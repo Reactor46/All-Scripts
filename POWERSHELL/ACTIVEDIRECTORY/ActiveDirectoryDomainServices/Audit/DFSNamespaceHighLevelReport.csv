@@ -1,0 +1,9 @@
+Name,ObjectClass,Version,Path,State,Timeout,SiteCosting,RootScalability,ABDE,Targets
+AppData,fTDfs,v1,\\FNBMCORP\AppData,OK,300,,,,System.Management.Automation.PSObject[]
+BizData,fTDfs,v1,\\FNBMCORP\BizData,OK,300,,,,System.Management.Automation.PSObject[]
+BizDataArc,fTDfs,v1,\\FNBMCORP\BizDataArc,OK,300,,,,System.Management.Automation.PSObject[]
+MCSI,fTDfs,v1,\\FNBMCORP\MCSI,OK,300,1,,,System.Management.Automation.PSObject[]
+PJTest,fTDfs,v1,\\FNBMCORP\PJTest,OK,300,,,,System.Management.Automation.PSObject[]
+ProcFiles,fTDfs,v1,\\FNBMCORP\ProcFiles,OK,300,,,,System.Management.Automation.PSObject[]
+ProcFilesArc,fTDfs,v1,\\FNBMCORP\ProcFilesArc,OK,300,,,,System.Management.Automation.PSObject[]
+share,fTDfs,v1,\\FNBMCORP\share,OK,300,,,,System.Management.Automation.PSObject[]

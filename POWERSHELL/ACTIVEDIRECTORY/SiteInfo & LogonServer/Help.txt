@@ -1,0 +1,14 @@
+Server_ADsite_Auto.ps1
+------You Need to change the OU Path. That will pull the computers from Active Directory.
+
+Server_ADsite.ps1
+------We need a input file called computers.txt in c: drive where you need to keep all computers name.
+
+
+__________________________________________________________________________________________
+
+1. you will get a additional txt file called UnreachableHosts.txt in C: drive of unreachable computers.
+
+
+
+

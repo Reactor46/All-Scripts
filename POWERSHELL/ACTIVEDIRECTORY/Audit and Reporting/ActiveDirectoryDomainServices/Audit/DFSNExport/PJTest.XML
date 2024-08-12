@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<Root xmlns = "http://schemas.microsoft.com/dfs/2007/03/dfsutil" majorVersion = "2" minorVersion = "0" 
+	Name="\\FNBMCORP\PJTest" State="OK" Timeout="300" >
+	<Target State="ONLINE" >\\LASHAFILE01N01\PJTest</Target>
+	<Target State="ONLINE" >\\LASHAFILE01N02\PJTest</Target>
+
+
+	<Link Name="PJTest" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\pj_vsvr\PJTest</Target>
+		<Target State="ONLINE" >\\lasfs03\xPJTest</Target>
+	</Link>
+
+</Root>
+

@@ -1,0 +1,14 @@
+Set-Acl
+https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-acl?view=powershell-5.1
+
+Get-Credential
+https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/get-credential?view=powershell-5.1
+
+Récuperation droit d'une arborescence 
+http://ps-scripting.blogspot.fr/2011/10/recuperer-les-droits-dune-arborescence.html
+
+Gerer les autorisations NTFS en powershell
+https://www.it-connect.fr/gerer-les-autorisations-ntfs-en-powershell-avec-ntfssecurity/
+
+Secedit
+https://technet.microsoft.com/en-us/library/bb490997.aspx

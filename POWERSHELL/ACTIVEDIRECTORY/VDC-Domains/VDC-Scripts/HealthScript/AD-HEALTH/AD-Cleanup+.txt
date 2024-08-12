@@ -1,0 +1,271 @@
+@echo off
+TITLE AD-Cleanup+ by Andrew Dalkos
+:: AD-Cleanup by Andrew Dalkos
+:: 08/20/2014
+:: --------------------------------------------------------
+:: REQUIREMENTS: You must have RSAT for Windows installed
+:: and enabled.
+::
+:: Download RSAT for Windows 7 with SP1
+:: http://www.microsoft.com/en-us/download/confirmation.aspx?id=7887
+:: 
+:: Download RSAT for Windows 8
+:: http://www.microsoft.com/en-us/download/confirmation.aspx?id=28972
+:: 
+:: 1. This script will look in Active Directory and disable
+::    all computers that meet the following characteristics:
+:: - Hasn't been logged into in at least 120 days
+:: - Hasn't exchanged computer credentials in over 120 days
+:: - Hostname/OU doesn't contain anything in the variable list.
+:: 
+:: 2. It will then put all disabled computers in the 
+::    appropriate DisabledComputers OU.
+:: 
+:: 3. And then it will create a report and save it to the 
+::    directory variable location, and open it at the end.
+::
+:: 4. It might even make you a coffee
+::
+:: --------------------------------------------------------
+
+:: EXCLUSION VARIABLE LIST to exclude in searches.
+:: (example: set VAR1=TEST  won't include any PCs/OUs containing "TEST" in the disabling process)
+set VAR1=
+set VAR2=
+set VAR3=
+set VAR4=
+set VAR5=
+set VAR6=
+set VAR7=
+set VAR8=
+set VAR9=
+
+:: LOG DIRECTORY - LOCAL OR NETWORK PATH TO LOG DIRECTORY
+:: (example: set LOGDIR=c:\logfolder   -or-   set LOGDIR=\\server\share\logfolder)
+set LOGDIR=
+
+:: EXISTING DISABLED COMPUTERS ORGANIZATIONAL UNIT IN ACTIVE DIRECTORY
+:: Make sure your OU doesn't contain esclamation marks...
+:: (ex. set OUNIT=OU=DISABLED,DC=EXAMPLE,DC=LOCAL  )
+set OUNIT=
+
+:: DON'T CHANGE THIS UNLESS YOU KNOW WHAT YOU ARE DOING.
+set TEMPFILES=%TEMP%\AD-Cleanup
+:: --------------------------------------------------------
+SETLOCAL EnableDelayedExpansion
+cls
+
+echo.
+echo                    ------------------------------------------
+echo                    -    AD-Cleanup+ - Version 1.0.0.1       -
+echo                    -       Created by Andrew Dalkos         -
+echo                    -         www.AndrewDalkos.com           -
+echo                    -              08/20/2014                -
+echo                    ------------------------------------------
+timeout /t 4 /nobreak > nul 2>&1
+
+:LOGCREATION
+if "%LOGDIR%"=="" set LOGDIR=%TEMP%\AD-Cleanup
+echo ------------------------------ > "%LOGDIR%\Report.txt"
+echo AD-Cleanup Report %date:~4,10% >> "%LOGDIR%\Report.txt"
+time /t >> "%LOGDIR%\Report.txt"
+echo ------------------------------ >> "%LOGDIR%\Report.txt"
+echo. >> "%LOGDIR%\Report.txt"
+
+
+:: CREATE THE TEMP DIRECTORY
+:CREATE
+COLOR 0E
+cls
+if "%TEMPFILES%"=="" (
+	color 0b
+	echo You must set a temp directory. Set one now:
+	set /p TEMPFILES=
+	goto CREATE
+	) ELSE (
+		dir %TEMPFILES% > nul 2>&1
+		if !ERRORLEVEL! GEQ 1 (
+			mkdir %TEMPFILES% > nul 2>&1
+			if !ERRORLEVEL! GEQ 1 goto CREATEFAIL
+		)
+	)
+
+	
+:: COLLECT INACTIVE COMPUTERS FROM AD
+:COLLECT
+cls
+echo.
+echo PLEASE WAIT: Collecting inactive computers from Active Directory...
+dsquery computer -stalepwd 120 -inactive 17 -limit 0 > "%TEMPFILES%\list.txt" 2> NUL
+if not "%errorlevel%"=="0" goto COLLECTFAIL
+
+
+:: PARSE RESULTS TO EXCLUDE LIST OF VARIABLES
+:PARSE
+type "%TEMPFILES%\list.txt" | find "CN=" /c > "%TEMPFILES%\count.txt" 2> NUL
+set /p COUNT=< "%TEMPFILES%\count.txt"
+dsquery computer -stalepwd 120 -inactive 17 -limit 0 | dsget computer -dn -disabled | find "CN=" | find " yes" /c > "%TEMPFILES%\dcount.txt" 2> NUL
+set /p DCOUNT=< "%TEMPFILES%\dcount.txt"
+cls
+echo.
+echo So far, there are %COUNT% inactive computers in Active Directory.
+echo.
+if "%DCOUNT%"=="" set DCOUNT=0
+echo There are %DCOUNT% inactive computers that are already disabled.
+echo Now parsing the results to exlude the list of variables defined.
+echo.
+timeout /T 6 /NOBREAK > nul 2>&1
+echo "%VAR1%%VAR2%%VAR3%%VAR4%%VAR5%%VAR6%%VAR7%%VAR8%%VAR9%" > "%TEMPFILES%\var.txt"
+set /p VARRESULT=< "%TEMPFILES%\var.txt"
+if %VARRESULT%=="" (
+	echo There are no exlusion variables defined.
+	echo The computer count is still %COUNT%.
+	type "%TEMPFILES%\list.txt" > "%TEMPFILES%\finallist.txt"
+	timeout /T 4 /NOBREAK
+	goto DISABLE
+	) ELSE (
+		type "%TEMPFILES%\list.txt" | findstr /I /V "%VAR1% %VAR2% %VAR3% %VAR4% %VAR5% %VAR6% %VAR7% %VAR8% %VAR9%" > "%TEMPFILES%\finallist.txt" 2> NUL
+		if !ERRORLEVEL! GEQ 1 goto PARSEFAIL
+	)
+type "%TEMPFILES%\finallist.txt" | find "CN=" /c > "%TEMPFILES%\count.txt" 2> NUL
+set /p COUNT=< "%TEMPFILES%\count.txt"
+echo The exclusions have been applied.
+echo The computer count is now %COUNT%.
+timeout /T 4 /NOBREAK > NUL 2>&1
+
+
+:: DISABLE THE INACTIVE COMPUTERS IN ACTIVE DIRECTORY
+:DISABLE
+cls
+echo.
+echo PLEASE WAIT: Disabling %COUNT% computers in Active Directory.
+echo.
+echo COMPUTER COUNT: %COUNT% >> "%LOGDIR%\Report.txt"
+echo. >> "%LOGDIR%\Report.txt"
+echo - - - - - - - - - - - - DISABLE REPORT - - - - - - - - - - - - >> "%LOGDIR%\Report.txt"
+type "%TEMPFILES%\finallist.txt" | dsmod computer -disabled Yes >> "%LOGDIR%\Report.txt"
+if errorlevel NEQ 0 goto DISABLEFAIL
+
+
+:: CREATE NEW ORGANIZATIONAL UNITS TO STORE DISABLED COMPUTERS
+:MAKEOU
+set dateou=01
+if "%date:~4,2%"=="01" set dateou=09
+if "%date:~4,2%"=="02" set dateou=10
+if "%date:~4,2%"=="03" set dateou=11
+if "%date:~4,2%"=="04" set dateou=12
+if "%date:~4,2%"=="05" set dateou=01
+if "%date:~4,2%"=="06" set dateou=02
+if "%date:~4,2%"=="07" set dateou=03
+if "%date:~4,2%"=="08" set dateou=04
+if "%date:~4,2%"=="09" set dateou=05
+if "%date:~4,2%"=="10" set dateou=06
+if "%date:~4,2%"=="11" set dateou=07
+if "%date:~4,2%"=="12" set dateou=08
+cls
+echo.
+echo Checking current OU structure...
+if "%OUNIT%"=="" (
+	color 0b
+	echo You must set the OUNIT variable. Set one now:
+	set /p OUNIT=
+	goto MAKEOU
+	)
+
+
+DSQUERY OU "OU=%dateou%,%OUNIT%" > nul 2>&1
+if not %errorlevel%==0 (
+	echo.
+	echo Creating new OU...
+	DSADD OU "OU=%dateou%,%OUNIT%" > nul 2>&1
+	if !ERRORLEVEL! NEQ 0 goto MAKEFAIL
+	) ELSE (
+		echo.
+		echo The appropriate OU already exists...
+		timeout /t 2 > nul 2>&1
+		)
+
+
+:: MOVE DISABLED COMPUTERS TO DISABLED OU
+:MOVEOU
+cls
+echo PLEASE WAIT: Moving disabled computers to the following OU:
+echo  "OU=%dateou%,%OUNIT%"
+echo. >> "%LOGDIR%\Report.txt"
+echo - - - - - - - - - - - - OU MOVE REPORT - - - - - - - - - - - - >> "%LOGDIR%\Report.txt"
+echo - - "OU=%dateou%,%OUNIT%" >> "%LOGDIR%\Report.txt"
+for /f "usebackq" %%a in ("%TEMPFILES%\finallist.txt") do (
+	dsmove %%a -newparent "OU=%dateou%,%OUNIT%" > nul 2>&1
+	if !ERRORLEVEL! NEQ 0 (echo  *FAILED* - %%a >> "%LOGDIR%\Report.txt") ELSE (echo SUCCESS   - %%a >> "%LOGDIR%\Report.txt")
+)
+goto FINISHED
+
+
+:CREATEFAIL
+cls
+color 0c
+echo.
+echo ERROR! Cannot create temp directory: %TEMPFILES%
+echo Make sure that you have write permission in that location.
+echo.
+timeout /t 6 /nobreak > nul 2>&1
+goto END
+
+:COLLECTFAIL
+cls
+color 0c
+echo.
+echo ERROR! Cannot collect results from Active Directory...
+echo   Make sure to run this script as a user that has write access to 
+echo   Active Directory.
+echo.
+timeout /t 6 /nobreak > nul 2>&1
+goto END
+
+:PARSEFAIL
+cls
+color 0c
+echo.
+echo ERROR! Cannot properly parse the AD results...
+echo   Check the variables you've defined for proper syntax.
+echo.
+timeout /t 6 /nobreak > nul 2>&1
+goto END
+
+:DISABLEFAIL
+cls
+color 0c
+echo.
+echo ERROR! Cannot disable computers in Active Directory...
+echo   Make sure to run this script as a user that has write access to 
+echo   Active Directory.
+echo.
+timeout /t 6 /nobreak > nul 2>&1
+goto END
+
+:MAKEFAIL
+cls
+color 0c
+echo.
+echo ERROR! Cannot add new OU in Active Directory...
+echo   Make sure to run this script as a user that has full write access
+echo   to Active Directory.
+echo.
+timeout /t 6 /nobreak > nul 2>&1
+goto END
+
+
+:FINISHED
+cls
+color 0a
+echo.
+echo SUCCESS! AD-Cleanup has finished...
+echo.
+echo www.AndrewDalkos.com
+echo http://community.spiceworks.com/people/andrewdalkos
+timeout /t 2 /nobreak > nul 2>&1
+notepad "%LOGDIR%\Report.txt"
+timeout /t 2 /nobreak > nul 2>&1
+
+:END
+color

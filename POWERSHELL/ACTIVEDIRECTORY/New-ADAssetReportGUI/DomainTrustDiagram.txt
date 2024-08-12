@@ -1,0 +1,6 @@
+digraph test {
+ rankdir = LR
+ 
+ "USON.LOCAL" -> "cloud.local"[label = "Trusts"]
+ "USON.LOCAL" -> "roc.local"[label = "Trusts"]
+}

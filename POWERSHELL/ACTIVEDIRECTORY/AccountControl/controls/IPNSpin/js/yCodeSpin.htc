@@ -1,0 +1,39 @@
+/* 
+ * Copyright Notice. 
+ * This code was originally created by yCode: http://www.yCode.com  
+ * Any modifications to this code can only be made upon purchase from
+ * yCode provided that this notice remains in the source code. 
+ *
+ */
+
+<PUBLIC:COMPONENT tagName="spin">
+
+<PUBLIC:METHOD NAME = "getCurrentPos" />
+<PUBLIC:METHOD NAME = "setCurrentPos" />
+<PUBLIC:METHOD NAME = "getStep" />
+<PUBLIC:METHOD NAME = "setStep" />
+<PUBLIC:METHOD NAME = "getLowerLimit" />
+<PUBLIC:METHOD NAME = "getUpperLimit" />
+<PUBLIC:METHOD NAME = "setLimits" />
+<PUBLIC:METHOD NAME = "setCurrentPos" />
+<PUBLIC:METHOD NAME = "getLimits" />
+<PUBLIC:METHOD NAME = "getUpperLimit" />
+<PUBLIC:METHOD NAME = "setSpinValues" />
+
+<PUBLIC:PROPERTY NAME="case_sensitive" />
+<PUBLIC:PROPERTY NAME="integer" ID="propid_integer" PUT="setInteger" GET="getInteger"/>
+<PUBLIC:PROPERTY NAME="editable" ID="propid_editable" PUT="setReadOnly" GET="getReadOnly"/>
+<PUBLIC:PROPERTY NAME="circular" />
+
+<PUBLIC:EVENT NAME = "spin_onchange" ID="event_onchange"/>
+
+<PUBLIC:attach event="ondocumentready" handler="initSpin" />
+
+</PUBLIC:COMPONENT>
+
+<SCRIPT language="JScript" src="yCodeSpin.js">
+</SCRIPT>
+
+<BODY>
+</BODY>
+ 

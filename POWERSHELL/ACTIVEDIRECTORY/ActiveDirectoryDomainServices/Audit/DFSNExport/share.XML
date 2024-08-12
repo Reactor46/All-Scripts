@@ -1,0 +1,366 @@
+<?xml version="1.0"?>
+
+<Root xmlns = "http://schemas.microsoft.com/dfs/2007/03/dfsutil" majorVersion = "2" minorVersion = "0" 
+	Name="\\FNBMCORP\share" State="OK" Timeout="300" >
+	<Target State="ONLINE" >\\LASHAFILE01N01\share</Target>
+	<Target State="ONLINE" >\\LASHAFILE01N02\share</Target>
+
+
+	<Link Name="authcout" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasfdr\authcout</Target>
+	</Link>
+
+
+	<Link Name="Compliance" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\LASFS02\Compliance</Target>
+	</Link>
+
+
+	<Link Name="MARKET" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasfs03\market</Target>
+		<Target State="OFFLINE" >\\LASFS02\SYS</Target>
+	</Link>
+
+
+	<Link Name="batmout" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfdr01\batmout</Target>
+		<Target State="OFFLINE" >\\lasfdr02\batmout</Target>
+		<Target State="ONLINE" >\\lasfdr\batmout</Target>
+	</Link>
+
+
+	<Link Name="public" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\apps\sys\public</Target>
+	</Link>
+
+
+	<Link Name="CollDept" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\CollDept</Target>
+	</Link>
+
+
+	<Link Name="audit" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfs01\auditwizard</Target>
+	</Link>
+
+
+	<Link Name="accountservices" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\accountservices</Target>
+	</Link>
+
+
+	<Link Name="batcout" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfdr01\batcout</Target>
+		<Target State="OFFLINE" >\\lasfdr02\batcout</Target>
+		<Target State="ONLINE" >\\lasfdr\batcout</Target>
+	</Link>
+
+
+	<Link Name="Bridger_Insight" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\LASFS02\Bridger Insight XG ClickOnce</Target>
+	</Link>
+
+
+	<Link Name="collect" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\app01\collect</Target>
+	</Link>
+
+
+	<Link Name="authmout" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasfdr\authmout</Target>
+	</Link>
+
+
+	<Link Name="IOU" Comment="IOU Netware Replacement" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasfs03\IOU</Target>
+	</Link>
+
+
+	<Link Name="Corp" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\Shared\corp</Target>
+	</Link>
+
+
+	<Link Name="Interactive" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\LASHAFILE01N02\share\Shared\InterActive</Target>
+	</Link>
+
+
+	<Link Name="HR" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasfs02\HR</Target>
+	</Link>
+
+
+	<Link Name="nacout" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfdr01\nacout</Target>
+		<Target State="OFFLINE" >\\lasfdr02\nacout</Target>
+		<Target State="ONLINE" >\\lasfdr\nacout</Target>
+	</Link>
+
+
+	<Link Name="W7BU" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\LASFS03\W7BU</Target>
+	</Link>
+
+
+	<Link Name="edscout" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfdr01\edscout</Target>
+		<Target State="OFFLINE" >\\lasfdr02\edscout</Target>
+		<Target State="ONLINE" >\\lasfdr\edscout</Target>
+	</Link>
+
+
+	<Link Name="MSDN" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\Shared\msdn</Target>
+	</Link>
+
+
+	<Link Name="bacout" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfdr01\bacout</Target>
+		<Target State="OFFLINE" >\\lasfdr02\bacout</Target>
+		<Target State="ONLINE" >\\lasfdr\bacout</Target>
+	</Link>
+
+
+	<Link Name="collections" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\Collections</Target>
+		<Target State="OFFLINE" >\\LASHAFILE01N01\share</Target>
+	</Link>
+
+
+	<Link Name="uspsmout" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\LASFDR\USPS</Target>
+	</Link>
+
+
+	<Link Name="DYOCMOUT" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfdr02\dyocmout</Target>
+		<Target State="OFFLINE" >\\lasfdr01\dyocmout</Target>
+		<Target State="ONLINE" >\\lasfdr\dyocmout</Target>
+	</Link>
+
+
+	<Link Name="Recovery1" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\Shared\extracts\Recovery1</Target>
+	</Link>
+
+
+	<Link Name="mkt-backup" Comment="Backup Share for Marketing on the MSA storage connected to LASFS03" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs03\MKT-Backup</Target>
+	</Link>
+
+
+	<Link Name="CustomerService" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasfs02\CustomerService</Target>
+	</Link>
+
+
+	<Link Name="CSData" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\Shared\csdata</Target>
+	</Link>
+
+
+	<Link Name="bdccout" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfdr01\bdccout</Target>
+		<Target State="OFFLINE" >\\lasfdr02\bdccout</Target>
+		<Target State="ONLINE" >\\lasfdr\bdccout</Target>
+	</Link>
+
+
+	<Link Name="mis" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\mis</Target>
+	</Link>
+
+
+	<Link Name="nmoncout" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfdr01\nmoncout</Target>
+		<Target State="OFFLINE" >\\lasfdr02\nmoncout</Target>
+		<Target State="ONLINE" >\\lasfdr\nmoncout</Target>
+	</Link>
+
+
+	<Link Name="Shared" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\Shared</Target>
+	</Link>
+
+
+	<Link Name="convmout" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\LASFDR\CONV</Target>
+	</Link>
+
+
+	<Link Name="BK" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\LASHAFILE01N02\share\Shared\Buffet\BK</Target>
+	</Link>
+
+
+	<Link Name="CardholderAgreements" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasfs02\CardholderAgreements</Target>
+	</Link>
+
+
+	<Link Name="out" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfdr01\out</Target>
+		<Target State="OFFLINE" >\\lasfdr02\out</Target>
+		<Target State="ONLINE" >\\lasfdr\out</Target>
+	</Link>
+
+
+	<Link Name="User" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\User</Target>
+	</Link>
+
+
+	<Link Name="in" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfdr01\in</Target>
+		<Target State="OFFLINE" >\\lasfdr02\in</Target>
+		<Target State="ONLINE" >\\lasfdr\in</Target>
+	</Link>
+
+
+	<Link Name="Executive" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasfs02\Executive</Target>
+	</Link>
+
+
+	<Link Name="DYOCCOUT" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\Lasfdr01\DYOCCOUT</Target>
+		<Target State="OFFLINE" >\\lasfdr02\dyoccout</Target>
+		<Target State="ONLINE" >\\lasfdr\dyoccout</Target>
+	</Link>
+
+
+	<Link Name="debitcard" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasauto1\debitcard</Target>
+	</Link>
+
+
+	<Link Name="Manuals" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\Shared\manuals</Target>
+	</Link>
+
+
+	<Link Name="Extracts" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\Shared\extracts</Target>
+	</Link>
+
+
+	<Link Name="dwdialer" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasdawh1\dwdialer</Target>
+	</Link>
+
+
+	<Link Name="transactionservices" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\transactionservices</Target>
+	</Link>
+
+
+	<Link Name="convcout" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasfdr\CONVCOUT</Target>
+	</Link>
+
+
+	<Link Name="OFAC" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\OFAC</Target>
+	</Link>
+
+
+	<Link Name="uspscout" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasfdr\uspscout</Target>
+	</Link>
+
+
+	<Link Name="Capsback" Comment="Oracle Backups Avanti" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\Capsback</Target>
+	</Link>
+
+
+	<Link Name="edsmout" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfdr01\edsmout</Target>
+		<Target State="OFFLINE" >\\lasfdr02\edsmout</Target>
+		<Target State="ONLINE" >\\lasfdr\edsmout</Target>
+	</Link>
+
+
+	<Link Name="software" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs03\Software</Target>
+	</Link>
+
+
+	<Link Name="Risk" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasfs03\risk</Target>
+	</Link>
+
+
+	<Link Name="Accounting" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasfs02\Accounting</Target>
+	</Link>
+
+
+	<Link Name="workarea" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfdr01\workarea</Target>
+		<Target State="OFFLINE" >\\lasfdr02\workarea</Target>
+		<Target State="ONLINE" >\\lasfdr\workarea</Target>
+	</Link>
+
+
+	<Link Name="nmonmout" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfdr01\nmonmout</Target>
+		<Target State="OFFLINE" >\\lasfdr02\nmonmout</Target>
+		<Target State="ONLINE" >\\lasfdr\nmonmout</Target>
+	</Link>
+
+
+	<Link Name="QualityAudit" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasfs02\QualityAudit</Target>
+	</Link>
+
+
+	<Link Name="mcsiaudit" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasfs02\mcsiaudit</Target>
+	</Link>
+
+
+	<Link Name="fdrarchive" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfdr01\fdrarchive</Target>
+		<Target State="OFFLINE" >\\lasfdr02\fdrarchive</Target>
+		<Target State="ONLINE" >\\lasfdr\fdrarchive</Target>
+	</Link>
+
+
+	<Link Name="cstartaudit" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\cstartaudit</Target>
+	</Link>
+
+
+	<Link Name="bamout" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfdr01\bamout</Target>
+		<Target State="OFFLINE" >\\lasfdr02\bamout</Target>
+		<Target State="ONLINE" >\\lasfdr\bamout</Target>
+	</Link>
+
+
+	<Link Name="LitigationSupport" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\LASHAFILE01N02\share\Shared\Buffet\LITIGATION Support</Target>
+	</Link>
+
+
+	<Link Name="BofA" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\Lasfs02\Shared\bofa</Target>
+	</Link>
+
+
+	<Link Name="bdcmout" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfdr01\bdcmout</Target>
+		<Target State="OFFLINE" >\\lasfdr02\bdcmout</Target>
+		<Target State="ONLINE" >\\lasfdr\bdcmout</Target>
+	</Link>
+
+
+	<Link Name="CreditOneLogging" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasfs02\creditonelogging</Target>
+		<Target State="OFFLINE" >\\phxfs01\creditonelogging</Target>
+	</Link>
+
+</Root>
+

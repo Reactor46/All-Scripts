@@ -1,0 +1,32 @@
+Name	Type	Description	
+_TESTOU	Organizational Unit		
+Builtin	builtinDomain		
+C1B UNKNOWN COMPUTERS	Organizational Unit		
+Computers	Container	Default container for upgraded computer accounts	
+DefaultMigrationContainer30	Container		
+DefaultOUPermissions	Organizational Unit		
+Digital Displays	Organizational Unit		
+Disabled	Organizational Unit		
+Domain Controllers	Organizational Unit	Default container for new Windows 2000 domain controllers	
+ForeignSecurityPrincipals	Container	Default container for security identifiers (SIDs) associated with objects from external, trusted domains	
+Infrastructure	infrastructureUpdate		
+IT_Advisors	Organizational Unit		
+Las_Vegas	Organizational Unit		
+Las_Vegas - Testing	Organizational Unit		
+Las_Vegas_Systems	Organizational Unit		
+LostAndFound	lostAndFound	Default container for orphaned objects	
+Managed Service Accounts	Container	Default container for managed service accounts.	
+Microsoft Exchange Security Groups	Organizational Unit		
+Microsoft Exchange System Objects	msExchSystemObjectsContainer		
+No-one	Organizational Unit	Container for Mailbox accounts excluded from the Everyone distribution group.	
+NTDS Quotas	msDS-QuotaContainer		
+Program Data	Container	Default location for storage of application data.	
+QuestReplicationMonitoring	Container		
+QuestReplicationMonitoring
+CNF:7d41cfed-0591-47e7-8b15-1d35bbea7d9b	Container		
+Resources	Organizational Unit		
+Service_Accounts	Organizational Unit		
+SFG_Execs	Organizational Unit		
+System	Container	Builtin system settings	
+TPM Devices	msTPM-InformationObjectsContainer		
+Users	Container	Default container for upgraded user accounts	

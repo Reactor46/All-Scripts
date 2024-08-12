@@ -1,0 +1,38 @@
+# Written by Jeremiah Michno
+# Used to List all inactive users and computers older than 180 days
+# Run quarterly to cleanup AD
+# Requires Quest Active Roles plugin: http://www.quest.com/powershell/activeroles-server.aspx
+
+Add-PSSnapin Quest.ActiveRoles.ADManagement
+cls
+
+$OU = "OU=ToBeDeleted,OU=MyBusiness,DC=domain,DC=Local"
+$Today = Get-Date
+$Path1 = "\\server\share\Audit\InactiveAccounts\InactiveComputerAccounts.csv"
+$Path2 = "\\server\share\Audit\InactiveAccounts\InactiveUserAccounts.csv"
+
+#  Inactive Computers for past 180 days
+Get-QADComputer -InactiveFor 180 -SizeLimit 0 |
+ Sort WhenChanged |
+ Select-Object computername, WhenChanged, Description, osname, osservicepack |
+ Export-csv -path $Path1
+
+# Remove the hash below to move computers to the obsolete OU
+#Get-QADComputer -InactiveFor 180 -SizeLimit 0 | Move-QADObject -to cis.local/obsolete
+
+# Remove the hash below to delete computers
+#Get-QADComputer -InactiveFor 180 -SizeLimit 0 | Remove-QADObject
+
+
+#  Inactive Users for past 180 days in the ToBeDeleted OU that are also disabled
+Get-QADUser -InactiveFor 180 -Disabled -SizeLimit 0 -searchroot $OU |
+ where {$_.WhenChanged.Adddays(180) -lt $Today} |
+ Sort WhenChanged |
+ Select-Object DisplayName, WhenChanged, Description, Email |
+ Export-csv -path $Path2
+ 
+# Remove the hash below to move users to the obsolete OU
+#Get-QADUser -InactiveFor 180 -Disabled -SizeLimit 0 | Move-QADObject -to cis.local/obsolete
+
+# Remove the hash below to delete users
+#Get-QADUser -InactiveFor 180 -Disabled -SizeLimit 0 | Remove-QADObject

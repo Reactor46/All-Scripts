@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+
+<Root xmlns = "http://schemas.microsoft.com/dfs/2007/03/dfsutil" majorVersion = "2" minorVersion = "0" 
+	Name="\\FNBMCORP\ProcFilesArc" State="OK" Timeout="300" >
+	<Target State="ONLINE" >\\LASHAFILE01N01\ProcFilesArc</Target>
+	<Target State="ONLINE" >\\LASHAFILE01N02\ProcFilesArc</Target>
+
+
+	<Link Name="Trn01" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\LASFS04\Trn01_arc</Target>
+		<Target State="ONLINE" >\\lasfs03\ProcFilesArc_Trn01</Target>
+	</Link>
+
+
+	<Link Name="Test03" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfs04\Test03_arc</Target>
+		<Target State="ONLINE" >\\lasfs03\ProcFilesArc_Test03</Target>
+	</Link>
+
+
+	<Link Name="Pdev01" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\lasfs03\ProcFilesArc_Pdev01</Target>
+	</Link>
+
+
+	<Link Name="Test06" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\LASFS03\ProcFilesArc_Test06</Target>
+	</Link>
+
+
+	<Link Name="HF01" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\LASFS04\HF01_arc</Target>
+		<Target State="ONLINE" >\\lasfs03\ProcFilesArc_HF01</Target>
+	</Link>
+
+
+	<Link Name="Test05" State="OK" Timeout="1800" >
+		<Target State="ONLINE" >\\LASFS03\ProcFilesArc_Test05</Target>
+	</Link>
+
+
+	<Link Name="Prod" Comment="Production File Processing Share for Scheduled Jobs" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfs04\Prod_Arc</Target>
+		<Target State="ONLINE" >\\lasfs03\ProcFilesArc_Prod</Target>
+	</Link>
+
+
+	<Link Name="RL01" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\LASFS04\RL01_arc</Target>
+		<Target State="ONLINE" >\\lasfs03\ProcFilesArc_RL01</Target>
+	</Link>
+
+
+	<Link Name="Dev01" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfs04\Dev01_arc</Target>
+		<Target State="ONLINE" >\\lasfs03\ProcFilesArc_Dev01</Target>
+	</Link>
+
+
+	<Link Name="STG01" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\LASFS04\STG01_arc</Target>
+		<Target State="ONLINE" >\\lasfs03\ProcFilesArc_STG01</Target>
+	</Link>
+
+
+	<Link Name="FDR_MCycle" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfs04\FDR_MCycle_arc</Target>
+		<Target State="ONLINE" >\\lasfs03\ProcFilesArc_FDR_MCycle</Target>
+	</Link>
+
+
+	<Link Name="FDR_CCycle" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfs04\FDR_CCycle_arc</Target>
+		<Target State="ONLINE" >\\lasfs03\ProcFilesArc_FDR_CCycle</Target>
+	</Link>
+
+
+	<Link Name="Test02" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfs04\Test02_arc</Target>
+		<Target State="ONLINE" >\\lasfs03\ProcFilesArc_Test02</Target>
+	</Link>
+
+
+	<Link Name="Test04" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfs04\Test04_arc</Target>
+		<Target State="ONLINE" >\\lasfs03\ProcFilesArc_Test04</Target>
+	</Link>
+
+
+	<Link Name="Test01" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfs04\Test01_arc</Target>
+		<Target State="ONLINE" >\\lasfs03\ProcFilesArc_Test01</Target>
+	</Link>
+
+</Root>
+
