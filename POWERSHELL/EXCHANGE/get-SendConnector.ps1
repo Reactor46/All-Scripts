@@ -1,0 +1,1 @@
+Get-SendConnector | ft Identity,AddressSpaces,SourceTransportServers -AutoSize

@@ -1,0 +1,255 @@
+            ExchangeServiceBinding esb = new ExchangeServiceBinding();
+            esb.RequestServerVersionValue = new RequestServerVersion();
+            esb.RequestServerVersionValue.Version = ExchangeVersionType.Exchange2007_SP1;
+            esb.Credentials = new NetworkCredential("username", "password","domain");
+            esb.Url = @"https://servername/EWS/Exchange.asmx";
+            DistinguishedFolderIdType parentFolder = new DistinguishedFolderIdType();
+            parentFolder.Id = DistinguishedFolderIdNameType.publicfoldersroot;
+            FolderIdType cfContactsFolder = FindFolder(esb, parentFolder, "ParentFolder", "Months");
+            CreateFolder(esb, cfContactsFolder, "Contacts-June");
+            GetContacts(esb, cfContactsFolder);
+            Console.WriteLine(cfContactsFolder.Id);
+        }
+        static FolderIdType FindFolder(ExchangeServiceBinding esb, DistinguishedFolderIdType fiFolderID, String pfRootFldName, String sfChildSub)
+        {
+            FolderIdType rvFolderID = new FolderIdType();
+            // Create the request and specify the travesal type
+            FindFolderType findFolderRequest = new FindFolderType();
+            findFolderRequest.Traversal = FolderQueryTraversalType.Shallow;
+
+            // Define the properties returned in the response
+            FolderResponseShapeType responseShape = new FolderResponseShapeType();
+            responseShape.BaseShape = DefaultShapeNamesType.Default;
+            findFolderRequest.FolderShape = responseShape;
+
+            // Identify which folders to search
+            DistinguishedFolderIdType[] folderIDArray = new DistinguishedFolderIdType[1];
+
+            folderIDArray[0] = new DistinguishedFolderIdType();
+            folderIDArray[0].Id = fiFolderID.Id;
+           // folderIDArray[0].ChangeKey = fiFolderID.ChangeKey;
+
+            //Add Restriction for DisplayName
+            RestrictionType ffRestriction = new RestrictionType();
+            IsEqualToType ieToType = new IsEqualToType();
+            PathToUnindexedFieldType diDisplayName = new PathToUnindexedFieldType();
+            diDisplayName.FieldURI = UnindexedFieldURIType.folderDisplayName;
+
+            FieldURIOrConstantType ciConstantType = new FieldURIOrConstantType();
+            ConstantValueType cvConstantValueType = new ConstantValueType();
+            cvConstantValueType.Value = pfRootFldName;
+            ciConstantType.Item = cvConstantValueType;
+            ieToType.Item = diDisplayName;
+            ieToType.FieldURIOrConstant = ciConstantType;
+            ffRestriction.Item = ieToType;
+            findFolderRequest.Restriction = ffRestriction;
+
+            // Add the folders to search to the request
+            findFolderRequest.ParentFolderIds = folderIDArray;
+             // Send the request and get the response
+                FindFolderResponseType findFolderResponse = esb.FindFolder(findFolderRequest);
+
+                // Get the response messages
+                ResponseMessageType[] rmta = findFolderResponse.ResponseMessages.Items;
+
+                foreach (ResponseMessageType rmt in rmta)
+                {
+                    if (((FindFolderResponseMessageType)rmt).ResponseClass == ResponseClassType.Success)
+                    {
+                        FindFolderResponseMessageType ffResponse = (FindFolderResponseMessageType)rmt;
+                        if (ffResponse.RootFolder.TotalItemsInView > 0)
+                        {
+                            foreach (BaseFolderType fld in ffResponse.RootFolder.Folders)
+                            {
+                                Console.WriteLine(fld.DisplayName.ToString());
+                                if (fld.ChildFolderCount != 0)
+                                {
+                                   rvFolderID = FindSubFolder(esb, fld, sfChildSub);
+                                }                              
+                            }
+                           
+
+                        }
+                        else
+                        { //handle no folder
+                        }
+                    }
+                    else
+                    { //handle error
+                    }
+
+                }         
+            return rvFolderID;
+
+
+        }
+        static FolderIdType FindSubFolder(ExchangeServiceBinding esb, BaseFolderType pfParentFolder, String sfChildSub)
+        {
+            FolderIdType rvFolderID = new FolderIdType();
+            FolderType dd = new FolderType();
+            BaseFolderIdType bf = new FolderIdType();
+
+            // Create the request and specify the travesal type
+            FindFolderType findFolderRequest = new FindFolderType();
+            findFolderRequest.Traversal = FolderQueryTraversalType.Shallow;
+
+            // Define the properties returned in the response
+            FolderResponseShapeType responseShape = new FolderResponseShapeType();
+            responseShape.BaseShape = DefaultShapeNamesType.Default;
+            findFolderRequest.FolderShape = responseShape;
+
+            // Identify which folders to search
+            FolderIdType[] folderIDArray = new FolderIdType[1];
+
+            folderIDArray[0] = new FolderIdType();
+            folderIDArray[0] = pfParentFolder.FolderId;
+
+            // Add the folders to search to the request
+            findFolderRequest.ParentFolderIds = folderIDArray;
+            // Send the request and get the response
+            FindFolderResponseType findFolderResponse = esb.FindFolder(findFolderRequest);
+
+            // Get the response messages
+            ResponseMessageType[] rmta = findFolderResponse.ResponseMessages.Items;
+
+            foreach (ResponseMessageType rmt in rmta)
+            {
+                if (((FindFolderResponseMessageType)rmt).ResponseClass == ResponseClassType.Success)
+                {
+                    FindFolderResponseMessageType ffResponse = (FindFolderResponseMessageType)rmt;
+                    if (ffResponse.RootFolder.TotalItemsInView > 0)
+                    {
+                        foreach (BaseFolderType fld in ffResponse.RootFolder.Folders)
+                        {
+                            Console.WriteLine(fld.DisplayName.ToString());
+                            if (fld.DisplayName == sfChildSub) { rvFolderID = fld.FolderId; };
+                            if (fld.ChildFolderCount != 0 & rvFolderID.Id == null)
+                            {
+                                rvFolderID = FindSubFolder(esb, fld, sfChildSub);
+                            }
+                        }
+
+                    }
+                    else
+                    { //handle no folder
+                    }
+                }
+                else
+                { //handle error
+                }
+
+            }
+            return rvFolderID;
+
+
+        }
+        static void CreateFolder(ExchangeServiceBinding esb, FolderIdType pfParentFolder, String nfNewFolderName)
+        {
+            CreateFolderType cfCreateFolder = new CreateFolderType();
+            ContactsFolderType nfNewFolder = new ContactsFolderType();
+            nfNewFolder.DisplayName = nfNewFolderName;
+            TargetFolderIdType tfTargetFolder = new TargetFolderIdType();
+            cfCreateFolder.ParentFolderId = new TargetFolderIdType();
+            cfCreateFolder.ParentFolderId.Item = pfParentFolder;
+            cfCreateFolder.Folders = new ContactsFolderType[] { nfNewFolder };
+            CreateFolderResponseType cfResponse = esb.CreateFolder(cfCreateFolder);
+            FolderInfoResponseMessageType cfResponseMessage = (FolderInfoResponseMessageType)cfResponse.ResponseMessages.Items[0];
+            if (cfResponseMessage.ResponseClass == ResponseClassType.Success)
+            {
+                setPerms(esb, cfResponseMessage.Folders[0].FolderId);
+            }
+            else
+            {//handle Error }
+            }
+
+        }
+        static void setPerms(ExchangeServiceBinding esb, FolderIdType ffFolder) {
+            
+            FolderResponseShapeType frFolderRShape = new FolderResponseShapeType();
+            frFolderRShape.BaseShape = DefaultShapeNamesType.AllProperties;
+
+            GetFolderType gfRequest = new GetFolderType();
+            gfRequest.FolderIds = new BaseFolderIdType[1] { ffFolder };
+            gfRequest.FolderShape = frFolderRShape;
+
+
+            GetFolderResponseType gfGetFolderResponse = esb.GetFolder(gfRequest);
+            ContactsFolderType cfCurrentFolder = null;
+            if (gfGetFolderResponse.ResponseMessages.Items[0].ResponseClass == ResponseClassType.Success)
+            {
+
+                cfCurrentFolder = (ContactsFolderType)((FolderInfoResponseMessageType)gfGetFolderResponse.ResponseMessages.Items[0]).Folders[0];
+
+            }
+            else
+            {//handle error 
+            }
+
+            UserIdType auAceUser = new UserIdType();
+            auAceUser.DistinguishedUserSpecified = true;
+            auAceUser.DistinguishedUser = DistinguishedUserType.Default;
+
+            PermissionSetType cfCurrentPermsionsSet = cfCurrentFolder.PermissionSet;
+            PermissionSetType cfNewPermsionsSet = new PermissionSetType();
+            cfNewPermsionsSet.Permissions = new PermissionType[cfCurrentPermsionsSet.Permissions.Length];
+            for (int cpint = 0; cpint < cfCurrentPermsionsSet.Permissions.Length; cpint++)
+            {
+                if (cfCurrentPermsionsSet.Permissions[cpint].UserId.DistinguishedUser == DistinguishedUserType.Default & cfCurrentPermsionsSet.Permissions[cpint].UserId.DistinguishedUserSpecified == true)
+                {
+                    cfNewPermsionsSet.Permissions[cpint] = new PermissionType();
+                    cfNewPermsionsSet.Permissions[cpint].UserId = cfCurrentPermsionsSet.Permissions[cpint].UserId;
+                    cfNewPermsionsSet.Permissions[cpint].PermissionLevel = PermissionLevelType.Editor;
+                }
+                else
+                {
+                    //Copy old ACE
+                    if (cfCurrentPermsionsSet.Permissions[cpint].PermissionLevel == PermissionLevelType.Custom)
+                    {
+                        cfNewPermsionsSet.Permissions[cpint] = cfCurrentPermsionsSet.Permissions[cpint];
+                    }
+                    else
+                    {
+                        cfNewPermsionsSet.Permissions[cpint] = new PermissionType();
+                        {
+                            cfNewPermsionsSet.Permissions[cpint].UserId = cfCurrentPermsionsSet.Permissions[cpint].UserId;
+                            cfNewPermsionsSet.Permissions[cpint].PermissionLevel = cfCurrentPermsionsSet.Permissions[cpint].PermissionLevel;
+                        }
+                    }
+                }
+
+            }
+
+
+            FolderType cfUpdateFolder = new FolderType();
+            cfUpdateFolder.PermissionSet = cfNewPermsionsSet;
+
+            UpdateFolderType upUpdateFolderRequest = new UpdateFolderType();
+
+            FolderChangeType fcFolderchanges = new FolderChangeType();
+
+            FolderIdType cfFolderid = new FolderIdType();
+            cfFolderid.Id = cfCurrentFolder.FolderId.Id;
+            cfFolderid.ChangeKey = cfCurrentFolder.FolderId.ChangeKey;
+
+            fcFolderchanges.Item = cfFolderid;
+
+            SetFolderFieldType cpPerms = new SetFolderFieldType();
+            PathToUnindexedFieldType cpFieldURI = new PathToUnindexedFieldType();
+            cpFieldURI.FieldURI = UnindexedFieldURIType.folderPermissionSet;
+            cpPerms.Item = cpFieldURI;
+            cpPerms.Item1 = cfUpdateFolder;
+
+            fcFolderchanges.Updates = new FolderChangeDescriptionType[1] { cpPerms };
+            upUpdateFolderRequest.FolderChanges = new FolderChangeType[1] { fcFolderchanges };
+
+            UpdateFolderResponseType ufUpdateFolderResponse = esb.UpdateFolder(upUpdateFolderRequest);
+            if (ufUpdateFolderResponse.ResponseMessages.Items[0].ResponseClass == ResponseClassType.Success)
+            {
+                Console.WriteLine("Permissions Updated sucessfully");
+            }
+            else
+            {
+                // Handle Error
+
+            }
+        }

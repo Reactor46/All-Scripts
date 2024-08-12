@@ -1,0 +1,86 @@
+        static void Main(string[] args)
+        {
+            String emFileName = @"c:\emchk1.eml";
+            FileStream fsFileStream = new FileStream(emFileName, FileMode.Open, FileAccess.Read);
+            byte[] bdBinaryData1 = ReadFully(fsFileStream,fsFileStream.Length);
+            ExchangeServiceBinding esb = new ExchangeServiceBinding();
+            esb.Credentials = new NetworkCredential("username", "password", "domain");
+            esb.Url = @"http://servername/EWS/exchange.asmx";
+            CreateItemType ciCreateItemRequest = new CreateItemType();
+            ciCreateItemRequest.MessageDisposition = MessageDispositionType.SaveOnly;
+            ciCreateItemRequest.MessageDispositionSpecified = true;
+            ciCreateItemRequest.SavedItemFolderId = new TargetFolderIdType();
+            DistinguishedFolderIdType sfSenditems = new DistinguishedFolderIdType();
+            sfSenditems.Id = DistinguishedFolderIdNameType.sentitems;
+            ciCreateItemRequest.SavedItemFolderId.Item = sfSenditems;
+            ciCreateItemRequest.Items = new NonEmptyArrayOfAllItemsType();
+            MessageType wsMessage = new MessageType();
+            MimeContentType mcMimeContnet = new MimeContentType();
+            mcMimeContnet.Value = Convert.ToBase64String(bdBinaryData1);
+            wsMessage.MimeContent = mcMimeContnet;
+            ExtendedPropertyType sfSentFlag = new ExtendedPropertyType();
+            PathToExtendedFieldType epExPath = new PathToExtendedFieldType();
+            epExPath.PropertyTag = "0x0E07";
+            epExPath.PropertyType = MapiPropertyTypeType.Integer;
+            sfSentFlag.ExtendedFieldURI = epExPath;
+            sfSentFlag.Item = "1";
+            wsMessage.IsRead = true;
+            wsMessage.ExtendedProperty = new ExtendedPropertyType[1];
+            wsMessage.ExtendedProperty[0] = sfSentFlag;
+            ciCreateItemRequest.Items.Items = new ItemType[1];
+            ciCreateItemRequest.Items.Items[0] = wsMessage;
+            CreateItemResponseType crCreateItemResponse = esb.CreateItem(ciCreateItemRequest);
+                if (crCreateItemResponse.ResponseMessages.Items[0].ResponseClass == ResponseClassType.Error)
+                {
+                    throw new Exception(crCreateItemResponse.ResponseMessages.Items[0].MessageText);
+                }
+                else
+                {
+                }
+            }
+        public static byte[] ReadFully(Stream stream, long initialLength)
+        {
+            // ref Function from http://www.yoda.arachsys.com/csharp/readbinary.html
+            // If we've been passed an unhelpful initial length, just
+            // use 32K.
+            if (initialLength < 1)
+            {
+                initialLength = 32768;
+            }
+
+            byte[] buffer = new byte[initialLength];
+            int read = 0;
+
+            int chunk;
+            while ((chunk = stream.Read(buffer, read, buffer.Length - read)) > 0)
+            {
+                read += chunk;
+
+                // If we've reached the end of our buffer, check to see if there's
+                // any more information
+                if (read == buffer.Length)
+                {
+                    int nextByte = stream.ReadByte();
+
+                    // End of stream? If so, we're done
+                    if (nextByte == -1)
+                    {
+                        return buffer;
+                    }
+
+                    // Nope. Resize the buffer, put in the byte we've just
+                    // read, and continue
+                    byte[] newBuffer = new byte[buffer.Length * 2];
+                    Array.Copy(buffer, newBuffer, buffer.Length);
+                    newBuffer[read] = (byte)nextByte;
+                    buffer = newBuffer;
+                    read++;
+                }
+            }
+            // Buffer is now too big. Shrink it.
+            byte[] ret = new byte[read];
+            Array.Copy(buffer, ret, read);
+            return ret;
+        }
+        }
+    }

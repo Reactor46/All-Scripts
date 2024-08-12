@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<helpItems schema="maml">
+	<_locDefinition>
+		<_locDefault _loc="locNone" />
+		<_locTag _loc="locData">maml:para</_locTag>
+		<_locTag _loc="locData">maml:title</_locTag>
+	</_locDefinition>
+	<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+		<command:details>
+			<command:name>CheckDatabaseRedundancy.ps1</command:name>
+			<maml:description>
+				<maml:para _locID="CommandShortDescription">Checks that databases have sufficient copies.</maml:para>
+			</maml:description>
+			<maml:copyright>
+				<maml:para _locID="Copyright">Copyright (c) Microsoft.  All rights reserved.</maml:para>
+			</maml:copyright>
+			<command:verb></command:verb>
+			<command:noun></command:noun>
+			<dev:version></dev:version>
+		</command:details>
+		<maml:description>
+			<maml:para _locID="CommandLongDescription">Checks that databases have enough configured and healthy copies. Active and passive copies are both counted; a mounted copy is considered healthy, some dismounted copies will be considered unhealthy.  The script can check just a single database, or all the databases on a particular server.</maml:para>
+			<maml:para></maml:para>
+			<maml:para>By default, the script skips all of the default mailbox databases.  If you have configured multiple copies of the default databases and want the script to check them, set the -SkipDatabasesRegex appropriately.</maml:para>
+			<maml:para></maml:para>
+			<maml:para>Without the -MonitoringContext switch, the script will return the results and can send an email containing the details.  With -MonitoringContext, the script will raise events in the Application event log for each database detailing whether or not it has sufficient healthy copies (MSExchangeRepl event 4114 if the database has sufficient copies, MSExchangeRepl event 4113 if it does not).  These events are used by the Exchange management pack in SCOM to monitor whether databases have sufficient copies.  In this mode, the script will run its checks multiple times and only raise the events if it sees the conditions persist before raising the events.</maml:para>
+					<maml:para></maml:para>
+					<maml:para>For example, if the script needs to see databases have two healthy copies and it has just seen a database change from two healthy copies to one, it does not raise the event immediately.  It will continue to run its periodic check, and if this database remains at only one healthy copy for sufficient time it will raise the error event.  Likewise, if the database has changed from one healthy copy to two, the script does not raise the healthy event immediately, but will wait to see that it keeps the two healthy copies for some time before raising the event.</maml:para>
+					<maml:para></maml:para>
+					<maml:para>The script can also email reports of the database status.  To configure this, admins should edit the Send-HANotificationMailCorpHub function and/or the Get-SmtpClients function.</maml:para>
+		</maml:description>
+		<command:syntax>
+			<command:syntaxItem>
+				<command:name>CheckDatabaseRedundancy.ps1</command:name>
+				<command:parameter required="False" position="named">
+					<maml:name>MailboxServerName</maml:name>
+					<command:parameterValue required="true">String</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SkipDatabasesRegex</maml:name>
+					<command:parameterValue required="true">String</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>MonitoringContext</maml:name>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SleepDurationBetweenIterationsSecs</maml:name>
+					<command:parameterValue required="true">UInt32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>TerminateAfterDurationSecs</maml:name>
+					<command:parameterValue required="true">Int32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SuppressGreenEventForSecs</maml:name>
+					<command:parameterValue required="true">UInt32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>ReportRedEventAfterDurationSecs</maml:name>
+					<command:parameterValue required="true">UInt32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>ReportRedEventIntervalSecs</maml:name>
+					<command:parameterValue required="true">UInt32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SkipEventLogging</maml:name>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>AtLeastNCopies</maml:name>
+					<command:parameterValue required="true">UInt32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>ShowDetailedErrors</maml:name>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SummaryMailFrom</maml:name>
+					<command:parameterValue required="true">String</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SendSummaryMailTos</maml:name>
+					<command:parameterValue required="true">String[]</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>EmailViaMSCorp</maml:name>
+				</command:parameter>
+			</command:syntaxItem>  
+			<command:syntaxItem>
+				<command:name>CheckDatabaseRedundancy.ps1</command:name>
+				<command:parameter required="True" position="named">
+					<maml:name>MailboxDatabaseName</maml:name>
+					<command:parameterValue required="true">String</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>MonitoringContext</maml:name>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SleepDurationBetweenIterationsSecs</maml:name>
+					<command:parameterValue required="true">UInt32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>TerminateAfterDurationSecs</maml:name>
+					<command:parameterValue required="true">Int32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SuppressGreenEventForSecs</maml:name>
+					<command:parameterValue required="true">UInt32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>ReportRedEventAfterDurationSecs</maml:name>
+					<command:parameterValue required="true">UInt32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>ReportRedEventIntervalSecs</maml:name>
+					<command:parameterValue required="true">UInt32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SkipEventLogging</maml:name>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>AtLeastNCopies</maml:name>
+					<command:parameterValue required="true">UInt32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>ShowDetailedErrors</maml:name>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SummaryMailFrom</maml:name>
+					<command:parameterValue required="true">String</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SendSummaryMailTos</maml:name>
+					<command:parameterValue required="true">String[]</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>EmailViaMSCorp</maml:name>
+				</command:parameter>
+			</command:syntaxItem>  
+			<command:syntaxItem>
+				<command:name>CheckDatabaseRedundancy.ps1</command:name>
+				<command:parameter required="True" position="named">
+					<maml:name>MonitoringContext</maml:name>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SleepDurationBetweenIterationsSecs</maml:name>
+					<command:parameterValue required="true">UInt32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>TerminateAfterDurationSecs</maml:name>
+					<command:parameterValue required="true">Int32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SuppressGreenEventForSecs</maml:name>
+					<command:parameterValue required="true">UInt32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>ReportRedEventAfterDurationSecs</maml:name>
+					<command:parameterValue required="true">UInt32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>ReportRedEventIntervalSecs</maml:name>
+					<command:parameterValue required="true">UInt32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SkipEventLogging</maml:name>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>AtLeastNCopies</maml:name>
+					<command:parameterValue required="true">UInt32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>ShowDetailedErrors</maml:name>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SummaryMailFrom</maml:name>
+					<command:parameterValue required="true">String</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SendSummaryMailTos</maml:name>
+					<command:parameterValue required="true">String[]</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>EmailViaMSCorp</maml:name>
+				</command:parameter>
+			</command:syntaxItem>  
+			<command:syntaxItem>
+				<command:name>CheckDatabaseRedundancy.ps1</command:name>
+				<command:parameter required="False" position="named">
+					<maml:name>AtLeastNCopies</maml:name>
+					<command:parameterValue required="true">UInt32</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>ShowDetailedErrors</maml:name>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SummaryMailFrom</maml:name>
+					<command:parameterValue required="true">String</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>SendSummaryMailTos</maml:name>
+					<command:parameterValue required="true">String[]</command:parameterValue>
+				</command:parameter>
+				<command:parameter required="False" position="named">
+					<maml:name>EmailViaMSCorp</maml:name>
+				</command:parameter>
+				<command:parameter required="True" position="named">
+					<maml:name>DotSourceMode</maml:name>
+				</command:parameter>
+			</command:syntaxItem>  
+		</command:syntax>
+		<command:parameters>
+			<command:parameter required="True" position="0">
+				<maml:name>MailboxDatabaseName</maml:name>
+				<maml:description>
+					<maml:para _locID="Param_Description_MailboxDatabaseName">Name of databases to check.  Wildcards are acceptable.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true">String</command:parameterValue>
+				<dev:type>
+					<maml:name>string</maml:name>
+					<maml:uri />
+				</dev:type>
+				<dev:defaultValue />
+			</command:parameter>
+			<command:parameter required="False" position="0">
+				<maml:name>MailboxServerName</maml:name>
+				<maml:description>
+					<maml:para _locID="Param_Description_MailboxServerName">Name of mailbox servers; wildcards are acceptable.  All of the databases associated with those servers will be checked.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true">String</command:parameterValue>
+				<dev:type>
+					<maml:name>string</maml:name>
+					<maml:uri />
+				</dev:type>
+				<dev:defaultValue />
+			</command:parameter>
+			<command:parameter required="False" position="named">
+				<maml:name>AtLeastNCopies</maml:name>
+				<maml:description>
+					<maml:para _locID="Param_Description_AtLeastNCopies">Sets the number of healthy copies that each database should have.  The healthy copies of a database includes the mounted copy.  The default is 2; which means that the script will consider a database unhealthy if there is only one copy, including the mounted copy.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true">UInt32</command:parameterValue>
+				<dev:type>
+					<maml:name>System.UInt32</maml:name>
+					<maml:uri />
+				</dev:type>
+				<dev:defaultValue>2</dev:defaultValue>
+			</command:parameter>
+			<command:parameter required="False" position="named">
+				<maml:name>SkipDatabasesRegex</maml:name>
+				<maml:description>
+					<maml:para _locID="Param_Description_SkipDatabasesRegex">Defines a regular expression that is matched against the selected database names; any databases that match this regular expression will be skipped.  The default is to skip all of the default mailbox databases; if they need to be checked, then set this parameter to either $null or the empty string.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true">String</command:parameterValue>
+				<dev:type>
+					<maml:name>string</maml:name>
+					<maml:uri />
+				</dev:type>
+				<dev:defaultValue>"^Mailbox Database \d{10}$"</dev:defaultValue>
+			</command:parameter>
+			<command:parameter required="True" position="named">
+				<maml:name>MonitoringContext</maml:name>
+				<maml:description>
+					<maml:para _locID="Param_Description_MonitoringContext">Causes the script to raise events reporting the status of each database; MSExchangeRepl event 4114 if the database has sufficient copies, MSExchangeRepl event 4113 if it does not.  These events are used by the Exchange management pack in SCOM to monitor whether databases have sufficient copies.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true">SwitchParameter</command:parameterValue>
+				<dev:type>
+					<maml:name>switch</maml:name>
+					<maml:uri />
+				</dev:type>
+				<dev:defaultValue />
+			</command:parameter>
+			<command:parameter required="False" position="named">
+				<maml:name>SleepDurationBetweenIterationsSecs</maml:name>
+				<maml:description>
+					<maml:para _locID="Param_Description_SleepDurationBetweenIterationsSecs">Used only with -MonitoringContext, sets the frequency at which the script will run it's checks.  The default is to run them every minute.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true">UInt32</command:parameterValue>
+				<dev:type>
+					<maml:name>System.UInt32</maml:name>
+					<maml:uri />
+				</dev:type>
+				<dev:defaultValue>60</dev:defaultValue>
+			</command:parameter>
+			<command:parameter required="False" position="named">
+				<maml:name>TerminateAfterDurationSecs</maml:name>
+				<maml:description>
+					<maml:para _locID="Param_Description_TerminateAfterDurationSecs">Used only with -MonitoringContext, sets the total time that the script will run for.  During this time, it will run its checks multiple times.  The default is 58 minutes.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true">Int32</command:parameterValue>
+				<dev:type>
+					<maml:name>int</maml:name>
+					<maml:uri />
+				</dev:type>
+				<dev:defaultValue />
+			</command:parameter>
+			<command:parameter required="False" position="named">
+				<maml:name>SuppressGreenEventForSecs</maml:name>
+				<maml:description>
+					<maml:para _locID="Param_Description_SuppressGreenEventForSecs">Used only with -MonitoringContext, sets the amount of time that a healthy condition has to persist before the script will raise the event saying a database has sufficient copies.  The default is 10 minutes.  This is to avoid having SCOM alerts firing multiple times because of transient changes.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true">UInt32</command:parameterValue>
+				<dev:type>
+					<maml:name>System.UInt32</maml:name>
+					<maml:uri />
+				</dev:type>
+				<dev:defaultValue>600</dev:defaultValue>
+			</command:parameter>
+			<command:parameter required="False" position="named">
+				<maml:name>ReportRedEventAfterDurationSecs</maml:name>
+				<maml:description>
+					<maml:para _locID="Param_Description_ReportRedEventAfterDurationSecs">Used only with -MonitoringContext, sets the amount of time that an unhealthy condition has to persist before the script will raise the event saying a database too few copies.  The default is 20 minutes.  This is to avoid having SCOM alerts firing multiple times because of transient changes.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true">UInt32</command:parameterValue>
+				<dev:type>
+					<maml:name>System.UInt32</maml:name>
+					<maml:uri />
+				</dev:type>
+				<dev:defaultValue>1200</dev:defaultValue>
+			</command:parameter>
+			<command:parameter required="False" position="named">
+				<maml:name>ReportRedEventIntervalSecs</maml:name>
+				<maml:description>
+					<maml:para _locID="Param_Description_ReportRedEventIntervalSecs">Used only with -MonitoringContext, sets the frequency that the script will raise further events for a database that has too few healthy copies.  The default is 15 minutes; so if a database has had insufficient healthy copies for 20 minutes, the error event will be raised twice.  This is to avoid having SCOM not raise the alert if the earlier event is missed.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true">UInt32</command:parameterValue>
+				<dev:type>
+					<maml:name>System.UInt32</maml:name>
+					<maml:uri />
+				</dev:type>
+				<dev:defaultValue>900</dev:defaultValue>
+			</command:parameter>
+			<command:parameter required="False" position="named">
+				<maml:name>SkipEventLogging</maml:name>
+				<maml:description>
+					<maml:para _locID="Param_Description_SkipEventLogging">When set along with -MonitoringContext, the script will run its checks periodically, but will not raise any events and will just return the results.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true">SwitchParameter</command:parameterValue>
+				<dev:type>
+					<maml:name>switch</maml:name>
+					<maml:uri />
+				</dev:type>
+				<dev:defaultValue />
+			</command:parameter>
+			<command:parameter required="False" position="named">
+				<maml:name>ShowDetailedErrors</maml:name>
+				<maml:description>
+					<maml:para _locID="Param_Description_ShowDetailedErrors">When set, the script will include extra details of the unhealthy copies.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true">SwitchParameter</command:parameterValue>
+				<dev:type>
+					<maml:name>switch</maml:name>
+					<maml:uri />
+				</dev:type>
+				<dev:defaultValue />
+			</command:parameter>
+			<command:parameter required="False" position="named">
+				<maml:name>SendSummaryMailTos</maml:name>
+				<maml:description>
+					<maml:para _locID="Param_Description_SendSummaryMailTos">Email addresses to send the reports to.  If this is not set, then no emails are sent.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true">String[]</command:parameterValue>
+				<dev:type>
+					<maml:name>string[]</maml:name>
+					<maml:uri />
+				</dev:type>
+				<dev:defaultValue />
+			</command:parameter>
+			<command:parameter required="False" position="named">
+				<maml:name>SummaryMailFrom</maml:name>
+				<maml:description>
+					<maml:para _locID="Param_Description_SummaryMailFrom">E-mail address to use as the sender name when e-mailing reports.  This must be set when -SendSummaryMailTos is set.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true">String</command:parameterValue>
+				<dev:type>
+					<maml:name>string</maml:name>
+					<maml:uri />
+				</dev:type>
+				<dev:defaultValue />
+			</command:parameter>
+			<command:parameter required="True" position="named">
+				<maml:name>DotSourceMode</maml:name>
+				<maml:description>
+					<maml:para _locID="Param_Description_DotSourceMode">When set, the body of the script is not executed.  This is useful for "dot-sourcing" the definitions in the script into the current environment.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true">SwitchParameter</command:parameterValue>
+				<dev:type>
+					<maml:name>switch</maml:name>
+					<maml:uri />
+				</dev:type>
+				<dev:defaultValue />
+			</command:parameter>
+		</command:parameters>
+	</command:command>
+</helpItems>

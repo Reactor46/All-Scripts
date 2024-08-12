@@ -1,0 +1,1 @@
+Foreach($ReceiverName in Get-ReceiveConnector) {Set-ReceiveConnector $ReceiverName.Name -TarpitInterval 00:00:00

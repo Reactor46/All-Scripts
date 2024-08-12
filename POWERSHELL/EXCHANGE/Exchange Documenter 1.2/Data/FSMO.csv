@@ -1,0 +1,4 @@
+#TYPE System.Management.Automation.PSCustomObject
+"DNSRoot","PDCEmulator","RIDMaster","InfrastructureMaster","DomainNamingMaster","SchemaMaster"
+"fnbm.corp","LASDC01.fnbm.corp","LASDC01.fnbm.corp","LASDC01.fnbm.corp","LASDC01.fnbm.corp","LASDC01.fnbm.corp"
+"phx.fnbm.corp","PHXDC04.phx.fnbm.corp","PHXDC04.phx.fnbm.corp","PHXDC04.phx.fnbm.corp","LASDC01.fnbm.corp","LASDC01.fnbm.corp"

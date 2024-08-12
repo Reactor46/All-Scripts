@@ -1,0 +1,29 @@
+param([String] $servername = $(throw "Please specify the Servername"), [int32] $timerange = $(throw "Please specify a Time Range in Hours"),[int32] $sizeg = $(throw "Please specify the lower size limit"))
+$dtQueryDT = [DateTime]::UtcNow.AddHours(-$timerange)
+$sizegdiv = $sizeg * 1024 * 1024
+$WmidtQueryDT = [System.Management.ManagementDateTimeConverter]::ToDmtfDateTime($dtQueryDT)
+
+$WmiNamespace = "ROOT\MicrosoftExchangev2"
+$filter = "entrytype = '1020' and OriginationTime >= '" + $WmidtQueryDT + "' and size > " + $sizegdiv  + " or entrytype = '1028' and OriginationTime >= '" + $WmidtQueryDT + "' and size > " +  $sizegdiv
+$Qresults = get-wmiobject -class Exchange_MessageTrackingEntry -Namespace $WmiNamespace -ComputerName $servername -filter $filter 
+$BodyTable = "<table border=`"1`" cellpadding=`"0`" cellspacing=`"0`" width=`"100%`">`r<tr>`r"
+$td = "<td width=`"20%`" align=`"center`">"
+$BodyTable = $BodyTable + "<tr>" + $td + "Date/Time</td>" + $td + "From</td>" + $td + "Sent-to</td>" + $td + "Subject</td>" + $td + "Size (MB)</td></tr>"
+foreach ($Mentry in $Qresults){
+	$BodyTable = $BodyTable + "<td align=`"center`">" + [System.Management.ManagementDateTimeConverter]::ToDateTime($Mentry.OriginationTime) + "</td>`r"
+ 	$BodyTable = $BodyTable + "<td align=`"center`">" + $Mentry.Senderaddress + "</td>`r" 
+	$BodyTable = $BodyTable + "<td align=`"center`">" + $Mentry.recipientaddress + "</td>`r" 
+	$BodyTable = $BodyTable + "<td align=`"center`">" + $Mentry.subject + "</td>`r" 
+	$BodyTable = $BodyTable + "<td align=`"center`">" + ($Mentry.size/1024/1024).tostring("0.00")  + "</td>`r"
+	$BodyTable = $BodyTable + "</tr>`r"
+} 
+$SmtpClient = new-object system.net.mail.smtpClient
+$SmtpClient.host = $servername 
+$MailMessage = new-object System.Net.Mail.MailMessage
+$MailMessage.To.Add("destiantion@yourdomain.com")
+$MailMessage.From = "source@yourdomain.com"
+$MailMessage.Subject = "Messages larger then " + $sizeg + " MB for the past " + $timerange + " Hours on Server " + $servername
+$MailMessage.IsBodyHtml = $TRUE
+$MailMessage.body = $BodyTable
+$SMTPClient.Send($MailMessage)
+

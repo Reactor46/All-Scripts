@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>Enumerate All Items in Folder</Title>
+      <ShortCut>Enumerate All Items in Folder</ShortCut>
+      <Description>Enumerate All Items in Folder</Description>
+      <Author>Glen Scales</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+      </Declarations>
+      <Code Language="powershell"><![CDATA[#Define ItemView to retrive just 1000 Items    
+$ivItemView =  New-Object Microsoft.Exchange.WebServices.Data.ItemView(1000)    
+$fiItems = $null    
+do{    
+    $fiItems = $service.FindItems($Folder.Id,$ivItemView)    
+    #[Void]$service.LoadPropertiesForItems($fiItems,$psPropset)  
+    foreach($Item in $fiItems.Items){      
+				#Process Item          
+    }    
+    $ivItemView.Offset += $fiItems.Items.Count    
+}while($fiItems.MoreAvailable -eq $true) ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,4 @@
+#TYPE System.Management.Automation.PSCustomObject
+"Name","Servers","WitnessServer","WitnessDirectory","AlternateWitnessDirectory","AutoDagDatabaseCopiesPerVolume","AutoDagDatabaseCopiesPerDatabase","AutoDagDatabasesRootFolderPath","AutoDagVolumesRootFolderPath"
+"LASEXDAG","LASEXDB02 LASEXDB01","lasexcas01.fnbm.corp","c:\dagfilesharewitnesses","C:\DAGFileShareWitnesses\LASEXDAG.fnbm.corp","1","1","C:\ExchangeDatabases","C:\ExchangeVolumes"
+"LASEXDAG16","LASEXCH04 LASEXCH02 LASEXCH03 LASEXCH01","lasexchmgt.fnbm.corp","c:\DAG_Witness",,"1","1","C:\ExchangeDatabases","C:\ExchangeVolumes"

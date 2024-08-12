@@ -1,0 +1,4 @@
+#TYPE Selected.Microsoft.Exchange.Management.SystemConfigurationTasks.DatabaseCopyStatusEntry
+"Name","ActivationSuspended"
+"DAG02 MBX-1\USONVSVRDAG01","False"
+"DAG01 MBX-1\USONVSVRDAG01","False"

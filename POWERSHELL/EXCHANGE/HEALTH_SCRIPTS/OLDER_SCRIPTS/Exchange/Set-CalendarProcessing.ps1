@@ -1,0 +1,1 @@
+Set-CalendarProcessing "anbldg6itconf" -AutomateProcessing AutoAccept

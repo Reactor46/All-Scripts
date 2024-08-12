@@ -1,0 +1,47 @@
+Imports ewsvbsamp.ews
+Imports System.Net
+Imports System.Net.Security
+Imports System.Security.Cryptography.X509Certificates
+Module Module1
+
+    Sub Main()
+        Console.WriteLine(GetUnreadEmailCount("user@domain.com"))
+    End Sub
+    Public Function GetUnreadEmailCount(ByVal emailaddress As String) As Integer
+        Dim UnreadCount As Integer = 0
+        ServicePointManager.ServerCertificateValidationCallback = New RemoteCertificateValidationCallback(AddressOf ValidateCertificate)
+        Dim esb As New ExchangeServiceBinding
+        esb.RequestServerVersionValue = New RequestServerVersion
+        esb.RequestServerVersionValue.Version = ExchangeVersionType.Exchange2007_SP1
+        esb.Credentials = New NetworkCredential("user", "password", "domain")
+        esb.Url = "https://servername/EWS/Exchange.asmx"
+
+        Dim csConSid As New ConnectingSIDType
+        csConSid.PrimarySmtpAddress = emailaddress
+        Dim exImpersonate As New ExchangeImpersonationType
+        exImpersonate.ConnectingSID = csConSid
+        esb.ExchangeImpersonation = exImpersonate
+
+        Dim biArray(1) As BaseFolderIdType
+        Dim dfFolder As New DistinguishedFolderIdType
+        dfFolder.Id = DistinguishedFolderIdNameType.inbox
+        biArray(0) = dfFolder
+        Dim geGetFolder As New GetFolderType
+        geGetFolder.FolderIds = biArray
+        geGetFolder.FolderShape = New FolderResponseShapeType
+        geGetFolder.FolderShape.BaseShape = DefaultShapeNamesType.AllProperties
+        Dim gfResponse As GetFolderResponseType = esb.GetFolder(geGetFolder)
+        Dim rmta As ResponseMessageType() = gfResponse.ResponseMessages.Items
+        Dim rmt As FolderInfoResponseMessageType = DirectCast(rmta(0), FolderInfoResponseMessageType)
+        If rmt.ResponseClass = ResponseClassType.Success Then
+            Dim folder As FolderType = DirectCast(rmt.Folders(0), FolderType)
+            UnreadCount = folder.UnreadCount
+        End If
+        Return UnreadCount
+    End Function
+
+    Private Function ValidateCertificate(ByVal sender As Object, ByVal certificate As X509Certificate, ByVal chain As X509Chain, ByVal sslPolicyErrors As SslPolicyErrors) As Boolean
+        'Return True to force the certificate to be accepted.
+        Return True
+    End Function
+End Module

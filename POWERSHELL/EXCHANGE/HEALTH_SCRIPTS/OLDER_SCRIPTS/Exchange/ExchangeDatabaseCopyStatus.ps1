@@ -1,0 +1,2 @@
+﻿# Get-MailboxDatabaseCopyStatus * -Active | ft Name,Status,MailboxServer,ActivationPreference,CopyQueueLength,ReplayQueueLength,ContentIndexState -auto
+Get-MailboxDatabaseCopyStatus * | ft Name,Status,MailboxServer,ActivationPreference,CopyQueueLength,ReplayQueueLength,ContentIndexState -auto
