@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modulestrings version="1">
+ <module id="m_gfisetup">
+  <string id="IDS_CURVERLATER">Sie versuchen, eine Version von %s zu installieren, die älter als die bereits auf diesem Rechner installierte Version ist. Bitte entfernen Sie die aktuelle Version, bevor Sie mit der Installation der älteren Version fortfahren.</string> 
+  <string id="IDS_FAILREMOVE">Fehler beim Entfernen von %s von Ihrem Rechner. Bitte deinstallieren Sie %s manuell, und starten SIe diese Installation erneut.</string> 
+  <string id="IDS_ALREADYINSTALLED">%s, Version %s, ist bereits installiert. Vor der Installation von %s, Version %s, muss die bereits installierte Version entfernt werden.\r\n\r\nMöchten Sie die bestehende Version von %s deinstallieren?</string> 
+  <string id="IDS_MAJORUPGRADE">Wichtig: Nach der Installation des Upgrades müssen Sie innerhalb von 10 Tagen einen neuen Registrierschlüssel eingeben, um das Produkt weiterhin nutzen zu können. Informationen zum Erhalt des neuen Schlüssels finden Sie unter http://customers.gfi.com.</string>   
+ </module>
+</modulestrings>

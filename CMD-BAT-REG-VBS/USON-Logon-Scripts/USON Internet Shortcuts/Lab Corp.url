@@ -1,0 +1,9 @@
+[DEFAULT]
+BASEURL=https://www4.labcorp.com/eResults/Navigation/er_Login.cfm
+[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,11
+[InternetShortcut]
+URL=https://www4.labcorp.com/eResults/Navigation/er_Login.cfm
+IDList=
+IconFile=https://www4.labcorp.com/favicon.ico
+IconIndex=1

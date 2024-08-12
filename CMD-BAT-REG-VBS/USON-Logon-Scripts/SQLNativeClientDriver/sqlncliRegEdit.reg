@@ -1,0 +1,67 @@
+ REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ODBC]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBC.INI]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBC.INI\ODBC Data Sources]
+"NGDemo"="SQL Native Client"
+"NGDevl"="SQL Native Client"
+"NGTest"="SQL Native Client"
+"NGProd"="SQL Native Client"
+"NGReport"="SQL Native Client"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBC.INI\NGDemo]
+"Driver"="C:\\Windows\\System32\\sqlncli.dll"
+"Description"="NGDemo"
+"Database"="NGDemo"
+"Server"="USONVSVRNG"
+"QuotedId"="Yes"
+"AnsiNPW"="Yes"
+"OemToAnsi"="No"
+"LastUser"="sa"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBC.INI\NGDevl]
+"Driver"="C:\\Windows\\System32\\sqlncli.dll"
+"Description"="NGDevl"
+"Database"="NGDevl"
+"Server"="USONVSVRNG"
+"QuotedId"="Yes"
+"AnsiNPW"="Yes"
+"OemToAnsi"="No"
+"LastUser"="sa"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBC.INI\NGTest]
+"Driver"="C:\\Windows\\System32\\sqlncli.dll"
+"Description"="NGTest"
+"Database"="NGTest"
+"Server"="USONVSVRNG"
+"QuotedId"="Yes"
+"AnsiNPW"="Yes"
+"OemToAnsi"="No"
+"LastUser"="sa"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBC.INI\NGProd]
+"Driver"="C:\\Windows\\System32\\sqlncli.dll"
+"Description"="NGProd"
+"Database"="NGProd"
+"Server"="USONVSVRSQL1"
+"QuotedId"="Yes"
+"AnsiNPW"="Yes"
+"OemToAnsi"="No"
+"LastUser"="sa"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBC.INI\NGReport]
+"Driver"="C:\\Windows\\System32\\sqlncli.dll"
+"Description"="NGReport"
+"Database"="NGProd"
+"Server"="USONVSVRNG"
+"QuotedId"="Yes"
+"AnsiNPW"="Yes"
+"OemToAnsi"="No"
+"LastUser"="sa"
+
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSSQLServer\Client\ConnectTo]
+"NEXTGEN"="DBMSSOCN,NEXTGEN"
+"USONVSVRNG"="DBMSSOCN,SERVERREP"

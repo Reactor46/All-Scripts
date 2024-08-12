@@ -1,0 +1,1 @@
+copy /y C:\FDRfileslog.txt C:\move\FDRfileslog%Date:~-4,4%%Date:~-10,2%%Date:~-7,2%.txt

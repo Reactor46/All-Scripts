@@ -1,0 +1,110 @@
+<head>
+<title>HTA Test</title>
+<HTA:APPLICATION 
+     APPLICATIONNAME="HTA Test"
+     SCROLL="yes"
+     SINGLEINSTANCE="yes"
+     WINDOWSTATE="normal"
+>
+</head>
+
+<script language="VBScript">
+Const adVarChar = 200
+Const MaxCharacters = 255
+Const ForReading = 1
+Const ForWriting = 2
+
+Set DataList = CreateObject("ADOR.Recordset")
+DataList.Fields.Append "Classes", adVarChar, MaxCharacters
+DataList.Open
+
+
+Sub FillClassDropDown
+
+	Set objWMIService = GetObject("winmgmts:{impersonationLevel=impersonate}root\cimv2")
+	Set colClasses = objWMIService.SubClassesOf
+	
+	For Each objClass In colClasses
+	  If Left(objClass.Path_.Class,6) = "Win32_" Then
+	    DataList.AddNew
+	    DataList("Classes") = objClass.Path_.Class
+		  DataList.Update
+	  End If
+	Next
+	DataList.Sort = "Classes"
+	
+	DataList.MoveFirst
+	Do Until DataList.EOF
+		Set objNewOption = document.createElement("OPTION")
+		objNewOption.Text = DataList.Fields.Item("Classes")
+		WMIClasses.options.Add(objNewOption)
+		DataList.MoveNext
+	Loop
+
+
+ 
+End Sub
+
+Sub HandleClassChange
+   For Each objOption In WMIClasses.Options
+      If objOption.Selected = True Then
+      strClass = objOption.Text
+      Set objWMIService = GetObject("winmgmts:{impersonationLevel=impersonate}root\cimv2")
+      Set objClass = objWMIService.Get(strClass)
+
+      For Each objProperty In objClass.Properties_
+          strProperties = strProperties & objProperty.Name & vbCrLf
+      Next
+   
+      For Each objMethod In objClass.Methods_
+         strMethods = strMethods & objMethod.Name & vbCrLf
+      Next
+
+      Properties.Value = strProperties
+      Methods.Value    = strMethods
+      End If
+   Next
+End Sub
+
+Sub ShowCode
+For Each objOption In WMIClasses.Options
+      If objOption.Selected = True Then
+     strClass = objOption.Text
+  End If
+Next
+
+Set objWMIService = GetObject("winmgmts:{impersonationLevel=impersonate}root\cimv2")
+Set objClass = objWMIService.Get(strClass)
+
+strCode = strCode & "Set objWMIService = GetObject(""winmgmts:"")" & vbCrLf
+strCode = strCode & "Set colInstances = objWMIService.ExecQuery" & _
+    "(""SELECT * FROM " & strClass & """)" & vbCrLf
+strCode = strCode & "For Each objInstance In colInstances" & vbCrLf
+
+For Each objProperty In objClass.Properties_
+   strCode = strCode & "   WScript.Echo " & Chr(34) & "objInstance." & objProperty.Name & " = " & Chr(34) & " & objInstance." & objProperty.Name & vbCrLf
+Next
+
+strCode = strCode & "Next" 
+Code.Value = strCode
+End Sub
+
+</script>
+
+<body onLoad=FillClassDropDown>
+<table>
+<tr><th>Class</th></tr>
+<tr><td colspan=2><select onChange=HandleClassChange name="WMIClasses"></select></td></tr>
+<tr><td><input onClick=ShowCode type="submit" value="Show Code"></input></td></tr>
+<tr><th>Properties</th><th>Methods</th></tr>
+<tr>
+<td><textarea name="Properties" rows="5" cols="45"></textarea></td>
+<td><textarea name="Methods" rows="5" cols="45"></textarea></td>
+</tr>
+<tr><th>Code</th></tr>
+<tr>
+<td colspan=2><textarea name="Code" rows="30" cols="93"></textarea></td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,941 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<setupstrings version="1">
+	<table id="Control">
+		<module id="Admin_Install_Point">
+			<string FONT="[_WiseDialogFontDefault]" id="Back"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Browse"><![CDATA[Examina&r]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="EditQ"><![CDATA[Punto de &instalación de red:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[¿Dónde desea crear la instalación?]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text36"><![CDATA[Instalación de administrador]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text54"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="Admin_Verify_Ready">
+			<string FONT="[_WiseDialogFontDefault]" id="Back"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="InstallNow"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[¿Está preparado para instalar?]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text37"><![CDATA[Verificación de instalación de administrador preparada]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text55"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="AdminInstallBrowse">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ComboText"><![CDATA[Ubicación de &la carpeta:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TailText"><![CDATA[Ruta &seleccionada:]]></string>
+		</module>
+		<module id="Browse">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ComboText"><![CDATA[&Buscar en:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TailText"><![CDATA[&Nombre de carpeta:]]></string>
+		</module>
+		<module id="Cancel">
+			<string FONT="[_WiseDialogFontDefault]" id="No"><![CDATA[&Reanudar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[La instalación no ha terminado. Si sale ahora del programa de instalación, la aplicación no se instalará.[WiseCRLF][WiseCRLF]Puede ejecutar el programa de instalación en otro momento para completar la instalación.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2515"><![CDATA[Para continuar con la instalación, haga clic en Reanudar. Para salir del programa de instalación, haga clic en Salir de la instalación.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Yes"><![CDATA[Salir d&e la instalación]]></string>
+		</module>
+		<module id="CCPDialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="DriveText"><![CDATA[Unidad:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[La instalación no puede encontrar ningún producto autorizado en las unidades de disco. Seleccione la unidad que contiene el producto autorizado.]]></string>
+		</module>
+		<module id="CCPFail">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[&Salir]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[La instalación no puede encontrar ningún producto autorizado. Esta instalación requiere un producto autorizado válido para continuar.]]></string>
+		</module>
+		<module id="ConnDetailsInvalidServer">
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Tanto la dirección del servidor como la dirección de correo electrónico son necesarias al conectar directamente con GFI FaxMaker.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[&Aceptar]]></string>
+		</module>
+		<module id="ConnectionSettings">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Al enviar faxes, conecte con GFI FaxMaker a través de:]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Configuración de conexión de GFI FaxMaker]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Elija cómo conectar con GFI FaxMaker al enviar faxes]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text25252527"><![CDATA[Dirección del servidor de GFI FaxMaker (IP o FQDN):[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text25252528"><![CDATA[Dirección de correo electrónico:]]></string>
+		</module>
+		<module id="DiskCost">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Las selecciones actuales requieren la siguiente cantidad de espacio en disco en los diferentes volúmenes. Los volúmenes resaltados no disponen de espacio en disco suficiente para las características seleccionadas actualmente.]]></string>
+		</module>
+		<module id="ErrorDialog">
+			<string FONT="[_WiseDialogFontDefault]" id="A"><![CDATA[&Anular]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="C"><![CDATA[&Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="I"><![CDATA[&Ignorar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="N"><![CDATA[&No]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="O"><![CDATA[&Aceptar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="R"><![CDATA[&Reintentar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Y"><![CDATA[&Sí]]></string>
+		</module>
+		<module id="Exit_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[&Finalizar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton1"><![CDATA[Cancelar]]></string>
+			<string FONT="Arial14" id="Text"><![CDATA[[ProductName] se ha instalado correctamente.[WiseCRLF]]]></string>
+			<string FONT="Arial14" id="Text56"><![CDATA[[ProductName] se ha desinstalado correctamente.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text6"><![CDATA[Haga clic en el botón Finalizar para salir de la instalación.]]></string>
+		</module>
+		<module id="Fatal_Error">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[La instalación ha finalizado antes de tiempo debido a un error. ]]></string>
+		</module>
+		<module id="FilesInUse">
+			<string FONT="[_WiseDialogFontDefault]" id="Exit"><![CDATA[&Salir]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Ignore"><![CDATA[&Ignorar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Retry"><![CDATA[&Reintentar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Se están utilizando algunos archivos que tienen que actualizarse.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text54"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text58"><![CDATA[Archivos en uso]]></string>
+			<string id="Text60"><![CDATA[En la siguiente lista se muestran los archivos que están ocupados seguidos de las aplicaciones que los están utilizando. Cierre las aplicaciones y haga clic en Reintentar, o haga clic en Ignorar para reemplazar los archivos después del reinicio. Si hace clic en Salir, saldrá de la instalación.]]></string>
+		</module>
+		<module id="FirstRun">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string id="NameE"><![CDATA[{47}]]></string>
+			<string FONT="TimesItalicBlue10" id="NameQ"><![CDATA[N&ombre:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string id="OrgE"><![CDATA[{53}]]></string>
+			<string FONT="TimesItalicBlue10" id="OrgQ"><![CDATA[&Organización:]]></string>
+			<string id="PIDE"><![CDATA[[PIDTemplate]]]></string>
+			<string FONT="TimesItalicBlue10" id="PIDQ"><![CDATA[Introduzca el &Id. del producto que encontrará en la caja del CD.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+		</module>
+		<module id="fmmessageform">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox"><![CDATA[Utilizar la libreta de direcciones de Outlook con el formulario de mensaje de fax de GFI FaxMaker]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[¿Desea que el controlador de impresora de GFI FaxMaker utilice el formulario de nuevo mensaje de Outlook o el formulario de mensaje de fax de GFI FaxMaker para enviar faxes?]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Formulario de mensaje]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Seleccione el formulario de mensaje que desea utilizar.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM][WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2521"><![CDATA[(Outlook debe ser el cliente de correo predeterminado)[WiseCRLF]]]></string>
+		</module>
+		<module id="FMOFailedEmailDlg">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Las instrucciones para restablecer la contraseña no se han enviado. [WiseCRLF][ONLINEEMAIL] no está registrado como usuario de GFI FaxMaker Online.[WiseCRLF]Contacte con su administrador para verificar los detalles de la cuenta[WiseCRLF]]]></string>
+		</module>
+		<module id="FMONoEmailDlg">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[ACEPTAR[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Especifique su dirección de correo electrónico.]]></string>
+		</module>
+		<module id="FMOResetPassword">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Se ha enviado un correo electrónico a [ONLINEEMAIL] que contiene sus credenciales de GFI FaxMaker Online.[WiseCRLF]]]></string>
+		</module>
+		<module id="FMOUserDetails">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[¿Las has olvidado?[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Dirección de correo electrónico (obligatoria)]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Detalles de usuario[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Especificar los credenciales de GFI FaxMaker Online[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM][WiseCRLF][WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2522"><![CDATA[Nombre de usuario]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2524"><![CDATA[Contraseña]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text25252526"><![CDATA[Credenciales de usuario de GFI FaxMaker Online (opcional)[WiseCRLF][WiseCRLF]]]></string>
+		</module>
+		<module id="fmserver">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox"><![CDATA[Omitir este cuadro de diálogo, introduciré los detalles manualmente.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Introduzca el nombre del servidor de GFI FaxMaker.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[...]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Equipo:[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Especificar equipo servidor]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Establezca el nombre del equipo del servidor de GFI FaxMaker.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="fmserverdetails">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox"><![CDATA[Mi servidor de correo requiere autenticación]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Especifique los detalles dependiendo de qué servidor de correo esté utilizando y cómo desee enviar faxes a GFI FaxMaker.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Nombre de servidor de correo:]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Detalles del servidor de GFI FaxMaker[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Especifique los detalles del servidor de GFI FaxMaker[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2"><![CDATA[Buzón de fax:[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM][WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text3"><![CDATA[Nombre de servidor de fax:[WiseCRLF]]]></string>
+		</module>
+		<module id="Installation_Type_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CompleteText"><![CDATA[Se instalarán las funciones más comunes de la aplicación. Se recomienda esta opción para la mayoría de usuarios.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Se instalarán todas las funciones de la aplicación. Se recomienda esta opción para obtener el mejor rendimiento.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Seleccionar tipo de instalación]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Seleccione el tipo de instalación que desee.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text48"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TypicalText"><![CDATA[Utilice esta opción para seleccionar las funciones de la aplicación que desea instalar y la ubicación donde desea instalarlas. Se recomienda para usuarios avanzados.]]></string>
+		</module>
+		<module id="IntegrationType">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[Saber más]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Seleccionar el tipo de servidor de fax que se utilizará con [ProductName]]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Tipo de servidor de fax[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Seleccionar el tipo de servidor de fax que se va a usar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="invalidserver">
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Todos los campos activados son obligatorios. Asegúrese de especificar toda la información necesaria y vuelva a intentarlo.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[OK]]></string>
+		</module>
+		<module id="License_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Reset"><![CDATA[&Restablecer]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text13"><![CDATA[Contrato de licencia]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text14"><![CDATA[Debe aceptar el siguiente contrato de licencia para continuar.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text44"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="Maintenance_Welcome_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CompleteText3"><![CDATA[Cambiar las funciones de aplicación que se instalan. Muestra el cuadro de diálogo Seleccionar funciones que le permitirá configurar funciones individuales.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText5"><![CDATA[Vuelva a instalar accesos directos, claves del registro y archivos que faltan o están dañados. Puede que las preferencias almacenadas en el registro se restablezcan en valores predeterminados.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2"><![CDATA[Seleccione la operación de mantenimiento que se va a realizar.]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text3"><![CDATA[Mantenimiento de aplicación]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text52"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TypicalText7"><![CDATA[Desinstalar [ProductName] de este equipo.]]></string>
+		</module>
+		<module id="oldfmclientfound">
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Se ha encontrado un cliente anterior de GFI FaxMaker y debe desinstalarse. ¿Desea continuar con esta instalación sin eliminar el cliente anterior?]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[Sí]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton45"><![CDATA[No]]></string>
+		</module>
+		<module id="OutOfDisk">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[No hay espacio en disco. Los volúmenes resaltados no disponen de espacio en disco suficiente para las características seleccionadas.]]></string>
+		</module>
+		<module id="Palm_User_Information_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[A continuación, se muestran los usuarios de Palm que hay disponibles en este equipo. Marque las casillas de verificación de los usuarios para los que debe instalarse la aplicación o las aplicaciones Palm.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Información de usuario de Palm[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Seleccione los usuarios para los que se deben instalar las aplicaciones Palm.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="Patch_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="Arial14" id="Text"><![CDATA[Bienvenido al Asistente para instalación de [ProductName]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text1"><![CDATA[Se recomienda encarecidamente que cierre todos los programas de Windows antes de ejecutar este programa de instalación.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2518"><![CDATA[Haga clic en Cancelar para salir de la instalación y cerrar todos los programas que esté ejecutando. Haga clic en Siguiente para continuar con el programa de instalación.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2519"><![CDATA[La reproducción o distribución ilícitas de este programa, o de cualquier parte del mismo, están penadas por ley con severas sanciones civiles y penales, y serán objeto de todas las acciones judiciales que correspondan.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text269"><![CDATA[ADVERTENCIA: Este programa está protegido por las leyes de derechos de autor y otros tratados internacionales.]]></string>
+		</module>
+		<module id="Progress_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="ActionData"><![CDATA[Inicializando...]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text27"><![CDATA[Actualizando el sistema]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text28"><![CDATA[Se están instalando las funciones que ha seleccionado.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text51"><![CDATA[[GFITM]]]></string>
+			<string id="Text57"><![CDATA[{&MSSansSerif8}Se están desinstalando las funciones que ha seleccionado.]]></string>
+		</module>
+		<module id="Readme_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Información de Léame]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[En la siguiente información se describe esta instalación.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text45"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="ReinstallMode">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileChecksum"><![CDATA[Reinstalar si el archivo EXE o DLL tiene una suma de comprobación no válida]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileEqualVersion"><![CDATA[Reinstalar si falta el archivo o si existe una versión anterior o igual]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileExact"><![CDATA[Reinstalar si la versión del archivo existente es distinta]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileForce"><![CDATA[&Forzar la reinstalación de todos los archivos, sin tener en cuenta la suma de comprobación o versión]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileOlderVersion"><![CDATA[Reinstalar si falta el archivo o si existe una versión anterior]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFilePresent"><![CDATA[Reinstalar sólo si falta el archivo]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallMachineData"><![CDATA[Co&mprobar que las entradas requeridas de registro del equipo local están presentes]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallRepair"><![CDATA[&Reparar todos los problemas de reinstalación detectados]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallShortcut"><![CDATA[Validar accesos directos]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallUserData"><![CDATA[Comprobar que las entradas req&ueridas de registro de usuarios están presentes]]></string>
+		</module>
+		<module id="Resume_Install_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="InstallNow"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[¿Está preparado para que Wise Installation Wizard continúe con la instalación?]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2"><![CDATA[¿Está preparado para que Wise Installation Wizard complete la instalación suspendida?]]></string>
+			<string FONT="Arial14" id="Text31"><![CDATA[Reanudando el Asistente para instalación de [ProductName]]]></string>
+		</module>
+		<module id="Select_Feature_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="ActionDescription"><![CDATA[Descripción de la acción seleccionada actualmente xxx xxx xxx xxxx xxxx xxxx xxxx xxxx]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Browse"><![CDATA[Ex&aminar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="DiskCost"><![CDATA[Espacio en &disco]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ItemDescription"><![CDATA[Descripción en varias líneas del elemento seleccionado actualmente xxx xxxx xxxx xxxx xxxx  xxxxx xxx xxxx xxxx xxxx xxx xxxx xx xxxxx xxxxx x]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="LocationPath"><![CDATA[Ruta]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="LocationText"><![CDATA[Ubicación actual:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Reset"><![CDATA[&Restablecer]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Size"><![CDATA[Tamaño de la selección actual xxx xxx xxxx xxxx xxxx xxxx xxx xxxx xxxx xxxx xxxx xxx]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text23"><![CDATA[Seleccionar funciones]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text24"><![CDATA[Seleccione las funciones que desea instalar.]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text41"><![CDATA[Descripción de función:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text49"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="Setup_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="ActionText"><![CDATA[Espere mientras Wise Installation Wizard® prepara Windows Installer.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="Arial14" id="Text15"><![CDATA[Bienvenido al Asistente para instalación de [ProductName]]]></string>
+		</module>
+		<module id="Single_Feature_Destination">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="GroupBox"><![CDATA[Carpeta de destino]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton44"><![CDATA[Examina&r]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Carpeta de destino]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Seleccione una carpeta para instalar la aplicación.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text42"><![CDATA[Wise Installation Wizard instalará los archivos de [ProductName] en la siguiente carpeta.[WiseCRLF][WiseCRLF]Para instalar en una carpeta diferente, haga clic en el botón Examinar y seleccione otra carpeta. ]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text42a"><![CDATA[Puede elegir no instalar [ProductName] haciendo clic en Cancelar para salir de Wise Installation Wizard.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text43"><![CDATA[[INSTALLDIR]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text47"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="smtpauthform">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox"><![CDATA[Iniciar sesión mediante autenticación de contraseña segura]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox1"><![CDATA[Usar SSL]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox2"><![CDATA[Usar autenticación SMTP]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Seleccione las propiedades de autenticación SMTP para [ProductName]. Si emplea la autenticación SMTP, debe proporcionar una cuenta y una contraseña.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Cuenta:]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Autenticación SMTP.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Seleccione las propiedades de autenticación SMTP para [ProductName].]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM][WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2520"><![CDATA[Contraseña:[WiseCRLF]]]></string>
+		</module>
+		<module id="Start_Installation_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="InstallNow"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text244"><![CDATA[Haga clic en Siguiente para iniciar la instalación.]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text251"><![CDATA[Preparado para instalar la aplicación]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text2512"><![CDATA[Preparado para reparar la aplicación]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text2513"><![CDATA[Preparado para reanudar la instalación de [ProductName]]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text26"><![CDATA[Preparado para modificar la aplicación]]></string>
+			<string id="Text50"><![CDATA[{\MS_Sans_Serif_80}[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text51"><![CDATA[Haga clic en el botón Atrás para volver a escribir la información de la instalación o haga clic en Cancelar para salir del asistente.]]></string>
+		</module>
+		<module id="upgrading9x">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Se ha encontrado una versión anterior del cliente de GFI FaxMaker. Elimine esta versión utilizando el subprograma Agregar o quitar programas en el panel de control antes de instalar esta versión del cliente de GFI FaxMaker.[WiseCRLF]]]></string>
+		</module>
+		<module id="User_Exit">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[[ProductName] se interrumpió antes de que el nuevo software se instalara por completo. Puede ejecutar de nuevo la instalación en otro momento para completar la instalación del software.]]></string>
+		</module>
+		<module id="User_Information_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="NameE"><![CDATA[{47}]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="NameQ"><![CDATA[N&ombre completo:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OrgE"><![CDATA[{53}]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OrgQ"><![CDATA[&Organización:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PIDE"><![CDATA[[PIDTemplate]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PIDQ"><![CDATA[&Id. de producto:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text16"><![CDATA[Información de usuario]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text46"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text7"><![CDATA[Introduzca la siguiente información para personalizar la instalación.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text8"><![CDATA[La configuración para esta aplicación puede instalarse para el usuario actual o para todos los usuarios que compartan este equipo. Debe tener derechos de administrador para instalar la configuración para todos los usuarios. Instalar esta aplicación para:]]></string>
+		</module>
+		<module id="Verify_Remove_All">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="RemoveNow"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Se eliminará [ProductName] del equipo. ¿Seguro que desea continuar?[WiseCRLF][WiseCRLF]Haga clic en el botón Siguiente para eliminar la aplicación.[WiseCRLF][WiseCRLF]Haga clic en el botón Cancelar para salir del proceso de desinstalación.]]></string>
+			<string FONT="Arial14" id="Text32"><![CDATA[Desinstalación de [ProductName]]]></string>
+		</module>
+		<module id="WaitForCosting">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TextMessage"><![CDATA[Espere mientras el instalador determina los requisitos de espacio en disco...]]></string>
+		</module>
+		<module id="Welcome_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Cancelar]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Siguie&nte >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Atrás]]></string>
+			<string FONT="Arial14" id="Text"><![CDATA[Bienvenido al Asistente para instalación de [ProductName]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text1"><![CDATA[Se recomienda encarecidamente que cierre todos los programas de Windows antes de ejecutar este programa de instalación.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2"><![CDATA[ADVERTENCIA: Este programa está protegido por las leyes de derechos de autor y otros tratados internacionales.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2516"><![CDATA[Haga clic en Cancelar para salir del programa de instalación y cierre todos los programas que esté ejecutando. Haga clic en Siguiente para continuar con la instalación.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2517"><![CDATA[La reproducción o distribución ilícitas de este programa, o de cualquier parte del mismo, están penadas por ley con severas sanciones civiles y penales, y serán objeto de todas las acciones judiciales que correspondan.]]></string>
+		</module>
+	</table>
+	<table id="Property">
+		<string id="LANGUAGE"><![CDATA[0]]></string>
+		<string id="_WiseDebugMode"><![CDATA[0]]></string>
+		<string id="CONNSTGSUSESMTP"><![CDATA[Servidor de correo SMTP]]></string>
+		<string id="CONNSTGSUSEWSAPI"><![CDATA[Conexión directa con GFI FaxMaker]]></string>
+		<string id="DETAILSEXCHANGE"><![CDATA[Exchange 2013/2010/2007/2003/2000/5.5]]></string>
+		<string id="DETAILSISP"><![CDATA[Servidor de correo SMTP/POP3 o ISP]]></string>
+		<string id="DETAILSLOTUS"><![CDATA[Servidor de correo SMTP/POP3 o Lotus Notes]]></string>
+		<string id="DETAILSTYPE"><![CDATA[0]]></string>
+		<string id="DiskPrompt"><![CDATA[[ProductName] [1]]]></string>
+		<string id="MESSAGEFORM_E"><![CDATA[Formulario de mensaje de fax de GFI FaxMaker]]></string>
+		<string id="SMTPUSEONLINE"><![CDATA[Utilizar servidor de retransmisión en línea de GFI FaxMaker]]></string>
+		<string id="SMTPUSEOWN"><![CDATA[Utilizar servidor de correo SMTP propio]]></string>
+		<string id="TYPEUSEONLINE"><![CDATA[GFI FaxMaker Online (solución de nube)]]></string>
+		<string id="TYPEUSEONPREM"><![CDATA[Servidor de GFI FaxMaker (solución conjunta)]]></string>
+		<string id="USEBOTH"><![CDATA[Usar Outlook pero instalar también el formulario de nuevo fax de GFI FaxMaker]]></string>
+		<string id="USEFAXFORM"><![CDATA[Usar el formulario de nuevo fax de GFI FaxMaker (requiere nombre de servidor de correo y dirección de correo)]]></string>
+		<string id="USEOUTLOOK"><![CDATA[Usar formulario de nuevo mensaje de Outlook (si utiliza Exchange 2000/2003/2007/2010/2013)]]></string>
+		<string id="USEFAXFORM"><![CDATA[Utilizar formulario de mensaje de fax de GFI FaxMaker]]></string>
+		<string id="USEOUTLOOK"><![CDATA[Utilizar Microsoft Outlook (si se utiliza Microsoft Exchange)]]></string>
+		<string id="WiseInitAdminError"><![CDATA[Debe tener derechos de administrador para ejecutar esta instalación. Inicie sesión como administrador y vuelva a ejecutar la instalación.]]></string>
+		<string id="WiseInitCmdLine"><![CDATA[/L*v faxclient.log /I]]></string>
+		<string id="WiseInitExistError"><![CDATA[%s versión %s ya está instalada. Debe desinstalar la versión actual antes de instalar %s versión %s. ¿Desea desinstalar la versión actual de %s?]]></string>
+		<string id="WiseInitLangDefault"><![CDATA[Español, 3082]]></string>
+		<string id="WiseInitPrefix"><![CDATA[Iniciando]]></string>
+		<string id="WiseInitSpaceError"><![CDATA[No se ha podido crear un archivo temporal, no hay espacio temporal suficiente en el disco. Por favor, libere espacio en el disco y vuelva a ejecutar esta instalación.]]></string>
+		<string id="WiseInitSuffix"><![CDATA[Asistente...]]></string>
+	</table>
+	<table id="ActionText">
+		<record>
+			<field id="Action"><![CDATA[Advertise]]></field>
+			<field id="Description"><![CDATA[Advertising application...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[AllocateRegistrySpace]]></field>
+			<field id="Description"><![CDATA[Allocating registry space...]]></field>
+			<field id="Template"><![CDATA[Free space: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[AppSearch]]></field>
+			<field id="Description"><![CDATA[Searching for installed applications...]]></field>
+			<field id="Template"><![CDATA[Propiedad: [1][WiseCRLF]Firma: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[autoconfigureclientfromfaxserver]]></field>
+			<field id="Description"><![CDATA[Configuring client...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[BindImage]]></field>
+			<field id="Description"><![CDATA[Vinculando ejecutables...]]></field>
+			<field id="Template"><![CDATA[Archivo: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[ca_deferred_install_printer]]></field>
+			<field id="Description"><![CDATA[Installing printer driver...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[ca_deferred_install_printer_prew2k]]></field>
+			<field id="Description"><![CDATA[Installing printer driver...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CCPSearch]]></field>
+			<field id="Description"><![CDATA[Searching for qualifying products...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CostFinalize]]></field>
+			<field id="Description"><![CDATA[Calculando los requisitos de espacio...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CostInitialize]]></field>
+			<field id="Description"><![CDATA[Calculando los requisitos de espacio...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CreateFolders]]></field>
+			<field id="Description"><![CDATA[Creating folders...]]></field>
+			<field id="Template"><![CDATA[Carpeta: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CreateShortcuts]]></field>
+			<field id="Description"><![CDATA[Creando accesos rápidos...]]></field>
+			<field id="Template"><![CDATA[Acceso directo: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[DeleteServices]]></field>
+			<field id="Description"><![CDATA[Deleting services...]]></field>
+			<field id="Template"><![CDATA[Servicio: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[DuplicateFiles]]></field>
+			<field id="Description"><![CDATA[Creando archivos duplicados...]]></field>
+			<field id="Template"><![CDATA[Archivo: [1][WiseCRLF]Directorio: [9][WiseCRLF]Tamaño: [6]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[FileCost]]></field>
+			<field id="Description"><![CDATA[Calculando los requisitos de espacio...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[GenerateScript]]></field>
+			<field id="Description"><![CDATA[Generando operaciones de script por acción:]]></field>
+			<field id="Template"><![CDATA[[1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[install_printer]]></field>
+			<field id="Description"><![CDATA[Installing printer driver...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallAdminPackage]]></field>
+			<field id="Description"><![CDATA[Copiando los archivos de instalación de la impresora...]]></field>
+			<field id="Template"><![CDATA[Archivo: [1][WiseCRLF]Directorio: [9][WiseCRLF]Tamaño: [6]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallFiles]]></field>
+			<field id="Description"><![CDATA[Copiando los archivos nuevos...]]></field>
+			<field id="Template"><![CDATA[Archivo: [1][WiseCRLF]Directorio: [9][WiseCRLF]Tamaño: [6]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallODBC]]></field>
+			<field id="Description"><![CDATA[Instalando los componentes ODBC...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallServices]]></field>
+			<field id="Description"><![CDATA[Instalando los nuevos servicios...]]></field>
+			<field id="Template"><![CDATA[Servicio: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallValidate]]></field>
+			<field id="Description"><![CDATA[Validando la instalación...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[LaunchConditions]]></field>
+			<field id="Description"><![CDATA[Evaluando las condiciones de lanzamiento...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[MoveFiles]]></field>
+			<field id="Description"><![CDATA[Moviendo archivos...]]></field>
+			<field id="Template"><![CDATA[Archivo: [1][WiseCRLF]Directorio: [9][WiseCRLF]Tamaño: [6]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[PatchFiles]]></field>
+			<field id="Description"><![CDATA[Aplicando revisiones a archivos...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [2][WiseCRLF]Size: [3]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[ProcessComponents]]></field>
+			<field id="Description"><![CDATA[Updating component registration...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[PublishComponents]]></field>
+			<field id="Description"><![CDATA[Publicando los componentes calificados...]]></field>
+			<field id="Template"><![CDATA[ID de componente: [1][WiseCRLF]Calificador: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[PublishFeatures]]></field>
+			<field id="Description"><![CDATA[Publicando las características del producto...]]></field>
+			<field id="Template"><![CDATA[Feature: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[PublishProduct]]></field>
+			<field id="Description"><![CDATA[Publicando la información del producto...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterClassInfo]]></field>
+			<field id="Description"><![CDATA[Registrando las clases de servidores...]]></field>
+			<field id="Template"><![CDATA[Class Id: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterExtensionInfo]]></field>
+			<field id="Description"><![CDATA[Registrando las extensiones de servidores...]]></field>
+			<field id="Template"><![CDATA[Extension: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterFonts]]></field>
+			<field id="Description"><![CDATA[Registering fonts...]]></field>
+			<field id="Template"><![CDATA[Font: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterMIMEInfo]]></field>
+			<field id="Description"><![CDATA[Registrando la información MIME...]]></field>
+			<field id="Template"><![CDATA[Tipo de contenido MIME: [1][WiseCRLF]Extensión: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterProduct]]></field>
+			<field id="Description"><![CDATA[Registrando el producto...]]></field>
+			<field id="Template"><![CDATA[[1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterProgIdInfo]]></field>
+			<field id="Description"><![CDATA[Desconectando de los identificadores de programa...]]></field>
+			<field id="Template"><![CDATA[ProgId: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterTypeLibraries]]></field>
+			<field id="Description"><![CDATA[Registrando los tipos de bibliotecas...]]></field>
+			<field id="Template"><![CDATA[Id. de la biblioteca: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterUser]]></field>
+			<field id="Description"><![CDATA[Registering user...]]></field>
+			<field id="Template"><![CDATA[[1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveDuplicateFiles]]></field>
+			<field id="Description"><![CDATA[Removing duplicated files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveEnvironmentStrings]]></field>
+			<field id="Description"><![CDATA[Updating environment strings...]]></field>
+			<field id="Template"><![CDATA[Nombre: [1][WiseCRLF]Valor: [2][WiseCRLF]Acción [3]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveFiles]]></field>
+			<field id="Description"><![CDATA[Eliminando archivos...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveFolders]]></field>
+			<field id="Description"><![CDATA[Eliminando carpetas...]]></field>
+			<field id="Template"><![CDATA[Carpeta: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveIniValues]]></field>
+			<field id="Description"><![CDATA[Eliminando entradas de archivos INI...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Section: [2][WiseCRLF]Key: [3], Value: [4]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveODBC]]></field>
+			<field id="Description"><![CDATA[Eliminando los componentes ODBC...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveRegistryValues]]></field>
+			<field id="Description"><![CDATA[Removing system registry values...]]></field>
+			<field id="Template"><![CDATA[Key: [1][WiseCRLF]Name: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveShortcuts]]></field>
+			<field id="Description"><![CDATA[Eliminando los accesos rápidos...]]></field>
+			<field id="Template"><![CDATA[Acceso directo: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RMCCPSearch]]></field>
+			<field id="Description"><![CDATA[Searching for qualifying products...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[Rollback]]></field>
+			<field id="Description"><![CDATA[Acción de revertir:]]></field>
+			<field id="Template"><![CDATA[[1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RollbackCleanup]]></field>
+			<field id="Description"><![CDATA[Eliminando copias de seguridad...]]></field>
+			<field id="Template"><![CDATA[Archivo: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[SelfRegModules]]></field>
+			<field id="Description"><![CDATA[Registering modules...]]></field>
+			<field id="Template"><![CDATA[Archivo: [1][WiseCRLF]Directorio: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[SelfUnregModules]]></field>
+			<field id="Description"><![CDATA[Unregistering modules...]]></field>
+			<field id="Template"><![CDATA[Archivo: [1][WiseCRLF]Directorio: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[SetODBCFolders]]></field>
+			<field id="Description"><![CDATA[Initializing ODBC directories...]]></field>
+			<field id="Template"><![CDATA[El controlador ODBC [1] está forzando a la carpeta [2] a [3]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[SetSecurityPermissions]]></field>
+			<field id="Description"><![CDATA[Setting permissions...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[StartServices]]></field>
+			<field id="Description"><![CDATA[Starting services...]]></field>
+			<field id="Template"><![CDATA[Servicio: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[StopServices]]></field>
+			<field id="Description"><![CDATA[Deteniendo los servicios...]]></field>
+			<field id="Template"><![CDATA[Servicio: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[uninstall_printer]]></field>
+			<field id="Description"><![CDATA[Calling uninstall_printer_CA]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnmoveFiles]]></field>
+			<field id="Description"><![CDATA[Eliminando los archivos movidos...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnpublishComponents]]></field>
+			<field id="Description"><![CDATA[Unpublishing qualified components...]]></field>
+			<field id="Template"><![CDATA[ID de componente: [1][WiseCRLF]Calificador: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnpublishFeatures]]></field>
+			<field id="Description"><![CDATA[Restringiendo las características del producto...]]></field>
+			<field id="Template"><![CDATA[Feature: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnpublishProduct]]></field>
+			<field id="Description"><![CDATA[Restringiendo la información del producto...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterClassInfo]]></field>
+			<field id="Description"><![CDATA[Unregister class servers...]]></field>
+			<field id="Template"><![CDATA[Class Id: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterExtensionInfo]]></field>
+			<field id="Description"><![CDATA[Desconectar las extensiones de servidores...]]></field>
+			<field id="Template"><![CDATA[Extension: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterFonts]]></field>
+			<field id="Description"><![CDATA[Desconectando las fuentes...]]></field>
+			<field id="Template"><![CDATA[Font: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterMIMEInfo]]></field>
+			<field id="Description"><![CDATA[Desconectando la información MIME...]]></field>
+			<field id="Template"><![CDATA[Tipo de contenido MIME: [1][WiseCRLF]Extensión: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterProgIdInfo]]></field>
+			<field id="Description"><![CDATA[Desconectando de los identificadores de programa...]]></field>
+			<field id="Template"><![CDATA[ProgId: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterTypeLibraries]]></field>
+			<field id="Description"><![CDATA[Desconectando los tipos de bibliotecas...]]></field>
+			<field id="Template"><![CDATA[Id. de la biblioteca: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[WriteEnvironmentStrings]]></field>
+			<field id="Description"><![CDATA[Updating environment strings...]]></field>
+			<field id="Template"><![CDATA[Nombre: [1][WiseCRLF]Valor: [2][WiseCRLF]Acción [3]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[WriteIniValues]]></field>
+			<field id="Description"><![CDATA[Escribiendo los valores de los archivos INI...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Section: [2][WiseCRLF]Key: [3], Value: [4]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[WriteRegistryValues]]></field>
+			<field id="Description"><![CDATA[Writing system registry values...]]></field>
+			<field id="Template"><![CDATA[Key: [1][WiseCRLF]Name: [2][WiseCRLF]Value: [3]]]></field>
+		</record>
+	</table>
+	<table id="Error">
+		<string id="0"><![CDATA[{{Error grave: }}]]></string>
+		<string id="1"><![CDATA[Error [1]. ]]></string>
+		<string id="2"><![CDATA[Aviso [1]. ]]></string>
+		<string id="4"><![CDATA[Información [1]. ]]></string>
+		<string id="5"><![CDATA[Error interno [1]. [2]{, [3]}{, [4]}]]></string>
+		<string id="7"><![CDATA[{{Disco lleno: }}]]></string>
+		<string id="8"><![CDATA[Acción [Time]: [1]. [2]]]></string>
+		<string id="9"><![CDATA[[ProductName]]]></string>
+		<string id="10"><![CDATA[{[2]}{, [3]}{, [4]}]]></string>
+		<string id="11"><![CDATA[Tipo de mensaje: [1], Argumento: [2]]]></string>
+		<string id="12"><![CDATA[=== Inicio de sesión iniciado: [Date]  [Time] ===]]></string>
+		<string id="13"><![CDATA[=== Registro detenido: [Date] [Time] ===]]></string>
+		<string id="14"><![CDATA[La acción se inició a las [Time]: [1].]]></string>
+		<string id="15"><![CDATA[Acción finalizada [Time]: [1]. Devolver valor [2].]]></string>
+		<string id="16"><![CDATA[Tiempo restante: {[1] minutos }{[2] segundos}]]></string>
+		<string id="17"><![CDATA[Memoria insuficiente. Cierre otras aplicaciones e inténtelo de nuevo.]]></string>
+		<string id="18"><![CDATA[Windows Installer ya no responde.]]></string>
+		<string id="19"><![CDATA[La instalación terminó antes de tiempo.]]></string>
+		<string id="20"><![CDATA[Espere mientras Windows configura [ProductName]]]></string>
+		<string id="21"><![CDATA[Reuniendo la información necesaria...]]></string>
+		<string id="32"><![CDATA[{[ProductName] }Instalación completada con éxito.]]></string>
+		<string id="33"><![CDATA[{[ProductName] }Instalación fallida.]]></string>
+		<string id="1101"><![CDATA[Error al leer el archivo: [2]. {{ Error de sistema [3].}}  Verifique que el archivo existe y que tiene acceso a él.]]></string>
+		<string id="1301"><![CDATA[No se puede crear el archivo '[3]'. Ya existe un directorio con este nombre. Cancele la instalación e inténtelo de nuevo en otra ubicación.]]></string>
+		<string id="1302"><![CDATA[Por favor, inserte el disco: [2]]]></string>
+		<string id="1303"><![CDATA[La instalación no tiene privilegios suficientes para acceder a este directorio: [2].  La instalación no puede continuar.  Inicie sesión como administrador o contacte con su administrador de sistemas.]]></string>
+		<string id="1304"><![CDATA[Error al escribir en el archivo: [2]. Compruebe que dispone de acceso a ese directorio.]]></string>
+		<string id="1305"><![CDATA[Error al leer el archivo: [2].  Verifique que el archivo existe y que tiene acceso a él.]]></string>
+		<string id="1306"><![CDATA[Otra aplicación tiene acceso exclusivo al archivo '[2]'.  Por favor, cierre el resto de aplicaciones y, a continuación, haga clic en Reintentar.]]></string>
+		<string id="1307"><![CDATA[No hay suficiente espacio en el disco para instalar este archivo: [2].  Libere algo de espacio y haga clic en Reintentar, o haga clic en Cancelar para salir.]]></string>
+		<string id="1308"><![CDATA[No se ha encontrado el archivo de origen: [2].  Verifique que el archivo existe y que tiene acceso a él.]]></string>
+		<string id="1309"><![CDATA[Error al leer el archivo: [3]. {{ Error del sistema [2].}} Compruebe que el archivo existe y que tiene acceso a él.]]></string>
+		<string id="1310"><![CDATA[Error al escribir en el archivo: [3]. {{ Error del sistema [2].}} Compruebe que dispone de acceso a ese directorio.]]></string>
+		<string id="1311"><![CDATA[No se ha encontrado el archivo de origen{{(cabinet)}}: [2].  Verifique que el archivo existe y que tiene acceso a él.]]></string>
+		<string id="1312"><![CDATA[No se puede crear el directorio '[2]'.  Ya existe un archivo con este nombre.  Cambie el nombre o elimine el archivo y haga clic en Reintentar, o haga clic en Cancelar para salir.]]></string>
+		<string id="1313"><![CDATA[El volumen [2] no está disponible actualmente.  Por favor, seleccione otro.]]></string>
+		<string id="1314"><![CDATA[La ruta especificada [2]' no está disponible.]]></string>
+		<string id="1315"><![CDATA[No se puede escribir en la carpeta especificada: [2].]]></string>
+		<string id="1316"><![CDATA[Error de red al intentar leer el archivo: [2]]]></string>
+		<string id="1317"><![CDATA[Se ha producido un error mientras se intentaba crear el directorio: [2]]]></string>
+		<string id="1318"><![CDATA[Se ha producido un error de red mientras se intentaba crear el directorio: [2]]]></string>
+		<string id="1319"><![CDATA[Se ha producido un error de red cuando se intentaba abrir el archivo de origen: [2]]]></string>
+		<string id="1320"><![CDATA[La ruta especificada es muy larga: [2]]]></string>
+		<string id="1321"><![CDATA[Windows Installer no tiene privilegios suficientes para modificar este archivo: [2].]]></string>
+		<string id="1322"><![CDATA[Un porción de la ruta de la carpeta '[2]' supera la longitud permitida por el sistema.]]></string>
+		<string id="1323"><![CDATA[La ruta de la carpeta '[2]' contiene palabras que no son válidas en las rutas de carpetas.]]></string>
+		<string id="1324"><![CDATA[La ruta de carpeta '[2]' contiene un carácter no válido.]]></string>
+		<string id="1325"><![CDATA['[2]' no es un nombre corto de archivo válido.]]></string>
+		<string id="1326"><![CDATA[Error al obtener la seguridad del archivo: [3] GetLastError: [2]]]></string>
+		<string id="1327"><![CDATA[Unidad no válida: [2]]]></string>
+		<string id="1401"><![CDATA[No se ha podido crear una clave: [2]. {{ Error de sistema [3].}}  Verifique que tiene acceso suficiente a dicha clave, o contacte con el personal de apoyo. ]]></string>
+		<string id="1402"><![CDATA[No se puede abrir la clave: [2]. {{ Error del sistema [3].}} Compruebe que dispone de suficientes derechos de acceso a esa clave o póngase en contacto con el personal de soporte técnico. ]]></string>
+		<string id="1403"><![CDATA[No se pudo borrar el valor [2] de la clave [3]. {{ Error de sistema [4].}}  Verifique que tiene acceso suficiente a dicha clave, o contacte con el personal de apoyo. ]]></string>
+		<string id="1404"><![CDATA[No se puede eliminar la clave [2]: {{ Error del sistema [3].}} Compruebe que dispone de suficientes derechos de acceso a esa clave o póngase en contacto con el personal de soporte técnico. ]]></string>
+		<string id="1405"><![CDATA[No se pudo leer el valor [2] de la clave [3]. {{ Error de sistema [4].}}  Verifique que tiene acceso suficiente a dicha clave, o contacte con el personal de apoyo. ]]></string>
+		<string id="1406"><![CDATA[No se pudo escribir el valor [2] de la clave [3]. {{ Error de sistema [4].}}  Verifique que tiene acceso suficiente a dicha clave, o contacte con el personal de apoyo.]]></string>
+		<string id="1407"><![CDATA[No se pueden obtener los nombres de valores para la clave [2]: {{ Error del sistema [3].}} Compruebe que dispone de suficientes derechos de acceso a esa clave o póngase en contacto con el personal de soporte técnico.]]></string>
+		<string id="1408"><![CDATA[No se pudieron obtener los nombres de la subclave de la clave [2]. {{ Error de sistema [3].}}  Verifique que tiene acceso suficiente a dicha clave, o contacte con el personal de apoyo.]]></string>
+		<string id="1409"><![CDATA[No se pudo leer la información de seguridad de la clave [2]. {{ Error de sistema [3].}}  Verifique que tiene acceso suficiente a dicha clave, o contacte con el personal de apoyo.]]></string>
+		<string id="1410"><![CDATA[No se pudo aumentar el espacio de registro disponible. Se necesitan [2] KB de espacio de registro para la instalación de esta aplicación.]]></string>
+		<string id="1500"><![CDATA[Hay otra instalación en progreso. Debe completar la otra instalación antes de continuar con esta.]]></string>
+		<string id="1501"><![CDATA[Error al acceder a los datos seguros. Asegúrese de que Windows Installer está correctamente configurado e intente instalarlo de nuevo.]]></string>
+		<string id="1502"><![CDATA[El usuario '[2]' ha iniciado previamente la instalación del producto '[3]'.  Dicho usuario necesitará ejecutar esa instalación de nuevo antes de que pueda utilizar el producto.  Su instalación actual continuará ahora.]]></string>
+		<string id="1503"><![CDATA[El usuario '[2]' ha iniciado previamente una instalación para el producto '[3]'. Ese usuario tendrá que ejecutar la instalación de nuevo antes de usar el producto.]]></string>
+		<string id="1601"><![CDATA[Sin espacio en disco -- Volumen: '[2]'; espacio requerido: [3] KB; espacio disponible: [4] KB.  Libere algo de espacio en el disco y vuélvalo a intentar.]]></string>
+		<string id="1602"><![CDATA[¿Está seguro de que desea cancelar?]]></string>
+		<string id="1603"><![CDATA[El archivo [2][3] está siendo utilizado{ por el siguiente proceso: Nombre: [4], Id.: [5], Título de ventana: '[6]'}. Cierre la aplicación y vuelva a intentarlo.]]></string>
+		<string id="1604"><![CDATA[El producto '[2]' ya está instalado, evite la instalación de este producto.  Los dos productos son incompatibles.]]></string>
+		<string id="1605"><![CDATA[Sin espacio en disco -- Volumen: '[2]'; espacio requerido: [3] KB; espacio disponible: [4] KB.  Si la recuperación de versiones anteriores está deshabilitada, hay bastante espacio disponible. Haga clic en 'Cancelar' para salir, en 'Reintentar' para comprobar el espacio disponible en el disco, o en 'Ignorar' para continuar sin la recuperación de versiones anteriores.]]></string>
+		<string id="1606"><![CDATA[No se puede acceder a la ubicación de red [2].]]></string>
+		<string id="1607"><![CDATA[Cierre las siguientes aplicaciones antes de continuar con la instalación:]]></string>
+		<string id="1608"><![CDATA[No se ha podido encontrar en la máquina ningún producto instalado previamente que cumpla con los requisitos para instalar este producto.]]></string>
+		<string id="1701"><![CDATA[La clave [2] no es válida. Compruebe que escribió la clave correcta.]]></string>
+		<string id="1702"><![CDATA[Windows Installer debe reiniciar su sistema antes de que se pueda continuar con la configuración de [2].  Haga clic en SÍ para reiniciar ahora o en NO si desea reiniciar manualmente más adelante.]]></string>
+		<string id="1703"><![CDATA[Debe reiniciar su sistema para que los cambios en la configuración de [2] tengan efecto. Haga clic en SÍ para reiniciar ahora o en NO si desea reiniciar manualmente más adelante.]]></string>
+		<string id="1704"><![CDATA[Una instalación para [2] está actualmente suspendida.  Debe deshacer los cambios realizados por esa instalación para continuar.  ¿Desea deshacer esos cambios?]]></string>
+		<string id="1705"><![CDATA[Una instalación previa para este producto está progreso.  Debe deshacer los cambios realizados por esa instalación para continuar.  ¿Desea deshacer esos cambios?]]></string>
+		<string id="1706"><![CDATA[No se encuentra un origen válido para el producto [2]: Windows Installer no puede continuar.]]></string>
+		<string id="1707"><![CDATA[La operación de instalación se ha completado con éxito.]]></string>
+		<string id="1708"><![CDATA[La operación de instalación ha fallado.]]></string>
+		<string id="1709"><![CDATA[Producto: [2] -- [3]]]></string>
+		<string id="1710"><![CDATA[Debe restaurar su ordenador a su estado previo o continuar la instalación más tarde. ¿Desea restaurar su ordenador?]]></string>
+		<string id="1711"><![CDATA[Ha ocurrido un error mientras se escribía la información de instalación en el disco.  Compruebe que hay disponible espacio suficiente en el disco y haga clic en Reintentar, o haga clic en Cancelar para finalizar la instalación.]]></string>
+		<string id="1712"><![CDATA[No se pueden encontrar uno o más archivos necesarios para restaurar su ordenador a su estado previo.  La restauración no será posible.]]></string>
+		<string id="1801"><![CDATA[La ruta [2] no es válida.  Por favor, especifique una ruta válida.]]></string>
+		<string id="1802"><![CDATA[Memoria insuficiente. Cierre otras aplicaciones e inténtelo de nuevo.]]></string>
+		<string id="1803"><![CDATA[No hay disco en la unidad [2]. Inserte uno y haga clic en Reintentar, o haga clic en Cancelar para volver al volumen seleccionado previamente.]]></string>
+		<string id="1804"><![CDATA[No hay disco en la unidad [2]. Inserte uno y haga clic en Reintentar, o haga clic en Cancelar para volver al cuadro de diálogo para examinar y seleccione un volumen diferente.]]></string>
+		<string id="1805"><![CDATA[La carpeta [2] no existe.  Introduzca una ruta en una carpeta existente.]]></string>
+		<string id="1806"><![CDATA[No tiene los privilegios suficientes para leer esta carpeta.]]></string>
+		<string id="1807"><![CDATA[No se ha podido determinar una carpeta de destino válida para la instalación.]]></string>
+		<string id="1901"><![CDATA[Error al intentar leer la base de datos de instalación de origen: [2].]]></string>
+		<string id="1902"><![CDATA[Programando operación de reinicio:  Cambiando el nombre del archivo [2] a [3]. Reinicie para completar la operación.]]></string>
+		<string id="1903"><![CDATA[Programando una operación de reinicio: Eliminando archivo [2]. Reinicie para completar la operación.]]></string>
+		<string id="1904"><![CDATA[Error al registrar el módulo [2]. HRESULT [3]. Póngase en contacto con el personal de soporte técnico.]]></string>
+		<string id="1905"><![CDATA[El módulo [2] no puede desconectarse.  HRESULT [3].  Contacte con el personal de apoyo.]]></string>
+		<string id="1906"><![CDATA[Error al almacenar paquetes [2]. Error: [3]. Contacte con el personal de apoyo.]]></string>
+		<string id="1907"><![CDATA[No se ha podido registrar la fuente [2]. Compruebe que tiene suficientes permisos para instalar fuentes y que el sistema admite esta fuente.]]></string>
+		<string id="1908"><![CDATA[No se ha podido eliminar del registro la fuente [2]. Compruebe que dispone de suficientes permisos para eliminar fuentes.]]></string>
+		<string id="1909"><![CDATA[No se ha podido crear el acceso directo [2]. Compruebe que la carpeta de destino existe y que tiene acceso a ella.]]></string>
+		<string id="1910"><![CDATA[No se pudo eliminar un acceso rápido [2]. Verifique que el archivo de acceso rápido existe y que tiene acceso a él.]]></string>
+		<string id="1911"><![CDATA[No se ha podido registrar la biblioteca de tipos del archivo [2]. Póngase en contacto con el personal de soporte técnico.]]></string>
+		<string id="1912"><![CDATA[No se pudo desconectar el tipo de biblioteca para el archivo [2].  Contacte con el personal de apoyo.]]></string>
+		<string id="1913"><![CDATA[No se pudo actualizar el archivo .INI [2][3].  Verifique que el archivo existe y que tiene acceso a él.]]></string>
+		<string id="1914"><![CDATA[No se pudo programar que el archivo [2] reemplazara al archivo [3] tras reiniciar.  Verifique que tiene permisos para escribir en el archivo [3].]]></string>
+		<string id="1915"><![CDATA[Error al eliminar el gestor de controladores ODBC, error ODBC [2]: [3]. Contacte con el personal de apoyo.]]></string>
+		<string id="1916"><![CDATA[Error al instalar el administrador de controladores ODBC; error de ODBC [2]: [3]. Póngase en contacto con el personal de soporte técnico.]]></string>
+		<string id="1917"><![CDATA[Error al eliminar el controlador ODBC: [4], error ODBC [2]: [3]. Verifique que tiene los privilegios necesarios para eliminar controladores ODBC.]]></string>
+		<string id="1918"><![CDATA[Error al instalar el controlador ODBC: [4], error de ODBC [2]: [3]. Compruebe que el archivo [4] existe y que tiene acceso a él.]]></string>
+		<string id="1919"><![CDATA[Error al configurar el origen de datos ODBC: [4], error ODBC [2]: [3]. Verifique que el archivo [4] existe y que tiene acceso a él.]]></string>
+		<string id="1920"><![CDATA[Error al iniciar el servicio '[2]' ([3]).  Verifique que tiene los privilegios necesarios para iniciar los servicios del sistema.]]></string>
+		<string id="1921"><![CDATA[No se puede detener el servicio '[2]' ([3]). Compruebe que dispone de suficientes privilegios para detener servicios del sistema.]]></string>
+		<string id="1922"><![CDATA[No se puede eliminar el servicio '[2]' ([3]). Compruebe que dispone de suficientes privilegios para eliminar servicios del sistema.]]></string>
+		<string id="1923"><![CDATA[El servicio '[2]' ([3]) no se pudo instalar.  Verifique que tiene los privilegios necesarios para instalar los servicios del sistema.]]></string>
+		<string id="1924"><![CDATA[No se puede actualizar la variable de entorno '[2]'. Compruebe que dispone de suficientes privilegios para modificar variables de entorno.]]></string>
+		<string id="1925"><![CDATA[No tiene los privilegios suficientes para completar esta instalación para todos los usuarios de la máquina.  Inicie sesión como administrador y vuelva a intentar esta instalación.]]></string>
+		<string id="1926"><![CDATA[No se puede establecer seguridad para el archivo '[3]'. Error: [2]. Compruebe que dispone de suficientes privilegios para modificar los permisos de seguridad de este archivo.]]></string>
+	</table>
+	<table id="UIText">
+		<string id="bytes"><![CDATA[bytes]]></string>
+		<string id="GB"><![CDATA[GB]]></string>
+		<string id="KB"><![CDATA[KB]]></string>
+		<string id="MB"><![CDATA[MB]]></string>
+		<string id="MenuAbsent"><![CDATA[La característica al completo no estará disponible.]]></string>
+		<string id="MenuAdvertise"><![CDATA[Feature will be installed when required.]]></string>
+		<string id="MenuAllCD"><![CDATA[La característica al completo se instalará para ejecutarse desde CD.]]></string>
+		<string id="MenuAllLocal"><![CDATA[La característica al completo se instalará en el disco duro local.]]></string>
+		<string id="MenuAllNetwork"><![CDATA[La característica al completo se instalará para ejecutarse desde la red.]]></string>
+		<string id="MenuCD"><![CDATA[Will be installed to run from CD.]]></string>
+		<string id="MenuLocal"><![CDATA[Se instalará para ejecutarse en el disco duro local.]]></string>
+		<string id="MenuNetwork"><![CDATA[Se instalará para ejecutarse desde la red.]]></string>
+		<string id="NewFolder"><![CDATA[Fldr|Nueva Carpeta]]></string>
+		<string id="ScriptInProgress"><![CDATA[Reuniendo la información necesaria...]]></string>
+		<string id="SelAbsentAbsent"><![CDATA[Este componente no se instalará.]]></string>
+		<string id="SelAbsentAdvertise"><![CDATA[Este componente se podrá instalar cuando sea necesario.]]></string>
+		<string id="SelAbsentCD"><![CDATA[Este componente se instalará para ejecutar desde CD.]]></string>
+		<string id="SelAbsentLocal"><![CDATA[Este componente se instalará en el disco duro local.]]></string>
+		<string id="SelAbsentNetwork"><![CDATA[Este componente se instalará para ejecutar desde red.]]></string>
+		<string id="SelAdvertiseAbsent"><![CDATA[This feature will become unavailable.]]></string>
+		<string id="SelAdvertiseAdvertise"><![CDATA[Se podrá instalar cuando sea necesario.]]></string>
+		<string id="SelAdvertiseCD"><![CDATA[This feature will be available to run from CD.]]></string>
+		<string id="SelAdvertiseLocal"><![CDATA[Este componente se instalará en el disco duro local.]]></string>
+		<string id="SelAdvertiseNetwork"><![CDATA[Este componente se instalará para su ejecución desde red.]]></string>
+		<string id="SelCDAbsent"><![CDATA[This feature will be uninstalled completely, you won't be able to run it from CD.]]></string>
+		<string id="SelCDAdvertise"><![CDATA[Esta característica se modificará y, en lugar de ejecutarse desde CD, se instalará cuando sea necesario.]]></string>
+		<string id="SelCDCD"><![CDATA[Esta característica se seguirá ejecutando desde CD.]]></string>
+		<string id="SelCDLocal"><![CDATA[Esta característica se modificará y en lugar de ejecutarse desde CD, se instalará en el disco duro local.]]></string>
+		<string id="SelChildCostNeg"><![CDATA[Este componente liberará [1] en el disco duro.]]></string>
+		<string id="SelChildCostPos"><![CDATA[Este componente requiere [1] en el disco duro.]]></string>
+		<string id="SelCostPending"><![CDATA[Compiling cost for this feature...]]></string>
+		<string id="SelLocalAbsent"><![CDATA[Este componente se eliminará completamente.]]></string>
+		<string id="SelLocalAdvertise"><![CDATA[Esta característica se eliminará del disco duro local, pero se configurará para instalarse cuando sea necesario.]]></string>
+		<string id="SelLocalCD"><![CDATA[Esta característica se eliminará del disco duro local, pero seguirá estando disponible para ejecutarse desde CD.]]></string>
+		<string id="SelLocalLocal"><![CDATA[This feature will remain on your local hard drive.]]></string>
+		<string id="SelLocalNetwork"><![CDATA[Esta característica se eliminará del disco duro local, pero seguirá estando disponible para ejecutarse desde la red.]]></string>
+		<string id="SelNetworkAbsent"><![CDATA[Esta característica se desinstalará por completo y no podrá ejecutarse desde CD.]]></string>
+		<string id="SelNetworkAdvertise"><![CDATA[Esta característica se modificará y en lugar de ejecutarse desde la red, se instalará cuando sea necesario.]]></string>
+		<string id="SelNetworkLocal"><![CDATA[This feature will change from run from network state to be installed on the local hard drive.]]></string>
+		<string id="SelNetworkNetwork"><![CDATA[Esta característica se seguirá ejecutando desde la red.]]></string>
+		<string id="SelParentCostNegNeg"><![CDATA[Este componente liberará [1] en el disco duro. Tiene seleccionados[2] de[3] subcomponentes. Estos subcomponentes liberarán [4] en el disco duro.]]></string>
+		<string id="SelParentCostNegPos"><![CDATA[Este componente liberará [1] en el disco duro. Tiene seleccionados[2] de[3] subcomponentes. Estos subcomponentes requieren[4] en el disco duro.]]></string>
+		<string id="SelParentCostPosNeg"><![CDATA[Este componente requiere [1] en el disco duro. Tiene seleccionados[2] de[3] subcomponentes. Estos subcomponentes liberarán [4] en el disco duro.]]></string>
+		<string id="SelParentCostPosPos"><![CDATA[Este componente requiere [1] en el disco duro. Tiene seleccionados [2] de[3] subcomponentes. Estos subcomponentes requieren [4] en el disco duro.]]></string>
+		<string id="TimeRemaining"><![CDATA[Tiempo restante: {[1] minutos }{[2] segundos}]]></string>
+		<string id="VolumeCostAvailable"><![CDATA[Available]]></string>
+		<string id="VolumeCostDifference"><![CDATA[Difference]]></string>
+		<string id="VolumeCostRequired"><![CDATA[Requerido]]></string>
+		<string id="VolumeCostSize"><![CDATA[Tamaño del disco]]></string>
+		<string id="VolumeCostVolume"><![CDATA[Volume]]></string>
+	</table>
+	<table id="Shortcutname">
+		<string id="FAXmaker_Fax_Message_Form"><![CDATA[FAXMAK~1|Formulario de mensaje de fax de GFI FaxMaker]]></string>
+		<string id="FAXMaker_Help"><![CDATA[FAXMAK~1|Ayuda de GFI FaxMaker]]></string>
+		<string id="FAXmaker_SMS_Message_Form"><![CDATA[FAXMAK~1|Formulario de mensaje SMS de GFI FaxMaker]]></string>
+		<string id="FAXMaker_Viewer"><![CDATA[FAXMAK~1|Visor de GFI FaxMaker]]></string>
+	</table>
+	<table id="Shortcutdescription">
+		<string id="FAXmaker_Fax_Message_Form"><![CDATA[Formulario de mensaje de fax de GFI FaxMaker]]></string>
+		<string id="FAXMaker_Help"><![CDATA[Ayuda de GFI FaxMaker]]></string>
+		<string id="FAXmaker_SMS_Message_Form"><![CDATA[Formulario de mensaje SMS de GFI FaxMaker]]></string>
+		<string id="FAXMaker_Viewer"><![CDATA[Visor de GFI FaxMaker]]></string>
+	</table>
+</setupstrings>

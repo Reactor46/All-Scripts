@@ -1,0 +1,5 @@
+taskkill -f -im "AuthManSvr.exe"
+taskkill -f -im "concentr.exe"
+taskkill -f -im "Receiver.exe"
+taskkill -f -im "wfcrun32.exe"
+taskkill -f -im "SelfServicePlugin.exe"

@@ -1,0 +1,941 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<setupstrings version="1">
+	<table id="Control">
+		<module id="Admin_Install_Point">
+			<string FONT="[_WiseDialogFontDefault]" id="Back"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Browse"><![CDATA[&Procházet]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="EditQ"><![CDATA[Místo &síťové instalace:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Kde chcete vytvořit instalaci?]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text36"><![CDATA[Instalace administrátora]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text54"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="Admin_Verify_Ready">
+			<string FONT="[_WiseDialogFontDefault]" id="Back"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="InstallNow"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Jste připraveni k instalaci?]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text37"><![CDATA[Admin Installation Verify Ready]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text55"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="AdminInstallBrowse">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ComboText"><![CDATA[&Umístění složky:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TailText"><![CDATA[&Vybraná cesta:]]></string>
+		</module>
+		<module id="Browse">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ComboText"><![CDATA[&Hledat v:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TailText"><![CDATA[&Název složky:]]></string>
+		</module>
+		<module id="Cancel">
+			<string FONT="[_WiseDialogFontDefault]" id="No"><![CDATA[&Pokračovat]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Instalace není dokončena.  Opustíte-li nyní instalační program, aplikace nebude nainstalována.[WiseCRLF][WiseCRLF]Pro dokončení instalace můžete instalační program spustit později.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2515"><![CDATA[Chcete-li pokračovat v instalaci, stiskněte Pokračovat.  Chcete-li opustit instalační program, stiskněte Ukončit instalaci.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Yes"><![CDATA[&Ukončit instalaci]]></string>
+		</module>
+		<module id="CCPDialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="DriveText"><![CDATA[Disk:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Instalační program nenalezl na vašem pevném disku (discích) opravňující produkt. Vyberte prosím disk, který obsahuje opravňující produkt.]]></string>
+		</module>
+		<module id="CCPFail">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[&Ukončit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Instalační program nenalezl opravňující produkt. Instalace vyžaduje platný opravňující produkt, aby mohla pokračovat.]]></string>
+		</module>
+		<module id="ConnDetailsInvalidServer">
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Při připojování přímo k nástroji GFI FaxMaker je třeba zadat adresu serveru i adresu e-mailu.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[&OK]]></string>
+		</module>
+		<module id="ConnectionSettings">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Při odesílání faxů se připojovat k nástroji GFI FaxMaker prostřednictvím:]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Nastavení připojení GFI FaxMaker]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Zvolte způsob připojování k nástroji GFI FaxMaker při odesílání faxů]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text25252527"><![CDATA[Adresa serveru nástroje GFI FaxMaker (IP nebo FQDN):[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text25252528"><![CDATA[E-mailová adresa:]]></string>
+		</module>
+		<module id="DiskCost">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Vybrané položky vyžadují následující diskový prostor na jednotlivých discích. Na zvýrazněných discích není dostatek volného prostoru pro momentálně vybrané součásti.]]></string>
+		</module>
+		<module id="ErrorDialog">
+			<string FONT="[_WiseDialogFontDefault]" id="A"><![CDATA[&Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="C"><![CDATA[&Storno]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="I"><![CDATA[&Ignorovat]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="N"><![CDATA[&Ne]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="O"><![CDATA[&OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="R"><![CDATA[&Zkusit znovu]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Y"><![CDATA[&Ano]]></string>
+		</module>
+		<module id="Exit_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[&Dokončit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton1"><![CDATA[Zrušit]]></string>
+			<string FONT="Arial14" id="Text"><![CDATA[[ProductName] byl úspěšně nainstalován.[WiseCRLF]]]></string>
+			<string FONT="Arial14" id="Text56"><![CDATA[[ProductName] byl úspěšně odinstalován.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text6"><![CDATA[Stiskem tlačítka Dokončit opustíte instalaci.]]></string>
+		</module>
+		<module id="Fatal_Error">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Instalace byla z důvodu chyby předčasně ukončena. ]]></string>
+		</module>
+		<module id="FilesInUse">
+			<string FONT="[_WiseDialogFontDefault]" id="Exit"><![CDATA[&Odejít]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Ignore"><![CDATA[&Ignorovat]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Retry"><![CDATA[&Zkusit znovu]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Soubory, které je třeba aktualizovat, jsou právě používány.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text54"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text58"><![CDATA[Používané soubory]]></string>
+			<string id="Text60"><![CDATA[Níže jsou uvedeny používané soubory a aplikace, která soubor používá. Zavřete aplikaci a stiskněte Zkusit znovu, nebo stiskněte Ignorovat a soubory budou nahrazeny po restartu počítače. Stiskem tlačítka Ukončit opustíte instalaci.]]></string>
+		</module>
+		<module id="FirstRun">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string id="NameE"><![CDATA[{47}]]></string>
+			<string FONT="TimesItalicBlue10" id="NameQ"><![CDATA[&Název:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string id="OrgE"><![CDATA[{53}]]></string>
+			<string FONT="TimesItalicBlue10" id="OrgQ"><![CDATA[&Organizace:]]></string>
+			<string id="PIDE"><![CDATA[[PIDTemplate]]]></string>
+			<string FONT="TimesItalicBlue10" id="PIDQ"><![CDATA[Zadejte prosím &ID produktu, které naleznete na obalu CD.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+		</module>
+		<module id="fmmessageform">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox"><![CDATA[S formulářem pro faxovou zprávu nástroje GFI FaxMaker použít adresu Outlooku]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Přejete si, aby ovladač tiskárny GFI FaxMaker používal k posílání faxů formulář Outlooku Nová zpráva nebo formulář GFI FaxMaker Nová faxová zpráva?]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Formulář pro zprávu]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Zvolte, který formulář pro zprávu bude použit.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM][WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2521"><![CDATA[(vyžaduje, aby byl Outlook nastaven jako výchozí poštovní klient)[WiseCRLF]]]></string>
+		</module>
+		<module id="FMOFailedEmailDlg">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Pokyny k resetování hesla nebyly odeslány. Uživatel [WiseCRLF][ONLINEEMAIL] není zaregistrovaný jako uživatel nástroje GFI FaxMaker Online.[WiseCRLF]Ověřte podrobnosti o účtu u správce[WiseCRLF]]]></string>
+		</module>
+		<module id="FMONoEmailDlg">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[OK[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Uveďte prosím svou e-mailovou adresu.]]></string>
+		</module>
+		<module id="FMOResetPassword">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Na adresu [ONLINEEMAIL] byl zaslán e-mail s vašimi přihlašovacími údaji pro nástroj GFI FaxMaker Online.[WiseCRLF]]]></string>
+		</module>
+		<module id="FMOUserDetails">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[Zapomenuté údaje[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[E-mailová adresa (povinný údaj)]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Podrobnosti o uživateli[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Zadejte přihlašovací údaje pro nástroj GFI FaxMaker Online[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM][WiseCRLF][WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2522"><![CDATA[Uživatelské jméno]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2524"><![CDATA[Heslo]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text25252526"><![CDATA[Přihlašovací údaje uživatele GFI FaxMaker Online (volitelné)[WiseCRLF][WiseCRLF]]]></string>
+		</module>
+		<module id="fmserver">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox"><![CDATA[Přeskočit toto okno, zadám detaily ručně.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Zadejte název serveru GFI FaxMaker.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[...]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Počítač:[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Určete serverový počítač]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Nastavte název počítače serveru GFI FaxMaker.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="fmserverdetails">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox"><![CDATA[Můj poštovní server vyžaduje ověření]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Zadejte prosím detaily podle toho, jaký poštovní server používáte, a podle způsobu, jakým chcete doručovat faxy do GFI FaxMaker.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Název poštovního serveru:]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Detaily serveru GFI FaxMaker[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Zadejte detaily serveru GFI FaxMaker[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2"><![CDATA[Faxová schránka:[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM][WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text3"><![CDATA[Název faxového serveru:[WiseCRLF]]]></string>
+		</module>
+		<module id="Installation_Type_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CompleteText"><![CDATA[Budou instalovány nejobvyklejší součásti aplikace. Tuto volbu doporučujeme většině uživatelů.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Budou instalovány všechny součásti aplikace. Tuto volbu doporučujeme pro nejlepší výkon.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Zvolte typ instalace]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Zvolte požadovaný typ instalace.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text48"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TypicalText"><![CDATA[Pomocí této volby určíte, které součásti aplikace chcete nainstalovat a kam mají být instalovány. Doporučujeme pouze zkušeným uživatelům.]]></string>
+		</module>
+		<module id="IntegrationType">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[Více informací]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Vyberte typ faxového serveru, který bude používán s aplikací [ProductName]]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Typ faxového serveru [WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Vyberte typ používaného faxového serveru]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="invalidserver">
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Jsou vyžadována všechna aktivní pole. Zkontrolujte prosím, zda jste zadali všechny potřebné informace, a zkuste znovu.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[OK]]></string>
+		</module>
+		<module id="License_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Reset"><![CDATA[&Reset]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text13"><![CDATA[Licenční smlouva]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text14"><![CDATA[Chcete-li pokračovat, musíte souhlasit s níže uvedenou smlouvou.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text44"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="Maintenance_Welcome_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CompleteText3"><![CDATA[Změnit to, jaké součásti aplikace se nainstalují.  Zobrazí okno Vybrat součásti, které vám umožní určit jednotlivé součásti.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText5"><![CDATA[Přeinstalovat chybějící nebo poškozené soubory, klíče registru a zástupce.  Vlastní nastavení uložená v registru mohou být resetována na výchozí hodnoty.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2"><![CDATA[Zvolte, který úkon údržby má být proveden.]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text3"><![CDATA[Údržba aplikace]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text52"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TypicalText7"><![CDATA[Odinstalovat [ProductName] z tohoto počítače.]]></string>
+		</module>
+		<module id="oldfmclientfound">
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Byl nalezen starý klient GFI FaxMaker a je třeba jej odinstalovat. Chcete pokračovat v této instalaci bez odstranění starého klienta?]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[Ano]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton45"><![CDATA[Ne]]></string>
+		</module>
+		<module id="OutOfDisk">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Málo místa na disku. Na zvýrazněných discích není k dispozici dostatek prostoru pro vybrané součásti.]]></string>
+		</module>
+		<module id="Palm_User_Information_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Níže jsou uvedeni uživatelé Palm, kteří jsou na tomto počítači k dispozici. Označte políčka uživatelů, pro které chcete nainstalovat aplikaci/aplikace Palm.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Informace o uživatelích Palm[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Vyberte uživatele, pro které se mají instalovat aplikace Palm.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="Patch_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="Arial14" id="Text"><![CDATA[Vítejte v Průvodci instalací [ProductName].]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text1"><![CDATA[Před spuštěním tohoto instalačního programu velmi doporučujeme ukončit všechny programy Windows.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2518"><![CDATA[Stiskem tlačítka Storno uzavřete instalační program a ukončete všechny spuštěné programy.  Stiskem tlačítka Další pokračujte v instalaci.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2519"><![CDATA[Neautorizované kopírování nebo rozšiřování tohoto programu nebo jakékoli jeho části může vést k vážným občanskoprávním i trestněprávním postihům a bude právně stíháno v nejširším možném rozsahu.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text269"><![CDATA[UPOZORNĚNÍ: Tento program je chráněn autorským právem a mezinárodními smlouvami.]]></string>
+		</module>
+		<module id="Progress_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="ActionData"><![CDATA[Inicializace...]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text27"><![CDATA[Aktualizuji systém]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text28"><![CDATA[Instalují se vámi vybrané součásti.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text51"><![CDATA[[GFITM]]]></string>
+			<string id="Text57"><![CDATA[{&MSSansSerif8}Odinstalují se vámi vybrané součásti.]]></string>
+		</module>
+		<module id="Readme_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Čti mě]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Následující informace popisují tuto instalaci.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text45"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="ReinstallMode">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileChecksum"><![CDATA[Přeinstalovat, pokud má soubor EXE nebo DLL neplatný kontrolní součet.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileEqualVersion"><![CDATA[Přeinstalovat, jestliže soubor chybí nebo existuje starší či stejná verze.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileExact"><![CDATA[Přeinstalovat, jestliže existující soubor má jinou verzi]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileForce"><![CDATA[&Povinně přeinstalovat všechny soubory bez ohledu na kontrolní součet nebo verzi]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileOlderVersion"><![CDATA[Přeinstalovat, jestliže soubor chybí nebo existuje starší verze]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFilePresent"><![CDATA[Přeinstalovat pouze v případě, že soubor chybí]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallMachineData"><![CDATA[Zkontrolujte, zda jsou zadány požadované registrační údaje o místním &počítači.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallRepair"><![CDATA[&Opravit všechny zjištěné problémy s instalací]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallShortcut"><![CDATA[Ověřit zástupce]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallUserData"><![CDATA[Zkontrolujte, zda jsou zadány požadované registrační údaje o &uživateli]]></string>
+		</module>
+		<module id="Resume_Install_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="InstallNow"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Může Průvodce instalací pokračovat v instalaci?]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2"><![CDATA[Může Průvodce instalací dokončit vámi přerušenou instalaci?]]></string>
+			<string FONT="Arial14" id="Text31"><![CDATA[Obnovuji Průvodce instalací [ProductName].]]></string>
+		</module>
+		<module id="Select_Feature_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="ActionDescription"><![CDATA[Popis aktuálně vybrané akce xxx xxx xxx xxxx xxxx xxxx xxxx xxxx]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Browse"><![CDATA[&Procházet]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="DiskCost"><![CDATA[&Potřebné místo na disku]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ItemDescription"><![CDATA[Víceřádkový popis aktuálně vybrané položky xxx xxxx xxxx xxxx xxxx  xxxxx xxx xxxx xxxx xxxx xxx xxxx xx xxxxx xxxxx x]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="LocationPath"><![CDATA[Cesta]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="LocationText"><![CDATA[Aktuální pozice:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Reset"><![CDATA[&Reset]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Size"><![CDATA[Velikost aktuálního výběru xxx xxx xxx xxxx xxxx xxxx xxxx xxxx]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text23"><![CDATA[Vyberte součásti]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text24"><![CDATA[Vyberte prosím součásti, které si přejete nainstalovat.]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text41"><![CDATA[Popis součásti:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text49"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="Setup_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="ActionText"><![CDATA[Vyčkejte prosím, zatímco Průvodce instalací Wise® připravuje Instalátor Windows.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="Arial14" id="Text15"><![CDATA[Vítejte v Průvodci instalací [ProductName].]]></string>
+		</module>
+		<module id="Single_Feature_Destination">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="GroupBox"><![CDATA[Cílová složka]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton44"><![CDATA[&Procházet]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Cílová složka]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Vyberte složku, do které bude aplikace instalována.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text42"><![CDATA[Průvodce instalací Wise nainstaluje soubory produktu [ProductName] do následující složky.[WiseCRLF][WiseCRLF]Chcete-li instalovat do jiné složky, stiskněte tlačítko Procházet a vyberte jinou složku. ]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text42a"><![CDATA[Nechcete-li instalovat produkt [ProductName], stiskem tlačítka Storno opusťte Průvodce instalací Wise.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text43"><![CDATA[[INSTALLDIR]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text47"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="smtpauthform">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox"><![CDATA[Přihlásit se pomocí zabezpečeného ověřování hesla]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox1"><![CDATA[Použít SSL]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox2"><![CDATA[Použít ověřování SMTP]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Vyberte parametry ověřování SMTP pro [ProductName]. Použijete-li ověřování SMTP, musíte zadat účet a heslo.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Účet:]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Ověřování SMTP.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Vyberte parametry ověřování SMTP pro [ProductName].]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM][WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2520"><![CDATA[Heslo:[WiseCRLF]]]></string>
+		</module>
+		<module id="Start_Installation_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="InstallNow"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text244"><![CDATA[Stiskem tlačítka Další zahájíte instalaci.]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text251"><![CDATA[Připraven k instalaci aplikace]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text2512"><![CDATA[Připraven k opravě aplikace]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text2513"><![CDATA[Připraven obnovení instalace [ProductName]]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text26"><![CDATA[Připraven ke změně aplikace]]></string>
+			<string id="Text50"><![CDATA[{\MS_Sans_Serif_80}[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text51"><![CDATA[Stiskem tlačítka Zpět se vrátíte k informacím o instalaci, stiskem Storno ukončíte průvodce.]]></string>
+		</module>
+		<module id="upgrading9x">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Je nainstalována starší verze klienta GFI FaxMaker. Před instalací nové verze klienta GFI FaxMaker prosím odstraňte starší verzi pomocí nástroje Přidat nebo odebrat programy na ovládacím panelu.[WiseCRLF]]]></string>
+		</module>
+		<module id="User_Exit">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[[ProductName] byl přerušen dříve, než byla dokončena instalace nového programu.  Pro dokončení instalace tohoto programu můžete instalaci později spustit znovu.]]></string>
+		</module>
+		<module id="User_Information_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="NameE"><![CDATA[{47}]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="NameQ"><![CDATA[Úplný &Název:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OrgE"><![CDATA[{53}]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OrgQ"><![CDATA[&Organizace:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PIDE"><![CDATA[[PIDTemplate]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PIDQ"><![CDATA[&ID produktu:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text16"><![CDATA[Informace o uživateli]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text46"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text7"><![CDATA[Zadáním následujících informací můžete instalaci upravit podle svých požadavků.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text8"><![CDATA[Nastavení pro tuto aplikaci lze nainstalovat pro aktuálního uživatele nebo pro všechny uživatele na tomto počítači. Pro instalaci nastavení pro všechny uživatele musíte mít oprávnění administrátora. Instalovat tuto aplikaci pro:]]></string>
+		</module>
+		<module id="Verify_Remove_All">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="RemoveNow"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Tímto se [ProductName] odstraní z vašeho počítače. Opravdu chcete pokračovat?[WiseCRLF][WiseCRLF]Stiskem tlačítka Další odstraníte aplikaci.[WiseCRLF][WiseCRLF]Stiskem tlačítka Storno ukončíte proces odinstalace.]]></string>
+			<string FONT="Arial14" id="Text32"><![CDATA[Odinstalace [ProductName]]]></string>
+		</module>
+		<module id="WaitForCosting">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TextMessage"><![CDATA[Vyčkejte prosím, instalátor zjišťuje potřebné místo na disku...]]></string>
+		</module>
+		<module id="Welcome_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Zrušit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Další >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Zpět]]></string>
+			<string FONT="Arial14" id="Text"><![CDATA[Vítejte v Průvodci instalací [ProductName].]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text1"><![CDATA[Před spuštěním tohoto instalačního programu velmi doporučujeme ukončit všechny programy Windows.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2"><![CDATA[UPOZORNĚNÍ: Tento program je chráněn autorským právem a mezinárodními smlouvami.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2516"><![CDATA[Stiskem tlačítka Storno uzavřete instalační program a pak ukončete všechny spuštěné programy.  Pro pokračování instalace stiskněte tlačítko Další.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2517"><![CDATA[Neautorizované kopírování nebo rozšiřování tohoto programu nebo jakékoli jeho části může vést k vážným občanskoprávním i trestněprávním postihům a bude právně stíháno v nejširším možném rozsahu.]]></string>
+		</module>
+	</table>
+	<table id="Property">
+		<string id="LANGUAGE"><![CDATA[0]]></string>
+		<string id="_WiseDebugMode"><![CDATA[0]]></string>
+		<string id="CONNSTGSUSESMTP"><![CDATA[Poštovní server SMTP]]></string>
+		<string id="CONNSTGSUSEWSAPI"><![CDATA[Přímé připojení k aplikaci GFI FaxMaker]]></string>
+		<string id="DETAILSEXCHANGE"><![CDATA[Exchange 2013/2010/2007/2003/2000/5.5]]></string>
+		<string id="DETAILSISP"><![CDATA[Poštovní server ISP nebo SMTP/POP3]]></string>
+		<string id="DETAILSLOTUS"><![CDATA[Poštovní server Lotus Notes nebo SMTP/POP3]]></string>
+		<string id="DETAILSTYPE"><![CDATA[0]]></string>
+		<string id="DiskPrompt"><![CDATA[[ProductName] [1]]]></string>
+		<string id="MESSAGEFORM_E"><![CDATA[Formulář faxové zprávy GFI FaxMaker]]></string>
+		<string id="SMTPUSEONLINE"><![CDATA[Použít předávací server GFI FaxMaker Online]]></string>
+		<string id="SMTPUSEOWN"><![CDATA[Použít vlastní poštovní server SMTP]]></string>
+		<string id="TYPEUSEONLINE"><![CDATA[GFI FaxMaker Online (cloud)]]></string>
+		<string id="TYPEUSEONPREM"><![CDATA[GFI FaxMaker Server (místní)]]></string>
+		<string id="USEBOTH"><![CDATA[Použijte Outlook, ale instalujte také GFI FaxMaker New Fax form]]></string>
+		<string id="USEFAXFORM"><![CDATA[Použijte GFI FaxMaker New Fax form (vyžaduje název poštovního serveru a emailovou adresu)]]></string>
+		<string id="USEOUTLOOK"><![CDATA[Použijte formulář Nová zpráva v Outlooku (v případě použití 2000/2003/2007/2010/2013)]]></string>
+		<string id="USEFAXFORM"><![CDATA[Použít formulář faxové zprávy GFI FaxMaker]]></string>
+		<string id="USEOUTLOOK"><![CDATA[Použít Microsoft Outlook (při použití Microsoft Exchange)]]></string>
+		<string id="WiseInitAdminError"><![CDATA[Ke spuštění této instalace musíte mít oprávnění administrátora. Přihlaste se prosím jako administrátor a spusťte instalaci znovu.]]></string>
+		<string id="WiseInitCmdLine"><![CDATA[/L*v faxclient.log /I]]></string>
+		<string id="WiseInitExistError"><![CDATA[%s Verze %s je již nainstalována. Před instalací %s Verze %s musíte odinstalovat existující verzi. Chcete odinstalovat existující verzi %s?]]></string>
+		<string id="WiseInitLangDefault"><![CDATA[English,1033]]></string>
+		<string id="WiseInitPrefix"><![CDATA[Inicializace]]></string>
+		<string id="WiseInitSpaceError"><![CDATA[Nelze vytvořit dočasný soubor, na disku je málo místa pro dočasné soubory. Uvolněte prosím místo na disku a spusťte instalaci znovu.]]></string>
+		<string id="WiseInitSuffix"><![CDATA[Průvodce...]]></string>
+	</table>
+	<table id="ActionText">
+		<record>
+			<field id="Action"><![CDATA[Advertise]]></field>
+			<field id="Description"><![CDATA[Advertising application...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[AllocateRegistrySpace]]></field>
+			<field id="Description"><![CDATA[Allocating registry space...]]></field>
+			<field id="Template"><![CDATA[Free space: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[AppSearch]]></field>
+			<field id="Description"><![CDATA[Searching for installed applications...]]></field>
+			<field id="Template"><![CDATA[Property: [1][WiseCRLF]Signature: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[autoconfigureclientfromfaxserver]]></field>
+			<field id="Description"><![CDATA[Configuring client...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[BindImage]]></field>
+			<field id="Description"><![CDATA[Binding executables...]]></field>
+			<field id="Template"><![CDATA[File: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[ca_deferred_install_printer]]></field>
+			<field id="Description"><![CDATA[Installing printer driver...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[ca_deferred_install_printer_prew2k]]></field>
+			<field id="Description"><![CDATA[Installing printer driver...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CCPSearch]]></field>
+			<field id="Description"><![CDATA[Searching for qualifying products...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CostFinalize]]></field>
+			<field id="Description"><![CDATA[Computing space requirements...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CostInitialize]]></field>
+			<field id="Description"><![CDATA[Computing space requirements...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CreateFolders]]></field>
+			<field id="Description"><![CDATA[Creating folders...]]></field>
+			<field id="Template"><![CDATA[Folder: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CreateShortcuts]]></field>
+			<field id="Description"><![CDATA[Creating shortcuts...]]></field>
+			<field id="Template"><![CDATA[Shortcut: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[DeleteServices]]></field>
+			<field id="Description"><![CDATA[Deleting services...]]></field>
+			<field id="Template"><![CDATA[Service: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[DuplicateFiles]]></field>
+			<field id="Description"><![CDATA[Creating duplicate files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9][WiseCRLF]Size: [6]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[FileCost]]></field>
+			<field id="Description"><![CDATA[Computing space requirements...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[GenerateScript]]></field>
+			<field id="Description"><![CDATA[Generating script operations for action:]]></field>
+			<field id="Template"><![CDATA[[1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[install_printer]]></field>
+			<field id="Description"><![CDATA[Installing printer driver...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallAdminPackage]]></field>
+			<field id="Description"><![CDATA[Copying network install files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9][WiseCRLF]Size: [6]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallFiles]]></field>
+			<field id="Description"><![CDATA[Copying new files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9][WiseCRLF]Size: [6]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallODBC]]></field>
+			<field id="Description"><![CDATA[Installing ODBC components...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallServices]]></field>
+			<field id="Description"><![CDATA[Installing new services...]]></field>
+			<field id="Template"><![CDATA[Service: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallValidate]]></field>
+			<field id="Description"><![CDATA[Validating install...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[LaunchConditions]]></field>
+			<field id="Description"><![CDATA[Evaluating launch conditions...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[MoveFiles]]></field>
+			<field id="Description"><![CDATA[Moving files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9][WiseCRLF]Size: [6]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[PatchFiles]]></field>
+			<field id="Description"><![CDATA[Patching files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [2][WiseCRLF]Size: [3]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[ProcessComponents]]></field>
+			<field id="Description"><![CDATA[Updating component registration...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[PublishComponents]]></field>
+			<field id="Description"><![CDATA[Publishing qualified components...]]></field>
+			<field id="Template"><![CDATA[Component ID: [1][WiseCRLF]Qualifier: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[PublishFeatures]]></field>
+			<field id="Description"><![CDATA[Publishing product features...]]></field>
+			<field id="Template"><![CDATA[Feature: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[PublishProduct]]></field>
+			<field id="Description"><![CDATA[Publishing product information...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterClassInfo]]></field>
+			<field id="Description"><![CDATA[Registering class servers...]]></field>
+			<field id="Template"><![CDATA[Class Id: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterExtensionInfo]]></field>
+			<field id="Description"><![CDATA[Registering extension servers...]]></field>
+			<field id="Template"><![CDATA[Extension: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterFonts]]></field>
+			<field id="Description"><![CDATA[Registering fonts...]]></field>
+			<field id="Template"><![CDATA[Font: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterMIMEInfo]]></field>
+			<field id="Description"><![CDATA[Registering MIME information...]]></field>
+			<field id="Template"><![CDATA[MIME Content Type: [1][WiseCRLF]Extension: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterProduct]]></field>
+			<field id="Description"><![CDATA[Registering product...]]></field>
+			<field id="Template"><![CDATA[[1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterProgIdInfo]]></field>
+			<field id="Description"><![CDATA[Unregistering program identifiers...]]></field>
+			<field id="Template"><![CDATA[ProgId: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterTypeLibraries]]></field>
+			<field id="Description"><![CDATA[Registering type libraries...]]></field>
+			<field id="Template"><![CDATA[LibID: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterUser]]></field>
+			<field id="Description"><![CDATA[Registering user...]]></field>
+			<field id="Template"><![CDATA[[1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveDuplicateFiles]]></field>
+			<field id="Description"><![CDATA[Removing duplicated files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveEnvironmentStrings]]></field>
+			<field id="Description"><![CDATA[Updating environment strings...]]></field>
+			<field id="Template"><![CDATA[Name: [1][WiseCRLF]Value: [2][WiseCRLF]Action [3]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveFiles]]></field>
+			<field id="Description"><![CDATA[Removing files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveFolders]]></field>
+			<field id="Description"><![CDATA[Removing folders...]]></field>
+			<field id="Template"><![CDATA[Folder: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveIniValues]]></field>
+			<field id="Description"><![CDATA[Removing INI file entries...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Section: [2][WiseCRLF]Key: [3], Value: [4]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveODBC]]></field>
+			<field id="Description"><![CDATA[Removing ODBC components...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveRegistryValues]]></field>
+			<field id="Description"><![CDATA[Removing system registry values...]]></field>
+			<field id="Template"><![CDATA[Key: [1][WiseCRLF]Name: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveShortcuts]]></field>
+			<field id="Description"><![CDATA[Removing shortcuts...]]></field>
+			<field id="Template"><![CDATA[Shortcut: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RMCCPSearch]]></field>
+			<field id="Description"><![CDATA[Searching for qualifying products...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[Rollback]]></field>
+			<field id="Description"><![CDATA[Rolling back action:]]></field>
+			<field id="Template"><![CDATA[[1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RollbackCleanup]]></field>
+			<field id="Description"><![CDATA[Removing backup files...]]></field>
+			<field id="Template"><![CDATA[File: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[SelfRegModules]]></field>
+			<field id="Description"><![CDATA[Registering modules...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Folder: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[SelfUnregModules]]></field>
+			<field id="Description"><![CDATA[Unregistering modules...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Folder: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[SetODBCFolders]]></field>
+			<field id="Description"><![CDATA[Initializing ODBC directories...]]></field>
+			<field id="Template"><![CDATA[ODBC Driver [1] forcing folder [2] to [3]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[SetSecurityPermissions]]></field>
+			<field id="Description"><![CDATA[Setting permissions...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[StartServices]]></field>
+			<field id="Description"><![CDATA[Starting services...]]></field>
+			<field id="Template"><![CDATA[Service: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[StopServices]]></field>
+			<field id="Description"><![CDATA[Stopping services...]]></field>
+			<field id="Template"><![CDATA[Service: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[uninstall_printer]]></field>
+			<field id="Description"><![CDATA[Calling uninstall_printer_CA]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnmoveFiles]]></field>
+			<field id="Description"><![CDATA[Removing moved files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnpublishComponents]]></field>
+			<field id="Description"><![CDATA[Unpublishing qualified components...]]></field>
+			<field id="Template"><![CDATA[Component ID: [1][WiseCRLF]Qualifier: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnpublishFeatures]]></field>
+			<field id="Description"><![CDATA[Unpublishing product features...]]></field>
+			<field id="Template"><![CDATA[Feature: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnpublishProduct]]></field>
+			<field id="Description"><![CDATA[Unpublishing product information...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterClassInfo]]></field>
+			<field id="Description"><![CDATA[Unregister class servers...]]></field>
+			<field id="Template"><![CDATA[Class Id: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterExtensionInfo]]></field>
+			<field id="Description"><![CDATA[Unregistering extension servers...]]></field>
+			<field id="Template"><![CDATA[Extension: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterFonts]]></field>
+			<field id="Description"><![CDATA[Unregistering fonts...]]></field>
+			<field id="Template"><![CDATA[Font: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterMIMEInfo]]></field>
+			<field id="Description"><![CDATA[Unregistering MIME information...]]></field>
+			<field id="Template"><![CDATA[MIME Content Type: [1][WiseCRLF]Extension: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterProgIdInfo]]></field>
+			<field id="Description"><![CDATA[Unregistering program identifiers...]]></field>
+			<field id="Template"><![CDATA[ProgId: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterTypeLibraries]]></field>
+			<field id="Description"><![CDATA[Unregistering type libraries...]]></field>
+			<field id="Template"><![CDATA[LibID: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[WriteEnvironmentStrings]]></field>
+			<field id="Description"><![CDATA[Updating environment strings...]]></field>
+			<field id="Template"><![CDATA[Name: [1][WiseCRLF]Value: [2][WiseCRLF]Action [3]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[WriteIniValues]]></field>
+			<field id="Description"><![CDATA[Writing INI file values...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Section: [2][WiseCRLF]Key: [3], Value: [4]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[WriteRegistryValues]]></field>
+			<field id="Description"><![CDATA[Writing system registry values...]]></field>
+			<field id="Template"><![CDATA[Key: [1][WiseCRLF]Name: [2][WiseCRLF]Value: [3]]]></field>
+		</record>
+	</table>
+	<table id="Error">
+		<string id="0"><![CDATA[{{Závažná chyba: }}]]></string>
+		<string id="1"><![CDATA[Chyba [1]. ]]></string>
+		<string id="2"><![CDATA[Upozornění [1]. ]]></string>
+		<string id="4"><![CDATA[Info [1]. ]]></string>
+		<string id="5"><![CDATA[Vnitřní chyba [1]. [2]{, [3]}{, [4]}]]></string>
+		<string id="7"><![CDATA[{{Disk je plný: }}]]></string>
+		<string id="8"><![CDATA[Akce [Čas]: [1]. [2]]]></string>
+		<string id="9"><![CDATA[[ProductName]]]></string>
+		<string id="10"><![CDATA[{[2]}{, [3]}{, [4]}]]></string>
+		<string id="11"><![CDATA[Typ zprávy: [1], Argument: [2]]]></string>
+		<string id="12"><![CDATA[=== Zapisování zahájeno: [Datum]  [Čas] ===]]></string>
+		<string id="13"><![CDATA[=== Zapisování zastaveno: [Datum]  [Čas] ===]]></string>
+		<string id="14"><![CDATA[Začátek akce [Čas]: [1].]]></string>
+		<string id="15"><![CDATA[Akce ukončena [Čas]: [1]. Vrácená hodnota [2].]]></string>
+		<string id="16"><![CDATA[Zbývající čas: {[1] minut }{[2] sekund}]]></string>
+		<string id="17"><![CDATA[Málo paměti. Před dalším pokusem ukončete ostatní aplikace.]]></string>
+		<string id="18"><![CDATA[Instalátor Windows neodpovídá.]]></string>
+		<string id="19"><![CDATA[Instalace byla předčasně ukončena.]]></string>
+		<string id="20"><![CDATA[Vyčkejte prosím, zatímco Windows konfiguruje [ProductName]]]></string>
+		<string id="21"><![CDATA[Shromažďování požadovaných informací...]]></string>
+		<string id="32"><![CDATA[Instalace {[ProductName] } byla úspěšně dokončena.]]></string>
+		<string id="33"><![CDATA[Instalace {[ProductName] } se nepodařila.]]></string>
+		<string id="1101"><![CDATA[Chyba při čtení ze souboru: [2]. {{ Systémová chyba [3].}}  Zkontrolujte, zda soubor existuje a zda k němu máte přístup.]]></string>
+		<string id="1301"><![CDATA[Nelze vytvořit soubor '[3]'.  Složka s tímto názvem již existuje.  Zrušte instalaci a zkuste instalovat na jiné místo.]]></string>
+		<string id="1302"><![CDATA[Prosím vložte disk: [2]]]></string>
+		<string id="1303"><![CDATA[Instalace nemá dostatečná oprávnění pro přístup k této složce: [2].  Instalace nemůže pokračovat.  Přihlaste se jako administrátor nebo kontaktujte svého administrátora systému.]]></string>
+		<string id="1304"><![CDATA[Chyba při zápisu do souboru: [2].  Zkontrolujte, zda máte přístup do této složky.]]></string>
+		<string id="1305"><![CDATA[Chyba při čtení ze souboru: [2].  Zkontrolujte, zda soubor existuje a zda k němu máte přístup.]]></string>
+		<string id="1306"><![CDATA[Jiná aplikace má výhradní přístup k souboru '[2]'.  Ukončete prosím všechny ostatní aplikace a stiskněte Zkusit znovu.]]></string>
+		<string id="1307"><![CDATA[Málo místa na disku pro instalaci tohoto souboru: [2].  Uvolněte prostor na disku a stiskněte Zkusit znovu, nebo stiskem Storno akci zrušte.]]></string>
+		<string id="1308"><![CDATA[Zdrojový soubor nebyl nalezen: [2].  Zkontrolujte, zda soubor existuje a zda k němu máte přístup.]]></string>
+		<string id="1309"><![CDATA[Chyba při čtení ze souboru: [3]. {{ Systémová chyba [2].}}  Zkontrolujte, zda soubor existuje a zda k němu máte přístup.]]></string>
+		<string id="1310"><![CDATA[Chyba při zápisu do souboru: [3]. {{ Systémová chyba [2].}}  Zkontrolujte, zda máte přístup do této složky.]]></string>
+		<string id="1311"><![CDATA[Zdrojový soubor nebyl nalezen{{(cabinet)}}: [2].  Zkontrolujte, zda soubor existuje a zda k němu máte přístup.]]></string>
+		<string id="1312"><![CDATA[Nelze vytvořit adresář '[2]'.  Soubor s tímto názvem již existuje.  Přejmenujte nebo odstraňte soubor a stiskněte Zkusit znovu, nebo stiskem Storno akci zrušte.]]></string>
+		<string id="1313"><![CDATA[Svazek [2] je momentálně nedostupný.  Vyberte prosím jiný.]]></string>
+		<string id="1314"><![CDATA[Zadaná cesta '[2]' není dostupná.]]></string>
+		<string id="1315"><![CDATA[Nelze zapisovat do zadané složky: [2].]]></string>
+		<string id="1316"><![CDATA[Při pokusu o čtení ze souboru vznikla síťová chyba: [2]]]></string>
+		<string id="1317"><![CDATA[Při pokusu o vytvoření adresáře se vyskytla chyba: [2]]]></string>
+		<string id="1318"><![CDATA[Při pokusu o vytvoření adresáře se vyskytla síťová chyba: [2]]]></string>
+		<string id="1319"><![CDATA[Při pokusu otevření zdrojového souboru se vyskytla síťová chyba: [2]]]></string>
+		<string id="1320"><![CDATA[Zadaná cesta je příliš dlouhá: [2]]]></string>
+		<string id="1321"><![CDATA[Instalátor Windows má nedostatečná oprávnění ke změně tohoto souboru: [2].]]></string>
+		<string id="1322"><![CDATA[Část cesty ke složce '[2]' přesahuje délku povolenou systémem.]]></string>
+		<string id="1323"><![CDATA[Cesta ke složce '[2]' obsahuje slova, která nelze v cestě použít.]]></string>
+		<string id="1324"><![CDATA[Cesta ke složce '[2]' obsahuje neplatný znak.]]></string>
+		<string id="1325"><![CDATA['[2]' není platný název souboru.]]></string>
+		<string id="1326"><![CDATA[Chyba při získávání zabezpečení souboru: [3] GetLastError: [2]]]></string>
+		<string id="1327"><![CDATA[Neplatný disk: [2]]]></string>
+		<string id="1401"><![CDATA[Nelze vytvořit klíč: [2]. {{ Systémová chyba [3].}}  Zkontrolujte, zda máte dostatečný přístup k tomuto klíči, nebo kontaktujte pověřený personál. ]]></string>
+		<string id="1402"><![CDATA[Nelze otevřít klíč: [2]. {{ Systémová chyba [3].}}  Zkontrolujte, zda máte dostatečný přístup k tomuto klíči, nebo kontaktujte pověřený personál. ]]></string>
+		<string id="1403"><![CDATA[Nelze vymazat hodnotu [2] z klíče [3]. {{ Systémová chyba [4].}}  Zkontrolujte, zda máte dostatečný přístup k tomuto klíči, nebo kontaktujte pověřený personál. ]]></string>
+		<string id="1404"><![CDATA[Nelze vymazat klíč [2]. {{ Systémová chyba [3].}}  Zkontrolujte, zda máte dostatečný přístup k tomuto klíči, nebo kontaktujte pověřený personál. ]]></string>
+		<string id="1405"><![CDATA[Nelze přečíst hodnotu [2] z klíče [3]. {{ Systémová chyba [4].}}  Zkontrolujte, zda máte dostatečný přístup k tomuto klíči, nebo kontaktujte pověřený personál. ]]></string>
+		<string id="1406"><![CDATA[Nelze zapsat hodnotu [2] do klíče [3]. {{ Systémová chyba [4].}}  Zkontrolujte, zda máte dostatečný přístup k tomuto klíči, nebo kontaktujte pověřený personál.]]></string>
+		<string id="1407"><![CDATA[Nelze získat názvy hodnot pro klíč [2]. {{ Systémová chyba [3].}}  Zkontrolujte, zda máte dostatečný přístup k tomuto klíči, nebo kontaktujte pověřený personál.]]></string>
+		<string id="1408"><![CDATA[Nelze získat názvy podklíčů pro klíč [2]. {{ Systémová chyba [3].}}  Zkontrolujte, zda máte dostatečný přístup k tomuto klíči, nebo kontaktujte pověřený personál.]]></string>
+		<string id="1409"><![CDATA[Nelze přečíst bezpečnostní informace pro klíč [2]. {{ Systémová chyba [3].}}  Zkontrolujte, zda máte dostatečný přístup k tomuto klíči, nebo kontaktujte pověřený personál.]]></string>
+		<string id="1410"><![CDATA[Nelze navýšit dostupný prostor v registru. Pro instalaci této aplikace je zapotřebí [2] kB volného prostoru v registru.]]></string>
+		<string id="1500"><![CDATA[Právě je spuštěna jiná instalace. Před pokračováním této instalace musíte dokončit spuštěnou instalaci.]]></string>
+		<string id="1501"><![CDATA[Chyba při přístupu k zabezpečeným datům. Zkontrolujte, zda je Instalátor Windows správně nakonfigurován, a zkuste instalaci znovu.]]></string>
+		<string id="1502"><![CDATA[Uživatel '[2]' již dříve spustil instalaci produktu '[3]'.  Tento uživatel bude muset spustit instalaci znovu, aby mohl produkt používat.  Vaše aktuální instalace bude nyní pokračovat.]]></string>
+		<string id="1503"><![CDATA[Uživatel '[2]' již dříve spustil instalaci produktu '[3]'.  Tento uživatel bude muset spustit instalaci znovu, aby mohl produkt používat.]]></string>
+		<string id="1601"><![CDATA[Málo místa na disku -- svazek: '[2]'; požadované místo na disku: [3] kB; volné místo na disku: [4] kB.  Uvolněte místo na disku a zkuste znovu.]]></string>
+		<string id="1602"><![CDATA[Opravdu chcete akci zrušit?]]></string>
+		<string id="1603"><![CDATA[Soubor [2][3] je právě používán{ následujícím procesem: Název: [4], ID: [5], Nadpis okna: '[6]'}.  Ukončete aplikaci a zkuste znovu.]]></string>
+		<string id="1604"><![CDATA[Je již nainstalován produkt '[2]', což znemožňuje instalaci tohoto produktu.  Tyto dva produkty nejsou kompatibilní.]]></string>
+		<string id="1605"><![CDATA[Málo místa na disku -- svazek: '[2]'; požadované místo na disku: [3] kB; volné místo na disku: [4] kB.  Není-li návrat zpět aktivní, je k dispozici dostatek místa. Stiskem 'Storno' odejdete, stiskem 'Zkusit znovu' zkontrolujete znovu dostupné místo na disku a stiskem 'Ignorovat' pokračujete bez návratu zpět.]]></string>
+		<string id="1606"><![CDATA[Není přístup na síťové místo [2].]]></string>
+		<string id="1607"><![CDATA[Před pokračováním instalace ukončete následující aplikace:]]></string>
+		<string id="1608"><![CDATA[Na tomto počítači nelze nalézt žádné nainstalované vyhovující produkty potřebné pro instalaci tohoto produktu.]]></string>
+		<string id="1701"><![CDATA[Klíč [2] není platný.  Zkontrolujte, zda jste zadali správný klíč.]]></string>
+		<string id="1702"><![CDATA[Instalátor Windows musí restartovat systém, aby mohla konfigurace [2] pokračovat.  Stiskněte Ano pro okamžitý restart, Ne pro pozdější ruční restart.]]></string>
+		<string id="1703"><![CDATA[Aby se změny v konfiguraci [2] projevily, musíte restartovat systém. Stiskněte Ano pro okamžitý restart, Ne pro pozdější ruční restart.]]></string>
+		<string id="1704"><![CDATA[Instalace produktu [2] je momentálně pozastavena.  Chcete-li pokračovat, musíte vrátit změny provedené touto instalací.  Chcete vrátit tyto změny?]]></string>
+		<string id="1705"><![CDATA[Již běží předchozí instalace tohoto produktu.  Chcete-li pokračovat, musíte vrátit změny provedené touto instalací.  Chcete vrátit tyto změny?]]></string>
+		<string id="1706"><![CDATA[Pro produkt [2] nelze nalézt žádný platný zdroj.  Instalátor Windows nemůže pokračovat.]]></string>
+		<string id="1707"><![CDATA[Instalace byla úspěšně dokončena.]]></string>
+		<string id="1708"><![CDATA[Instalace selhala.]]></string>
+		<string id="1709"><![CDATA[Produkt: [2] -- [3]]]></string>
+		<string id="1710"><![CDATA[Počítač můžete vrátit do původního stavu nebo pokračovat v instalaci později. Chcete vrátit do původního stavu?]]></string>
+		<string id="1711"><![CDATA[Při zápisu informací na disk se vyskytla chyba.  Zkontrolujte, zda je k dispozici dostatek místa na disku, a klepněte na Zkusit znovu, nebo instalaci ukončete klepnutím na Storno.]]></string>
+		<string id="1712"><![CDATA[Jeden nebo více souborů potřebných pro vrácení počítače do původního stavu nelze nalézt.  Návrat nebude možný.]]></string>
+		<string id="1801"><![CDATA[Cesta [2] není platná.  Zadejte prosím platnou cestu.]]></string>
+		<string id="1802"><![CDATA[Málo paměti. Před dalším pokusem ukončete ostatní aplikace.]]></string>
+		<string id="1803"><![CDATA[V mechanice [2] není žádný disk. Vložte disk a stiskněte Zkusit znovu, nebo se stiskem Storno vraťte k původně vybranému svazku.]]></string>
+		<string id="1804"><![CDATA[V mechanice [2] není žádný disk. Vložte disk a stiskněte Zkusit znovu, nebo se stiskem Storno vraťte do okna pro procházení a vyberte jiný svazek.]]></string>
+		<string id="1805"><![CDATA[Složka [2] neexistuje.  Zadejte cestu k existující složce.]]></string>
+		<string id="1806"><![CDATA[Nemáte dostatečná oprávnění ke čtení z této složky.]]></string>
+		<string id="1807"><![CDATA[Nelze zjistit platnou cílovou složku pro instalaci.]]></string>
+		<string id="1901"><![CDATA[Chyba při pokusu o čtení ze zdrojové databáze instalace: [2].]]></string>
+		<string id="1902"><![CDATA[Navrhování restartovací operace: Přejmenovávám soubor [2] na [3]. Pro dokončení operace restartujte počítač.]]></string>
+		<string id="1903"><![CDATA[Navrhování restartovací operace: Odstraňuji soubor [2]. Pro dokončení operace restartujte počítač.]]></string>
+		<string id="1904"><![CDATA[Modul [2] se nepodařilo zaregistrovat.  HRESULT [3].  Kontaktujte pověřený personál.]]></string>
+		<string id="1905"><![CDATA[Modul [2] se nepodařilo odregistrovat.  HRESULT [3].  Kontaktujte pověřený personál.]]></string>
+		<string id="1906"><![CDATA[Nepodařilo se zapsat svazek [2] do vyrovnávací paměti. Chyba: [3]. Kontaktujte pověřený personál.]]></string>
+		<string id="1907"><![CDATA[Nelze zaregistrovat písmo [2].  Zkontrolujte, zda máte dostatečná oprávnění pro instalaci písem a že váš systém toto písmo podporuje.]]></string>
+		<string id="1908"><![CDATA[Nelze odregistrovat písmo [2]. Zkontrolujte, zda máte dostatečná oprávnění pro odstraňování písem.]]></string>
+		<string id="1909"><![CDATA[Nelze vytvořit zástupce [2]. Zkontrolujte, zda cílová složka existuje a zda k ní máte přístup.]]></string>
+		<string id="1910"><![CDATA[Nelze odstranit zástupce [2]. Zkontrolujte, zda soubor zástupce existuje a zda k němu máte přístup.]]></string>
+		<string id="1911"><![CDATA[Nelze zaregistrovat knihovnu typů pro soubor [2].  Kontaktujte pověřený personál.]]></string>
+		<string id="1912"><![CDATA[Nelze odregistrovat knihovnu typů pro soubor [2].  Kontaktujte pověřený personál.]]></string>
+		<string id="1913"><![CDATA[Nelze aktualizovat soubor .INI [2][3].  Zkontrolujte, zda soubor existuje a zda k němu máte přístup.]]></string>
+		<string id="1914"><![CDATA[Nelze naplánovat nahrazení souboru [3] souborem [2] při restartu.  Zkontrolujte, zda máte oprávnění zapisovat do souboru [3].]]></string>
+		<string id="1915"><![CDATA[Chyba při odstraňování manažera ovladačů ODBC, chyba ODBC [2]: [3]. Kontaktujte pověřený personál.]]></string>
+		<string id="1916"><![CDATA[Chyba při instalaci manažera ovladačů ODBC, chyba ODBC [2]: [3]. Kontaktujte pověřený personál.]]></string>
+		<string id="1917"><![CDATA[Chyba při odstraňování ovladače ODBC: [4], chyba ODBC [2]: [3]. Zkontrolujte, zda máte dostatečná oprávnění pro odstraňování ovladačů ODBC.]]></string>
+		<string id="1918"><![CDATA[Chyba při instalaci ovladače ODBC: [4], chyba ODBC [2]: [3]. Zkontrolujte, zda soubor [4] existuje a zda k němu máte přístup.]]></string>
+		<string id="1919"><![CDATA[Chyba při konfiguraci zdroje dat ODBC: [4], chyba ODBC [2]: [3]. Zkontrolujte, zda soubor [4] existuje a zda k němu máte přístup.]]></string>
+		<string id="1920"><![CDATA[Službu '[2]' ([3]) se nepodařilo spustit.  Zkontrolujte, zda máte dostatečná oprávnění pro spouštění systémových služeb.]]></string>
+		<string id="1921"><![CDATA[Službu '[2]' ([3]) se nepodařilo zastavit.  Zkontrolujte, zda máte dostatečná oprávnění pro zastavování systémových služeb.]]></string>
+		<string id="1922"><![CDATA[Službu '[2]' ([3]) se nepodařilo odstranit.  Zkontrolujte, zda máte dostatečná oprávnění pro odstraňování systémových služeb.]]></string>
+		<string id="1923"><![CDATA[Službu '[2]' ([3]) se nepodařilo instalovat.  Zkontrolujte, zda máte dostatečná oprávnění pro instalaci systémových služeb.]]></string>
+		<string id="1924"><![CDATA[Nelze aktualizovat proměnnou prostředí '[2]'.  Zkontrolujte, zda máte dostatečná oprávnění pro změnu proměnných prostředí.]]></string>
+		<string id="1925"><![CDATA[Nemáte dostatečná oprávnění pro dokončení této instalace pro všechny uživatele na tomto počítači.  Přihlaste se prosím jako administrátor a zkuste instalaci znovu.]]></string>
+		<string id="1926"><![CDATA[Nelze nastavit zabezpečení pro soubor '[3]'. Chyba: [2].  Zkontrolujte, zda máte dostatečná oprávnění pro změnu bezpečnostních povolení pro tento soubor.]]></string>
+	</table>
+	<table id="UIText">
+		<string id="bytes"><![CDATA[bytes]]></string>
+		<string id="GB"><![CDATA[GB]]></string>
+		<string id="KB"><![CDATA[KB]]></string>
+		<string id="MB"><![CDATA[MB]]></string>
+		<string id="MenuAbsent"><![CDATA[Entire feature will be unavailable.]]></string>
+		<string id="MenuAdvertise"><![CDATA[Feature will be installed when required.]]></string>
+		<string id="MenuAllCD"><![CDATA[Entire feature will be installed to run from CD.]]></string>
+		<string id="MenuAllLocal"><![CDATA[Entire feature will be installed on local hard drive.]]></string>
+		<string id="MenuAllNetwork"><![CDATA[Entire feature will be installed to run from network.]]></string>
+		<string id="MenuCD"><![CDATA[Will be installed to run from CD.]]></string>
+		<string id="MenuLocal"><![CDATA[Will be installed on local hard drive.]]></string>
+		<string id="MenuNetwork"><![CDATA[Will be installed to run from network.]]></string>
+		<string id="NewFolder"><![CDATA[Složka|Nová složka]]></string>
+		<string id="ScriptInProgress"><![CDATA[Shromažďování požadovaných informací...]]></string>
+		<string id="SelAbsentAbsent"><![CDATA[This feature will remain uninstalled.]]></string>
+		<string id="SelAbsentAdvertise"><![CDATA[This feature will be set to be installed when required.]]></string>
+		<string id="SelAbsentCD"><![CDATA[This feature will be installed to run from CD.]]></string>
+		<string id="SelAbsentLocal"><![CDATA[This feature will be installed on the local hard drive.]]></string>
+		<string id="SelAbsentNetwork"><![CDATA[This feature will be installed to run from the network.]]></string>
+		<string id="SelAdvertiseAbsent"><![CDATA[This feature will become unavailable.]]></string>
+		<string id="SelAdvertiseAdvertise"><![CDATA[Will be installed when required.]]></string>
+		<string id="SelAdvertiseCD"><![CDATA[This feature will be available to run from CD.]]></string>
+		<string id="SelAdvertiseLocal"><![CDATA[This feature will be installed on your local hard drive.]]></string>
+		<string id="SelAdvertiseNetwork"><![CDATA[This feature will be available to run from the network.]]></string>
+		<string id="SelCDAbsent"><![CDATA[This feature will be uninstalled completely, you won't be able to run it from CD.]]></string>
+		<string id="SelCDAdvertise"><![CDATA[This feature will change from run from CD state to set to be installed when required.]]></string>
+		<string id="SelCDCD"><![CDATA[This feature will remain to be run from CD.]]></string>
+		<string id="SelCDLocal"><![CDATA[This feature will change from run from CD state to be installed on the local hard drive.]]></string>
+		<string id="SelChildCostNeg"><![CDATA[This feature frees up [1] on your hard drive.]]></string>
+		<string id="SelChildCostPos"><![CDATA[This feature requires [1] on your hard drive.]]></string>
+		<string id="SelCostPending"><![CDATA[Compiling cost for this feature...]]></string>
+		<string id="SelLocalAbsent"><![CDATA[This feature will be completely removed.]]></string>
+		<string id="SelLocalAdvertise"><![CDATA[This feature will be removed from your local hard drive, but will be set to be installed when required.]]></string>
+		<string id="SelLocalCD"><![CDATA[This feature will be removed from your local hard drive, but still will be available to run from CD.]]></string>
+		<string id="SelLocalLocal"><![CDATA[This feature will remain on your local hard drive.]]></string>
+		<string id="SelLocalNetwork"><![CDATA[This feature will be removed from your local hard drive, but still will be available to run from the network.]]></string>
+		<string id="SelNetworkAbsent"><![CDATA[This feature will be uninstalled completely, you won't be able to run it from the network.]]></string>
+		<string id="SelNetworkAdvertise"><![CDATA[This feature will change from run from network state to set to be installed when required.]]></string>
+		<string id="SelNetworkLocal"><![CDATA[This feature will change from run from network state to be installed on the local hard drive.]]></string>
+		<string id="SelNetworkNetwork"><![CDATA[This feature will remain to be run from the network.]]></string>
+		<string id="SelParentCostNegNeg"><![CDATA[This feature frees up [1] on your hard drive. It has [2] of [3] subfeatures selected. The subfeatures free up [4] on your hard drive.]]></string>
+		<string id="SelParentCostNegPos"><![CDATA[This feature frees up [1] on your hard drive. It has [2] of [3] subfeatures selected. The subfeatures require [4] on your hard drive.]]></string>
+		<string id="SelParentCostPosNeg"><![CDATA[This feature requires [1] on your hard drive. It has [2] of [3] subfeatures selected. The subfeatures free up [4] on your hard drive.]]></string>
+		<string id="SelParentCostPosPos"><![CDATA[This feature requires [1] on your hard drive. It has [2] of [3] subfeatures selected. The subfeatures require [4] on your hard drive.]]></string>
+		<string id="TimeRemaining"><![CDATA[Zbývající čas: {[1] minut }{[2] sekund}]]></string>
+		<string id="VolumeCostAvailable"><![CDATA[Available]]></string>
+		<string id="VolumeCostDifference"><![CDATA[Difference]]></string>
+		<string id="VolumeCostRequired"><![CDATA[Required]]></string>
+		<string id="VolumeCostSize"><![CDATA[Disk Size]]></string>
+		<string id="VolumeCostVolume"><![CDATA[Volume]]></string>
+	</table>
+	<table id="Shortcutname">
+		<string id="FAXmaker_Fax_Message_Form"><![CDATA[FAXMAK~1|Formulář Faxová zpráva GFI FaxMaker]]></string>
+		<string id="FAXMaker_Help"><![CDATA[FAXMAK~1|Nápověda GFI FaxMaker]]></string>
+		<string id="FAXmaker_SMS_Message_Form"><![CDATA[FAXMAK~1|Formulář SMS zprávy GFI FaxMaker]]></string>
+		<string id="FAXMaker_Viewer"><![CDATA[FAXMAK~1|Prohlížeč GFI FaxMaker]]></string>
+	</table>
+	<table id="Shortcutdescription">
+		<string id="FAXmaker_Fax_Message_Form"><![CDATA[Formulář faxové zprávy GFI FaxMaker]]></string>
+		<string id="FAXMaker_Help"><![CDATA[Nápověda pro GFI FaxMaker]]></string>
+		<string id="FAXmaker_SMS_Message_Form"><![CDATA[Formulář Zpráva SMS GFI FaxMaker]]></string>
+		<string id="FAXMaker_Viewer"><![CDATA[Prohlížeč GFI FaxMaker]]></string>
+	</table>
+</setupstrings>

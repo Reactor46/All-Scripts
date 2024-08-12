@@ -1,0 +1,12 @@
+psloggedon -l \\DPC-16941
+psloggedon -l \\DPC-17138
+psloggedon -l \\DPC-18799
+psloggedon -l \\DPC-17029
+psloggedon -l \\DPC-18203
+psloggedon -l \\DPC-17643
+psloggedon -l \\DPC-20335
+psloggedon -l \\DPC-17135
+psloggedon -l \\DPC-17619
+psloggedon -l \\DPC-16417
+psloggedon -l \\DPC-17779
+psloggedon -l \\DPC-17143

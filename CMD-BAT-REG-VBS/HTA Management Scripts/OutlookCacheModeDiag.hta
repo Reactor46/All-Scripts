@@ -1,0 +1,350 @@
+
+<html>
+<head>
+<Title>Outlook Cache Mode Diagnostics</Title>
+<HTA:APPLICATION 
+	APPLICATIONNAME="Outlook Cache Mode Diagnostics"
+	ID="CacheModeDiag"
+	BORDER="thin"
+	BORDERSTYLE="normal"
+	CAPTION="yes"
+	INNERBORDER="yes"
+	MAXIMIZEBUTTON="no"
+	MINIMIZEBUTTON="yes"
+	NAVIGABLE="yes"
+	ICON="c:\Program Files\Microsoft Office\Office12\OUTLOOK.EXE"
+	SCROLL="no"
+	SELECTION="no"
+	SYSMENU="yes"
+    SINGLEINSTANCE="yes"
+>
+<style type="text/css">
+<!--
+BODY {
+	xfont-family: "Verdana,Arial, Helvetica, sans-serif";
+	font:menu;
+	background-color:Menu;
+	color:MenuText;
+	xfont-size:8pt;
+}
+TABLE{
+	direction:LTR;
+	border-collapse:collapse;
+	border-width: 0px;
+	font-family: Calibri;
+	xfont-family:"Arial";
+	xfont-size:8pt;
+}
+td{
+	direction: LTR;
+	font-family: Calibri;
+}
+H1{
+	font-family: Calibri;
+	}
+-->
+</style>
+<Script Language="VBScript">
+'=*=*=*=*=*=*=*=*=*=*=*=*==*=*==*=*==*=
+' Created by Assaf Miron
+' Http://assaf.miron.googlepages.com
+' Date : 15/7/2008
+' Outlook Cache Mode Diag.hta
+'=*=*=*=*=*=*=*=*=*=*=*=*==*=*==*=*==*=
+' Using some of the Functions from the script
+' CachedExchange.vbs - by Bill Stewart (bill.stewart@frenchmortuary.com)
+' Give a nice and clear view on remote computers cache mode
+' Outlook Cache Mode Diagnostics
+Dim g_objReg
+Dim strVersion,strDefProfile
+Dim lngRC,lngMode
+Dim arrConfig,arrProfiles
+Dim strComputer
+
+' StdRegProv constants
+Const HKEY_CLASSES_ROOT = &H80000000
+Const HKEY_LOCAL_MACHINE = &H80000002
+Const HKEY_CURRENT_USER = &H80000001
+Const REG_SZ            = 1
+Const REG_EXPAND_SZ     = 2
+Const REG_BINARY        = 3
+Const REG_DWORD         = 4
+Const REG_MULTI_SZ      = 7
+
+' Registry constants
+Const CLASSID_SUBKEY = "CLSID\{0006F03A-0000-0000-C000-000000000046}\LocalServer32"
+Const PROFILE_SUBKEY = "Software\Microsoft\Windows NT\CurrentVersion\Windows Messaging Subsystem\Profiles"
+Const EXCHCFG_SUBKEY = "13dbb0c8aa05101a9bb000aa002fc45a"
+Const EXCHCFG_VALUE  = "00036601"
+Const EXCHHEBCFG_VALUE = "000366a1"
+Const EXCHHEB_DW = "1037" 'Hebrew
+
+' "Inline if": If blnTest is True, return vntTrue; otherwise, return vntFalse.
+Function IIf(ByVal blnTest, vntTrue, vntFalse)
+  If blnTest Then IIf = vntTrue Else IIf = vntFalse
+End Function
+
+' Wrapper for the StdRegProv class Get<xxx>Value methods. With this function,
+' the calling code doesn't need to know the registry data type beforehand. The
+' lngHive, strSubKey, and strValueName parameters are input parameters that
+' specify the data to retrieve, and lngValueType and vntValueData are output
+' parameters that will contain the retrieved value type and data. Returns 0 for
+' success, or non-zero failure.
+Function ReadValue(ByVal lngHive, ByVal strSubKey, ByVal strValueName, ByRef lngValueType, ByRef vntValueData)
+  Dim lngRC, arrNames, arrTypes, lngN
+
+  lngValueType = 0
+  vntValueData = Null
+  lngRC = g_objReg.EnumValues(lngHive, strSubKey, arrNames, arrTypes)
+  If lngRC = 0 Then
+    For lngN = 0 To UBound(arrNames)
+      If LCase(arrNames(lngN)) = LCase(strValueName) Then
+        Select Case arrTypes(lngN)
+          Case REG_SZ
+            lngRC = g_objReg.GetStringValue(lngHive, strSubKey, arrNames(lngN), vntValueData)
+            lngValueType = REG_SZ
+            Exit For
+          Case REG_EXPAND_SZ
+            lngRC = g_objReg.GetExpandedStringValue(lngHive, strSubKey, arrNames(lngN), vntValueData)
+            lngValueType = REG_EXPAND_SZ
+            Exit For
+          Case REG_BINARY
+            lngRC = g_objReg.GetBinaryValue(lngHive, strSubKey, arrNames(lngN), vntValueData)
+            lngValueType = REG_BINARY
+            Exit For
+          Case REG_DWORD
+            lngRC = g_objReg.GetDWORDValue(lngHive, strSubKey, arrNames(lngN), vntValueData)
+            lngValueType = REG_DWORD
+            Exit For
+          Case REG_MULTI_SZ
+            lngRC = g_objReg.GetMultiStringValue(lngHive, strSubKey, arrNames(lngN), vntValueData)
+            lngValueType = REG_MULTI_SZ
+            Exit For
+        End Select
+      End If
+    Next
+  End If
+  ReadValue = lngRC
+End Function
+
+Function CheckPSTPath(OlkVerNum)
+' This Function Check the HKEY_CURRENT_USER\Software\Microsoft\Office\12.0\Outlook Key for the ForcePSTPath Value
+' and checks if that Folder Exists or not.
+' If the Folder dosent Exists and Cache Mode is Applied, Outlook will not Load - Because it can not Create the OST File in the PSTPAth Defiened
+	On Error Resume Next
+	Dim strKeyPath,vntValueData,lngValueType,lngRC
+	Dim objFSO
+	
+	Set objFSO = CreateObject("Scripting.FileSystemObject")
+	arrolkVerNum = Split(olkVerNum,".")
+	olkVerNum = arrolkVerNum(0)
+	strKeyPath = "Software\Microsoft\Office\" & olkVerNum & ".0\Outlook"
+	If ValueExists(HKEY_CURRENT_USER,strKeyPath,"ForcePSTPath") = True Then
+		lngRC = ReadValue(HKEY_CURRENT_USER,strKeyPath,"ForcePSTPath",lngValueType,vntValueData)
+		If (lngRC = 0) And (lngValueType = REG_EXPAND_SZ) Then
+		msgbox objFSO.FolderExists(vntValueData)
+			If Not objFSO.FolderExists(vntValueData) Then
+				CheckPSTPath = vntValueData & "  (Folder Does <B><U>NOT</B></U> Exists - Create it.)"
+			Else
+				CheckPSTPath = vntValueData 
+			End If
+			 Exit Function
+		End If
+	End If	
+	CheckPSTPath = "No Forced PST Path"
+End Function
+
+' Returns True if the specified registry subkey exists. Works by calling the
+' StdRegProv EnumKey method and iterating the returned array of subkey names.
+Function KeyExists(ByVal lngHive, ByVal strSubKey, ByVal strKeyName)
+  Dim blnExists, lngRC, arrSubKeys, lngN
+  
+  blnExists = False
+  lngRC = g_objReg.EnumKey(lngHive, strSubKey, arrSubKeys)
+  If lngRC = 0 Then
+  	If Not strKeyName = "" Then
+	    For lngN = 0 To UBound(arrSubKeys)
+	      blnExists = LCase(arrSubKeys(lngN)) = LCase(strKeyName)
+	      If blnExists Then Exit For
+	    Next
+    End If
+  End If
+  KeyExists = blnExists
+End Function
+
+' Returns True if the specified registry Value exists. Works by calling the
+' StdRegProv EnumValues method and iterating the returned array of Value names.
+Function ValueExists(ByVal lngHive, ByVal strSubKey, ByVal strValueName)
+  Dim blnExists, lngRC, arrSubKeys, lngN
+  Dim arrValueNames,arrValueTypes
+  blnExists = False
+  lngRC = g_objReg.EnumValues(lngHive, strSubKey, arrValueNames, arrValueTypes)
+  If lngRC = 0 Then
+  	If Not strValueName = "" Then
+	    For lngN = 0 To UBound(arrValueNames)
+	      blnExists = LCase(arrValueNames(lngN)) = LCase(strValueName)
+	      If blnExists Then Exit For
+	    Next
+    End If
+  End If
+  ValueExists = blnExists
+End Function
+
+' Returns a string representation of the specified array of bytes as pairs of
+' hex digits (like the registry editor).
+Function ByteArrayToString(ByVal arrBytes)
+  Dim strBytes, lngByte
+
+  strBytes = ""
+  If (VarType(arrBytes) = vbArray Or vbVariant) And (UBound(arrBytes) > 0) Then
+    For Each lngByte In arrBytes
+      If strBytes = "" Then
+        strBytes = IIf(lngByte < &H10, "0" & Hex(lngByte), Hex(lngByte))
+      Else
+        strBytes = strBytes & " " & IIf(lngByte < &H10, "0" & Hex(lngByte), Hex(lngByte))
+      End If
+    Next
+  End If
+  ByteArrayToString = strBytes
+End Function
+
+' Returns the current version of Outlook as a string (e.g., 11.0.6353.0).
+Function GetOutlookVersion()
+  Dim strVersion, lngRC, lngValueType, vntValueData
+
+  strVersion = ""
+  lngRC = ReadValue(HKEY_CLASSES_ROOT, CLASSID_SUBKEY, "", lngValueType, vntValueData)
+  If (lngRC = 0) And (lngValueType = REG_SZ) Then
+    On Error Resume Next
+    vntValueData = "\\" & strComputer & "\" & Replace(vntValueData,":","$")
+    strVersion = CreateObject("Scripting.FileSystemObject").GetFileVersion(vntValueData)
+    If Err <> 0 Then strVersion = ""
+  End If
+  GetOutlookVersion = strVersion
+End Function
+
+
+' Returns the default Outlook profile for the current user.
+Function GetDefaultProfile()
+  Dim lngRC, lngValueType, vntValueData
+
+  lngRC = ReadValue(HKEY_CURRENT_USER, PROFILE_SUBKEY, "DefaultProfile", lngValueType, vntValueData)
+  If (lngRC = 0) And (lngValueType = REG_SZ) Then
+    GetDefaultProfile = vntValueData
+  Else
+    GetDefaultProfile = ""
+  End If
+End Function
+
+' Returns True if the specified Outlook profile exists.
+Function ProfileKeyExists(ByVal strProfile)
+  ProfileKeyExists = KeyExists(HKEY_CURRENT_USER, PROFILE_SUBKEY, strProfile)
+End Function
+
+' Returns vbTrue if the first bit in the second byte in the specified array is
+' set, vbFalse if it's not, or -2 if error.
+Function GetCachedExhangeMode(ByVal arrBytes)
+  Dim lngRC
+
+  lngRC = -2
+  If (VarType(arrBytes) = vbArray Or vbVariant) And (UBound(arrBytes) > 0) Then
+    lngRC = IIf((arrBytes(1) And 1) <> 0, vbTrue, vbFalse)
+  End If
+  GetCachedExhangeMode = lngRC
+End Function
+	
+Function GetAllProfiles(ByRef arrProfiles)
+  Dim lngRC
+  
+  lngRC = g_objReg.EnumKey(HKEY_CURRENT_USER, PROFILE_SUBKEY, arrProfiles)
+  GetAllProfiles = lngRC
+End Function
+
+' Returns an array containing the REG_BINARY data from the 00036601 registry
+' value. Returns an empty array if there was an error.
+Function GetExchangeConfig(ByVal strProfile)
+  Dim lngRC, lngValueType, vntValueData, arrConfig
+
+  lngRC = ReadValue(HKEY_CURRENT_USER, _
+    PROFILE_SUBKEY & "\" & strProfile & "\" & EXCHCFG_SUBKEY, _
+    EXCHCFG_VALUE, lngValueType, vntValueData)
+  If (lngRC = 0) And (lngValueType = REG_BINARY) Then
+    GetExchangeConfig = vntValueData
+  Else
+    GetExchangeConfig = Split("")
+  End If
+End Function
+
+Sub Window_onLoad()
+	Window.ResizeTo 600,550
+End Sub
+
+Sub CloseWindow
+   self.close
+End Sub
+    
+Sub GetOLKData()
+ On Error Resume Next
+	strComputer = txtComputerName.Value
+	
+	' Retrieve the WMI StdRegProv class.
+	Set g_objReg = GetObject("WinMgmts:" _
+		& "{impersonationlevel=impersonate}!\\" & strComputer & "/root/default:StdRegProv")
+ 
+	If TypeName(g_objReg) = "Empty" then 
+		Msgbox "No Such Computer"
+	End If
+	
+	strVersion = GetOutlookVersion()
+	strDefProfile = GetDefaultProfile()
+	lngRC = GetAllProfiles(arrProfiles)
+	If lngRC <> 0 Then
+	  MsgBox "Unable to get all profile names from registry."
+	  'CloseWindow
+	End If
+	 
+	strMessage =  "<li>Outlook.exe is version: " & strVersion & "</li><BR>"
+	strMessage = strMessage &  "<li>Default Profile Name is: <B>" & strDefProfile & "</B></li><BR>"
+	strMessage = strMessage & "<li>Force PST Path in Folder: " & CheckPSTPath(strVersion) & "</li><BR>"
+		
+	strProfileTable = "<table border=1><tr><td>Profile Name</td><td>Cache Mode Status</td></tr>"
+	If lngRC=0 Then
+		For Each strProfile In arrProfiles 
+				' Retrieve the array of bytes from the registry.
+				arrConfig = GetExchangeConfig(strProfile)
+				CahceText = "Cache Data is not avialable"
+				' Check the status of the bit that determines cached Exchange mode.
+				lngMode = GetCachedExhangeMode(arrConfig)
+			
+				If lngMode = -2 Then 
+					Msgbox "Unable to read cached Exchange mode setting from registry."
+					'CloseWindow
+				Else
+					  strCacheStaus = IIf(CBool(lngMode), "ENABLED", "DISABLED")
+				End If
+				strProfileTable = strProfileTable & "<tr><td>" & strProfile & "</td><td><center>" & strCacheStaus & "</center></td></tr>"
+		Next
+		strProfileTable = strProfileTable & "</table>"
+		
+		txtOLKData.InnerHTML = strMessage
+		OLKProfiles.InnerHTML = strProfileTable
+	End If
+End Sub
+
+
+</Script>
+</head>
+
+<Body>
+<center><H1>Outlook Cache Mode Diagnostics</H1></center>
+Computer Name: <INPUT type=text value="" name="txtComputerName" style="WIDTH: 100px; HEIGHT: 24px" maxLength=16></INPUT>
+						 <INPUT TYPE="button" Value="Get Profiles" onClick="GetOLKData"></INPUT><BR>
+<h2><u>Outlook Details</u></h2>
+						 <span id=txtOLKData></span>
+<h2><u>Profile List Cache Mode Status</u></h2>
+						  <span id="OLKProfiles"></span>
+						<BR>
+<INPUT TYPE="button" Value="Exit" onClick="CloseWindow"></INPUT>
+
+</Body>
+</html>

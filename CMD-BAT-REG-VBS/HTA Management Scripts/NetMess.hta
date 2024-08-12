@@ -1,0 +1,2111 @@
+<html>
+	<head>
+		<title>NetMessenger - Created by: IT4577</title> 
+		 
+		<hta:application 
+			id="objNetMessenger"
+			applicationname="NetMessenger" 
+			border="dialog"
+			borderstyle="normal"
+			version="1.0"
+			maximizebutton="no"
+			contextmenu="no"
+			scroll="no"
+			icon="eudcedit.exe" />
+		
+		<!-- AD Browser Style -->		
+		<style type="text/css">
+/* ADBrowser Style */
+			table.sidemenu	{
+				border-collapse:collapse;
+				float:right;
+				Width:100%;
+				border: #ababab 1px solid;
+				background-color:#FFF;
+			}		
+			table.sidemenu a {
+				color: #595959;
+				text-decoration: none;
+			}		
+			table.mainTP {
+				border-collapse:collapse;
+				float:right;
+				Width: 100%;
+				/* Width:expression(document.body.clientWidth-360); */
+				border: #ababab 1px solid;
+				background-color:#FFF;
+			}
+			table.mainT	{
+				border-collapse:collapse;
+			}
+			td.mainT {
+				/* font:normal 11px/17px Arial; */
+				border-bottom:1px solid #CCC;
+				padding-left:4px;
+				padding-right:4px;
+			}
+			th.mainT {
+				/* font:normal 11px/17px Arial; */
+				text-align:left;
+				padding:3px;
+				font-weight: bold;
+				border-bottom:1px solid #CCC;
+				border-right: 1px solid #CCC;
+				background-color: #FFFFFF;
+			}
+			th.mainThover {
+				/* font:normal 11px/17px Arial; */
+				text-align:left;
+				padding:3px;
+				border-bottom:1px solid #CCC;
+				border-right: 1px solid #CCC;
+				background-color: #DFE8F6;
+			}
+			tr.highlight {
+				background-color:#F4F4F4;
+			}
+			tr.selected	{
+				background:#DFE8F6;
+			}
+			tr.unselected {
+				background:#FFF;
+			}
+			.header { 		
+				font-family: Segoe UI, Segoe, Tahoma, Verdana, Arial, Helvetica;
+				font-size: 11pt;
+				line-height: normal;
+				letter-spacing: normal;			
+				padding: 2px; /* padding: 4px;
+				font-weight: bold; */
+				vertical-align: 35%;
+				border-bottom: 0px; 
+				background-image: url(http://subtlepatterns.com/patterns/grid.png);
+				/* background-color: transparent; #707070;  #595959; */
+				color: #4C89BD; /* #FFFFFF; */
+				Width: 100%;
+			}		
+		</style>			
+		
+		<!-- NetMessenger Style -->	
+		<style type="text/css">
+/* NetMessenger Style */
+			body {
+				background-image: url(http://subtlepatterns.com/patterns/dark_fish_skin.png);
+				background-repeat: repeat;			
+				background-color: #888888;
+			}		
+			img {
+				border: none;
+			}
+			.txt {
+				font-family: Segoe UI, Segoe, Tahoma, Verdana, Arial, Helvetica;
+				font-size: 9.5pt;
+				font-weight: normal;
+				line-height: normal;
+				letter-spacing: normal;
+				color: #707070;
+			}			
+			.txtH1 {
+				font-family: Segoe Semibold, Segoe UI, Segoe, Tahoma, Verdana, Arial, Helvetica;
+				font-size: 14.5pt;
+				font-weight: normal;
+				line-height: normal;
+				letter-spacing: normal;
+				color: #4C89BD;
+			}
+
+			.txtH2 {
+				font-family: Segoe UI, Segoe, Tahoma, Verdana, Arial, Helvetica;
+				font-size: 11pt;
+				font-weight: normal;
+				line-height: normal;
+				letter-spacing: normal;
+				color: #4C89BD;
+			}
+/* Main window style information	*/			
+			#main0 {
+				
+			}
+			#main_nav { 
+				width: 160px; 
+				height: 540px; 
+				position: absolute;
+				left: 660px;
+				top: 10px;
+				padding-top: 10px;				
+				background-color: #AAAAAA;
+				background-repeat: repeat;	
+				background-image: url(http://subtlepatterns.com/patterns/grid.png)				
+			}
+			#main_nav_footer{
+				text-align: center;
+				font-size: 20px;
+				font-weight: bold
+				position: absolute;
+				padding: 8px;
+				margin-top: 215px;
+			}
+			.main_pane { 
+				width: 640px; 
+				height: 540px;
+				padding: 10px;
+				position: absolute;
+				left: 10px;
+				top: 10px;
+				background-color: #DDDDDD;
+				background-repeat: repeat;	
+				background-image: url(http://subtlepatterns.com/patterns/grid.png)
+			}
+			.scroll {
+				overflow-y:scroll;
+			}
+			.no_scroll {
+				overflow: auto;
+			}
+			.text {
+				font-family: Segoe UI, Segoe, Tahoma, Verdana, Arial, Helvetica;
+				font-size: 9.5pt;
+				font-weight: normal;
+				line-height: normal;
+				letter-spacing: normal;
+				color: #707070;			
+			}
+			input.text {
+				border: #ababab 1px solid;
+				height: 23px;
+				padding-left: 3px;
+			}
+			input.disabled { 
+				background-color: #eeeeee;
+				border-color: #888888;
+				cursor: default;
+			}
+			textarea.text, span.text{
+				background-color: #ffffff;
+				border: #ababab 1px solid;
+				padding-left: 3px;
+			}
+			select, option {
+				font-family: Segoe UI, Segoe, Tahoma, Verdana, Arial, Helvetica;
+				font-size: 9.5pt;
+				font-weight: normal;
+				line-height: normal;
+				letter-spacing: normal;
+				color: #707070;
+			}
+			select {
+				background:transparent;
+				outline: none;
+				border: #ababab 1px solid;
+				height: 23px;
+			}
+			label {
+				cursor:pointer;
+			}
+			span {
+				-ms-user-select: none;
+			}
+/* Button controls style information	*/			
+			.button {
+				box-shadow:inset 0px 1px 0px 0px #ffffff;
+				background:color-stop(1, #dfdfdf) );
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+				background-color:#ededed;
+				border-radius:6px;
+				border:1px solid #ababab;
+				color:#777777;
+				font-family:Verdana;
+				font-size:12px;
+				font-weight:bold;
+				padding:6px 14px;
+				text-decoration:none;
+				text-align: center;
+				text-shadow:1px 1px 0px #ffffff;
+			}
+			.button2 {
+				box-shadow:inset 0px 1px 0px 0px #ffffff;
+				background:color-stop(1, #dfdfdf) );
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+				background-color:#ededed;
+				border-radius:6px;
+				border:1px solid #dcdcdc;
+				/* display:inline-block; */
+				color:#777777;
+				font-family:Verdana;
+				font-size:12px;
+				font-weight:bold;
+				padding:6px 14px;
+				text-decoration:none;
+				text-align: center;
+				text-shadow:1px 1px 0px #ffffff;
+			}
+			.button3 {
+				box-shadow:inset 0px 1px 0px 0px #ffffff;
+				background:color-stop(1, #dfdfdf) );
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+				background-color:#ededed;
+				border-radius:6px;
+				border:1px solid #dcdcdc;
+				color:#777777;
+				font-family:Verdana;
+				font-size:12px;
+				font-weight:bold;
+				padding-top:6px;
+				text-decoration:none;
+				text-align: center;
+				text-shadow:1px 1px 0px #ffffff;
+			}			
+			.main {
+				border:1px solid #ababab;
+			}
+			.button2:hover {
+				background:color-stop(1, #ededed) );
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#909090', endColorstr='#707070');
+				background-color:#dfdfdf;
+				border:1px solid #ababab;
+				color:#333333;
+			}
+			.button2:active {
+				background:color-stop(1, #ededed) );
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7F7F7F', endColorstr='#909090');
+				background-color:#adadad;
+				border:1px solid #444444;
+				color:#222222;
+			}
+			.selected {
+				background:color-stop(1, #ededed) );
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7F7F7F', endColorstr='#909090');
+				background-color:#adadad;
+				border:1px solid #444444;
+				color:#222222;
+			}
+			ul {
+				margin: 5px 0px 5px 8px;
+				list-style-type: none;
+			}
+			li.control {	
+				list-style: none;
+				display: inline;
+			}	
+			li a{
+				color: #555555;
+				text-decoration: none;
+				height: 30px;
+				width: 144px;
+			}
+			a {
+				color: black;
+				text-decoration: none;
+			}
+			.button2 a:hover {
+				color: #555555;
+				text-decoration: none;
+			}
+			p {
+				margin:0px;
+			}
+					
+		</style>
+		
+		<!-- AD Browser Scripts -->
+		<script language="VBScript">
+			Set xmlDoc = CreateObject("Microsoft.XMLDOM")
+			Dim arrServer, FQDN, ouNum
+			Dim strCommand,laststrSQL,lastSort,strASC
+			Dim Timeout, objFile, xLastSelectedRow, LastSelectedRow
+
+			Sub AD_onload
+				On Error Resume Next
+				If objFSO.FolderExists(ADTEMP) Then
+					Set objFolder = objFSO.GetFolder(ADTEMP)
+				Else 
+					Set objFolder = objFSO.CreateFolder(ADTEMP)
+				End If
+
+				Set objRootDSE = GetObject("LDAP://RootDSE")
+				FQDN = objRootDSE.Get("DefaultNamingContext")
+				mainRDP.innerHTML = ""
+				sidemenuAD.innerHTML = ""
+				getServers
+				createADXML
+				ReadTree
+				Call ADSearch(4,"","")
+			End Sub
+
+			Function getServers
+				Const ADS_SCOPE_SUBTREE = 2
+
+				Set objConnection = CreateObject("ADODB.Connection")
+				Set objCommand =   CreateObject("ADODB.Command")
+				objConnection.Provider = "ADsDSOObject"
+				
+				' If alternate credentials checkbox is checked
+				If document.getElementById("cbx_adCred").checked = True Then
+					objConnection.Properties("User ID") = document.getElementById("txtADUsername").value
+					objConnection.Properties("Password") = document.getElementById("txtADPassword").value
+					objConnection.Properties("Encrypt Password") = TRUE
+					objConnection.Properties("ADSI Flag") = 3
+				End If
+				
+				objConnection.Open "Active Directory Provider"
+				Set objCOmmand.ActiveConnection = objConnection
+				objCommand.CommandText = _
+					"Select Name, Location from 'LDAP://" & FQDN & "' " _
+						& "Where objectCategory='computer' and operatingSystem='*Server*' Order By Name"  
+				objCommand.Properties("Page Size") = 1000
+				objCommand.Properties("Searchscope") = ADS_SCOPE_SUBTREE 
+				
+				'On Error Resume Next
+				Set objRecordSet = objCommand.Execute
+				If Err.Number <> 0 Then
+					DisplayErrorInfo
+				End If
+				
+				objRecordSet.MoveFirst
+
+				reDim arrServer(objRecordSet.RecordCount-1)
+				counter = 0
+
+				Do Until objRecordSet.EOF
+					arrServer(counter) = objRecordSet.Fields("Name").Value
+					mainRDP.innerHTML = mainRDP.innerHTML & "<span id='div"&objRecordSet.Fields("Name").Value&"'></span>"
+					counter = counter + 1
+					objRecordSet.MoveNext
+				Loop
+			End Function
+
+			Function createADXML
+				Set objFile = objFSO.CreateTextFile(ADTEMP & "\AD.xml")
+			   
+				strLDAP = FQDN
+				
+				objFile.WriteLine "<?xml version=" & chr(34) & "1.0" & chr(34) & " encoding=" & chr(34) & "ISO-8859-1" & chr(34) & " ?>"
+				objFile.WriteLine "<AD>"
+				
+				Call ListTree(strLDAP,FQDN,"")
+				
+				objFile.WriteLine "</AD>"
+				objFile.Close
+			End Function
+
+			Function ListTree(OUname,parentDN,ParentOU)
+				objFile.WriteLine "<OU id="& chr(34) & "ou" & ouNum & chr(34) & " DN="& chr(34) & parentDN & chr(34) &" OU="& chr(34) & parentOU & chr(34) &">"
+				Set colItems = GetObject("LDAP://" & OUname)
+				colItems.Filter = Array("organizationalUnit")
+				For Each objItem in colItems
+					ouNum = ouNum + 1
+					Call ListTree(Replace(objItem.distinguishedName,"/","\/"),replace(Replace(objItem.distinguishedName,"/","\/"),"&","&amp;"),replace(objItem.OU,"&","&amp;"))
+				Next	
+				
+				objFile.WriteLine "</OU>"
+			End Function
+
+			Function ReadTree
+				xmlDoc.Async = "False"
+				xmldoc.setProperty "SelectionLanguage", "XPath"
+				xmlDoc.Load(ADTEMP &"\AD.xml")
+				SET doc = xmlDoc.getElementsByTagName("AD")(0).childNodes(0)
+				If doc.hasChildNodes Then
+					For each strNode In doc.childNodes 
+						sidemenuAD.innerHTML = sidemenuAD.innerHTML & "<div style='float:left;' id=a"& strNode.getAttributeNode("id").value &" style='font-family:Wingdings 3;font-size:8pt;color:#666;' tabindex=-1>w</div><div style='border:0px solid #555' id=" & strNode.getAttributeNode("id").value & " tabindex=-1><a href=# onclick=branch(" & chr(34) & strNode.getAttributeNode("id").value & chr(34) & ") tabindex=-1> " & strNode.getAttributeNode("OU").value & "</a></div>"
+					Next
+				End If
+			End Function
+
+			Function Branch(twig)
+				strXPath = "//OU[@id='"& twig &"']"
+				Set ndNode = xmlDoc.documentElement.selectSingleNode(strXPath)
+				Set stick = document.getElementById(twig)
+				Set aStick = document.getElementById("a" & twig)
+				If aStick.innerHTML = "w" Then
+					astick.innerHTML = "y"
+					If ndNode.hasChildNodes Then
+						For each strNode In ndNode.childNodes	
+							stick.innerHTML = stick.innerHTML & "<div style='float:left;margin-left:10px;' id=a"& strNode.getAttributeNode("id").value &" style='font-family:Wingdings 3;font-size:8pt;color:#666;' tabindex=-1>w</div><div style='border:0px solid #555;margin-left:10px' id=" & strNode.getAttributeNode("id").value & " tabindex=-1><a href=# onclick=branch(" & chr(34) & strNode.getAttributeNode("id").value & chr(34) & ") tabindex=-1> " & strNode.getAttributeNode("OU").value & "</a></div>"
+						Next
+					End If	
+				Else 
+					aStick.innerHTML = "w"
+					Stick.innerHTML = " <a href=# onclick=branch(" & chr(34) & ndNode.getAttributeNode("id").value & chr(34) & ") tabindex=-1> " & ndNode.getAttributeNode("OU").value & "</a><br>"
+				End If
+				Call ADSearch(1,ndNode.getAttributeNode("DN").value,"")
+			End Function	
+
+			Function ADSearch(strSQL,OUPath,sort)
+				On Error Resume Next
+				For Each adServer In arrServer
+					document.getElementById("div"&adServer).style.display = "none"
+				Next
+
+				document.getElementById("colHeader").style.display = "block"
+				document.getElementById("form1").style.display = "block"
+				Const ADS_SCOPE_TREE = 1
+				Const ADS_SCOPE_SUBTREE = 2
+
+				Set objConnection = CreateObject("ADODB.Connection")
+				Set objCommand =   CreateObject("ADODB.Command")
+				objConnection.Provider = "ADsDSOObject"
+				
+				' If alternate credentials checkbox is checked
+				If document.getElementById("cbx_adCred").checked = True Then
+					objConnection.Properties("User ID") = document.getElementById("txtADUsername").value
+					objConnection.Properties("Password") = document.getElementById("txtADPassword").value
+					objConnection.Properties("Encrypt Password") = TRUE
+					objConnection.Properties("ADSI Flag") = 1
+				End If
+
+				objConnection.Open "Active Directory Provider"		
+				Set objCommand.ActiveConnection = objConnection
+				
+				objCommand.Properties("Page Size") = 1000
+				objCommand.Properties("Sort on") = "Name"
+
+
+				If strSQL = 1 Then		
+					objCommand.Properties("Searchscope") = strSQL 
+					objCommand.CommandText = "SELECT ADsPath FROM 'LDAP://"& OUPath &"' WHERE objectCategory='computer'" 
+					
+					Set objRecordSet = objCommand.Execute
+					If Err.Number <> 0 Then
+						DisplayErrorInfo
+						Exit Function
+					End If
+					
+					strLeft = left(OUPath,Instr(OUPath,",")-1)
+					strSearch = Right(strLeft,Len(strLeft)-3)
+					
+					laststrSQL = strSQL
+					strCommand = objCommand.CommandText
+					lastSort = 1
+					strASC = 0
+					
+				ElseIf strSQL = 2 Then
+					objCommand.Properties("Searchscope") = strSQL 
+					objCommand.CommandText = "SELECT ADsPath FROM 'LDAP://"& FQDN &"' WHERE objectCategory='computer' and employeeNumber='*" & strSearch & "*' or objectCategory='computer' and name='*" & strSearch & "*'"   
+					
+					Set objRecordSet = objCommand.Execute
+					If Err.Number <> 0 Then
+						DisplayErrorInfo
+						Exit Function
+					End If
+					
+					laststrSQL = strSQL
+					strCommand = objCommand.CommandText
+					lastSort = 1
+					strASC = 0
+					
+				ElseIf strSQL = 3 Then	
+					strSQL = laststrSQL
+					objCommand.Properties("Searchscope") = strSQL 
+					If lastSort = sort Then
+						If strASC = 1 Then
+							strOrder = "ASC"
+							strASC = 0
+							arrow = "q"
+						Else 
+							strOrder = "DESC"
+							strASC = 1
+							arrow = "p"
+						End If	
+					Else 
+					   If strASC = 1 Then
+							strOrder = "DESC"
+							strASC = 1
+							arrow = "p"
+						Else        
+							strOrder = "ASC"
+							strASC = 0
+							arrow = "q"
+
+						End If
+					End If
+				
+					Select Case sort
+						Case 1 objCommand.CommandText = strCommand & " Order by cn " & strOrder
+								CNTarrow.innerHTML = arrow
+								IPTarrow.innerHTML = ""
+						Case 3 objCommand.CommandText = strCommand & " Order by ipHostNumber " & strOrder
+								CNTarrow.innerHTML = ""
+								IPTarrow.innerHTML = arrow
+					End Select
+
+					Set objRecordSet = objCommand.Execute
+					If Err.Number <> 0 Then
+						DisplayErrorInfo
+						Exit Function
+					End If
+					
+					lastSort = sort
+				ElseIf strSQL = 4 Then	
+					objCommand.Properties("Searchscope") = strSQL 
+					objCommand.CommandText = "SELECT ADsPath FROM 'LDAP://"& FQDN &"' WHERE objectCategory='computer' and ipHostNumber='1'"   
+
+					Set objRecordSet = objCommand.Execute
+					If Err.Number <> 0 Then
+						DisplayErrorInfo
+						Exit Function
+					End If
+					
+					laststrSQL = strSQL
+					strCommand = objCommand.CommandText
+					lastSort = 1
+					strASC = 0	
+				End If
+
+				strHTML = "<table id='mainTable' class='pickme txt' style=width:100%;background-color:#FFF; cellpadding=0 cellspacing=0><tbody><form name=x>"
+				cbCount=0
+
+				If objRecordset.RecordCount <> 0 Then
+					form1.innerHTML = "<br><br><br><center><center>"
+					objRecordSet.MoveFirst
+					Do Until objRecordSet.EOF		
+						Set objComp=GetObject(objRecordSet.Fields("ADsPath").Value)
+						strHTML = strHTML & "<tr onclick=ADSelectRows('" & objComp.cn & "') ondblclick=addADMachine('" & objComp.cn & "') onmouseout=unhighlightRows('" & objComp.cn & "') onMouseOver=highlightRows('" & objComp.cn & "') id=" & objComp.cn &"><td class='mainT' style=width:2%;><input type=checkbox style='visibility: hidden;' name=cb" & cbCount &"  id=cb" & cbCount &" value=" & objComp.cn & " /></td>"
+						
+						strHTML = strHTML &"<td class='mainT' style=width:20%;>"				
+						If objComp.employeeID = 1 Then	
+							strHTML = strHTML & objComp.cn & "</td>"
+						Else 
+							strHTML = strHTML & objComp.cn & "</td>"
+						End If
+						strHTML = strHTML & "<td class='mainT' style=width:20%;>" 
+						If objComp.employeeNumber = "" Then 
+							strHTML = strHTML & "&nbsp;" 
+						Else  
+							strHTML = strHTML & objComp.ipHostNumber 
+						End If
+						strHTML = strHTML & "</td>"
+						cbCount=cbCount+1	
+						objRecordSet.MoveNext
+					Loop
+				ElseIf objRecordset.RecordCount = 0 and strSQL = 1 Then
+					strHTML = strHTML & "<br><br><br><tr><td colspan=3 align=center > No Computers Within Container</td></tr>"
+				ElseIf objRecordset.RecordCount = 0 and strSQL = 4 Then
+					strHTML = strHTML & "<br><br><br><tr><td colspan=3 align=center > Active Directory Browser </td></tr>"
+				Else 
+					strHTML = strHTML & "<br><br><br><tr><td colspan=3 align=center > No Computer Returned</td></tr>"
+				End If
+				sResult.innerHTML = objRecordset.RecordCount & " results for " & strSearch
+				strHTML = strHTML & "</form></tbody></table>"
+				form1.innerHTML = strHTML
+					
+			End Function	
+
+			Function ADSelectRows(e)
+				Set rowid = document.getElementById(e)
+				Set td = document.getElementById(e).childNodes.item(0).childNodes.item(0)
+
+				Set cb = document.getElementByID(td.ID)
+				
+				startcb = CInt(cb.name)
+				
+				if rowid.className = "selected" Then
+					set oform=document.forms("x")
+					set celem=oform.elements
+					for i=0 to celem.length -1
+						if celem(i).checked = true then
+						celem(i).checked = false
+						document.getElementById(celem(i).parentNode.parentNode.id).className = "unselected"
+						end if
+					next
+				else
+					set oform=document.forms("x")
+					set celem=oform.elements
+					for i=0 to celem.length -1
+						if celem(i).checked = true then
+						celem(i).checked = false
+						document.getElementById(celem(i).parentNode.parentNode.id).className = "unselected"
+						end if
+					next
+					rowid.className = "selected"
+					cb.checked = True
+				End if
+				
+				LastSelectedRow = startcb
+			End Function
+
+			Function ADSelectRows(e)
+				Set rowid = document.getElementById(e)
+				Set td = document.getElementById(e).childNodes.item(0).childNodes.item(0)
+
+				Set cb = document.getElementByID(td.ID)
+				
+				startcb = CInt(Mid(cb.name,3))
+				
+				If window.event.shiftKey Then
+
+				   if isNull(xLastSelectedRow) = false Then
+					If xLastSelectedRow < startcb Then
+					   For i = xLastSelectedRow to startcb
+						Set cbI = document.getElementById("cb" & i)
+						Set rowidI = document.getElementById(cbI.parentNode.parentNode.id)
+
+						rowidI.className = "selected"
+							cbI.checked = True
+
+						   Next
+					Else
+					   For i = startcb to xLastSelectedRow
+						Set cbI = document.getElementById("cb" & i)
+						Set rowidI = document.getElementById(cbI.parentNode.parentNode.id)
+
+						rowidI.className = "selected"
+							cbI.checked = True
+
+						   Next
+					End If
+				   End If
+				ElseIf window.event.ctrlKey Then
+				   if rowid.className = "selected" Then
+					rowid.className = "unselected"
+					cb.checked = False
+				   else
+					rowid.className = "selected"
+					cb.checked = True
+				   End if
+				Else
+				   if rowid.className = "selected" Then
+						set oform=document.forms("x")
+						set celem=oform.elements
+						for i=0 to celem.length -1
+							if celem(i).checked = true then
+							celem(i).checked = false
+							document.getElementById(celem(i).parentNode.parentNode.id).className = "unselected"
+							end if
+						next
+				   else
+						set oform=document.forms("x")
+						set celem=oform.elements
+						for i=0 to celem.length -1
+							if celem(i).checked = true then
+							celem(i).checked = false
+							document.getElementById(celem(i).parentNode.parentNode.id).className = "unselected"
+							end if
+						next
+						rowid.className = "selected"
+						cb.checked = True
+				   End if
+
+				End If
+
+				
+				xLastSelectedRow = startcb
+			End Function
+
+			Function highlightHeader(e)
+			   document.getElementById(e).classname = "mainThover"
+			End Function
+
+			Function unhighlightHeader(e)
+			   document.getElementById(e).classname = "mainT"
+			End Function
+
+			Sub DisplayErrorInfo
+				Msgbox "Error: " & Err.Number & vbCrLf & _
+					 "Source: " &  Err.Source & vbCrLf & _
+					 "Description: " &  Err.Description, 16, "ERROR:"
+				Err.Clear
+			End Sub		
+		</script>		
+		
+		<!-- NetMessenger Scripts -->
+		<script language="VBScript">
+			' #############################################################################
+			' #						GLOBAL ROUNTINES AND VARIABLES
+			' #############################################################################
+			Set objFSO = CreateObject("Scripting.FileSystemObject")
+			Set objShell = CreateObject("Wscript.Shell")
+			Const ForReading = 1, ForWriting = 2, ForAppending = 8
+			Dim TEMP : TEMP = objShell.ExpandEnvironmentStrings("%TEMP%")
+			Dim ADTEMP : ADTEMP = TEMP & "\AD_Browser"
+			Dim intSelected : intSelected = 0
+			Dim msgInt, tmoInt, tmpFile
+
+			Sub window_Onload
+				window.ResizeTo 850,600
+				window.MoveTo (screen.Width - 850)/2, (screen.Height - 600)/2
+				Update
+				showPane "main" , 1
+			End sub		
+
+			Sub Window_onBeforeUnLoad
+				If objFSO.FolderExists(ADTEMP) Then
+					objFSO.DeleteFolder ADTEMP, True 
+				End If
+			End Sub
+
+			Sub showPane(win , num)
+				If win = "main" Then
+					Dim x
+					For x = 1 To 4
+						If x = num Then
+							document.getElementById("main" & x).style.display = "block"
+							document.getElementById("marker" & x).classname = "button selected"
+						Else
+							document.getElementById("main" & x).style.display = "none"
+							document.getElementById("marker" & x).classname = "button"
+						End If
+					Next			
+					If num = 4 Then
+						document.getElementById("_spn2").innerHTML = Replace(document.getElementById("_spn1").innerHTML, "id='tblSelectedMachines'", "id='tblSelectedMachines2'")
+						Preview("code")
+					End If
+				End If
+			End Sub		
+
+			Sub showCredentials(obj, btn)
+				If document.getElementById("cbx_" & obj).checked = True Then
+					If btn = "submit" Then
+						If Trim(document.getElementById("txt" & Mid(obj,1,Len(obj)-4) & "Username").value) = "" Or Trim(document.getElementById("txt" & Mid(obj,1,Len(obj)-4) & "Password").value) = "" Then Exit Sub
+					End If
+					If document.getElementById(obj).style.display <> "none" Then
+						document.getElementById(obj).style.display = "none"
+						document.getElementById(obj & 2).style.display = "none"
+					Else
+						document.getElementById(obj).style.display = "block"
+						document.getElementById(obj & 2).style.display = "block"
+					End If
+				End If
+				If btn = "cancel" Then
+					document.getElementById("cbx_" & obj).checked = False
+				End If
+			End Sub	
+
+			Sub About
+				MsgBox "Version : 1.0" & vbCrLf & vbCrLf & "Created by: IT4577", 64, "NetMessenger - About"
+			End Sub
+
+			Sub Update
+				Dim objHTTP, strHTML, strSite, strSearch, objShell, strResponse
+				strSite = "http://community.spiceworks.com/scripts/show/2389-network-messenger-hta"
+				strSearch = "Lastscriptchangeupdate01302014at100pm"
+				Set objHTTP = CreateObject("WinHTTP.WinHTTPRequest.5.1")
+				objHTTP.Option(6) = False
+				strHTML = ""
+
+				Call objHTTP.Open("GET", strSite, False)
+				objHTTP.Send()
+				strHTML = CStr(objHTTP.ResponseText)
+				If InStr(1, strClean(strHTML), strSearch, vbTextCompare) = 0 Then
+					strResponse = MsgBox ("Update Available!" & vbCrLf & vbCrLf & "Download the new version from the Spiceworks script center to get the latest release." & vbCrLf & vbCrLf & "Would you like to download the update now?", 4148, "Update - Network Messenger")
+					If strResponse = vbYes Then
+						Set objShell = CreateObject("WScript.Shell") 
+						objShell.Run strSite
+					End If
+				End If
+			End Sub
+
+			Function strClean (strToClean)
+				Dim objRegExp, outputStr
+				Set objRegExp = New Regexp
+
+				objRegExp.IgnoreCase = True
+				objRegExp.Global = True
+				objRegExp.Pattern = "((?![a-zA-Z0-9]).)+"
+				outputStr = objRegExp.Replace(strToClean, "")
+
+				objRegExp.Pattern = "([\r\n\-+])"
+				outputStr = objRegExp.Replace(outputStr, "")
+
+				strClean = outputStr
+			End Function
+
+			Sub cancelEvent 
+			  window.event.returnValue = False 
+			End Sub ' cancelEvent 
+
+			' #############################################################################
+			' # 						MAIN 1 ROUNTINES	-	MESSAGES
+			' #############################################################################
+
+			Sub strLength(box)
+				Dim message, inCurrCount
+				
+				message = replace(msgText.value,vbCrLf,"##")
+				message = message & replace(msgSign.value,vbCrLf,"##")
+				intCurrCount = Len(message)
+				If intCurrCount >= 1 Then
+					chrCount.innerHTML = 1018 - intCurrCount
+				Else
+					chrCount.innerHTML = 1018
+				End If
+				If intCurrCount > 1018 Then
+					If box.value = msgText.value Then
+						box.value = Left(box.value, 1018 - Len(msgSign.value))
+					ElseIf box.value = msgSign.value Then
+						box.value = Left(box.value, 1018 - Len(msgText.value))
+					End If
+					chrCount.innerHTML = 0
+				End If
+			End Sub
+
+			Sub showResponse(num)
+				Dim x
+				
+				For x = 1 To 10
+					document.getElementById("res" & x).style.display = "none"
+				Next
+				Select Case num
+					Case 0 ' OK Only
+						document.getElementById("res" & 1).style.display = "block"
+					Case 1 ' OK and Cancel
+						document.getElementById("res" & 1).style.display = "block"
+						document.getElementById("res" & 6).style.display = "block"
+					Case 2 ' Abort, Retry and Ignore
+						document.getElementById("res" & 4).style.display = "block"
+						document.getElementById("res" & 5).style.display = "block"
+						document.getElementById("res" & 7).style.display = "block"
+					Case 3 ' Yes, No and Cancel
+						document.getElementById("res" & 2).style.display = "block"
+						document.getElementById("res" & 3).style.display = "block"
+						document.getElementById("res" & 6).style.display = "block"
+					Case 4 ' Yes and No
+						document.getElementById("res" & 2).style.display = "block"
+						document.getElementById("res" & 3).style.display = "block"
+					Case 5 ' Retry and Cancel
+						document.getElementById("res" & 5).style.display = "block"
+						document.getElementById("res" & 6).style.display = "block"
+					Case 6 ' Cancel, Try Again and Continue
+						document.getElementById("res" & 6).style.display = "block"
+						document.getElementById("res" & 8).style.display = "block"	
+						document.getElementById("res" & 9).style.display = "block"	
+				End Select
+				showTimeout
+			End Sub	
+
+			Sub showTimeout()
+				tmoInt = CInt(document.getElementById("ddlTimeout").Value)
+				If Cstr(tmoInt) <> "0" Then
+					document.getElementById("res" & 10).style.display = "block"
+				Else
+					document.getElementById("res" & 10).style.display = "none"
+				End If
+			End Sub
+
+			Sub setMsgOptions(grp , num)
+				For Each btn In Buttons
+					If btn.Checked Then
+						btnVal = btn.Value
+						Exit For
+					End If
+				Next
+				For Each ico In Icons
+					If ico.Checked Then
+						icoVal = ico.Value
+						Exit For
+					End If
+				Next
+				For Each mo In Modes
+					If mo.Checked Then
+						moVal = mo.Value
+						Exit For
+					End If
+				Next
+				For Each def In Defaults
+					If def.Checked Then
+						defVal = def.Value
+						Exit For
+					End If
+				Next
+				msgInt = CInt(btnVal) + Cint(icoVal) + CInt(moVal) + CInt(defVal)
+				If grp.Name = "Buttons" Then
+					showResponse(num)
+				End If
+			End Sub
+
+			' #############################################################################
+			' # 						MAIN 2 ROUNTINES	-	RESPONSE
+			' #############################################################################
+
+			' #############################################################################
+			' # 						MAIN 4 ROUNTINES	-	DESTINATION
+			' #############################################################################
+
+			Sub showOption(num)
+				Dim x
+				For x = 1 To 4
+					If x = CInt(num) Then
+						document.getElementById("option" & x).style.display = "block"
+
+					Else
+						document.getElementById("option" & x).style.display = "none"
+					End If
+				Next	
+				If num = 4 Then AD_onload
+			End Sub	
+
+			Function highlightRows(e)
+				Set rowid = document.getElementById(e)
+				If rowid.className <> "selected" Then
+					rowid.className = "highlight"
+				End If
+			End Function
+
+			Function unhighlightRows(e)
+				Set rowid = document.getElementById(e)
+				If rowid.className <> "selected" Then
+					rowid.className = "unselected"
+				End If
+			End Function
+
+			Function SelectRows(e)
+				on Error resume next
+				Set rowid = document.getElementById(e)
+				sRow = CInt(e)
+				
+				If window.event.shiftKey Then
+					If IsNull(LastSelectedRow) = False Then
+						If LastSelectedRow < sRow Then
+							For i = LastSelectedRow To sRow		
+								Set rowidI = document.getElementById(i)
+								If rowidI <> Nothing Then
+									rowidI.className = "selected"
+								End If
+							Next
+						Else
+							For i = sRow to LastSelectedRow
+								Set rowidI = document.getElementById(i)
+								If rowidI <> Nothing Then
+									rowidI.className = "selected"
+								End If
+							Next
+						End If
+					End If
+				ElseIf window.event.ctrlKey Then
+					If rowid.className = "selected" Then
+						rowid.className = "unselected"
+					Else
+						rowid.className = "selected"
+					End If
+				Else
+					If rowid.className = "selected" Then
+						For i = 1 to intSelected
+							document.getElementById(i).className = "unselected"
+						Next
+					Else
+						For i = 1 to intSelected
+							document.getElementById(i).className = "unselected"
+						Next
+						rowid.className = "selected"
+					End If
+				End If
+
+				LastSelectedRow = sRow
+			End Function
+
+			' # OPTION 1 - SINGLE MACHINE
+
+			' # OPTION 2 - IP ADDRESS RANGE
+
+			Dim strNetworkID
+
+			Sub Validate(obj)
+				If js_validateIP(document.getElementById(obj).value) Then
+					document.getElementById(obj).style.border = "solid 1px #ABABAB"
+					' Check subnet
+					If document.getElementById(obj).id = "txtSubnet" Then
+						If js_validateNetMask(document.getElementById(obj).value) Then
+							document.getElementById(obj).style.border = "solid 1px #ABABAB"
+						Else
+							document.getElementById(obj).style.border = "solid 1px #A00000"
+						End If
+					End If
+				Else
+					document.getElementById(obj).style.border = "solid 1px #A00000"
+				End If
+			End Sub
+
+			Sub IPRange()
+					Dim arrNetIDNumIPs
+					Dim intNumberofIPs
+					Dim strListIP
+					Dim blnStart
+					Dim strBroadcastIP
+				
+				If document.getElementById("cbx_IP").Checked = True Then
+					Dim arrIP : arrIP = getIP
+					Dim strIPAddress
+					If js_validateIP(arrIP(0)) Then
+						strIPAddress = arrIP(0)
+					Else
+						Exit Sub
+					End If
+					Dim strSubnetmask
+					If js_validateIP(arrIP(1)) And js_validateNetMask(arrIP(1)) Then
+						strSubnetmask = arrIP(1)
+					Else
+						Exit Sub
+					End If
+					document.getElementById("txtSubnet").value = strSubnetmask
+					arrNetIDNumIPs = CalcNetIDandNumIPs(strIPaddress, strSubnetmask) 
+					strNetworkID = arrNetIDNumIPs(0)
+					intNumberofIPs = arrNetIDNumIPs(1)
+					strBroadcastIP = CalcBroadcastIP(strNetworkID,intNumberofIPs)	
+					document.getElementById("txtStartIP").value = IncrementIP(strNetworkID)
+					document.getElementById("txtStopIP").value = CalcLastHostIP(strBroadcastIP)
+					document.getElementById("_spnTmp1").innerHTML = "<table class='txt' style='width:100%;' id='tblSelectorBox1'></table>"
+					strListIP = IncrementIP(strNetworkID)
+					blnStart = False
+					For i = 1 To (intNumberofIPs - 3)
+						If Not blnStart Then addMachine strListIP, "tblSelectorBox1" 
+						blnStart = True
+						strListIP = IncrementIP(strListIP)
+						If strListIP = strBroadcastIP Then Exit For
+						addMachine strListIP, "tblSelectorBox1"
+					Next
+				Else
+					Dim ipStart
+					If js_validateIP(document.getElementById("txtStartIP").value) Then
+						ipStart = document.getElementById("txtStartIP").value
+						document.getElementById("txtStartIP").style.border = "solid 1px #ABABAB"
+					Else
+						Exit Sub
+					End If
+					Dim ipStop
+					If js_validateIP(document.getElementById("txtStopIP").value) Then
+						ipStop = document.getElementById("txtStopIP").value
+						document.getElementById("txtStopIP").style.border = "solid 1px #ABABAB"
+					Else
+						Exit Sub
+					End If
+					Dim ipSubnet
+					If js_validateIP(document.getElementById("txtSubnet").value) And js_validateNetMask(document.getElementById("txtSubnet").value) Then
+						ipSubnet = document.getElementById("txtSubnet").value
+						document.getElementById("txtSubnet").style.border = "solid 1px #ABABAB"
+					Else
+						Exit Sub
+					End If
+					
+					arrNetIDNumIPs = CalcNetIDandNumIPs(ipStart, ipSubnet) 
+					strNetworkID = arrNetIDNumIPs(0)
+					intNumberofIPs = arrNetIDNumIPs(1)	
+					strBroadcastIP = CalcBroadcastIP(strNetworkID,intNumberofIPs)
+					If Not ValidateStopIPAddress(ipStart, ipStop, strBroadcastIP) Then
+						document.getElementById("txtStopIP").style.border = "solid 1px #A00000"
+						Exit Sub
+					End If
+					strListIP = ipStart
+					blnStart = False
+					For i = 1 To (intNumberofIPs - 3)
+						If Not blnStart Then addMachine strListIP, "tblSelectorBox1" 
+						blnStart = True
+						If strListIP = ipStop Then Exit For
+						strListIP = IncrementIP(strListIP)
+						If strListIP = strBroadcastIP Then Exit For
+						addMachine strListIP, "tblSelectorBox1"
+						If strListIP = ipStop Then Exit For
+					Next
+				End If
+			End Sub
+
+			Function getIP()
+				On Error Resume Next
+				 
+				Dim strComputer : strComputer = "."
+				Set objWMIService = GetObject("winmgmts:{impersonationLevel=impersonate}!\\" & strComputer & "\root\cimv2")
+				Set colNetworkAdaptors =  objWMIService.ExecQuery("Select * from Win32_NetworkAdapterConfiguration where IPEnabled=TRUE",,48)
+
+				Dim strIP : strIP = ""
+				Dim arrIP(1)
+				For Each objNetworkAdaptor In colNetworkAdaptors
+					Set objAdaptor = objWMIService.Get ("Win32_NetworkAdapter.DeviceID=" & objNetworkAdaptor.Index)
+					If objAdaptor.PhysicalAdapter = True Then																	' Physical Adaptor
+						If objAdaptor.NetConnectionStatus = 2 Then																' Connected
+							If objAdaptor.AdapterTypeID = 0 Then																' Ethernet Adaptor
+								If InStr(1,objAdaptor.NetConnectionID, "VM") = 0 Then											' Adaptor Name Does Not Contain VM
+									If Not IsNull(objNetworkAdaptor.IPAddress) Then 											' IP Address Is Not Empty
+										For i=LBound(objNetworkAdaptor.IPAddress) To UBound(objNetworkAdaptor.IPAddress) 
+											If Mid(objNetworkAdaptor.IPAddress(i),1,3) <> "169" Then							' IP Is Not APIPA
+												If Not InStr(objNetworkAdaptor.IPAddress(i), ":") > 0 Then						' IP Is Not IPv6
+													If LastMac = "" Then 														' Get Only 1 IP
+														arrIP(0) = ListIPAdds & objNetworkAdaptor.IPAddress(i)
+														arrIP(1) = objNetworkAdaptor.IPSubnet(0)
+														LastMac = objNetworkAdaptor.MACAddress
+													End If
+												End If
+											End If
+										Next 
+									End If 
+								End If
+							End If
+						End If
+					End If
+				Next
+				
+				getIP = arrIP
+			End Function
+
+			Function ValidateStopIPAddress(strStartIP, strStopIP, strBroadcastIP)
+						Dim arrOctStop  : arrOctStop = Split(strStopIP, ".")
+						Dim arrOctFirst : arrOctFirst = Split(IncrementIP(strNetworkID), ".")
+						Dim arrOctLast  : arrOctLast = Split(CalcLastHostIP(strBroadcastIP), ".")
+						
+						ValidateStopIPAddress = True
+						Dim i
+						For i = 0 to UBound(arrOctStop)
+							' Stop IP outside subnet
+							If CInt(arrOctFirst(i)) > CInt(arrOctStop(i)) Or CInt(arrOctStop(i)) > CInt(arrOctLast(i)) Then
+								ValidateStopIPAddress = False
+							End If
+						Next
+						
+						Dim arrOctStart : arrOctStart = Split(strStartIP, ".")
+						For i = 0 to UBound(arrOctStop)
+							' Stop IP less than start IP
+							If CInt(arrOctStart(i)) > CInt(arrOctStop(i)) Then
+								ValidateStopIPAddress = False
+							End If
+						Next	
+			End Function
+
+			Function IncrementIP(strStartIP) 
+				Dim arrStartIP
+				arrStartIP = Split(strStartIP,".")
+					if arrStartIP(3) < 255 then
+						arrStartIP(3) = arrStartIP(3) + 1
+					else
+						if arrStartIP(2) < 255 then
+							arrStartIP(2) = arrStartIP(2) + 1
+							arrStartIP(3) = 0
+						else
+							if arrStartIP(1) < 255 then
+								arrStartIP(1) = arrStartIP(1) + 1
+								arrStartIP(2) = 0
+								arrStartIP(3) = 0
+							else
+								if arrStartIP(0) < 255 then
+									arrStartIP(0) = arrStartIP(0) + 1
+									arrStartIP(2) = 0
+									arrStartIP(2) = 0
+									arrStartIP(3) = 0
+								else
+									Msgbox "Oops, cannot increment past 255.255.255.255 !"
+									Exit Function
+								end if
+							end if
+						end if
+					end if
+				IncrementIP = arrStartIP(0) &"."& arrStartIP(1) &"."& arrStartIP(2) &"."& arrStartIP(3)
+			End Function
+
+			Function CalcLastHostIP(strBroadcastIP)
+				Dim arrBroadcastIP : arrBroadcastIP = Split(strBroadcastIP,".")
+				CalcLastHostIP = arrBroadcastIP(0) &"."& arrBroadcastIP(1) &"."&arrBroadcastIP(2) &"."& (arrBroadcastIP(3) - 1)
+			End Function
+
+			Function CalcBroadcastIP(strNetworkID,intNumberofIPs)
+				CalcBroadcastIP = strNetworkID
+				Dim i
+				For i = 1 To (intNumberofIPs - 1)
+					CalcBroadcastIP = IncrementIP(CalcBroadcastIP)
+				Next
+			End Function
+
+			Function CalcNetIDandNumIPs(strIPaddress, strSubnetmask)
+				Dim arrReturn(2)
+				Dim arrSubnetmask : arrSubnetmask = Split(strSubnetmask,".")
+				Dim arrIPaddress : arrIPaddress = Split(strIPaddress,".")
+				Dim arrNetworkIP(3) 
+				Dim intOctet : intOctet = 0
+				Dim intNumIPsPerOctet 	
+				Dim intNumIPs : intNumIPs = 1 
+				 
+				Do Until intOctet = 4 
+					intNumIPsPerOctet = 256 - arrSubnetmask(intOctet)
+					arrNetworkIP(intOctet) = CalcNetworkID(arrIPAddress(intOctet), intNumIPsPerOctet)
+					intNumIPs = intNumIPs * IntNumIPsPerOctet
+					intOctet = IntOctet + 1
+				Loop
+				arrReturn(0) = arrNetworkIP(0) &"."& arrNetworkIP(1) &"."& arrNetworkIP(2) &"."& arrNetworkIP(3)
+				arrReturn(1) = intNumIPs
+				CalcNetIDandNumIPs = arrReturn
+			End Function
+
+			Function CalcNetworkID(OctetVal, IntNumIPsPerOctet)
+				Dim intWhichNet 
+				Dim intStartAddress
+				intWhichNet = OctetVal \ intNumIpsperOctet
+				CalcNetworkID = intWhichNet * IntNumIPsPerOctet
+			End Function
+
+			' # OPTION 3 - LIST FROM FILE
+			Sub BrowseForFile()
+			  hiddenBrowse.click
+			  strFilePath = hiddenBrowse.value
+			  If right(lcase(strFilePath),3) <> "txt" then 
+				msgbox "Please choose a txt file.",64,"No txt file chosen"
+				txtFileName.value = ""
+			  Else
+				txtFileName.value = strFilePath
+				Set objListFile = objFSO.OpenTextFile(strFilePath, ForReading)
+				Do While Not objListFile.AtEndOfStream 
+					objMachine = objListFile.ReadLine()
+					If document.getElementById("cbxAllInFile").checked = True Then
+						addMachine objMachine, "tblSelectedMachines"
+					Else
+						addMachine objMachine, "tblSelectorBox2"
+					End If
+				Loop
+			  End If
+			  document.getElementById("hiddenBrowse").outerHTML = document.getElementById("hiddenBrowse").outerHTML
+			  Set strFilePath = Nothing
+			End Sub
+
+			' # OPTION 4 - ACTIVE DIRECTORY
+			Sub showAD(obj)
+				If document.getElementById("cbx_" & obj).checked = True Then
+					document.getElementById(obj).style.display = "block"
+					document.getElementById("ddlDest").tabindex = -1
+					document.getElementById("option4").tabindex = -1
+					getDomain
+				Else
+					document.getElementById(obj).style.display = "none"
+				End If
+			End Sub
+
+			Sub getDomain()
+				Set colItems = GetObject(getCurrentOU)
+				colItems.Filter = Array("Computer")
+
+				document.getElementById("_spn1").innerHTML = "<table class='txt' style='width:100%;' id='tblSelectedMachines'></table>"
+				For Each objItem in colItems
+					addMachine objItem.CN, "tblSelectedMachines"
+				Next
+			End Sub
+
+			Function getCurrentOU()
+				On Error Resume Next
+				Set objSysInfo = CreateObject("ADSystemInfo")
+				strComputer = objSysInfo.ComputerName
+
+				Set objComputer = GetObject("LDAP://" & strComputer)
+				getCurrentOU = objComputer.Parent
+			End Function
+
+			' #############################################################################
+			' # 						MAIN 5 ROUNTINES	-	SEND
+			' #############################################################################
+
+			Sub Preview(btn)
+				strVBS = ""
+				strVBS = strVBS & "Dim objShell, result" & vbCrLF
+				strVBS = strVBS & "Set objShell = WScript.CreateObject(" & Chr(34) & "WScript.Shell" & Chr(34) & ")" & vbCrLF
+				strVBS = strVBS & "result = objShell.Popup(""" & Replace(document.getElementById("msgText").value, vbCrLf, """ & vbCrLf & """) & """ & vbCrLf & vbCrLf & """ & document.getElementById("msgSign").value & """, " & CInt(tmoInt) & ", """ & document.getElementById("msgTitle").value & """, " & CInt(msgInt) & ")" & vbCrLF
+				strVBS = strVBS & "Select Case result" & vbCrLF
+				strVBS = strVBS & vbTab & "Case 1" & vbCrLF		' OK
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response1").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case 6" & vbCrLF		' Yes
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response2").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case 7" & vbCrLF		' No
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response3").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case 3" & vbCrLF		' Abort
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response4").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case 4" & vbCrLF		' Retry
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response5").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case 2" & vbCrLF		' Cancel
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response6").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case 5" & vbCrLF		' Ignore
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response7").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case 10" & vbCrLF	' Try Again
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response8").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case 11" & vbCrLF	' Continue
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response9").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case -1" & vbCrLF	' Timeout
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response10").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf	
+				strVBS = strVBS & "End Select"
+				If btn = "preview" Then
+					Set objFile = getTempFile
+					objFile.WriteLine strVBS
+					objFile.Close
+					objShell.Run TEMP & "\" & tmpFile,0,True
+					objFSO.DeleteFile(TEMP & "\" & tmpFile)	
+				Else
+					spnCodePreview.innerHTML = "<p>" & Replace(Replace(strVBS,vbCrLf,"<br />"),vbTab, "&nbsp;&nbsp;&nbsp;&nbsp;") & "</p>"
+					areaOutput.innerHTML = ""
+				End If
+			End Sub
+
+			Sub Send()
+				On Error Resume Next
+				Dim oExec, output, line, strVBS
+				window.document.Body.Style.Cursor = "wait"
+				strVBS = ""
+				strVBS = strVBS & "Dim objShell, result" & vbCrLF
+				strVBS = strVBS & "Set objShell = WScript.CreateObject(" & Chr(34) & "WScript.Shell" & Chr(34) & ")" & vbCrLF
+				strVBS = strVBS & "result = objShell.Popup(""" & Replace(document.getElementById("msgText").value, vbCrLf, """ & vbCrLf & """) & """ & vbCrLf & vbCrLf & """ & document.getElementById("msgSign").value & """, " & CInt(tmoInt) & ", """ & document.getElementById("msgTitle").value & """, " & CInt(msgInt) & ")" & vbCrLF
+				strVBS = strVBS & "Select Case result" & vbCrLF
+				strVBS = strVBS & vbTab & "Case 1" & vbCrLF		' OK
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response1").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case 6" & vbCrLF		' Yes
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response2").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case 7" & vbCrLF		' No
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response3").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case 3" & vbCrLF		' Abort
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response4").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case 4" & vbCrLF		' Retry
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response5").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case 2" & vbCrLF		' Cancel
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response6").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case 5" & vbCrLF		' Ignore
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response7").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case 10" & vbCrLF	' Try Again
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response8").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case 11" & vbCrLF	' Continue
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response9").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf
+				strVBS = strVBS & vbTab & "Case -1" & vbCrLF	' Timeout
+				strVBS = strVBS & vbTab & vbTab & Replace(document.getElementById("response10").value, vbCrLF, vbCrLf & vbTab & vbTab) & vbCrLf	
+				strVBS = strVBS & "End Select" & vbCrLF	
+				strVBS = strVBS & "strScript = Wscript.ScriptFullName" & vbCrLF	
+				strVBS = strVBS & "Set objFSO = CreateObject(""Scripting.FileSystemObject"")" & vbCrLF	
+				strVBS = strVBS & "objFSO.DeleteFile(strScript)"
+				Set objFile = getTempFile
+				objFile.WriteLine strVBS
+				objFile.Close
+				
+				areaOutput.innerHTML = "<p>"
+				Set objTable = document.getElementById( "tblSelectedMachines" )
+				Dim strDir, strUserTemp
+				For i = 0 To objTable.rows.length - 1
+					sComp = objTable.rows(i).cells(0).innerText
+					areaOutput.innerHTML = areaOutput.innerHTML & "Connecting to " & sComp & "...  "
+					
+					If Reachable(sComp) Then
+						areaOutput.innerHTML = areaOutput.innerHTML & "Successful<br />"
+						areaOutput.innerHTML = areaOutput.innerHTML & "Checking for logged on user... "
+						If LoggedOnUser(sComp) <> "" Then
+							areaOutput.innerHTML = areaOutput.innerHTML & "Successful (" & LoggedOnUser(sComp) & ")<br />"
+							If document.getElementById("cbx_altCred").checked = True Then
+								Set objSWbemLocator = CreateObject("WbemScripting.SWbemLocator")
+								Set objRemote = objSWbemLocator.ConnectServer(sComp, "root\cimv2", document.getElementById("txtAltUsername").value, document.getElementById("txtAltPassword").value)
+									objRemote.Security_.ImpersonationLevel = 3
+							Else
+								Set objRemote = GetObject("winmgmts:" _
+									& "{impersonationLevel=impersonate,authenticationLevel=Pkt}!\\" _
+									& sComp & "\root\cimv2")
+							End If					
+							
+							areaOutput.innerHTML = areaOutput.innerHTML & "Copying script to " & sComp & "...  "
+							strDir = Replace(getDir(sComp),":","$") & "\"
+							strUserTemp = strDir & Split(LoggedOnUser(sComp), "\")(1) & "\AppData\Local\Temp\"
+							intReturnCode = objFSO.CopyFile(TEMP & "\" & tmpFile ,"\\" & sComp & "\" & strUserTemp, True)
+							strUserTemp = Replace(strUserTemp,"$",":")
+							Set colFiles = objRemote.ExecQuery("Select * From CIM_DataFile Where Name = '" & strUserTemp & "'")	
+							
+							If intReturnCode = 0 And colFiles <> 0 Then
+								areaOutput.innerHTML = areaOutput.innerHTML & "Successful<br />"
+								areaOutput.innerHTML = areaOutput.innerHTML & "&nbsp;&nbsp;&nbsp; - Copied to " & strUserTemp & "<br />"
+								areaOutput.innerHTML = areaOutput.innerHTML & "Creating scheduled task on " & sComp & "...  "
+								Set objProcess = objRemote.Get("Win32_Process")
+								objShell.Run "cmd /q /c SCHTASKS.exe /DELETE /S " & sComp & " /TN ntmsgr /F", 0, True
+								
+								If document.getElementById("cbx_altCred").checked = True Then
+									intReturnCode = objProcess.Create("SCHTASKS.exe /CREATE /U " & document.getElementById("txtAltUsername").value & " /P " & document.getElementById("txtAltPassword").value & " /RU " & LoggedOnUser(sComp) & " /SC ONCE /TN ntmsgr /TR " & Chr(34) & strUserTemp & tmpFile & Chr(34) & " /ST " & getTime(sComp) & " /V1 /IT /Z /F")
+								Else
+									intReturnCode = objProcess.Create("SCHTASKS.exe /CREATE /RU " & LoggedOnUser(sComp) & " /SC ONCE /TN ntmsgr /TR " & Chr(34) & strUserTemp & tmpFile & Chr(34) & " /ST " & getTime(sComp) & " /V1 /IT /Z /F")
+								End If
+								
+								If intReturnCode = 0 Then
+									areaOutput.innerHTML = areaOutput.innerHTML & "Successful<br />"
+									intReturnCode = objShell.Run("cmd /q /c SCHTASKS.exe /RUN /S " & sComp & " /U " & LoggedOnUser(sComp) & " /TN ntmsgr", 0, False) ' Try
+								Else
+									areaOutput.innerHTML = areaOutput.innerHTML & "Error: " & intReturnCode & "<br /><br />"					
+								End If
+							Else
+								areaOutput.innerHTML = areaOutput.innerHTML & "Error: " & intReturnCode & "<br /><br />"
+							End If
+						Else
+							areaOutput.innerHTML = areaOutput.innerHTML & "None<br /><br />"
+						End If
+					Else
+						areaOutput.innerHTML = areaOutput.innerHTML & "Computer Unavailable<br /><br />"
+					End If
+				Next
+				areaOutput.innerHTML = areaOutput.innerHTML & "</p>"
+				objFSO.DeleteFile(TEMP & "\" & tmpFile)
+				window.document.Body.Style.Cursor = "default"
+			End Sub
+
+			Function getTempFile()
+				Dim tfile
+				tmpFile = objFSO.GetTempName
+				tmpFile = Replace(tmpFile,"tmp","vbs")	
+				Set tfile = objFSO.CreateTextFile(TEMP & "\" & tmpFile)
+				Set getTempFile = tfile
+			End Function
+
+			Function getTime(strComputer)
+				If document.getElementById("cbx_altCred").checked = True Then
+					Set objSWbemLocator = CreateObject("WbemScripting.SWbemLocator")
+					Set objWMIService = objSWbemLocator.ConnectServer(strComputer, "root\cimv2", document.getElementById("txtAltUsername").value, document.getElementById("txtAltPassword").value)
+						objWMIService.Security_.ImpersonationLevel = 3
+				Else
+					Set objWMIService = GetObject("winmgmts:\\" & strComputer & "\root\CIMV2")
+				End If
+				Set colItems = objWMIService.ExecQuery("Select * From Win32_LocalTime")
+
+				For Each objItem in colItems
+					intMinute = objItem.Minute + 2
+					If intMinute > 59 Then
+						intMinute = 0
+						intHour = objItem.Hour + 1
+						If intHour > 23 Then
+							intHour = 0
+						End If
+					End If
+					
+					If Len(intHour) = 1 Then
+						intHour = "0" & objItem.Hour
+					Else
+						intHour = objItem.Hour
+					End If
+					If Len(intMinute) = 1 Then
+						intMinute = "0" & intMinute
+					Else
+						intMinute = intMinute
+					End If		
+					getTime = intHour & ":" & intMinute
+				Next
+			End Function
+			
+			Function getDir(strComputer)
+				If document.getElementById("cbx_altCred").checked = True Then
+					Set objSWbemLocator = CreateObject("WbemScripting.SWbemLocator")
+					Set objWMIService = objSWbemLocator.ConnectServer(strComputer, "\root\default:StdRegProv", document.getElementById("txtAltUsername").value, document.getElementById("txtAltPassword").value)
+						objWMIService.Security_.ImpersonationLevel = 3
+				Else
+					Set objWMIService = GetObject("winmgmts:\\" & strComputer & "\root\default:StdRegProv")
+				End If
+				Const HKEY_LOCAL_MACHINE = &H80000002
+				Dim strKeyPath : strKeyPath = "Software\Microsoft\Windows NT\CurrentVersion\ProfileList"
+				Dim strValueName : strValueName = "ProfilesDirectory"
+				objWMIService.GetStringValue HKEY_LOCAL_MACHINE,strKeyPath,strValueName,strValue
+				getDir = strValue
+			End Function
+
+			Function Reachable(strPC)
+				'#--------------------------------------------------------------------------
+				'#  FUNCTION.......:	Reachable(strPC)
+				'#  PURPOSE........:	Checks whether the remote PC is online
+				'#  ARGUMENTS......:	strPC = PC on which to perform action
+				'#  EXAMPLE........:	Reachable(PC1)
+				'#  NOTES..........:    Subroutine taken from Stuart Barrett's PSExecCommandBuilder.hta
+				'#--------------------------------------------------------------------------
+				Set objWMIService2 = GetObject("winmgmts:\\.\root\cimv2")
+				Set colPing = objWMIService2.ExecQuery _
+					("Select * from Win32_PingStatus Where Address = '" & strPC & "'")
+				For Each objItem in colPing
+					If IsNull(objItem.StatusCode) Or objItem.Statuscode <> 0 Then
+						Reachable = False
+					Else
+						Reachable = True
+					End If
+				Next
+			End Function
+
+			Function LoggedOnUser(strComputer)
+				If document.getElementById("cbx_altCred").checked = True Then
+					Set objSWbemLocator = CreateObject("WbemScripting.SWbemLocator")
+					Set objWMIService = objSWbemLocator.ConnectServer(strComputer, "root\cimv2", document.getElementById("txtAltUsername").value, document.getElementById("txtAltPassword").value)
+						objWMIService.Security_.ImpersonationLevel = 3
+				Else
+					Set objWMIService = GetObject("winmgmts:\\" & strComputer & "\root\CIMV2")
+				End If
+				Set colComputer = objWMIService.ExecQuery _
+					("Select * from Win32_ComputerSystem")
+				For Each objItem In colComputer
+					strLoggedOn = objItem.UserName
+				Next
+				LoggedOnUser = strLoggedOn
+			End Function		
+		</script>
+
+		<!-- JavaScript Scripts -->
+		<script language="javascript">
+			function addMachine(txtMachine, tbl){
+				if (txtMachine != "") {
+					var objTable = document.getElementById(tbl);
+					intSelected = intSelected + 1;
+					var rowCnt = intSelected;
+					var objRow = objTable.insertRow();
+					objRow.id = rowCnt;
+					if (tbl == "tblSelectedMachines") {
+						objRow.onclick = function(){SelectRows(rowCnt);};
+						if (document.getElementById("ddlDest").value == "2") {
+							var srcTable = "tblSelectorBox1";
+							objRow.ondblclick = function(){remMachine(rowCnt);addMachine(txtMachine, srcTable);};
+						}else if (document.getElementById("ddlDest").value == "3") {
+							var srcTable = "tblSelectorBox2";
+							objRow.ondblclick = function(){remMachine(rowCnt);addMachine(txtMachine, srcTable);};
+						} else{
+							objRow.ondblclick = function(){remMachine(rowCnt)};
+						}
+					}else{
+						objRow.onclick = function(){SelectRows(rowCnt)};
+						objRow.ondblclick = function(){addMachine(txtMachine, "tblSelectedMachines");remMachine(rowCnt);};
+					}
+					objRow.onmouseout = function(){unhighlightRows(rowCnt)};
+					objRow.onmouseover = function(){highlightRows(rowCnt)};	
+					var objCell = objRow.insertCell();
+					objCell.innerHTML = txtMachine.toUpperCase();
+				}
+			}
+
+			function addADMachine(txtMachine){
+				addMachine(String(txtMachine), "tblSelectedMachines");
+			}
+
+			function remMachine(rowid){   
+				var row = document.getElementById(rowid);
+				row.parentNode.removeChild(row);
+			}
+
+			function remSelectedMachines(remB){
+				var objTable = document.getElementById("tblSelectedMachines");
+				var counter = 0;
+				if (objTable.rows.length > 0) {
+					for (var i = 0; i < objTable.rows.length; i++) {
+						var objRow = objTable.rows[i];	
+						if (remB == true){
+							objRow.fireEvent("ondblclick");
+							i--;
+							counter = counter + 1;
+						}else{
+							if (objRow.className == "selected") {
+								objRow.fireEvent("ondblclick");
+								i--;
+								counter = counter + 1;
+							}
+						}
+					}
+				}
+			}
+
+			function addSelectedMachines(addB){
+				if (document.getElementById("ddlDest").value == "1") {
+					addMachine(String(document.getElementById("txtSingle").value), "tblSelectedMachines");
+					document.getElementById("txtSingle").value = "";
+					return;
+				}else if (document.getElementById("ddlDest").value == "2") {
+					var tbl = "tblSelectorBox1";
+				}else if (document.getElementById("ddlDest").value == "3") {
+					var tbl = "tblSelectorBox2";
+				}else if (document.getElementById("ddlDest").value == "4") {
+					if (document.getElementById("cbx_adBlock").checked == true){
+						return;
+					}
+					var tbl = "mainTable";
+				} else{
+					return;
+				}
+				var objTable = document.getElementById(tbl);
+				var counter = 0;
+				if (objTable.rows.length > 0) {
+					for (var i = 0; i < objTable.rows.length; i++) {
+						var objRow = objTable.rows[i];	
+						if (addB == true && document.getElementById("ddlDest").value != "4"){
+							objRow.className = "unselected";
+							objRow.fireEvent("ondblclick");
+							i--;
+							counter = counter + 1;			
+						}else{
+							if (objRow.className == "selected") {
+								objRow.className = "unselected";
+								objRow.fireEvent("ondblclick");
+								i--;
+								counter = counter + 1;
+							}
+						}
+					}			
+				}
+			}
+
+			function addSingle(txtMachine){
+				if(txtMachine != "" && event.keyCode==13){
+					addMachine(txtMachine, "tblSelectedMachines");
+					document.getElementById("txtSingle").value = "";
+				}
+			}
+
+			function js_validateIP(strIP){
+				if(/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(strIP)){
+					return true;
+				}else{
+					return false;
+				}
+			}
+
+			function js_validateNetMask(mask){
+				//m[0] can be 128, 192, 224, 240, 248, 252, 254, 255
+				//m[1] can be 128, 192, 224, 240, 248, 252, 254, 255 if m[0] is 255, else m[1] must be 0
+				//m[2] can be 128, 192, 224, 240, 248, 252, 254, 255 if m[1] is 255, else m[2] must be 0
+				//m[3] can be 128, 192, 224, 240, 248, 252, 254, 255 if m[2] is 255, else m[3] must be 0
+
+				var correct_range = {128:1,192:1,224:1,240:1,248:1,252:1,254:1,255:1,0:1};
+				var m = mask.split('.');
+
+				for (var i = 0; i <= 3; i ++) {
+					if (!(m[i] in correct_range)) {
+						return false;
+					}
+				}
+				if ((m[0] == 0) || (m[0] != 255 && m[1] != 0) || (m[1] != 255 && m[2] != 0) || (m[2] != 255 && m[3] != 0)) {
+					return false;
+				}
+				return true;
+			}		
+		</script>		
+	</head>
+	
+	<body>
+		<div id="main0">
+			<div id="main_nav">
+				<ul>
+					<li><a id="marker1" class="button selected">Message</a></li>
+					<li><a id="marker2" class="button selected">Response</a></li>
+					<li><a id="marker3" class="button">Destination</a></li>
+					<li><a id="marker4" class="button">Send</a></li>
+					<hr>
+					<li><a onclick="About" href="#" class="button">About</a></li>
+				</ul>
+				<div id="main_nav_footer">
+					<hr>
+					<span id="info" style="float:left;font-size:0.6em;font-style:italic;color:#888888;font-weight:bold;font-family:palatino;text-align:left;margin-bottom:7px;">
+						<a target="_blank" href="http://community.spiceworks.com/profile/show/IT4577">
+							<img src="http://static.spiceworks.com/images/users/0020/6560/mini_magick20120227-26837-1jt7gia_big.jpg?1330358166" alt="IT4577" width="60" height="60" align="left"/>
+						</a>
+						Version 1.0<br>Created by<br>IT4577 
+					</span>
+					<a id="tag" target="_blank" href="http://www.spiceworks.com/referrer/IT4577" style="clear:both; margin-bottom:0px;">
+						<img src="http://banners.spiceworks.com/banners/spiceworks/spread_spiceworks/images/buttons/spiceworks.png" width="144" height="30" border="0" alt="Spiceworks"/>
+					</a>					
+				</div> <!-- End Main_Nav_Footer -->
+			</div> <!-- End Main_Nav -->
+							
+			<div id="main1" class="main_pane" style="display:none;"><h2 class="txtH1" style="margin: 10px;"><u>Message</u></h2>
+				<table class="txt">	
+					<tr title="Title of message box.">
+						<td>Message Title:</td>
+						<td colspan=2><input id="msgTitle" class="text" type="text" name="" size="72"></td>
+					</tr>
+					<tr title="Message text to send.">
+						<td>Message:</td>
+						<td colspan=2><textarea id="msgText" class="text" name="" rows="10" cols="72" onkeyup=strLength(me)></textarea></td>
+					</tr>
+					<tr title="Signature for message. (Optional)">
+						<td >Signature:</td>
+						<td><input id="msgSign" class="text" type="text" name="" size="65" onkeyup=strLength(me)></td>
+						<td>(<span id="chrCount">1018</span>)</td>
+					</tr>
+				</table>
+				<hr>
+				<table class="txt" style="width:95%;">	
+					<tr>
+						<th class="txtH2" style="width:44%; text-align:left;">Buttons</th>
+						<th class="txtH2" style="width:36%; text-align:left;">Icons</th>
+						<th class="txtH2" style="width:20%; text-align:left;">Default Button</th>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="Buttons"  value="0" onclick="setMsgOptions me,me.value" checked />OK Only</label></td>
+						<td><label><input type="radio" name="Icons"    value="0" onclick="setMsgOptions me,me.value" checked />No icon</label></td>
+						<td><label><input type="radio" name="Defaults" value="0" onclick="setMsgOptions me,me.value" checked />First button</label></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="Buttons"  value="1"   onclick="setMsgOptions me,me.value" />OK and Cancel buttons</label></td>
+						<td><label><input type="radio" name="Icons"    value="16"  onclick="setMsgOptions me,me.value" />Critical Message icon</label></td>
+						<td><label><input type="radio" name="Defaults" value="256" onclick="setMsgOptions me,me.value" />Second button</label></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="Buttons" value="2"    onclick="setMsgOptions me,me.value" />Abort, Retry, and Ignore buttons</label></td>
+						<td><label><input type="radio" name="Icons"   value="32"   onclick="setMsgOptions me,me.value" />Warning Query icon</label></td>
+						<td><label><input type="radio" name="Defaults" value="512" onclick="setMsgOptions me,me.value" />Third button</label></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="Buttons" value="3"    onclick="setMsgOptions me,me.value" />Yes, No, and Cancel buttons</label></td>
+						<td><label><input type="radio" name="Icons"   value="48"   onclick="setMsgOptions me,me.value" />Warning Message icon</label></td>
+						<th class="txtH2" style="width:32%; text-align:left;">TimeOut</th>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="Buttons" value="4"  onclick="setMsgOptions me,me.value" />Yes and No buttons</label></td>
+						<td><label><input type="radio" name="Icons"   value="64" onclick="setMsgOptions me,me.value" />Information Message icon</label></td>
+						<td>
+							<select class="text" name="Timeout" id="ddlTimeout" style="width:95px" onChange="showTimeout">
+								<option value="0"></option>
+								<option value="1">1 Second</option>
+								<option value="2">2 Seconds</option>
+								<option value="3">3 Seconds</option>
+								<option value="4">4 Seconds</option>
+								<option value="5">5 Seconds</option>
+								<option value="10">10 Seconds</option>
+								<option value="15">15 Seconds</option>
+								<option value="30">30 Seconds</option>
+								<option value="60">60 Seconds</option>
+								<option value="90">90 Seconds</option>
+								<option value="120">2 Minutes</option>
+								<option value="180">3 Minutes</option>
+								<option value="300">5 Minutes</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="Buttons" value="5" onclick="setMsgOptions me,me.value" />Retry and Cancel buttons</label></td>
+						<th class="txtH2" style="width:32%; text-align:left;">Mode</th>
+						<td></td>
+					</tr>
+					<tr>
+						<td><label><input type="radio" name="Buttons" value="6" onclick="setMsgOptions me,me.value" />Cancel, Try Again, and Continue buttons</label></td>
+						<td><label><input type="radio" name="Modes" value="0" onclick="setMsgOptions me,me.value" checked />Application modal</label></td>
+						<td></td>
+					</tr>	
+					<tr>
+						<td></td>
+						<td><label><input type="radio" name="Modes" value="4096" onclick="setMsgOptions me,me.value" />System modal</label></td>
+						<td></td>
+					</tr>						
+				</table>
+				<ul style="position:absolute;right:10px;bottom:10px;">
+					<li><a onclick="showPane 'main',2" href="#" class="button2 main">Next</a></li>
+				</ul>
+			</div> <!-- End Network Message -->
+			
+			<div id="main2" class="main_pane" style="display:none;"><h2 class="txtH1" style="margin: 10px;"><u>Response</u></h2>
+				<p class="txt" style="margin: 0px 0px 10px 0px;">Adding any button response code may prevent this application from working correctly. Only add response code if you know what you are doing.</p>
+				<table class="txt" style="width:100%">
+					<col width="17%" />
+					<tr id="res1" title="OK Response code">
+						<td>OK Response:</td>
+						<td><textarea id="response1" class="text" rows="5" cols="69"></textarea></td>
+					</tr>
+					<tr id="res2" title="Yes Response code" style="display:none;">
+						<td>Yes Response:</td>
+						<td><textarea id="response2" class="text" rows="5" cols="69"></textarea></td>
+					</tr>
+					<tr id="res3" title="No Response code" style="display:none;">
+						<td>No Response:</td>
+						<td><textarea id="response3" class="text" rows="5" cols="69"></textarea></td>
+					</tr>	
+					<tr id="res4" title="Abort Response code" style="display:none;">
+						<td>Abort Response:</td>
+						<td><textarea id="response4" class="text" rows="5" cols="69"></textarea></td>
+					</tr>	
+					<tr id="res5" title="Retry Response code" style="display:none;">
+						<td>Retry Response:</td>
+						<td><textarea id="response5" class="text" rows="5" cols="69"></textarea></td>
+					</tr>	
+					<tr id="res6" title="Cancel Response code" style="display:none;">
+						<td>Cancel Response:</td>
+						<td><textarea id="response6" class="text" rows="5" cols="69"></textarea></td>
+					</tr>	
+					<tr id="res7" title="Ignore Response code" style="display:none;">
+						<td>Ignore Response:</td>
+						<td><textarea id="response7" class="text" rows="5" cols="69"></textarea></td>
+					</tr>	
+					<tr id="res8" title="Try Again Response code" style="display:none;">
+						<td>Try Again Response:</td>
+						<td><textarea id="response8" class="text" rows="5" cols="69"></textarea></td>
+					</tr>	
+					<tr id="res9" title="Continue Response code" style="display:none;">
+						<td>Continue Response:</td>
+						<td><textarea id="response9" class="text" rows="5" cols="69"></textarea></td>
+					</tr>
+					<tr id="res10" title="Timeout Response code" style="display:none;">
+						<td>Timeout Response:</td>
+						<td><textarea id="response10" class="text" rows="5" cols="69"></textarea></td>
+					</tr>					
+				</table>
+				<ul style="position:absolute;left:3px;bottom:10px;">
+					<li><a onclick="showPane 'main',1" href="#" class="button2 main">Back</a></li>
+				</ul>
+				<ul style="position:absolute;right:10px;bottom:10px;">
+					<li><a onclick="showPane 'main',3" href="#" class="button2 main">Next</a></li>
+				</ul>
+			</div> <!-- End Response -->	
+
+			<div id="main3" class="main_pane txt" style="display:none;"><h2 class="txtH1" style="margin:10px;"><u>Destination</u></h2>
+				<div id="adCred"  style="display:none; z-index:10; background: black;    position:absolute; left:0px;   bottom:0px; width:640px; height:100%; filter:alpha(opacity=10);"></div>
+				<div id="adCred2" style="display:none; z-index:20; position:absolute; left:173px; top:95px; border:1px solid #ababab; filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');">
+					<table class="txt" style="width:auto;">	
+						<tr>
+							<td title="Optional user name for login to remote system">
+								Username
+							</td>
+							<td title="Optional user name for login to remote system">
+								<input id="txtADUsername" class="text" type="text" name="" size="25">
+							</td>
+						</tr>
+						<tr>
+							<td title="Optional password for username, if left blank where a username is specified then you will be asked to supply one on executing the command">
+								Password
+							</td>
+							<td title="Optional password for username, if left blank where a username is specified then you will be asked to supply one on executing the command">
+								<input id="txtADPassword" class="text" type="password" name="" size="25">
+							</td>
+						</tr>
+						<tr align="right">
+							<td colspan=2 title="Optional password for username, if left blank where a username is specified then you will be asked to supply one on executing the command">
+								<ul id="" style="display:inline; margin:0px 0px 0px 23px;">
+									<li style="display:inline;"><a onClick="showCredentials 'adCred','submit'" href="#" class="button2 main" style="width:12px; height:15px; padding:3px 7px;" >Submit</a></li>
+									<li style="display:inline;"><a onClick="showCredentials 'adCred','cancel'" href="#" class="button2 main" style="width:12px; height:15px; padding:3px 7px;" >Cancel</a></li>
+								</ul>
+							</td>
+						</tr>						
+					</table>
+				</div>
+				<div id="adBlock" style="display:none; z-index:10; background: black;    position:absolute; left:11px;   bottom:70px; width:445px; height:425px; filter:alpha(opacity=10);"></div>
+				<table class="txt" style="width:100%; margin-bottom:0px;">
+					<tr>
+						<th class="txtH2" style="height:25px;width:80%;text-align:left;">
+							Lookup Type:&nbsp;
+							<select class="text" size="1" id="ddlDest" style="width:154px" onChange="showOption(me.value)">
+								<option value="1">Single Machine</option>
+								<option value="2">IP Range</option>
+								<option value="3">List File</option>
+								<option value="4">Active Directory</option>
+							</select>
+						</th>
+						<th rowspan=2>
+							<ul style="margin: 150px 0px;">
+								<li style="width: 15px;"><a onclick="addSelectedMachines(true)" href="#" style="width: 25px;" class="button3 main" title="Click to add selected computers from selector box to Selected Machines box">>></a></li>
+								<li style="width: 15px;"><a onclick="addSelectedMachines(false)" href="#" style="width: 25px;" class="button3 main" title="Click to add selected computers from selector box to Selected Machines box">></a></li>
+								<li style="width: 15px;"><a onclick="remSelectedMachines(false)" href="#" style="width: 25px;" class="button3 main" title="Click to remove selected computers from Selected Machines box"><</a></li>
+								<li style="width: 15px;"><a onclick="remSelectedMachines(true)" href="#" style="width: 25px;" class="button3 main" title="Click to remove selected computers from Selected Machines box"><<</a></li>
+							</ul>
+						</th>
+						<th class="txtH2" style="width:20%;text-align:left;">
+							Selected Machines:
+						</th>
+					</tr>
+					<tr>
+						<td valign="top">
+							<div id="option1"> <!-- Single Machine -->
+								<table class="txt">
+									<tr>
+										<td colspan=2>Destination Computer:</td>
+									</tr>
+									<tr>
+										<td colspan=2><input class="text" type="text" id="txtSingle" size="32" onkeydown="addSingle(me.value)" ></td>
+									</tr>
+									<tr>
+										<td colspan=2>Please enter a valid computer name or a valid IP address for the destination computer you wish to send a message. Then add it to the Selected Machines box.</td>
+									</tr>
+								</table>
+							</div>
+							<div id="option2"  style="display: none; margin-top:0px;"> <!-- IP Range -->
+								<table class="txt">
+									<tr>
+										<td colspan=2 style="text-align:left;">IP Address Range:</td>
+										<td rowspan=7 style="vertical-align:top;">
+											<span unselectable="on" onselectstart="cancelEvent" id="_spnTmp1" class="text no_scroll" name="" style="height:395px; width:140px;">
+												<table class="txt" style="width:100%;" id="tblSelectorBox1"></table>
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<td>Start IP</td>
+										<td><input class="text" type="text" id="txtStartIP" size="18" onkeyup="Validate(me.id)"></td>
+									</tr>
+									<tr>
+										<td>Stop IP</td>
+										<td><input class="text" type="text" id="txtStopIP" size="18" onkeyup="Validate(me.id)"></td>
+									</tr>
+									<tr>
+										<td>Subnet</td>
+										<td><input class="text" type="text" id="txtSubnet" size="18" onkeyup="Validate(me.id)"></td>
+									</tr>
+									<tr>
+										<td style="text-align:left;" colspan=2>
+											<label><input id="cbx_IP" onClick="" type="checkbox"></input>Select all machines in subnet</label>
+											<ul id="" style="display:inline; margin:0px 0px 0px 10px;">
+													<li style="display:inline;"><a onclick="IPRange()" href="#" class="button2 main" style="width:12px; height:15px; padding:4px 7px;" >Submit</a></li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<td colspan=2>Please enter a valid start IP address for which to start the search. Then enter a valid end IP address for which to end the search.</td>
+									</tr>
+									<tr>
+										<td colspan=2>The search will scan the IP address range starting at the start address and ending at the end address for all IP addresses and 
+											will add them to the selector box. The selector box will allow you to select and add machines to the Selected Machines box. All
+											machines listed in the Select Machines box will be sent the message.</td>
+									</tr>
+									<tr><td style="height:30px;"></td></tr>
+								</table>
+								<!--<textarea id="" class="text no_scroll" name="" rows="9" cols="58"></textarea> -->
+							</div>
+							<div id="option3" style="display: none;"> <!-- List File -->	
+								<table class="txt">
+									<tr>
+										<td colspan=2 style="text-align:left;">List From File:</td>
+										<td rowspan=6  style="vertical-align:top;">
+											<span unselectable="on" onselectstart="cancelEvent" id="_spnTmp2" class="text no_scroll" style="height:395px; width:140px;">
+												<table class="txt" style="width:100%;" id="tblSelectorBox2"></table>
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<td style="text-align:left;">
+											<label><input id="cbxAllInFile" onClick="" type="checkbox"></input>Select all machines in file</label>
+											<div style="position:absolute; visibility:'hidden';">
+												<input type="file" id="hiddenBrowse">
+											</div>
+											<ul id="" style="display:inline; margin:0px 0px 0px 28px;">
+												<li style="display:inline;"><a onclick="BrowseForFile" href="#" class="button2 main" style="width:12px; height:15px; padding:4px 7px;" >Browse</a></li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<td colspan=2>File Name&nbsp;&nbsp;<input class="text" type="text" id="txtFileName" size="25"></td>
+									</tr>
+									<tr>
+										<td colspan=2>Please select a file containing the names and\or IP addresses of the computers you wish to send the message. The file should contain
+										one name or IP address per line. Blank line entries will be skipped and IP addresses are <b>not</b> validated.</td>
+									</tr>
+									<tr>
+										<td colspan=2>The list from file function will parse the selected file for computer names or IP addresses and will add them to the selector box. 
+										The selector box will allow you to select and add machines to the Selected Machines box. All machines listed in the Select Machines box will be 
+										sent the message.</td>
+									</tr>
+									<tr><td style="height:60px;"></td></tr>
+								</table>
+							</div>
+							<div id="option4"  style="display: none;"> <!-- AD_Browser -->	
+								<span style="margin: 0px 0px 0px 250px;">
+									<label>Use alternate AD credentials<input id="cbx_adCred" onClick="showCredentials 'adCred','check'" type="checkbox" tabindex=-1></input></label>
+								</span>
+								<!-- Right Side Bar -->
+								<table class="sidemenu" cellpadding="0" cellspacing="0" border="0" >
+									<tr>
+										<td>
+											<table class="mainT" cellpadding="0" cellspacing="0" width="100%" align="center" border="0">
+												<thead>
+													<tr>
+														<td>
+															<span class="header">Active Directory</span>
+														</td>
+													</tr>
+												</thead>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td><span unselectable="on" onselectstart="cancelEvent" id=sidemenuAD class="txt" style="width:100%;margin-top:5px;margin-left:3px;overflow:auto;height:127px;"></span></td>
+									</tr>
+								</table> <!-- End Right Side Bar -->
+							
+								<!-- Main Window -->
+								<table id="mainT" class="mainTP" cellpadding="0" cellspacing="0" border="0">
+									<tr>
+										<td style="border:0;">
+											<span id="mainRDP"></span>
+											<span id="colheader">
+												<table class="txt" cellpadding="0" cellspacing="0" width="100%" align="center" border="0">
+													<thead>
+														<tr>
+															<td colspan="2">
+																<span class="header" >Domain Computers</span>
+															</td>
+														</tr>
+													</thead>
+													<thead>
+														<tr>
+															<th class="mainT txt" id="CompNameTitle" style="width:20%;" onclick="call ADSearch(3,'',1)" onMouseOver="highlightHeader('CompNameTitle')" onMouseOut="unhighlightHeader('CompNameTitle')">Computer Name <span id="CNTarrow" style="font-family:wingdings 3;color:#666;">q</span></th>
+															<th class="mainT txt" id="IPTitle" style="width:21%;" onclick="call ADSearch(3,'',3)" onMouseOver="highlightHeader('IPTitle')" onMouseOut="unhighlightHeader('IPTitle')">IP Address <span id="IPTarrow" style="font-family:wingdings 3;color:#666;"></span></th>
+														</tr>
+													</thead>
+												</table>
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<td style="border:0;">
+											<span  unselectable="on" onselectstart="cancelEvent" id="form1" style="width:100%; overflow:auto;height:155px;"></span>
+										</td>
+									</tr>
+								</table> <!-- End Main Window -->
+								<span style="margin: 0px 0px 0px 100px;">
+									<label>** Select all computers in current domain<input id="cbx_adBlock" onClick="showAD('adBlock')" type="checkbox" /></label>
+								</span>
+							</div> <!-- End AD_Browser -->				
+						</td>
+						<td style="vertical-align:top;">
+							<span unselectable="on" onselectstart="cancelEvent" id="_spn1" class="text no_scroll" name="" style="height:395px; width:140px;">
+								<table class="txt" style="width:100%;" id='tblSelectedMachines'></table>
+							</span>
+						</td>
+					</tr>
+				</table>
+				
+				<ul style="position:absolute;left:3px;bottom:10px;">
+					<li><a onclick="showPane 'main',2" href="#" class="button2 main">Back</a></li>
+				</ul>
+				<ul style="position:absolute;right:10px;bottom:10px;">
+					<li><a onclick="showPane 'main',4" href="#" class="button2 main">Next</a></li>
+				</ul>
+			</div> <!-- End Destination -->	
+			
+			<div id="main4" class="main_pane" style="display:none;"><h2 class="txtH1" style="margin: 10px;"><u>Send</u></h2>
+				<span class="txt" style="position:absolute;top:14px;right:24px;">
+					<label><input id="cbx_altCred" onClick="showCredentials 'altCred','check'" type="checkbox" style="font-size:8px;" tabindex=-1>Send using alternate credentials</input></label>
+				</span>
+				<div id="altCred"  style="display:none; z-index:10; background: black;    position:absolute; left:0px;   bottom:0px; width:640px; height:100%; filter:alpha(opacity=10);"></div>
+				<div id="altCred2" style="display:none; z-index:20; position:absolute; right:20px; top:35px; border:1px solid #ababab; filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');">
+					<table class="txt" style="width:auto;">	
+						<tr>
+							<td title="Optional user name for login to remote system">
+								Username
+							</td>
+							<td title="Optional user name for login to remote system">
+								<input id="txtAltUsername" class="text" type="text" name="" size="25">
+							</td>
+						</tr>
+						<tr>
+							<td title="Optional password for username, if left blank where a username is specified then you will be asked to supply one on executing the command">
+								Password
+							</td>
+							<td title="Optional password for username, if left blank where a username is specified then you will be asked to supply one on executing the command">
+								<input id="txtAltPassword" class="text" type="password" name="" size="25">
+							</td>
+						</tr>
+						<tr align="right">
+							<td colspan=2 title="Optional password for username, if left blank where a username is specified then you will be asked to supply one on executing the command">
+								<ul id="" style="display:inline; margin:0px 0px 0px 23px;">
+									<li style="display:inline;"><a onClick="showCredentials 'altCred','submit'" href="#" class="button2 main" style="width:12px; height:15px; padding:3px 7px;" >Submit</a></li>
+									<li style="display:inline;"><a onClick="showCredentials 'altCred','cancel'" href="#" class="button2 main" style="width:12px; height:15px; padding:3px 7px;" >Cancel</a></li>
+								</ul>
+							</td>
+						</tr>						
+					</table>
+				</div>
+				<table class="txt" style="width:100%;">
+					<tr>
+						<th class="txtH2" style="width:30%;text-align:left;">Selected Machines:</th>
+						<th class="txtH2" style="width:70%;text-align:left;">Code Preview:</th>
+					</tr>
+					<tr>
+						<td rowspan=3>
+							<span unselectable="on" onselectstart="cancelEvent" id="_spn2" class="text no_scroll" name="" style="height:380px; width:140px;"></span>
+						</td>
+						<td>
+							<span id="spnCodePreview" class="text no_scroll" name="" style="height:200px; width:465px;"></span>
+						</td>
+					</tr>
+					<tr>
+						<th class="txtH2" style="text-align:left;">Output Log:</th>
+					</tr>
+					<tr>
+						<td>
+							<span id="areaOutput" class="text no_scroll" name="" style="height:150px; width:465px;"></span>
+						</td>
+					</tr>					
+				</table>
+				<ul style="position:absolute;left:3px;bottom:10px;">
+					<li><a onclick="showPane 'main',3" href="#" class="button2 main" tabindex=-1>Back</a></li>
+				</ul>
+				<ul style="position:absolute;right:10px;bottom:10px;">
+					<li><a onclick="Preview('preview')" href="#" class="button2 main" tabindex=-1>Preview</a></li><br/>
+					<li><a onclick="Send" href="#" class="button2 main" tabindex=-1>Send</a></li>
+				</ul>			
+			</div> <!-- End Programs -->			
+
+		</div> <!-- End Main -->
+	</body>
+</html>

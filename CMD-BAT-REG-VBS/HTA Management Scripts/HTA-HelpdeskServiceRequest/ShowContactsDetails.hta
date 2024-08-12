@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>ShowContactsDetails</title>
+<HTA:APPLICATION
+  APPLICATIONNAME="ShowContactsDetails"
+  ID="ShowContactsDetails"
+  VERSION="1.0"
+  BORDER="dialog"
+  INNERBORDER="no"
+  MAXIMIZEBUTTON="no"
+  SCROLL="auto"/>
+</head>
+<style type="text/css">
+<!--
+BODY {
+	xfont-family: "Verdana,Arial, Helvetica, sans-serif";
+	font:menu;
+	background-color:Buttonface;
+	color:MenuText;
+	xfont-size:8pt;
+}
+TABLE{
+	direction:LTR;
+	border-collapse:collapse;
+	border-width: 1px;
+	font-family: Calibri;
+	xfont-family:"Arial";
+	xfont-size:8pt;
+}
+td{
+	direction: LTR;
+	font-family: Calibri;
+}
+H1{
+	font-family: Calibri;
+	}
+-->
+</style>
+<script language="VBScript">
+
+'----------------------------
+' Global Size
+  	Const WIDTH  = 100
+  	Const HEIGHT = 400
+'----------------------------
+
+Sub Window_OnLoad
+  	ResizeWindow WIDTH, HEIGHT
+  'This method will be called when the application loads
+	ShowContacts
+End Sub
+
+
+Sub ResizeWindow(iWidth,iHeight)
+' This Method will Resize the HTA Window and Center it on the Screen
+' Input: Width, Height
+	If iWidth > Screen.AvailWidth Then iWidth = Screen.AvailWidht
+	If iHeight > Screen.AvailHeight Then iHeight = Screen.AvailHeight
+	Self.ResizeTo iWIDTH,iHEIGHT ' Resize
+  	Self.MoveTo (screen.AvailWidth-iWidth)/2,(screen.AvailHeight-iHeight)/2 ' Move Window to Center
+End Sub
+
+Sub ShowContacts
+	Dim oNS      ' As Outlook.NameSpace
+	Dim oFolder ' As Outlook.MAPIFolder
+	Dim oItem   ' As Outlook.ContactItem
+	Dim objOutlook
+	Dim strContactDetails
+	Dim iMaxLen : iMaxLen = 0
+	Dim iLen
+	Const olFolderContacts = 10
+	
+	set objOutlook = createobject("Outlook.Application") 
+	Set oNS = objOutlook.GetNamespace("MAPI")
+	Set oFolder = oNS.GetDefaultFolder(olFolderContacts)
+	
+	strContactDetails = "<table border=1 width=100% height=100%>"
+	
+	For Each oItem In oFolder.Items
+		strContactDetails =  strContactDetails & "<tr>" &_
+  			"<td height=100% width=10% valign=top align=left>" &_
+  			"<INPUT TYPE=" & chr(34) & "radio" & chr(34) & " Name=EmailChoise value=" & chr(34) & oItem.FullName & "," & oItem.Email1Address & chr(34) & "></Input></td>" &_
+			"<td height=100% width=40% valign top align=left>" & oItem.FullName & "</td>" &_
+			"<td height=100% width=40% valign top align=left>" & oItem.Email1Address & "</td>" &_
+			"</tr>"
+			iLen = Len(oItem.FullName) + Len(oItem.Email1Address)
+			If iLen >= iMaxLen Then iMaxLen = iLen
+			i = i + 1
+	Next
+	strContactDetails =  strContactDetails & "</table>"
+	' Resize the Window to the Correct Size
+	ResizeWindow (WIDTH + iMaxLen*10), (HEIGHT + i*10)
+	CantactNames.InnerHTML = strContactDetails
+
+End Sub
+
+Sub OnClickButtonOK()
+  'This method will be called when OK is clicked
+  Dim arrSelectedValue
+  arrSelectedValue = Split(GetEmailChoiseRadioValue,",")
+  window.returnValue = arrSelectedValue
+  window.Close
+End Sub
+
+Sub OnClickButtonCancel()
+  'This method will be called when Cancel is clicked
+  'Add your code here
+  window.Close
+End Sub
+
+Function GetEmailChoiseRadioValue()
+  For i=0 to EmailChoise.length-1
+    If EmailChoise.Item(i).Checked Then
+      GetEmailChoiseRadioValue = EmailChoise.Item(i).Value
+      Exit Function
+    End If
+  Next
+  GetEmailChoiseRadioValue = ""
+End Function
+</script>
+
+<body bgcolor="buttonface">
+<table border=0 width=100% height=100%>
+<tr><td height=100% width=100% valign=top align=left>
+
+<!--Add your controls here-->
+<span id=CantactNames></span>
+<!--{{InsertControlsHere}}-Do not remove this line-->
+</td></tr>
+<tr><td align=right>
+<input type="button" style="width: 80px" name="OK" id="OK" value="OK" onclick="OnClickButtonOK">&nbsp;&nbsp;
+<input type="button" style="width: 80px" name="Cancel" id="Cancel" value="Cancel" onclick="OnClickButtonCancel">
+</td></tr>
+</table>
+</table>
+</body>
+</html>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modulestrings version="1">
+ <module id="m_gfisetup">
+  <string id="IDS_CURVERLATER">La versione di %s che cercate d&apos;installare è precedente rispetto a quella che è già installata. Si prega di rimuovere la versione attuale prima di installare questa versione.</string> 
+  <string id="IDS_FAILREMOVE">Si è verficato un errore durante la rimozione di %s dal computer. Si prega di disinstallare %s manualmente ed eseguire di nuovo l&apos;installazione.</string> 
+  <string id="IDS_ALREADYINSTALLED">%s versione %s è già installata. Dovete installare la versione esistente prima d&apos;installare %s versione %s.\r\n\r\nSi desidera disinstallare la versione esistente di %s?</string> 
+  <string id="IDS_MAJORUPGRADE">Importante: Sarà necessario inserire un nuovo codice seriale entro 10 giorni dall&apos;installazione dell&apos;upgrade. Per informazioni su come ottenere il nuovo codice seriale, visitare http://customers.gfi.com</string>   
+ </module>
+</modulestrings>

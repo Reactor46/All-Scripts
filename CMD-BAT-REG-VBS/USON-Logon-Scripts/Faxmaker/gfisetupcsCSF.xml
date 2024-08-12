@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modulestrings version="1">
+ <module id="m_gfisetup">
+  <string id="IDS_CURVERLATER">Verze %s, kterou se chystáte instalovat, je starší než verze, která je již nainstalována. Před instalací této verze prosím odstraňte existující verzi.</string> 
+  <string id="IDS_FAILREMOVE">Při odstraňování %s z vašeho počítače se vyskytla chyba. Odinstalujte prosím %s ručně a spusťte znovu tuto instalaci.</string> 
+  <string id="IDS_ALREADYINSTALLED">%s Verze %s je již nainstalována. Před instalací %s verze %s musíte odinstalovat existující verzi.\r\n\r\nChcete odinstalovat existující verzi %s?</string> 
+  <string id="IDS_MAJORUPGRADE">Důležité: Do 10 dní od instalace aktualizace budete muset zadat nový licenční klíč. Informace, jak nový licenční klíč získat, obsahuje stránka http://customers.gfi.com</string>   
+ </module>
+</modulestrings>

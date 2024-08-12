@@ -1,0 +1,941 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<setupstrings version="1">
+	<table id="Control">
+		<module id="Admin_Install_Point">
+			<string FONT="[_WiseDialogFontDefault]" id="Back"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Browse"><![CDATA[T&allózás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="EditQ"><![CDATA[Hálózati telepítési pont:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Hol szeretné létrehozni ezt a telepítést?]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text36"><![CDATA[Felügyeleti telepítés]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text54"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="Admin_Verify_Ready">
+			<string FONT="[_WiseDialogFontDefault]" id="Back"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="InstallNow"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Készen áll a telepítésre?]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text37"><![CDATA[A felügyeleti telepítés ellenőrzése elkészült]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text55"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="AdminInstallBrowse">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ComboText"><![CDATA[A mappa helye:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TailText"><![CDATA[Kiválasztott elérési út:]]></string>
+		</module>
+		<module id="Browse">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ComboText"><![CDATA[Hely:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TailText"><![CDATA[Ma&ppanév:]]></string>
+		</module>
+		<module id="Cancel">
+			<string FONT="[_WiseDialogFontDefault]" id="No"><![CDATA[Fol&ytatás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[A telepítés még nincs kész.  Ha most kilép a Telepítőből, a program nem lesz telepítve.[WiseCRLF][WiseCRLF]A telepítés befejezéséhez később ismét futtathatja a Telepítőt.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2515"><![CDATA[A telepítés folytatásához kattintson a Folytatás gombra.  A kilépéshez kattintson a Kilépés a Telepítőből gombra.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Yes"><![CDATA[Kilépés a Telepítőből]]></string>
+		</module>
+		<module id="CCPDialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="DriveText"><![CDATA[Meghajtó:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[A Telepítő nem talált a telepítésre jogosító terméket a merevlemeze(ke)n. Válassza ki azt a meghajtót, amelyen a megfelelő termék található.]]></string>
+		</module>
+		<module id="CCPFail">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[K&ilépés]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[A Telepítő nem talált a telepítésre jogosító terméket. A telepítéshez rendelkeznie kell az arra feljogosító termék érvényes példányával.]]></string>
+		</module>
+		<module id="ConnDetailsInvalidServer">
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[A GFI FaxMakerhez való közvetlen kapcsolódás esetén a kiszolgálócímet és az e-mail címet egyaránt meg kell adni.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[OK]]></string>
+		</module>
+		<module id="ConnectionSettings">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Faxok küldésekor a GFI FaxMakerhez való kapcsolódás a következőn keresztül történjen:]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[GFI FaxMaker – a kapcsolat beállításai]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Válassza ki a GFI FaxMakerhez való kapcsolódás módját faxok küldésekor]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text25252527"><![CDATA[GFI FaxMaker kiszolgáló címe (IP vagy teljes tartománynév):[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text25252528"><![CDATA[E-mail cím:]]></string>
+		</module>
+		<module id="DiskCost">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[A jelenleg kiválasztott összetevők a következő szabad lemezterületet igénylik a különböző köteteken. A kiemelt köteteken nincs elegendő hely a jelenleg kiválasztott funkciókhoz.]]></string>
+		</module>
+		<module id="ErrorDialog">
+			<string FONT="[_WiseDialogFontDefault]" id="A"><![CDATA[Megszakítás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="C"><![CDATA[&Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="I"><![CDATA[Figyelmen kívül hagyás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="N"><![CDATA[Nem]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="O"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="R"><![CDATA[&Ismét]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Y"><![CDATA[Igen]]></string>
+		</module>
+		<module id="Exit_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[Befejezés]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton1"><![CDATA[Mégse]]></string>
+			<string FONT="Arial14" id="Text"><![CDATA[A(z) [ProductName] telepítése sikeresen véget ért.[WiseCRLF]]]></string>
+			<string FONT="Arial14" id="Text56"><![CDATA[A(z) [ProductName] eltávolítása sikeresen véget ért.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text6"><![CDATA[A telepítésből való kilépéshez kattintson a Befejezés gombra.]]></string>
+		</module>
+		<module id="Fatal_Error">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[A telepítés hiba miatt leállt. ]]></string>
+		</module>
+		<module id="FilesInUse">
+			<string FONT="[_WiseDialogFontDefault]" id="Exit"><![CDATA[&Kilépés]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Ignore"><![CDATA[Figyelmen kívül hagyás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Retry"><![CDATA[&Ismét]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[A frissítendő fájlok használatban vannak.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text54"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text58"><![CDATA[Használatban lévő fájlok]]></string>
+			<string id="Text60"><![CDATA[Az alábbi lista tartalmazza a pillanatnyilag használatban lévő fájlokat, és az őket használó alkalmazásokat. Zárja be az alkalmazást, és kattintson az Ismét gombra, vagy kattintson a Figyelmen kívül hagyás gombra a fájlok rendszerindítás után történő cseréjéhez. Ha a Kilépés gombra kattint, kilép a Telepítőből.]]></string>
+		</module>
+		<module id="FirstRun">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string id="NameE"><![CDATA[{47}]]></string>
+			<string FONT="TimesItalicBlue10" id="NameQ"><![CDATA[&Név:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string id="OrgE"><![CDATA[{53}]]></string>
+			<string FONT="TimesItalicBlue10" id="OrgQ"><![CDATA[S&zervezet:]]></string>
+			<string id="PIDE"><![CDATA[[PIDTemplate]]]></string>
+			<string FONT="TimesItalicBlue10" id="PIDQ"><![CDATA[Írja be a CD dobozán található termékazonosítót (Product ID).]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+		</module>
+		<module id="fmmessageform">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox"><![CDATA[Az Outlook címjegyzékének használata a GFI FaxMaker faxüzenetűrlaphoz]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Válasszon, hogy a GFI FaxMaker nyomtató-illesztőprogram az Outlook Új üzenet űrlapját vagy a GFI FaxMaker faxüzenetűrlapot használja faxküldéshez.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Üzenet űrlap]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Válassza ki a használni kívánt üzenet űrlapot.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM][WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2521"><![CDATA[(az Outlook kell legyen az alapértelmezett levelező ügyfél)[WiseCRLF]]]></string>
+		</module>
+		<module id="FMOFailedEmailDlg">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[A jelszó visszaállítására vonatkozó utasítások nem lettek elküldve. A következő cím nincs regisztrálva a GFI FaxMaker Online felhasználójaként: [WiseCRLF][ONLINEEMAIL].[WiseCRLF]Egyeztesse a fiókadatokat az adminisztrátorral[WiseCRLF]]]></string>
+		</module>
+		<module id="FMONoEmailDlg">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[OK[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Kérjük, adja meg e-mail címét.]]></string>
+		</module>
+		<module id="FMOResetPassword">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[A rendszer elküldte az Ön GFI FaxMaker Online hitelesítő adatait tartalmazó e-mail üzenetet a következő címre: [ONLINEEMAIL].[WiseCRLF]]]></string>
+		</module>
+		<module id="FMOUserDetails">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[Elfelejtett azonosítók[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[E-mail cím (kötelező)]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Felhasználó adatai[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[GFI FaxMaker Online hitelesítő adatok megadása[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM][WiseCRLF][WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2522"><![CDATA[Felhasználónév]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2524"><![CDATA[Jelszó]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text25252526"><![CDATA[GFI FaxMaker Online felhasználói hitelesítő adatok (nem kötelező)[WiseCRLF][WiseCRLF]]]></string>
+		</module>
+		<module id="fmserver">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox"><![CDATA[Kihagyom ezt a párbeszédablakot és kézzel adom meg a részleteket.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Adja meg a GFI FaxMaker kiszolgáló nevét.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[...]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Gép:[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Adja meg a kiszolgáló gépet]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Állítsa be a GFI FaxMaker kiszolgálógép nevét.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="fmserverdetails">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox"><![CDATA[Levelező kiszolgálóm hitelesítést igényel]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Szíveskedjék megadni a részleteket, levelező kiszolgálójától és a faxoknak a GFI FaxMaker számára történő kézbesítésének mikéntjétől függően.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[A levelező kiszolgáló neve:]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[A GFI FaxMaker kiszolgáló részletei[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Adja meg a GFI FaxMaker kiszolgáló részletes adatait[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2"><![CDATA[Fax postafiók:[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM][WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text3"><![CDATA[Fax kiszolgáló neve:[WiseCRLF]]]></string>
+		</module>
+		<module id="Installation_Type_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CompleteText"><![CDATA[Az alkalmazás leggyakrabban használt funkcióit telepíti. A felhasználók túlnyomó többségének ezt javasoljuk.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Az alkalmazás összes funkcióját telepíti. A legjobb teljesítményhez javasoljuk.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Válassza ki a telepítés típusát]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Válassza ki a kívánt telepítés típusát.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text48"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TypicalText"><![CDATA[Ezzel a beállítással válassza ki az alkalmazás telepítendő funkcióit és helyüket. Haladó felhasználóknak ajánljuk.]]></string>
+		</module>
+		<module id="IntegrationType">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[További információ]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[A [ProductName] alkalmazással használandó faxkiszolgáló típusának kiválasztása]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[A faxkiszolgáló típusa[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[A faxkiszolgáló típusának kiválasztása]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="invalidserver">
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Az összes engedélyezett mező kötelező. Ellenőrizze, hogy megadta-e az összes kötelező adatot, és próbálja meg újra.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[OK]]></string>
+		</module>
+		<module id="License_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Reset"><![CDATA[Alap&helyzet]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text13"><![CDATA[Licencszerződés]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text14"><![CDATA[A folytatás előtt el kell fogadnia az alábbi licencszerződést.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text44"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="Maintenance_Welcome_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CompleteText3"><![CDATA[Módosítsa az alkalmazás telepíteni kívánt funkcióit.  Megjelenik a Funkciók kijelölése párbeszédablak, ahol konfigurálhatja a funkciókat.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText5"><![CDATA[Újratelepíti a hiányzó vagy sérült fájlokat, rendszerleíró kulcsokat és parancsikonokat.  A beállításjegyzékben tárolt beállítások is visszaállhatnak alaphelyzetükbe.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2"><![CDATA[Válassza ki a végrehajtandó karbantartási műveletet.]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text3"><![CDATA[Alkalmazás karbantartása]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text52"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TypicalText7"><![CDATA[A(z) [ProductName] eltávolítása erről a számítógépről.]]></string>
+		</module>
+		<module id="oldfmclientfound">
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[A gépen a GFI FaxMaker ügyfélprogram egy régi példánya van telepítve, amit el kell távolítani. Folytatja a telepítést a régi ügyfélprogram eltávolításának kihagyásával?]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[Igen]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton45"><![CDATA[Nem]]></string>
+		</module>
+		<module id="OutOfDisk">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Nincs elég lemezterület. A kiemelt köteteken nincs elegendő hely a kiválasztott funkciókhoz.]]></string>
+		</module>
+		<module id="Palm_User_Information_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Alább találhatók a számítógépen elérhető Palm felhasználók. Jelölje be azok négyzeteit, akik számára telepíteni kívánja a Palm alkalmazás(oka)t.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Palm felhasználóadatok[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Válassza ki azokat a felhasználókat, akik számára telepíteni kívánja a Palm alkalmazásokat.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="Patch_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="Arial14" id="Text"><![CDATA[Üdvözöljük a [ProductName] Installation Wizard telepítő varázslóban]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text1"><![CDATA[A telepítőprogram futtatása előtt ajánlatos minden Windows-programot bezárni.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2518"><![CDATA[A Telepítőből való kilépéshez kattintson a Mégse gombra, és zárjon be minden futó programot.  A telepítés folytatásához kattintson a Tovább gombra.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2519"><![CDATA[A program vagy bármely részének engedély nélküli másolása vagy terjesztése súlyos polgárjogi vagy büntetőjogi következményeket és a törvény által kiszabható legszigorúbb büntetést vonhatja maga után.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text269"><![CDATA[FIGYELMEZTETÉS:  Ezt a programot szerzői jogi törvények és nemzetközi egyezmények védik.]]></string>
+		</module>
+		<module id="Progress_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="ActionData"><![CDATA[Inicializálás...]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text27"><![CDATA[A rendszer frissítése]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text28"><![CDATA[Folyik a kiválasztott funkciók telepítése.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text51"><![CDATA[[GFITM]]]></string>
+			<string id="Text57"><![CDATA[Folyik a kiválasztott funkciók telepítése.]]></string>
+		</module>
+		<module id="Readme_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Fontos információ]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[A következő információk írják le ezt a telepítést.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text45"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="ReinstallMode">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileChecksum"><![CDATA[Újratelepítés, ha az EXE vagy DLL ellenőrző összege érvénytelen]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileEqualVersion"><![CDATA[Újratelepítés, ha a fájl hiányzik, illetve, ha régebbi vagy megegyező verziója van]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileExact"><![CDATA[Újratelepítés, ha a létező fájl verziója különbözik]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileForce"><![CDATA[Az összes fájl újratelepítése, az ellenőrző összegtől és a verziószámtól függetlenül]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileOlderVersion"><![CDATA[Újratelepítés, ha a fájl hiányzik, illetve, ha régebbi verziója van]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFilePresent"><![CDATA[Újratelepítés csak akkor, ha a fájl hiányzik]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallMachineData"><![CDATA[A szükséges rendszerleíró bejegyzések meglétének ellenőrzése a local machine gyűjtőkulcs alatt]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallRepair"><![CDATA[Az összes észlelt újratelepítési probléma javítása]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallShortcut"><![CDATA[Parancsikonok érvényesítése]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallUserData"><![CDATA[A szükséges rendszerleíró bejegyzések meglétének ellenőrzése a user gyűjtőkulcs alatt]]></string>
+		</module>
+		<module id="Resume_Install_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="InstallNow"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Készen áll arra, hogy a Wise Installation Wizard telepítő varázsló folytassa a telepítést?]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2"><![CDATA[Készen áll arra, hogy a Wise Installation Wizard telepítő varázsló befejezze a felfüggesztett telepítést?]]></string>
+			<string FONT="Arial14" id="Text31"><![CDATA[A [ProductName] Installation Wizard telepítő varázsló folytatja munkáját]]></string>
+		</module>
+		<module id="Select_Feature_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="ActionDescription"><![CDATA[A jelenleg kiválasztott művelet leírása xxx xxx xxx xxxx xxxx xxxx xxxx xxxx]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Browse"><![CDATA[T&allózás]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="DiskCost"><![CDATA[&Helyigény]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ItemDescription"><![CDATA[A jelenleg kiválasztott elem többsoros leírása xxx xxxx xxxx xxxx xxxx  xxxxx xxx xxxx xxxx xxxx xxx xxxx xx xxxxx xxxxx x]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="LocationPath"><![CDATA[Elérési út]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="LocationText"><![CDATA[Jelenlegi hely:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Reset"><![CDATA[Alap&helyzet]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Size"><![CDATA[A jelenleg kijelölt terület mérete xxx xxx xxxx xxxx xxxx xxxx xxx xxxx xxxx xxxx xxxx xxx]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text23"><![CDATA[Funkciók kijelölése]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text24"><![CDATA[Jelölje ki, mely funkciókat szeretné telepíteni.]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text41"><![CDATA[Funkciók leírása:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text49"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="Setup_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="ActionText"><![CDATA[Várjon, amíg a Wise Installation Wizard® telepítő varázsló előkészíti a Windows telepítőt.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="Arial14" id="Text15"><![CDATA[Üdvözöljük a [ProductName] Installation Wizard telepítő varázslóban]]></string>
+		</module>
+		<module id="Single_Feature_Destination">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="GroupBox"><![CDATA[Célmappa]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton44"><![CDATA[T&allózás]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Célmappa]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Adja meg azt a mappát, amelybe az alkalmazás telepítve lesz.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text42"><![CDATA[A Wise Installation Wizard a(z) [ProductName] fájljait az alábbi mappába telepíti.[WiseCRLF][WiseCRLF]Ha más mappába szeretné telepíteni, a Tallózás gombra kattintva választhat másikat.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text42a"><![CDATA[Azt is választhatja, hogy nem telepíti a következőt: [ProductName]. Ehhez kattintson a Mégse gombra, így kilép a Wise Installation Wizard telepítő varázslóból.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text43"><![CDATA[[INSTALLDIR]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text47"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="smtpauthform">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox"><![CDATA[Bejelentkezés biztonságos jelszóhitelesítéssel]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox1"><![CDATA[SSL használata]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox2"><![CDATA[SMTP hitelesítés használata]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[SMTP hitelesítési tulajdonságok használata ehhez: [ProductName]. SMTP hitelesítés esetén meg kell adnia a fiókot és jelszót.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Fiók:]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[SMTP hitelesítés.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[SMTP hitelesítési tulajdonságok kiválasztása ehhez: [ProductName].]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM][WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2520"><![CDATA[Jelszó:[WiseCRLF]]]></string>
+		</module>
+		<module id="Start_Installation_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="InstallNow"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text244"><![CDATA[A telepítés megkezdéséhez kattintson a Tovább gombra.]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text251"><![CDATA[Készen áll az alkalmazás telepítésére]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text2512"><![CDATA[Készen áll az alkalmazás javítására]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text2513"><![CDATA[Készen áll az alkalmazás ([ProductName]) telepítésének folytatására]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text26"><![CDATA[Készen áll az alkalmazás módosítására]]></string>
+			<string id="Text50"><![CDATA[{\MS_Sans_Serif_80}[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text51"><![CDATA[A telepítési adatok újbóli megadásához kattintson a Vissza gombra. A varázslóból való kilépéshez kattintson a Mégse gombra.]]></string>
+		</module>
+		<module id="upgrading9x">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[A GFI FaxMaker ügyfélprogram egy régebbi verziója van telepítve. A GFI FaxMaker ügyfélprogram jelen verziójának telepítése előtt távolítsa el a régebbi verziót a Programok telepítése/törlése vezérlőpult-alkalmazással.[WiseCRLF]]]></string>
+		</module>
+		<module id="User_Exit">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[OK]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[[ProductName] az új szoftver telepítésének befejezése előtt meg lett szakítva.  A szoftver telepítéséhez később újra futtathatja ezt a telepítőprogramot.]]></string>
+		</module>
+		<module id="User_Information_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="NameE"><![CDATA[{47}]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="NameQ"><![CDATA[Tel&jes név:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OrgE"><![CDATA[{53}]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OrgQ"><![CDATA[S&zervezet:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PIDE"><![CDATA[[PIDTemplate]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PIDQ"><![CDATA[Termé&kazonosító:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text16"><![CDATA[Felhasználói információ]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text46"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text7"><![CDATA[A telepítés testreszabásához adja meg a következő adatokat.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text8"><![CDATA[Az alkalmazás beállításait az aktuális felhasználóhoz vagy a számítógépet használó összes felhasználóhoz lehet telepíteni. Ahhoz, hogy a beállításokat az összes felhasználó számára telepíteni tudja, rendszergazdai jogokkal kell rendelkeznie. Az alkalmazás telepítése a következő felhasználó számára:]]></string>
+		</module>
+		<module id="Verify_Remove_All">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="RemoveNow"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Ezzel eltávolítja a következőt a számítógépről: [ProductName]. Biztosan folytatja?[WiseCRLF][WiseCRLF]Az alkalmazás eltávolításához kattintson a Tovább gombra.[WiseCRLF][WiseCRLF]Az eltávolítási folyamatból való kilépéshez kattintson a Mégse gombra.]]></string>
+			<string FONT="Arial14" id="Text32"><![CDATA[[ProductName] Eltávolítás]]></string>
+		</module>
+		<module id="WaitForCosting">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TextMessage"><![CDATA[Várjon, amíg a Telepítő kiszámolja a lemezterület-szükségleteket...]]></string>
+		</module>
+		<module id="Welcome_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Mégse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[&Tovább >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[< &Vissza]]></string>
+			<string FONT="Arial14" id="Text"><![CDATA[Üdvözöljük a [ProductName] Installation Wizard telepítő varázslóban]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text1"><![CDATA[A telepítőprogram futtatása előtt ajánlatos minden Windows-programot bezárni.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2"><![CDATA[FIGYELMEZTETÉS:  Ezt a programot szerzői jogi törvények és nemzetközi egyezmények védik.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2516"><![CDATA[A Telepítőből való kilépéshez kattintson a Mégse gombra, és zárjon be minden futó programot.  A telepítés folytatásához kattintson a Tovább gombra.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2517"><![CDATA[A program vagy bármely részének engedély nélküli másolása vagy terjesztése súlyos polgárjogi vagy büntetőjogi következményeket és a törvény által kiszabható legszigorúbb büntetést vonhatja maga után.]]></string>
+		</module>
+	</table>
+	<table id="Property">
+		<string id="LANGUAGE"><![CDATA[0]]></string>
+		<string id="_WiseDebugMode"><![CDATA[0]]></string>
+		<string id="CONNSTGSUSESMTP"><![CDATA[SMTP-levelezőkiszolgáló]]></string>
+		<string id="CONNSTGSUSEWSAPI"><![CDATA[Közvetlen kapcsolat a GFI FaxMaker szoftverrel]]></string>
+		<string id="DETAILSEXCHANGE"><![CDATA[Exchange 2013/2010/2007/2003/2000/5.5]]></string>
+		<string id="DETAILSISP"><![CDATA[ISP vagy SMTP/POP3 levelezési kiszolgáló]]></string>
+		<string id="DETAILSLOTUS"><![CDATA[Lotus Notes vagy SMTP/POP3 levelezési kiszolgáló]]></string>
+		<string id="DETAILSTYPE"><![CDATA[0]]></string>
+		<string id="DiskPrompt"><![CDATA[[ProductName] [1]]]></string>
+		<string id="MESSAGEFORM_E"><![CDATA[GFI FaxMaker faxüzenetűrlap]]></string>
+		<string id="SMTPUSEONLINE"><![CDATA[A GFI FaxMaker Online Relay Server használata]]></string>
+		<string id="SMTPUSEOWN"><![CDATA[Saját SMTP-levelezőkiszolgáló használata]]></string>
+		<string id="TYPEUSEONLINE"><![CDATA[GFI FaxMaker Online ( felhőalapú megoldás )]]></string>
+		<string id="TYPEUSEONPREM"><![CDATA[GFI FaxMaker Server ( helyi üzemeltetésű szoftver )]]></string>
+		<string id="USEBOTH"><![CDATA[Használja az Outlookot, de telepítse a GFI FaxMaker Új fax űrlapot is.]]></string>
+		<string id="USEFAXFORM"><![CDATA[Használja a GFI FaxMaker Új fax űrlapot (itt szükség van a levelezési kiszolgáló nevére és e-mail címére)]]></string>
+		<string id="USEOUTLOOK"><![CDATA[Használja az Outlook Új üzenet űrlapot (Exchange 2000/2003/2007/2010/2013 használata esetén)]]></string>
+		<string id="USEFAXFORM"><![CDATA[A GFI FaxMaker faxüzenetűrlap használata]]></string>
+		<string id="USEOUTLOOK"><![CDATA[A Microsoft Outlook használata (Microsoft Exchange használata esetén)]]></string>
+		<string id="WiseInitAdminError"><![CDATA[A telepítés futtatásához rendszergazdai jogosultságok szükségesek. Jelentkezzen be rendszergazdaként, majd futtassa újra a telepítést.]]></string>
+		<string id="WiseInitCmdLine"><![CDATA[/L*v faxclient.log /I]]></string>
+		<string id="WiseInitExistError"><![CDATA[A(z) %s %s verziója már telepítve van. A(z) %s %s verziójának telepítése előtt el kell távolítania a jelenlegi verziót. El akarja távolítani a(z) %s jelenlegi verzióját?]]></string>
+		<string id="WiseInitLangDefault"><![CDATA[English,1033]]></string>
+		<string id="WiseInitPrefix"><![CDATA[Inicializálás]]></string>
+		<string id="WiseInitSpaceError"><![CDATA[Nem sikerült létrehozni az ideiglenes fájlt, mert nincs elegendő ideiglenes szabad lemezterület. Szabadítson fel lemezterületet, majd futtassa újra a telepítőt.]]></string>
+		<string id="WiseInitSuffix"><![CDATA[Varázsló…]]></string>
+	</table>
+	<table id="ActionText">
+		<record>
+			<field id="Action"><![CDATA[Advertise]]></field>
+			<field id="Description"><![CDATA[Advertising application...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[AllocateRegistrySpace]]></field>
+			<field id="Description"><![CDATA[Allocating registry space...]]></field>
+			<field id="Template"><![CDATA[Free space: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[AppSearch]]></field>
+			<field id="Description"><![CDATA[Searching for installed applications...]]></field>
+			<field id="Template"><![CDATA[Property: [1][WiseCRLF]Signature: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[autoconfigureclientfromfaxserver]]></field>
+			<field id="Description"><![CDATA[Configuring client...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[BindImage]]></field>
+			<field id="Description"><![CDATA[Binding executables...]]></field>
+			<field id="Template"><![CDATA[File: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[ca_deferred_install_printer]]></field>
+			<field id="Description"><![CDATA[Installing printer driver...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[ca_deferred_install_printer_prew2k]]></field>
+			<field id="Description"><![CDATA[Installing printer driver...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CCPSearch]]></field>
+			<field id="Description"><![CDATA[Searching for qualifying products...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CostFinalize]]></field>
+			<field id="Description"><![CDATA[Computing space requirements...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CostInitialize]]></field>
+			<field id="Description"><![CDATA[Computing space requirements...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CreateFolders]]></field>
+			<field id="Description"><![CDATA[Creating folders...]]></field>
+			<field id="Template"><![CDATA[Folder: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CreateShortcuts]]></field>
+			<field id="Description"><![CDATA[Creating shortcuts...]]></field>
+			<field id="Template"><![CDATA[Shortcut: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[DeleteServices]]></field>
+			<field id="Description"><![CDATA[Deleting services...]]></field>
+			<field id="Template"><![CDATA[Service: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[DuplicateFiles]]></field>
+			<field id="Description"><![CDATA[Creating duplicate files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9][WiseCRLF]Size: [6]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[FileCost]]></field>
+			<field id="Description"><![CDATA[Computing space requirements...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[GenerateScript]]></field>
+			<field id="Description"><![CDATA[Generating script operations for action:]]></field>
+			<field id="Template"><![CDATA[[1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[install_printer]]></field>
+			<field id="Description"><![CDATA[Installing printer driver...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallAdminPackage]]></field>
+			<field id="Description"><![CDATA[Copying network install files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9][WiseCRLF]Size: [6]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallFiles]]></field>
+			<field id="Description"><![CDATA[Copying new files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9][WiseCRLF]Size: [6]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallODBC]]></field>
+			<field id="Description"><![CDATA[Installing ODBC components...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallServices]]></field>
+			<field id="Description"><![CDATA[Installing new services...]]></field>
+			<field id="Template"><![CDATA[Service: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallValidate]]></field>
+			<field id="Description"><![CDATA[Validating install...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[LaunchConditions]]></field>
+			<field id="Description"><![CDATA[Evaluating launch conditions...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[MoveFiles]]></field>
+			<field id="Description"><![CDATA[Moving files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9][WiseCRLF]Size: [6]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[PatchFiles]]></field>
+			<field id="Description"><![CDATA[Patching files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [2][WiseCRLF]Size: [3]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[ProcessComponents]]></field>
+			<field id="Description"><![CDATA[Updating component registration...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[PublishComponents]]></field>
+			<field id="Description"><![CDATA[Publishing qualified components...]]></field>
+			<field id="Template"><![CDATA[Component ID: [1][WiseCRLF]Qualifier: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[PublishFeatures]]></field>
+			<field id="Description"><![CDATA[Publishing product features...]]></field>
+			<field id="Template"><![CDATA[Feature: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[PublishProduct]]></field>
+			<field id="Description"><![CDATA[Publishing product information...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterClassInfo]]></field>
+			<field id="Description"><![CDATA[Registering class servers...]]></field>
+			<field id="Template"><![CDATA[Class Id: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterExtensionInfo]]></field>
+			<field id="Description"><![CDATA[Registering extension servers...]]></field>
+			<field id="Template"><![CDATA[Extension: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterFonts]]></field>
+			<field id="Description"><![CDATA[Registering fonts...]]></field>
+			<field id="Template"><![CDATA[Font: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterMIMEInfo]]></field>
+			<field id="Description"><![CDATA[Registering MIME information...]]></field>
+			<field id="Template"><![CDATA[MIME Content Type: [1][WiseCRLF]Extension: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterProduct]]></field>
+			<field id="Description"><![CDATA[Registering product...]]></field>
+			<field id="Template"><![CDATA[[1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterProgIdInfo]]></field>
+			<field id="Description"><![CDATA[Unregistering program identifiers...]]></field>
+			<field id="Template"><![CDATA[ProgId: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterTypeLibraries]]></field>
+			<field id="Description"><![CDATA[Registering type libraries...]]></field>
+			<field id="Template"><![CDATA[LibID: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterUser]]></field>
+			<field id="Description"><![CDATA[Registering user...]]></field>
+			<field id="Template"><![CDATA[[1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveDuplicateFiles]]></field>
+			<field id="Description"><![CDATA[Removing duplicated files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveEnvironmentStrings]]></field>
+			<field id="Description"><![CDATA[Updating environment strings...]]></field>
+			<field id="Template"><![CDATA[Name: [1][WiseCRLF]Value: [2][WiseCRLF]Action [3]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveFiles]]></field>
+			<field id="Description"><![CDATA[Removing files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveFolders]]></field>
+			<field id="Description"><![CDATA[Removing folders...]]></field>
+			<field id="Template"><![CDATA[Folder: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveIniValues]]></field>
+			<field id="Description"><![CDATA[Removing INI file entries...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Section: [2][WiseCRLF]Key: [3], Value: [4]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveODBC]]></field>
+			<field id="Description"><![CDATA[Removing ODBC components...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveRegistryValues]]></field>
+			<field id="Description"><![CDATA[Removing system registry values...]]></field>
+			<field id="Template"><![CDATA[Key: [1][WiseCRLF]Name: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveShortcuts]]></field>
+			<field id="Description"><![CDATA[Removing shortcuts...]]></field>
+			<field id="Template"><![CDATA[Shortcut: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RMCCPSearch]]></field>
+			<field id="Description"><![CDATA[Searching for qualifying products...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[Rollback]]></field>
+			<field id="Description"><![CDATA[Rolling back action:]]></field>
+			<field id="Template"><![CDATA[[1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RollbackCleanup]]></field>
+			<field id="Description"><![CDATA[Removing backup files...]]></field>
+			<field id="Template"><![CDATA[File: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[SelfRegModules]]></field>
+			<field id="Description"><![CDATA[Registering modules...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Folder: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[SelfUnregModules]]></field>
+			<field id="Description"><![CDATA[Unregistering modules...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Folder: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[SetODBCFolders]]></field>
+			<field id="Description"><![CDATA[Initializing ODBC directories...]]></field>
+			<field id="Template"><![CDATA[ODBC Driver [1] forcing folder [2] to [3]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[SetSecurityPermissions]]></field>
+			<field id="Description"><![CDATA[Setting permissions...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[StartServices]]></field>
+			<field id="Description"><![CDATA[Starting services...]]></field>
+			<field id="Template"><![CDATA[Service: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[StopServices]]></field>
+			<field id="Description"><![CDATA[Stopping services...]]></field>
+			<field id="Template"><![CDATA[Service: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[uninstall_printer]]></field>
+			<field id="Description"><![CDATA[Calling uninstall_printer_CA]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnmoveFiles]]></field>
+			<field id="Description"><![CDATA[Removing moved files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnpublishComponents]]></field>
+			<field id="Description"><![CDATA[Unpublishing qualified components...]]></field>
+			<field id="Template"><![CDATA[Component ID: [1][WiseCRLF]Qualifier: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnpublishFeatures]]></field>
+			<field id="Description"><![CDATA[Unpublishing product features...]]></field>
+			<field id="Template"><![CDATA[Feature: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnpublishProduct]]></field>
+			<field id="Description"><![CDATA[Unpublishing product information...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterClassInfo]]></field>
+			<field id="Description"><![CDATA[Unregister class servers...]]></field>
+			<field id="Template"><![CDATA[Class Id: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterExtensionInfo]]></field>
+			<field id="Description"><![CDATA[Unregistering extension servers...]]></field>
+			<field id="Template"><![CDATA[Extension: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterFonts]]></field>
+			<field id="Description"><![CDATA[Unregistering fonts...]]></field>
+			<field id="Template"><![CDATA[Font: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterMIMEInfo]]></field>
+			<field id="Description"><![CDATA[Unregistering MIME information...]]></field>
+			<field id="Template"><![CDATA[MIME Content Type: [1][WiseCRLF]Extension: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterProgIdInfo]]></field>
+			<field id="Description"><![CDATA[Unregistering program identifiers...]]></field>
+			<field id="Template"><![CDATA[ProgId: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterTypeLibraries]]></field>
+			<field id="Description"><![CDATA[Unregistering type libraries...]]></field>
+			<field id="Template"><![CDATA[LibID: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[WriteEnvironmentStrings]]></field>
+			<field id="Description"><![CDATA[Updating environment strings...]]></field>
+			<field id="Template"><![CDATA[Name: [1][WiseCRLF]Value: [2][WiseCRLF]Action [3]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[WriteIniValues]]></field>
+			<field id="Description"><![CDATA[Writing INI file values...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Section: [2][WiseCRLF]Key: [3], Value: [4]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[WriteRegistryValues]]></field>
+			<field id="Description"><![CDATA[Writing system registry values...]]></field>
+			<field id="Template"><![CDATA[Key: [1][WiseCRLF]Name: [2][WiseCRLF]Value: [3]]]></field>
+		</record>
+	</table>
+	<table id="Error">
+		<string id="0"><![CDATA[{{Végzetes hiba: }}]]></string>
+		<string id="1"><![CDATA[Hiba [1]. ]]></string>
+		<string id="2"><![CDATA[Figyelmeztetés [1]. ]]></string>
+		<string id="4"><![CDATA[Információ [1]. ]]></string>
+		<string id="5"><![CDATA[Belső hiba [1]. [2]{, [3]}{, [4]}]]></string>
+		<string id="7"><![CDATA[{{Tele a lemez: }}]]></string>
+		<string id="8"><![CDATA[Művelet [Time]: [1]. [2]]]></string>
+		<string id="9"><![CDATA[[ProductName]]]></string>
+		<string id="10"><![CDATA[{[2]}{, [3]}{, [4]}]]></string>
+		<string id="11"><![CDATA[Üzenettípus: [1], Argumentum: [2]]]></string>
+		<string id="12"><![CDATA[=== Naplózás kezdete: [Date]  [Time] ===]]></string>
+		<string id="13"><![CDATA[=== Naplózás vége: [Date]  [Time] ===]]></string>
+		<string id="14"><![CDATA[Művelet kezdete [Time]: [1].]]></string>
+		<string id="15"><![CDATA[Művelet vége [Time]: [1]. Visszatérési érték [2].]]></string>
+		<string id="16"><![CDATA[Hátralévő idő: {[1] perc }{[2] másodperc}]]></string>
+		<string id="17"><![CDATA[Memóriahiány. Az újrapróbálkozás előtt zárjon be más alkalmazásokat.]]></string>
+		<string id="18"><![CDATA[A Windows Installer leállt.]]></string>
+		<string id="19"><![CDATA[A telepítési folyamat idő előtt megszakadt.]]></string>
+		<string id="20"><![CDATA[Várjon, amíg a Windows konfigurálja a(z) [ProductName] programot]]></string>
+		<string id="21"><![CDATA[A kért adatok összegyűjtése...]]></string>
+		<string id="32"><![CDATA[{[ProductName] }A telepítés sikerült.]]></string>
+		<string id="33"><![CDATA[{[ProductName] }A telepítés nem sikerült.]]></string>
+		<string id="1101"><![CDATA[Hiba a következő fájl olvasásakor: [2]. {{ Rendszerhiba: [3].}}   Ellenőrizze, létezik-e a fájl, és hogy eléri-e.]]></string>
+		<string id="1301"><![CDATA[Nem lehet létrehozni a(z) '[3]' fájlt;   Már létezik ilyen nevű könyvtár.  Szakítsa meg a telepítést, és próbálja más helyre telepíteni a programot.]]></string>
+		<string id="1302"><![CDATA[Helyezze be a következő lemezt: [2]]]></string>
+		<string id="1303"><![CDATA[A telepítő nem rendelkezik megfelelő jogosultsággal a következő könyvtár eléréséhez: [2].  A telepítés nem folytatódhat.  Jelentkezzen be rendszergazdaként, vagy lépjen kapcsolatba a rendszergazdával.]]></string>
+		<string id="1304"><![CDATA[Hiba a következő fájl írásakor: [2].  Ellenőrizze, hogy rendelkezik-e hozzáféréssel a könyvtárhoz.]]></string>
+		<string id="1305"><![CDATA[Hiba a következő fájl olvasásakor: [2].  Ellenőrizze, létezik-e a fájl, és hogy eléri-e.]]></string>
+		<string id="1306"><![CDATA[Egy másik alkalmazás kizárólagos hozzáféréssel rendelkezik a következő fájlhoz: '[2]'.  Zárjon be minden más alkalmazást, majd kattintson az Ismét gombra.]]></string>
+		<string id="1307"><![CDATA[Nincs elég lemezterület a következő fájl telepítéséhez: [2].  Szabadítson fel lemezterületet, majd kattintson az Ismét gombra, vagy válassza a Mégse gombot a kilépéshez.]]></string>
+		<string id="1308"><![CDATA[A következő forrásfájl nem található: [2].  Ellenőrizze, létezik-e a fájl, és hogy eléri-e.]]></string>
+		<string id="1309"><![CDATA[Hiba a következő fájl olvasásakor: [3]. {{ Rendszerhiba [2].}}  Ellenőrizze, létezik-e a fájl, és hogy eléri-e.]]></string>
+		<string id="1310"><![CDATA[Hiba a következő fájl írásakor: [3]. {{ Rendszerhiba [2].}}  Ellenőrizze, hogy rendelkezik-e hozzáféréssel a könyvtárhoz.]]></string>
+		<string id="1311"><![CDATA[A következő forrásfájl nem található:{{(cabinet)}}: [2].  Ellenőrizze, létezik-e a fájl, és hogy eléri-e.]]></string>
+		<string id="1312"><![CDATA[Nem lehet létrehozni a(z) '[2]' könyvtárat;   Már létezik ilyen nevű fájl.  Nevezze át vagy törölje a fájlt, majd kattintson az Ismét gombra, vagy válassza a Mégse gombot a kilépéshez.]]></string>
+		<string id="1313"><![CDATA[A(z) [2] kötet jelenleg nem érhető el. Válasszon másikat.]]></string>
+		<string id="1314"><![CDATA[A megadott '[2]' elérési út nem érhető el.]]></string>
+		<string id="1315"><![CDATA[Nem lehet írni a megadott mappába: [2].]]></string>
+		<string id="1316"><![CDATA[Hálózati hiba történt a következő fájl olvasásakor: [2]]]></string>
+		<string id="1317"><![CDATA[Hiba történt a következő könyvtár létrehozásakor: [2]]]></string>
+		<string id="1318"><![CDATA[Hálózati hiba történt a következő könyvtár létrehozásakor: [2]]]></string>
+		<string id="1319"><![CDATA[Hálózati hiba történt a következő forrásfájl-kabinet megnyitásakor: [2]]]></string>
+		<string id="1320"><![CDATA[A megadott elérési út túl hosszú: [2]]]></string>
+		<string id="1321"><![CDATA[A telepítő nem rendelkezik elegendő jogosultsággal a következő fájl módosításához: [2].]]></string>
+		<string id="1322"><![CDATA[A(z) '[2]' mappaelérési útvonal egy része érvénytelen; túllépi a rendszer által engedélyezett hosszúságot.]]></string>
+		<string id="1323"><![CDATA[A(z) '[2]' mappaelérési útvonal olyan szavakat tartalmaz, melyek nem használhatók mappaelérési útvonalban.]]></string>
+		<string id="1324"><![CDATA[A(z) '[2]' mappaelérési útvonal egy érvénytelen karaktert tartalmaz.]]></string>
+		<string id="1325"><![CDATA[A(z) '[2]' nem érvényes rövid fájlnév.]]></string>
+		<string id="1326"><![CDATA[Hiba a fájlbiztonság beolvasásakor: [3] GetLastError: [2]]]></string>
+		<string id="1327"><![CDATA[Érvénytelen meghajtó: [2]]]></string>
+		<string id="1401"><![CDATA[Nem lehetett létrehozni a következő kulcsot: [2]. {{ Rendszerhiba: [3].}}  Ellenőrizze, van-e megfelelő jogosultsága a kulcs eléréséhez, vagy kérje szakember segítségét. ]]></string>
+		<string id="1402"><![CDATA[Nem lehetett megnyitni a következő kulcsot: [2]. {{ Rendszerhiba: [3].}}  Ellenőrizze, van-e megfelelő jogosultsága a kulcs eléréséhez, vagy kérje szakember segítségét. ]]></string>
+		<string id="1403"><![CDATA[Nem lehetett törölni a(z) [2] értéket a következő kulcsból: [3]. {{ Rendszerhiba: [4].}}  Ellenőrizze, van-e megfelelő jogosultsága a kulcs eléréséhez, vagy kérje szakember segítségét. ]]></string>
+		<string id="1404"><![CDATA[Nem lehetett törölni a következő kulcsot: [2]. {{ Rendszerhiba: [3].}}  Ellenőrizze, van-e megfelelő jogosultsága a kulcs eléréséhez, vagy kérje szakember segítségét. ]]></string>
+		<string id="1405"><![CDATA[Nem lehetett olvasni a(z) [2] értéket a következő kulcsból: [3]. {{ Rendszerhiba: [4].}}  Ellenőrizze, van-e megfelelő jogosultsága a kulcs eléréséhez, vagy kérje szakember segítségét. ]]></string>
+		<string id="1406"><![CDATA[Nem lehetett írni a(z) [2] értéket a következő kulcsba: [3]. {{ Rendszerhiba: [4].}}  Ellenőrizze, van-e megfelelő jogosultsága a kulcs eléréséhez, vagy kérje szakember segítségét.]]></string>
+		<string id="1407"><![CDATA[Nem lehetett értékneveket beolvasni a következő kulcshoz: [2]. {{ Rendszerhiba: [3].}}  Ellenőrizze, van-e megfelelő jogosultsága a kulcs eléréséhez, vagy kérje szakember segítségét.]]></string>
+		<string id="1408"><![CDATA[Nem lehetett alkulcsneveket beolvasni a következő kulcshoz: [2]. {{ Rendszerhiba: [3].}}  Ellenőrizze, van-e megfelelő jogosultsága a kulcs eléréséhez, vagy kérje szakember segítségét.]]></string>
+		<string id="1409"><![CDATA[Nem lehetett biztonsági információkat beolvasni a következő kulcshoz: [2]. {{ Rendszerhiba: [3].}}  Ellenőrizze, van-e megfelelő jogosultsága a kulcs eléréséhez, vagy kérje szakember segítségét.]]></string>
+		<string id="1410"><![CDATA[Nem sikerült növelni a rendelkezésre álló területet a rendszerleíró adatbázisban. Az alkalmazás telepítéséhez [2] KB szabad hely szükséges a rendszerleíró adatbázisban.]]></string>
+		<string id="1500"><![CDATA[Egy másik telepítés van folyamatban. Be kell fejeznie azt a telepítést, mielőtt folytatná a jelenlegit.]]></string>
+		<string id="1501"><![CDATA[Hiba a biztonságos adatok elérésekor. Győződjön meg arról, hogy a Windows Installer megfelelően van konfigurálva, majd próbálkozzon újra a telepítéssel.]]></string>
+		<string id="1502"><![CDATA[A '[2]' nevű felhasználó előzőleg kezdeményezett egy telepítést a(z) '[3]' termékhez. Ennek a felhasználónak újra futtatnia kell a telepítést, mielőtt használhatná a terméket.  A jelenlegi telepítés most folytatódik.]]></string>
+		<string id="1503"><![CDATA[A '[2]' nevű felhasználó előzőleg kezdeményezett egy telepítést a(z) '[3]' termékhez. Ennek a felhasználónak újra futtatnia kell a telepítést, mielőtt használhatná a terméket.]]></string>
+		<string id="1601"><![CDATA[Nincs elég szabad lemezterület -- Kötet: '[2]'; szükséges terület: [3] KB; szabad terület: [4] KB.  Szabadítson fel lemezterületet, és próbálkozzon újra.]]></string>
+		<string id="1602"><![CDATA[Biztosan megszakítja?]]></string>
+		<string id="1603"><![CDATA[A(z) [2][3] fájl használatban van tartva{ a következő folyamathoz: Név: [4], Azonosító: [5], Ablak címe: '[6]'}.  Zárja be a kérdéses alkalmazást, és próbálkozzon újra.]]></string>
+		<string id="1604"><![CDATA[A(z) '[2]' termék már telepítve van, ezért a telepítés nem lehetséges. A két termék nem kompatibilis.]]></string>
+		<string id="1605"><![CDATA[Nincs elég hely a lemezen -- Kötet: '[2]'; szükséges hely: [3] KB; rendelkezésre álló hely: [4] KB. Ha a visszaállítási funkciót letiltja, elegendő hely lesz a lemezen. A kilépéshez kattintson a 'Mégse' gombra, a szabad lemezterület újbóli ellenőrzéséhez az 'Ismét' gombra, vagy a telepítésnek a visszaállítási funkció nélküli folytatásához a 'Kihagyás' gombra.]]></string>
+		<string id="1606"><![CDATA[Nem sikerült a következő hálózati hely elérése: [2].]]></string>
+		<string id="1607"><![CDATA[A telepítés folytatása előtt zárja be a következő alkalmazásokat:]]></string>
+		<string id="1608"><![CDATA[A számítógépen nem találhatók korábban telepített kompatibilis alkalmazások a termék telepítéséhez.]]></string>
+		<string id="1701"><![CDATA[A(z) [2] kulcs nem érvényes. Ellenőrizze, hogy a megfelelő kulcsot adta-e meg.]]></string>
+		<string id="1702"><![CDATA[A telepítőnek a(z) [2] konfigurálásának folytatása előtt újra kell indítania a rendszert. Kattintson az Igen gombra az azonnali újraindításhoz. Válassza a Nem lehetőséget, ha később manuálisan kívánja újraindítani a rendszert.]]></string>
+		<string id="1703"><![CDATA[Újra kell indítania a rendszert ahhoz, hogy a(z) [2] konfigurációjának változásai életbe lépjenek. Kattintson az Igen gombra az azonnali újraindításhoz. Válassza a Nem lehetőséget, ha később manuálisan kívánja újraindítani a rendszert.]]></string>
+		<string id="1704"><![CDATA[A(z) [2] egy telepítése jelenleg felfüggesztett állapotban várakozik. A folytatáshoz vissza kell vonnia ennek a telepítésnek a módosításait. Visszavonja ezeket a módosításokat?]]></string>
+		<string id="1705"><![CDATA[A termék egy korábbi telepítése már folyamatban van. A folytatáshoz vissza kell vonnia a telepítés által végzett módosításokat. Visszavonja ezeket a módosításokat?]]></string>
+		<string id="1706"><![CDATA[A(z) [2] termék telepítéséhez nem sikerült érvényes forrást találni. A Windows Installer nem tud továbblépni.]]></string>
+		<string id="1707"><![CDATA[A telepítési művelet sikeresen befejeződött.]]></string>
+		<string id="1708"><![CDATA[A telepítési művelet nem sikerült.]]></string>
+		<string id="1709"><![CDATA[Termék: [2] -- [3]]]></string>
+		<string id="1710"><![CDATA[A számítógépet visszaállíthatja előző állapotába, vagy később is folytathatja a telepítést. Visszaállítja a rendszert?]]></string>
+		<string id="1711"><![CDATA[Hiba történt a telepítési adatok lemezre írásakor. Ellenőrizze, van-e elég szabad lemezterület, majd kattintson az Ismét gombra. A telepítésből a Mégse gombbal léphet ki.]]></string>
+		<string id="1712"><![CDATA[A számítógép korábbi állapotba való visszaállításához szükséges egy vagy több fájl nem található. A visszaállítás nem lehetséges.]]></string>
+		<string id="1801"><![CDATA[A(z) [2] elérési útvonal nem érvényes. Adjon meg érvényes útvonalat.]]></string>
+		<string id="1802"><![CDATA[Memóriahiány. Az újrapróbálkozás előtt zárjon be más alkalmazásokat.]]></string>
+		<string id="1803"><![CDATA[Nincs lemez a(z) [2] meghajtóban. Helyezzen be egy lemezt, és kattintson az Ismét gombra, vagy a Mégse gombra kattintva térjen vissza a korábban kijelölt kötetre.]]></string>
+		<string id="1804"><![CDATA[Nincs lemez a(z) [2] meghajtóban. Helyezzen be egy lemezt, és kattintson az Ismét gombra, vagy a Mégse gombra kattintva térjen vissza a tallózási párbeszédpanelre és válasszon másik kötetet.]]></string>
+		<string id="1805"><![CDATA[A(z) [2] mappa nem létezik. Adja meg egy létező mappa elérési útvonalát.]]></string>
+		<string id="1806"><![CDATA[A mappa olvasásához nem rendelkezik megfelelő jogosultsággal.]]></string>
+		<string id="1807"><![CDATA[Nem lehetett érvényes célmappát megállapítani a telepítéshez.]]></string>
+		<string id="1901"><![CDATA[Hiba a forrás telepítési adatbázisból való olvasás során: [2].]]></string>
+		<string id="1902"><![CDATA[Újraindítási művelet ütemezése: A rendszer a(z) [2] fájlt a következőre nevezi át: [3]. A művelet befejezéséhez végezzen újraindítást.]]></string>
+		<string id="1903"><![CDATA[Újraindítási művelet ütemezése: A rendszer törli a(z) [2] fájlt. A művelet befejezéséhez végezzen újraindítást.]]></string>
+		<string id="1904"><![CDATA[A(z) [2] modul regisztrálása nem sikerült. HRESULT [3]. Kérje szakember segítségét.]]></string>
+		<string id="1905"><![CDATA[A(z) [2] modul regisztrációjának megszüntetése nem sikerült. HRESULT [3]. Kérje szakember segítségét.]]></string>
+		<string id="1906"><![CDATA[Nem sikerült a(z) [2] csomag gyorsítótárba helyezése. Hiba: [3]. Kérje szakember segítségét.]]></string>
+		<string id="1907"><![CDATA[Nem sikerült a(z) [2] betűkészlet regisztrálása.  Ellenőrizze, rendelkezik-e a betűkészletek telepítéséhez szükséges jogosultságokkal és hogy a rendszer támogatja-e ezt a betűkészletet.]]></string>
+		<string id="1908"><![CDATA[Nem sikerült a(z) [2] betűkészlet regisztrációjának megszüntetése. Ellenőrizze, hogy rendelkezik-e a betűkészletek eltávolításához szükséges jogosultságokkal.]]></string>
+		<string id="1909"><![CDATA[Nem sikerült létrehozni a(z) [2] parancsikont. Ellenőrizze, létezik-e a célmappa és eléri-e.]]></string>
+		<string id="1910"><![CDATA[Nem sikerült eltávolítani a(z) [2] parancsikont. Ellenőrizze, létezik-e a célmappa és eléri-e.]]></string>
+		<string id="1911"><![CDATA[Nem sikerült a típustár regisztrálása a(z) [2] fájlhoz. Forduljon szakemberhez.]]></string>
+		<string id="1912"><![CDATA[Nem sikerült a típustár regisztrálásának megszüntetése a(z) [2] fájlhoz. Forduljon szakemberhez.]]></string>
+		<string id="1913"><![CDATA[Nem sikerült a(z) [2][3] .INI fájl frissítése. Ellenőrizze a fájl létezését és elérhetőségét.]]></string>
+		<string id="1914"><![CDATA[Nem sikerült a(z) [2] fájl ütemezése a(z) [3] fájl cseréjéhez az újraindításkor. Ellenőrizze, rendelkezik-e írási jogosultságokkal a(z) [3] fájlhoz.]]></string>
+		<string id="1915"><![CDATA[Hiba az ODBC illesztőprogram-kezelő eltávolításakor. ODBC-hiba: [2]: [3]. Forduljon szakemberhez.]]></string>
+		<string id="1916"><![CDATA[Hiba az ODBC illesztőprogram-kezelő telepítésekor. ODBC-hiba: [2]: [3]. Forduljon szakemberhez.]]></string>
+		<string id="1917"><![CDATA[Hiba az ODBC illesztőprogram eltávolításakor: [4], ODBC-hiba: [2]: [3]. Ellenőrizze, rendelkezik-e megfelelő jogosultságokkal az ODBC-illesztőprogramok eltávolításához.]]></string>
+		<string id="1918"><![CDATA[Hiba az ODBC-illesztőprogram telepítésekor: [4], ODBC-hiba: [2]: [3]. Ellenőrizze, létezik-e a(z) [4] fájl, és eléri-e.]]></string>
+		<string id="1919"><![CDATA[Hiba az ODBC-adatforrás konfigurálásakor: [4], ODBC hiba: [2]: [3]. Ellenőrizze, létezik-e a(z) [4] fájl, és eléri-e.]]></string>
+		<string id="1920"><![CDATA[A(z) '[2]' ([3]) szolgáltatás elindítása nem sikerült. Ellenőrizze, rendelkezik-e megfelelő jogosultságokkal a rendszerszolgáltatások indításához.]]></string>
+		<string id="1921"><![CDATA[A(z) '[2]' ([3]) szolgáltatás leállítása nem sikerült. Ellenőrizze, rendelkezik-e megfelelő jogosultságokkal a rendszerszolgáltatások leállításához.]]></string>
+		<string id="1922"><![CDATA[A(z) '[2]' ([3]) szolgáltatás törlése nem sikerült. Ellenőrizze, rendelkezik-e megfelelő jogosultságokkal a rendszerszolgáltatások eltávolításához.]]></string>
+		<string id="1923"><![CDATA[A(z) '[2]' ([3]) szolgáltatás telepítése nem sikerült. Ellenőrizze, rendelkezik-e megfelelő jogosultságokkal a rendszerszolgáltatások telepítéséhez.]]></string>
+		<string id="1924"><![CDATA[Nem sikerült a(z) '[2]' környezeti változó frissítése. Ellenőrizze, rendelkezik-e megfelelő jogosultságokkal a környezeti változók módosításához.]]></string>
+		<string id="1925"><![CDATA[Nem rendelkezik megfelelő jogosultságokkal a telepítés befejezéséhez a számítógép minden felhasználója számára. Jelentkezzen be rendszergazdaként, és próbálkozzon újra a telepítéssel.]]></string>
+		<string id="1926"><![CDATA[Nem lehetett beállítani a fájlbiztonságot a(z) '[3]' fájlhoz. Hiba: [2]. Ellenőrizze, rendelkezik-e megfelelő jogosultságokkal a fájl biztonsági engedélyeinek módosításához.]]></string>
+	</table>
+	<table id="UIText">
+		<string id="bytes"><![CDATA[bytes]]></string>
+		<string id="GB"><![CDATA[GB]]></string>
+		<string id="KB"><![CDATA[KB]]></string>
+		<string id="MB"><![CDATA[MB]]></string>
+		<string id="MenuAbsent"><![CDATA[Entire feature will be unavailable.]]></string>
+		<string id="MenuAdvertise"><![CDATA[Feature will be installed when required.]]></string>
+		<string id="MenuAllCD"><![CDATA[Entire feature will be installed to run from CD.]]></string>
+		<string id="MenuAllLocal"><![CDATA[Entire feature will be installed on local hard drive.]]></string>
+		<string id="MenuAllNetwork"><![CDATA[Entire feature will be installed to run from network.]]></string>
+		<string id="MenuCD"><![CDATA[Will be installed to run from CD.]]></string>
+		<string id="MenuLocal"><![CDATA[Will be installed on local hard drive.]]></string>
+		<string id="MenuNetwork"><![CDATA[Will be installed to run from network.]]></string>
+		<string id="NewFolder"><![CDATA[Mappa|Új mappa]]></string>
+		<string id="ScriptInProgress"><![CDATA[A kért adatok összegyűjtése...]]></string>
+		<string id="SelAbsentAbsent"><![CDATA[This feature will remain uninstalled.]]></string>
+		<string id="SelAbsentAdvertise"><![CDATA[This feature will be set to be installed when required.]]></string>
+		<string id="SelAbsentCD"><![CDATA[This feature will be installed to run from CD.]]></string>
+		<string id="SelAbsentLocal"><![CDATA[This feature will be installed on the local hard drive.]]></string>
+		<string id="SelAbsentNetwork"><![CDATA[This feature will be installed to run from the network.]]></string>
+		<string id="SelAdvertiseAbsent"><![CDATA[This feature will become unavailable.]]></string>
+		<string id="SelAdvertiseAdvertise"><![CDATA[Will be installed when required.]]></string>
+		<string id="SelAdvertiseCD"><![CDATA[This feature will be available to run from CD.]]></string>
+		<string id="SelAdvertiseLocal"><![CDATA[This feature will be installed on your local hard drive.]]></string>
+		<string id="SelAdvertiseNetwork"><![CDATA[This feature will be available to run from the network.]]></string>
+		<string id="SelCDAbsent"><![CDATA[This feature will be uninstalled completely, you won't be able to run it from CD.]]></string>
+		<string id="SelCDAdvertise"><![CDATA[This feature will change from run from CD state to set to be installed when required.]]></string>
+		<string id="SelCDCD"><![CDATA[This feature will remain to be run from CD.]]></string>
+		<string id="SelCDLocal"><![CDATA[This feature will change from run from CD state to be installed on the local hard drive.]]></string>
+		<string id="SelChildCostNeg"><![CDATA[This feature frees up [1] on your hard drive.]]></string>
+		<string id="SelChildCostPos"><![CDATA[This feature requires [1] on your hard drive.]]></string>
+		<string id="SelCostPending"><![CDATA[Compiling cost for this feature...]]></string>
+		<string id="SelLocalAbsent"><![CDATA[This feature will be completely removed.]]></string>
+		<string id="SelLocalAdvertise"><![CDATA[This feature will be removed from your local hard drive, but will be set to be installed when required.]]></string>
+		<string id="SelLocalCD"><![CDATA[This feature will be removed from your local hard drive, but still will be available to run from CD.]]></string>
+		<string id="SelLocalLocal"><![CDATA[This feature will remain on your local hard drive.]]></string>
+		<string id="SelLocalNetwork"><![CDATA[This feature will be removed from your local hard drive, but still will be available to run from the network.]]></string>
+		<string id="SelNetworkAbsent"><![CDATA[This feature will be uninstalled completely, you won't be able to run it from the network.]]></string>
+		<string id="SelNetworkAdvertise"><![CDATA[This feature will change from run from network state to set to be installed when required.]]></string>
+		<string id="SelNetworkLocal"><![CDATA[This feature will change from run from network state to be installed on the local hard drive.]]></string>
+		<string id="SelNetworkNetwork"><![CDATA[This feature will remain to be run from the network.]]></string>
+		<string id="SelParentCostNegNeg"><![CDATA[This feature frees up [1] on your hard drive. It has [2] of [3] subfeatures selected. The subfeatures free up [4] on your hard drive.]]></string>
+		<string id="SelParentCostNegPos"><![CDATA[This feature frees up [1] on your hard drive. It has [2] of [3] subfeatures selected. The subfeatures require [4] on your hard drive.]]></string>
+		<string id="SelParentCostPosNeg"><![CDATA[This feature requires [1] on your hard drive. It has [2] of [3] subfeatures selected. The subfeatures free up [4] on your hard drive.]]></string>
+		<string id="SelParentCostPosPos"><![CDATA[This feature requires [1] on your hard drive. It has [2] of [3] subfeatures selected. The subfeatures require [4] on your hard drive.]]></string>
+		<string id="TimeRemaining"><![CDATA[Hátralévő idő: {[1] perc }{[2] másodperc}]]></string>
+		<string id="VolumeCostAvailable"><![CDATA[Available]]></string>
+		<string id="VolumeCostDifference"><![CDATA[Difference]]></string>
+		<string id="VolumeCostRequired"><![CDATA[Required]]></string>
+		<string id="VolumeCostSize"><![CDATA[Disk Size]]></string>
+		<string id="VolumeCostVolume"><![CDATA[Volume]]></string>
+	</table>
+	<table id="Shortcutname">
+		<string id="FAXmaker_Fax_Message_Form"><![CDATA[FAXMAK~1|GFI FaxMaker Faxüzenet űrlap]]></string>
+		<string id="FAXMaker_Help"><![CDATA[FAXMAK~1|GFI FaxMaker Súgó]]></string>
+		<string id="FAXmaker_SMS_Message_Form"><![CDATA[FAXMAK~1|GFI FaxMaker SMS-üzenet-űrlap]]></string>
+		<string id="FAXMaker_Viewer"><![CDATA[FAXMAK~1|GFI FaxMaker Néző]]></string>
+	</table>
+	<table id="Shortcutdescription">
+		<string id="FAXmaker_Fax_Message_Form"><![CDATA[GFI FaxMaker faxüzenetűrlap]]></string>
+		<string id="FAXMaker_Help"><![CDATA[GFI FaxMaker Súgó]]></string>
+		<string id="FAXmaker_SMS_Message_Form"><![CDATA[GFI FaxMaker SMS üzenet űrlap]]></string>
+		<string id="FAXMaker_Viewer"><![CDATA[GFI FaxMaker Néző]]></string>
+	</table>
+</setupstrings>

@@ -1,0 +1,1305 @@
+Syncing all NC's held on LASDC01.
+Syncing partition: DC=ForestDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=DomainDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Schema,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=phx,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing all NC's held on LASDC02.
+Syncing partition: DC=DomainDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=ForestDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Schema,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=phx,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing all NC's held on LASDC05.
+Syncing partition: DC=DomainDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=ForestDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Schema,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=phx,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing all NC's held on LASDC01.
+Syncing partition: DC=ForestDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=DomainDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Schema,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=phx,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing all NC's held on LASDC02.
+Syncing partition: DC=DomainDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=ForestDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Schema,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=phx,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing all NC's held on LASDC05.
+Syncing partition: DC=DomainDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=ForestDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Schema,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=phx,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing all NC's held on LASDC01.
+Syncing partition: DC=ForestDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=DomainDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Schema,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=phx,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing all NC's held on LASDC02.
+Syncing partition: DC=DomainDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=ForestDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Schema,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=phx,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing all NC's held on LASDC05.
+Syncing partition: DC=DomainDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=ForestDnsZones,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Schema,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC04,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=PHXDC03,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+
+Syncing partition: DC=phx,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC05,CN=Servers,CN=Phoenix,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication is in progress:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: The following replication completed successfully:
+    From: CN=NTDS Settings,CN=LASDC01,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+    To  : CN=NTDS Settings,CN=LASDC02,CN=Servers,CN=LasVegas,CN=Sites,CN=Configuration,DC=fnbm,DC=corp
+CALLBACK MESSAGE: SyncAll Finished.
+SyncAll terminated with no errors.
+

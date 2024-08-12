@@ -1,0 +1,1408 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="description" content="Created by Stuart Barrett">
+<meta name="description" content="Last Update: 03/10/11">
+
+<title>Software Uninstall Utility</title>
+
+<HTA:APPLICATION
+	APPLICATIONNAME="UninstallUtility"
+	ID="objUninstallUtility" 
+	VERSION="1.8"
+	BORDER="dialog"
+	ICON="otherfiles/applications.ico"
+	SCROLL="no"
+	CONTEXTMENU="no"
+	SINGLEINSTANCE="no" 
+	WINDOWSTATE="normal"/> 
+
+<style type="text/css">
+body {
+	font-family: "trebuchet ms", calibri, helvetica, sans-serif, "Times New Roman";
+	cursor: default;
+}
+input {
+	font-family: "trebuchet ms", calibri, helvetica, sans-serif, "Times New Roman";
+	border: #000033 2px solid;
+}
+input.button {
+	color: black;
+	cursor: hand;
+	background-color: white;
+	border: #000033 2px solid;
+	font-weight: bold;
+}
+input.btnhov { 
+	border-color: #000033;
+	background-color: #cccccc;
+}
+input.text { 
+	height: 27px;
+	padding-left: 5px;
+	padding-bottom: 0px;
+}
+input.disabled { 
+	color: #888888;
+	border-color: #888888;
+	cursor: default;
+}
+select {
+	font-family: "trebuchet ms", calibri, helvetica, sans-serif, "Times New Roman";
+	border: #000033 1px solid;
+	height: 23px;
+}
+table.softwaretable {
+	border: 1px solid black;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+table.softwaretable th {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	background-color: black;
+	color: white;
+	padding: 1px 5px;
+}
+table.softwaretable td {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	padding: 1px 5px;
+}
+span.spanlink {
+	color: blue;
+	cursor: hand;
+}
+h3 {
+	font-style: italic;
+}
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+#DataArea {
+	overflow: auto;
+	height: 90%;
+	width: 100%;
+}
+</style>
+
+</head>
+
+<script language="VBScript">
+
+'#==============================================================================
+'#==============================================================================
+'#  SCRIPT.........:	UninstallUtility.hta
+'#  AUTHOR.........:	Stuart Barrett
+'#  VERSION........:	1.8
+'#  CREATED........:	17/06/11
+'#  LICENSE........:	Freeware
+'#  REQUIREMENTS...:  
+'#
+'#  DESCRIPTION....:	Retrieves a list of installed programs on a remote
+'#						PC and allows the user to uninstall any as required.
+'#
+'#  NOTES..........:	Takes one command line arguement - Computer Name
+'#						(not required) To specify "PC1" as computer name:
+'#						"c:\scripts\Uninstall Utility.hta" PC1
+'# 
+'#  CUSTOMIZE......:  
+'#==============================================================================
+'#  REVISED BY.....:  
+'#  EMAIL..........:  
+'#  REVISION DATE..:  
+'#  REVISION NOTES.:
+'#
+'#==============================================================================
+'#==============================================================================
+	
+	Const HKEY_USERS = &H80000003 : Const HKEY_LOCAL_MACHINE = &H80000002
+	Const adVarChar = 200 : Const adDate = 7 : Const MaxCharacters = 255
+	
+	Dim strPC, intSWCount, booSoftwareNameSort, booVendorSort, booVersionSort, booInstallDateSort
+
+	Set objFSO = CreateObject("Scripting.FileSystemObject")
+	Set objShell = CreateObject("Wscript.Shell")
+	Set DataList = CreateObject("ADOR.Recordset")
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	ShowSoftwareItems()
+    '#	PURPOSE........:	Retrieves a list of installed software
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub ShowSoftwareItems()
+		On Error Resume Next
+		
+		document.body.style.cursor = "wait"
+		PauseScript(0)
+		
+		Set DataList = CreateObject("ADOR.Recordset")
+		
+		booSoftwareNameSort = 1
+		booVendorSort = 0
+		booVersionSort = 0
+		booInstallDateSort = 1
+		intSWCount = 0
+		
+		WMIError.className = "hidden"
+		NotFoundArea.className = "hidden"
+		PSExecError.className = "hidden"
+		DataArea.className = ""
+		btnShowSW.Disabled = True
+		btnShowSW.className = "disabled"
+		txtComputerName.Disabled = True
+		txtComputerName.className = "text disabled"
+		txtComputerName.style.fontweight = "bold"
+		txtComputerName.Title = ""
+		btnShowSW.Title = ""
+		
+		If IsNull(txtComputerName.Value) OR txtComputerName.Value = "" OR txtComputerName.Value = "." Then
+			txtComputerName.Value = objShell.ExpandEnvironmentStrings("%COMPUTERNAME%")
+		End If
+		txtComputerName.Value = UCase(txtComputerName.Value)
+		strPC = txtComputerName.Value
+		
+		If NOT Reachable(strPC) Then
+			ResetForm()
+			NotFoundArea.className = ""
+			DataArea.className = "hidden"
+			document.body.style.cursor = "default"
+			Exit Sub
+		End If
+		
+		strLoggedOnUser = LoggedOnUser(strPC)
+		If IsNull(strLoggedOnUser) OR strLoggedOnUser = "" Then strLoggedOnUser = "None"
+		LoggedOnSpan.InnerHTML = "Logged On User: " & strLoggedOnUser
+		
+		DataArea.InnerHTML = "<h3>Fetching Software info for " & strPC & ", please wait.</h3>"
+		PauseScript(1)
+		
+		DataList.Fields.Append "SoftwareName", adVarChar, MaxCharacters
+		DataList.Fields.Append "Vendor", adVarChar, MaxCharacters
+		DataList.Fields.Append "Version", adVarChar, MaxCharacters
+		DataList.Fields.Append "InstallDate", adDate
+		DataList.Fields.Append "UninstallString", adVarChar, MaxCharacters
+		DataList.Fields.Append "SilentString", adVarChar, MaxCharacters
+		DataList.Fields.Append "ID", adVarChar, MaxCharacters
+		DataList.Open
+		
+		strHTML = "<form name=""softwareform"" method=""post"">" & _
+			"<table class=""softwaretable"">" & _
+				"<tr>" & _
+					"<th style=""width:30%;text-align:left;cursor:hand;"" " & _
+						"title=""Sort by Software Title"" onClick=SortSoftwareItems(1)>" & _
+						"Software Title&nbsp;&nbsp;&nbsp;^</th>" & _
+					"<th style=""width:24%;text-align:left;cursor:hand;"" " & _
+						"title=""Sort by Vendor"" onClick=SortSoftwareItems(2)>Vendor</th>" & _
+					"<th style=""width:15%;text-align:left;cursor:hand;"" " & _
+						"title=""Sort by Version"" onClick=SortSoftwareItems(3)>Version</th>" & _
+					"<th style=""width:15%;cursor:hand;"" " & _
+						"title=""Sort by Install Date"" onClick=SortSoftwareItems(4)>Install Date</th>" & _
+					"<th style=""width:8%;"">&nbsp;</th>" & _
+					"<th style=""width:8%;"">&nbsp;</th>" & _
+				"</tr>"
+		
+		Err.Clear
+		Set objReg = GetObject("winmgmts://" & strPC & "/root/default:StdRegProv")
+		
+		If Err.Number <> 0 Then
+			ResetForm()
+			WMIError.className = ""
+			DataArea.className = "hidden"
+			document.body.style.cursor = "default"
+			Exit Sub
+		End If
+
+		DataArea.InnerHTML = "<h3>Fetching Software info for " & strPC & ", please wait..</h3>"
+		PauseScript(1)
+		
+		Set objWMIService = GetObject("winmgmts:{impersonationLevel=impersonate}!\\" & _
+			strPC & "\root\cimv2")
+							
+		Set colOS = objWMIService.ExecQuery _
+			("Select * from Win32_OperatingSystem")
+		
+		For Each objItem In colOS
+			intLocale = objItem.Locale
+		Next
+		
+		strKeyPath = "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"
+		objReg.EnumKey HKEY_LOCAL_MACHINE, strKeyPath, arrSubkeys
+		
+		For Each objItem In arrSubKeys
+			strValueName = "DisplayName"
+			strSubPath = strKeyPath & "\" & objItem
+			objReg.GetStringValue HKEY_LOCAL_MACHINE,strSubPath,strValueName,strName
+			
+			If strName <> "" AND InStr(strName, "Hotfix") = 0 AND _
+			InStr(strName, "Security Update") = 0 AND _
+			InStr(strName, "Update for Windows") = 0 Then
+				booHide = 0
+				objReg.GetDwordValue HKEY_LOCAL_MACHINE,strSubPath, _
+				"SystemComponent",booHide
+				objReg.GetStringValue HKEY_LOCAL_MACHINE,strSubPath, _
+				"UninstallString",strUninstallString
+				objReg.GetStringValue HKEY_LOCAL_MACHINE,strSubPath, _
+				"ParentKeyName",strParentKey
+				objReg.GetStringValue HKEY_LOCAL_MACHINE,strSubPath, _
+				"ReleaseType",strReleaseType
+				If (booHide <> 1 OR IsNull(booHide) OR booHide = "") AND strUninstallString <> "" _
+				AND (IsNull(strParentKey) OR strParentKey = "") _
+				AND (IsNull(strReleaseType) OR strReleaseType = "")Then
+					intSWCount = intSWCount + 1
+					objReg.GetStringValue HKEY_LOCAL_MACHINE,strSubPath, _
+					"DisplayVersion",strVersion
+					objReg.GetStringValue HKEY_LOCAL_MACHINE,strSubPath, _
+					"InstallDate",intInstallDate
+					objReg.GetStringValue HKEY_LOCAL_MACHINE,strSubPath, _
+					"Publisher",strVendor
+					objReg.GetStringValue HKEY_LOCAL_MACHINE,strSubPath, _
+					"QuietUninstallString",strSilentString
+					
+					If IsNull(intInstallDate) OR intInstallDate = "" Then
+						dtmInstallDate = "&nbsp;"
+						Else
+							If MID(intInstallDate,5,2) > 12 Then
+								If intLocale = 0809 Then
+									intDate = MID(intInstallDate,5,2)
+									intMonth = MID(intInstallDate,7,2)
+									Else
+										intDate = MID(intInstallDate,7,2)
+										intMonth = MID(intInstallDate,5,2)
+								End If
+								Else 
+									If intLocale = 0809 Then
+										intDate = MID(intInstallDate,7,2)
+										intMonth = MID(intInstallDate,5,2)
+										Else
+											intDate = MID(intInstallDate,5,2)
+											intMonth = MID(intInstallDate,7,2)
+									End If
+							End If
+							
+							dtmInstallDate = intDate & "/" & intMonth & "/" & _
+								LEFT(intInstallDate,4)
+
+							If NOT IsDate(dtmInstallDate) Then
+								dtmInstallDate = "&nbsp;"
+							End If
+					End If
+					If IsNull(strName) OR strName = "" Then
+						strSoftwareName = "&nbsp;"
+					End If
+					If IsNull(strVendor) OR strVendor = "" Then
+						strVendor = "&nbsp;"
+					End If
+					If IsNull(strVersion) OR strVersion = "" Then
+						strVersion = "&nbsp;"
+					End If
+					
+					If InStr(Lcase(strUninstallString), "msiexec.exe") > 0 Then
+						strSilentString = strUninstallString & " /qn /norestart"
+					End If
+
+					DataList.AddNew
+					
+					If intSWCount < 10 Then intSWCount = "0" & intSWCount
+					
+					DataList("SoftwareName") = strName
+					DataList("Vendor") = strVendor
+					DataList("Version") = strVersion
+					DataList("InstallDate") = dtmInstallDate
+					DataList("UninstallString") = strUninstallString
+					DataList("SilentString") = strSilentString
+					DataList("ID") = intSWCount
+					
+					DataList.Update
+				End If
+			End If
+		Next
+		
+		strKeyPath = "SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall"
+		objReg.EnumKey HKEY_LOCAL_MACHINE, strKeyPath, arrSubkeys
+		
+		For Each objItem In arrSubKeys
+			strValueName = "DisplayName"
+			strSubPath = strKeyPath & "\" & objItem
+			objReg.GetStringValue HKEY_LOCAL_MACHINE,strSubPath,strValueName,strName
+			
+			If strName <> "" AND InStr(strName, "Hotfix") = 0 AND _
+			InStr(strName, "Security Update") = 0 AND _
+			InStr(strName, "Update for Windows") = 0 Then
+				booHide = 0
+				objReg.GetDwordValue HKEY_LOCAL_MACHINE,strSubPath, _
+				"SystemComponent",booHide
+				objReg.GetStringValue HKEY_LOCAL_MACHINE,strSubPath, _
+				"UninstallString",strUninstallString
+				objReg.GetStringValue HKEY_LOCAL_MACHINE,strSubPath, _
+				"ParentKeyName",strParentKey
+				objReg.GetStringValue HKEY_LOCAL_MACHINE,strSubPath, _
+				"ReleaseType",strReleaseType
+				If (booHide <> 1 OR IsNull(booHide) OR booHide = "") AND strUninstallString <> "" _
+				AND (IsNull(strParentKey) OR strParentKey = "") _
+				AND (IsNull(strReleaseType) OR strReleaseType = "")Then
+					intSWCount = intSWCount + 1
+					objReg.GetStringValue HKEY_LOCAL_MACHINE,strSubPath, _
+					"DisplayVersion",strVersion
+					objReg.GetStringValue HKEY_LOCAL_MACHINE,strSubPath, _
+					"InstallDate",intInstallDate
+					objReg.GetStringValue HKEY_LOCAL_MACHINE,strSubPath, _
+					"Publisher",strVendor
+					objReg.GetStringValue HKEY_LOCAL_MACHINE,strSubPath, _
+					"QuietUninstallString",strSilentString
+					
+					If IsNull(intInstallDate) OR intInstallDate = "" Then
+						dtmInstallDate = "&nbsp;"
+						Else
+							If MID(intInstallDate,5,2) > 12 Then
+								If intLocale = 0809 Then
+									intDate = MID(intInstallDate,5,2)
+									intMonth = MID(intInstallDate,7,2)
+									Else
+										intDate = MID(intInstallDate,7,2)
+										intMonth = MID(intInstallDate,5,2)
+								End If
+								Else 
+									If intLocale = 0809 Then
+										intDate = MID(intInstallDate,7,2)
+										intMonth = MID(intInstallDate,5,2)
+										Else
+											intDate = MID(intInstallDate,5,2)
+											intMonth = MID(intInstallDate,7,2)
+									End If
+							End If
+							
+							dtmInstallDate = intDate & "/" & intMonth & "/" & _
+								LEFT(intInstallDate,4)
+
+							If NOT IsDate(dtmInstallDate) Then
+								dtmInstallDate = "&nbsp;"
+							End If
+					End If
+					If IsNull(strName) OR strName = "" Then
+						strSoftwareName = "&nbsp;"
+					End If
+					If IsNull(strVendor) OR strVendor = "" Then
+						strVendor = "&nbsp;"
+					End If
+					If IsNull(strVersion) OR strVersion = "" Then
+						strVersion = "&nbsp;"
+					End If
+					
+					If InStr(Lcase(strUninstallString), "msiexec.exe") > 0 Then
+						strSilentString = strUninstallString & " /qn /norestart"
+					End If
+
+					DataList.AddNew
+					
+					If intSWCount < 10 Then intSWCount = "0" & intSWCount
+					
+					DataList("SoftwareName") = strName
+					DataList("Vendor") = strVendor
+					DataList("Version") = strVersion
+					DataList("InstallDate") = dtmInstallDate
+					DataList("UninstallString") = strUninstallString
+					DataList("SilentString") = strSilentString
+					DataList("ID") = intSWCount
+					
+					DataList.Update
+				End If
+			End If
+		Next
+		
+		DataArea.InnerHTML = "<h3>Fetching Software info for " & strPC & ", please wait...</h3>"
+		PauseScript(1)
+		
+		If strLoggedOnUser <> "None" Then
+			strRemoteSID = GetSIDFromUser(strLoggedOnUser)
+			
+			strKeyPath = strRemoteSID & "\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"
+			objReg.EnumKey HKEY_USERS, strKeyPath, arrSubkeys
+		
+			For Each objItem In arrSubKeys
+				strValueName = "DisplayName"
+				strSubPath = strKeyPath & "\" & objItem
+				objReg.GetStringValue HKEY_USERS,strSubPath,strValueName,strName
+				
+				If strName <> "" AND InStr(strName, "Hotfix") = 0 AND _
+				InStr(strName, "Security Update") = 0 AND _
+				InStr(strName, "Update for Windows") = 0 Then
+					booHide = 0
+					objReg.GetDwordValue HKEY_USERS,strSubPath, _
+					"SystemComponent",booHide
+					objReg.GetStringValue HKEY_USERS,strSubPath, _
+					"UninstallString",strUninstallString
+					objReg.GetStringValue HKEY_USERS,strSubPath, _
+					"ParentKeyName",strParentKey
+					objReg.GetStringValue HKEY_USERS,strSubPath, _
+					"ReleaseType",strReleaseType
+					If (booHide <> 1 OR IsNull(booHide) OR booHide = "") AND strUninstallString <> "" _
+					AND (IsNull(strParentKey) OR strParentKey = "") _
+					AND (IsNull(strReleaseType) OR strReleaseType = "")Then
+						intSWCount = intSWCount + 1
+						objReg.GetStringValue HKEY_USERS,strSubPath, _
+						"DisplayVersion",strVersion
+						objReg.GetStringValue HKEY_USERS,strSubPath, _
+						"InstallDate",intInstallDate
+						objReg.GetStringValue HKEY_USERS,strSubPath, _
+						"Publisher",strVendor
+						objReg.GetStringValue HKEY_USERS,strSubPath, _
+						"QuietUninstallString",strSilentString
+						
+						If IsNull(intInstallDate) OR intInstallDate = "" Then
+							dtmInstallDate = "&nbsp;"
+							Else
+								If MID(intInstallDate,5,2) > 12 Then
+									If intLocale = 0809 Then
+										intDate = MID(intInstallDate,5,2)
+										intMonth = MID(intInstallDate,7,2)
+										Else
+											intDate = MID(intInstallDate,7,2)
+											intMonth = MID(intInstallDate,5,2)
+									End If
+									Else 
+										If intLocale = 0809 Then
+											intDate = MID(intInstallDate,7,2)
+											intMonth = MID(intInstallDate,5,2)
+											Else
+												intDate = MID(intInstallDate,5,2)
+												intMonth = MID(intInstallDate,7,2)
+										End If
+								End If
+								
+								dtmInstallDate = intDate & "/" & intMonth & "/" & _
+									LEFT(intInstallDate,4)
+
+								If NOT IsDate(dtmInstallDate) Then
+									dtmInstallDate = "&nbsp;"
+								End If
+						End If
+						If IsNull(strName) OR strName = "" Then
+							strSoftwareName = "&nbsp;"
+						End If
+						If IsNull(strVendor) OR strVendor = "" Then
+							strVendor = "&nbsp;"
+						End If
+						If IsNull(strVersion) OR strVersion = "" Then
+							strVersion = "&nbsp;"
+						End If
+						
+						If InStr(Lcase(strUninstallString), "msiexec.exe") > 0 Then
+							strSilentString = strUninstallString & " /qn /norestart"
+						End If
+
+						DataList.AddNew
+						
+						If intSWCount < 10 Then intSWCount = "0" & intSWCount
+						
+						DataList("SoftwareName") = strName
+						DataList("Vendor") = strVendor
+						DataList("Version") = strVersion
+						DataList("InstallDate") = dtmInstallDate
+						DataList("UninstallString") = strUninstallString
+						DataList("SilentString") = strSilentString
+						DataList("ID") = intSWCount
+						
+						DataList.Update
+					End If
+				End If
+			Next
+		End If
+
+		DataList.Sort = "SoftwareName"
+		
+		DataArea.InnerHTML = "<h3>Fetching Software info for " & strPC & ", please wait....</h3>"
+		PauseScript(1)
+		
+		DataList.MoveFirst
+		Do Until DataList.EOF
+			strSoftwareName = DataList.Fields.Item("SoftwareName")
+			strVendor = DataList.Fields.Item("Vendor")
+			strVersion = DataList.Fields.Item("Version")
+			dtmInstallDate = DataList.Fields.Item("InstallDate")
+			strUninstallString = DataList.Fields.Item("UninstallString")
+			strSilentString = DataList.Fields.Item("SilentString")
+			intID = DataList.Fields.Item("ID")
+			DataList.MoveNext
+			
+			strSoftwareSearch = Replace(strSoftwareName, " ", "_")
+			
+			If InStr(LCase(strUninstallString), "msiexec.exe") > 0 Then
+				strSilentString = Replace(strUninstallString, _
+					"MsiExec.exe /I", "MsiExec.exe /norestart /quiet /X")
+				strUninstallString = Replace(strUninstallString, _
+					"MsiExec.exe /I", "MsiExec.exe /X")
+			End If
+			
+			strUninstallString = Replace(strUninstallString, Chr(34), "{Chr(34)}")
+			strUninstallString = Replace(strUninstallString, "'", "{APOS}")
+			strUninstallString = Replace(strUninstallString, " ", "{SPACE}")
+			strEncodedSWName = Replace(strSoftwareName, " ", "{SPACE}")
+			strEncodedSWName = Replace(strEncodedSWName, Chr(34), "{Chr(34)}")
+			strEncodedSWName = Replace(strEncodedSWName, "'", "{APOS}")
+			strSilentString = Replace(strSilentString, Chr(34), "{Chr(34)}")
+			strSilentString = Replace(strSilentString, "'", "{APOS}")
+			strSilentString = Replace(strSilentString, " ", "{SPACE}")
+			
+			strNewValue = strSoftwareName & "||" & strVendor & "||" & strVersion & "||" & _
+				dtmInstallDate & "||" & strUninstallString & "||" & strSilentString & "||" & intID
+			
+			strHTML = strHTML & "<tr>"
+			strHTML = strHTML & "<td><span class=""spanlink"" onClick=OpenURL(""http://www.google.com/search?q=" & _
+				strSoftwareSearch & """) title=""Search Google for '" & strSoftwareName & "'"">" & strSoftwareName & _
+				"</span><input type=""hidden"" name=""hdnValue" & intID & """ value=""" & strNewValue & """></td>"
+			strHTML = strHTML &	"<td>" & strVendor & "</td>"
+			strHTML = strHTML & "<td>" & strVersion & "</td>"
+			strHTML = strHTML & "<td style=""text-align:center;"">" & dtmInstallDate & "</td>"
+			strHTML = strHTML & "<td style=""text-align:center;""><input class=""button"" type=""button"" " & _
+				"style=""width:70;height:23px;"" value=""Uninstall"" id=""btnUninstall" & intID & """ title=""Uninstall '" & _
+				strSoftwareName & "' interactively"" onClick=UninstallSoftware(""" & strUninstallString & _
+				"||" & strEncodedSWName & "||0"") onMouseOver=""btnMouseOver(me)"" onMouseOut=""btnMouseOut(me)""></td>"
+			strHTML = strHTML & "<td style=""text-align:center;""><input class=""button"" type=""button"" " & _
+				"style=""width:70;height:23px;"" value=""Silent"" id=""btnSilent" & intID & """ title=""Uninstall '" & _
+				strSoftwareName & "' silently"" onClick=UninstallSoftware(""" & strSilentString & _
+				"||" & strEncodedSWName & "||1"") onMouseOver=""btnMouseOver(me)"" onMouseOut=""btnMouseOut(me)""> </td>"
+			strHTML = strHTML &	"</tr>" 
+		Loop
+		
+		strHTML = strHTML & "</table></form>"
+
+		DataArea.InnerHTML = strHTML
+
+		For j = 1 To intSWCount
+			strUninstallString = ""
+			strSilentString = ""
+
+			If j < 10 Then j = "0" & j
+			
+			strValue = document.getElementById("hdnValue" & j).Value
+			arrValues = Split(strValue, "||")
+			
+			strUninstallString = arrValues(4)
+			strSilentString = arrValues(5)
+			
+			If strUninstallString = "" Then
+				document.getElementById("btnUninstall" & j).Disabled = True	
+				document.getElementById("btnUninstall" & j).className = "disabled"
+				document.getElementById("btnUninstall" & j).Title = ""
+			End If
+			If strSilentString = "" Then
+				document.getElementById("btnSilent" & j).Disabled = True
+				document.getElementById("btnSilent" & j).className = "disabled"
+				document.getElementById("btnSilent" & j).Title = ""
+			End If
+		Next
+
+		BottomBar.className = ""
+		NumItemsSpan.InnerHTML = intSWCount & " items"
+		
+		document.body.style.cursor = "default"
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	SortSoftwareItems(intSort)
+    '#	PURPOSE........:	Sorts the list of installed software
+    '#	ARGUMENTS......:	intSort = index of row to sort
+    '#	EXAMPLE........:	SortSoftwareItems(2)
+    '#	NOTES..........:	The above example would sort the Vendor row
+    '#--------------------------------------------------------------------------
+	Sub SortSoftwareItems(intSort)
+		On Error Resume Next
+		
+		document.body.style.cursor = "wait"
+		PauseScript(0)
+		
+		Select Case intSort
+			Case 1
+				booVendorSort = 0
+				booVersionSort = 0
+				booInstallDateSort = 1
+				
+				If booSoftwareNameSort = 0 Then
+					booSoftwareNameSort = 1
+					strSortHTML = "Software Title&nbsp;&nbsp;&nbsp;^"
+					DataList.Sort = "SoftwareName ASC"
+					Else
+						booSoftwareNameSort = 0
+						strSortHTML = "Software Title&nbsp;&nbsp;&nbsp;<span style=""font-size:0.6em"">v</span>"
+						DataList.Sort = "SoftwareName DESC"
+				End If
+			
+				strHTML = "<form name=""softwareform"" method=""post"">" & _
+				"<table class=""softwaretable"">" & _
+					"<tr>" & _
+						"<th style=""width:30%;text-align:left;cursor:hand;"" " & _
+							"title=""Sort by Software Title"" onClick=SortSoftwareItems(1)>" & _
+							strSortHTML & "</th>" & _
+						"<th style=""width:24%;text-align:left;cursor:hand;"" " & _
+							"title=""Sort by Vendor"" onClick=SortSoftwareItems(2)>Vendor</th>" & _
+						"<th style=""width:15%;text-align:left;cursor:hand;"" " & _
+							"title=""Sort by Version"" onClick=SortSoftwareItems(3)>Version</th>" & _
+						"<th style=""width:15%;cursor:hand;"" " & _
+							"title=""Sort by Install Date"" onClick=SortSoftwareItems(4)>Install Date</th>" & _
+						"<th style=""width:8%;"">&nbsp;</th>" & _
+						"<th style=""width:8%;"">&nbsp;</th>" & _
+					"</tr>"
+			Case 2
+				booSoftwareNameSort = 0
+				booVersionSort = 0
+				booInstallDateSort = 1
+				
+				If booVendorSort = 0 Then
+					booVendorSort = 1
+					strSortHTML = "Vendor&nbsp;&nbsp;&nbsp;^"
+					DataList.Sort = "Vendor ASC"
+					Else
+						booVendorSort = 0
+						strSortHTML = "Vendor&nbsp;&nbsp;&nbsp;<span style=""font-size:0.6em"">v</span>"
+						DataList.Sort = "Vendor DESC"
+				End If
+				
+				strHTML = "<form name=""softwareform"" method=""post"">" & _
+				"<table class=""softwaretable"">" & _
+					"<tr>" & _
+						"<th style=""width:30%;text-align:left;cursor:hand;"" " & _
+							"title=""Sort by Software Title"" onClick=SortSoftwareItems(1)>Software Title</th>" & _
+						"<th style=""width:24%;text-align:left;cursor:hand;"" " & _
+							"title=""Sort by Vendor"" onClick=SortSoftwareItems(2)>" & _
+							strSortHTML & "</th>" & _
+						"<th style=""width:15%;text-align:left;cursor:hand;"" " & _
+							"title=""Sort by Version"" onClick=SortSoftwareItems(3)>Version</th>" & _
+						"<th style=""width:15%;cursor:hand;"" " & _
+							"title=""Sort by Install Date"" onClick=SortSoftwareItems(4)>Install Date</th>" & _
+						"<th style=""width:8%;"">&nbsp;</th>" & _
+						"<th style=""width:8%;"">&nbsp;</th>" & _
+					"</tr>"
+			Case 3
+				booSoftwareNameSort = 0
+				booVendorSort = 0
+				booInstallDateSort = 1
+				
+				If booVersionSort = 0 Then
+					booVersionSort = 1
+					strSortHTML = "Version&nbsp;&nbsp;&nbsp;^"
+					DataList.Sort = "Version ASC"
+					Else
+						booVersionSort = 0
+						strSortHTML = "Version&nbsp;&nbsp;&nbsp;<span style=""font-size:0.6em"">v</span>"
+						DataList.Sort = "Version DESC"
+				End If
+				
+				strHTML = "<form name=""softwareform"" method=""post"">" & _
+				"<table class=""softwaretable"">" & _
+					"<tr>" & _
+						"<th style=""width:30%;text-align:left;cursor:hand;"" " & _
+							"title=""Sort by Software Title"" onClick=SortSoftwareItems(1)>Software Title</th>" & _
+						"<th style=""width:24%;text-align:left;cursor:hand;"" " & _
+							"title=""Sort by Vendor"" onClick=SortSoftwareItems(2)>Vendor</th>" & _
+						"<th style=""width:15%;text-align:left;cursor:hand;"" " & _
+							"title=""Sort by Version"" onClick=SortSoftwareItems(3)>" & _
+							strSortHTML & "</th>" & _
+						"<th style=""width:15%;cursor:hand;"" " & _
+							"title=""Sort by Install Date"" onClick=SortSoftwareItems(4)>Install Date</th>" & _
+						"<th style=""width:8%;"">&nbsp;</th>" & _
+						"<th style=""width:8%;"">&nbsp;</th>" & _
+					"</tr>"
+			Case 4
+				booSoftwareNameSort = 0
+				booVendorSort = 0
+				booVersionSort = 0
+				
+				If booInstallDateSort = 0 Then
+					booInstallDateSort = 1
+					strSortHTML = "Install Date&nbsp;&nbsp;&nbsp;^"
+					DataList.Sort = "InstallDate ASC"
+					Else
+						booInstallDateSort = 0
+						strSortHTML = "Install Date&nbsp;&nbsp;&nbsp;<span style=""font-size:0.6em"">v</span>"
+						DataList.Sort = "InstallDate DESC"
+				End If
+				
+				strHTML = "<form name=""softwareform"" method=""post"">" & _
+				"<table class=""softwaretable"">" & _
+					"<tr>" & _
+						"<th style=""width:30%;text-align:left;cursor:hand;"" " & _
+							"title=""Sort by Software Title"" onClick=SortSoftwareItems(1)>Software Title</th>" & _
+						"<th style=""width:24%;text-align:left;cursor:hand;"" " & _
+							"title=""Sort by Vendor"" onClick=SortSoftwareItems(2)>Vendor</th>" & _
+						"<th style=""width:15%;text-align:left;cursor:hand;"" " & _
+							"title=""Sort by Version"" onClick=SortSoftwareItems(3)>Version</th>" & _
+						"<th style=""width:15%;cursor:hand;"" " & _
+							"title=""Sort by Install Date"" onClick=SortSoftwareItems(4)>" & _
+							strSortHTML & "</th>" & _
+						"<th style=""width:8%;"">&nbsp;</th>" & _
+						"<th style=""width:8%;"">&nbsp;</th>" & _
+					"</tr>"
+		End Select
+		
+		DataList.MoveFirst
+		Do Until DataList.EOF
+			strSoftwareName = DataList.Fields.Item("SoftwareName")
+			strVendor = DataList.Fields.Item("Vendor")
+			strVersion = DataList.Fields.Item("Version")
+			dtmInstallDate = DataList.Fields.Item("InstallDate")
+			strUninstallString = DataList.Fields.Item("UninstallString")
+			strSilentString = DataList.Fields.Item("SilentString")
+			intID = DataList.Fields.Item("ID")
+			DataList.MoveNext
+			
+			strSoftwareSearch = Replace(strSoftwareName, " ", "_")
+			
+			If InStr(LCase(strUninstallString), "msiexec.exe") > 0 Then
+				strSilentString = Replace(strUninstallString, _
+					"MsiExec.exe /I", "MsiExec.exe /norestart /quiet /X")
+				strUninstallString = Replace(strUninstallString, _
+					"MsiExec.exe /I", "MsiExec.exe /X")
+			End If
+			
+			strUninstallString = Replace(strUninstallString, Chr(34), "{Chr(34)}")
+			strUninstallString = Replace(strUninstallString, "'", "{APOS}")
+			strUninstallString = Replace(strUninstallString, " ", "{SPACE}")
+			strEncodedSWName = Replace(strSoftwareName, " ", "{SPACE}")
+			strEncodedSWName = Replace(strEncodedSWName, Chr(34), "{Chr(34)}")
+			strEncodedSWName = Replace(strEncodedSWName, "'", "{APOS}")
+			strSilentString = Replace(strSilentString, Chr(34), "{Chr(34)}")
+			strSilentString = Replace(strSilentString, "'", "{APOS}")
+			strSilentString = Replace(strSilentString, " ", "{SPACE}")
+			
+			strNewValue = strSoftwareName & "||" & strVendor & "||" & strVersion & "||" & _
+				dtmInstallDate & "||" & strUninstallString & "||" & strSilentString & "||" & intID
+			
+			strHTML = strHTML & "<tr>"
+			strHTML = strHTML & "<td><span class=""spanlink"" onClick=OpenURL(""http://www.google.com/search?q=" & _
+				strSoftwareSearch & """) title=""Search Google for '" & strSoftwareName & "'"">" & strSoftwareName & _
+				"</span><input type=""hidden"" name=""hdnValue" & intID & """ value=""" & strNewValue & """></td>"
+			strHTML = strHTML &	"<td>" & strVendor & "</td>"
+			strHTML = strHTML & "<td>" & strVersion & "</td>"
+			strHTML = strHTML & "<td style=""text-align:center;"">" & dtmInstallDate & "</td>"
+			strHTML = strHTML & "<td style=""text-align:center;""><input class=""button"" type=""button"" " & _
+				"style=""width:70;height:23px;"" value=""Uninstall"" id=""btnUninstall" & intID & """ title=""Uninstall '" & _
+				strSoftwareName & "' interactively"" onClick=UninstallSoftware(""" & strUninstallString & _
+				"||" & strEncodedSWName & "||0"") onMouseOver=""btnMouseOver(me)"" onMouseOut=""btnMouseOut(me)""></td>"
+			strHTML = strHTML & "<td style=""text-align:center;""><input class=""button"" type=""button"" " & _
+				"style=""width:70;height:23px;"" value=""Silent"" id=""btnSilent" & intID & """ title=""Uninstall '" & _
+				strSoftwareName & "' silently"" onClick=UninstallSoftware(""" & strSilentString & _
+				"||" & strEncodedSWName & "||1"") onMouseOver=""btnMouseOver(me)"" onMouseOut=""btnMouseOut(me)""> </td>"
+			strHTML = strHTML &	"</tr>" 
+		Loop
+		
+		strHTML = strHTML & "</table></form>"
+
+		DataArea.InnerHTML = strHTML
+
+		For j = 1 To intSWCount
+			strUninstallString = ""
+			strSilentString = ""
+
+			If j < 10 Then j = "0" & j
+			
+			strValue = document.getElementById("hdnValue" & j).Value
+			arrValues = Split(strValue, "||")
+			
+			strUninstallString = arrValues(4)
+			strSilentString = arrValues(5)
+			
+			If strUninstallString = "" Then
+				document.getElementById("btnUninstall" & j).Disabled = True	
+				document.getElementById("btnUninstall" & j).className = "disabled"
+				document.getElementById("btnUninstall" & j).Title = ""
+			End If
+			If strSilentString = "" Then
+				document.getElementById("btnSilent" & j).Disabled = True
+				document.getElementById("btnSilent" & j).className = "disabled"
+				document.getElementById("btnSilent" & j).Title = ""
+			End If
+		Next
+		
+		document.body.style.cursor = "default"
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	btnMouseOver(objButton)
+    '#	PURPOSE........:	onMouseOver routine to change colour of uninstall
+	'#						buttons
+    '#	ARGUMENTS......:	objButton = button name
+    '#	EXAMPLE........:	btnMouseOver("btnUninstall01")
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub btnMouseOver(objButton)
+		document.GetElementById(objButton)
+		objButton.className = "button btnhov"
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	btnMouseOut(objButton)
+    '#	PURPOSE........:	onMouseOut routine to change colour of uninstall
+	'#						buttons
+    '#	ARGUMENTS......:	objButton = button name
+    '#	EXAMPLE........:	btnMouseOut("btnUninstall01")
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub btnMouseOut(objButton)
+		document.GetElementById(objButton)
+		objButton.className = "button"
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	OpenURL(strURL)
+    '#	PURPOSE........:	Opens the supplied URL in default browser
+    '#	ARGUMENTS......:	strURL = URL
+    '#	EXAMPLE........:	OpenURL("http://www.google.com"
+    '#	NOTES..........:	Any spaces in URL must be encoded as underscores ( _ )
+    '#--------------------------------------------------------------------------	
+	Sub OpenURL(strURL)
+		strURL = Replace(strURL, "_", " ")
+		objShell.Run(Chr(34) & strURL & Chr(34))
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	UninstallSoftware(strValue)
+    '#	PURPOSE........:	Remotely uninstalls software
+    '#	ARGUMENTS......:	strValue = uninstall string and software title
+    '#	EXAMPLE........:	UninstallSoftware("c:\uninstall.exe||MS Stuff")
+    '#	NOTES..........:	Uses PSExec or Rctrlx to perform install
+    '#--------------------------------------------------------------------------
+	Sub UninstallSoftware(strValue)
+		arrValues = Split(strValue, "||")
+		strUninstallString = arrValues(0)
+		strSoftwareName = arrValues(1)
+		booSilent = arrValues(2)
+		
+		If booSilent = 1 Then
+			strSilentLabel = "silently"
+			Else strSilentLabel = "interactively"
+		End If
+		
+		strUninstallString = Replace(strUninstallString, "{Chr(34)}", Chr(34))
+		strUninstallString = Replace(strUninstallString, "{APOS}", "'")
+		strUninstallString = Replace(strUninstallString, "{SPACE}", " ")
+		strSoftwareName = Replace(strSoftwareName, "{Chr(34)}", Chr(34))
+		strSoftwareName = Replace(strSoftwareName, "{APOS}", "'")
+		strSoftwareName = Replace(strSoftwareName, "{SPACE}", " ")
+		
+		strPath = objShell.ExpandEnvironmentStrings("%path%")
+		arrPaths = Split(strPath, ";")
+		For i = 0 To UBound(arrPaths)
+			strPathFolder = arrPaths(i) & "\"
+			strPathFolder = Replace(strPathFolder, "\\", "\")
+			strPathFolder = Replace(LCase(strPathFolder), "%systemroot%", _
+			objShell.ExpandEnvironmentStrings("%systemroot%"))
+			If objFSO.FileExists(strPathFolder & "psexec.exe") Then booPSExecInPath = 1
+			If objFSO.FileExists(strPathFolder & "rctrlx.exe") Then booRctrlxInPath = 1
+		Next
+
+		If booPSExecInPath = 0 AND booRctrlxInPath = 0 Then
+			For i = 0 To UBound(arrPaths)
+				strPathFolder = arrPaths(i) & "\"
+				strPathFolder = Replace(strPathFolder, "\\", "\")
+				strPathFolder = Replace(LCase(strPathFolder), "%systemroot%", _
+				objShell.ExpandEnvironmentStrings("%systemroot%"))
+				strHTML = strHTML & LCase(strPathFolder) & "<br />"
+			Next
+			
+			SystemPathSpan.InnerHTML = strHTML
+		
+			txtComputerName.Disabled = False
+			btnShowSW.Disabled = False
+			txtComputerName.className = "text"
+			btnShowSW.className = "button"
+			txtComputerName.Title = "Computer Name"
+			btnShowSW.Title = "Show software list"
+			PSExecError.className = ""
+			DataArea.className = "hidden"
+			BottomBar.className = "hidden"
+			
+			Exit Sub
+		End If
+		
+		Err.Clear
+		
+		strUserName = Trim(txtPSUserName.Value)
+		
+		If booRctrlxInPath = 1 Then
+			If strUserName <> "" Then 
+				objShell.Run "%comspec% /c rctrlx " & strPC & " /u " & strUserName & " /i /app " & _
+				strUninstallString, 1
+				Else objShell.Run "%COMSPEC% /c rctrlx " & strPC & " /i /app " & _
+				strUninstallString, 0
+			End If
+			Else
+				If strUserName <> "" Then
+					objShell.Run "%COMSPEC% /c psexec \\" & strPC & " -u " & strUserName & " -i " & _
+					strUninstallString, 1
+					Else objShell.Run "%COMSPEC% /c psexec -i \\" & strPC & " " & _
+					strUninstallString, 0
+				End If
+		End If
+
+		MsgBox strSoftwareName & " is now being uninstalled " & strSilentLabel & _
+		" on " & UCase(strPC) & ".", vbInformation, "Software Uninstall Utility"
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	ExportSoftwareDetails()
+    '#	PURPOSE........:	Export the details for the Software Items
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub ExportSoftwareDetails()
+		On Error Resume Next
+		
+		document.body.style.cursor = "wait"
+		PauseScript(0)
+
+		strTemp = objShell.ExpandEnvironmentStrings("%TEMP%")
+		
+		Select Case ExportSelect.Value
+			Case 1
+				Set objFile = objFSO.CreateTextFile(strTemp & "\SoftwareDetails" & strPC & ".csv",True)
+				objFile.WriteLine "Software Items on " & strPC
+				objFile.WriteLine ""
+				objFile.WriteLine "Total: " & intSWCount & " Applications"
+				objFile.WriteLine ""
+				objFile.WriteLine "Name,Vendor,Version,Install Date,Uninstall String,Silent String"
+			Case 2
+				Const xlContinuous = 1
+				Const xlThin = 2
+				Const xlAutomatic = -4105
+				
+				strExcelPath = objShell.RegRead("HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\excel.exe\")
+			   
+				If strExcelPath = "" Then
+					MsgBox "Unable to export. Excel does not appear to be installed.", vbExclamation, "PC Management Utility"
+					Exit Sub
+				End If
+				
+				Set objExcel = CreateObject("Excel.Application")
+				objExcel.Visible = False
+				Set objWorkBook = objExcel.WorkBooks.Add
+				Set objWorksheet = objWorkbook.Worksheets(1)
+				objExcel.DisplayAlerts = False
+				For i = 1 to 3
+					objWorkbook.Worksheets(2).Delete
+				Next
+				objExcel.DisplayAlerts = True
+				objWorksheet.Name = "Software Details"
+				
+				objWorkSheet.Cells(1, 1) = "Software Items on " & strPC
+				objWorkSheet.Cells(3, 1) = "Total: " & intSWCount & " Applications"
+
+				intStartRow = 6
+				
+				objWorkSheet.Cells(5, 1) = "Name"
+				objWorkSheet.Cells(5, 2) = "Vendor"
+				objWorkSheet.Cells(5, 3) = "Version"
+				objWorkSheet.Cells(5, 4) = "Install Date"
+				objWorkSheet.Cells(5, 5) = "Uninstall String"
+				objWorkSheet.Cells(5, 6) = "Silent String"
+			Case 3
+				Set objFile = objFSO.CreateTextFile(strTemp & "\SoftwareDetails" & strPC & ".htm",True)
+				objFile.WriteLine "<style type=""text/css"">"
+				objFile.WriteLine "body{background-color:#CEF0FF;}"
+				objFile.WriteLine "table.export{border-width:1px;border-spacing:1px;border-style:solid;border-color:gray;border-collapse:collapse;}"
+				objFile.WriteLine "table.export th{border-width:1px;padding:1px;border-style:solid;border-color:gray;padding:2px 7px 2px 7px;}"
+				objFile.WriteLine "table.export td{border-width:1px;padding:1px;border-style:dotted;border-color:gray;padding:2px 7px 2px 7px;}"
+				objFile.WriteLine ".backtotop a {font-size:0.9em;}"
+				objFile.WriteLine "</style>"
+				objFile.WriteLine "<div style=""font-weight:bold;""><a name =""top"">Software Items on " & strPC & "</a><p>"
+				objFile.WriteLine "Total: " & intSWCount & " Applications<p></div>"
+				objFile.WriteLine "<table class=""export"">"
+				objFile.WriteLine "	<tr>"
+				objFile.WriteLine "		<th style=""text-align:left;"">"
+				objFile.WriteLine "			Name"
+				objFile.WriteLine "		</th>"
+				objFile.WriteLine "		<th>"
+				objFile.WriteLine "			Google"
+				objFile.WriteLine "		</th>"
+				objFile.WriteLine "		<th style=""text-align:left;"">"
+				objFile.WriteLine "			Vendor"
+				objFile.WriteLine "		</th>"
+				objFile.WriteLine "		<th style=""text-align:left;"">"
+				objFile.WriteLine "			Version"
+				objFile.WriteLine "		</th>"
+				objFile.WriteLine "		<th>"
+				objFile.WriteLine "			Install Date"
+				objFile.WriteLine "		</th>"
+				objFile.WriteLine "		<th style=""text-align:left;"">"
+				objFile.WriteLine "			Uninstall String"
+				objFile.WriteLine "		</th>"
+				objFile.WriteLine "		<th style=""text-align:left;"">"
+				objFile.WriteLine "			Silent String"
+				objFile.WriteLine "		</th>"
+				objFile.WriteLine "	</tr>"
+		End Select
+		
+		
+		
+		DataList.Sort = "SoftwareName"
+		
+		DataList.MoveFirst
+		Do Until DataList.EOF
+			strSoftwareName = DataList.Fields.Item("SoftwareName")
+			strSoftwareVendor = DataList.Fields.Item("Vendor")
+			strSoftwareVersion = DataList.Fields.Item("Version")
+			dtmSoftwareDate = DataList.Fields.Item("InstallDate")
+			strUninstallString = DataList.Fields.Item("UninstallString")
+			strSilentString = DataList.Fields.Item("SilentString")
+			DataList.MoveNext
+			
+			If strSoftwareName = "&nbsp;" Then strSoftwareName = ""
+			If strSoftwareVendor = "&nbsp;" Then strSoftwareVendor = ""
+			If strSoftwareVersion = "&nbsp;" Then strSoftwareVersion = ""
+			If dtmSoftwareDate = "&nbsp;" Then dtmSoftwareDate = ""
+			If strUninstallString = "&nbsp;" Then strUninstallString = ""
+			If strSilentString = "&nbsp;" Then strSilentString = ""
+			
+			If IsDate(dtmSoftwareDate) Then dtmSoftwareDate = CDate(dtmSoftwareDate)
+			
+			Select Case ExportSelect.Value
+				Case 1
+					strSoftwareName = EncodeCsv(strSoftwareName)
+					strSoftwareVendor = EncodeCsv(strSoftwareVendor)
+					strSoftwareVersion = EncodeCsv(strSoftwareVersion)
+					dtmSoftwareDate = EncodeCsv(dtmSoftwareDate)
+					strUninstallString = EncodeCsv(strUninstallString)
+					strSilentString = EncodeCsv(strSilentString)
+					
+					strCSV = strCSV & strSoftwareName & "," & _
+					strSoftwareVendor & "," & strSoftwareVersion & "," & _
+					dtmSoftwareDate & "," & strUninstallString & "," & _
+					strSilentString & vbCrLf
+				Case 2
+					objWorkSheet.Cells(intStartRow, 1) = strSoftwareName
+					objWorkSheet.Cells(intStartRow, 2) = strSoftwareVendor
+					objWorkSheet.Cells(intStartRow, 3) = strSoftwareVersion
+					objWorkSheet.Cells(intStartRow, 4) = dtmSoftwareDate
+					objWorkSheet.Cells(intStartRow, 5) = strUninstallString
+					objWorkSheet.Cells(intStartRow, 6) = strSilentString
+					intStartRow = intStartRow + 1
+				Case 3
+					objFile.WriteLine "	<tr>"
+					objFile.WriteLine "		<td>"
+					objFile.WriteLine "			" & strSoftwareName
+					objFile.WriteLine "		</td>"
+					objFile.WriteLine "		<td>"
+					objFile.WriteLine "		 	<a target=_blank href=""http://www.google.com/search?q=" & _
+						strSoftwareName & """>Search</a>" 
+					objFile.WriteLine "		</td>"
+					objFile.WriteLine "		<td>"
+					objFile.WriteLine "			" & strSoftwareVendor
+					objFile.WriteLine "		</td>"
+					objFile.WriteLine "		<td>"
+					objFile.WriteLine "			" & strSoftwareVersion
+					objFile.WriteLine "		</td>"
+					objFile.WriteLine "		<td>"
+					objFile.WriteLine "			" & dtmSoftwareDate
+					objFile.WriteLine "		</td>"
+					objFile.WriteLine "		<td>"
+					objFile.WriteLine "			" & strUninstallString
+					objFile.WriteLine "		</td>"
+					objFile.WriteLine "		<td>"
+					objFile.WriteLine "			" & strSilentString
+					objFile.WriteLine "		</td>"
+					objFile.WriteLine "	</tr>"
+			End Select
+		Loop		
+
+		Select Case ExportSelect.Value
+			Case 1
+				objFile.WriteLine strCSV
+				objFile.Close
+				Set objFile = Nothing
+				objShell.Run strTemp & "\SoftwareDetails" & strPC & ".csv"
+			Case 2
+				Set objRange = objWorkSheet.Range("A1:Z5")
+				Set objRange2 = objWorkSheet.Range("A5:F" & intStartRow - 1)
+				Set objRange3 = objWorkSheet.Range("E:F")
+				Set objRangeH = objWorkSheet.Range("A5:F5")
+				
+				objRange.Font.Bold = True
+				objRange2.Borders.LineStyle = xlContinuous
+				objRange2.Borders.Weight = xlThin
+				objRange2.Borders.ColorIndex = xlAutomatic
+				objRange3.ColumnWidth = 75
+				objRange3.WrapText = True
+				objRangeH.AutoFilter
+				
+				objWorksheet.Range("A6").Select
+				objExcel.ActiveWindow.FreezePanes = "True"
+				objWorksheet.Range("A1").Select
+				
+				objWorkSheet.Columns("A:ZZ").EntireColumn.AutoFit
+				objExcel.DisplayAlerts = False
+				objExcel.ActiveWorkbook.SaveAs(strTemp & "\SoftwareDetails" & strPC & ".xls")
+				objExcel.Visible = True
+				Set objExcel = Nothing
+			Case 3
+				strHTMLTempDir = Replace(LCase(strTemp), "c:", "file:///c:")
+				strHTMLTempDir = Replace(strHTMLTempDir, "\", "/")
+				
+				objFile.WriteLine "</table>"
+				objFile.WriteLine "<p class=""backtotop""><a href=""" & strHTMLTempDir & "/SoftwareDetails" & _
+				strPC & ".htm#top"">[..back to top..]</a></p>"
+				objFile.Close
+				Set objFile = Nothing
+				objShell.Run strTemp & "\SoftwareDetails" & strPC & ".htm"
+			End Select
+		
+		ExportSelect.Value = 0
+		
+		document.body.style.cursor = "default"
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	OpenPSUser()
+    '#	PURPOSE........:	Shows / hides username textbox
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub OpenPSUser()
+		If txtPSUserName.className = "text hidden" Then
+			txtPSUserName.className = "text"
+			Else 
+				txtPSUserName.className = "text hidden"
+				txtPSUserName.Value = ""
+		End If
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	PauseScript(intPause)
+    '#	PURPOSE........:	Pauses the script
+    '#	ARGUMENTS......:	intPause = number of milliseconds to pause
+    '#	EXAMPLE........:	PauseScript(1000)
+    '#	NOTES..........:	Above example will pause script for 1 second
+    '#--------------------------------------------------------------------------
+	Sub PauseScript(intPause)
+		objShell.Run "%COMSPEC% /c ping -w " & intPause & " -n 1 1.0.0.0", 0, True
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	ResetForm()
+    '#	PURPOSE........:	Reset the form
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub ResetForm()
+		strPC = ""
+		txtComputerName.Value = ""
+		txtComputerName.Disabled = False
+		txtPSUserName.Value = ""
+		txtPSUserName.className = "text hidden"
+		btnShowSW.Disabled = False
+		txtComputerName.className = "text"
+		btnShowSW.className = "button"
+		txtComputerName.Title = "Computer Name"
+		btnShowSW.Title = "Show software list"
+		
+		BottomBar.className = "hidden"
+		DataArea.InnerHTML = ""
+		NumItemsSpan.InnerHTML = ""
+		LoggedOnSpan.InnerHTML = ""
+		txtComputerName.Focus()
+	End Sub
+
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	Window_onLoad()
+    '#	PURPOSE........:	Sets Window size and checks for command line
+	'#						argument, if present searches for specified PC.
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------	
+	Sub Window_onLoad
+		VersionSpan.InnerHTML = objUninstallUtility.Version
+		
+		strCommand = objUninstallUtility.commandLine
+		If InStr(UCase(strCommand), ".EXE") > 0 Then
+			arrCommands = Split(UCase(strCommand), ".EXE")
+			Else
+				arrCommands = Split(UCase(strCommand), ".HTA")
+		End If
+		
+		strComputerName = Trim(Replace(arrCommands(UBound(arrCommands)), Chr(34), ""))
+		txtComputerName.Value = strComputerName
+		
+		self.ResizeTo 1110,775
+		
+		If txtComputerName.Value <> "" Then ShowSoftwareItems()
+	End Sub
+
+	'#--------------------------------------------------------------------------
+	'#  FUNCTION.......:	Reachable(strPC)
+	'#  PURPOSE........:	Checks whether the remote PC is online
+	'#  ARGUMENTS......:	strPC = PC on which to perform action
+	'#  EXAMPLE........:	Reachable(PC1)
+	'#  NOTES..........:  
+	'#--------------------------------------------------------------------------
+	Function Reachable(strPC)
+		Set objWMIService2 = GetObject("winmgmts:\\.\root\cimv2")
+		Set colPing = objWMIService2.ExecQuery _
+			("Select * from Win32_PingStatus Where Address = '" & strPC & "'")
+		For Each objItem in colPing
+			If IsNull(objItem.StatusCode) Or objItem.Statuscode <> 0 Then
+				Reachable = False
+				Else
+					Reachable = True
+			End If
+		Next
+	End Function
+	
+	'#--------------------------------------------------------------------------
+	'#  FUNCTION.......:	LoggedOnUser(strPC)
+	'#  PURPOSE........:	Get the name of the logged on user as per WMI
+	'#  ARGUMENTS......:	strPC = PC on which to perform action
+	'#  EXAMPLE........:	LoggedOnUser(PC1)
+	'#  NOTES..........:	
+	'#--------------------------------------------------------------------------
+	Function LoggedOnUser(strPC)
+		Set objWMIService = GetObject("winmgmts:{impersonationLevel=impersonate}!\\" & _
+		strPC & "\root\cimv2")
+		Set colComputer = objWMIService.ExecQuery _
+			("Select * from Win32_ComputerSystem")
+		For Each objItem In colComputer
+			strLoggedOn = objItem.UserName
+		Next
+		LoggedOnUser = strLoggedOn
+	End Function
+	
+	'#--------------------------------------------------------------------------
+	'#  FUNCTION.......:	GetSIDFromUser(strUserName)
+	'#  PURPOSE........:	Gets the SID from the specified user
+	'#  ARGUMENTS......:	strUserName = Username for which to retrieve SID
+	'#  EXAMPLE........:	GetSIDFromUser("acmegroup\jimbob")
+	'#  NOTES..........:  
+	'#--------------------------------------------------------------------------
+	Function GetSIDFromUser(strUserName)
+		If InStr(strUserName, "\") > 0 Then
+			arrUserName = Split(strUserName, "\")
+			strDomainName = arrUserName(LBound(arrUserName))
+			strUserName = arrUserName(UBound(arrUserName))
+			Else
+				strDomainName = CreateObject("WScript.Network").UserDomain
+		End If
+
+		On Error Resume Next
+		
+		Set objWMIService2 = GetObject("winmgmts:\\.\root\cimv2")
+		
+		Set objAccount = objWMIService2.Get _
+			("Win32_UserAccount.Name='" & strUserName & "',Domain='" & _
+			strDomainName & "'")
+			
+		If Err = 0 Then 
+			Result = objAccount.SID 
+			Else 
+				Result = ""
+		End If
+		
+		On Error GoTo 0
+
+		GetSIDFromUser = Result
+	End Function
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	EncodeCsv(strText)
+    '#	PURPOSE........:	Encode provided text for CSV export
+    '#	ARGUMENTS......:	strText = text to encode
+    '#	EXAMPLE........:	EncodeCsv("Some text, etc.")
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Function EncodeCsv(strText)
+		strText = Replace(strText, Chr(34), "")
+		strText = Replace(strText, vbCrLf, " ")
+		strText = Chr(34) & strText & Chr(34)
+		EncodeCsv = strText
+	End Function
+	
+</script>
+
+<body>
+
+	<span style="float:left;">
+		Computer Name: <input type="text" class="text" tabindex="1" style="border-right:0px;" id="txtComputerName" size="20" title="Computer Name"><input class="button" type="button" tabindex="2" value="Show Items" name="btnShowSW" onclick="ShowSoftwareItems()" onMouseOver="btnShowSW.className='button btnhov'" onMouseOut="btnShowSW.className='button'" title="Show software list">
+	</span>
+	<span style="float:right;font-size:0.9em;font-style:italic;color:#888888;font-weight:bold;">
+		Version <span id="VersionSpan">&nbsp;</span>&nbsp;&nbsp;&nbsp;Created by Stuart Barrett
+	</span>
+	
+	<br /><br />
+	
+	<div id="DataArea"></div>
+	
+	<div id="NotFoundArea" class="hidden">
+		<span style="font-size:1.75em;font-weight:bold;color:red;">Access Error</span>
+		<p>
+			This PC cannot be reached or the Computer Name has been entered incorrectly.
+		</p>
+		<p>
+			Please make sure you have entered the Computer Name correctly and try again.
+		</p>
+	</div>
+
+	<div id="WMIError" class="hidden">
+		<span style="font-size:1.75em;font-weight:bold;color:red;">WMI Access Error</span>
+		<p>
+			Please make sure you have the required privileges to access the WMI repository on this PC.
+		</p>
+	</div>
+	
+	<div id="PSExecError" class="hidden">
+		<span style="font-size:1.75em;font-weight:bold;color:red;">Error</span>
+		<p>
+			Neither Rctrlx nor PSExec can be found in the System Path. The folders within your System Path are as below:
+		</p>		
+		<span id="SystemPathSpan" style="height:250px;width:100%;overflow:auto;border:1px solid black;padding:5px;">&nbsp;</span>
+		
+		<br />
+		
+		You can download these utilities from the following locations:
+		<p style="margin-top:5px;">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			PSExec - 
+			<span class="spanlink" style="text-decoration:underline" onClick=OpenURL("http://technet.microsoft.com/en-us/sysinternals/bb897553.aspx") title="Download PSExec">
+				http://technet.microsoft.com/en-us/sysinternals/bb897553.aspx
+			</span>
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			Rctrlx - 
+			<span class="spanlink" style="text-decoration:underline;" onClick=OpenURL("http://sites.google.com/site/4utils/projects") title="Download Rctrlx">
+				http://sites.google.com/site/4utils/projects
+			</span>
+		</p>
+		Once you have downloaded PSExec or Rctrlx you <span style="font-weight:bold;text-decoration:underline;">must</span> place it into one of the above mentioned folders.
+	</div>
+	
+	<div id="BottomBar" class="hidden" style="margin-top:10px">
+		<span style="float:left;">
+			<input class="button" type="button" style="height:23px;width:70px;border-right:0px;" value="Refresh" name="btnRefresh" onclick="ShowSoftwareItems()" onMouseOver="btnRefresh.className='button btnhov'" onMouseOut="btnRefresh.className='button'" title="Refresh Software list"><input class="button" type="button" style="height:23px;width:70px;" value="Reset" name="btnReset" onclick="ResetForm()" onMouseOver="btnReset.className='button btnhov'" onMouseOut="btnReset.className='button'" title="Reset form">
+			&nbsp;&nbsp;
+			<input class="button" type="button" style="height:23px;width:80px;" value="Username" name="btnPSUser" onclick="OpenPSUser()" onMouseOver="btnPSUser.className='button btnhov'" onMouseOut="btnPSUser.className='button'" title="Show / hide username box"><input type="text" class="text hidden" style="height:23px;border-left:0px;" id="txtPSUserName" size="20" title="Username of install user">
+		</span>
+		
+		<span style="float:right;">
+			<span id="LoggedOnSpan" style="font-size:0.9em;font-style:italic;color:#888888;">
+				&nbsp;
+			</span>
+			&nbsp;&nbsp;&nbsp;
+			<span id="NumItemsSpan" style="font-size:0.9em;font-style:italic;">
+				&nbsp;
+			</span>
+			&nbsp;&nbsp;&nbsp;
+			<select name="ExportSelect" title="Export the Software list" onChange="ExportSoftwareDetails()" style="width:150;">
+				<option value="0">Export to:</option>
+				<option value="1" title="Export Software list to a Comma Seperated Values (csv) file">Export to csv</option>
+				<option value="2" title="Export Software list to an Excel (xls) file">Export to xls</option>
+				<option value="3" title="Export Software list to a Web page (html) file">Export to html</option>
+			</select>
+		</span>
+	</div>
+	
+</body>
+</html>

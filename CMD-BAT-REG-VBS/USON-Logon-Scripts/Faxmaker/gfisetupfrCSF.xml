@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modulestrings version="1">
+ <module id="m_gfisetup">
+  <string id="IDS_CURVERLATER">La version de %s que vous tentez d'installer est plus ancienne que la version qui est déjà installée. Veuillez supprimer la version actuelle avant d'installer cette version.</string> 
+  <string id="IDS_FAILREMOVE">Une erreur est survenue lors de la suppression de %s de votre ordinateur.  Veuillez désinstaller %s manuellement et procéder à nouveau à son installation.</string> 
+  <string id="IDS_ALREADYINSTALLED">%s version %s est déjà installée.  Vous devez désinstaller la version existante avant d'installer %s version %s.\r\n\r\nVoulez-vous désinstaller la version existante de %s ?</string> 
+  <string id="IDS_MAJORUPGRADE">Important : Vous devrez entrer une nouvelle clé de licence dans les 10 jours qui suivent l'installation de la mise à niveau.  Pour plus d'informations sur la façon d'obtenir une nouvelle clé de licence, allez sur http://customers.gfi.com</string>   
+ </module>
+</modulestrings>

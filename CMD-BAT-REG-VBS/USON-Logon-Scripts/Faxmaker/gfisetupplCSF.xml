@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modulestrings version="1">
+ <module id="m_gfisetup">
+  <string id="IDS_CURVERLATER">Wersja programu %s, którą próbujesz zainstalować, jest starsza od wersji już zainstalowanej. Przed zainstalowaniem tej wersji usuń wersję bieżącą.</string> 
+  <string id="IDS_FAILREMOVE">Wystąpił błąd podczas usuwania programu %s z komputera. Odinstaluj program %s ręcznie i uruchom ponownie tę instalację.</string> 
+  <string id="IDS_ALREADYINSTALLED">%s, wersja %s, jest już zainstalowany. Przed zainstalowaniem %s w wersji %s należy odinstalować istniejącą wersję.\r\n\r\nCzy chcesz odinstalować istniejącą wersję %s?</string> 
+  <string id="IDS_MAJORUPGRADE">Ważne: W ciągu 10 dni od zainstalowania uaktualnienia będzie wymagane wprowadzenie nowego klucza licencji. Informacje na temat uzyskiwania nowego klucza licencji można uzyskać w witrynie http://customers.gfi.com.</string>   
+ </module>
+</modulestrings>

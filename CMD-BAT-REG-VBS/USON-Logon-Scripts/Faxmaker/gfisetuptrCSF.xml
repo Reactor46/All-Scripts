@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modulestrings version="1">
+ <module id="m_gfisetup">
+  <string id="IDS_CURVERLATER">Kurmak istediğiniz %s versiyonu, kurulu versiyondan daha eski. Lütfen bu versiyonu kurmadan önce mevcut versiyonu kaldırın.</string> 
+  <string id="IDS_FAILREMOVE">%s&apos;yi bilgisayarınızdan kaldırırken bir hata oluştu. Lütfen %s&apos;i elle kaldırın ve bu kurulumu tekrar başlatın.</string> 
+  <string id="IDS_ALREADYINSTALLED">%s versiyon %s zaten kurulu. %s versiyon %s&apos;i kurmadan önce mevcut versiyonu kaldırmalısınız.\r\n\r\n%s mevcut versiyonunu kaldırmak istiyor musunuz?</string> 
+  <string id="IDS_MAJORUPGRADE">Önemli: Sürüm yükseltmeyi kurduktan sonra 10 gün içinde yeni bir lisans anahtarı girmeniz gerekir. yeni bir lisans anahtarı edinme hakkında daha fazla bilgi için, http://customers.gfi.com adresini ziyaret edin.</string>   
+ </module>
+</modulestrings>

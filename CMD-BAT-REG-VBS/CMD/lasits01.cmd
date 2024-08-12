@@ -1,0 +1,1 @@
+javaws C:\LazyWinAdmin\AntiVirus\Symantec\SEPM\JnlpServlet-01.jnlp

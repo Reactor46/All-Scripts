@@ -1,0 +1,15 @@
+REM Possible properties used in command line
+REM ID=UID 			UID or COMP (UID Default)
+REM ISVDI=No 			No or Yes (No Default)
+REM LOGLEVEL=1			1 - 4 (1 Default)
+REM SCANSTARTTIME=21:00		00:00 - 23:59 (21:00 Default)
+REM SITE=OPTUMMSO	 	(UNITEDHEALTHCARE Default)
+
+Command line:
+msiexec /i "UNITEDHEALTHCARE_3704_uid_x64 - OPTUMMSO.msi" /qn
+
+
+Display Name:		Snow Inventory Client for Windows (x64)
+Display Version:	3.7.04
+Publisher:		Snow Software AB
+Uninstall Key:		{1441FE72-8D71-4B05-B89F-8C3DA0D2D3A6}

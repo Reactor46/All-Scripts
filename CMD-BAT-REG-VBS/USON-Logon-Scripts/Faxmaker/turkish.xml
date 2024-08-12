@@ -1,0 +1,941 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<setupstrings version="1">
+	<table id="Control">
+		<module id="Admin_Install_Point">
+			<string FONT="[_WiseDialogFontDefault]" id="Back"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Browse"><![CDATA[Taramak]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="EditQ"><![CDATA[Ağ installation point:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Kurulumu nerede oluşturmak istersiniz?]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text36"><![CDATA[Yönetici Kurulumu]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text54"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="Admin_Verify_Ready">
+			<string FONT="[_WiseDialogFontDefault]" id="Back"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="InstallNow"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Kurulum için hazır mısınız?]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text37"><![CDATA[Yönetici Kurulum Doğrula Hazır]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text55"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="AdminInstallBrowse">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ComboText"><![CDATA[klasörün konumu:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[Tamam]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TailText"><![CDATA[Seçilmiş patika:]]></string>
+		</module>
+		<module id="Browse">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ComboText"><![CDATA[bakmak içinde:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[Tamam]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TailText"><![CDATA[klasör adı:]]></string>
+		</module>
+		<module id="Cancel">
+			<string FONT="[_WiseDialogFontDefault]" id="No"><![CDATA[yeniden başlamak]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Kurulum tamamlanmadı.  Eğer kur programından şimdi çıkarsanız, uygulama kurulmayacaktır.[WiseCRLF][WiseCRLF]Kur programını daha sonra çalıştırıp kurulumu tamamlayabilirsiniz.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2515"><![CDATA[Kuruluma devam etmek için Dön'ü tıklatın  Kur programından çıkmak için, Kur'dan Çık'ı tıklatın.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Yes"><![CDATA[çıkış ayarı]]></string>
+		</module>
+		<module id="CCPDialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="DriveText"><![CDATA[Sürücü:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Kur, sabit sürücülerinizde uygun bir ürün bulamadı. Lütfen uygun ürünün bulunduğu sürücüyü seçiniz.]]></string>
+		</module>
+		<module id="CCPFail">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[Exit]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Kur, uygun bir ürün bulamadı. Kurulumun devam etmesi için geçerli bir uygun ürün bulunmalıdır.]]></string>
+		</module>
+		<module id="ConnDetailsInvalidServer">
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[GFI FaxMaker'a direkt bağlanılırken sunucu adresi ve E-posta adresleri istenmektedir.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[Tamam]]></string>
+		</module>
+		<module id="ConnectionSettings">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Faks gönderirken GFI FaxMaker'a üzerinden bağlanacağınız:]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[GFI FaxMaker Bağlantı ayarları]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Faks gönderirken GFI FaxMaker'a nasıl bağlanacağınızı seçin]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text25252527"><![CDATA[GFI FaxMaker sunucu adresi (IP ya da FQDN):[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text25252528"><![CDATA[E-posta adresi:]]></string>
+		</module>
+		<module id="DiskCost">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[Tamam]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Mevcut seçimler farklı hacimler üzerinde aşağıda belirtilen disk alanını gerektirmektedir. Vurgulanan hacimlerde seçili özellikler için gerekli disk alanı bulunmamaktadır.]]></string>
+		</module>
+		<module id="ErrorDialog">
+			<string FONT="[_WiseDialogFontDefault]" id="A"><![CDATA[durdurmak]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="C"><![CDATA[Iptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="I"><![CDATA[yoksay]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="N"><![CDATA[Yok]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="O"><![CDATA[Tamam]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="R"><![CDATA[yeniden]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Y"><![CDATA[Yes]]></string>
+		</module>
+		<module id="Exit_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[Bitirmek]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton1"><![CDATA[İptal]]></string>
+			<string FONT="Arial14" id="Text"><![CDATA[[ProductName] başarıyla kuruldu.[WiseCRLF]]]></string>
+			<string FONT="Arial14" id="Text56"><![CDATA[[ProductName] başarıyla kaldırıldı.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text6"><![CDATA[Kurulumdan çıkmak için Bitir düğmesini tıklatın.]]></string>
+		</module>
+		<module id="Fatal_Error">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[Tamam]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Kurulum bir hata nedeniyle tamamlanmadan sonlandı. ]]></string>
+		</module>
+		<module id="FilesInUse">
+			<string FONT="[_WiseDialogFontDefault]" id="Exit"><![CDATA[Çıkış]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Ignore"><![CDATA[yoksay]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Retry"><![CDATA[yeniden]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Güncellenmesi gereken dosyalar kullanımda.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text54"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text58"><![CDATA[Dosyalar Kullanımda]]></string>
+			<string id="Text60"><![CDATA[Aşağıda, dosyayı kullanan uygulamanın takip ettiği, kullanımda olan dosyalar belirtilmektedir. Uygulamayı kapatıp Yeniden Dene'yi tıklatın veya dosyaları bilgisayarınızı yeniden başlattıktan sonra değiştirmek için Yoksay'ı tıklatın. Çıkış'ı tıklatarak kurulumdan çıkabilirsiniz.]]></string>
+		</module>
+		<module id="FirstRun">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string id="NameE"><![CDATA[{47}]]></string>
+			<string FONT="TimesItalicBlue10" id="NameQ"><![CDATA[Name:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string id="OrgE"><![CDATA[{53}]]></string>
+			<string FONT="TimesItalicBlue10" id="OrgQ"><![CDATA[organizasyon:]]></string>
+			<string id="PIDE"><![CDATA[[PIDTemplate]]]></string>
+			<string FONT="TimesItalicBlue10" id="PIDQ"><![CDATA[Lütfen CD kutusunda yazılı olan ürün ID'sini giriniz.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+		</module>
+		<module id="fmmessageform">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox"><![CDATA[Outlook adres defteri ile GFI FaxMaker Faks İletisi formunu kullanın]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[GFI FaxMaker Yazıcı Sürücüsü'nün faks göndermek için Outlook Yeni İleti formunu mu yoksa GFI FaxMaker Faks İletisini mi kullanmasını istiyorsunuz?]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Mesaj Formu]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Hangi mesaj formunu kullanacağınızı seçin.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM][WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2521"><![CDATA[(Outlook'un varsayılan posta istemcisi olması gereklidir)[WiseCRLF]]]></string>
+		</module>
+		<module id="FMOFailedEmailDlg">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Tamam]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Parola sıfırlama yönergeleri gönderilmedi.[WiseCRLF][ONLINEEMAIL] GFI FaxMaker Online kullanıcı olarak kaydedilmemiş.[WiseCRLF]Hesap detaylarınızı onaylamak için yöneticinizle iletişim kurun[WiseCRLF]]]></string>
+		</module>
+		<module id="FMONoEmailDlg">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Tamam[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Lütfen e-posta adresinizi tanımlayın.]]></string>
+		</module>
+		<module id="FMOResetPassword">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Tamam]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[[ONLINEEMAIL] adresine GFI FaxMaker Online kimlik bilgilerinizi içeren bir e-posta gönderildi.[WiseCRLF]]]></string>
+		</module>
+		<module id="FMOUserDetails">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[Bilgilerimi unuttum[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[E-posta adresi (gerekiyor)]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Kullanıcı detayları[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[GFI FaxMaker Online kimlik bilgilerinizi tanımlayın[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM][WiseCRLF][WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2522"><![CDATA[Kullanıcı Adı]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2524"><![CDATA[Parola]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text25252526"><![CDATA[GFI FaxMaker Online kullanıcı kimlik bilgileri (isteğe bağlı)[WiseCRLF][WiseCRLF]]]></string>
+		</module>
+		<module id="fmserver">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox"><![CDATA[Bu pencereyi atlayalım, detayları elle girmek istiyorum.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[GFI FaxMaker sunucusunun adını girin.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[...]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Makine:[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Sunucu Makinesini Belirtin]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[GFI FaxMaker Sunucusunun makine adını ayarlayın.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="fmserverdetails">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox"><![CDATA[Posta sunucum doğrulama gerektiriyor]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Lütfen kullandığınız posta sunucusu ve faksların GFI FaxMaker'a nasıl iletilmesini istediğinizle ilgili detayları belirtin.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Posta sunucusu adı:]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[GFI FaxMaker Sunucu Detayları[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[GFI FaxMaker sunucu detaylarını belirtin[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2"><![CDATA[Faks posta kutusu:[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM][WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text3"><![CDATA[Faks sunucu adı:[WiseCRLF]]]></string>
+		</module>
+		<module id="Installation_Type_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CompleteText"><![CDATA[En yaygın kullanılan uygulama özellikleri kurulacaktır. Çoğu kullanıcı için bu seçim önerilir.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Tüm uygulama özellikleri kurulacaktır. En iyi performans için bu seçim önerilir.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Kurulum Tipini Seçin]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[istediğiniz kurulum tipini seçin.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text48"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TypicalText"><![CDATA[Hangi uygulama özelliklerinin kurulacağını ve bunların nereye kurulacağını belirlemek için bu seçeneği kullanın. İleri düzeyde kullanıcılar için önerilir.]]></string>
+		</module>
+		<module id="IntegrationType">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[Daha fazla anlat]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[[ProductName] ile kullanılacak faks sunucusu türünü seçin.]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Faks sunucusu türü [WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Kullanılacak faks sunucusu türünü seçin.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="invalidserver">
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Etkin alanların tümünün doldurulması zorunludur. Gerekli bilgilerin tümünü verdiğinizden emin olup tekrar deneyin.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Tamam]]></string>
+		</module>
+		<module id="License_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Reset"><![CDATA[Sıfırla]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text13"><![CDATA[Lisans Sözleşmesi]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text14"><![CDATA[Devam etmek için aşağıdaki lisans sözleşmesini onaylamalısınız.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text44"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="Maintenance_Welcome_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CompleteText3"><![CDATA[Hangi uygulama özelliklerinin kurulacağını değiştirin.  Bağımsız özellikleri yapılandırmanızı sağlayan Özellik Seç penceresini görüntüler.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText5"><![CDATA[Kayıp veya bozuk dosyaları, kayıt tuşlarını ve kısayolları yeniden kurun.  Sistem kayıt defterinde saklanan tercihler varsayılan değerelere sıfırlanabilir.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2"><![CDATA[Gerçekleştirilecek bakım işlemini seçin.]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text3"><![CDATA[Uygulama Bakım]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text52"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TypicalText7"><![CDATA[[ProductName]'i bu bilgisayardan kaldırın.]]></string>
+		</module>
+		<module id="oldfmclientfound">
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Eski bir GFI FaxMaker İstemcisi tespit edildi ve kaldırılması gerekiyor. Bu kuruluma eski istemciyi kaldırmadan devam etmek istiyor musunuz?]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton"><![CDATA[Evet]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton45"><![CDATA[Hayır]]></string>
+		</module>
+		<module id="OutOfDisk">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[Tamam]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Yetersiz disk alanı. Vurgulanan hacimlerde seçili özellikler için gerekli disk alanı bulunmamaktadır.]]></string>
+		</module>
+		<module id="Palm_User_Information_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[Aşağıda, bu bilgisayarda kullanılabilir durumdaki Palm kullanıcıları gösterilmektedir. Palm uygulamalarının kurulmasını istediğiniz kullanıcıların yanındaki onay kutucuklarını işaretleyin.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Palm Kullanıcı Bilgileri[WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Palm uygulamalarının kurulacağı kullanıcıları seçin.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="Patch_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="Arial14" id="Text"><![CDATA[[ProductName] Kurulum Sihirbazına hoş geldiniz]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text1"><![CDATA[Kur Programını çalıştırmadan önce bütün Windows programlarını kapatmanızı öneririz.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2518"><![CDATA[İptal'i tıklatarak Kur'dan çıkın ve çalışan tüm programları kapatın.  Kur programına devam etmek için İleri'yi tıklatın.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2519"><![CDATA[Bu programın veya herhangi bir kısmının yetkisiz kişilerce çoğaltılması veya dağıtılması medeni hukuk ve ceza hukuku kapsamında ciddi bir suç teşkil edebilir ve yasalar çerçevesinde mümkün olan en geniş şekilde kovuşturmaya tabi tutulur.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text269"><![CDATA[UYARI: Bu program telif yasaları ve uluslararası anlaşmalar tarafından korunmaktadır.]]></string>
+		</module>
+		<module id="Progress_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="ActionData"><![CDATA[Başlatılıyor...]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text27"><![CDATA[Sistem Güncelleştiriliyor]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text28"><![CDATA[Seçtiğiniz özellikler kuruluyor.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text51"><![CDATA[[GFITM]]]></string>
+			<string id="Text57"><![CDATA[{\MSSansSerif8}Seçtiğiniz özellikler kaldırılıyor.]]></string>
+		</module>
+		<module id="Readme_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Beni Oku Bilgileri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Bu kurulum aşağıdaki bilgiler içerisinde açıklanmaktadır.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text45"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="ReinstallMode">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[Tamam]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileChecksum"><![CDATA[EXE veya DLL'de geçersiz bir toplama sağlaması varsa kurulumu tekrarlayın]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileEqualVersion"><![CDATA[Dosya kayıpsa veya daha eski veya denk bir versiyon mevcutsa kurulumu tekrarlayın]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileExact"><![CDATA[Mevcut dosyanın versiyonu farklıysa kurulumu tekrarlayın]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileForce"><![CDATA[Toplama sağlamasına veya versiyonuna bakılmaksızın tüm dosyalar yeniden kurulsun]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFileOlderVersion"><![CDATA[Dosya kayıpsa veya daha eski bir versiyon mevcutsa kurulumu tekrarlayın]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallFilePresent"><![CDATA[Ancak dosya kayıpsa kurulumu tekrarlayın]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallMachineData"><![CDATA[Gereken yerel makine sistem kayıt defteri girişlerinin mevcut olduğunu doğrulayın]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallRepair"><![CDATA[Tespit edilen tüm kurulum tekrarlama sorunlarını giderin.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallShortcut"><![CDATA[Kısayolları doğrulayın]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ReinstallUserData"><![CDATA[Gereken kullanıcı sistem kayıt defteri girişlerinin mevcut olduğunu doğrulayın]]></string>
+		</module>
+		<module id="Resume_Install_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="InstallNow"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Wise Kurulum Sihirbazının kuruluma devam etmesine hazır mısınız?]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2"><![CDATA[Wise Kurulum Sihirbazının yarıda bıraktığınız kurulumu tamamlamasına hazır mısınız?]]></string>
+			<string FONT="Arial14" id="Text31"><![CDATA[[ProductName] Kurulum Sihirbazına geri dönülüyor]]></string>
+		</module>
+		<module id="Select_Feature_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="ActionDescription"><![CDATA[Seçilen mevcut xxx xxx xxx xxxx xxxx xxxx xxxx xxxx eyleminin açıklaması]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Browse"><![CDATA[Browse]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="DiskCost"><![CDATA[Diske maliyeti]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="ItemDescription"><![CDATA[Seçili mevcut xxx xxxx xxxx xxxx xxxx  xxxxx xxx xxxx xxxx xxxx xxx xxxx xx xxxxx xxxxx x öğesinin çok hatlı açıklaması]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="LocationPath"><![CDATA[Dizin]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="LocationText"><![CDATA[Mevcut konum:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Reset"><![CDATA[Sıfırla]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Size"><![CDATA[Mevcut xxx xxx xxx xxxx xxxx xxxx xxxx xxxx seçiminin boyutu]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text23"><![CDATA[Seçili Özellikler]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text24"><![CDATA[Lütfen hangi özellikleri kurmak istediğinizi seçin.]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text41"><![CDATA[Özellik Tanımı:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text49"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="Setup_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="ActionText"><![CDATA[Lütfen Wise Installation Wizard® Windows Kur'u hazırlarken bekleyin.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="Arial14" id="Text15"><![CDATA[[ProductName] Kurulum Sihirbazına hoş geldiniz]]></string>
+		</module>
+		<module id="Single_Feature_Destination">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="GroupBox"><![CDATA[Hedef Klasör]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PushButton44"><![CDATA[Browse]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[Hedef Klasör]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[Uygulamanın kurulacağı klasörü seçin.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text42"><![CDATA[Wise Kurulum sihirbazı [ProductName] ile ilgili dosyaları aşağıdaki klasöre kuracak.[WiseCRLF][WiseCRLF]Farklı bir klasöre kurmak için, Gözat düğmesini tıklatın ve farklı bir klasör seçin. ]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text42a"><![CDATA[İptal'i tıklatıp Wise Kurulum Sihirbazı'ndan çıkarak [ProductName]'i kurmamayı tercih edebilirsiniz.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text43"><![CDATA[[INSTALLDIR]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text47"><![CDATA[[GFITM]]]></string>
+		</module>
+		<module id="smtpauthform">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox"><![CDATA[Güvenli Parola Doğrulama'yı kullanarak oturum açın.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox1"><![CDATA[SSL kullanın.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CheckBox2"><![CDATA[SMTP Doğrulama kullanın]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="CustomText"><![CDATA[[ProductName] için SMTP doğrulama özelliklerini seçin. SMTP doğrulama kullanıyorsanız, bir hesap ve parola sağlamalısınız.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Hesap:]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text18"><![CDATA[SMTP doğrulama.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text19"><![CDATA[[ProductName] için SMTP doğrulama özelliklerini seçin.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text20"><![CDATA[[GFITM][WiseCRLF]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2520"><![CDATA[Parola:[WiseCRLF]]]></string>
+		</module>
+		<module id="Start_Installation_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="InstallNow"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text244"><![CDATA[Kuruluma başlamak için İleri'yi tıklatın.]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text251"><![CDATA[Uygulamayı kurmak için hazır]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text2512"><![CDATA[Uygulamayı onarmak için hazır]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text2513"><![CDATA[[ProductName] Kurulumuna geri dönmeye hazır]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text26"><![CDATA[Uygulamayı değiştirmek için hazır]]></string>
+			<string id="Text50"><![CDATA[{\MS_Sans_Serif_80}[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text51"><![CDATA[Kurulum bilgilerini tekrar girmek için Geri tuşunu veya sihirbazdan çıkmak için İptal tuşunu tıklatın.]]></string>
+		</module>
+		<module id="upgrading9x">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[Tamam]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Eski bir GFI FaxMaker istemci versiyonu kurulu. Lütfen bu GFI FaxMaker İstemci sürümünü kurmadan önce denetim masasındaki Program Ekle/Kaldır menüsünü kullanrak bu versiyonu kaldırın.[WiseCRLF]]]></string>
+		</module>
+		<module id="User_Exit">
+			<string FONT="[_WiseDialogFontDefault]" id="OK"><![CDATA[Tamam]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[[ProductName] yeni yazılımınız tam olarak kurulmadan kesintiye uğradı.  Bu yazılımın kurulumunu tamamlamak için bu kuruluma daha sonra geri dönebilirsiniz.]]></string>
+		</module>
+		<module id="User_Information_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="NameE"><![CDATA[{47}]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="NameQ"><![CDATA[Full Name:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OrgE"><![CDATA[{53}]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="OrgQ"><![CDATA[organizasyon:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PIDE"><![CDATA[[PIDTemplate]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="PIDQ"><![CDATA[Product ID:]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogTitleFontDefault]" id="Text16"><![CDATA[Kullanıcı Bilgileri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text46"><![CDATA[[GFITM]]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text7"><![CDATA[Kurulumunuzu kişiselleştirmek için aşağıdaki bilgileri girin.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text8"><![CDATA[Bu uygulama ile ilgili ayarlar bu kullanıcı veya bu bilgisayarı kullanan tüm kullanıcılar için kurulamıyor. Tüm kullanıcılar için ayarları kurmak için yönetici haklarına sahip olmalısınız. Bu uygulamayı şu kullanıcılar için kur:]]></string>
+		</module>
+		<module id="Verify_Remove_All">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="RemoveNow"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text"><![CDATA[Bu, [ProductName]'i makinenizden kaldıracaktır. Devam etmek istediğinizden emin misiniz?[WiseCRLF][WiseCRLF]Uygulamayı kaldırmak için İleri tuşunu tıklatın.[WiseCRLF][WiseCRLF]Kaldırma işlemini sonlandırmak için İptal tuşunu tıklatın.]]></string>
+			<string FONT="Arial14" id="Text32"><![CDATA[[ProductName] Kaldır]]></string>
+		</module>
+		<module id="WaitForCosting">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="TextMessage"><![CDATA[Kurulum disk alanı gereksinimlerinizi hesaplarken lütfen bekleyin...]]></string>
+		</module>
+		<module id="Welcome_Dialog">
+			<string FONT="[_WiseDialogFontDefault]" id="Cancel"><![CDATA[İptal]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Next"><![CDATA[Sonraki >]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Previous"><![CDATA[<Geri]]></string>
+			<string FONT="Arial14" id="Text"><![CDATA[[ProductName] Kurulum Sihirbazına hoş geldiniz]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text1"><![CDATA[Kur Programını çalıştırmadan önce bütün Windows programlarını kapatmanızı öneririz.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2"><![CDATA[UYARI: Bu program telif yasaları ve uluslararası anlaşmalar tarafından korunmaktadır.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2516"><![CDATA[İptal'i tıklatarak kur programından çıkın ve çalışan tüm programları kapatın.  Kuruluma devam etmek İleri düğmesini tıklatın.]]></string>
+			<string FONT="[_WiseDialogFontDefault]" id="Text2517"><![CDATA[Bu programın veya herhangi bir kısmının yetkisiz kişilerce çoğaltılması veya dağıtılması medeni hukuk ve ceza hukuku kapsamında ciddi bir suç teşkil edebilir ve yasalar çerçevesinde mümkün olan en geniş şekilde kovuşturmaya tabi tutulur.]]></string>
+		</module>
+	</table>
+	<table id="Property">
+		<string id="LANGUAGE"><![CDATA[0]]></string>
+		<string id="_WiseDebugMode"><![CDATA[0]]></string>
+		<string id="CONNSTGSUSESMTP"><![CDATA[SMTP posta sunucusu]]></string>
+		<string id="CONNSTGSUSEWSAPI"><![CDATA[GFI FaxMaker'a doğrudan bağlanmak]]></string>
+		<string id="DETAILSEXCHANGE"><![CDATA[Exchange 2013/2010/2007/2003/2000/5.5]]></string>
+		<string id="DETAILSISP"><![CDATA[ISP yada SMTP/POP3 Mail sunucusu]]></string>
+		<string id="DETAILSLOTUS"><![CDATA[Lotus Notes yada SMTP/POP3 Mail sunucusu]]></string>
+		<string id="DETAILSTYPE"><![CDATA[0]]></string>
+		<string id="DiskPrompt"><![CDATA[[ProductName] [1]]]></string>
+		<string id="MESSAGEFORM_E"><![CDATA[GFI FaxMaker Faks Mesajı Formu]]></string>
+		<string id="SMTPUSEONLINE"><![CDATA[GFI FaxMaker Çevrimiçi Röle Sunucusu'nu kullanın]]></string>
+		<string id="SMTPUSEOWN"><![CDATA[Kendi SMTP posta sunucusunu kullanın]]></string>
+		<string id="TYPEUSEONLINE"><![CDATA[GFI FaxMaker Çevrimiçi ( bulut çözümü )]]></string>
+		<string id="TYPEUSEONPREM"><![CDATA[GFI FaxMaker Sunucusu ( tesis içi çözümü )]]></string>
+		<string id="USEBOTH"><![CDATA[Outlook kullanın ama aynı zamanda GFI FaxMaker Yeni Faks formunu kurun]]></string>
+		<string id="USEFAXFORM"><![CDATA[GFI FaxMaker Yeni Faks formunu kullanın (mailserver ismi ve email adresi gerekir)]]></string>
+		<string id="USEOUTLOOK"><![CDATA[Mesaj formunu kullanın (eğer Exchange 2000/2003/2007/2010 kullanıyorsanız)]]></string>
+		<string id="USEFAXFORM"><![CDATA[GFI FaxMaker Faks İletisi formunu kullan]]></string>
+		<string id="USEOUTLOOK"><![CDATA[Microsoft Outlook'u kullan (Microsoft Exchange kullanılıyorsa)]]></string>
+		<string id="WiseInitAdminError"><![CDATA[Bu kurulumu başlatmak için yönetici haklarına sahip olmalısınız. Lütfen yönetici olarak oturum açıp bu kurulumu tekrar başlatın.]]></string>
+		<string id="WiseInitCmdLine"><![CDATA[/L*v faxclient.log /I]]></string>
+		<string id="WiseInitExistError"><![CDATA[%s Versiyon %s zaten kurulu. %s Versiyon %s'i kurmadan önce mevcut versiyonu kaldırmalısınız. %s'in mevcut versiyonunu kaldırmak ister misiniz?]]></string>
+		<string id="WiseInitLangDefault"><![CDATA[İngilizce,1033]]></string>
+		<string id="WiseInitPrefix"><![CDATA[Başlatılıyor]]></string>
+		<string id="WiseInitSpaceError"><![CDATA[Geçici dosya oluşturulamadı, yeterli boş geçici disk alanı yok. Lütfen diskte boş alan açıp bu kurulumu tekrar başlatın.]]></string>
+		<string id="WiseInitSuffix"><![CDATA[Sihirbaz...]]></string>
+	</table>
+	<table id="ActionText">
+		<record>
+			<field id="Action"><![CDATA[Advertise]]></field>
+			<field id="Description"><![CDATA[Advertising application...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[AllocateRegistrySpace]]></field>
+			<field id="Description"><![CDATA[Allocating registry space...]]></field>
+			<field id="Template"><![CDATA[Free space: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[AppSearch]]></field>
+			<field id="Description"><![CDATA[Searching for installed applications...]]></field>
+			<field id="Template"><![CDATA[Property: [1][WiseCRLF]Signature: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[autoconfigureclientfromfaxserver]]></field>
+			<field id="Description"><![CDATA[Configuring client...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[BindImage]]></field>
+			<field id="Description"><![CDATA[Binding executables...]]></field>
+			<field id="Template"><![CDATA[File: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[ca_deferred_install_printer]]></field>
+			<field id="Description"><![CDATA[Installing printer driver...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[ca_deferred_install_printer_prew2k]]></field>
+			<field id="Description"><![CDATA[Installing printer driver...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CCPSearch]]></field>
+			<field id="Description"><![CDATA[Searching for qualifying products...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CostFinalize]]></field>
+			<field id="Description"><![CDATA[Computing space requirements...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CostInitialize]]></field>
+			<field id="Description"><![CDATA[Computing space requirements...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CreateFolders]]></field>
+			<field id="Description"><![CDATA[Creating folders...]]></field>
+			<field id="Template"><![CDATA[Folder: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[CreateShortcuts]]></field>
+			<field id="Description"><![CDATA[Creating shortcuts...]]></field>
+			<field id="Template"><![CDATA[Shortcut: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[DeleteServices]]></field>
+			<field id="Description"><![CDATA[Deleting services...]]></field>
+			<field id="Template"><![CDATA[Service: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[DuplicateFiles]]></field>
+			<field id="Description"><![CDATA[Creating duplicate files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9][WiseCRLF]Size: [6]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[FileCost]]></field>
+			<field id="Description"><![CDATA[Computing space requirements...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[GenerateScript]]></field>
+			<field id="Description"><![CDATA[Generating script operations for action:]]></field>
+			<field id="Template"><![CDATA[[1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[install_printer]]></field>
+			<field id="Description"><![CDATA[Installing printer driver...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallAdminPackage]]></field>
+			<field id="Description"><![CDATA[Copying network install files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9][WiseCRLF]Size: [6]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallFiles]]></field>
+			<field id="Description"><![CDATA[Copying new files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9][WiseCRLF]Size: [6]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallODBC]]></field>
+			<field id="Description"><![CDATA[Installing ODBC components...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallServices]]></field>
+			<field id="Description"><![CDATA[Installing new services...]]></field>
+			<field id="Template"><![CDATA[Service: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[InstallValidate]]></field>
+			<field id="Description"><![CDATA[Validating install...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[LaunchConditions]]></field>
+			<field id="Description"><![CDATA[Evaluating launch conditions...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[MoveFiles]]></field>
+			<field id="Description"><![CDATA[Moving files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9][WiseCRLF]Size: [6]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[PatchFiles]]></field>
+			<field id="Description"><![CDATA[Patching files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [2][WiseCRLF]Size: [3]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[ProcessComponents]]></field>
+			<field id="Description"><![CDATA[Updating component registration...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[PublishComponents]]></field>
+			<field id="Description"><![CDATA[Publishing qualified components...]]></field>
+			<field id="Template"><![CDATA[Component ID: [1][WiseCRLF]Qualifier: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[PublishFeatures]]></field>
+			<field id="Description"><![CDATA[Publishing product features...]]></field>
+			<field id="Template"><![CDATA[Feature: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[PublishProduct]]></field>
+			<field id="Description"><![CDATA[Publishing product information...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterClassInfo]]></field>
+			<field id="Description"><![CDATA[Registering class servers...]]></field>
+			<field id="Template"><![CDATA[Class Id: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterExtensionInfo]]></field>
+			<field id="Description"><![CDATA[Registering extension servers...]]></field>
+			<field id="Template"><![CDATA[Extension: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterFonts]]></field>
+			<field id="Description"><![CDATA[Registering fonts...]]></field>
+			<field id="Template"><![CDATA[Font: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterMIMEInfo]]></field>
+			<field id="Description"><![CDATA[Registering MIME information...]]></field>
+			<field id="Template"><![CDATA[MIME Content Type: [1][WiseCRLF]Extension: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterProduct]]></field>
+			<field id="Description"><![CDATA[Registering product...]]></field>
+			<field id="Template"><![CDATA[[1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterProgIdInfo]]></field>
+			<field id="Description"><![CDATA[Unregistering program identifiers...]]></field>
+			<field id="Template"><![CDATA[ProgId: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterTypeLibraries]]></field>
+			<field id="Description"><![CDATA[Registering type libraries...]]></field>
+			<field id="Template"><![CDATA[LibID: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RegisterUser]]></field>
+			<field id="Description"><![CDATA[Registering user...]]></field>
+			<field id="Template"><![CDATA[[1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveDuplicateFiles]]></field>
+			<field id="Description"><![CDATA[Removing duplicated files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveEnvironmentStrings]]></field>
+			<field id="Description"><![CDATA[Updating environment strings...]]></field>
+			<field id="Template"><![CDATA[Name: [1][WiseCRLF]Value: [2][WiseCRLF]Action [3]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveFiles]]></field>
+			<field id="Description"><![CDATA[Removing files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveFolders]]></field>
+			<field id="Description"><![CDATA[Removing folders...]]></field>
+			<field id="Template"><![CDATA[Folder: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveIniValues]]></field>
+			<field id="Description"><![CDATA[Removing INI file entries...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Section: [2][WiseCRLF]Key: [3], Value: [4]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveODBC]]></field>
+			<field id="Description"><![CDATA[Removing ODBC components...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveRegistryValues]]></field>
+			<field id="Description"><![CDATA[Removing system registry values...]]></field>
+			<field id="Template"><![CDATA[Key: [1][WiseCRLF]Name: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RemoveShortcuts]]></field>
+			<field id="Description"><![CDATA[Removing shortcuts...]]></field>
+			<field id="Template"><![CDATA[Shortcut: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RMCCPSearch]]></field>
+			<field id="Description"><![CDATA[Searching for qualifying products...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[Rollback]]></field>
+			<field id="Description"><![CDATA[Rolling back action:]]></field>
+			<field id="Template"><![CDATA[[1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[RollbackCleanup]]></field>
+			<field id="Description"><![CDATA[Removing backup files...]]></field>
+			<field id="Template"><![CDATA[File: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[SelfRegModules]]></field>
+			<field id="Description"><![CDATA[Registering modules...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Folder: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[SelfUnregModules]]></field>
+			<field id="Description"><![CDATA[Unregistering modules...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Folder: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[SetODBCFolders]]></field>
+			<field id="Description"><![CDATA[Initializing ODBC directories...]]></field>
+			<field id="Template"><![CDATA[ODBC Driver [1] forcing folder [2] to [3]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[SetSecurityPermissions]]></field>
+			<field id="Description"><![CDATA[Setting permissions...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[StartServices]]></field>
+			<field id="Description"><![CDATA[Starting services...]]></field>
+			<field id="Template"><![CDATA[Service: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[StopServices]]></field>
+			<field id="Description"><![CDATA[Stopping services...]]></field>
+			<field id="Template"><![CDATA[Service: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[uninstall_printer]]></field>
+			<field id="Description"><![CDATA[Calling uninstall_printer_CA]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnmoveFiles]]></field>
+			<field id="Description"><![CDATA[Removing moved files...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Directory: [9]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnpublishComponents]]></field>
+			<field id="Description"><![CDATA[Unpublishing qualified components...]]></field>
+			<field id="Template"><![CDATA[Component ID: [1][WiseCRLF]Qualifier: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnpublishFeatures]]></field>
+			<field id="Description"><![CDATA[Unpublishing product features...]]></field>
+			<field id="Template"><![CDATA[Feature: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnpublishProduct]]></field>
+			<field id="Description"><![CDATA[Unpublishing product information...]]></field>
+			<field id="Template"><![CDATA[]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterClassInfo]]></field>
+			<field id="Description"><![CDATA[Unregister class servers...]]></field>
+			<field id="Template"><![CDATA[Class Id: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterExtensionInfo]]></field>
+			<field id="Description"><![CDATA[Unregistering extension servers...]]></field>
+			<field id="Template"><![CDATA[Extension: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterFonts]]></field>
+			<field id="Description"><![CDATA[Unregistering fonts...]]></field>
+			<field id="Template"><![CDATA[Font: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterMIMEInfo]]></field>
+			<field id="Description"><![CDATA[Unregistering MIME information...]]></field>
+			<field id="Template"><![CDATA[MIME Content Type: [1][WiseCRLF]Extension: [2]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterProgIdInfo]]></field>
+			<field id="Description"><![CDATA[Unregistering program identifiers...]]></field>
+			<field id="Template"><![CDATA[ProgId: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[UnregisterTypeLibraries]]></field>
+			<field id="Description"><![CDATA[Unregistering type libraries...]]></field>
+			<field id="Template"><![CDATA[LibID: [1]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[WriteEnvironmentStrings]]></field>
+			<field id="Description"><![CDATA[Updating environment strings...]]></field>
+			<field id="Template"><![CDATA[Name: [1][WiseCRLF]Value: [2][WiseCRLF]Action [3]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[WriteIniValues]]></field>
+			<field id="Description"><![CDATA[Writing INI file values...]]></field>
+			<field id="Template"><![CDATA[File: [1][WiseCRLF]Section: [2][WiseCRLF]Key: [3], Value: [4]]]></field>
+		</record>
+		<record>
+			<field id="Action"><![CDATA[WriteRegistryValues]]></field>
+			<field id="Description"><![CDATA[Writing system registry values...]]></field>
+			<field id="Template"><![CDATA[Key: [1][WiseCRLF]Name: [2][WiseCRLF]Value: [3]]]></field>
+		</record>
+	</table>
+	<table id="Error">
+		<string id="0"><![CDATA[{{Onulmaz hata: }}]]></string>
+		<string id="1"><![CDATA[Hata [1]. ]]></string>
+		<string id="2"><![CDATA[Uyarı [1]. ]]></string>
+		<string id="4"><![CDATA[Bilgi [1]. ]]></string>
+		<string id="5"><![CDATA[Dahili Hata [1]. [2]{, [3]}{, [4]}]]></string>
+		<string id="7"><![CDATA[{{Disk dolu: }}]]></string>
+		<string id="8"><![CDATA[İşlem [Time]: [1]. [2]]]></string>
+		<string id="9"><![CDATA[[ProductName]]]></string>
+		<string id="10"><![CDATA[{[2]}{, [3]}{, [4]}]]></string>
+		<string id="11"><![CDATA[Mesaj türü: [1], Argüman: [2]]]></string>
+		<string id="12"><![CDATA[=== Günlük tutma başlangıcı: [Date]  [Time] ===]]></string>
+		<string id="13"><![CDATA[=== Günlük tutma sonu: [Date]  [Time] ===]]></string>
+		<string id="14"><![CDATA[İşlem başlangıcı [Time]: [1].]]></string>
+		<string id="15"><![CDATA[İşlem sonu [Time]: [1]. Döndürme değeri [2].]]></string>
+		<string id="16"><![CDATA[Kalan süre: {[1] dakika}{[2] saniye}]]></string>
+		<string id="17"><![CDATA[Hafıza dolu. Diğer uygulamaları kapatıp tekrar deneyin.]]></string>
+		<string id="18"><![CDATA[Windows Kur yanıt vermiyor.]]></string>
+		<string id="19"><![CDATA[Kurulum tamamlanmadan sonlandı.]]></string>
+		<string id="20"><![CDATA[Lütfen Windows [ProductName]'i yapılandırırken bekleyin]]></string>
+		<string id="21"><![CDATA[Gerekli bilgiler toplanıyor...]]></string>
+		<string id="32"><![CDATA[{[ProductName] }Kurulumu başarıyla tamamlandı.]]></string>
+		<string id="33"><![CDATA[{[ProductName] }Kurulumu başarısız oldu.]]></string>
+		<string id="1101"><![CDATA[Dosyadan okuma hatası: [2]. {{ Sistem hatası [3].}}  Dosyanın bulunduğundan ve erişiminiz olduğundan emin olun.]]></string>
+		<string id="1301"><![CDATA[Dosya oluşturulamıyor '[3]'.  Bu isimde bir dizin zaten var.  Kurulumu iptal edip farklı bir konuma kurmayı deneyin.]]></string>
+		<string id="1302"><![CDATA[Lütfen diski yerleştirin: [2]]]></string>
+		<string id="1303"><![CDATA[Kurulum bu dizine erişim önceliklerine sahip değil: [2].  Kurulum devam edemiyor.  Yönetici olarak oturum açın veya sistem yöneticinizden yardım isteyin.]]></string>
+		<string id="1304"><![CDATA[Dosyaya yazma hatası: [2].  Bu dizine erişiminiz olduğundan emin olun.]]></string>
+		<string id="1305"><![CDATA[Dosyadan okuma hatası: [2].  Dosyanın bulunduğundan ve erişiminiz olduğundan emin olun.]]></string>
+		<string id="1306"><![CDATA[Farklı bir uygulama '[2]' dosyasına ayrıcalıklı erişim hakkına sahip.  Lütfen tüm uygulamaları kapatıp Tekrar Dene'yi tıklatın.]]></string>
+		<string id="1307"><![CDATA[Bu dosyayı kurmak için yeterli disk alanı yok: [2].  Biraz disk alanı açıp Yeniden Dene'yi tıklatın veya İptal'i tıklatarak çıkın.]]></string>
+		<string id="1308"><![CDATA[Kaynak dosya bulunamadı: [2].  Dosyanın bulunduğundan ve erişiminiz olduğundan emin olun.]]></string>
+		<string id="1309"><![CDATA[Dosyadan okuma hatası: [3]. {{ Sistem hatası [2].}}  Dosyanın bulunduğundan ve erişiminiz olduğundan emin olun.]]></string>
+		<string id="1310"><![CDATA[Dosyaya yazma hatası: [3]. {{ Sistem hatası [2].}}  Bu dizine erişiminiz olduğundan emin olun.]]></string>
+		<string id="1311"><![CDATA[Kaynak dosya bulunamadı{{(kabin)}}: [2].  Dosyanın bulunduğundan ve erişiminiz olduğundan emin olun.]]></string>
+		<string id="1312"><![CDATA[Dosya oluşturulamıyor '[2]'.  Bu isimde bir dosya zaten var.  Dosyayı yeniden adlandırdıktan veya kaldırdıktan sonra Yeniden Dene'yi tıklatın veya İptal'i tıklatarak çıkın.]]></string>
+		<string id="1313"><![CDATA[Hacim [2] şu an kullanılamıyor.  Lütfen farklı bir tane seçin.]]></string>
+		<string id="1314"><![CDATA[Belirtilen yol '[2]' kullanılamıyor.]]></string>
+		<string id="1315"><![CDATA[Belirtilen klasöre yazılamıyor: [2].]]></string>
+		<string id="1316"><![CDATA[Dosyadan okuma denemesi sırasında bir ağ hatası oluştu: [2]]]></string>
+		<string id="1317"><![CDATA[Dizin oluşturma denemesi sırasında bir hata oluştu: [2]]]></string>
+		<string id="1318"><![CDATA[Dizin oluşturma denemesi sırasında bir ağ hatası oluştu: [2]]]></string>
+		<string id="1319"><![CDATA[Kaynak dosya kabinini açma denemesi sırasında bir ağ hatası oluştu: [2]]]></string>
+		<string id="1320"><![CDATA[Belirtilen yol çok uzun: [2]]]></string>
+		<string id="1321"><![CDATA[Windows Kur bu dosyayı değiştirme önceliklerine sahip değil: [2].]]></string>
+		<string id="1322"><![CDATA['[2]' klasör yolunun bir kısmı sistemin izin verdiği uzunluğu aşıyor.]]></string>
+		<string id="1323"><![CDATA['[2]' klasör yolu, klasör yollarında geçerli olmayan kelimeler içeriyor.]]></string>
+		<string id="1324"><![CDATA['[2]' klasör yolu geçersiz karakterler içeriyor.]]></string>
+		<string id="1325"><![CDATA['[2]' geçerli bir kısa dosya adı değil.]]></string>
+		<string id="1326"><![CDATA[Dosya güvenliği belirlemede hata: [3] GetLastError: [2]]]></string>
+		<string id="1327"><![CDATA[Geçersiz Sürücü: [2]]]></string>
+		<string id="1401"><![CDATA[Anahtar oluşturulamadı: [2]. {{ Sistem hatası [3].}}  Bu anahtara yeterli erişiminiz olduğundan emin olun veya destek personelinden yardım isteyin. ]]></string>
+		<string id="1402"><![CDATA[Anahtar açılamadı: [2]. {{ Sistem hatası [3].}}  Bu anahtara yeterli erişiminiz olduğundan emin olun veya destek personelinden yardım isteyin. ]]></string>
+		<string id="1403"><![CDATA[[3] anahtarından [2] değeri silinemedi. {{ Sistem hatası [4].}}  Bu anahtara yeterli erişiminiz olduğundan emin olun veya destek personelinden yardım isteyin. ]]></string>
+		<string id="1404"><![CDATA[[2] anahtarı silinemedi: {{ Sistem hatası [3].}}  Bu anahtara yeterli erişiminiz olduğundan emin olun veya destek personelinden yardım isteyin. ]]></string>
+		<string id="1405"><![CDATA[[3] anahtarından [2] değeri okunamadı. {{ Sistem hatası [4].}}  Bu anahtara yeterli erişiminiz olduğundan emin olun veya destek personelinden yardım isteyin. ]]></string>
+		<string id="1406"><![CDATA[[3] anahtarına [2] değeri yazılamadı. {{ Sistem hatası [4].}}  Bu anahtara yeterli erişiminiz olduğundan emin olun veya destek personelinden yardım isteyin.]]></string>
+		<string id="1407"><![CDATA[[2] anahtarı için değer adları alınamadı. {{ Sistem hatası [3].}}  Bu anahtara yeterli erişiminiz olduğundan emin olun veya destek personelinden yardım isteyin.]]></string>
+		<string id="1408"><![CDATA[[2] anahtarı için alt anahtar adları alınamadı. {{ Sistem hatası [3].}}  Bu anahtara yeterli erişiminiz olduğundan emin olun veya destek personelinden yardım isteyin.]]></string>
+		<string id="1409"><![CDATA[[2] anahtarı için güvenlik bilgileri okunamadı. {{ Sistem hatası [3].}}  Bu anahtara yeterli erişiminiz olduğundan emin olun veya destek personelinden yardım isteyin.]]></string>
+		<string id="1410"><![CDATA[Kullanılabilir kayıt defteri alanı arttırılamadı. Bu uygulamanın kurulması için [2] KB boş kayıt defteri alanı gereklidir.]]></string>
+		<string id="1500"><![CDATA[Farklı bir kurulum devam ediyor. Bu kuruluma devam etmeden önce diğerini tamamlamalısınız.]]></string>
+		<string id="1501"><![CDATA[Güvenli verilere erişimde hata. Windows Kur'un düzgün yağpılandırıldığından emin olun ve kurulumu tekrar deneyin.]]></string>
+		<string id="1502"><![CDATA['[2]' kullanıcısı, '[3]' ürünü için daha önce bir kurulum başlatmış.  Bu kullanıcının ürünü kullanabilmesi için bu kurulumu tekrar çalıştırması gerekmektedir.  Mevcut kurulumunuz devam edecektir.]]></string>
+		<string id="1503"><![CDATA['[2]' kullanıcısı, '[3]' ürünü için daha önce bir kurulum başlatmış.  Bu kullanıcının ürünü kullanabilmesi için bu kurulumu tekrar çalıştırması gerekmektedir.]]></string>
+		<string id="1601"><![CDATA[Yetersiz disk alanı -- Hacim: '[2]'; gerekli alan: [3] KB; kullanılabilir alan: [4] KB.  Disk alanı açıp tekrar deneyin.]]></string>
+		<string id="1602"><![CDATA[İptal etmek istediğinizden emin misiniz?]]></string>
+		<string id="1603"><![CDATA[[2][3] dosyası{ şu işlem tarafından kullanılıyor: Adı: [4], Id: [5], Pencere Başlığı: '[6]'}.  Bu uygulamayı kapatıp tekrar deneyin.]]></string>
+		<string id="1604"><![CDATA['[2]' ürünü zaten kurulu ve bu ürünün kurulumunu engelliyor.  İki ürün birbiriyle uyumsuzdur.]]></string>
+		<string id="1605"><![CDATA[Yetersiz disk alanı -- Hacim: '[2]'; gerekli alan: [3] KB; kullanılabilir alan: [4] KB.  Geri alma devre dışı bırakılırsa, yeterli alan kullanılabilir hale gelecektir. Çıkmak için'Cancel''i, kullanılabilir disk alanını tekrar kontrol etmek için 'Retry''yi veya geri almadan devam etmek için 'Ignore''ı tıklatın.]]></string>
+		<string id="1606"><![CDATA[[2] ağ konumuna erişilemedi.]]></string>
+		<string id="1607"><![CDATA[Kuruluma devam etmeden önce şu uygulamaları kapatın:]]></string>
+		<string id="1608"><![CDATA[Makinede daha önceden kurulu olan bu ürünün kurulumuyla uyumlu ürün bulunamadı.]]></string>
+		<string id="1701"><![CDATA[[2] anahtarı geçerli değil.  Doğru anahtarı girdiğinizden emin olun.]]></string>
+		<string id="1702"><![CDATA[[2] yapılandırmasına devam etmeden önce Windows Kur'un bilgisayarınızı yeniden başlatması gerekiyor.  Şimdi yeniden başlatmak için Evet'i, daha sonra elle yeniden başlatmak için Hayır'ı tıklatın.]]></string>
+		<string id="1703"><![CDATA[[2] yapılandırma değişikliklerinin etkinleşmesi için sisteminizi yeniden başlatmalısınız. Şimdi yeniden başlatmak için Evet'i, daha sonra elle yeniden başlatmak için Hayır'ı tıklatın.]]></string>
+		<string id="1704"><![CDATA[Bir [2] kurulumu iptal edildi.  Devam etmek için bu bu kurulumun yaptığı değişiklikleri geri almalısınız.  Bu değişiklikleri geri almak istiyor musunuz?]]></string>
+		<string id="1705"><![CDATA[Bu ürünle ilgili önceki bir kurulum devam ediyor.  Devam etmek için bu bu kurulumun yaptığı değişiklikleri geri almalısınız.  Bu değişiklikleri geri almak istiyor musunuz?]]></string>
+		<string id="1706"><![CDATA[[2] ürünü için geçerli kaynak bulunamadı.  Windows Kur devam edemiyor.]]></string>
+		<string id="1707"><![CDATA[Kurulum başarıyla tamamlandı.]]></string>
+		<string id="1708"><![CDATA[Kurulum başarısız.]]></string>
+		<string id="1709"><![CDATA[Ürün: [2] -- [3]]]></string>
+		<string id="1710"><![CDATA[Bilgisayarınızı önceki haline geri alabilir veya kuruluma daha sonra devam edebilirsiniz. Geri almak istiyor musunuz?]]></string>
+		<string id="1711"><![CDATA[Diske kurulum bilgilerini yazarken bir hata oluştu.  Yeterli disk alanının kullanılabilir olup olmadığını kontrol edin ve Yeniden Dene'yi tıklatın veya İptal'i tıklatarak kurulumu sonlandırın.]]></string>
+		<string id="1712"><![CDATA[Bilgisayarınızı eski haline döndürmek için gereken dosyalardan bir veya daha fazlası bulunamadı.  Geri alma işlemi mümkün değil.]]></string>
+		<string id="1801"><![CDATA[[2] yolu geçerli değil.  Lütfen geçerli bir yol belirtin.]]></string>
+		<string id="1802"><![CDATA[Hafıza dolu. Diğer uygulamaları kapatıp tekrar deneyin.]]></string>
+		<string id="1803"><![CDATA[[2] sürücüsünde disk yok. Disk yerleştirip Yeniden Dene'yi tıklatın veya İptal'i tıklatarak seçilen bir önceki hacme dönün.]]></string>
+		<string id="1804"><![CDATA[[2] sürücüsünde disk yok. Disk yerleştirip Yeniden Dene'yi tıklatın veya İptal'i tıklatarak gözat penceresine dönün ve farklı bir hacim seçin.]]></string>
+		<string id="1805"><![CDATA[[2] klasörü bulunmamaktadır.  Mevcut bir klasöre giden yolu girin.]]></string>
+		<string id="1806"><![CDATA[Bu klasörden okumak için yeterli önceliğe sahip değilsiniz.]]></string>
+		<string id="1807"><![CDATA[Kurulum için geçerli bir hedef klasör belirlenmedi.]]></string>
+		<string id="1901"><![CDATA[Kaynak kurulum veritabanından okumada hata: [2].]]></string>
+		<string id="1902"><![CDATA[Yeniden başlatma işlemi programlanıyor: [2] dosyasının adı [3] olarak değiştiriliyor. İşlemi tamamlamak için yeniden başlatın.]]></string>
+		<string id="1903"><![CDATA[Yeniden başlatma işlemi programlanıyor: [2] dosyası siliniyor. İşlemi tamamlamak için yeniden başlatın.]]></string>
+		<string id="1904"><![CDATA[Modül [2] kaydedilemedi.  HRESULT [3].  Destek personelinizle irtibata geçin.]]></string>
+		<string id="1905"><![CDATA[Modül [2] kaydı silinemedi.  HRESULT [3].  Destek personelinizle irtibata geçin.]]></string>
+		<string id="1906"><![CDATA[Paket önbelleğe alınamadı [2]. Hata: [3]. Destek personelinizle irtibata geçin.]]></string>
+		<string id="1907"><![CDATA[[2] yazı tipi kaydedilemedi.  Yazı tipi kurmak için gereken izinlere sahip olduğunuzdan ve sistemin bu yazı tipini desteklediğinden emin olun.]]></string>
+		<string id="1908"><![CDATA[[2] yazı tipi kaydı silinemedi. Yazı tipi kaldırmak için gereken izinlere sahip olduğunuzdan emin olun.]]></string>
+		<string id="1909"><![CDATA[[2] kısayolu oluşturulamadı. Hedef klasörün bulunduğundan ve erişiminiz olduğundan emin olun.]]></string>
+		<string id="1910"><![CDATA[[2] kısayolu kaldırılamadı. Kısayol dosyasının bulunduğundan ve erişiminiz olduğundan emin olun.]]></string>
+		<string id="1911"><![CDATA[[2] dosyası tür kitaplığı kaydedilemedi.  Destek personelinizle irtibata geçin.]]></string>
+		<string id="1912"><![CDATA[[2] dosyası tür kitaplığı kaydı silinemedi.  Destek personelinizle irtibata geçin.]]></string>
+		<string id="1913"><![CDATA[[2][3] .INI dosyası güncellenemedi.  Dosyanın bulunduğundan ve erişiminiz olduğundan emin olun.]]></string>
+		<string id="1914"><![CDATA[[2] dosyasının yeniden başlatma sonrasında [3] dosyasının yerini alması planlanamadı.  [3] dosyasına yazma izniniz olduğundan emin olun.]]></string>
+		<string id="1915"><![CDATA[ODBC sürücü yöneticisini kaldırma hatası, ODBC hatası [2]: [3]. Destek personelinizle irtibata geçin.]]></string>
+		<string id="1916"><![CDATA[ODBC sürücü yöneticisini kurma hatası, ODBC hatası [2]: [3]. Destek personelinizle irtibata geçin.]]></string>
+		<string id="1917"><![CDATA[ODBC sürücüsünü kaldırma hatası: [4], ODBC hatası [2]: [3]. ODBC sürücülerini kaldırmak için gereken önceliklere sahip olduğunuzdan emin olun.]]></string>
+		<string id="1918"><![CDATA[ODBC sürücüsünü kurma hatası: [4], ODBC hatası [2]: [3]. [4] dosyasının bulunduğundan ve erişiminiz olduğundan emin olun.]]></string>
+		<string id="1919"><![CDATA[ODBC veri kaynağı yapılandırma hatası: [4], ODBC hatası [2]: [3]. [4] dosyasının bulunduğundan ve erişiminiz olduğundan emin olun.]]></string>
+		<string id="1920"><![CDATA['[2]' ([3]) hizmeti başlatılamadı.  Sistem hizmetlerini başlatmak için gereken önceliklere sahip olduğunuzdan emin olun.]]></string>
+		<string id="1921"><![CDATA['[2]' ([3]) hizmeti durdurulamadı.  Sistem hizmetlerini durdurmak için gereken önceliklere sahip olduğunuzdan emin olun.]]></string>
+		<string id="1922"><![CDATA['[2]' ([3]) hizmeti silinemedi.  Sistem hizmetlerini kaldırmak için gereken önceliklere sahip olduğunuzdan emin olun.]]></string>
+		<string id="1923"><![CDATA['[2]' ([3]) hizmeti kurulamadı.  Sistem hizmetlerini kurmak için gereken önceliklere sahip olduğunuzdan emin olun.]]></string>
+		<string id="1924"><![CDATA['[2]' çevre değişkeni güncelleştirilemedi.  Çevre değişkenlerini değiştirmek için gereken önceliklere sahip olduğunuzdan emin olun.]]></string>
+		<string id="1925"><![CDATA[bu kurulumunu makinenin tüm kullanıcıları için tamamlama önceliğiniz yok.  Yönetici olarak oturum açıp bu kurulumu tekrar deneyin.]]></string>
+		<string id="1926"><![CDATA['[3]' dosyası için dosya güvenliği belirlenemedi. Hata: [2].  Bu dosyanın güvenlik izinlerini değiştirmek için gereken önceliklere sahip olduğunuzdan emin olun.]]></string>
+	</table>
+	<table id="UIText">
+		<string id="bytes"><![CDATA[bytes]]></string>
+		<string id="GB"><![CDATA[GB]]></string>
+		<string id="KB"><![CDATA[KB]]></string>
+		<string id="MB"><![CDATA[MB]]></string>
+		<string id="MenuAbsent"><![CDATA[Entire feature will be unavailable.]]></string>
+		<string id="MenuAdvertise"><![CDATA[Feature will be installed when required.]]></string>
+		<string id="MenuAllCD"><![CDATA[Entire feature will be installed to run from CD.]]></string>
+		<string id="MenuAllLocal"><![CDATA[Entire feature will be installed on local hard drive.]]></string>
+		<string id="MenuAllNetwork"><![CDATA[Entire feature will be installed to run from network.]]></string>
+		<string id="MenuCD"><![CDATA[Will be installed to run from CD.]]></string>
+		<string id="MenuLocal"><![CDATA[Will be installed on local hard drive.]]></string>
+		<string id="MenuNetwork"><![CDATA[Will be installed to run from network.]]></string>
+		<string id="NewFolder"><![CDATA[Klsr|Yeni Klasör]]></string>
+		<string id="ScriptInProgress"><![CDATA[Gerekli bilgiler toplanıyor...]]></string>
+		<string id="SelAbsentAbsent"><![CDATA[This feature will remain uninstalled.]]></string>
+		<string id="SelAbsentAdvertise"><![CDATA[This feature will be set to be installed when required.]]></string>
+		<string id="SelAbsentCD"><![CDATA[This feature will be installed to run from CD.]]></string>
+		<string id="SelAbsentLocal"><![CDATA[This feature will be installed on the local hard drive.]]></string>
+		<string id="SelAbsentNetwork"><![CDATA[This feature will be installed to run from the network.]]></string>
+		<string id="SelAdvertiseAbsent"><![CDATA[This feature will become unavailable.]]></string>
+		<string id="SelAdvertiseAdvertise"><![CDATA[Will be installed when required.]]></string>
+		<string id="SelAdvertiseCD"><![CDATA[This feature will be available to run from CD.]]></string>
+		<string id="SelAdvertiseLocal"><![CDATA[This feature will be installed on your local hard drive.]]></string>
+		<string id="SelAdvertiseNetwork"><![CDATA[This feature will be available to run from the network.]]></string>
+		<string id="SelCDAbsent"><![CDATA[This feature will be uninstalled completely, you won't be able to run it from CD.]]></string>
+		<string id="SelCDAdvertise"><![CDATA[This feature will change from run from CD state to set to be installed when required.]]></string>
+		<string id="SelCDCD"><![CDATA[This feature will remain to be run from CD.]]></string>
+		<string id="SelCDLocal"><![CDATA[This feature will change from run from CD state to be installed on the local hard drive.]]></string>
+		<string id="SelChildCostNeg"><![CDATA[This feature frees up [1] on your hard drive.]]></string>
+		<string id="SelChildCostPos"><![CDATA[This feature requires [1] on your hard drive.]]></string>
+		<string id="SelCostPending"><![CDATA[Compiling cost for this feature...]]></string>
+		<string id="SelLocalAbsent"><![CDATA[This feature will be completely removed.]]></string>
+		<string id="SelLocalAdvertise"><![CDATA[This feature will be removed from your local hard drive, but will be set to be installed when required.]]></string>
+		<string id="SelLocalCD"><![CDATA[This feature will be removed from your local hard drive, but still will be available to run from CD.]]></string>
+		<string id="SelLocalLocal"><![CDATA[This feature will remain on your local hard drive.]]></string>
+		<string id="SelLocalNetwork"><![CDATA[This feature will be removed from your local hard drive, but still will be available to run from the network.]]></string>
+		<string id="SelNetworkAbsent"><![CDATA[This feature will be uninstalled completely, you won't be able to run it from the network.]]></string>
+		<string id="SelNetworkAdvertise"><![CDATA[This feature will change from run from network state to set to be installed when required.]]></string>
+		<string id="SelNetworkLocal"><![CDATA[This feature will change from run from network state to be installed on the local hard drive.]]></string>
+		<string id="SelNetworkNetwork"><![CDATA[This feature will remain to be run from the network.]]></string>
+		<string id="SelParentCostNegNeg"><![CDATA[This feature frees up [1] on your hard drive. It has [2] of [3] subfeatures selected. The subfeatures free up [4] on your hard drive.]]></string>
+		<string id="SelParentCostNegPos"><![CDATA[This feature frees up [1] on your hard drive. It has [2] of [3] subfeatures selected. The subfeatures require [4] on your hard drive.]]></string>
+		<string id="SelParentCostPosNeg"><![CDATA[This feature requires [1] on your hard drive. It has [2] of [3] subfeatures selected. The subfeatures free up [4] on your hard drive.]]></string>
+		<string id="SelParentCostPosPos"><![CDATA[This feature requires [1] on your hard drive. It has [2] of [3] subfeatures selected. The subfeatures require [4] on your hard drive.]]></string>
+		<string id="TimeRemaining"><![CDATA[Kalan süre: {[1] dakika}{[2] saniye}]]></string>
+		<string id="VolumeCostAvailable"><![CDATA[Available]]></string>
+		<string id="VolumeCostDifference"><![CDATA[Difference]]></string>
+		<string id="VolumeCostRequired"><![CDATA[Required]]></string>
+		<string id="VolumeCostSize"><![CDATA[Disk Size]]></string>
+		<string id="VolumeCostVolume"><![CDATA[Volume]]></string>
+	</table>
+	<table id="Shortcutname">
+		<string id="FAXmaker_Fax_Message_Form"><![CDATA[FAXMAK~1|GFI FaxMaker Faks Mesajı Formu]]></string>
+		<string id="FAXMaker_Help"><![CDATA[FAXMAK~1|GFI FaxMaker Yardım]]></string>
+		<string id="FAXmaker_SMS_Message_Form"><![CDATA[FAXMAK~1|GFI FaxMaker SMS Mesajı Formu]]></string>
+		<string id="FAXMaker_Viewer"><![CDATA[FAXMAK~1|GFI FaxMaker Görüntüleyici]]></string>
+	</table>
+	<table id="Shortcutdescription">
+		<string id="FAXmaker_Fax_Message_Form"><![CDATA[GFI FaxMaker Faks Mesajı Formu]]></string>
+		<string id="FAXMaker_Help"><![CDATA[GFI FaxMaker Yardım]]></string>
+		<string id="FAXmaker_SMS_Message_Form"><![CDATA[GFI FaxMaker SMS Mesajı Formu]]></string>
+		<string id="FAXMaker_Viewer"><![CDATA[GFI FaxMaker Görüntüleyici]]></string>
+	</table>
+</setupstrings>

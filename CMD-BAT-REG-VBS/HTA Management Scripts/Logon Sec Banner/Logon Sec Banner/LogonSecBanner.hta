@@ -1,0 +1,191 @@
+<html>
+<head>
+<title>Logon Banner K8L0</title>
+<HTA:APPLICATION
+     ApplicationName="Logon Banner K8L0"
+     SingleInstance="Yes"
+     WINDOWSTATE="maximize"
+     Scroll="No"
+     SCROLLFLAT="No"
+     Navigable="No"
+     SysMenu="No"
+     Caption="No"
+	 Select="No"
+     MaximizeButton="No"
+     MinimizeButton="No"
+     BORDER = "none"
+     INNERBORDER = "No"
+     SHOWINTASKBAR="No"
+     CONTEXTMENU="No">
+></HEAD>
+
+<SCRIPT LANGUAGE="VBScript">
+'by k8l0
+'===============================
+'Begin Config Script
+'===============================
+strdelayAcepted = 10
+strdelayNotAcepted = 600
+strAviso = "All information generated, stored, processed, delivered or entrusted to the Group is considered his property, being regulated by the Information Security Policy and subject to audit and usage monitoring."
+strSizeAviso = 12
+strContentPolicePath = "policies.htm"
+strPicture1 = "image1.jpg"
+strPicture2 = "image2.jpg"
+strLogSecNetworkPath = "."
+strPolVersion = "123"
+'===============================
+'End Config Script
+'===============================
+
+Const ForAppending = 8
+Const HKEY_CURRENT_USER = &H80000001
+
+Set objNetwork = CreateObject("WScript.Network")
+Set objShell = CreateObject("WScript.Shell")
+Set objFileSys = CreateObject("Scripting.FileSystemObject")
+
+strUser = objNetwork.UserName   
+strDomain = objNetwork.UserDomain
+strHost = objNetwork.ComputerName
+strUserProfile = objShell.ExpandEnvironmentStrings("%USERPROFILE%") 
+
+strDay = Day(Date())
+strMonth = Month(Date())
+strYear = Year(Date())
+If Len(strDay) = 1 Then strDay = "0" & strDay
+If Len(strMonth) = 1 Then strMonth = "0" & strMonth
+strDate = strMonth & "/" & strDay & "/" & strYear
+strDisppol = False
+strUnlockAceito = False
+strPolAcept = False
+	
+If objFileSys.FileExists(strUserProfile & "\CSCPOL_v" & strPolVersion & ".txt") Then
+	strPolAcept = True
+Else
+	strPolAcept = False
+	If objFileSys.FileExists(strLogSecNetworkPath & "\" & strUser & ".txt") Then
+		Set objLogFile = objFileSys.OpenTextFile(strLogSecNetworkPath & "\" & strUser & ".txt", ForAppending, True)
+		objLogFile.Write vbNewLine & strDate & ";" & Time() & ";" & strDomain & ";" & strHost & ";" & strUser & ";Vpol." & strPolVersion & ";"
+	Else
+		Set objLogFile = objFileSys.OpenTextFile(strLogSecNetworkPath & "\" & strUser & ".txt", ForAppending, True)
+		objLogFile.Write strDate & ";" & Time() & ";" & strDomain & ";" & strHost & ";" & strUser & ";Vpol." & strPolVersion & ";"
+	End If
+End If
+
+Sub Window_OnLoad
+	objShell.Run "LBTop.exe"
+	If strPolAcept = True Then
+		InitMensage
+	Else
+		InitPol
+	End If
+End Sub
+
+Sub InitMensage
+	strDhtmL1 = "<center><img src='" & strPicture1 & "'></center>"
+	strDhtmL2 = "<center><H1 align='justified'><font size=" & strSizeAviso & ">" & strAviso & "</font></H1></center><br>"
+	strDhtmL3 = "<center><font size=2><span id='endTime'>.</span></font></center>"
+	strDhtmL4 = "<center><img src='" & strPicture2 & "'></center>"
+	Tela.innerhtml = strDhtmL1 & strDhtmL2 & strDhtmL3 & strDhtmL4
+	Call EndBanner()
+End Sub
+
+Sub InitPol
+	strDhtmL1 = "<center><img src='" & strPicture1 & "'></center>"
+	strDhtmL2 = "<center><H1 align='justified'><font size=" & strSizeAviso & ">" & strAviso & "</font></H1></center>"
+	strDhtmL3 = "<center><input type='button' value='Accepted  [F2]' name='cmbAceito'  disabled=True onClick='AceptedPolicy'>"
+	strDhtmL4 = "<input type='button' value='Not accepted [F12]' name='cmbNaoAceito' onClick='NotAceptedPolicy'></center>"
+	strDhtmL5 = "<center><img src='" & strPicture2 & "'></center>"
+	strDhtmL6 = "<center><input type='button' value='Read the policy [F1]' name='cmbPolitica' onClick='DisplayPol'></center>"
+	Tela.innerhtml = strDhtmL1 & strDhtmL2 & strDhtmL3 & strDhtmL4 & strDhtmL5 & strDhtmL6
+	Call Countdown()
+End Sub
+
+Function CountDown()
+	If strdelayAcepted > 0 Then
+		If strPolAcept = False Then cmbAceito.value = "Accepted  [F2] " & strdelayAcepted & "s"
+		setTimeout "CountDown()",1000
+		strdelayAcepted = strdelayAcepted - 1
+	Else
+		If strPolAcept = False Then cmbAceito.value = "Accepted  [F2]"
+		If strPolAcept = False Then cmbAceito.disabled=False
+		strUnlockAceito = True
+		If strdelayNotAcepted > 0 Then
+			If strPolAcept = False Then cmbNaoAceito.value = "Not accepted  [F12] " & strdelayNotAcepted & "s"
+			setTimeout "CountDown()",1000
+			strdelayNotAcepted = strdelayNotAcepted - 1
+		Else
+			NotAceptedPolicy
+		End If
+	End If
+End Function
+
+Function EndBanner()
+	If strdelayAcepted > 0 Then
+		endTime.innerhtml = strdelayAcepted & " seconds to close..."
+		setTimeout "EndBanner()",1000
+		strdelayAcepted = strdelayAcepted - 1
+	Else
+		self.close
+	End If
+End Function
+
+Sub AceptedPolicy
+	objLogFile.Write "Policy accept at " & Time()
+	objLogFile.close
+	Set objLocalPolFile = objFileSys.OpenTextFile(strUserProfile & "\CSCPOL_v" & strPolVersion & ".txt", ForAppending, True)
+	objLocalPolFile.Writeline "On the date" & strDate & " at " & Time() & " the user " & strUser & " accepted security policy version " & strPolVersion & " on the computer " & strDomain & "\" & strHost & "."
+	objLocalPolFile.close
+	Close.Self
+End Sub
+
+Sub NotAceptedPolicy
+	objLogFile.Write "Policy not accept at " & Time()
+	objLogFile.close
+	Set oSystems = GetObject("winmgmts:{(Shutdown)}//./root/cimv2").ExecQuery("select * from Win32_OperatingSystem where Primary=true") 
+	For Each oSystem in oSystems 
+		'LOGOFF   = 0 
+		'SHUTDOWN = 1  
+		'REBOOT   = 2 
+		'FORCE    = 4 
+		'POWEROFF = 8 
+		oSystem.Win32Shutdown 0 
+	Next
+End Sub
+
+Sub DisplayPol
+	strDhtmL1 = "<TABLE border=0 width='100%'><TR><TD><img src='" & strPicture1 & "' align='left'><img src='" & strPicture2 & "' align='right'></TD></TR></TABLE>"
+	strDhtmL2 = "<center><object id='frmpol' data='" & strContentPolicePath & "' type='text/html' width='63%' height='70%'></object></center>"
+	strDhtmL3 = "<center><input type='button' value='Accepted  [F2]' name='cmbAceito'  disabled=True onClick='AceptedPolicy'>"
+	strDhtmL4 = "<input type='button' value='Not Accepted  [F12]' name='cmbNaoAceito' onClick='NotAceptedPolicy'></center>"
+	Tela.innerhtml = strDhtmL1 & strDhtmL2 & strDhtmL3 & strDhtmL4
+	strDisppol = True
+End Sub
+
+Sub KeyMonitor
+	'IF Window.Event.Keycode = 27 Then self.close
+	IF strDisppol = true Then frmpol.setActive
+	IF strPolAcept = false Then
+		IF Window.Event.Keycode = 112 and strDisppol = false Then DisplayPol
+		IF Window.Event.Keycode = 113 and strUnlockAceito = True Then AceptedPolicy
+		IF Window.Event.Keycode = 123 Then NotAceptedPolicy
+	End If	
+	IF Window.Event.Keycode <> 33 and _
+		Window.Event.Keycode <> 34 and _
+		Window.Event.Keycode <> 37 and _
+		Window.Event.Keycode <> 38 and _
+		Window.Event.Keycode <> 39 and _
+		Window.Event.Keycode <> 40 then _
+		Window.Event.returnValue = False
+End Sub
+
+</SCRIPT>
+
+<body onkeyup="KeyMonitor" onkeypress="KeyMonitor" onkeydown="KeyMonitor">
+	<TABLE border=0 width="100%" height="100%"><TR><TD align="center" valign="center"> 
+		<span id="Tela"> </span>
+	</TD></TR></TABLE>
+	<font size=1>By k8l0</font>
+</body>
+
+</html> 
