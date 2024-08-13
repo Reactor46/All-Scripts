@@ -1,0 +1,75 @@
+/* Navigation classes */
+
+.utilitybar-category-content > a
+{
+    color: white;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+
+.nav-icon
+{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.icon-info:before {
+    background: #0078d7;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: white;
+    display: inline-block;
+    line-height: 14px;
+    text-align: center;
+    width: 14px;
+    content: "i";
+    font-size: 11px;
+  }
+  
+  .icon-ok:before {
+    font-size: 12px;
+    background: #107c10; 
+    font-family: "FabricMDL2Icons";
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: white;
+    display: inline-block;
+    line-height: 14px;
+    text-align: center;
+    width: 14px;
+    content: "\E73E"
+  }
+
+  .icon-error:before {
+    font-size: 12px;
+    background: #a80000;
+    font-family: "FabricMDL2Icons";
+    color: white;
+    display: inline-block;
+    line-height: 14px;
+    text-align: center;
+    width: 14px;
+    content: "\E711"
+  }
+  
+  .icon-warning:before {
+    background: #ffb900;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: black;
+    display: inline-block;
+    line-height: 14px;
+    text-align: center;
+    width: 14px;
+    content: "!";
+    font-size: 14px;
+  }

@@ -1,0 +1,70 @@
+Start subroutine: GatherWMIInformation(SCOLOSIMO)
+ Gathering OS information
+ Gathering BIOS information
+ Gathering computer system information
+ Gathering CD-ROM Information
+ Gathering computer system product information
+ Gathering disk information
+ Gathering local groups
+ Gathering local group members
+ Gathering network adapter configuration
+ Gathering event log settings
+ Gathering pagefile information
+ Gathering information about physical memory
+ Gathering printer information
+ Gathering process information
+ Gathering processor information
+ Gathering application information
+ Gathering registry size information
+ Gathering information about services
+ Gathering information about shares
+ Gathering Sound Device information
+ Gathering Startup Commands information
+ Gathering system enclosure information
+ Gathering TapeDrive information
+ Gathering time zone
+ Gathering information about patches
+ Gathering local users
+ Gathering Video Controller information
+End subroutine: GatherWMIInformation()
+
+Start subroutine: GatherRegInformation(SCOLOSIMO)
+ Reading domain information
+ Reading print spool location
+ Reading Programs from Registry
+ Reading last user
+ Reading Windows Components information
+End subroutine: GatherRegInformation()
+
+Checking for Other WMI Providers
+
+Start subroutine: PopulateWordfile()
+ Opening Empty document
+ Setting styles
+ Writing summary
+ Inserting Table Of Contents
+ Writing System Information
+ Writing Hardware Platform
+ Writing Software Platform
+  Writing Installed Programs (Windows Installer)
+  Writing Installed Programs (Registry)
+ Writing storage information
+ Writing Network configuration
+ Writing Miscellaneous configuration
+ Writing Event Log configuration
+ Writing Local Groups
+ Writing Local User Accounts
+ Writing Printer information
+ Writing Regional settings
+ Writing Processes information
+ Writing Services
+ Writing File share info
+ Writing startup commands info
+ Writing Page File information
+ Writing Registry information
+ Writing Contact Information
+ Writing Password section
+ Updating Tables Of Contents
+ Saving Document
+ Document Saved
+End subroutine: PopulateWordfile()

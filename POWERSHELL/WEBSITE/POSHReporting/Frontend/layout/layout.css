@@ -1,0 +1,104 @@
+body
+{
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+/* animation classes */
+.animate-transition
+{
+            transition: 0.3s ease;
+       -moz-transition: 0.3s ease;
+         -o-transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+}
+
+.animate-all
+{
+    transition-property: all;
+}
+
+/* Layout */
+#top-bar
+{
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    z-index: 999;
+}
+
+#utility-bar
+{
+    overflow-y: auto!important;
+    position: fixed;
+    z-index: 998;
+}
+
+#main-content
+{
+    padding-top: 40px;
+    z-index: 996;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* Responsive layout */
+
+@media screen and (min-width: 501px)
+{
+    #utility-bar
+    {
+        width: 0;
+        height: 100vh;
+    }
+
+    #wrapper.menuToggled > #utility-bar
+    {
+        width: 250px;
+    }
+
+}
+
+@media screen and (min-width: 1025px)
+{
+    #wrapper.menuToggled > #main-content
+    {
+        padding-left: 250px;
+    }
+}
+
+@media screen and (max-width: 1024px)
+{
+    body.inactive
+    {
+        overflow-y: hidden;
+    }
+
+    #wrapper.menuToggled > #overlay
+    {
+        opacity: 0.5;
+        background: #000000;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        position: fixed;
+        z-index: 997;
+    }
+}
+
+@media screen and (max-width: 500px)
+{
+
+    #utility-bar
+    {
+        width: 100%;
+        max-height: 0;
+    }
+
+    #wrapper.menuToggled > #utility-bar
+    {
+        max-height: 100%;
+    }
+
+}

@@ -1,0 +1,40 @@
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\bin\Debug\PSReport.exe.config
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\bin\Debug\PSReport.exe
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\bin\Debug\PSReport.pdb
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport.csprojResolveAssemblyReference.cache
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\MainWindow.g.cs
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\App.g.cs
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport_MarkupCompile.cache
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport_MarkupCompile.lref
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\MainWindow.baml
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport.g.resources
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport.Properties.Resources.resources
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport.csproj.GenerateResource.cache
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport.csproj.CoreCompileInputs.cache
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport.exe
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport.pdb
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\ServerDialog.g.cs
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\ServerDialog.baml
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\ScriptDialog.g.cs
+C:\Users\a672845\source\repos\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\ScriptDialog.baml
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\bin\Debug\PSReport.exe.config
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\bin\Debug\PSReport.exe
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\bin\Debug\PSReport.pdb
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport.csprojResolveAssemblyReference.cache
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\MainWindow.g.cs
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\ScriptDialog.g.cs
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\ServerDialog.g.cs
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\App.g.cs
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport_MarkupCompile.cache
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport_MarkupCompile.lref
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\MainWindow.baml
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\ScriptDialog.baml
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\ServerDialog.baml
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport.g.resources
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport.Properties.Resources.resources
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport.csproj.GenerateResource.cache
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport.csproj.CoreCompileInputs.cache
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport.exe
+C:\Users\a672845\Desktop\Scripts Repo\WORKSPACE\HTML\PSReporting\Backend\C#\Report Configurator 2.0\Report Configurator 2.0\obj\Debug\PSReport.pdb

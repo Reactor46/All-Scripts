@@ -1,0 +1,23 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20171228165957
+Username: ContosoCORP\jbattista.advisor
+RunAs User: ContosoCORP\jbattista.advisor
+Machine: LASPSHOST (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 9792
+PSVersion: 5.0.10586.117
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0.10586.117
+BuildVersion: 10.0.10586.117
+CLRVersion: 4.0.30319.36399
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Scripts\Repository\jbattista\Web\reports\Lockouts\SVC\\Svc_Transcripts\20171228_.Log
+** SETTING VARIABLES **
+** IMPORTING MODULES **
+**********************
+Windows PowerShell transcript end
+End time: 20171228170013
+**********************

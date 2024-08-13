@@ -1,0 +1,1049 @@
+************************************************************
+* Running SYDI-Wrapper v.0.2.3
+* SYDISERVER: C:\sydi-server-2.4\sydi-server.vbs
+* OUTPUTDIRECTORY: C:\sydi-server-2.4\Output\
+* LOGDIRECTORY: C:\sydi-server-2.4\Log_Files\
+* TIMEOUT: 600 seconds
+* Time of Scan: 11/21/2018 4:42:02 PM
+* Current Options: C:\sydi-server-2.4\sydi-server.vbs -wabefghipPqrsSu -racdklp -ew -d
+*   -t%Computer% -oC:\sydi-server-2.4\Output\%Computer%.doc -sh
+* Targeting computers from Active Directory
+* Using list from: DC=corp,DC=vegas,DC=com
+Ignoring disabled account: ACCTG4093
+Ignoring disabled account: ACHILLESDEV4
+Ignoring disabled account: CCTRAIN13LAPTOP
+Ignoring disabled account: CONF-DEAN
+Ignoring disabled account: DEV4130
+Ignoring disabled account: ENG-DC-THIN2
+Ignoring disabled account: JBLAKELY001
+Ignoring disabled account: QA_ANDROID_BASE
+Ignoring disabled account: QABASE09
+Ignoring disabled account: VEGAS4147LAPTOP
+Ignoring disabled account: VEGAS4174
+Ignoring disabled account: VEGAS4229LAPTOP
+Ignoring disabled account: VEGAS4269LAPTOP
+* Hosts Selected: 335
+************************************************************
+
+
+************************************************************
+* Testing connection and passing to SYDI
+*
+* Testing connection to 4279TIER1 (1/335)
+* Passing 4279TIER1 to SYDI-Server
+* Testing connection to ACCTG4084M (2/335)
+* Passing ACCTG4084M to SYDI-Server
+* Testing connection to ACCTG4085M (3/335)
+* Passing ACCTG4085M to SYDI-Server
+* Testing connection to ACCTG4092 (4/335)
+* Failed to connect to: ACCTG4092
+* Testing connection to ACCTG4094 (5/335)
+* Failed to connect to: ACCTG4094
+* Testing connection to ACCTG4105 (6/335)
+* Failed to connect to: ACCTG4105
+* Testing connection to ACDM4032 (7/335)
+* Failed to connect to: ACDM4032
+* Testing connection to ACDM4044 (8/335)
+* Passing ACDM4044 to SYDI-Server
+* Testing connection to ACDM4054M (9/335)
+* Failed to connect to: ACDM4054M
+* Testing connection to ACDM4056M (10/335)
+* Passing ACDM4056M to SYDI-Server
+* Testing connection to ACDM4059M (11/335)
+* Passing ACDM4059M to SYDI-Server
+* Testing connection to ACDM4060M (12/335)
+* Failed to connect to: ACDM4060M
+* Testing connection to ACDM4062M (13/335)
+* Failed to connect to: ACDM4062M
+* Testing connection to ACDM4168 (14/335)
+* Failed to connect to: ACDM4168
+* Testing connection to ACDM4176 (15/335)
+* Failed to connect to: ACDM4176
+* Testing connection to ACHILLESDEV (16/335)
+* Passing ACHILLESDEV to SYDI-Server
+* Testing connection to ACHILLESDEV2 (17/335)
+* Passing ACHILLESDEV2 to SYDI-Server
+* Testing connection to ACHILLESDEV3 (18/335)
+* Passing ACHILLESDEV3 to SYDI-Server
+* Testing connection to ACHILLESDEV5 (19/335)
+* Passing ACHILLESDEV5 to SYDI-Server
+* Testing connection to ACHILLESDEV6 (20/335)
+* Failed to connect to: ACHILLESDEV6
+* Testing connection to adityas-mbp-2 (21/335)
+* Failed to connect to: adityas-mbp-2
+* Testing connection to ashleys-imac (22/335)
+* Failed to connect to: ashleys-imac
+* Testing connection to BMINGHELLI (23/335)
+* Failed to connect to: BMINGHELLI
+* Testing connection to bs-mbp002 (24/335)
+* Failed to connect to: bs-mbp002
+* Testing connection to BSNYDER (25/335)
+* Failed to connect to: BSNYDER
+* Testing connection to CCTRAIN02LAPTOP (26/335)
+* Failed to connect to: CCTRAIN02LAPTOP
+* Testing connection to CCTRAIN03LAPTOP (27/335)
+* Failed to connect to: CCTRAIN03LAPTOP
+* Testing connection to CCTRAIN04LAPTOP (28/335)
+* Failed to connect to: CCTRAIN04LAPTOP
+* Testing connection to CCTRAIN05LAPTOP (29/335)
+* Failed to connect to: CCTRAIN05LAPTOP
+* Testing connection to CCTRAIN06LAPTOP (30/335)
+* Failed to connect to: CCTRAIN06LAPTOP
+* Testing connection to CCTRAIN07LAPTOP (31/335)
+* Failed to connect to: CCTRAIN07LAPTOP
+* Testing connection to CCTRAIN08LAPTOP (32/335)
+* Failed to connect to: CCTRAIN08LAPTOP
+* Testing connection to CCTRAIN09LAPTOP (33/335)
+* Failed to connect to: CCTRAIN09LAPTOP
+* Testing connection to CCTRAIN10LAPTOP (34/335)
+* Failed to connect to: CCTRAIN10LAPTOP
+* Testing connection to CCTRAIN11LAPTOP (35/335)
+* Failed to connect to: CCTRAIN11LAPTOP
+* Testing connection to CCTRAIN12LAPTOP (36/335)
+* Failed to connect to: CCTRAIN12LAPTOP
+* Testing connection to CDM4016M (37/335)
+* Failed to connect to: CDM4016M
+* Testing connection to CDM4017M (38/335)
+* Failed to connect to: CDM4017M
+* Testing connection to CDM4018M (39/335)
+* Failed to connect to: CDM4018M
+* Testing connection to CDM4022M (40/335)
+* Failed to connect to: CDM4022M
+* Testing connection to CDM4077M (41/335)
+* Failed to connect to: CDM4077M
+* Testing connection to CDM4298M (42/335)
+* Passing CDM4298M to SYDI-Server
+* Testing connection to CDM4299M (43/335)
+* Failed to connect to: CDM4299M
+* Testing connection to CHINATOWN (44/335)
+* Failed to connect to: CHINATOWN
+* Testing connection to CHINTON-LAPTOP (45/335)
+* Failed to connect to: CHINTON-LAPTOP
+* Testing connection to chriss-imac (46/335)
+* Failed to connect to: chriss-imac
+* Testing connection to CONF-JOEY (47/335)
+* Failed to connect to: CONF-JOEY
+* Testing connection to CONF-JOEY4028 (48/335)
+* Failed to connect to: CONF-JOEY4028
+* Testing connection to content4030mac (49/335)
+* Failed to connect to: content4030mac
+* Testing connection to content4039mac (50/335)
+* Failed to connect to: content4039mac
+* Testing connection to CSRIPOONPAK (51/335)
+* Failed to connect to: CSRIPOONPAK
+* Testing connection to CURLIN (52/335)
+* Failed to connect to: CURLIN
+* Testing connection to CURLIN1 (53/335)
+* Failed to connect to: CURLIN1
+* Testing connection to CWESTMORLAND (54/335)
+* Passing CWESTMORLAND to SYDI-Server
+* Testing connection to CWESTMORLAND2 (55/335)
+* Failed to connect to: CWESTMORLAND2
+* Testing connection to CYLTFS (56/335)
+* Failed to connect to: CYLTFS
+* Testing connection to darls-imac (57/335)
+* Failed to connect to: darls-imac
+* Testing connection to davids-imac (58/335)
+* Failed to connect to: davids-imac
+* Testing connection to DBA2149 (59/335)
+* Passing DBA2149 to SYDI-Server
+* Testing connection to DBA4008 (60/335)
+* Passing DBA4008 to SYDI-Server
+* Testing connection to DBA4009M (61/335)
+* Failed to connect to: DBA4009M
+* Testing connection to DBA4011M (62/335)
+* Failed to connect to: DBA4011M
+* Testing connection to DBA4014M (63/335)
+* Passing DBA4014M to SYDI-Server
+* Testing connection to DBA4193 (64/335)
+* Failed to connect to: DBA4193
+* Testing connection to DBA4242 (65/335)
+* Passing DBA4242 to SYDI-Server
+* Testing connection to DBRUMMER-LAPTOP (66/335)
+* Failed to connect to: DBRUMMER-LAPTOP
+* Testing connection to DCHOU (67/335)
+* Failed to connect to: DCHOU
+* Testing connection to DENGLAND (68/335)
+* Failed to connect to: DENGLAND
+* Testing connection to DESKTOP-FF2UA1M (69/335)
+* Failed to connect to: DESKTOP-FF2UA1M
+* Testing connection to DESKTOP-FJ9APR7 (70/335)
+* Failed to connect to: DESKTOP-FJ9APR7
+* Testing connection to DESKTOP-S1O5MQB (71/335)
+* Failed to connect to: DESKTOP-S1O5MQB
+* Testing connection to DEV2260 (72/335)
+* Failed to connect to: DEV2260
+* Testing connection to DEV2265 (73/335)
+* Failed to connect to: DEV2265
+* Testing connection to DEV4004 (74/335)
+* Passing DEV4004 to SYDI-Server
+* Testing connection to DEV4007M (75/335)
+* Passing DEV4007M to SYDI-Server
+* Testing connection to DEV4010M (76/335)
+* Failed to connect to: DEV4010M
+* Testing connection to DEV4015M (77/335)
+* Passing DEV4015M to SYDI-Server
+* Testing connection to DEV4035M (78/335)
+* Passing DEV4035M to SYDI-Server
+* Testing connection to DEV4040M (79/335)
+* Passing DEV4040M to SYDI-Server
+* Testing connection to dev4042mac (80/335)
+* Failed to connect to: dev4042mac
+* Testing connection to dev4043mac (81/335)
+* Failed to connect to: dev4043mac
+* Testing connection to DEV4092M (82/335)
+* Passing DEV4092M to SYDI-Server
+* Testing connection to DEV4127 (83/335)
+* Failed to connect to: DEV4127
+* Testing connection to DEV4270M (84/335)
+* Failed to connect to: DEV4270M
+* Testing connection to DEV4271M (85/335)
+* Failed to connect to: DEV4271M
+* Testing connection to DEV4273M (86/335)
+* Failed to connect to: DEV4273M
+* Testing connection to DEV4275 (87/335)
+* Passing DEV4275 to SYDI-Server
+* Testing connection to DEV4276M (88/335)
+* Failed to connect to: DEV4276M
+* Testing connection to DEV4277M (89/335)
+* Failed to connect to: DEV4277M
+* Testing connection to DEV4278M (90/335)
+* Failed to connect to: DEV4278M
+* Testing connection to DEV4279M (91/335)
+* Failed to connect to: DEV4279M
+* Testing connection to DEV4280M (92/335)
+* Passing DEV4280M to SYDI-Server
+* Testing connection to DEV4281M (93/335)
+* Failed to connect to: DEV4281M
+* Testing connection to DEV4282M (94/335)
+* Passing DEV4282M to SYDI-Server
+* Testing connection to DEV4283M (95/335)
+* Failed to connect to: DEV4283M
+* Testing connection to DEV4284M (96/335)
+* Failed to connect to: DEV4284M
+* Testing connection to DEV4285M (97/335)
+* Passing DEV4285M to SYDI-Server
+* Testing connection to DEV4286M (98/335)
+* Failed to connect to: DEV4286M
+* Testing connection to devmac4213 (99/335)
+* Failed to connect to: devmac4213
+* Testing connection to devmac4214 (100/335)
+* Failed to connect to: devmac4214
+* Testing connection to ENG4075M (101/335)
+* Failed to connect to: ENG4075M
+* Testing connection to ENG-DC-THIN1 (102/335)
+* Failed to connect to: ENG-DC-THIN1
+* Testing connection to ENG-DC-THIN3 (103/335)
+* Failed to connect to: ENG-DC-THIN3
+* Testing connection to ENTERPRISE (104/335)
+* Failed to connect to: ENTERPRISE
+* Testing connection to EXCHANGE-DAG01 (105/335)
+* Passing EXCHANGE-DAG01 to SYDI-Server
+* Testing connection to HDOLANCH (106/335)
+* Failed to connect to: HDOLANCH
+* Testing connection to HDOLANCH-TEMP (107/335)
+* Failed to connect to: HDOLANCH-TEMP
+* Testing connection to IS4026M (108/335)
+* Failed to connect to: IS4026M
+* Testing connection to JBARTLETTLAPTOP (109/335)
+* Failed to connect to: JBARTLETTLAPTOP
+* Testing connection to JBLAKELY2 (110/335)
+* Failed to connect to: JBLAKELY2
+* Testing connection to JFORD (111/335)
+* Failed to connect to: JFORD
+* Testing connection to JFORD-4047 (112/335)
+* Failed to connect to: JFORD-4047
+* Testing connection to JLOPEZ (113/335)
+* Failed to connect to: JLOPEZ
+* Testing connection to JMCCULLOUGH (114/335)
+* Failed to connect to: JMCCULLOUGH
+* Testing connection to JMCCULLOUGH2 (115/335)
+* Failed to connect to: JMCCULLOUGH2
+* Testing connection to johnb (116/335)
+* Failed to connect to: johnb
+* Testing connection to johns-imac (117/335)
+* Failed to connect to: johns-imac
+* Testing connection to JSAINDON-LAPTOP (118/335)
+* Failed to connect to: JSAINDON-LAPTOP
+* Testing connection to kristoffersimac (119/335)
+* Failed to connect to: kristoffersimac
+* Testing connection to LVL60CONSULT01 (120/335)
+* Passing LVL60CONSULT01 to SYDI-Server
+* Testing connection to LVL60CONSULT02 (121/335)
+* Passing LVL60CONSULT02 to SYDI-Server
+* Testing connection to LVL60CONSULT03 (122/335)
+* Passing LVL60CONSULT03 to SYDI-Server
+* Testing connection to macadmins-imac (123/335)
+* Failed to connect to: macadmins-imac
+* Testing connection to macs-mbp (124/335)
+* Failed to connect to: macs-mbp
+* Testing connection to MARILYN-PC (125/335)
+* Failed to connect to: MARILYN-PC
+* Testing connection to marketing4041mac (126/335)
+* Failed to connect to: marketing4041mac
+* Testing connection to markups-mbp (127/335)
+* Failed to connect to: markups-mbp
+* Testing connection to MCURTIS (128/335)
+* Failed to connect to: MCURTIS
+* Testing connection to MCURTIS2 (129/335)
+* Passing MCURTIS2 to SYDI-Server
+* Testing connection to MKTG4034M (130/335)
+* Failed to connect to: MKTG4034M
+* Testing connection to MKTG4055M (131/335)
+* Failed to connect to: MKTG4055M
+* Testing connection to MKTG4057M (132/335)
+* Passing MKTG4057M to SYDI-Server
+* Testing connection to MKTG4058M (133/335)
+* Failed to connect to: MKTG4058M
+* Testing connection to MKTG4061M (134/335)
+* Failed to connect to: MKTG4061M
+* Testing connection to MKTG4076 (135/335)
+* Failed to connect to: MKTG4076
+* Testing connection to MKTG4079 (136/335)
+* Failed to connect to: MKTG4079
+* Testing connection to MKTG4286 (137/335)
+* Failed to connect to: MKTG4286
+* Testing connection to peters-mbp (138/335)
+* Failed to connect to: peters-mbp
+* Testing connection to PMELLO2 (139/335)
+* Failed to connect to: PMELLO2
+* Testing connection to QA_ANDROID01 (140/335)
+* Failed to connect to: QA_ANDROID01
+* Testing connection to QA_ANDROID02 (141/335)
+* Failed to connect to: QA_ANDROID02
+* Testing connection to QA_AUTO1A (142/335)
+* Failed to connect to: QA_AUTO1A
+* Testing connection to QA_AUTO1B (143/335)
+* Failed to connect to: QA_AUTO1B
+* Testing connection to QA_AUTO2A (144/335)
+* Failed to connect to: QA_AUTO2A
+* Testing connection to QA_AUTO2B (145/335)
+* Failed to connect to: QA_AUTO2B
+* Testing connection to QA_AUTO3A (146/335)
+* Failed to connect to: QA_AUTO3A
+* Testing connection to QA_AUTO3B (147/335)
+* Failed to connect to: QA_AUTO3B
+* Testing connection to QA_AUTO4 (148/335)
+* Failed to connect to: QA_AUTO4
+* Testing connection to QA_AUTO5 (149/335)
+* Failed to connect to: QA_AUTO5
+* Testing connection to QA_AUTO6 (150/335)
+* Failed to connect to: QA_AUTO6
+* Testing connection to QA_AUTO7 (151/335)
+* Failed to connect to: QA_AUTO7
+* Testing connection to QA_AUTO8 (152/335)
+* Failed to connect to: QA_AUTO8
+* Testing connection to QA_AUTO9 (153/335)
+* Failed to connect to: QA_AUTO9
+* Testing connection to QA1 (154/335)
+* Failed to connect to: QA1
+* Testing connection to QA10 (155/335)
+* Failed to connect to: QA10
+* Testing connection to QA11 (156/335)
+* Failed to connect to: QA11
+* Testing connection to QA12 (157/335)
+* Failed to connect to: QA12
+* Testing connection to QA2266 (158/335)
+* Failed to connect to: QA2266
+* Testing connection to QA4019M (159/335)
+* Failed to connect to: QA4019M
+* Testing connection to QA4020M (160/335)
+* Failed to connect to: QA4020M
+* Testing connection to QA4021M (161/335)
+* Failed to connect to: QA4021M
+* Testing connection to QA4023M (162/335)
+* Failed to connect to: QA4023M
+* Testing connection to QA4024M (163/335)
+* Failed to connect to: QA4024M
+* Testing connection to QA4025M (164/335)
+* Failed to connect to: QA4025M
+* Testing connection to QA4027M (165/335)
+* Failed to connect to: QA4027M
+* Testing connection to QA4274M (166/335)
+* Passing QA4274M to SYDI-Server
+* Testing connection to QA5 (167/335)
+* Failed to connect to: QA5
+* Testing connection to QA6 (168/335)
+* Failed to connect to: QA6
+* Testing connection to QA7 (169/335)
+* Failed to connect to: QA7
+* Testing connection to QA8 (170/335)
+* Failed to connect to: QA8
+* Testing connection to QA9 (171/335)
+* Failed to connect to: QA9
+* Testing connection to QA-SELENIUM (172/335)
+* Failed to connect to: QA-SELENIUM
+* Testing connection to RNOTLEY (173/335)
+* Failed to connect to: RNOTLEY
+* Testing connection to RNOTLEY-LAPTOP (174/335)
+* Passing RNOTLEY-LAPTOP to SYDI-Server
+* Testing connection to RNOTLEY-SURFACE (175/335)
+* Failed to connect to: RNOTLEY-SURFACE
+* Testing connection to RTHOMPSON (176/335)
+* Failed to connect to: RTHOMPSON
+* Testing connection to SC-LAPTOP (177/335)
+* Failed to connect to: SC-LAPTOP
+* Testing connection to SCOLOSIMO (178/335)
+* Passing SCOLOSIMO to SYDI-Server
+* Testing connection to SEC4012M (179/335)
+* Failed to connect to: SEC4012M
+* Testing connection to SECENG7 (180/335)
+* Failed to connect to: SECENG7
+* Testing connection to SGERSH (181/335)
+* Failed to connect to: SGERSH
+* Testing connection to shaunimac (182/335)
+* Failed to connect to: shaunimac
+* Testing connection to STG-THEOAPP01 (183/335)
+* Passing STG-THEOAPP01 to SYDI-Server
+* Testing connection to STG-THEOAPP02 (184/335)
+* Passing STG-THEOAPP02 to SYDI-Server
+* Testing connection to T12147 (185/335)
+* Failed to connect to: T12147
+* Testing connection to t12157mac (186/335)
+* Failed to connect to: t12157mac
+* Testing connection to T14078 (187/335)
+* Passing T14078 to SYDI-Server
+* Testing connection to T14080 (188/335)
+* Passing T14080 to SYDI-Server
+* Testing connection to T14088M (189/335)
+* Failed to connect to: T14088M
+* Testing connection to T14193 (190/335)
+* Failed to connect to: T14193
+* Testing connection to TEST4102 (191/335)
+* Failed to connect to: TEST4102
+* Testing connection to TIER1-4279 (192/335)
+* Failed to connect to: TIER1-4279
+* Testing connection to TIER1-SURFACE (193/335)
+* Failed to connect to: TIER1-SURFACE
+* Testing connection to TITAN-DEV-APP01 (194/335)
+* Passing TITAN-DEV-APP01 to SYDI-Server
+* Testing connection to TITAN-DEV-APP02 (195/335)
+* Passing TITAN-DEV-APP02 to SYDI-Server
+* Testing connection to TITAN-DEV-DB (196/335)
+* Failed to connect to: TITAN-DEV-DB
+* Testing connection to TITAN-DEVDB-CLU (197/335)
+* Failed to connect to: TITAN-DEVDB-CLU
+* Testing connection to TIX-DEVDB (198/335)
+* Passing TIX-DEVDB to SYDI-Server
+* Testing connection to TIX-DEVDB-CLUS (199/335)
+* Passing TIX-DEVDB-CLUS to SYDI-Server
+* Testing connection to VDC-FAS01-CORP (200/335)
+* Failed to connect to: VDC-FAS01-CORP
+* Testing connection to VDC-FAS01-SV (201/335)
+* Failed to connect to: VDC-FAS01-SV
+* Testing connection to VDCFILER04 (202/335)
+* Failed to connect to: VDCFILER04
+* Testing connection to VDCLDGAP02 (203/335)
+* Passing VDCLDGAP02 to SYDI-Server
+* Testing connection to VDCLDGAP03 (204/335)
+* Passing VDCLDGAP03 to SYDI-Server
+* Testing connection to VDCLDGAP04 (205/335)
+* Passing VDCLDGAP04 to SYDI-Server
+* Testing connection to VDCLDRAP01 (206/335)
+* Passing VDCLDRAP01 to SYDI-Server
+* Testing connection to VDCMADDC01 (207/335)
+* Passing VDCMADDC01 to SYDI-Server
+* Testing connection to VDCNBUMS01 (208/335)
+* Passing VDCNBUMS01 to SYDI-Server
+* Testing connection to VDCNETAP01 (209/335)
+* Passing VDCNETAP01 to SYDI-Server
+* Testing connection to VDCNET-CLUS (210/335)
+* Passing VDCNET-CLUS to SYDI-Server
+* Testing connection to VDCNET-DHCP (211/335)
+* Passing VDCNET-DHCP to SYDI-Server
+* Testing connection to vdc-snap-rubrik (212/335)
+* Failed to connect to: vdc-snap-rubrik
+* Testing connection to VDC-T3620JB (213/335)
+* Passing VDC-T3620JB to SYDI-Server
+* Testing connection to VEGAS1844 (214/335)
+* Failed to connect to: VEGAS1844
+* Testing connection to VEGAS1925 (215/335)
+* Failed to connect to: VEGAS1925
+* Testing connection to VEGAS1959 (216/335)
+* Passing VEGAS1959 to SYDI-Server
+* Testing connection to VEGAS2096 (217/335)
+* Failed to connect to: VEGAS2096
+* Testing connection to VEGAS2147 (218/335)
+* Failed to connect to: VEGAS2147
+* Testing connection to VEGAS2148 (219/335)
+* Failed to connect to: VEGAS2148
+* Testing connection to VEGAS2162 (220/335)
+* Failed to connect to: VEGAS2162
+* Testing connection to VEGAS2167LAPTOP (221/335)
+* Failed to connect to: VEGAS2167LAPTOP
+* Testing connection to VEGAS2171 (222/335)
+* Failed to connect to: VEGAS2171
+* Testing connection to VEGAS2172 (223/335)
+* Failed to connect to: VEGAS2172
+* Testing connection to VEGAS2173 (224/335)
+* Failed to connect to: VEGAS2173
+* Testing connection to VEGAS2190 (225/335)
+* Passing VEGAS2190 to SYDI-Server
+* Testing connection to VEGAS2195 (226/335)
+* Passing VEGAS2195 to SYDI-Server
+* Testing connection to VEGAS2198 (227/335)
+* Failed to connect to: VEGAS2198
+* Testing connection to VEGAS2199 (228/335)
+* Failed to connect to: VEGAS2199
+* Testing connection to VEGAS2248 (229/335)
+* Failed to connect to: VEGAS2248
+* Testing connection to VEGAS2257 (230/335)
+* Failed to connect to: VEGAS2257
+* Testing connection to VEGAS2258 (231/335)
+* Failed to connect to: VEGAS2258
+* Testing connection to VEGAS2259 (232/335)
+* Failed to connect to: VEGAS2259
+* Testing connection to VEGAS2261 (233/335)
+* Failed to connect to: VEGAS2261
+* Testing connection to VEGAS2263 (234/335)
+* Failed to connect to: VEGAS2263
+* Testing connection to VEGAS2265 (235/335)
+* Failed to connect to: VEGAS2265
+* Testing connection to VEGAS2283 (236/335)
+* Failed to connect to: VEGAS2283
+* Testing connection to VEGAS2286 (237/335)
+* Failed to connect to: VEGAS2286
+* Testing connection to VEGAS2500 (238/335)
+* Failed to connect to: VEGAS2500
+* Testing connection to VEGAS4005M (239/335)
+* Failed to connect to: VEGAS4005M
+* Testing connection to VEGAS4006LAPTOP (240/335)
+* Failed to connect to: VEGAS4006LAPTOP
+* Testing connection to VEGAS4006M (241/335)
+* Failed to connect to: VEGAS4006M
+* Testing connection to VEGAS4035LAPTOP (242/335)
+* Failed to connect to: VEGAS4035LAPTOP
+* Testing connection to VEGAS4039 (243/335)
+* Failed to connect to: VEGAS4039
+* Testing connection to VEGAS4041 (244/335)
+* Passing VEGAS4041 to SYDI-Server
+* Testing connection to VEGAS4045-M (245/335)
+* Failed to connect to: VEGAS4045-M
+* Testing connection to VEGAS4046M (246/335)
+* Failed to connect to: VEGAS4046M
+* Testing connection to VEGAS4048M (247/335)
+* Failed to connect to: VEGAS4048M
+* Testing connection to VEGAS4049 (248/335)
+* Failed to connect to: VEGAS4049
+* Testing connection to VEGAS4052 (249/335)
+* Failed to connect to: VEGAS4052
+* Testing connection to VEGAS4053M (250/335)
+* Failed to connect to: VEGAS4053M
+* Testing connection to VEGAS4056 (251/335)
+* Passing VEGAS4056 to SYDI-Server
+* Testing connection to VEGAS4058 (252/335)
+* Passing VEGAS4058 to SYDI-Server
+* Testing connection to VEGAS4059 (253/335)
+* Failed to connect to: VEGAS4059
+* Testing connection to VEGAS4065LAPTOP (254/335)
+* Failed to connect to: VEGAS4065LAPTOP
+* Testing connection to VEGAS4069 (255/335)
+* Failed to connect to: VEGAS4069
+* Testing connection to VEGAS4078 (256/335)
+* Failed to connect to: VEGAS4078
+* Testing connection to VEGAS4079 (257/335)
+* Failed to connect to: VEGAS4079
+* Testing connection to VEGAS4087 (258/335)
+* Failed to connect to: VEGAS4087
+* Testing connection to VEGAS4089 (259/335)
+* Failed to connect to: VEGAS4089
+* Testing connection to VEGAS4097 (260/335)
+* Failed to connect to: VEGAS4097
+* Testing connection to VEGAS4100 (261/335)
+* Failed to connect to: VEGAS4100
+* Testing connection to VEGAS4110 (262/335)
+* Failed to connect to: VEGAS4110
+* Testing connection to VEGAS4116LAPTOP (263/335)
+* Failed to connect to: VEGAS4116LAPTOP
+* Testing connection to VEGAS4120 (264/335)
+* Failed to connect to: VEGAS4120
+* Testing connection to VEGAS4121 (265/335)
+* Failed to connect to: VEGAS4121
+* Testing connection to VEGAS4124 (266/335)
+* Failed to connect to: VEGAS4124
+* Testing connection to VEGAS4125 (267/335)
+* Failed to connect to: VEGAS4125
+* Testing connection to VEGAS4131 (268/335)
+* Failed to connect to: VEGAS4131
+* Testing connection to VEGAS4133 (269/335)
+* Failed to connect to: VEGAS4133
+* Testing connection to VEGAS4136 (270/335)
+* Failed to connect to: VEGAS4136
+* Testing connection to VEGAS4138 (271/335)
+* Failed to connect to: VEGAS4138
+* Testing connection to VEGAS4139 (272/335)
+* Failed to connect to: VEGAS4139
+* Testing connection to VEGAS4149 (273/335)
+* Failed to connect to: VEGAS4149
+* Testing connection to VEGAS4150LAPTOP (274/335)
+* Failed to connect to: VEGAS4150LAPTOP
+* Testing connection to VEGAS4157 (275/335)
+* Failed to connect to: VEGAS4157
+* Testing connection to VEGAS4160 (276/335)
+* Failed to connect to: VEGAS4160
+* Testing connection to VEGAS4169 (277/335)
+* Failed to connect to: VEGAS4169
+* Testing connection to VEGAS4170 (278/335)
+* Failed to connect to: VEGAS4170
+* Testing connection to VEGAS4173 (279/335)
+* Failed to connect to: VEGAS4173
+* Testing connection to VEGAS4181 (280/335)
+* Failed to connect to: VEGAS4181
+* Testing connection to VEGAS4192LAPTOP (281/335)
+* Failed to connect to: VEGAS4192LAPTOP
+* Testing connection to VEGAS4196 (282/335)
+* Failed to connect to: VEGAS4196
+* Testing connection to VEGAS4207 (283/335)
+* Passing VEGAS4207 to SYDI-Server
+* Testing connection to VEGAS4220 (284/335)
+* Failed to connect to: VEGAS4220
+* Testing connection to VEGAS4227M (285/335)
+* Failed to connect to: VEGAS4227M
+* Testing connection to VEGAS4241LAPTOP (286/335)
+* Failed to connect to: VEGAS4241LAPTOP
+* Testing connection to vegass-mbp (287/335)
+* Failed to connect to: vegass-mbp
+* Testing connection to VVCADCAP01 (288/335)
+* Passing VVCADCAP01 to SYDI-Server
+* Testing connection to VVCBIGDB01 (289/335)
+* Passing VVCBIGDB01 to SYDI-Server
+* Testing connection to VVCBIGDB02 (290/335)
+* Passing VVCBIGDB02 to SYDI-Server
+* Testing connection to VVCDEVWK01 (291/335)
+* Passing VVCDEVWK01 to SYDI-Server
+* Testing connection to VVCEPOAP01 (292/335)
+* Passing VVCEPOAP01 to SYDI-Server
+* Testing connection to VVCEXCMB01 (293/335)
+* Passing VVCEXCMB01 to SYDI-Server
+* Testing connection to VVCEXCMB02 (294/335)
+* Passing VVCEXCMB02 to SYDI-Server
+* Testing connection to VVCEXCWA01 (295/335)
+* Passing VVCEXCWA01 to SYDI-Server
+* Testing connection to VVCEXCWA02 (296/335)
+* Passing VVCEXCWA02 to SYDI-Server
+* Testing connection to VVCJCLAP01 (297/335)
+* Passing VVCJCLAP01 to SYDI-Server
+* Testing connection to VVCLDRAP02 (298/335)
+* Failed to connect to: VVCLDRAP02
+* Testing connection to VVCMADDC02 (299/335)
+* Passing VVCMADDC02 to SYDI-Server
+* Testing connection to VVCNETAP02 (300/335)
+* Passing VVCNETAP02 to SYDI-Server
+* Testing connection to VVCPRTAP01 (301/335)
+* Passing VVCPRTAP01 to SYDI-Server
+* Testing connection to VVCPWMAP01 (302/335)
+* Passing VVCPWMAP01 to SYDI-Server
+* Testing connection to VVCSITAP02 (303/335)
+* Passing VVCSITAP02 to SYDI-Server
+* Testing connection to VVCVCSAP02 (304/335)
+* Failed to connect to: VVCVCSAP02
+* Testing connection to VVCVCSAP03 (305/335)
+* Failed to connect to: VVCVCSAP03
+* Testing connection to VVCVCSAP04 (306/335)
+* Failed to connect to: VVCVCSAP04
+* Testing connection to VVDBHRAP01 (307/335)
+* Passing VVDBHRAP01 to SYDI-Server
+* Testing connection to VVDCICAP01 (308/335)
+* Passing VVDCICAP01 to SYDI-Server
+* Testing connection to VVDCICWB01 (309/335)
+* Passing VVDCICWB01 to SYDI-Server
+* Testing connection to VVDSQLDB01 (310/335)
+* Passing VVDSQLDB01 to SYDI-Server
+* Testing connection to VVDSQLDB02 (311/335)
+* Passing VVDSQLDB02 to SYDI-Server
+* Testing connection to VVDSQLDB03 (312/335)
+* Passing VVDSQLDB03 to SYDI-Server
+* Testing connection to VVDTTGDB01 (313/335)
+* Passing VVDTTGDB01 to SYDI-Server
+* Testing connection to VVDTTGDB02 (314/335)
+* Passing VVDTTGDB02 to SYDI-Server
+* Testing connection to VVDTWHAP01 (315/335)
+* Passing VVDTWHAP01 to SYDI-Server
+* Testing connection to VVDTWHAP02 (316/335)
+* Passing VVDTWHAP02 to SYDI-Server
+* Testing connection to VVDTWYAP01 (317/335)
+* Passing VVDTWYAP01 to SYDI-Server
+* Testing connection to VVDTWYAP02 (318/335)
+* Passing VVDTWYAP02 to SYDI-Server
+* Testing connection to VVNSQLDB01 (319/335)
+* Passing VVNSQLDB01 to SYDI-Server
+* Testing connection to VVNSQLDB02 (320/335)
+* Passing VVNSQLDB02 to SYDI-Server
+* Testing connection to VVSBHRAP01 (321/335)
+* Passing VVSBHRAP01 to SYDI-Server
+* Testing connection to VVSBHRAP02 (322/335)
+* Passing VVSBHRAP02 to SYDI-Server
+* Testing connection to VVSCLRAP02 (323/335)
+* Passing VVSCLRAP02 to SYDI-Server
+* Testing connection to VVSCLRDB01 (324/335)
+* Passing VVSCLRDB01 to SYDI-Server
+* Testing connection to VVSCLRDB02 (325/335)
+* Passing VVSCLRDB02 to SYDI-Server
+* Testing connection to VVSCLRPX01 (326/335)
+* Failed to connect to: VVSCLRPX01
+* Testing connection to VVSTHEAP01 (327/335)
+* Passing VVSTHEAP01 to SYDI-Server
+* Testing connection to VVSTHEDB03 (328/335)
+* Passing VVSTHEDB03 to SYDI-Server
+* Testing connection to VVSVDCDB01 (329/335)
+* Passing VVSVDCDB01 to SYDI-Server
+* Testing connection to VVSVDCDB02 (330/335)
+* Passing VVSVDCDB02 to SYDI-Server
+* Testing connection to VVSVDCDB03 (331/335)
+* Passing VVSVDCDB03 to SYDI-Server
+* Testing connection to VVTNPSAP02 (332/335)
+* Passing VVTNPSAP02 to SYDI-Server
+* Testing connection to VVTSQLDB01 (333/335)
+* Passing VVTSQLDB01 to SYDI-Server
+* Testing connection to VVTSQLDB02 (334/335)
+* Passing VVTSQLDB02 to SYDI-Server
+* Testing connection to VVTSQLDB03 (335/335)
+* Passing VVTSQLDB03 to SYDI-Server
+************************************************************
+
+
+************************************************************
+* Status
+*
+* ErrorNumber: 0
+* Description: Passed to SYDI-Server
+*    4279TIER1
+*    ACCTG4084M
+*    ACCTG4085M
+*    ACDM4044
+*    ACDM4056M
+*    ACDM4059M
+*    ACHILLESDEV
+*    ACHILLESDEV2
+*    ACHILLESDEV3
+*    ACHILLESDEV5
+*    CDM4298M
+*    CWESTMORLAND
+*    DBA2149
+*    DBA4008
+*    DBA4014M
+*    DBA4242
+*    DEV4004
+*    DEV4007M
+*    DEV4015M
+*    DEV4035M
+*    DEV4040M
+*    DEV4092M
+*    DEV4275
+*    DEV4280M
+*    DEV4282M
+*    DEV4285M
+*    EXCHANGE-DAG01
+*    LVL60CONSULT01
+*    LVL60CONSULT02
+*    LVL60CONSULT03
+*    MCURTIS2
+*    MKTG4057M
+*    QA4274M
+*    RNOTLEY-LAPTOP
+*    SCOLOSIMO
+*    STG-THEOAPP01
+*    STG-THEOAPP02
+*    T14078
+*    T14080
+*    TITAN-DEV-APP01
+*    TITAN-DEV-APP02
+*    TIX-DEVDB
+*    TIX-DEVDB-CLUS
+*    VDCLDGAP02
+*    VDCLDGAP03
+*    VDCLDGAP04
+*    VDCLDRAP01
+*    VDCMADDC01
+*    VDCNBUMS01
+*    VDCNETAP01
+*    VDCNET-CLUS
+*    VDCNET-DHCP
+*    VDC-T3620JB
+*    VEGAS1959
+*    VEGAS2190
+*    VEGAS2195
+*    VEGAS4041
+*    VEGAS4056
+*    VEGAS4058
+*    VEGAS4207
+*    VVCADCAP01
+*    VVCBIGDB01
+*    VVCBIGDB02
+*    VVCDEVWK01
+*    VVCEPOAP01
+*    VVCEXCMB01
+*    VVCEXCMB02
+*    VVCEXCWA01
+*    VVCEXCWA02
+*    VVCJCLAP01
+*    VVCMADDC02
+*    VVCNETAP02
+*    VVCPRTAP01
+*    VVCPWMAP01
+*    VVCSITAP02
+*    VVDBHRAP01
+*    VVDCICAP01
+*    VVDCICWB01
+*    VVDSQLDB01
+*    VVDSQLDB02
+*    VVDSQLDB03
+*    VVDTTGDB01
+*    VVDTTGDB02
+*    VVDTWHAP01
+*    VVDTWHAP02
+*    VVDTWYAP01
+*    VVDTWYAP02
+*    VVNSQLDB01
+*    VVNSQLDB02
+*    VVSBHRAP01
+*    VVSBHRAP02
+*    VVSCLRAP02
+*    VVSCLRDB01
+*    VVSCLRDB02
+*    VVSTHEAP01
+*    VVSTHEDB03
+*    VVSVDCDB01
+*    VVSVDCDB02
+*    VVSVDCDB03
+*    VVTNPSAP02
+*    VVTSQLDB01
+*    VVTSQLDB02
+*    VVTSQLDB03
+*
+* ErrorNumber: 462
+* Description: The remote server machine does not exist or is unavailable
+*    ACCTG4092
+*    ACCTG4094
+*    ACCTG4105
+*    ACDM4032
+*    ACDM4054M
+*    ACDM4060M
+*    ACDM4062M
+*    ACDM4168
+*    ACDM4176
+*    ACHILLESDEV6
+*    adityas-mbp-2
+*    ashleys-imac
+*    BMINGHELLI
+*    bs-mbp002
+*    BSNYDER
+*    CCTRAIN02LAPTOP
+*    CCTRAIN03LAPTOP
+*    CCTRAIN04LAPTOP
+*    CCTRAIN05LAPTOP
+*    CCTRAIN06LAPTOP
+*    CCTRAIN07LAPTOP
+*    CCTRAIN08LAPTOP
+*    CCTRAIN09LAPTOP
+*    CCTRAIN10LAPTOP
+*    CCTRAIN11LAPTOP
+*    CCTRAIN12LAPTOP
+*    CDM4016M
+*    CDM4017M
+*    CDM4018M
+*    CDM4022M
+*    CDM4077M
+*    CDM4299M
+*    CHINATOWN
+*    CHINTON-LAPTOP
+*    chriss-imac
+*    CONF-JOEY
+*    CONF-JOEY4028
+*    content4030mac
+*    content4039mac
+*    CSRIPOONPAK
+*    CURLIN
+*    CURLIN1
+*    CWESTMORLAND2
+*    CYLTFS
+*    darls-imac
+*    davids-imac
+*    DBA4009M
+*    DBA4011M
+*    DBA4193
+*    DBRUMMER-LAPTOP
+*    DCHOU
+*    DENGLAND
+*    DESKTOP-FF2UA1M
+*    DESKTOP-FJ9APR7
+*    DESKTOP-S1O5MQB
+*    DEV2260
+*    DEV2265
+*    DEV4010M
+*    dev4042mac
+*    dev4043mac
+*    DEV4127
+*    DEV4270M
+*    DEV4271M
+*    DEV4273M
+*    DEV4276M
+*    DEV4277M
+*    DEV4278M
+*    DEV4279M
+*    DEV4281M
+*    DEV4283M
+*    DEV4284M
+*    DEV4286M
+*    devmac4213
+*    devmac4214
+*    ENG4075M
+*    ENG-DC-THIN1
+*    ENG-DC-THIN3
+*    ENTERPRISE
+*    HDOLANCH
+*    HDOLANCH-TEMP
+*    IS4026M
+*    JBARTLETTLAPTOP
+*    JBLAKELY2
+*    JFORD
+*    JFORD-4047
+*    JLOPEZ
+*    JMCCULLOUGH
+*    JMCCULLOUGH2
+*    johnb
+*    johns-imac
+*    JSAINDON-LAPTOP
+*    kristoffersimac
+*    macadmins-imac
+*    macs-mbp
+*    MARILYN-PC
+*    marketing4041mac
+*    markups-mbp
+*    MCURTIS
+*    MKTG4034M
+*    MKTG4055M
+*    MKTG4058M
+*    MKTG4061M
+*    MKTG4076
+*    MKTG4079
+*    MKTG4286
+*    peters-mbp
+*    PMELLO2
+*    QA_ANDROID01
+*    QA_ANDROID02
+*    QA_AUTO1A
+*    QA_AUTO1B
+*    QA_AUTO2A
+*    QA_AUTO2B
+*    QA_AUTO3A
+*    QA_AUTO3B
+*    QA_AUTO4
+*    QA_AUTO5
+*    QA_AUTO6
+*    QA_AUTO7
+*    QA_AUTO8
+*    QA_AUTO9
+*    QA1
+*    QA10
+*    QA11
+*    QA12
+*    QA2266
+*    QA4019M
+*    QA4020M
+*    QA4021M
+*    QA4023M
+*    QA4024M
+*    QA4025M
+*    QA4027M
+*    QA5
+*    QA6
+*    QA7
+*    QA8
+*    QA9
+*    QA-SELENIUM
+*    RNOTLEY
+*    RNOTLEY-SURFACE
+*    RTHOMPSON
+*    SC-LAPTOP
+*    SEC4012M
+*    SECENG7
+*    SGERSH
+*    shaunimac
+*    T12147
+*    t12157mac
+*    T14088M
+*    T14193
+*    TEST4102
+*    TIER1-4279
+*    TIER1-SURFACE
+*    TITAN-DEV-DB
+*    TITAN-DEVDB-CLU
+*    VDC-FAS01-CORP
+*    VDC-FAS01-SV
+*    VDCFILER04
+*    vdc-snap-rubrik
+*    VEGAS1844
+*    VEGAS1925
+*    VEGAS2096
+*    VEGAS2147
+*    VEGAS2148
+*    VEGAS2162
+*    VEGAS2167LAPTOP
+*    VEGAS2171
+*    VEGAS2172
+*    VEGAS2173
+*    VEGAS2198
+*    VEGAS2199
+*    VEGAS2248
+*    VEGAS2257
+*    VEGAS2258
+*    VEGAS2259
+*    VEGAS2261
+*    VEGAS2263
+*    VEGAS2265
+*    VEGAS2283
+*    VEGAS2286
+*    VEGAS2500
+*    VEGAS4005M
+*    VEGAS4006LAPTOP
+*    VEGAS4006M
+*    VEGAS4035LAPTOP
+*    VEGAS4039
+*    VEGAS4045-M
+*    VEGAS4046M
+*    VEGAS4048M
+*    VEGAS4049
+*    VEGAS4052
+*    VEGAS4053M
+*    VEGAS4059
+*    VEGAS4065LAPTOP
+*    VEGAS4069
+*    VEGAS4078
+*    VEGAS4079
+*    VEGAS4087
+*    VEGAS4089
+*    VEGAS4097
+*    VEGAS4100
+*    VEGAS4110
+*    VEGAS4116LAPTOP
+*    VEGAS4120
+*    VEGAS4121
+*    VEGAS4124
+*    VEGAS4125
+*    VEGAS4131
+*    VEGAS4133
+*    VEGAS4136
+*    VEGAS4138
+*    VEGAS4139
+*    VEGAS4149
+*    VEGAS4150LAPTOP
+*    VEGAS4157
+*    VEGAS4160
+*    VEGAS4169
+*    VEGAS4170
+*    VEGAS4173
+*    VEGAS4181
+*    VEGAS4192LAPTOP
+*    VEGAS4196
+*    VEGAS4220
+*    VEGAS4227M
+*    VEGAS4241LAPTOP
+*    vegass-mbp
+*    VVCLDRAP02
+*    VVCVCSAP02
+*    VVCVCSAP03
+*    VVCVCSAP04
+*    VVSCLRPX01
+*
+************************************************************

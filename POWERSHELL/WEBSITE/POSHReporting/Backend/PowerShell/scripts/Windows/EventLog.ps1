@@ -1,0 +1,1 @@
+$ComputerName | Get-EventLogEntries -LogName System, Application -EntryType Error, Warning -Newest 20 | Select "Server Name", "Log Name", Level, Date, Source, "Event ID", "Message" 

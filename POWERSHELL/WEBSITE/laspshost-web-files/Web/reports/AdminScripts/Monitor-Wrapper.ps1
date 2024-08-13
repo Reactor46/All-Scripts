@@ -1,0 +1,1 @@
+﻿C:\Scripts\Repository\jbattista\Web\reports\AdminScripts\Monitor-ADGroupMemberShip.ps1 -Group "Domain Admins","Enterprise Admins","DevelopersAdvisors" -Emailfrom "AD-Group-Monitor@creditone.com" -Emailto "john.battista@creditone.com" -Emailserver "mailgateway.Contoso.corp"
