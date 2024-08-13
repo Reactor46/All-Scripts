@@ -1,2 +1,0 @@
-adfind -gc -b "" -binenc -f " msExchMailboxGUID={{GUID:de5331c9-2eec-4763-96b5-1e68c89e3aaf}}" -dn
-

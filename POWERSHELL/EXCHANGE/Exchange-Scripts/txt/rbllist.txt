@@ -1,5 +1,0 @@
-cbl.abuseat.org
-whois.rfc-ignorant.org
-will-spam-for-food.eu.org
-wingate.opm.blitzed.org 
-zombie.dnsbl.sorbs.net

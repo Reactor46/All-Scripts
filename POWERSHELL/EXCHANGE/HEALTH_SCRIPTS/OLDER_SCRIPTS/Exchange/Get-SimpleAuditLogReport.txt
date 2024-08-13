@@ -1,2 +1,0 @@
-http://blogs.technet.com/b/exchange/archive/2015/06/15/parsing-the-admin-audit-logs-with-powershell.aspx
-search-adminauditlog | Get-simpleAuditLog

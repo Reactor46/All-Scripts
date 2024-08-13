@@ -1,3 +1,0 @@
-#TYPE System.Management.Automation.PSCustomObject
-"Cost","ADCost","ExchangeCost","MaxMessageSize","Name","Site"
-"100","100",,"Unlimited","585Pilot_Phoenix","    "

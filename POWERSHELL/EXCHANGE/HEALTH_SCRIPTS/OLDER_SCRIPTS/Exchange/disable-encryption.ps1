@@ -1,1 +1,0 @@
-Set-RpcClientAccess –Server <CAS server> –EncryptionRequired $false

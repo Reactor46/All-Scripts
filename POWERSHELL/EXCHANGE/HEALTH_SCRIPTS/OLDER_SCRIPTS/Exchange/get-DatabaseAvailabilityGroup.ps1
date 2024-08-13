@@ -1,1 +1,0 @@
-Get-DatabaseAvailabilityGroup DMACC-DAG-1 -Status | Format-List PrimaryActiveManager

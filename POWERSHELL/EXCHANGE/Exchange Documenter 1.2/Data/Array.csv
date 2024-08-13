@@ -1,3 +1,0 @@
-#TYPE System.Management.Automation.PSCustomObject
-"FQDN","Members","SiteName","Identity"
-"monsoon.creditone.com","LASEXCAS01 LASEXCAS02 LASEXDB01 LASEXDB02","LasVegas","monsoon"

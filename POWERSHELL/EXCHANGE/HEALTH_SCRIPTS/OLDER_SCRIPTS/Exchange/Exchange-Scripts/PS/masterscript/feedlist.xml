@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<config>
-   <rssfeed
-	feedurl="http://blog/feeds/atom.xml"
-	pfurl="http://servername/public/rssFeeds/blog" />
-   <rssfeed
-	feedurl="http://blogs.technet.com/exchange/atom.aspx"
-	pfurl="http://servername/public/rssFeeds/EHLO" />
-</config>

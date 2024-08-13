@@ -1,1 +1,0 @@
-Get-MailboxDatabase Faculty_06 -Status | FL AvailableNewMailboxSpace

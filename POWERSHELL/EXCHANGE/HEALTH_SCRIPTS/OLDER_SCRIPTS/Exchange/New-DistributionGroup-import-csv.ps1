@@ -1,2 +1,0 @@
-new-distributiongroup -alias Scholarship-Notice -name "Scholarship Notice" -type distribution -OrganizationalUnit "campus.dmacc.edu/Users" -SamAccountName "Scholarship-Notice"
-import-csv P:\scripts\powershell\dl-add.csv | foreach {add-distributiongroupmember Scholarship-Notice -member "DMACC\$($_.EMAIL)"}

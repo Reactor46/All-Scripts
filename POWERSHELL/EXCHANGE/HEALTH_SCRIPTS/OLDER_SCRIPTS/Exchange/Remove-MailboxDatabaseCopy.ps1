@@ -1,1 +1,0 @@
-Remove-MailboxDatabaseCopy -Identity DB1\EXMBX3 -Confirm:$False

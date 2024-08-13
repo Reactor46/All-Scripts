@@ -1,5 +1,0 @@
-#TYPE System.Management.Automation.PSCustomObject
-"Server","AddressLists","IsDefault","PublicFolderDistributionEnabled","WebDistributionEnabled","Name"
-"LASEXDB01","\Default Global Address List","False","False","True","LASEXDB01 to LASEXCAS01"
-"LASEXDB02","\Default Global Address List","False","False","True","LASEXDB02 to LASEXCAS02"
-,"\Default Global Address List","True","False","True","LASEXDB01 to LASEXCAS01 (Ex2013)"

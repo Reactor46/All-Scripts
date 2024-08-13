@@ -1,1 +1,0 @@
-New-DistributionGroup -Name "Urban Students Distribution Group" -OrganizationalUnit "campus.dmacc.edu/Campuses/Distribution Groups" -Alias "UrbanStudentsDG" -SamAccountName "UrbanStudentsDG" -Type "distribution"

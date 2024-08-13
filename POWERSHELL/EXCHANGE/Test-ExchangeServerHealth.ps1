@@ -194,10 +194,10 @@ $logfile = "$myDir\exchangeserverhealth.log"
 #...................................
 
 $smtpsettings = @{
-    To =  "administrator@exchangeserverpro.net"
-    From = "exchangeserver@exchangeserverpro.net"
+    To =  "john.battista@creditone.com"
+    From = "exchangeserver@creditone.com"
     Subject = "$reportemailsubject - $now"
-    SmtpServer = "smtp.exchangeserverpro.net"
+    SmtpServer = "mailgateway.Contoso.corp"
     }
 
 
@@ -532,7 +532,7 @@ if (!(Get-PSSnapin | Where-Object {$_.Name -eq "Microsoft.Exchange.Management.Po
     if ($Log) {Write-Logfile $initstring1}
     try
     {
-        Add-PSSnapin Microsoft.Exchange.Management.PowerShell.E2010 -ErrorAction STOP
+        Add-PSSnapin Microsoft.Exchange.Management.PowerShell.E2010 -ErrorAction SilentlyContinue
     }
     catch
     {
