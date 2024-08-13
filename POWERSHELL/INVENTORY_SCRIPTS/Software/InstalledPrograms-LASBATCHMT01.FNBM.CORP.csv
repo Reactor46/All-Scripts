@@ -1,0 +1,21 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"BMC Track-It! 11.3 Agent";"LASBATCHMT01.FNBM.CORP";"BMC Software";;"11.3.0.355";;;;
+"IBM WebSphere MQ (fix pack 7.5.0.4 files)";"LASBATCHMT01.FNBM.CORP";"IBM";"Thu Feb 22 13:21:02 PST 2018";"7.5.0.4";;;;
+"IBM WebSphere MQ (Installation1)";"LASBATCHMT01.FNBM.CORP";"IBM";"20180222";"7.5.0.1";;;;
+"Infognition ScreenPressor v2.1 (Remove Only)";"LASBATCHMT01.FNBM.CORP";;;;;;;
+"Microsoft Silverlight";"LASBATCHMT01.FNBM.CORP";"Microsoft Corporation";"20170429";"5.1.50906.0";;;;
+"Microsoft Visual C++ 2005 Redistributable (x64)";"LASBATCHMT01.FNBM.CORP";"Microsoft Corporation";"20150406";"8.0.56336";;;;
+"Microsoft Visual C++ 2005 Redistributable (x64)";"LASBATCHMT01.FNBM.CORP";"Microsoft Corporation";"20150410";"8.0.61000";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161";"LASBATCHMT01.FNBM.CORP";"Microsoft Corporation";"20150401";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148";"LASBATCHMT01.FNBM.CORP";"Microsoft Corporation";"20150401";"9.0.30729.4148";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161";"LASBATCHMT01.FNBM.CORP";"Microsoft Corporation";"20150406";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219";"LASBATCHMT01.FNBM.CORP";"Microsoft Corporation";"20150425";"10.0.40219";;;;
+"Microsoft Visual C++ 2010  x86 Redistributable - 10.0.30319";"LASBATCHMT01.FNBM.CORP";"Microsoft Corporation";"20170826";"10.0.30319";;;;
+"Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.30501";"LASBATCHMT01.FNBM.CORP";"Microsoft Corporation";;"12.0.30501.0";;;;
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501";"LASBATCHMT01.FNBM.CORP";"Microsoft Corporation";;"12.0.30501.0";;;;
+"Microsoft WSE 3.0";"LASBATCHMT01.FNBM.CORP";"Microsoft Corporation";"20171011";"3.0.5305.0";;;;
+"NCache";"LASBATCHMT01.FNBM.CORP";"Alachisoft";"20170826";"4.6.0.0";;;;
+"Netwitness SFTP Agent";"LASBATCHMT01.FNBM.CORP";"RSA Security Inc";"20180324";"4.1.0";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"LASBATCHMT01.FNBM.CORP";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"Symantec Endpoint Protection";"LASBATCHMT01.FNBM.CORP";"Symantec Corporation";"20180221";"14.0.3876.1100";;;;"0"
+"VMware Tools";"LASBATCHMT01.FNBM.CORP";"VMware, Inc.";"20180222";"10.1.7.5541682";;;;

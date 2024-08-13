@@ -1,0 +1,191 @@
+*********************************************
+Credit One Bank Applications Services Checker
+*********************************************
+
+Checking services...
+
+There are 0 services RUNNING on LASAUTH01.creditoneapp.biz.
+The following services are NOT RUNNING on LASAUTH01.creditoneapp.biz: 
+>>>>>>>>>> W3SVC <<<<<<<<<<
+The following services have status UNKNOWN on LASAUTH01.creditoneapp.biz: 
+
+There are 0 services RUNNING on LASAUTH02.creditoneapp.biz.
+The following services are NOT RUNNING on LASAUTH02.creditoneapp.biz: 
+>>>>>>>>>> W3SVC <<<<<<<<<<
+The following services have status UNKNOWN on LASAUTH02.creditoneapp.biz: 
+
+There are 0 services RUNNING on LASSVC01.
+The following services are NOT RUNNING on LASSVC01: 
+>>>>>>>>>> CollectionsAgentTimeService <<<<<<<<<<
+>>>>>>>>>> CreditOne.LogParser.Service <<<<<<<<<<
+>>>>>>>>>> CreditOneBatchLetterRequestService <<<<<<<<<<
+>>>>>>>>>> ContosoFinCenService <<<<<<<<<<
+>>>>>>>>>> ContosoQueueProcessorService <<<<<<<<<<
+>>>>>>>>>> CentralizedCacheService <<<<<<<<<<
+>>>>>>>>>> ContosoCheckRequestService <<<<<<<<<<
+>>>>>>>>>> ContosoLPSService <<<<<<<<<<
+The following services have status UNKNOWN on LASSVC01: 
+
+There are 0 services RUNNING on LASCSMT01.
+The following services are NOT RUNNING on LASCSMT01: 
+>>>>>>>>>> ContosoDataLayerService <<<<<<<<<<
+The following services have status UNKNOWN on LASCSMT01: 
+
+There are 0 services RUNNING on LASCASMT01.
+The following services are NOT RUNNING on LASCASMT01: 
+>>>>>>>>>> ContosoDataLayerService <<<<<<<<<<
+>>>>>>>>>> W3SVC <<<<<<<<<<
+The following services have status UNKNOWN on LASCASMT01: 
+
+There are 0 services RUNNING on LASCASMT02.
+The following services are NOT RUNNING on LASCASMT02: 
+>>>>>>>>>> ContosoDataLayerService <<<<<<<<<<
+>>>>>>>>>> W3SVC <<<<<<<<<<
+The following services have status UNKNOWN on LASCASMT02: 
+
+There are 0 services RUNNING on LASCASMT03.
+The following services are NOT RUNNING on LASCASMT03: 
+>>>>>>>>>> ContosoDataLayerService <<<<<<<<<<
+>>>>>>>>>> W3SVC <<<<<<<<<<
+The following services have status UNKNOWN on LASCASMT03: 
+
+There are 0 services RUNNING on LASCOLL01.
+The following services are NOT RUNNING on LASCOLL01: 
+>>>>>>>>>> ContosoDataLayerService <<<<<<<<<<
+>>>>>>>>>> W3SVC <<<<<<<<<<
+The following services have status UNKNOWN on LASCOLL01: 
+
+There are 0 services RUNNING on LASCOLL02.
+The following services are NOT RUNNING on LASCOLL02: 
+>>>>>>>>>> ContosoDataLayerService <<<<<<<<<<
+>>>>>>>>>> W3SVC <<<<<<<<<<
+The following services have status UNKNOWN on LASCOLL02: 
+
+There are 0 services RUNNING on LASCOLL03.
+The following services are NOT RUNNING on LASCOLL03: 
+>>>>>>>>>> ContosoDataLayerService <<<<<<<<<<
+>>>>>>>>>> W3SVC <<<<<<<<<<
+The following services have status UNKNOWN on LASCOLL03: 
+
+There are 0 services RUNNING on LASCOLL04.
+The following services are NOT RUNNING on LASCOLL04: 
+>>>>>>>>>> ContosoDataLayerService <<<<<<<<<<
+>>>>>>>>>> W3SVC <<<<<<<<<<
+The following services have status UNKNOWN on LASCOLL04: 
+
+There are 0 services RUNNING on LASCOLL05.
+The following services are NOT RUNNING on LASCOLL05: 
+>>>>>>>>>> ContosoDataLayerService <<<<<<<<<<
+>>>>>>>>>> W3SVC <<<<<<<<<<
+The following services have status UNKNOWN on LASCOLL05: 
+
+There are 0 services RUNNING on LASCOLL06.
+The following services are NOT RUNNING on LASCOLL06: 
+>>>>>>>>>> ContosoDataLayerService <<<<<<<<<<
+>>>>>>>>>> W3SVC <<<<<<<<<<
+The following services have status UNKNOWN on LASCOLL06: 
+
+There are 0 services RUNNING on LASMT01.
+The following services are NOT RUNNING on LASMT01: 
+>>>>>>>>>> ContosoDataLayerService <<<<<<<<<<
+The following services have status UNKNOWN on LASMT01: 
+
+There are 0 services RUNNING on LASMT02.
+The following services are NOT RUNNING on LASMT02: 
+>>>>>>>>>> ContosoDataLayerService <<<<<<<<<<
+The following services have status UNKNOWN on LASMT02: 
+
+There are 0 services RUNNING on LASMT03.
+The following services are NOT RUNNING on LASMT03: 
+>>>>>>>>>> ContosoDataLayerService <<<<<<<<<<
+The following services have status UNKNOWN on LASMT03: 
+
+There are 0 services RUNNING on LASMT04.
+The following services are NOT RUNNING on LASMT04: 
+>>>>>>>>>> ContosoDataLayerService <<<<<<<<<<
+The following services have status UNKNOWN on LASMT04: 
+
+There are 0 services RUNNING on LASMT05.
+The following services are NOT RUNNING on LASMT05: 
+>>>>>>>>>> ContosoDataLayerService <<<<<<<<<<
+The following services have status UNKNOWN on LASMT05: 
+
+There are 0 services RUNNING on LASMERIT01.
+The following services are NOT RUNNING on LASMERIT01: 
+>>>>>>>>>> CreditEngine <<<<<<<<<<
+The following services have status UNKNOWN on LASMERIT01: 
+
+There are 0 services RUNNING on LASCAPSMT01.
+The following services are NOT RUNNING on LASCAPSMT01: 
+>>>>>>>>>> CreditPullService <<<<<<<<<<
+>>>>>>>>>> ContosoIPFraudCheckService <<<<<<<<<<
+>>>>>>>>>> BoardingService <<<<<<<<<<
+>>>>>>>>>> ContosoIdentityCheckService <<<<<<<<<<
+>>>>>>>>>> ContosoApplicationProcessingService <<<<<<<<<<
+>>>>>>>>>> NetConnectTransactionsSavingService <<<<<<<<<<
+>>>>>>>>>> ContosoDebitCardHolderFileWatcher <<<<<<<<<<
+>>>>>>>>>> FromPPSExchangeFileWatcherService <<<<<<<<<<
+>>>>>>>>>> ContosoApplicationImportService <<<<<<<<<<
+>>>>>>>>>> ContosoApplicationParsingService <<<<<<<<<<
+The following services have status UNKNOWN on LASCAPSMT01: 
+
+There are 0 services RUNNING on LASCAPS03.
+The following services are NOT RUNNING on LASCAPS03: 
+>>>>>>>>>> W3SVC <<<<<<<<<<
+The following services have status UNKNOWN on LASCAPS03: 
+
+There are 0 services RUNNING on LASCAPS04.
+The following services are NOT RUNNING on LASCAPS04: 
+>>>>>>>>>> W3SVC <<<<<<<<<<
+The following services have status UNKNOWN on LASCAPS04: 
+
+There are 0 services RUNNING on LASCAS03.
+The following services are NOT RUNNING on LASCAS03: 
+>>>>>>>>>> W3SVC <<<<<<<<<<
+The following services have status UNKNOWN on LASCAS03: 
+
+There are 0 services RUNNING on LASCAS04.
+The following services are NOT RUNNING on LASCAS04: 
+>>>>>>>>>> W3SVC <<<<<<<<<<
+The following services have status UNKNOWN on LASCAS04: 
+
+There are 0 services RUNNING on LASCAS05.
+The following services are NOT RUNNING on LASCAS05: 
+>>>>>>>>>> W3SVC <<<<<<<<<<
+The following services have status UNKNOWN on LASCAS05: 
+
+There are 0 services RUNNING on LASCHAT01.
+The following services are NOT RUNNING on LASCHAT01: 
+>>>>>>>>>> WhosOnGateway <<<<<<<<<<
+>>>>>>>>>> WhosOnQuery <<<<<<<<<<
+>>>>>>>>>> WhosOnReports <<<<<<<<<<
+>>>>>>>>>> WhosOn <<<<<<<<<<
+>>>>>>>>>> WhosOnServiceMonitor <<<<<<<<<<
+The following services have status UNKNOWN on LASCHAT01: 
+
+There are 0 services RUNNING on LASCHAT02.
+The following services are NOT RUNNING on LASCHAT02: 
+>>>>>>>>>> WhosOnGateway <<<<<<<<<<
+>>>>>>>>>> WhosOnQuery <<<<<<<<<<
+>>>>>>>>>> WhosOnReports <<<<<<<<<<
+>>>>>>>>>> WhosOn <<<<<<<<<<
+>>>>>>>>>> WhosOnServiceMonitor <<<<<<<<<<
+The following services have status UNKNOWN on LASCHAT02: 
+
+There are 2 services RUNNING on LASPROCDB01.
+The following services are NOT RUNNING on LASPROCDB01: 
+The following services have status UNKNOWN on LASPROCDB01: 
+
+There are 5 services RUNNING on LASPROCAPP01.
+The following services are NOT RUNNING on LASPROCAPP01: 
+The following services have status UNKNOWN on LASPROCAPP01: 
+
+There are 1 services RUNNING on LASPROCAPP02.
+The following services are NOT RUNNING on LASPROCAPP02: 
+The following services have status UNKNOWN on LASPROCAPP02: 
+
+There are 24 services RUNNING on LASRFAX01.
+The following services are NOT RUNNING on LASRFAX01: 
+The following services have status UNKNOWN on LASRFAX01: 
+
+Press any key to continue . . . 

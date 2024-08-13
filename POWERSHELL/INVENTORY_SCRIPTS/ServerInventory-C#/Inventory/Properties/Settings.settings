@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Inventory.Server.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="InventoryServerURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://+:8080/</Value>
+    </Setting>
+    <Setting Name="InventoryDb" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=SqlServer\mssqlServer02;Initial Catalog=Inventory;User ID=InventoryServer;Password=PassWord12*;MultipleActiveResultSets=true</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

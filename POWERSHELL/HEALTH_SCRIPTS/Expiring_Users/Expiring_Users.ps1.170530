@@ -1,0 +1,29 @@
+﻿cls
+$csv="S:\IT\SupportServices\Desktop Support\PS\Expiring_Users\ExpiringAccounts.csv"
+$ErrorActionPreference = "SilentlyContinue" 
+Clear-Content $csv -Force
+$counter= 0
+$list=Search-ADAccount -AccountExpiring -TimeSpan "30" -Server "Contoso.corp" -SearchBase "DC=Contoso,DC=corp"  | select name,accountexpirationdate,lastlogondate,samaccountname,emailaddress,distinguishedname,description
+$email = Get-ADUser -Filter {samaccountname -like "$sam"} -Server "Contoso.corp" -SearchBase "DC=Contoso,DC=corp" -Properties emailaddress | select -property emailaddress
+foreach ($line in $list)
+{
+Write-Host 
+$sam = $line.samaccountname
+$email = Get-ADUser -Filter {samaccountname -like $sam} -Server "Contoso.corp" -SearchBase "DC=Contoso,DC=corp" -Properties emailaddress | select -property emailaddress
+$arr = @()
+$myobj = "" | Select "name","samaccountname","accountexpirationdate","emailaddress","lastlogondate","distinguishedname","description"
+$myobj.name = $line.name
+$myobj.samaccountname = $line.samaccountname
+$myobj.accountexpirationdate = $line.accountexpirationdate
+$myobj.emailaddress = $email.emailaddress
+$myobj.lastlogondate = $line.lastlogondate
+$myobj.distinguishedname = $line.distinguishedname
+$myobj.description = $line.description
+$arr += $myobj
+$arr | Export-Csv -Append $csv
+$counter++
+}
+Write-Host "Found $counter users"
+Write-Host
+Write-Host "Saved to $csv"
+Write-Host

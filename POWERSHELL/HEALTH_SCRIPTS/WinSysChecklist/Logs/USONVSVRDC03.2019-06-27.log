@@ -1,0 +1,945 @@
+
+Directory Server Diagnosis
+
+Performing initial setup:
+   * Connecting to directory service on server USONVSVRDC03.
+   * Identified AD Forest. 
+   Collecting AD specific global data 
+   * Collecting site info.
+   Calling ldap_search_init_page(hld,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL,LDAP_SCOPE_SUBTREE,(objectCategory=ntDSSiteSettings),.......
+   The previous call succeeded 
+   Iterating through the sites 
+   Looking at base site object: CN=NTDS Site Settings,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL
+   Getting ISTG and options for the site
+   Looking at base site object: CN=NTDS Site Settings,CN=MTS-FARM,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL
+   Getting ISTG and options for the site
+   Looking at base site object: CN=NTDS Site Settings,CN=ServerFarm,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL
+   Getting ISTG and options for the site
+   * Identifying all servers.
+   Calling ldap_search_init_page(hld,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL,LDAP_SCOPE_SUBTREE,(objectClass=ntDSDsa),.......
+   The previous call succeeded....
+   The previous call succeeded
+   Iterating through the list of servers 
+   Getting information for the server CN=NTDS Settings,CN=USONVSVRDC01,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL 
+   objectGuid obtained
+   InvocationID obtained
+   dnsHostname obtained
+   site info obtained
+   All the info for the server collected
+   Getting information for the server CN=NTDS Settings,CN=USONVSVRDC02,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL 
+   objectGuid obtained
+   InvocationID obtained
+   dnsHostname obtained
+   site info obtained
+   All the info for the server collected
+   Getting information for the server CN=NTDS Settings,CN=USONVSVRDC03,CN=Servers,CN=MTS-FARM,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL 
+   objectGuid obtained
+   InvocationID obtained
+   dnsHostname obtained
+   site info obtained
+   All the info for the server collected
+   Getting information for the server CN=NTDS Settings,CN=MSODC04,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL 
+   objectGuid obtained
+   InvocationID obtained
+   dnsHostname obtained
+   site info obtained
+   All the info for the server collected
+   * Identifying all NC cross-refs.
+   * Found 4 DC(s). Testing 1 of them.
+   Done gathering initial info.
+
+Doing initial required tests
+   
+   Testing server: MTS-FARM\USONVSVRDC03
+      Starting test: Connectivity
+         * Active Directory LDAP Services Check
+         Determining IP4 connectivity 
+         * Active Directory RPC Services Check
+         ......................... USONVSVRDC03 passed test Connectivity
+
+Doing primary tests
+   
+   Testing server: MTS-FARM\USONVSVRDC03
+      Starting test: Advertising
+         The DC USONVSVRDC03 is advertising itself as a DC and having a DS.
+         The DC USONVSVRDC03 is advertising as an LDAP server
+         The DC USONVSVRDC03 is advertising as having a writeable directory
+         The DC USONVSVRDC03 is advertising as a Key Distribution Center
+         The DC USONVSVRDC03 is advertising as a time server
+         The DS USONVSVRDC03 is advertising as a GC.
+         ......................... USONVSVRDC03 passed test Advertising
+      Starting test: CheckSecurityError
+         * Dr Auth:  Beginning security errors check!
+         Found KDC USONVSVRDC03 for domain USON.LOCAL in site MTS-FARM
+         Checking machine account for DC USONVSVRDC03 on DC USONVSVRDC03.
+         * SPN found :LDAP/USONVSVRDC03.USON.LOCAL/USON.LOCAL
+         * SPN found :LDAP/USONVSVRDC03.USON.LOCAL
+         * SPN found :LDAP/USONVSVRDC03
+         * SPN found :LDAP/USONVSVRDC03.USON.LOCAL/USON
+         * SPN found :LDAP/d2198335-f21c-405b-bf78-22a3b0d476c5._msdcs.USON.LOCAL
+         * SPN found :E3514235-4B06-11D1-AB04-00C04FC2DCD2/d2198335-f21c-405b-bf78-22a3b0d476c5/USON.LOCAL
+         * SPN found :HOST/USONVSVRDC03.USON.LOCAL/USON.LOCAL
+         * SPN found :HOST/USONVSVRDC03.USON.LOCAL
+         * SPN found :HOST/USONVSVRDC03
+         * SPN found :HOST/USONVSVRDC03.USON.LOCAL/USON
+         * SPN found :GC/USONVSVRDC03.USON.LOCAL/USON.LOCAL
+         [USONVSVRDC03] No security related replication errors were found on
+         this DC!  To target the connection to a specific source DC use
+         /ReplSource:<DC>.
+         ......................... USONVSVRDC03 passed test CheckSecurityError
+      Starting test: CutoffServers
+         * Configuration Topology Aliveness Check
+         * Analyzing the alive system replication topology for DC=ForestDnsZones,DC=USON,DC=LOCAL.
+         * Performing upstream (of target) analysis.
+         * Performing downstream (of target) analysis.
+         * Analyzing the alive system replication topology for DC=DomainDnsZones,DC=USON,DC=LOCAL.
+         * Performing upstream (of target) analysis.
+         * Performing downstream (of target) analysis.
+         * Analyzing the alive system replication topology for CN=Schema,CN=Configuration,DC=USON,DC=LOCAL.
+         * Performing upstream (of target) analysis.
+         * Performing downstream (of target) analysis.
+         * Analyzing the alive system replication topology for CN=Configuration,DC=USON,DC=LOCAL.
+         * Performing upstream (of target) analysis.
+         * Performing downstream (of target) analysis.
+         * Analyzing the alive system replication topology for DC=USON,DC=LOCAL.
+         * Performing upstream (of target) analysis.
+         * Performing downstream (of target) analysis.
+         ......................... USONVSVRDC03 passed test CutoffServers
+      Starting test: FrsEvent
+         * The File Replication Service Event log test 
+         There are warning or error events within the last 24 hours after the
+         SYSVOL has been shared.  Failing SYSVOL replication problems may cause
+         Group Policy problems. 
+         A warning event occurred.  EventID: 0x800034C4
+            Time Generated: 06/26/2019   18:46:50
+            Event String:
+            The File Replication Service is having trouble enabling replication from USONVSVRDC02 to USONVSVRDC03 for c:\windows\sysvol\domain using the DNS name USONVSVRDC02.USON.LOCAL. FRS will keep retrying. 
+             Following are some of the reasons you would see this warning. 
+             
+             [1] FRS can not correctly resolve the DNS name USONVSVRDC02.USON.LOCAL from this computer. 
+             [2] FRS is not running on USONVSVRDC02.USON.LOCAL. 
+             [3] The topology information in the Active Directory Domain Services for this replica has not yet replicated to all the Domain Controllers. 
+             
+             This event log message will appear once per connection, After the problem is fixed you will see another event log message indicating that the connection has been established.
+         ......................... USONVSVRDC03 passed test FrsEvent
+      Starting test: DFSREvent
+         The DFS Replication Event Log. 
+         Skip the test because the server is running FRS.
+         ......................... USONVSVRDC03 passed test DFSREvent
+      Starting test: SysVolCheck
+         * The File Replication Service SYSVOL ready test 
+         File Replication Service's SYSVOL is ready 
+         ......................... USONVSVRDC03 passed test SysVolCheck
+      Starting test: FrsSysVol
+         * The File Replication Service SYSVOL ready test 
+         File Replication Service's SYSVOL is ready 
+         ......................... USONVSVRDC03 passed test FrsSysVol
+      Starting test: KccEvent
+         * The KCC Event log test
+         Found no KCC errors in "Directory Service" Event log in the last 15 minutes.
+         ......................... USONVSVRDC03 passed test KccEvent
+      Starting test: KnowsOfRoleHolders
+         Role Schema Owner = CN=NTDS Settings,CN=USONVSVRDC02,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL
+         Role Domain Owner = CN=NTDS Settings,CN=USONVSVRDC01,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL
+         Role PDC Owner = CN=NTDS Settings,CN=USONVSVRDC01,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL
+         Role Rid Owner = CN=NTDS Settings,CN=USONVSVRDC01,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL
+         Role Infrastructure Update Owner = CN=NTDS Settings,CN=USONVSVRDC01,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL
+         ......................... USONVSVRDC03 passed test KnowsOfRoleHolders
+      Starting test: MachineAccount
+         Checking machine account for DC USONVSVRDC03 on DC USONVSVRDC03.
+         * SPN found :LDAP/USONVSVRDC03.USON.LOCAL/USON.LOCAL
+         * SPN found :LDAP/USONVSVRDC03.USON.LOCAL
+         * SPN found :LDAP/USONVSVRDC03
+         * SPN found :LDAP/USONVSVRDC03.USON.LOCAL/USON
+         * SPN found :LDAP/d2198335-f21c-405b-bf78-22a3b0d476c5._msdcs.USON.LOCAL
+         * SPN found :E3514235-4B06-11D1-AB04-00C04FC2DCD2/d2198335-f21c-405b-bf78-22a3b0d476c5/USON.LOCAL
+         * SPN found :HOST/USONVSVRDC03.USON.LOCAL/USON.LOCAL
+         * SPN found :HOST/USONVSVRDC03.USON.LOCAL
+         * SPN found :HOST/USONVSVRDC03
+         * SPN found :HOST/USONVSVRDC03.USON.LOCAL/USON
+         * SPN found :GC/USONVSVRDC03.USON.LOCAL/USON.LOCAL
+         ......................... USONVSVRDC03 passed test MachineAccount
+      Starting test: NCSecDesc
+         * Security Permissions check for all NC's on DC USONVSVRDC03.
+         The forest is not ready for RODC. Will skip checking ERODC ACEs.
+         * Security Permissions Check for
+           DC=ForestDnsZones,DC=USON,DC=LOCAL
+            (NDNC,Version 3)
+         Error NT AUTHORITY\ENTERPRISE DOMAIN CONTROLLERS doesn't have 
+            Replicating Directory Changes In Filtered Set
+         access rights for the naming context:
+         DC=ForestDnsZones,DC=USON,DC=LOCAL
+         * Security Permissions Check for
+           DC=DomainDnsZones,DC=USON,DC=LOCAL
+            (NDNC,Version 3)
+         Error NT AUTHORITY\ENTERPRISE DOMAIN CONTROLLERS doesn't have 
+            Replicating Directory Changes In Filtered Set
+         access rights for the naming context:
+         DC=DomainDnsZones,DC=USON,DC=LOCAL
+         * Security Permissions Check for
+           CN=Schema,CN=Configuration,DC=USON,DC=LOCAL
+            (Schema,Version 3)
+         * Security Permissions Check for
+           CN=Configuration,DC=USON,DC=LOCAL
+            (Configuration,Version 3)
+         * Security Permissions Check for
+           DC=USON,DC=LOCAL
+            (Domain,Version 3)
+         ......................... USONVSVRDC03 failed test NCSecDesc
+      Starting test: NetLogons
+         * Network Logons Privileges Check
+         Verified share \\USONVSVRDC03\netlogon
+         Verified share \\USONVSVRDC03\sysvol
+         ......................... USONVSVRDC03 passed test NetLogons
+      Starting test: ObjectsReplicated
+         USONVSVRDC03 is in domain DC=USON,DC=LOCAL
+         Checking for CN=USONVSVRDC03,OU=Domain Controllers,DC=USON,DC=LOCAL in domain DC=USON,DC=LOCAL on 1 servers
+            Object is up-to-date on all servers.
+         Checking for CN=NTDS Settings,CN=USONVSVRDC03,CN=Servers,CN=MTS-FARM,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL in domain CN=Configuration,DC=USON,DC=LOCAL on 1 servers
+            Object is up-to-date on all servers.
+         ......................... USONVSVRDC03 passed test ObjectsReplicated
+      Test omitted by user request: OutboundSecureChannels
+      Starting test: Replications
+         * Replications Check
+         * Replication Latency Check
+            DC=ForestDnsZones,DC=USON,DC=LOCAL
+               Latency information for 3 entries in the vector were ignored.
+                  3 were retired Invocations.  0 were either: read-only replicas and are not verifiably latent, or dc's no longer replicating this nc.  0 had no latency information (Win2K DC).  
+            DC=DomainDnsZones,DC=USON,DC=LOCAL
+               Latency information for 3 entries in the vector were ignored.
+                  3 were retired Invocations.  0 were either: read-only replicas and are not verifiably latent, or dc's no longer replicating this nc.  0 had no latency information (Win2K DC).  
+            CN=Schema,CN=Configuration,DC=USON,DC=LOCAL
+               Latency information for 3 entries in the vector were ignored.
+                  3 were retired Invocations.  0 were either: read-only replicas and are not verifiably latent, or dc's no longer replicating this nc.  0 had no latency information (Win2K DC).  
+            CN=Configuration,DC=USON,DC=LOCAL
+               Latency information for 4 entries in the vector were ignored.
+                  4 were retired Invocations.  0 were either: read-only replicas and are not verifiably latent, or dc's no longer replicating this nc.  0 had no latency information (Win2K DC).  
+            DC=USON,DC=LOCAL
+               Latency information for 4 entries in the vector were ignored.
+                  4 were retired Invocations.  0 were either: read-only replicas and are not verifiably latent, or dc's no longer replicating this nc.  0 had no latency information (Win2K DC).  
+         ......................... USONVSVRDC03 passed test Replications
+      Starting test: RidManager
+         * Available RID Pool for the Domain is 8104 to 1073741823
+         * USONVSVRDC01.USON.LOCAL is the RID Master
+         * DsBind with RID Master was successful
+         * rIDAllocationPool is 4604 to 5103
+         * rIDPreviousAllocationPool is 4604 to 5103
+         * rIDNextRID: 4693
+         ......................... USONVSVRDC03 passed test RidManager
+      Starting test: Services
+         * Checking Service: EventSystem
+         * Checking Service: RpcSs
+         * Checking Service: NTDS
+         * Checking Service: DnsCache
+         * Checking Service: DFSR
+         * Checking Service: IsmServ
+         * Checking Service: kdc
+         * Checking Service: SamSs
+         * Checking Service: LanmanServer
+         * Checking Service: LanmanWorkstation
+         * Checking Service: w32time
+         * Checking Service: NETLOGON
+         ......................... USONVSVRDC03 passed test Services
+      Starting test: SystemLog
+         * The System Event log test
+         Found no errors in "System" Event log in the last 60 minutes.
+         ......................... USONVSVRDC03 passed test SystemLog
+      Starting test: Topology
+         * Configuration Topology Integrity Check
+         * Analyzing the connection topology for DC=ForestDnsZones,DC=USON,DC=LOCAL.
+         * Performing upstream (of target) analysis.
+         * Performing downstream (of target) analysis.
+         * Analyzing the connection topology for DC=DomainDnsZones,DC=USON,DC=LOCAL.
+         * Performing upstream (of target) analysis.
+         * Performing downstream (of target) analysis.
+         * Analyzing the connection topology for CN=Schema,CN=Configuration,DC=USON,DC=LOCAL.
+         * Performing upstream (of target) analysis.
+         * Performing downstream (of target) analysis.
+         * Analyzing the connection topology for CN=Configuration,DC=USON,DC=LOCAL.
+         * Performing upstream (of target) analysis.
+         * Performing downstream (of target) analysis.
+         * Analyzing the connection topology for DC=USON,DC=LOCAL.
+         * Performing upstream (of target) analysis.
+         * Performing downstream (of target) analysis.
+         ......................... USONVSVRDC03 passed test Topology
+      Starting test: VerifyEnterpriseReferences
+         The following problems were found while verifying various important DN
+         references.  Note, that  these problems can be reported because of
+         latency in replication.  So follow up to resolve the following
+         problems, only if the same problem is reported on all DCs for a given
+         domain or if  the problem persists after replication has had
+         reasonable time to replicate changes. 
+            [1] Problem: Missing Expected Value
+             Base Object:
+            CN=USONVSVRDC02,OU=Domain Controllers,DC=USON,DC=LOCAL
+             Base Object Description: "DC Account Object"
+             Value Object Attribute Name: msDFSR-ComputerReferenceBL
+             Value Object Description: "SYSVOL FRS Member Object"
+             Recommended Action: See Knowledge Base Article: Q312862
+             
+            [2] Problem: Missing Expected Value
+             Base Object:
+            CN=USONVSVRDC03,OU=Domain Controllers,DC=USON,DC=LOCAL
+             Base Object Description: "DC Account Object"
+             Value Object Attribute Name: msDFSR-ComputerReferenceBL
+             Value Object Description: "SYSVOL FRS Member Object"
+             Recommended Action: See Knowledge Base Article: Q312862
+             
+            [3] Problem: Missing Expected Value
+             Base Object:
+            CN=USONVSVRDC01,OU=Domain Controllers,DC=USON,DC=LOCAL
+             Base Object Description: "DC Account Object"
+             Value Object Attribute Name: msDFSR-ComputerReferenceBL
+             Value Object Description: "SYSVOL FRS Member Object"
+             Recommended Action: See Knowledge Base Article: Q312862
+             
+            [4] Problem: Missing Expected Value
+             Base Object: CN=MSODC04,OU=Domain Controllers,DC=USON,DC=LOCAL
+             Base Object Description: "DC Account Object"
+             Value Object Attribute Name: msDFSR-ComputerReferenceBL
+             Value Object Description: "SYSVOL FRS Member Object"
+             Recommended Action: See Knowledge Base Article: Q312862
+             
+            LDAP Error 0x20 (32) - No Such Object. 
+         ......................... USONVSVRDC03 failed test
+         VerifyEnterpriseReferences
+      Starting test: VerifyReferences
+         The system object reference (serverReference)
+         CN=USONVSVRDC03,OU=Domain Controllers,DC=USON,DC=LOCAL and backlink on
+         CN=USONVSVRDC03,CN=Servers,CN=MTS-FARM,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL
+          are correct. 
+         The system object reference (serverReferenceBL)
+         CN=USONVSVRDC03,CN=Domain System Volume (SYSVOL share),CN=File Replication Service,CN=System,DC=USON,DC=LOCAL
+         and backlink on
+         CN=NTDS Settings,CN=USONVSVRDC03,CN=Servers,CN=MTS-FARM,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL
+         are correct. 
+         The system object reference (frsComputerReferenceBL)
+         CN=USONVSVRDC03,CN=Domain System Volume (SYSVOL share),CN=File Replication Service,CN=System,DC=USON,DC=LOCAL
+         and backlink on CN=USONVSVRDC03,OU=Domain Controllers,DC=USON,DC=LOCAL
+         are correct. 
+         ......................... USONVSVRDC03 passed test VerifyReferences
+      Starting test: VerifyReplicas
+         ......................... USONVSVRDC03 passed test VerifyReplicas
+   
+      Starting test: DNS
+         
+         DNS Tests are running and not hung. Please wait a few minutes...
+         See DNS test in enterprise tests section for results
+         ......................... USONVSVRDC03 passed test DNS
+   
+   Running partition tests on : ForestDnsZones
+      Starting test: CheckSDRefDom
+         ......................... ForestDnsZones passed test CheckSDRefDom
+      Starting test: CrossRefValidation
+         ......................... ForestDnsZones passed test
+         CrossRefValidation
+   
+   Running partition tests on : DomainDnsZones
+      Starting test: CheckSDRefDom
+         ......................... DomainDnsZones passed test CheckSDRefDom
+      Starting test: CrossRefValidation
+         ......................... DomainDnsZones passed test
+         CrossRefValidation
+   
+   Running partition tests on : Schema
+      Starting test: CheckSDRefDom
+         ......................... Schema passed test CheckSDRefDom
+      Starting test: CrossRefValidation
+         ......................... Schema passed test CrossRefValidation
+   
+   Running partition tests on : Configuration
+      Starting test: CheckSDRefDom
+         ......................... Configuration passed test CheckSDRefDom
+      Starting test: CrossRefValidation
+         ......................... Configuration passed test CrossRefValidation
+   
+   Running partition tests on : USON
+      Starting test: CheckSDRefDom
+         ......................... USON passed test CheckSDRefDom
+      Starting test: CrossRefValidation
+         ......................... USON passed test CrossRefValidation
+   
+   Running enterprise tests on : USON.LOCAL
+      Starting test: DNS
+         Test results for domain controllers:
+            
+            DC: USONVSVRDC03.USON.LOCAL
+            Domain: USON.LOCAL
+            
+                  
+               TEST: Authentication (Auth)
+                  Authentication test: Successfully completed
+                  
+               TEST: Basic (Basc)
+                  The OS
+                  Microsoft Windows Server 2008 R2 Enterprise  (Service Pack level: 1.0)
+                  is supported.
+                  NETLOGON service is running
+                  kdc service is running
+                  DNSCACHE service is running
+                  DNS service is running
+                  DC is a DNS server
+                  Network adapters information:
+                  Adapter [00000007] Intel(R) PRO/1000 MT Network Connection:
+                     MAC address is 00:50:56:98:75:1E
+                     IP Address is static 
+                     IP address: 10.201.2.10
+                     DNS servers:
+                        10.201.2.10 (usonvsvrdc.uson.local.) [Valid]
+                        192.168.1.10 (usonvsvrdc.uson.local.) [Valid]
+                        192.168.1.4 (usonvsvrdc.uson.local.) [Valid]
+                        127.0.0.1 (usonvsvrdc.uson.local.) [Valid]
+                        172.20.0.5 (<name unavailable>) [Valid]
+                        172.20.0.6 (<name unavailable>) [Valid]
+                  The A host record(s) for this DC was found
+                  The SOA record for the Active Directory zone was found
+                  The Active Directory zone on this DC/DNS server was found primary
+                  Root zone on this DC/DNS server was not found
+                  
+               TEST: Forwarders/Root hints (Forw)
+                  Recursion is enabled
+                  Forwarders are not configured on this DNS server
+                  Root hint Information: 
+                     Name: a.root-servers.net. IP: 198.41.0.4 [Valid]
+                     Name: a.root-servers.net. IP: 2001:503:ba3e::2:30 [Invalid (unreachable)]
+                     Name: b.root-servers.net. IP: 192.228.79.201 [Valid]
+                     Name: b.root-servers.net. IP: 199.9.14.201 [Valid]
+                     Name: b.root-servers.net. IP: 2001:500:200::b [Invalid (unreachable)]
+                     Name: c.root-servers.net. IP: 192.33.4.12 [Valid]
+                     Name: c.root-servers.net. IP: 2001:500:2::c [Invalid (unreachable)]
+                     Name: d.root-servers.net. IP: 199.7.91.13 [Valid]
+                     Name: d.root-servers.net. IP: 2001:500:2d::d [Invalid (unreachable)]
+                     Name: e.root-servers.net. IP: 192.203.230.10 [Valid]
+                     Name: e.root-servers.net. IP: 2001:500:a8::e [Invalid (unreachable)]
+                     Name: f.root-servers.net. IP: 192.5.5.241 [Valid]
+                     Name: f.root-servers.net. IP: 2001:500:2f::f [Invalid (unreachable)]
+                     Name: g.root-servers.net. IP: 192.112.36.4 [Valid]
+                     Name: g.root-servers.net. IP: 2001:500:12::d0d [Invalid (unreachable)]
+                     Name: h.root-servers.net. IP: 128.63.2.53 [Valid]
+                     Name: h.root-servers.net. IP: 198.97.190.53 [Valid]
+                     Name: h.root-servers.net. IP: 2001:500:1::53 [Invalid (unreachable)]
+                     Name: i.root-servers.net. IP: 192.36.148.17 [Valid]
+                     Name: i.root-servers.net. IP: 2001:7fe::53 [Invalid (unreachable)]
+                     Name: j.root-servers.net. IP: 192.58.128.30 [Valid]
+                     Name: j.root-servers.net. IP: 2001:503:c27::2:30 [Invalid (unreachable)]
+                     Name: k.root-servers.net. IP: 193.0.14.129 [Valid]
+                     Name: k.root-servers.net. IP: 2001:7fd::1 [Invalid (unreachable)]
+                     Name: l.root-servers.net. IP: 199.7.83.42 [Valid]
+                     Name: l.root-servers.net. IP: 2001:500:9f::42 [Invalid (unreachable)]
+                     Name: m.root-servers.net. IP: 2001:dc3::35 [Invalid (unreachable)]
+                     Name: m.root-servers.net. IP: 202.12.27.33 [Valid]
+                  
+               TEST: Delegations (Del)
+                  Delegation information for the zone: USON.LOCAL.
+                     Delegated domain name: _msdcs.USON.LOCAL.
+                        DNS server: usonvsvrdc.uson.local. IP:10.201.2.10 [Valid]
+                        DNS server: usonvsvrdc.uson.local. IP:192.168.1.10 [Valid]
+                        DNS server: usonvsvrdc.uson.local. IP:192.168.1.4 [Valid]
+                        DNS server: usonvsvrdc01.uson.local. IP:192.168.1.4 [Valid]
+                        DNS server: usonvsvrdc02.uson.local. IP:10.201.2.11 [Valid]
+                        DNS server: usonvsvrdc02.uson.local. IP:192.168.1.10 [Valid]
+                        DNS server: usonvsvrdc03.uson.local. IP:10.201.2.10 [Valid]
+                  
+               TEST: Dynamic update (Dyn)
+                  Test record dcdiag-test-record added successfully in zone USON.LOCAL
+                  Warning: Failed to delete the test record dcdiag-test-record in zone USON.LOCAL
+                  [Error details: 9505 (Type: Win32 - Description: Unsecured DNS packet.)]
+                  
+               TEST: Records registration (RReg)
+                  Network Adapter
+                  [00000007] Intel(R) PRO/1000 MT Network Connection:
+                     Matching CNAME record found at DNS server 10.201.2.10:
+                     d2198335-f21c-405b-bf78-22a3b0d476c5._msdcs.USON.LOCAL
+
+                     Matching A record found at DNS server 10.201.2.10:
+                     USONVSVRDC03.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _ldap._tcp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _ldap._tcp.35f05b20-cbbc-4324-a56d-8b108bed9e11.domains._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _kerberos._tcp.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _ldap._tcp.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _kerberos._tcp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _kerberos._udp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _kpasswd._tcp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _ldap._tcp.MTS-FARM._sites.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _kerberos._tcp.MTS-FARM._sites.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _ldap._tcp.MTS-FARM._sites.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _kerberos._tcp.MTS-FARM._sites.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _ldap._tcp.gc._msdcs.USON.LOCAL
+
+                     Matching A record found at DNS server 10.201.2.10:
+                     gc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _gc._tcp.MTS-FARM._sites.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _ldap._tcp.MTS-FARM._sites.gc._msdcs.USON.LOCAL
+
+                     Matching CNAME record found at DNS server 192.168.1.10:
+                     d2198335-f21c-405b-bf78-22a3b0d476c5._msdcs.USON.LOCAL
+
+                     Matching A record found at DNS server 192.168.1.10:
+                     USONVSVRDC03.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.10:
+                     _ldap._tcp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.10:
+                     _ldap._tcp.35f05b20-cbbc-4324-a56d-8b108bed9e11.domains._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.10:
+                     _kerberos._tcp.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.10:
+                     _ldap._tcp.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.10:
+                     _kerberos._tcp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.10:
+                     _kerberos._udp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.10:
+                     _kpasswd._tcp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.10:
+                     _ldap._tcp.MTS-FARM._sites.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.10:
+                     _kerberos._tcp.MTS-FARM._sites.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.10:
+                     _ldap._tcp.MTS-FARM._sites.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.10:
+                     _kerberos._tcp.MTS-FARM._sites.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.10:
+                     _ldap._tcp.gc._msdcs.USON.LOCAL
+
+                     Matching A record found at DNS server 192.168.1.10:
+                     gc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.10:
+                     _gc._tcp.MTS-FARM._sites.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.10:
+                     _ldap._tcp.MTS-FARM._sites.gc._msdcs.USON.LOCAL
+
+                     Matching CNAME record found at DNS server 192.168.1.4:
+                     d2198335-f21c-405b-bf78-22a3b0d476c5._msdcs.USON.LOCAL
+
+                     Matching A record found at DNS server 192.168.1.4:
+                     USONVSVRDC03.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.4:
+                     _ldap._tcp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.4:
+                     _ldap._tcp.35f05b20-cbbc-4324-a56d-8b108bed9e11.domains._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.4:
+                     _kerberos._tcp.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.4:
+                     _ldap._tcp.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.4:
+                     _kerberos._tcp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.4:
+                     _kerberos._udp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.4:
+                     _kpasswd._tcp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.4:
+                     _ldap._tcp.MTS-FARM._sites.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.4:
+                     _kerberos._tcp.MTS-FARM._sites.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.4:
+                     _ldap._tcp.MTS-FARM._sites.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.4:
+                     _kerberos._tcp.MTS-FARM._sites.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.4:
+                     _ldap._tcp.gc._msdcs.USON.LOCAL
+
+                     Matching A record found at DNS server 192.168.1.4:
+                     gc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.4:
+                     _gc._tcp.MTS-FARM._sites.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 192.168.1.4:
+                     _ldap._tcp.MTS-FARM._sites.gc._msdcs.USON.LOCAL
+
+                     Matching CNAME record found at DNS server 10.201.2.10:
+                     d2198335-f21c-405b-bf78-22a3b0d476c5._msdcs.USON.LOCAL
+
+                     Matching A record found at DNS server 10.201.2.10:
+                     USONVSVRDC03.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _ldap._tcp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _ldap._tcp.35f05b20-cbbc-4324-a56d-8b108bed9e11.domains._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _kerberos._tcp.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _ldap._tcp.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _kerberos._tcp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _kerberos._udp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _kpasswd._tcp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _ldap._tcp.MTS-FARM._sites.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _kerberos._tcp.MTS-FARM._sites.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _ldap._tcp.MTS-FARM._sites.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _kerberos._tcp.MTS-FARM._sites.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _ldap._tcp.gc._msdcs.USON.LOCAL
+
+                     Matching A record found at DNS server 10.201.2.10:
+                     gc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _gc._tcp.MTS-FARM._sites.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 10.201.2.10:
+                     _ldap._tcp.MTS-FARM._sites.gc._msdcs.USON.LOCAL
+
+                     Matching CNAME record found at DNS server 172.20.0.5:
+                     d2198335-f21c-405b-bf78-22a3b0d476c5._msdcs.USON.LOCAL
+
+                     Matching A record found at DNS server 172.20.0.5:
+                     USONVSVRDC03.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 172.20.0.5:
+                     _ldap._tcp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 172.20.0.5:
+                     _ldap._tcp.35f05b20-cbbc-4324-a56d-8b108bed9e11.domains._msdcs.USON.LOCAL
+
+                     Error: 
+                     Missing SRV record at DNS server 172.20.0.5:
+                     _kerberos._tcp.dc._msdcs.USON.LOCAL
+                     [Error details: 9003 (Type: Win32 - Description: DNS name does not exist.)]
+                     
+                     Matching  SRV record found at DNS server 172.20.0.5:
+                     _ldap._tcp.dc._msdcs.USON.LOCAL
+
+                     Error: 
+                     Missing SRV record at DNS server 172.20.0.5:
+                     _kerberos._tcp.USON.LOCAL
+                     [Error details: 9003 (Type: Win32 - Description: DNS name does not exist.)]
+                     
+                     Matching  SRV record found at DNS server 172.20.0.5:
+                     _kerberos._udp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 172.20.0.5:
+                     _kpasswd._tcp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 172.20.0.5:
+                     _ldap._tcp.MTS-FARM._sites.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 172.20.0.5:
+                     _kerberos._tcp.MTS-FARM._sites.dc._msdcs.USON.LOCAL
+
+                     Error: 
+                     Missing SRV record at DNS server 172.20.0.5:
+                     _ldap._tcp.MTS-FARM._sites.dc._msdcs.USON.LOCAL
+                     [Error details: 9003 (Type: Win32 - Description: DNS name does not exist.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 172.20.0.5:
+                     _kerberos._tcp.MTS-FARM._sites.USON.LOCAL
+                     [Error details: 9003 (Type: Win32 - Description: DNS name does not exist.)]
+                     
+                     Matching  SRV record found at DNS server 172.20.0.5:
+                     _ldap._tcp.gc._msdcs.USON.LOCAL
+
+                     Matching A record found at DNS server 172.20.0.5:
+                     gc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 172.20.0.5:
+                     _gc._tcp.MTS-FARM._sites.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 172.20.0.5:
+                     _ldap._tcp.MTS-FARM._sites.gc._msdcs.USON.LOCAL
+
+                     Matching CNAME record found at DNS server 172.20.0.6:
+                     d2198335-f21c-405b-bf78-22a3b0d476c5._msdcs.USON.LOCAL
+
+                     Matching A record found at DNS server 172.20.0.6:
+                     USONVSVRDC03.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 172.20.0.6:
+                     _ldap._tcp.USON.LOCAL
+
+                     Error: 
+                     Missing SRV record at DNS server 172.20.0.6:
+                     _ldap._tcp.35f05b20-cbbc-4324-a56d-8b108bed9e11.domains._msdcs.USON.LOCAL
+                     [Error details: 9003 (Type: Win32 - Description: DNS name does not exist.)]
+                     
+                     Matching  SRV record found at DNS server 172.20.0.6:
+                     _kerberos._tcp.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 172.20.0.6:
+                     _ldap._tcp.dc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 172.20.0.6:
+                     _kerberos._tcp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 172.20.0.6:
+                     _kerberos._udp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 172.20.0.6:
+                     _kpasswd._tcp.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 172.20.0.6:
+                     _ldap._tcp.MTS-FARM._sites.USON.LOCAL
+
+                     Error: 
+                     Missing SRV record at DNS server 172.20.0.6:
+                     _kerberos._tcp.MTS-FARM._sites.dc._msdcs.USON.LOCAL
+                     [Error details: 9003 (Type: Win32 - Description: DNS name does not exist.)]
+                     
+                     Matching  SRV record found at DNS server 172.20.0.6:
+                     _ldap._tcp.MTS-FARM._sites.dc._msdcs.USON.LOCAL
+
+                     Error: 
+                     Missing SRV record at DNS server 172.20.0.6:
+                     _kerberos._tcp.MTS-FARM._sites.USON.LOCAL
+                     [Error details: 9003 (Type: Win32 - Description: DNS name does not exist.)]
+                     
+                     Error: 
+                     Missing SRV record at DNS server 172.20.0.6:
+                     _ldap._tcp.gc._msdcs.USON.LOCAL
+                     [Error details: 9003 (Type: Win32 - Description: DNS name does not exist.)]
+                     
+                     Matching A record found at DNS server 172.20.0.6:
+                     gc._msdcs.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 172.20.0.6:
+                     _gc._tcp.MTS-FARM._sites.USON.LOCAL
+
+                     Matching  SRV record found at DNS server 172.20.0.6:
+                     _ldap._tcp.MTS-FARM._sites.gc._msdcs.USON.LOCAL
+
+               Warning: Record Registrations not found in some network adapters
+         
+         Summary of test results for DNS servers used by the above domain
+         controllers:
+         
+            DNS server: 2001:500:12::d0d (g.root-servers.net.)
+               1 test failure on this DNS server
+               PTR record query for the 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa failed on the DNS server 2001:500:12::d0d               [Error details: 1460 (Type: Win32 - Description: This operation returned because the timeout period expired.)]
+               
+            DNS server: 2001:500:1::53 (h.root-servers.net.)
+               1 test failure on this DNS server
+               PTR record query for the 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa failed on the DNS server 2001:500:1::53               [Error details: 1460 (Type: Win32 - Description: This operation returned because the timeout period expired.)]
+               
+            DNS server: 2001:500:200::b (b.root-servers.net.)
+               1 test failure on this DNS server
+               PTR record query for the 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa failed on the DNS server 2001:500:200::b               [Error details: 1460 (Type: Win32 - Description: This operation returned because the timeout period expired.)]
+               
+            DNS server: 2001:500:2::c (c.root-servers.net.)
+               1 test failure on this DNS server
+               PTR record query for the 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa failed on the DNS server 2001:500:2::c               [Error details: 1460 (Type: Win32 - Description: This operation returned because the timeout period expired.)]
+               
+            DNS server: 2001:500:2d::d (d.root-servers.net.)
+               1 test failure on this DNS server
+               PTR record query for the 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa failed on the DNS server 2001:500:2d::d               [Error details: 1460 (Type: Win32 - Description: This operation returned because the timeout period expired.)]
+               
+            DNS server: 2001:500:2f::f (f.root-servers.net.)
+               1 test failure on this DNS server
+               PTR record query for the 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa failed on the DNS server 2001:500:2f::f               [Error details: 1460 (Type: Win32 - Description: This operation returned because the timeout period expired.)]
+               
+            DNS server: 2001:500:9f::42 (l.root-servers.net.)
+               1 test failure on this DNS server
+               PTR record query for the 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa failed on the DNS server 2001:500:9f::42               [Error details: 1460 (Type: Win32 - Description: This operation returned because the timeout period expired.)]
+               
+            DNS server: 2001:500:a8::e (e.root-servers.net.)
+               1 test failure on this DNS server
+               PTR record query for the 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa failed on the DNS server 2001:500:a8::e               [Error details: 1460 (Type: Win32 - Description: This operation returned because the timeout period expired.)]
+               
+            DNS server: 2001:503:ba3e::2:30 (a.root-servers.net.)
+               1 test failure on this DNS server
+               PTR record query for the 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa failed on the DNS server 2001:503:ba3e::2:30               [Error details: 1460 (Type: Win32 - Description: This operation returned because the timeout period expired.)]
+               
+            DNS server: 2001:503:c27::2:30 (j.root-servers.net.)
+               1 test failure on this DNS server
+               PTR record query for the 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa failed on the DNS server 2001:503:c27::2:30               [Error details: 1460 (Type: Win32 - Description: This operation returned because the timeout period expired.)]
+               
+            DNS server: 2001:7fd::1 (k.root-servers.net.)
+               1 test failure on this DNS server
+               PTR record query for the 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa failed on the DNS server 2001:7fd::1               [Error details: 1460 (Type: Win32 - Description: This operation returned because the timeout period expired.)]
+               
+            DNS server: 2001:7fe::53 (i.root-servers.net.)
+               1 test failure on this DNS server
+               PTR record query for the 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa failed on the DNS server 2001:7fe::53               [Error details: 1460 (Type: Win32 - Description: This operation returned because the timeout period expired.)]
+               
+            DNS server: 2001:dc3::35 (m.root-servers.net.)
+               1 test failure on this DNS server
+               PTR record query for the 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa failed on the DNS server 2001:dc3::35               [Error details: 1460 (Type: Win32 - Description: This operation returned because the timeout period expired.)]
+               
+            DNS server: 192.58.128.30 (j.root-servers.net.)
+               All tests passed on this DNS server
+               
+            DNS server: 193.0.14.129 (k.root-servers.net.)
+               All tests passed on this DNS server
+               
+            DNS server: 198.41.0.4 (a.root-servers.net.)
+               All tests passed on this DNS server
+               
+            DNS server: 198.97.190.53 (h.root-servers.net.)
+               All tests passed on this DNS server
+               
+            DNS server: 199.7.83.42 (l.root-servers.net.)
+               All tests passed on this DNS server
+               
+            DNS server: 199.7.91.13 (d.root-servers.net.)
+               All tests passed on this DNS server
+               
+            DNS server: 199.9.14.201 (b.root-servers.net.)
+               All tests passed on this DNS server
+               
+            DNS server: 10.201.2.10 (usonvsvrdc.uson.local.)
+               All tests passed on this DNS server
+               Name resolution is functional._ldap._tcp SRV record for the forest root domain is registered 
+               DNS delegation for the domain  _msdcs.USON.LOCAL. is operational on IP 10.201.2.10
+
+               
+            DNS server: 10.201.2.11 (usonvsvrdc02.uson.local.)
+               All tests passed on this DNS server
+               DNS delegation for the domain  _msdcs.USON.LOCAL. is operational on IP 10.201.2.11
+
+               
+            DNS server: 128.63.2.53 (h.root-servers.net.)
+               All tests passed on this DNS server
+               
+            DNS server: 172.20.0.5 (<name unavailable>)
+               All tests passed on this DNS server
+               Name resolution is functional._ldap._tcp SRV record for the forest root domain is registered 
+               
+            DNS server: 172.20.0.6 (<name unavailable>)
+               All tests passed on this DNS server
+               Name resolution is functional._ldap._tcp SRV record for the forest root domain is registered 
+               
+            DNS server: 192.112.36.4 (g.root-servers.net.)
+               All tests passed on this DNS server
+               
+            DNS server: 192.168.1.10 (usonvsvrdc.uson.local.)
+               All tests passed on this DNS server
+               Name resolution is functional._ldap._tcp SRV record for the forest root domain is registered 
+               DNS delegation for the domain  _msdcs.USON.LOCAL. is operational on IP 192.168.1.10
+
+               
+            DNS server: 192.168.1.4 (usonvsvrdc.uson.local.)
+               All tests passed on this DNS server
+               Name resolution is functional._ldap._tcp SRV record for the forest root domain is registered 
+               DNS delegation for the domain  _msdcs.USON.LOCAL. is operational on IP 192.168.1.4
+
+               
+            DNS server: 192.203.230.10 (e.root-servers.net.)
+               All tests passed on this DNS server
+               
+            DNS server: 192.228.79.201 (b.root-servers.net.)
+               All tests passed on this DNS server
+               
+            DNS server: 192.33.4.12 (c.root-servers.net.)
+               All tests passed on this DNS server
+               
+            DNS server: 192.36.148.17 (i.root-servers.net.)
+               All tests passed on this DNS server
+               
+            DNS server: 192.5.5.241 (f.root-servers.net.)
+               All tests passed on this DNS server
+               
+            DNS server: 202.12.27.33 (m.root-servers.net.)
+               All tests passed on this DNS server
+               
+         Summary of DNS test results:
+         
+                                            Auth Basc Forw Del  Dyn  RReg Ext
+            _________________________________________________________________
+            Domain: USON.LOCAL
+               USONVSVRDC03                 PASS PASS PASS PASS WARN WARN n/a  
+         
+         ......................... USON.LOCAL passed test DNS
+      Starting test: LocatorCheck
+         GC Name: \\USONVSVRDC03.USON.LOCAL
+         Locator Flags: 0xe00031fc
+         PDC Name: \\USONVSVRDC01.USON.LOCAL
+         Locator Flags: 0xe00033fd
+         Time Server Name: \\USONVSVRDC03.USON.LOCAL
+         Locator Flags: 0xe00031fc
+         Preferred Time Server Name: \\USONVSVRDC01.USON.LOCAL
+         Locator Flags: 0xe00033fd
+         KDC Name: \\USONVSVRDC03.USON.LOCAL
+         Locator Flags: 0xe00031fc
+         ......................... USON.LOCAL passed test LocatorCheck
+      Starting test: FsmoCheck
+         GC Name: \\USONVSVRDC03.USON.LOCAL
+         Locator Flags: 0xe00031fc
+         PDC Name: \\USONVSVRDC01.USON.LOCAL
+         Locator Flags: 0xe00033fd
+         Time Server Name: \\USONVSVRDC03.USON.LOCAL
+         Locator Flags: 0xe00031fc
+         Preferred Time Server Name: \\USONVSVRDC02.USON.LOCAL
+         Locator Flags: 0xe00033fc
+         KDC Name: \\USONVSVRDC03.USON.LOCAL
+         Locator Flags: 0xe00031fc
+         ......................... USON.LOCAL passed test FsmoCheck
+      Starting test: Intersite
+         Skipping site Default-First-Site-Name, this site is outside the scope
+         provided by the command line arguments provided. 
+         Skipping site MTS-FARM, this site is outside the scope provided by the
+         command line arguments provided. 
+         Skipping site ServerFarm, this site is outside the scope provided by
+         the command line arguments provided. 
+         ......................... USON.LOCAL passed test Intersite

@@ -1,0 +1,13 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"AppDynamics .NET Agent";"LASCAPSMT02.FNBM.CORP";"AppDynamics";"20180711";"4.4.4.0";;;;
+"BMC Track-It! 11.3 Agent";"LASCAPSMT02.FNBM.CORP";"BMC Software";;"11.3.0.355";;;;
+"Commvault ContentStore";"LASCAPSMT02.FNBM.CORP";"Commvault";;"11.80.70.0";;;;
+"Microsoft Silverlight";"LASCAPSMT02.FNBM.CORP";"Microsoft Corporation";"20170429";"5.1.50906.0";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161";"LASCAPSMT02.FNBM.CORP";"Microsoft Corporation";"20150401";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148";"LASCAPSMT02.FNBM.CORP";"Microsoft Corporation";"20150401";"9.0.30729.4148";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161";"LASCAPSMT02.FNBM.CORP";"Microsoft Corporation";"20150410";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219";"LASCAPSMT02.FNBM.CORP";"Microsoft Corporation";"20150413";"10.0.40219";;;;
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501";"LASCAPSMT02.FNBM.CORP";"Microsoft Corporation";;"12.0.30501.0";;;;
+"Netwitness SFTP Agent";"LASCAPSMT02.FNBM.CORP";"RSA Security Inc";"20180324";"4.1.0";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"LASCAPSMT02.FNBM.CORP";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"VMware Tools";"LASCAPSMT02.FNBM.CORP";"VMware, Inc.";"20180224";"10.1.7.5541682";;;;

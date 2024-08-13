@@ -1,0 +1,16 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"BMC Track-It! 11.3 Agent";"LASENVISE01.FNBM.CORP";"BMC Software";;"11.3.0.355";;;;
+"Delta Controls BACnet Server 5";"LASENVISE01.FNBM.CORP";"Delta Controls Inc.";;"5.27.98";;;;
+"Delta Controls enteliWEB";"LASENVISE01.FNBM.CORP";"Delta Controls Inc.";;"4.7.149";;;;
+"Delta Controls Licensing 5.0";"LASENVISE01.FNBM.CORP";"Delta Controls Inc.";;"5.0.610";;;;
+"Delta Firmware Loader";"LASENVISE01.FNBM.CORP";"Delta Controls Inc.";"20180105";"4.0.0.129";;;;
+"IIS URL Rewrite Module 2";"LASENVISE01.FNBM.CORP";"Microsoft Corporation";"20180105";"7.2.1952";;;;
+"Infognition ScreenPressor v2.1 (Remove Only)";"LASENVISE01.FNBM.CORP";;;;;;;
+"Microsoft ODBC Driver 11 for SQL Server";"LASENVISE01.FNBM.CORP";"Microsoft Corporation";"20180105";"11.0.2270.0";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161";"LASENVISE01.FNBM.CORP";"Microsoft Corporation";"20180105";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161";"LASENVISE01.FNBM.CORP";"Microsoft Corporation";"20180105";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.61030";"LASENVISE01.FNBM.CORP";"Microsoft Corporation";;"11.0.61030.0";;;;
+"Mozilla Firefox 59.0.3 (x64 en-US)";"LASENVISE01.FNBM.CORP";"Mozilla";;"59.0.3";;;;
+"Mozilla Maintenance Service";"LASENVISE01.FNBM.CORP";"Mozilla";;"57.0.4";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"LASENVISE01.FNBM.CORP";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"VMware Tools";"LASENVISE01.FNBM.CORP";"VMware, Inc.";"20180105";"10.1.7.5541682";;;;

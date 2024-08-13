@@ -1,0 +1,31 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"BMC Track-It! 11.3 Agent";"LASFPTST01.FNBM.CORP";"BMC Software";;"11.3.0.355";;;;
+"FootPrints Service Core 12.1.02";"LASFPTST01.FNBM.CORP";"BMC Software, Inc.";"Mar 29 2016 01:58:37.181 PM -0700";"12.1.02";;;;
+"Infognition ScreenPressor v2.1 (Remove Only)";"LASFPTST01.FNBM.CORP";;;;;;;
+"Java 8 Update 66 (64-bit)";"LASFPTST01.FNBM.CORP";"Oracle Corporation";"20160328";"8.0.660.17";;;;
+"Microsoft .NET Framework 4 Multi-Targeting Pack";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"4.0.30319";;;;
+"Microsoft Help Viewer 1.1";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";;"1.1.40219";;;;
+"Microsoft Report Viewer 2012 Runtime";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"11.0.2100.60";;;;
+"Microsoft Silverlight";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20170413";"5.1.50906.0";;;;
+"Microsoft SQL Server 2008 R2 Management Objects";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"10.51.2500.0";;;;
+"Microsoft SQL Server 2008 Setup Support Files ";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"10.1.2731.0";;;;
+"Microsoft SQL Server 2012 (64-bit)";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";;;;;;
+"Microsoft SQL Server 2012 Native Client ";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"11.0.2100.60";;;;
+"Microsoft SQL Server 2012 Setup (English)";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"11.1.3000.0";;;;
+"Microsoft SQL Server 2012 Transact-SQL Compiler Service ";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"11.0.2100.60";;;;
+"Microsoft SQL Server 2012 Transact-SQL ScriptDom ";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"11.0.2100.60";;;;
+"Microsoft SQL Server System CLR Types";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"10.51.2500.0";;;;
+"Microsoft System CLR Types for SQL Server 2012 (x64)";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"11.0.2100.60";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20150608";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20150608";"9.0.30729.4148";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160216";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"10.0.40219";;;;
+"Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"10.0.40219";;;;
+"Microsoft Visual C++ 2010  x86 Runtime - 10.0.40219";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"10.0.40219";;;;
+"Microsoft Visual Studio 2010 Shell (Isolated) - ENU";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"10.0.40219";;;;
+"Microsoft VSS Writer for SQL Server 2012";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"11.0.2100.60";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"LASFPTST01.FNBM.CORP";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"SQL Server Browser for SQL Server 2012";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"11.0.2100.60";;;;
+"Symantec Endpoint Protection";"LASFPTST01.FNBM.CORP";"Symantec Corporation";"20180225";"14.0.3876.1100";;;;"0"
+"Visual Studio 2010 Prerequisites - English";"LASFPTST01.FNBM.CORP";"Microsoft Corporation";"20160329";"10.0.40219";;;;
+"VMware Tools";"LASFPTST01.FNBM.CORP";"VMware, Inc.";"20180215";"10.1.7.5541682";;;;

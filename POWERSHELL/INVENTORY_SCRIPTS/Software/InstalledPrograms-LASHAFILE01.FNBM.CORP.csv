@@ -1,0 +1,41 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"BMC Track-It! 11.3 Agent";"LASHAFILE01.FNBM.CORP";"BMC Software";;"11.3.0.355";;;;
+"Commvault ContentStore";"LASHAFILE01.FNBM.CORP";"Commvault";;"11.80.110.0";;;;
+"Headless Server Registry Update";"LASHAFILE01.FNBM.CORP";"Hewlett-Packard Company";"20130927";"1.0.0.0";;;;
+"HP Insight Diagnostics  Online Edition for Windows";"LASHAFILE01.FNBM.CORP";"Hewlett-Packard Development Company, L.P.";"20131016";"9.50.1009";;;;
+"HP Insight Management Agents";"LASHAFILE01.FNBM.CORP";"Hewlett-Packard Company";"20131015";"9.40.0.0";;;;
+"HP Insight Management WBEM Providers for Windows Server x64 Editions";"LASHAFILE01.FNBM.CORP";"Hewlett-Packard Company";;"9.4.0.0";;;;
+"HP Lights-Out Online Configuration Utility";"LASHAFILE01.FNBM.CORP";"Hewlett-Packard Development Company, L.P.";"20130927";"4.2.0.0";;;;
+"HP ProLiant Agentless Management Service";"LASHAFILE01.FNBM.CORP";"Hewlett-Packard Company";;"9.40.0.0";;;;
+"HP ProLiant iLO 3/4 Channel Interface Driver";"LASHAFILE01.FNBM.CORP";"Hewlett-Packard Company";;"3.9.0.0";;;;
+"HP ProLiant iLO 3/4 Management Controller Package";"LASHAFILE01.FNBM.CORP";"Hewlett-Packard Company";;"3.9.0.0";;;;
+"HP ProLiant Integrated Management Log Viewer";"LASHAFILE01.FNBM.CORP";"Hewlett-Packard Company";"20130927";"6.5.0.0";;;;
+"HP Smart Array SAS/SATA Event Notification Service";"LASHAFILE01.FNBM.CORP";"Hewlett-Packard Development Company, L.P.";"20130927";"6.34.0.64";;;;
+"HP Smart Storage Administrator";"LASHAFILE01.FNBM.CORP";"Hewlett-Packard Development Company, L.P.";"20130927";"1.50.4.0";;;;
+"HP Smart Storage Administrator CLI";"LASHAFILE01.FNBM.CORP";"Hewlett-Packard Development Company, L.P.";"20130927";"1.50.4.0";;;;
+"HP System Management Homepage";"LASHAFILE01.FNBM.CORP";"Hewlett-Packard Development Company, L.P.";"20140710";"7.3.3";;;;
+"HP Version Control Agent";"LASHAFILE01.FNBM.CORP";"Hewlett Packard Development Company, L.P.";"20140710";"7.3.3.0";;;;
+"Identity Finder";"LASHAFILE01.FNBM.CORP";"Identity Finder, LLC";"20140726";"7.5.0.2";;;;
+"Matrox Graphics Software (remove only)";"LASHAFILE01.FNBM.CORP";"Matrox Graphics Inc.";;"4.0.1.5";;;;
+"Microsoft Silverlight";"LASHAFILE01.FNBM.CORP";"Microsoft Corporation";"20170429";"5.1.50906.0";;;;
+"Microsoft Visual C++ 2005 Redistributable";"LASHAFILE01.FNBM.CORP";"Microsoft Corporation";"20140426";"8.0.59193";;;;
+"Microsoft Visual C++ 2005 Redistributable";"LASHAFILE01.FNBM.CORP";"Microsoft Corporation";"20130930";"8.0.61001";;;;
+"Microsoft Visual C++ 2005 Redistributable (x64)";"LASHAFILE01.FNBM.CORP";"Microsoft Corporation";"20130930";"8.0.61000";;;;
+"Microsoft Visual C++ 2005 Redistributable (x64)";"LASHAFILE01.FNBM.CORP";"Microsoft Corporation";"20130927";"8.0.59192";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.21022";"LASHAFILE01.FNBM.CORP";"Microsoft Corporation";"20131216";"9.0.21022";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161";"LASHAFILE01.FNBM.CORP";"Microsoft Corporation";"20131015";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.21022";"LASHAFILE01.FNBM.CORP";"Microsoft Corporation";"20180625";"9.0.21022";;;;
+"Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219";"LASHAFILE01.FNBM.CORP";"Microsoft Corporation";"20131204";"10.0.40219";;;;
+"Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219";"LASHAFILE01.FNBM.CORP";"Microsoft Corporation";"20131204";"10.0.40219";;;;
+"Microsoft Visual C++ 2012 Redistributable (x64) - 11.0.61030";"LASHAFILE01.FNBM.CORP";"Microsoft Corporation";;"11.0.61030.0";;;;
+"Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.61030";"LASHAFILE01.FNBM.CORP";"Microsoft Corporation";;"11.0.61030.0";;;;
+"Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.30501";"LASHAFILE01.FNBM.CORP";"Microsoft Corporation";;"12.0.30501.0";;;;
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501";"LASHAFILE01.FNBM.CORP";"Microsoft Corporation";;"12.0.30501.0";;;;
+"Microsoft Visual C++ 2017 Redistributable (x64) - 14.11.25325";"LASHAFILE01.FNBM.CORP";"Microsoft Corporation";;"14.11.25325.0";;;;
+"PFA Server Registry Update";"LASHAFILE01.FNBM.CORP";"Hewlett-Packard Company";"20130927";"1.0.0.0";;;;
+"SolarWinds Agent 2.0.70.0";"LASHAFILE01.FNBM.CORP";"SolarWinds Worldwide, LLC.";"20180604";"2.0.70.0";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"LASHAFILE01.FNBM.CORP";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"Symantec Endpoint Protection";"LASHAFILE01.FNBM.CORP";"Symantec Corporation";"20180224";"14.0.3876.1100";;;;"0"
+"Veritas Operations Manager (Host Component)";"LASHAFILE01.FNBM.CORP";"Symantec Corporation";;"5.00.0196";;;;"0"
+"Veritas Storage Foundation 6.0.2 for Windows ";"LASHAFILE01.FNBM.CORP";"Symantec Corporation";"11.10.2005.11.10 10:33:24 PST";"6.0.2";;;;
+"WinMerge 2.14.0";"LASHAFILE01.FNBM.CORP";"Thingamahoochie Software";"20180625";"2.14.0";;;;

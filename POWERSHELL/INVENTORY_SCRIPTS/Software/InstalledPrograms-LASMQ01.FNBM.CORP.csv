@@ -1,0 +1,26 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"BMC Track-It! 11.3 Agent";"LASMQ01.FNBM.CORP";"BMC Software";;"11.3.0.355";;;;
+"HP Lights-Out Online Configuration Utility";"LASMQ01.FNBM.CORP";"Hewlett Packard Enterprise";"20170823";"4.8.0.0";;;;
+"HP Smart Array SAS/SATA Event Notification Service";"LASMQ01.FNBM.CORP";"Hewlett-Packard Development Company, L.P.";"20170823";"6.46.0.64";;;;
+"HP Smart Update Tools for Windows";"LASMQ01.FNBM.CORP";"Hewlett Packard Enterprise";"20170823";"1.6.5.0";;;;
+"HPE ProLiant Agentless Management Service";"LASMQ01.FNBM.CORP";"Hewlett Packard Enterprise Development LP";;"10.60.0.0";;;;
+"HPE System Management Homepage";"LASMQ01.FNBM.CORP";"Hewlett Packard Enterprise Development LP";"20170823";"7.6.0";;;;
+"IBM WebSphere MQ (fix pack 8.0.0.4 files)";"LASMQ01.FNBM.CORP";"IBM";"Wed Aug 23 15:38:19 PDT 2017";"8.0.0.4";;;;
+"IBM WebSphere MQ (Installation1)";"LASMQ01.FNBM.CORP";"IBM";"20170823";"8.0.0.0";;;;
+"iLO 3/4 Channel Interface Driver";"LASMQ01.FNBM.CORP";"Hewlett Packard Enterprise";;"3.30.0.0";;;;
+"iLO 3/4 Management Controller Driver Package";"LASMQ01.FNBM.CORP";"Hewlett Packard Enterprise";;"3.30.0.0";;;;
+"Infognition ScreenPressor v2.1 (Remove Only)";"LASMQ01.FNBM.CORP";;;;;;;
+"Insight Diagnostics";"LASMQ01.FNBM.CORP";"Hewlett Packard Enterprise Development LP";"20170823";"10.60.2116";;;;
+"Integrated Management Log Viewer";"LASMQ01.FNBM.CORP";"Hewlett Packard Enterprise";"20170823";"7.8.0.0";;;;
+"Matrox Graphics Software (remove only)";"LASMQ01.FNBM.CORP";"Matrox Graphics Inc.";;"4.3.1.5";;;;
+"Microsoft Silverlight";"LASMQ01.FNBM.CORP";"Microsoft Corporation";"20170721";"5.1.50907.0";;;;
+"Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.61030";"LASMQ01.FNBM.CORP";"Microsoft Corporation";;"11.0.61030.0";;;;
+"Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.30501";"LASMQ01.FNBM.CORP";"Microsoft Corporation";;"12.0.30501.0";;;;
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501";"LASMQ01.FNBM.CORP";"Microsoft Corporation";;"12.0.30501.0";;;;
+"PFA Server Registry Update";"LASMQ01.FNBM.CORP";"Hewlett-Packard Company";"20170823";"1.0.0.0";;;;
+"Smart Storage Administrator";"LASMQ01.FNBM.CORP";"Hewlett Packard Enterprise Development LP";"20170823";"2.65.7.0";;;;
+"Smart Storage Administrator CLI";"LASMQ01.FNBM.CORP";"Hewlett Packard Enterprise Development LP";"20170823";"2.65.7.0";;;;
+"Smart Storage Administrator Diagnostics and SmartSSD Wear Gauge Utility";"LASMQ01.FNBM.CORP";"Hewlett Packard Enterprise Development LP";"20170823";"2.65.7.0";;;;
+"SolarWinds Agent 2.0.70.0";"LASMQ01.FNBM.CORP";"SolarWinds Worldwide, LLC.";"20180604";"2.0.70.0";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"LASMQ01.FNBM.CORP";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"Symantec Endpoint Protection";"LASMQ01.FNBM.CORP";"Symantec Corporation";"20180421";"14.0.3876.1100";;;;"0"

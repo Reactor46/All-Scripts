@@ -1,0 +1,17 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"Apache Tomcat 7.0 Tomcat7 (remove only)";"LASBMC01.FNBM.CORP";;;"7.0.72";;;;
+"BMC Track-It! 11.3 Agent";"LASBMC01.FNBM.CORP";"BMC Software";;"11.3.0.355";;;;
+"Commvault ContentStore";"LASBMC01.FNBM.CORP";"Commvault";;"11.80.110.0";;;;
+"FootPrints 12.1.09";"LASBMC01.FNBM.CORP";"BMC Software, Inc.";"Mar 10 2018 07:26:16.831 PM -0800";"12.1.09";;;;
+"Infognition ScreenPressor v2.1 (Remove Only)";"LASBMC01.FNBM.CORP";;;;;;;
+"Java 8 Update 141 (64-bit)";"LASBMC01.FNBM.CORP";"Oracle Corporation";"20170718";"8.0.1410.15";;;;
+"Microsoft Silverlight";"LASBMC01.FNBM.CORP";"Microsoft Corporation";"20170413";"5.1.50906.0";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161";"LASBMC01.FNBM.CORP";"Microsoft Corporation";"20150608";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148";"LASBMC01.FNBM.CORP";"Microsoft Corporation";"20150608";"9.0.30729.4148";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161";"LASBMC01.FNBM.CORP";"Microsoft Corporation";"20160216";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219";"LASBMC01.FNBM.CORP";"Microsoft Corporation";"20170316";"10.0.40219";;;;
+"Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.21005";"LASBMC01.FNBM.CORP";"Microsoft Corporation";;"12.0.21005.1";;;;
+"Microsoft Visual C++ 2017 Redistributable (x64) - 14.11.25325";"LASBMC01.FNBM.CORP";"Microsoft Corporation";;"14.11.25325.0";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"LASBMC01.FNBM.CORP";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"Symantec Endpoint Protection";"LASBMC01.FNBM.CORP";"Symantec Corporation";"20180224";"14.0.3876.1100";;;;"0"
+"VMware Tools";"LASBMC01.FNBM.CORP";"VMware, Inc.";"20171104";"10.1.7.5541682";;;;

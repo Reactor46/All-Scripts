@@ -1,0 +1,238 @@
+c:\users\shivam\documents\visual studio 2012\Projects\inventory\inventory\bin\Debug\inventory.exe.config
+D:\Development Area\inventory\inventory\bin\Debug\inventory.exe.config
+D:\Development Area\inventory\inventory\bin\Debug\inventory.exe
+D:\Development Area\inventory\inventory\bin\Debug\inventory.pdb
+D:\Development Area\inventory\inventory\obj\Debug\inventory.csprojResolveAssemblyReference.cache
+D:\Development Area\inventory\inventory\obj\Debug\App.g.cs
+D:\Development Area\inventory\inventory\obj\Debug\inventory_MarkupCompile.cache
+D:\Development Area\inventory\inventory\obj\Debug\inventory.g.resources
+D:\Development Area\inventory\inventory\obj\Debug\inventory.Properties.Resources.resources
+D:\Development Area\inventory\inventory\obj\Debug\inventory.csproj.GenerateResource.Cache
+D:\Development Area\inventory\inventory\obj\Debug\inventory.exe
+D:\Development Area\inventory\inventory\obj\Debug\inventory.pdb
+D:\Development Area\inventory\inventory\obj\Debug\View\Login.baml
+D:\Development Area\inventory\inventory\obj\Debug\View\Login.g.cs
+D:\Development Area\inventory\inventory\bin\Debug\BusinessLayer.dll
+D:\Development Area\inventory\inventory\bin\Debug\DataLayer.dll
+D:\Development Area\inventory\inventory\bin\Debug\EntityFramework.dll
+D:\Development Area\inventory\inventory\bin\Debug\BusinessLayer.pdb
+D:\Development Area\inventory\inventory\bin\Debug\DataLayer.pdb
+D:\Development Area\inventory\inventory\bin\Debug\EntityFramework.xml
+D:\Development Area\inventory\inventory\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Development Area\inventory\inventory\obj\Debug\inventory_MarkupCompile.lref
+D:\Development Area\inventory\inventory\obj\Debug\ResourceDic\MainDictionary.baml
+D:\Development Area\inventory\inventory\obj\Debug\App.baml
+D:\Development Area\inventory\inventory\obj\Debug\View\MainWindow.baml
+D:\Development Area\inventory\inventory\obj\Debug\View\MainWindow.g.cs
+D:\Development Area\inventory\inventory\obj\Debug\View\Dealers\ModifyDealers.baml
+D:\Development Area\inventory\inventory\obj\Debug\View\Dealers\ModifyDealers.g.cs
+D:\Development Area\inventory\inventory\obj\Debug\View\Dealers\AddDealers.baml
+D:\Development Area\inventory\inventory\obj\Debug\View\Dealers\AddDealers.g.cs
+G:\Softwares\inventory\inventory\bin\Debug\inventory.exe.config
+G:\Softwares\inventory\inventory\obj\Debug\inventory.exe
+G:\Softwares\inventory\inventory\obj\Debug\inventory.pdb
+G:\Softwares\inventory\inventory\bin\Debug\inventory.exe
+G:\Softwares\inventory\inventory\bin\Debug\inventory.pdb
+G:\Softwares\inventory\inventory\bin\Debug\BusinessLayer.dll
+G:\Softwares\inventory\inventory\bin\Debug\DataLayer.dll
+G:\Softwares\inventory\inventory\bin\Debug\EntityFramework.dll
+G:\Softwares\inventory\inventory\bin\Debug\BusinessLayer.pdb
+G:\Softwares\inventory\inventory\bin\Debug\DataLayer.pdb
+G:\Softwares\inventory\inventory\bin\Debug\EntityFramework.xml
+G:\Softwares\inventory\inventory\obj\Debug\Inventory.csprojResolveAssemblyReference.cache
+G:\Softwares\inventory\inventory\obj\Debug\ResourceDic\MainDictionary.baml
+G:\Softwares\inventory\inventory\obj\Debug\View\Dealers\AddDealers.baml
+G:\Softwares\inventory\inventory\obj\Debug\App.baml
+G:\Softwares\inventory\inventory\obj\Debug\View\Dealers\AddDealers.g.cs
+G:\Softwares\inventory\inventory\obj\Debug\View\Dealers\ModifyDealers.g.cs
+G:\Softwares\inventory\inventory\obj\Debug\View\Login.g.cs
+G:\Softwares\inventory\inventory\obj\Debug\View\MainWindow.g.cs
+G:\Softwares\inventory\inventory\obj\Debug\App.g.cs
+G:\Softwares\inventory\inventory\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\Softwares\inventory\inventory\obj\Debug\inventory_MarkupCompile.cache
+G:\Softwares\inventory\inventory\obj\Debug\inventory_MarkupCompile.lref
+G:\Softwares\inventory\inventory\obj\Debug\View\Dealers\ModifyDealers.baml
+G:\Softwares\inventory\inventory\obj\Debug\View\Login.baml
+G:\Softwares\inventory\inventory\obj\Debug\View\MainWindow.baml
+G:\Softwares\inventory\inventory\obj\Debug\inventory.g.resources
+G:\Softwares\inventory\inventory\obj\Debug\inventory.Properties.Resources.resources
+G:\Softwares\inventory\inventory\obj\Debug\Inventory.csproj.GenerateResource.Cache
+D:\Development Area\inventory\inventory\obj\Debug\View\Products\Category.baml
+D:\Development Area\inventory\inventory\obj\Debug\View\Products\Category.g.cs
+D:\Development Area\inventory\inventory\obj\Debug\View\Products\SubCategory.baml
+D:\Development Area\inventory\inventory\obj\Debug\View\Products\SubCategory.g.cs
+D:\Development Area\inventory\inventory\bin\Debug\EntityLayer.dll
+D:\Development Area\inventory\inventory\bin\Debug\EntityLayer.pdb
+G:\Softwares\inventory\InventoryManagement\inventory\bin\Debug\inventory.exe.config
+G:\Softwares\inventory\InventoryManagement\inventory\bin\Debug\inventory.exe
+G:\Softwares\inventory\InventoryManagement\inventory\bin\Debug\inventory.pdb
+G:\Softwares\inventory\InventoryManagement\inventory\bin\Debug\BusinessLayer.dll
+G:\Softwares\inventory\InventoryManagement\inventory\bin\Debug\DataLayer.dll
+G:\Softwares\inventory\InventoryManagement\inventory\bin\Debug\EntityLayer.dll
+G:\Softwares\inventory\InventoryManagement\inventory\bin\Debug\EntityFramework.dll
+G:\Softwares\inventory\InventoryManagement\inventory\bin\Debug\BusinessLayer.pdb
+G:\Softwares\inventory\InventoryManagement\inventory\bin\Debug\DataLayer.pdb
+G:\Softwares\inventory\InventoryManagement\inventory\bin\Debug\EntityLayer.pdb
+G:\Softwares\inventory\InventoryManagement\inventory\bin\Debug\EntityFramework.xml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\Inventory.csprojResolveAssemblyReference.cache
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\Controls\AutoCompleteTextBox.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\ResourceDic\MainDictionary.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Dealers\AddDealers.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Products\Category.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Products\ProductStockEntry.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Products\SellProducts.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Products\SubCategory.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\App.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\Controls\AutoCompleteTextBox.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Alerts\GrowlNotifiactions.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Dealers\AddDealers.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Dealers\ModifyDealers.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Login.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\MainWindow.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Products\AddProduct.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Products\Category.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Products\EditProduct.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Products\ModifyProduct.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Products\ProductStockEntry.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Products\SellProducts.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Products\SubCategory.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\App.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\inventory_MarkupCompile.cache
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\inventory_MarkupCompile.lref
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Alerts\DesignTimeNotificationData.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Alerts\GrowlNotifiactions.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Dealers\ModifyDealers.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Login.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\MainWindow.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Products\AddProduct.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Products\EditProduct.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Products\ModifyProduct.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\inventory.g.resources
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\inventory.Properties.Resources.resources
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\Inventory.csproj.GenerateResource.Cache
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\inventory.exe
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\inventory.pdb
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Transactions\TransactionSummary.baml
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\Transactions\TransactionSummary.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\ConfigurationWindow.g.cs
+G:\Softwares\inventory\InventoryManagement\inventory\obj\Debug\View\ConfigurationWindow.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\bin\Debug\inventory.exe.config
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\inventory.exe
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\inventory.pdb
+D:\Development Area\Inventory Development\InventoryManagement\inventory\bin\Debug\inventory.exe.manifest
+D:\Development Area\Inventory Development\InventoryManagement\inventory\bin\Debug\inventory.application
+D:\Development Area\Inventory Development\InventoryManagement\inventory\bin\Debug\inventory.exe
+D:\Development Area\Inventory Development\InventoryManagement\inventory\bin\Debug\inventory.pdb
+D:\Development Area\Inventory Development\InventoryManagement\inventory\bin\Debug\BusinessLayer.dll
+D:\Development Area\Inventory Development\InventoryManagement\inventory\bin\Debug\DataLayer.dll
+D:\Development Area\Inventory Development\InventoryManagement\inventory\bin\Debug\EntityLayer.dll
+D:\Development Area\Inventory Development\InventoryManagement\inventory\bin\Debug\EntityFramework.dll
+D:\Development Area\Inventory Development\InventoryManagement\inventory\bin\Debug\BusinessLayer.pdb
+D:\Development Area\Inventory Development\InventoryManagement\inventory\bin\Debug\DataLayer.pdb
+D:\Development Area\Inventory Development\InventoryManagement\inventory\bin\Debug\EntityLayer.pdb
+D:\Development Area\Inventory Development\InventoryManagement\inventory\bin\Debug\EntityFramework.xml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\Inventory.csprojResolveAssemblyReference.cache
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\Controls\AutoCompleteTextBox.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\ResourceDic\MainDictionary.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Dealers\AddDealers.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Products\Category.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Products\ProductStockEntry.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Products\SellProducts.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Products\SubCategory.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Transactions\TransactionSummary.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\App.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\Controls\AutoCompleteTextBox.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Alerts\GrowlNotifiactions.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\ConfigurationWindow.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Dealers\AddDealers.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Dealers\ModifyDealers.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Login.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\MainWindow.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Products\AddProduct.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Products\Category.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Products\EditProduct.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Products\ModifyProduct.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Products\ProductStockEntry.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Products\SellProducts.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Products\SubCategory.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Transactions\TransactionSummary.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\App.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\inventory_MarkupCompile.cache
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\inventory_MarkupCompile.lref
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Alerts\DesignTimeNotificationData.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Alerts\GrowlNotifiactions.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\ConfigurationWindow.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Dealers\ModifyDealers.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Login.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\MainWindow.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Products\AddProduct.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Products\EditProduct.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\View\Products\ModifyProduct.baml
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\inventory.g.resources
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\inventory.Properties.Resources.resources
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\Inventory.csproj.GenerateResource.Cache
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\inventory.exe.manifest
+D:\Development Area\Inventory Development\InventoryManagement\inventory\obj\Debug\inventory.application
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\Inventory.csprojAssemblyReference.cache
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\Controls\AutoCompleteTextBox.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\ResourceDic\MainDictionary.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Dealers\AddDealers.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Products\Category.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Products\ProductStockEntry.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Products\SellProducts.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Products\SubCategory.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Transactions\TransactionSummary.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\App.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\Controls\AutoCompleteTextBox.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Alerts\GrowlNotifiactions.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\ConfigurationWindow.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Dealers\AddDealers.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Dealers\ModifyDealers.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Login.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\MainWindow.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Products\AddProduct.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Products\Category.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Products\EditProduct.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Products\ModifyProduct.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Products\ProductStockEntry.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Products\SellProducts.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Products\SubCategory.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Transactions\TransactionSummary.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\App.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\inventory_MarkupCompile.cache
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\inventory_MarkupCompile.lref
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Alerts\DesignTimeNotificationData.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Alerts\GrowlNotifiactions.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\ConfigurationWindow.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Dealers\ModifyDealers.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Login.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\MainWindow.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Products\AddProduct.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Products\EditProduct.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\View\Products\ModifyProduct.baml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\inventory.g.resources
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\inventory.Properties.Resources.resources
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\Inventory.csproj.GenerateResource.cache
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\Inventory.csproj.CoreCompileInputs.cache
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\inventory.exe
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\inventory.pdb
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\bin\Debug\inventory.exe.config
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\bin\Debug\inventory.exe.manifest
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\bin\Debug\inventory.application
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\bin\Debug\inventory.exe
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\bin\Debug\inventory.pdb
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\bin\Debug\BusinessLayer.dll
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\bin\Debug\DataLayer.dll
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\bin\Debug\EntityLayer.dll
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\bin\Debug\EntityFramework.dll
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\bin\Debug\BusinessLayer.pdb
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\bin\Debug\DataLayer.pdb
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\bin\Debug\DataLayer.dll.config
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\bin\Debug\EntityLayer.pdb
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\bin\Debug\EntityFramework.xml
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\inventory.exe.manifest
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\inventory.application
+C:\LazyWinAdmin\ServerInventoryReport\InventoryManagement\inventory\obj\Debug\Inventory.csproj.CopyComplete

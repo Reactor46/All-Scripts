@@ -1,0 +1,15 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"AppDynamics .NET Agent";"LASCAPS01.FNBM.CORP";"AppDynamics";"20180711";"4.4.4.0";;;;
+"BMC Track-It! 11.3 Agent";"LASCAPS01.FNBM.CORP";"BMC Software";;"11.3.0.355";;;;
+"Microsoft Access database engine 2010 (English)";"LASCAPS01.FNBM.CORP";"Microsoft Corporation";"20171021";"14.0.7015.1000";;;;
+"Microsoft Silverlight";"LASCAPS01.FNBM.CORP";"Microsoft Corporation";"20170429";"5.1.50906.0";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161";"LASCAPS01.FNBM.CORP";"Microsoft Corporation";"20150401";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148";"LASCAPS01.FNBM.CORP";"Microsoft Corporation";"20150401";"9.0.30729.4148";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161";"LASCAPS01.FNBM.CORP";"Microsoft Corporation";"20150410";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219";"LASCAPS01.FNBM.CORP";"Microsoft Corporation";"20150425";"10.0.40219";;;;
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501";"LASCAPS01.FNBM.CORP";"Microsoft Corporation";;"12.0.30501.0";;;;
+"Netwitness SFTP Agent";"LASCAPS01.FNBM.CORP";"RSA Security Inc";"20171216";"4.1.0";;;;
+"SAP Crystal Reports runtime engine for .NET Framework (64-bit)";"LASCAPS01.FNBM.CORP";"SAP";"20150430";"13.0.13.1597";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"LASCAPS01.FNBM.CORP";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"Symantec Endpoint Protection";"LASCAPS01.FNBM.CORP";"Symantec Corporation";"20180421";"14.0.3876.1100";;;;"0"
+"VMware Tools";"LASCAPS01.FNBM.CORP";"VMware, Inc.";"20180224";"10.1.7.5541682";;;;

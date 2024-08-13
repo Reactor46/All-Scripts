@@ -1,0 +1,563 @@
+﻿<html>
+			<style>
+			BODY{font-family: Arial; font-size: 10pt;}
+			H1{font-size: 22px;}
+			H2{font-size: 20px; padding-top: 10px;}
+			H3{font-size: 16px; padding-top: 8px;}
+			TABLE{border: 1px solid black; border-collapse: collapse; font-size: 8pt; table-layout: fixed;}
+            TABLE.testresults{width: 850px;}
+            TABLE.summary{text-align: center; width: auto;}
+			TH{border: 1px solid black; background: #dddddd; padding: 5px; color: #000000;}
+            TH.summary{width: 80px;}
+            TH.test{width: 120px;}
+            TH.description{width: 150px;}
+            TH.outcome{width: 50px}
+            TH.comments{width: 120px;}
+            TH.details{width: 270px;}
+            TH.reference{width: 60px;}
+			TD{border: 1px solid black; padding: 5px; vertical-align: top; }
+			td.pass{background: #7FFF00;}
+			td.warn{background: #FFE600;}
+			td.fail{background: #FF0000; color: #ffffff;}
+			td.info{background: #85D4FF;}
+            ul{list-style: inside; padding-left: 0px;}
+			</style>
+			<body><h1>Exchange Analyzer Report</h1>
+			<p><strong>Generated:</strong> 04/12/2018 10:34:02</p>
+            <p><strong>Organization:</strong> First National Bank of Marin</p>
+            <p>The following guidelines apply to this report:
+            <ul>
+                <li>This tests included in this report are documented on the <a href="https://github.com/ExchangeAnalyzer/ExchangeAnalyzer/wiki/Exchange-Analyzer-Tests">Exchange Analyzer Wiki</a>.</li>
+                <li>Click the "More Info" link for each test to learn more about that test, what a pass or fail means, and recommendations for how to respond.</li>
+                <li>A test can fail if it can't complete successfully, or if a condition was encountered that requires manual assessment.</li>
+                <li>For some organizations a failed test may be due to a deliberate design or operational decision.</li>
+                <li>Please review the <a href="https://github.com/ExchangeAnalyzer/ExchangeAnalyzer/wiki/Frequently-Asked-Questions">Frequently Asked Questions</a> if you have any further questions.</li>
+            </ul>
+            </p><h2>Summary:</h2>
+                      <p>
+                      <table class="summary">
+                      <tr>
+                      <th class="summary">Passed</th>
+                      <th class="summary">Warning</th>
+                      <th class="summary">Failed</th>
+                      <th class="summary">Info</th>
+                      </tr>
+                      <tr>
+                      <td class="pass">11</td>
+                      <td class="warn">2</td>
+                      <td class="fail">3</td>
+                      <td class="info">2</td>
+                      </tr>
+                      </table>
+                      </p><p>Failed items:</p>
+                              <ul><li>One or more Exchange Server 2013/2016 servers are not running the latest build.</li><li>One or more Exchange sites has more than one namespace per HTTPS protocol.</li><li>One or more Exchange databases has not been backed up within the last 24 hours.</li></ul>
+                                </p><p>Warning items:</p>
+                                <ul><li>Errors were encountered. External: 'outlook.creditonemail.biz': (Unable to resolve) External: 'mail.Contoso.corp': (Unable to resolve) External: 'webmail.creditonemail.biz': (Unable to resolve)</li><li>One or more Exchange servers are a virtual server.</li></ul>
+                                 </p><h2>Category: Exchange Servers</h2><p>Summary of Exchange Servers:</p>
+                                <p>
+                                <table>
+                                <tr>
+                                <th>Name</th>
+                                <th>Version</th>
+                                <th>.NET Framework</th>
+                                <th>Site</th>
+                                <th>Domain</th>
+                                <th>Roles</th>
+                                <th>Edition</th>
+                                </tr><tr>
+                                    <td>LASEXCH01</td>
+                                    <td>Exchange Server 2016 CU4</td>
+                                    <td>.NET Framework 4.6.2</td>
+                                    <td>LasVegas</td>
+                                    <td>Contoso.corp</td>
+                                    <td>Mailbox</td>
+                                    <td>Enterprise</td>
+                                    </tr><tr>
+                                    <td>LASEXCH03</td>
+                                    <td>Exchange Server 2016 CU4</td>
+                                    <td>.NET Framework 4.6.2</td>
+                                    <td>LasVegas</td>
+                                    <td>Contoso.corp</td>
+                                    <td>Mailbox</td>
+                                    <td>Enterprise</td>
+                                    </tr><tr>
+                                    <td>LASEXCH02</td>
+                                    <td>Exchange Server 2016 CU4</td>
+                                    <td>.NET Framework 4.6.2</td>
+                                    <td>LasVegas</td>
+                                    <td>Contoso.corp</td>
+                                    <td>Mailbox</td>
+                                    <td>Enterprise</td>
+                                    </tr><tr>
+                                    <td>LASEXCH04</td>
+                                    <td>Exchange Server 2016 CU4</td>
+                                    <td>.NET Framework 4.6.2</td>
+                                    <td>LasVegas</td>
+                                    <td>Contoso.corp</td>
+                                    <td>Mailbox</td>
+                                    <td>Enterprise</td>
+                                    </tr></table>
+                                </p><p>Results for Exchange Servers tests:</p><p>
+					        <table class="testresults">
+					        <tr>
+					        <th class="test">Test</th>
+                            <th class="description">Description</th>
+					        <th class="outcome">Outcome</th>
+					        <th class="comments">Comments</th>
+					        <th class="details">Details</th>
+					        <th class="reference">Reference</th>
+					        </tr><tr><td>Exchange Versions</td><td>Exchange Analyzer supports Exchange Server 2013 and 2016.</td><td class="pass">Passed</td><td>All Exchange servers in the organization are Exchange 2013/2016.</td><td><p>Passed items:</p><ul><li>LASEXCH01</li><li>LASEXCH03</li><li>LASEXCH02</li><li>LASEXCH04</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/EXSRV001" target="_blank">More Info</a></td><tr><td>Build Numbers</td><td>Check if Exchange Servers are running the latest build.</td><td class="fail">Failed</td><td>One or more Exchange Server 2013/2016 servers are not running the latest build.</td><td><p>Failed items:</p><ul><li>LASEXCH01 (485 days old)</li><li>LASEXCH03 (485 days old)</li><li>LASEXCH02 (485 days old)</li><li>LASEXCH04 (485 days old)</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/EXSRV002" target="_blank">More Info</a></td><tr><td>.NET Framework Versions</td><td>Check if Exchange Servers are running the a supported version of .NET Framework.</td><td class="pass">Passed</td><td>All Exchange Server 2013/2016 servers are running supported versions of .NET Framework.</td><td><p>Passed items:</p><ul><li>LASEXCH01</li><li>LASEXCH03</li><li>LASEXCH02</li><li>LASEXCH04</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/EXSRV003" target="_blank">More Info</a></td></table></p><h2>Category: Client Access</h2><p>Summary of Client Access URLs/Namespaces:</p><table>
+                            <tr>
+                            <th colspan="3">Server: LASEXCH01, Site: LasVegas</th>
+                            </tr>
+                            <tr>
+                            <th>Service</th>
+                            <th>Internal URL</th>
+                            <th>External Url</th>
+                            </tr>
+                            <tr>
+                            <td>Outlook AnyWhere-Object</td>
+                            <td>outlook.creditonemail.biz</td>
+                            <td>outlook.creditonemail.biz</td>
+                            </tr>
+                            <tr>
+                            <td>MAPI/HTTP</td>
+                            <td>https://outlook.creditonemail.biz/mapi</td>
+                            <td>https://outlook.creditonemail.biz/mapi</td>
+                            </tr>
+                            <tr>
+                            <td>Outlook on the web (OWA)</td>
+                            <td>https://webmail.creditonemail.biz/owa</td>
+                            <td>https://activesync.creditone.com/owa</td>
+                            </tr>
+                            <tr>
+                            <td>Exchange Control Panel</td>
+                            <td>https://webmail.creditonemail.biz/ecp</td>
+                            <td>Not set</td>
+                            </tr>
+                            <tr>
+                            <td>ActiveSync</td>
+                            <td>https://activesync.creditone.com/Microsoft-Server-ActiveSync</td>
+                            <td>https://activesync.creditone.com/Microsoft-Server-ActiveSync</td>
+                            </tr>
+                            <tr>
+                            <td>Offline Address Book</td>
+                            <td>https://mail.Contoso.corp/OAB</td>
+                            <td>https://mail.Contoso.corp/OAB</td>
+                            </tr>
+                            <tr>
+                            <td>Exchange Web Access</td>
+                            <td>https://outlook.creditonemail.biz/ews/exchange.asmx</td>
+                            <td>https://webmail.creditonemail.biz/ews/exchange.asmx</td>
+                            </tr>
+                            <tr>
+                            <td>AutoDiscover (SCP)</td>
+                            <td>https://autodiscover.creditonemail.biz/Autodiscover/Autodiscover.xml</td>
+                            <td>n/a</td>
+                            </tr>
+                            </table>
+                            </p><table>
+                            <tr>
+                            <th colspan="3">Server: LASEXCH03, Site: LasVegas</th>
+                            </tr>
+                            <tr>
+                            <th>Service</th>
+                            <th>Internal URL</th>
+                            <th>External Url</th>
+                            </tr>
+                            <tr>
+                            <td>Outlook AnyWhere-Object</td>
+                            <td>outlook.creditonemail.biz</td>
+                            <td>outlook.creditonemail.biz</td>
+                            </tr>
+                            <tr>
+                            <td>MAPI/HTTP</td>
+                            <td>https://outlook.creditonemail.biz/mapi</td>
+                            <td>https://outlook.creditonemail.biz/mapi</td>
+                            </tr>
+                            <tr>
+                            <td>Outlook on the web (OWA)</td>
+                            <td>https://webmail.creditonemail.biz/owa</td>
+                            <td>https://activesync.creditone.com/owa</td>
+                            </tr>
+                            <tr>
+                            <td>Exchange Control Panel</td>
+                            <td>https://webmail.creditonemail.biz/ecp</td>
+                            <td>Not set</td>
+                            </tr>
+                            <tr>
+                            <td>ActiveSync</td>
+                            <td>https://activesync.creditone.com/Microsoft-Server-ActiveSync</td>
+                            <td>https://activesync.creditone.com/Microsoft-Server-ActiveSync</td>
+                            </tr>
+                            <tr>
+                            <td>Offline Address Book</td>
+                            <td>https://mail.Contoso.corp/OAB</td>
+                            <td>https://mail.Contoso.corp/OAB</td>
+                            </tr>
+                            <tr>
+                            <td>Exchange Web Access</td>
+                            <td>https://outlook.creditonemail.biz/ews/exchange.asmx</td>
+                            <td>https://webmail.creditonemail.biz/ews/exchange.asmx</td>
+                            </tr>
+                            <tr>
+                            <td>AutoDiscover (SCP)</td>
+                            <td>https://autodiscover.creditonemail.biz/Autodiscover/Autodiscover.xml</td>
+                            <td>n/a</td>
+                            </tr>
+                            </table>
+                            </p><table>
+                            <tr>
+                            <th colspan="3">Server: LASEXCH02, Site: LasVegas</th>
+                            </tr>
+                            <tr>
+                            <th>Service</th>
+                            <th>Internal URL</th>
+                            <th>External Url</th>
+                            </tr>
+                            <tr>
+                            <td>Outlook AnyWhere-Object</td>
+                            <td>outlook.creditonemail.biz</td>
+                            <td>outlook.creditonemail.biz</td>
+                            </tr>
+                            <tr>
+                            <td>MAPI/HTTP</td>
+                            <td>https://outlook.creditonemail.biz/mapi</td>
+                            <td>https://outlook.creditonemail.biz/mapi</td>
+                            </tr>
+                            <tr>
+                            <td>Outlook on the web (OWA)</td>
+                            <td>https://webmail.creditonemail.biz/owa</td>
+                            <td>https://activesync.creditone.com/owa</td>
+                            </tr>
+                            <tr>
+                            <td>Exchange Control Panel</td>
+                            <td>https://webmail.creditonemail.biz/ecp</td>
+                            <td>Not set</td>
+                            </tr>
+                            <tr>
+                            <td>ActiveSync</td>
+                            <td>https://activesync.creditone.com/Microsoft-Server-ActiveSync</td>
+                            <td>https://activesync.creditone.com/Microsoft-Server-ActiveSync</td>
+                            </tr>
+                            <tr>
+                            <td>Offline Address Book</td>
+                            <td>https://mail.Contoso.corp/OAB</td>
+                            <td>https://mail.Contoso.corp/OAB</td>
+                            </tr>
+                            <tr>
+                            <td>Exchange Web Access</td>
+                            <td>https://outlook.creditonemail.biz/ews/exchange.asmx</td>
+                            <td>https://webmail.creditonemail.biz/ews/exchange.asmx</td>
+                            </tr>
+                            <tr>
+                            <td>AutoDiscover (SCP)</td>
+                            <td>https://autodiscover.creditonemail.biz/Autodiscover/Autodiscover.xml</td>
+                            <td>n/a</td>
+                            </tr>
+                            </table>
+                            </p><table>
+                            <tr>
+                            <th colspan="3">Server: LASEXCH04, Site: LasVegas</th>
+                            </tr>
+                            <tr>
+                            <th>Service</th>
+                            <th>Internal URL</th>
+                            <th>External Url</th>
+                            </tr>
+                            <tr>
+                            <td>Outlook AnyWhere-Object</td>
+                            <td>outlook.creditonemail.biz</td>
+                            <td>outlook.creditonemail.biz</td>
+                            </tr>
+                            <tr>
+                            <td>MAPI/HTTP</td>
+                            <td>https://outlook.creditonemail.biz/mapi</td>
+                            <td>https://outlook.creditonemail.biz/mapi</td>
+                            </tr>
+                            <tr>
+                            <td>Outlook on the web (OWA)</td>
+                            <td>https://webmail.creditonemail.biz/owa</td>
+                            <td>https://activesync.creditone.com/owa</td>
+                            </tr>
+                            <tr>
+                            <td>Exchange Control Panel</td>
+                            <td>https://webmail.creditonemail.biz/ecp</td>
+                            <td>Not set</td>
+                            </tr>
+                            <tr>
+                            <td>ActiveSync</td>
+                            <td>https://activesync.creditone.com/Microsoft-Server-ActiveSync</td>
+                            <td>https://activesync.creditone.com/Microsoft-Server-ActiveSync</td>
+                            </tr>
+                            <tr>
+                            <td>Offline Address Book</td>
+                            <td>https://mail.Contoso.corp/OAB</td>
+                            <td>https://mail.Contoso.corp/OAB</td>
+                            </tr>
+                            <tr>
+                            <td>Exchange Web Access</td>
+                            <td>https://outlook.creditonemail.biz/ews/exchange.asmx</td>
+                            <td>https://webmail.creditonemail.biz/ews/exchange.asmx</td>
+                            </tr>
+                            <tr>
+                            <td>AutoDiscover (SCP)</td>
+                            <td>https://autodiscover.creditonemail.biz/Autodiscover/Autodiscover.xml</td>
+                            <td>n/a</td>
+                            </tr>
+                            </table>
+                            </p><p>Results for Client Access tests:</p><p>
+					        <table class="testresults">
+					        <tr>
+					        <th class="test">Test</th>
+                            <th class="description">Description</th>
+					        <th class="outcome">Outcome</th>
+					        <th class="comments">Comments</th>
+					        <th class="details">Details</th>
+					        <th class="reference">Reference</th>
+					        </tr><tr><td>Client Access Namespaces</td><td>Check if multiple namespaces exist for a protocol within the same AD site.</td><td class="fail">Failed</td><td>One or more Exchange sites has more than one namespace per HTTPS protocol.</td><td><p>Failed items:</p><ul><li>LasVegas</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/CAS001" target="_blank">More Info</a></td><tr><td>Server FQDNs in URLs</td><td>Check that CAS URLs don't contain server FQDNs.</td><td class="pass">Passed</td><td>No Exchange HTTPS services have URLs containing server FQDNs.</td><td><p>Passed items:</p><ul><li>LASEXCH01</li><li>LASEXCH03</li><li>LASEXCH02</li><li>LASEXCH04</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/CAS002" target="_blank">More Info</a></td><tr><td>SSL 3.0 Support</td><td>Check that SSL 3.0 protocol support is disabled</td><td class="pass">Passed</td><td>All Exchange servers have SSL 3.0 disabled.</td><td><p>Passed items:</p><ul><li>LASEXCH01</li><li>LASEXCH03</li><li>LASEXCH02</li><li>LASEXCH04</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/CAS003" target="_blank">More Info</a></td><tr><td>TTL on DNS Entries</td><td>Check that TTLs on DNS entries for CAS namespaces are not excessive</td><td class="warn">Warning</td><td>Errors were encountered. External: 'outlook.creditonemail.biz': (Unable to resolve) External: 'mail.Contoso.corp': (Unable to resolve) External: 'webmail.creditonemail.biz': (Unable to resolve)</td><td><p>Passed items:</p><ul><li>activesync.creditone.com' (Internal TTL: 00:00:36)</li><li>activesync.creditone.com (External TTL: 00:00:59)</li></ul><p>Failed items:</p><ul><li>outlook.creditonemail.biz' (Internal TTL: 01:00:00)</li><li>webmail.creditonemail.biz' (Internal TTL: 01:00:00)</li><li>mail.Contoso.corp' (Internal TTL: 01:00:00)</li><li>autodiscover.creditonemail.biz' (Internal TTL: 01:00:00)</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/CAS005" target="_blank">More Info</a></td></table></p><h2>Category: POP</h2>
+                                <p>Results for POP tests:</p><p>
+					        <table class="testresults">
+					        <tr>
+					        <th class="test">Test</th>
+                            <th class="description">Description</th>
+					        <th class="outcome">Outcome</th>
+					        <th class="comments">Comments</th>
+					        <th class="details">Details</th>
+					        <th class="reference">Reference</th>
+					        </tr><tr><td>POP Service Status</td><td>Check the status of the POP services.</td><td class="info">Info</td><td></td><td><p>Info items:</p><ul><li>LASEXCH01: MSExchangePop3 is Stopped (Start Mode: Manual)</li><li>LASEXCH01: MSExchangePOP3BE is Stopped (Start Mode: Manual)</li><li>LASEXCH03: MSExchangePop3 is Stopped (Start Mode: Manual)</li><li>LASEXCH03: MSExchangePOP3BE is Stopped (Start Mode: Manual)</li><li>LASEXCH02: MSExchangePop3 is Stopped (Start Mode: Manual)</li><li>LASEXCH02: MSExchangePOP3BE is Stopped (Start Mode: Manual)</li><li>LASEXCH04: MSExchangePop3 is Stopped (Start Mode: Manual)</li><li>LASEXCH04: MSExchangePOP3BE is Stopped (Start Mode: Manual)</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/POP001" target="_blank">More Info</a></td><tr><td>POP Secure Login</td><td>Check that insecure POP logins are not permitted.</td><td class="pass">Passed</td><td>No POP services allow insecure logins.</td><td><p>Passed items:</p><ul><li>LASEXCH01</li><li>LASEXCH03</li><li>LASEXCH02</li><li>LASEXCH04</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/POP002" target="_blank">More Info</a></td><tr><td>POP Protocol Logging</td><td>Check that protocol logging is not enabled for POP.</td><td class="pass">Passed</td><td>No POP services have protocol logging enabled.</td><td><p>Passed items:</p><ul><li>LASEXCH01</li><li>LASEXCH03</li><li>LASEXCH02</li><li>LASEXCH04</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/POP003" target="_blank">More Info</a></td></table></p><h2>Category: IMAP</h2>
+                                <p>Results for IMAP tests:</p><p>
+					        <table class="testresults">
+					        <tr>
+					        <th class="test">Test</th>
+                            <th class="description">Description</th>
+					        <th class="outcome">Outcome</th>
+					        <th class="comments">Comments</th>
+					        <th class="details">Details</th>
+					        <th class="reference">Reference</th>
+					        </tr><tr><td>IMAP Service Status</td><td>Check the status of the IMAP services.</td><td class="info">Info</td><td>IMAP service state and start mode information.</td><td><p>Info items:</p><ul><li>LASEXCH01: MSExchangeImap4 is Running (Start Mode: Auto)</li><li>LASEXCH01: MSExchangeIMAP4BE is Stopped (Start Mode: Manual)</li><li>LASEXCH03: MSExchangeImap4 is Running (Start Mode: Auto)</li><li>LASEXCH03: MSExchangeIMAP4BE is Running (Start Mode: Auto)</li><li>LASEXCH02: MSExchangeImap4 is Running (Start Mode: Auto)</li><li>LASEXCH02: MSExchangeIMAP4BE is Running (Start Mode: Auto)</li><li>LASEXCH04: MSExchangeImap4 is Stopped (Start Mode: Manual)</li><li>LASEXCH04: MSExchangeIMAP4BE is Stopped (Start Mode: Manual)</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/IMAP001" target="_blank">More Info</a></td><tr><td>IMAP Secure Login</td><td>Check that insecure IMAP logins are not permitted.</td><td class="pass">Passed</td><td>No IMAP services allow insecure logins.</td><td><p>Passed items:</p><ul><li>LASEXCH01</li><li>LASEXCH03</li><li>LASEXCH02</li><li>LASEXCH04</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/IMAP002" target="_blank">More Info</a></td><tr><td>IMAP Protocol Logging</td><td>Check that IMAP protocol logging is not enabled.</td><td class="pass">Passed</td><td>No IMAP services have protocol logging enabled.</td><td><p>Passed items:</p><ul><li>LASEXCH01</li><li>LASEXCH03</li><li>LASEXCH02</li><li>LASEXCH04</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/IMAP003" target="_blank">More Info</a></td></table></p><h2>Category: Databases</h2><p>Summary of mailbox databases:</p>
+                        <p>
+                        <table>
+                        <tr>
+                        <th>Database Name</th>
+                        <th>Type</th>
+                        <th>Server/DAG</th>
+                        <th>Copies</th>
+                        </tr><tr>
+                            <td>Disabled-01-16</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>1</td>
+                            </tr><tr>
+                            <td>Standard16-03</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Standard16-07</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Standard16-11</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Disabled16-01</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>1</td>
+                            </tr><tr>
+                            <td>LASEXCH03SYSDB</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>1</td>
+                            </tr><tr>
+                            <td>Executive16-03</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Large16-04</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Standard16-01</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Standard16-05</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Standard16-09</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Group16-01</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>LASEXCH01SYSDB</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>1</td>
+                            </tr><tr>
+                            <td>Executive16-01</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Resource16-01</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Large16-02</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Large16-06</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Rooms16-01</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Large-Onboard</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>1</td>
+                            </tr><tr>
+                            <td>Standard16-02</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Standard16-06</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Standard16-10</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>LASEXCH02SYSDB</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>1</td>
+                            </tr><tr>
+                            <td>Executive16-02</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Large16-03</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Rooms16-02</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Disabled16-02</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>1</td>
+                            </tr><tr>
+                            <td>Standard-Onboard</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>1</td>
+                            </tr><tr>
+                            <td>Legal16-01</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Standard16-04</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Standard16-08</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>LASEXCH04SYSDB</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>1</td>
+                            </tr><tr>
+                            <td>Resource16-02</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Large16-01</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr><tr>
+                            <td>Large16-05</td>
+                            <td>DatabaseAvailabilityGroup</td>
+                            <td>LASEXDAG16</td>
+                            <td>2</td>
+                            </tr></table>
+                        </p><p>Results for Databases tests:</p><p>
+					        <table class="testresults">
+					        <tr>
+					        <th class="test">Test</th>
+                            <th class="description">Description</th>
+					        <th class="outcome">Outcome</th>
+					        <th class="comments">Comments</th>
+					        <th class="details">Details</th>
+					        <th class="reference">Reference</th>
+					        </tr><tr><td>Database Backups</td><td>Check that a database backup has been run in the last 24 hours.</td><td class="fail">Failed</td><td>One or more Exchange databases has not been backed up within the last 24 hours.</td><td><p>Passed items:</p><ul><li>Group16-01</li><li>LASEXCH01SYSDB</li><li>Executive16-01</li><li>Resource16-01</li><li>Large16-06</li><li>Rooms16-01</li><li>Large-Onboard</li><li>Standard16-04</li><li>Standard16-08</li><li>LASEXCH04SYSDB</li><li>Resource16-02</li><li>Large16-01</li><li>Large16-05</li></ul><p>Failed items:</p><ul><li>Disabled-01-16 (884 hrs ago)</li><li>Standard16-03 (143 hrs ago)</li><li>Standard16-07 (92 hrs ago)</li><li>Standard16-11 (1003 hrs ago)</li><li>Disabled16-01 (184 hrs ago)</li><li>LASEXCH03SYSDB (143 hrs ago)</li><li>Executive16-03 (999 hrs ago)</li><li>Large16-04 (1000 hrs ago)</li><li>Standard16-01 (234 hrs ago)</li><li>Standard16-05 (46 hrs ago)</li><li>Standard16-09 (25 hrs ago)</li><li>Large16-02 (32 hrs ago)</li><li>Standard16-02 (184 hrs ago)</li><li>Standard16-06 (166 hrs ago)</li><li>Standard16-10 (161 hrs ago)</li><li>LASEXCH02SYSDB (998 hrs ago)</li><li>Executive16-02 (149 hrs ago)</li><li>Large16-03 (170 hrs ago)</li><li>Rooms16-02 (143 hrs ago)</li><li>Disabled16-02 (1007 hrs ago)</li><li>Standard-Onboard (998 hrs ago)</li><li>Legal16-01 (145 hrs ago)</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/DB001" target="_blank">More Info</a></td></table></p><h2>Category: Active Directory</h2>
+                                <p>Results for Active Directory tests:</p><p>
+					        <table class="testresults">
+					        <tr>
+					        <th class="test">Test</th>
+                            <th class="description">Description</th>
+					        <th class="outcome">Outcome</th>
+					        <th class="comments">Comments</th>
+					        <th class="details">Details</th>
+					        <th class="reference">Reference</th>
+					        </tr><tr><td>AD Domain Level</td><td>Check that the domains are at the required level.</td><td class="pass">Passed</td><td>All Active Directory domains meet the required functional level.</td><td><p>Passed items:</p><ul><li>Contoso.corp (Windows Server 2008 R2)</li><li>phx.Contoso.corp (Windows Server 2008 R2)</li><li>creditoneapp.biz (Windows Server 2008 R2)</li><li>creditoneapp.tst (Windows Server 2008 R2)</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/AD001" target="_blank">More Info</a></td><tr><td>AD Forest Level</td><td>Check that the forest is at the required level.</td><td class="pass">Passed</td><td>The Active Directory forest meets the required functional level.</td><td><p>Passed items:</p><ul><li>Contoso.corp (Windows Server 2008 R2)</li><li>creditoneapp.biz (Windows Server 2008 R2)</li><li>creditoneapp.tst (Windows Server 2008 R2)</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/AD002" target="_blank">More Info</a></td></table></p><h2>Category: Hardware</h2>
+                                <p>Results for Hardware tests:</p><p>
+					        <table class="testresults">
+					        <tr>
+					        <th class="test">Test</th>
+                            <th class="description">Description</th>
+					        <th class="outcome">Outcome</th>
+					        <th class="comments">Comments</th>
+					        <th class="details">Details</th>
+					        <th class="reference">Reference</th>
+					        </tr><tr><td>Physical or Virtual</td><td>Check whether the Exchange Server is Physical or Virtual.</td><td class="warn">Warning</td><td>One or more Exchange servers are a virtual server.</td><td><p>Warning items:</p><ul><li>LASEXCH01</li><li>LASEXCH03</li><li>LASEXCH02</li><li>LASEXCH04</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/HW001" target="_blank">More Info</a></td></table></p><h2>Category: Windows Server</h2>
+                                <p>Results for Windows Server tests:</p><p>
+					        <table class="testresults">
+					        <tr>
+					        <th class="test">Test</th>
+                            <th class="description">Description</th>
+					        <th class="outcome">Outcome</th>
+					        <th class="comments">Comments</th>
+					        <th class="details">Details</th>
+					        <th class="reference">Reference</th>
+					        </tr><tr><td>Exchange Install Volume Free Disk Space</td><td>Check that the Exchange install volume has 30% or greater free disk space.</td><td class="pass">Passed</td><td>All Exchange install volumes have greater than 30% free disk space.</td><td><p>Passed items:</p><ul><li>LASEXCH01</li><li>LASEXCH03</li><li>LASEXCH02</li><li>LASEXCH04</li></ul></td><td><a href="https://github.com/cunninghamp/ExchangeAnalyzer/wiki/WSSRV001" target="_blank">More Info</a></td></table></p><p>Report created by <a href="http://exchangeanalyzer.com">Exchange Analyzer</a></p>
+            </body>
+			</html>

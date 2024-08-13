@@ -1,0 +1,12 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"Microsoft .NET Framework 1.1 Security Update (KB2698023)";"LASCHAT01.FNBM.CORP";;;;;;"Microsoft .NET Framework 1.1  (1033)";
+"Microsoft .NET Framework 1.1 Security Update (KB2833941)";"LASCHAT01.FNBM.CORP";;;;;;"Microsoft .NET Framework 1.1  (1033)";
+"Hotfix for Microsoft .NET Framework 3.5 SP1 (KB953595)";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";;"1";;"Hotfix";"Microsoft .NET Framework 3.5 SP1";
+"Hotfix for Microsoft .NET Framework 3.5 SP1 (KB958484)";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";;"1";;"Hotfix";"Microsoft .NET Framework 3.5 SP1";
+"Security Update for Microsoft .NET Framework 3.5 SP1 (KB2604111)";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";;"1";;"Security Update";"Microsoft .NET Framework 3.5 SP1";
+"Security Update for Microsoft .NET Framework 3.5 SP1 (KB2736416)";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";;"1";;"Security Update";"Microsoft .NET Framework 3.5 SP1";
+"Security Update for Microsoft .NET Framework 3.5 SP1 (KB2840629)";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";;"1";;"Security Update";"Microsoft .NET Framework 3.5 SP1";
+"Security Update for Microsoft .NET Framework 3.5 SP1 (KB2861697)";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";;"1";;"Security Update";"Microsoft .NET Framework 3.5 SP1";
+"Update for Microsoft .NET Framework 3.5 SP1 (KB963707)";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";;"1";;"Update";"Microsoft .NET Framework 3.5 SP1";
+"GDR 4060 for SQL Server Database Services 2005 ENU (KB2494113)";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20121215";"9.3.4060";;"GDR";"Microsoft SQL Server 2005";
+"Service Pack 3 for SQL Server Database Services 2005 ENU (KB955706)";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20100810";"9.3.4035";;"Hotfix";"Microsoft SQL Server 2005";

@@ -1,0 +1,27 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"BMC Track-It! 11.3 Agent";"LASPDEV01GUI.FNBM.CORP";"BMC Software";;"11.3.0.355";;;;
+"IIS URL Rewrite Module 2";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20151208";"7.2.1952";;;;
+"Infognition ScreenPressor v2.1 (Remove Only)";"LASPDEV01GUI.FNBM.CORP";;;;;;;
+"Microsoft Access database engine 2010 (English)";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20171207";"14.0.7015.1000";;;;
+"Microsoft Report Viewer 2012 Runtime";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20151228";"11.1.3452.0";;;;
+"Microsoft Silverlight";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20170413";"5.1.50906.0";;;;
+"Microsoft SQL Server 2012 Data-Tier App Framework ";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20150928";"11.1.2807.0";;;;
+"Microsoft SQL Server 2012 Data-Tier App Framework ";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20150928";"11.1.2807.0";;;;
+"Microsoft SQL Server 2012 Management Objects ";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20150928";"11.1.3000.0";;;;
+"Microsoft SQL Server 2012 Management Objects  (x64)";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20150928";"11.1.3000.0";;;;
+"Microsoft SQL Server 2012 Transact-SQL ScriptDom ";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20150928";"11.0.2100.60";;;;
+"Microsoft System CLR Types for SQL Server 2012";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20150928";"11.1.3000.0";;;;
+"Microsoft System CLR Types for SQL Server 2012 (x64)";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20150928";"11.1.3000.0";;;;
+"Microsoft Visual C++ 2005 Redistributable (x64)";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20150910";"8.0.61000";;;;
+"Microsoft Visual C++ 2005 Redistributable (x64)";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20150828";"8.0.56336";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20150928";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20150928";"9.0.30729.4148";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20151015";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20151015";"10.0.40219";;;;
+"Microsoft Web Deploy 3.5";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20150928";"3.1237.1764";;;;
+"Microsoft Web Platform Installer 5.0";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20150828";"5.0.50430.0";;;;
+"Microsoft WSE 3.0";"LASPDEV01GUI.FNBM.CORP";"Microsoft Corporation";"20150819";"3.0.5305.0";;;;
+"SAP Crystal Reports runtime engine for .NET Framework (64-bit)";"LASPDEV01GUI.FNBM.CORP";"SAP";"20150828";"13.0.13.1597";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"LASPDEV01GUI.FNBM.CORP";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"Symantec Endpoint Protection";"LASPDEV01GUI.FNBM.CORP";"Symantec Corporation";"20180418";"14.0.3876.1100";;;;"0"
+"VMware Tools";"LASPDEV01GUI.FNBM.CORP";"VMware, Inc.";"20180215";"10.1.7.5541682";;;;
