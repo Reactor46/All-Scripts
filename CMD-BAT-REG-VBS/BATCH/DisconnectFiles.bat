@@ -1,0 +1,1 @@
+openfiles /disconnect /s servername /a username

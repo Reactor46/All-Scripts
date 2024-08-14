@@ -1,1 +1,0 @@
-msiexec /i "\\uson.local\netlogon\ShoreTel\ShoreTel Communicator.msi" /quiet /log c:\stlog.txt

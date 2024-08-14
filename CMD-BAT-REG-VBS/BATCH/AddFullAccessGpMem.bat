@@ -1,0 +1,1 @@
+powershell .\ADDFullAccesstoGpMem.ps1

@@ -57,14 +57,14 @@ WMIOPTIONS="-wabefghipPqrsSu"
 REGISTRYOPTIONS="-racdklp"
 
 ' Export Options
-EXPORTFORMAT="word" ' For Microsoft Word
-'EXPORTFORMAT="xml" ' For XML
+'EXPORTFORMAT="word" ' For Microsoft Word
+EXPORTFORMAT="xml" ' For XML
 
 ' Location Options
 ' Location of SYDI-Server.vbs
-SYDISERVER="C:\sydi-server-2.4\sydi-server.vbs"
-OUTPUTDIRECTORY="C:\sydi-server-2.4\Output\"
-LOGDIRECTORY="C:\sydi-server-2.4\Log_Files\"
+SYDISERVER="C:\scripts\sydi-server.vbs"
+OUTPUTDIRECTORY="C:\scripts\Output files\"
+LOGDIRECTORY="C:\Scripts\Log Files\"
 TIMEOUT="600" ' How many seconds to wait until a computer-scan is aborted, this hasn't been tested
 
 ' Other options, check sydi-server.vbs -h for help

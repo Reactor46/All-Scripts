@@ -1,0 +1,1 @@
+wevtutil.exe qe Application /rd:true /f:text /c:1 /q:*[System[(EventID=3169)]] > C:\ProgramData\DBMoveAlert\3169.txt

@@ -6,7 +6,7 @@
 ' //
 ' // File:      DeployWiz_Initialization.vbs
 ' // 
-' // Version:   6.3.8456.1000
+' // Version:   6.3.8298.1000
 ' // 
 ' // Purpose:   Main Client Deployment Wizard Initialization routines
 ' // 
@@ -88,15 +88,19 @@ function CustomTSFilter( sGuid, oItem )
 
 				oLogging.CreateEntry "Not Capable of running Platform: " & sOSPlatform & "   " & oUtility.SelectSingleNodeString(oItem,"ID"), LogTypeInfo
 				CustomTSFilter = False
-				
-			ElseIf UCase(sOSPlatform) = "X86" and UCase(oEnvironment.Item("Architecture")) = "X64" then
 
-				oLogging.CreateEntry "Skip cross platform x86 install from x64 Windows. " & oUtility.SelectSingleNodeString(oItem,"ID"), LogTypeInfo
-				CustomTSFilter = False
-				
+			ElseIf oEnv("SystemDrive") <> "X:"  then
+
+				' We are not in WinPE, so we can still apply any OS
+
 			ElseIf ucase(oEnvironment.Item("ForceApplyFallback")) = "NEVER" and ucase(oUtility.SelectSingleNodeString(oOS, "IncludesSetup")) = "TRUE" then
 
 				oLogging.CreateEntry "Skip cross platform unattended install disabled (ForceApplyFallback = NEVER). " & oUtility.SelectSingleNodeString(oItem,"ID"), LogTypeInfo
+				CustomTSFilter = False
+
+			ElseIf UCase(sOSPlatform) = "X86" and UCase(oEnvironment.Item("Architecture")) = "X64" then
+
+				oLogging.CreateEntry "Skip cross platform x86 install from x64 Windows PE. " & oUtility.SelectSingleNodeString(oItem,"ID"), LogTypeInfo
 				CustomTSFilter = False			
 
 			ElseIf oUtility.VersionMajor = 6 and oUtility.VersionMinor < 1 and ucase(oUtility.SelectSingleNodeString(oOS, "IncludesSetup")) = "TRUE" then
@@ -104,9 +108,6 @@ function CustomTSFilter( sGuid, oItem )
 				oLogging.CreateEntry "Skip cross platform unattended install for OS'es earlier than Windows 7. " & oUtility.SelectSingleNodeString(oItem,"ID"), LogTypeInfo
 				CustomTSFilter = False
 			
-			ElseIf oEnv("SystemDrive") <> "X:"  then
-
-				' We are not in WinPE, so we can still apply any OS
 			End if
 
 		End if

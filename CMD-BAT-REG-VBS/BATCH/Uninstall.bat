@@ -1,6 +1,3 @@
 @setlocal enableextensions
-@cd /d %~dp0
-mkdir %temp%\ClueSetup
-robocopy %~dp0 %temp%\ClueSetup /S
-Powershell.exe -ExecutionPolicy ByPass -NoProfile -File %temp%\ClueSetup\_Uninstall.ps1
-rmdir /S /Q %temp%\ClueSetup
+@cd /d "%~dp0"
+Powershell.exe -Version 2 -ExecutionPolicy ByPass -File _uninstall.ps1

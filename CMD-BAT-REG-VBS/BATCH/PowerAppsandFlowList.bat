@@ -1,0 +1,1 @@
+powershell .\PowerAppsandFlowList.ps1

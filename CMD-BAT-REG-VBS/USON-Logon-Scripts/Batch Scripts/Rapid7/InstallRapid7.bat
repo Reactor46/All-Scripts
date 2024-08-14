@@ -1,1 +1,0 @@
-msiexec /i %~dp0agentInstaller-x86_64.msi CUSTOMATTRIBUTES="MSO" /qn /l*v c:/r7log.install

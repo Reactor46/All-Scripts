@@ -1,9 +1,0 @@
-[DEFAULT]
-BASEURL=https://www.care360.com/eMaxx/
-[InternetShortcut]
-URL=https://portal.care360.com/care360/care360.login
-Modified=E06E1BE0BCD5C601A1
-HotKey=0
-IDList=
-[{000214A0-0000-0000-C000-000000000046}]
-Prop3=19,11

@@ -1,0 +1,1 @@
+powershell .\UploadFilesFTP.ps1

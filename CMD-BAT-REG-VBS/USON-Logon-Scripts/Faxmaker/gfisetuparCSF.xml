@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<modulestrings version="1">
- <module id="m_gfisetup">
-  <string id="IDS_CURVERLATER">إصدار %s الذي تحاول تثبيته أقدم من الإصدار المثبت بالفعل. الرجاء إزالة الإصدار الحالي قبل تثبيت هذا الإصدار.</string> 
-  <string id="IDS_FAILREMOVE">حدث خطأ أثناء إزالة %s من الكمبيوتر. الرجاء إلغاء تثبيت %s يدويًا وتشغيل هذا التثبيت مرة أخرى.</string> 
-  <string id="IDS_ALREADYINSTALLED">تم بالفعل تثبيت الإصدار %s من %s. يجب إلغاء تثبيت الإصدار الموجود قبل تثبيت الإصدار %s من %s.\r\n\r\nهل تريد إلغاء تثبيت الإصدار الموجود من %s؟</string> 
-  <string id="IDS_MAJORUPGRADE">هام: سوف تحتاج إلى إدخال مفتاح ترخيص جديد خلال 10 أيام من تثبيت الترقية. للحصول على معلومات حول كيفية الحصول على مفتاح الترخيص الجديد، قم بزيارة موقع ويب http://customers.gfi.com</string>   
- </module>
-</modulestrings>

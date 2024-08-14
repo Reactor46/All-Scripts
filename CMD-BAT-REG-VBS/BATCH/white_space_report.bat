@@ -1,0 +1,1 @@
+powershell .\white_space_report.ps1

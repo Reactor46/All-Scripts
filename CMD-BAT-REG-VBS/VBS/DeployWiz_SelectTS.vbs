@@ -6,7 +6,7 @@
 ' //
 ' // File:      DeployWiz_Initialization.vbs
 ' // 
-' // Version:   6.3.8456.1000
+' // Version:   6.1.2373.0
 ' // 
 ' // Purpose:   Main Client Deployment Wizard Initialization routines
 ' // 
@@ -89,7 +89,19 @@ End function
 
 Function ValidateTSList
 
+	Dim oTaskList
 	Dim oTS
+	Dim oItem
+	Dim oOSItem
+	Dim sID
+	Dim bFound
+	Dim sTemplate
+	' Different Settings per Task Sequence - http://blog.mikewalker.me/2013/04/mdt-2012-use-different-settings-per.html
+	Dim sCmd 
+	Set Oshell = createObject("Wscript.shell")
+	Dim sRulesFile
+	Dim sRulesEnabled
+
 	
 	set oTS = new ConfigFile
 	oTS.sFileType = "TaskSequences"
@@ -102,15 +114,89 @@ Function ValidateTSList
 	End if
 
 	oLogging.CreateEntry "TSGuid Found: " & Property("TSGuid"), LogTypeVerbose
-
+	
+	sID = ""
+	sTemplate = ""
 	If oTS.FindAllItems.Exists(Property("TSGuid")) then
-		oEnvironment.Item("TaskSequenceID") = oUtility.SelectSingleNodeString(oTS.FindAllItems.Item(Property("TSGuid")),"./ID")
+		sID = oUtility.SelectSingleNodeString(oTS.FindAllItems.Item(Property("TSGuid")),"./ID")
+		sTemplate = oUtility.SelectSingleNodeString(oTS.FindAllItems.Item(Property("TSGuid")),"./TaskSequenceTemplate")
 	End if
+	
+	oEnvironment.item("TaskSequenceID") = sID
+	TestAndLog sID <> "", "Verify Task Sequence ID: " & sID
+	Set oTaskList = oUtility.LoadConfigFileSafe( sID & "\TS.XML" )
+
+	If not FindTaskSequenceStep( "//step[@type='BDD_InstallOS']", "" ) then
+
+		oLogging.CreateEntry "Task Sequence does not contain an OS and does not contain a LTIApply.wsf step, possibly a Custom Step or a Client Replace.", LogTypeInfo
+		
+		oProperties.Item("OSGUID")=""
+		If not (oTaskList.SelectSingleNode("//group[@name='State Restore']") is nothing) then
+			oProperties("DeploymentType") = "StateRestore"
+		ElseIf sTemplate <> "ClientReplace.xml" and oTaskList.SelectSingleNode("//step[@name='Capture User State']") is nothing then
+			oProperties("DeploymentType")="CUSTOM"
+		Else
+			oProperties("DeploymentType")="REPLACE"
+
+			RMPropIfFound("ImageIndex")
+			RMPropIfFound("ImageSize")
+			RMPRopIfFound("ImageFlags")
+			RMPropIfFound("ImageBuild")
+			RMPropIfFound("InstallFromPath")
+			RMPropIfFound("ImageMemory")
+
+			oEnvironment.Item("ImageProcessor")=Ucase(oEnvironment.Item("Architecture"))
+		End if
+
+	Elseif oEnvironment.Item("OSVERSION")="WinPE" Then
+
+		oProperties("DeploymentType")="NEWCOMPUTER"
+
+	Else
+
+		oLogging.CreateEntry "Task Sequence contains a LTIApply.wsf step, and is not running within WinPE.", LogTypeInfo
+		oProperties("DeploymentType") = "REFRESH"
+		oEnvironment.Item("DeployTemplate")=Ucase(Left(sTemplate,Instr(sTemplate,".")-1))
+
+	End if
+
+	oLogging.CreateEntry "DeploymentType = " & oProperties("DeploymentType"), LogTypeInfo
+
+	' Different Settings per Task Sequence - http://blog.mikewalker.me/2013/04/mdt-2012-use-different-settings-per.html
+	Dim oGatherCheck
+	Set oGatherCheck = oTaskList.SelectSingleNode("/sequence/group[@name='Initialization']/step[@type='BDD_Gather']/defaultVarList/variable[@name='GatherLocalOnly']")
+	If Not (oGatherCheck is nothing) Then
+		sRulesEnabled = oGatherCheck.Text
+		sRulesFile = oTaskList.SelectSingleNode("/sequence/group[@name='Initialization']/step[@type='BDD_Gather']/defaultVarList/variable[@name='RulesFile']").Text
+	End If
+
+	set oTaskList = nothing
+	set oTS = nothing
 
 
 	' Set the related properties
 
-	oUtility.SetTaskSequenceProperties oEnvironment.Item("TaskSequenceID")
+	oEnvironment.Item("ImageProcessor") = ""
+	oEnvironment.Item("OSGUID")=""
+	oUtility.SetTaskSequenceProperties sID
+
+
+	If Left(Property("ImageBuild"), 1) < "6" then
+		RMPropIfFound("LanguagePacks")
+		RMPropIfFound("UserLocaleAndLang")
+		RMPropIfFound("KeyboardLocale")
+		RMPropIfFound("UserLocale")
+		RMPropIfFound("UILanguage")
+		RMPropIfFound("BdePin")
+		RMPropIfFound("BdeModeSelect1")
+		RMPropIfFound("BdeModeSelect2")
+		RMPropIfFound("OSDBitLockerStartupKeyDrive")
+		RMPropIfFound("WaitForEncryption")
+		RMPropIfFound("BdeInstall")
+		RMPropIfFound("OSDBitLockerWaitForEncryption")
+		RMPropIfFound("BdeRecoveryKey")
+		RMPropIfFound("BdeInstallSuppress")
+	End If
 
 	If oEnvironment.Item("OSGUID") <> "" and oEnvironment.Item("ImageProcessor") = "" then
 		' There was an OSGUID defined within the TS.xml file, however the GUID was not found 
@@ -122,6 +208,34 @@ Function ValidateTSList
 		ValidateTSList = True
 		ButtonNext.Disabled = False
 		Bad_OSGUID.style.display = "none"
-	End if
+	ENd if
 
+	' Different Settings per Task Sequence - http://blog.mikewalker.me/2013/04/mdt-2012-use-different-settings-per.html
+	If Not (oGatherCheck is nothing) AND LCase(sRulesEnabled) = "false" Then
+		Dim oFSO, oRegex
+		Set oFSO = CreateObject("Scripting.FileSystemObject")
+		Set oRegex = new regexp
+		oRegex.Pattern = "%(.*?)%"
+		oRegex.IgnoreCase = true
+		Dim mc, m, offset
+		offset = 0
+		Set mc = oRegex.Execute(sRulesFile)
+		For Each m In mc
+			sRulesFile = Left(sRulesFile, m.FirstIndex - offset) & oEnvironment.Item(m.SubMatches(0)) _
+				& Mid(sRulesFile, m.FirstIndex + m.Length - offset + 1)
+			offset = offset + m.Length - Len(oEnvironment.Item(m.SubMatches(0)))
+		Next
+
+		If oFSO.FileExists(sRulesFile) Then
+			sCmd = "wscript.exe """ & oUtility.ScriptDir & "\ZTIGather.wsf"" /inifile:" & sRulesFile
+			oItem = oSHell.Run(sCmd, , true)
+		Else
+			MsgBox("The custom rules file specified (" & sRulesFile &_
+				   ") does not exist. The default rules file will be used instead.")
+			sCmd = "wscript.exe """ & oUtility.ScriptDir & "\ZTIGather.wsf"
+			oItem = oSHell.Run(sCmd, , true)
+		End If
+		Set oFSO = nothing
+		Set oGatherCheck = nothing
+	End If
 End Function

@@ -1,0 +1,1 @@
+powershell .\Get-Office365LicensedUsers.ps1

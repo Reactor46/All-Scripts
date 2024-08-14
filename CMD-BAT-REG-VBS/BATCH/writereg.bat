@@ -1,0 +1,1 @@
+powershell .\writereg.ps1

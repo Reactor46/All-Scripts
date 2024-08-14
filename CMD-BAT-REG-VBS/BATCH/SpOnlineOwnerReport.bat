@@ -1,0 +1,1 @@
+PowerShell .\SpOnlineOwnerReport.ps1

@@ -1,0 +1,1 @@
+powershell .\Monitorvaultcache.ps1

@@ -1,0 +1,1 @@
+netsh advfirewall firewall add rule name="solr" dir=in action=allow protocol=TCP localport=8983 enable=yes

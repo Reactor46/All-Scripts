@@ -1,53 +1,53 @@
 ' The goal of this tools is to read a .reg file and generate a .admx that would allow us to set those settings thru GPO 
  
 ' +-----------------------------------------------------------------------------+ 
-' | App.Name :    REG_2_ADMXL.vbs                                                    | 
-' | App.Description :                                                            | 
+' | App.Name :    REG_2_ADMXL.vbs                                               | 
+' | App.Description :                                                           | 
 ' |                     This tools reads a .reg file and generates a ADMX/ADML  | 
 ' | pair of files that would allow us to set those settings thru GPO            | 
 ' |                     This file accepts 3 parameters:                         | 
-' |                            1) Reg File to convert                                | 
-' |                            2) Default Language (i.e.: en-US or sp-AR, po-BR)   | 
-' |                            3) (optional) Display Name to show in the GPO                                                    | 
-' |                                                                                | 
-' |                     The output file will be named after the .REG file (if    | 
+' |                            1) Reg File to convert                           | 
+' |                            2) Default Language (i.e.: en-US or sp-AR, po-BR)| 
+' |                            3) (optional) Display Name to show in the GPO    | 
+' |                                                                             | 
+' |                     The output file will be named after the .REG file (if   | 
 ' | the input is myfile.REG, the output will be myfile.ADMX and myfile.ADML)    | 
-' |                        The ADMX output file will be saved in the same folder   | 
-' | the input .REG file is located                                                | 
-' |                        The ADML output file will be saved in a subfolder of    | 
+' |                        The ADMX output file will be saved in the same folder| 
+' | the input .REG file is located                                              | 
+' |                        The ADML output file will be saved in a subfolder of | 
 ' | the one the .REG file is located. The subfolder will be named after the     | 
-' |    Language specified.                                                            | 
-' |                        So, if the reg file is C:\myapp\myfile.reg and the lang | 
-' | is en-US, then the ADMX file will be as in C:\myAPP\myfile.ADMX and the     | 
-' | ADML file will be saved as C:\myAPP\en-US\myfile.ADMX                        | 
-' |                                                                                | 
-' |                                                                                | 
-' |                                                                                | 
-' |                        This file does a very simple assignment of input fields | 
-' |    If the data type is a dword a numeric textbox is used, otherwise a textbox  | 
+' |    Language specified.                                                      | 
+' |                        So, if the reg file is C:\myapp\myfile.reg and the   | 
+' | lang is en-US, then the ADMX file will be as in C:\myAPP\myfile.ADMX and    | 
+' | the ADML file will be saved as C:\myAPP\en-US\myfile.ADMX                   | 
+' |                                                                             | 
+' |                                                                             | 
+' |                                                                             | 
+' |                     This file does a very simple assignment of input fields | 
+' | If the data type is a dword a numeric textbox is used, otherwise a textbox  | 
 ' | will be used.                                                               | 
-' |                        In my experience, this is good enought for 90% of the    | 
+' |                    In my experience, this is good enought for 90% of the    | 
 ' | cases. And if you would like fancier stuff (like comboboxes, listboxes,     | 
 ' | date picker, etc.) you can still use this tool to generate the initial file | 
 ' | and then add the stuff you need.                                            | 
-' |                                                                                | 
-' |                                                                                | 
+' |                                                                             | 
+' |                                                                             | 
 ' | Current Version:    1.02                                                    | 
-' |                By:    Mcosentino    (reg_2_ADMXL at marianok.com.ar)                    | 
+' |    By:    Mcosentino    (reg_2_ADMXL at marianok.com.ar)                    | 
 ' |            Date:        Mar. 01 2010                                        | 
-' |                                                                                | 
+' |                                                                             | 
 ' +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -+ 
-' | 1.02  03/01/10    mcosentino    Fixed issue with HKCU/HKCC/HKCR/HKC not                | 
-' |                     being parsed correctly    | 
-' |                    Thanks to JimmyRolaff for reporting it    | 
-' |                                        | 
+' | 1.02  03/01/10    mcosentino Fixed issue with HKCU/HKCC/HKCR/HKC not        | 
+' |                     being parsed correctly                                  | 
+' |                    Thanks to JimmyRolaff for reporting it                   | 
+' |                                                                             | 
 ' +-----------------------------------------------------------------------------+ 
-' |                                                                                | 
-' | How to use it:                                                                 | 
-' |          cscript REG_2_ADMXL.vbs <Registry file> <Language> [<name>]           | 
-' |        Sample:                                                                    | 
-' |          cscript REG_2_ADMXL.vbs c:\myapp\myfile.reg en-US "MY APP Policies"   | 
-' |                                                                                | 
+' |                                                                             | 
+' | How to use it:                                                              | 
+' |          cscript REG_2_ADMXL.vbs <Registry file> <Language> [<name>]        | 
+' |        Sample:                                                              | 
+' |          cscript REG_2_ADMXL.vbs c:\myapp\myfile.reg en-US "MY APP Policies"| 
+' |                                                                             | 
 ' +-----------------------------------------------------------------------------+ 
  
  
@@ -60,7 +60,7 @@ dim objFSO
 set objFSO = createobject("Scripting.FileSystemObject") 
  
  
-' check that we have the necesary arguments, if not display instructions and end. 
+' check that we have the necessary arguments, if not display instructions and end. 
  
 if wscript.Arguments.Count < 2 then 
     wscript.echo "Missing Parameters:" & vbcrlf & _ 
@@ -109,7 +109,7 @@ end if
         lCategories(4,0) = "" 
         lCategories(1,0) = sRootDisplay 
         lCategories(2,0) = sRootDisplay 
-        lCategories(3,0) = "MARIANOKS_XML_2_ADMXL" 
+        lCategories(3,0) = "CB1_XML_2_ADMXL" 
  
  
 ' Define the table that will hold the value assignments (from now on "policies") 
@@ -216,7 +216,7 @@ function CreateADMX ()
     'objRoot.Attributes.setNamedItem(xmlAttribute) 
  
  
-    'Create the policynamspaces node for future use 
+    'Create the policynamespaces node for future use 
     Set objPolNS = xmlDoc.createElement("policyNamespaces")   
     objRoot.appendChild objPolNS 
      
@@ -225,7 +225,7 @@ function CreateADMX ()
     objPolNS.appendChild tNode 
         ' Set the properties for the target node     
         Set xmlAttribute = xmlDoc.createAttribute("prefix") 
-        Set xmlText = xmlAttribute.appendChild(xmlDoc.createTextNode("Marianok")) ' I needed a unique Namespace, so I used mine (I deserve a little credit for my work, after all) 
+        Set xmlText = xmlAttribute.appendChild(xmlDoc.createTextNode("CB1")) 
         tNode.Attributes.setNamedItem(xmlAttribute) 
          
         Set xmlAttribute = xmlDoc.createAttribute("namespace") 
@@ -340,10 +340,7 @@ function CreateADML ()
     'Create the description node 
     Set objPolNS = xmlDoc.createElement("description")   
     objRoot.appendChild objPolNS 
-    objPolNS.text="This policy file was generated by the REG_2_ADMXL tool" & vbcrlf & _ 
-                    "Source File: " & sRegFileName & vbcrlf & vbcrlf & _ 
-                    "This Freeware Tool can be downloaded from www.marianok.com.ar" 
-     
+         
     'Create the resources node 
     Set objPolNS = xmlDoc.createElement("resources")   
     objRoot.appendChild objPolNS 
@@ -579,10 +576,8 @@ sub WriteCategories()
             Set xmlAttribute = ADMLDoc.createAttribute("id") 
             Set xmlText = xmlAttribute.appendChild(ADMLDoc.createTextNode("CAT_" & lCategories(3,iCounter) & "_HELP")) 
             objTemp.Attributes.setNamedItem(xmlAttribute) 
-            objTemp.text = "This Category configures the Values located under the [" & lCategories(2,iCounter) & "] Key." & vbcrlf & vbcrlf & _ 
-                            "This policy file was generated by the REG_2_ADMXL tool" & vbcrlf & _ 
-                            "This Freeware Tool can be downloaded from www.marianok.com.ar" 
-     
+            objTemp.text = "This Category configures the Values located under the [" & lCategories(2,iCounter) & "] Key."
+			
         '      <parentCategory ref="SAMPLE" /> 
  
     next 
@@ -652,9 +647,7 @@ sub WritePolicies()
             Set xmlText = xmlAttribute.appendChild(ADMLDoc.createTextNode("POL_" & lPolicies(2,iCounter) & "_HELP")) 
             objTemp.Attributes.setNamedItem(xmlAttribute) 
             objTemp.text = "This Policy configures the Value [" & lPolicies(4,iCounter) & "] located under the [" & lPolicies(7,iCounter) & "] Key." & vbcrlf & vbcrlf & _ 
-                           "In the .REG file, this setting was defined as [" & lPolicies(5,iCounter) & "] and had the value [" & lPolicies(6,iCounter) & "] assigned." & vbcrlf & vbcrlf & _ 
-                            "This policy file was generated by the REG_2_ADMXL tool" & vbcrlf & _ 
-                            "This Freeware Tool can be downloaded from www.marianok.com.ar" 
+                           "In the .REG file, this setting was defined as [" & lPolicies(5,iCounter) & "] and had the value [" & lPolicies(6,iCounter) & "] assigned."
  
          
 ' Parent category so AD knows under what node of the tree to show this policy     
@@ -850,7 +843,7 @@ end function
 function GetParentGUID(sPath,sName) 
     ' This function finds the Parent of the current registry KEY based on the PATH structure. 
     sFind = replace(sPath,"\" & sName,"") 
-    sTemp="MARIANOKS_XML_2_ADMXL" 
+    sTemp="CB1_XML_2_ADMXL" 
     for icounter = 1 to ubound(lCategories,2) 
         if lcase(sFind) = lcase(lCategories(2,iCounter)) then 
             sTemp= lCategories(3,iCounter)    

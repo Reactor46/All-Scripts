@@ -1,0 +1,1 @@
+powershell .\FileSharenotify.ps1

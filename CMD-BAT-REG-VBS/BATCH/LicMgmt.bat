@@ -1,0 +1,1 @@
+powershell .\LicMgmt.ps1

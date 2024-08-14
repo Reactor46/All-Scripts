@@ -22,7 +22,7 @@ Set EXCL= WScript.CreateObject("Excel.Application") 'Creates the Excel Applicati
 Dim username 'credetials that can be used for WMI access 
 Dim password 'credetials that can be used for WMI access 
 Dim ldapString 
-ldapString="LDAP://OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp" 'IMPORTANT: Customize it!!! 
+ldapString="LDAP://OU=Servers,OU=Las_Vegas,DC=fnbm,DC=corp" 'IMPORTANT: Customize it!!! 
 currentCell=1 
 EXCL.Visible=True 'it's better to set it to False. But if you want to watch progresses leave it True 
 EXCL.Workbooks.Add 

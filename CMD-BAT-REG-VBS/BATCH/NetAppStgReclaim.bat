@@ -1,0 +1,1 @@
+powershell .\NetAppStgReclaim.ps1

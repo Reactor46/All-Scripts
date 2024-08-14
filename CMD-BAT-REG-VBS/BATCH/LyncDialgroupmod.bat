@@ -1,0 +1,1 @@
+powershell .\LyncDialingroupmod.ps1

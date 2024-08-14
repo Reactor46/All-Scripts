@@ -7,7 +7,7 @@
 ' //
 ' // File:      ZTIUtility.vbs
 ' // 
-' // Version:   6.3.8456.1000
+' // Version:   6.3.8298.1000
 ' // 
 ' // Purpose:   Common Libraries for Microsoft Deployment Toolkit
 ' // 
@@ -37,7 +37,7 @@ Public Const adOpenStatic = 3
 Public Const adLockReadOnly = 1
 Public Const adLockOptimistic = 3
 
-Public Const Version = "6.3.8456.1000"
+Public Const Version = "6.3.8298.1000"
 
 
 ' Global variables
@@ -1066,8 +1066,8 @@ Class Environment
 
 		Select Case Ucase(sVariable)
 		Case "USERID", "USERPASSWORD", "USERDOMAIN", "DOMAINADMIN", "DOMAINADMINPASSWORD", "DOMAINADMINDOMAIN", _
-                   "ADMINPASSWORD", "BDEPIN", "TPMOWNERPASSWORD",  "USERNAME", "USERPASSWORD", "PRODUCTKEY", "OSDJOINACCOUNT",_
-                   "SAFEMODEADMINPASSWORD","OSDJOINPASSWORD"
+		 "ADMINPASSWORD", "BDEPIN", "TPMOWNERPASSWORD", "ADDSUSERNAME", "ADDSPASSWORD", _
+		 "SAFEMODEADMINPASSWORD", "USERNAME", "USERPASSWORD", "PRODUCTKEY", "OSDJOINACCOUNT", "OSDJOINPASSWORD"
 			ObfuscateEncode = oStrings.Base64Encode(sNew)
 		Case Else
 			ObfuscateEncode = sNew
@@ -1080,8 +1080,8 @@ Class Environment
 
 		Select Case Ucase(sVariable)
 		Case "USERID", "USERPASSWORD", "USERDOMAIN", "DOMAINADMIN", "DOMAINADMINPASSWORD", "DOMAINADMINDOMAIN", _
-                   "ADMINPASSWORD", "BDEPIN", "TPMOWNERPASSWORD",  "USERNAME", "USERPASSWORD", "PRODUCTKEY", "OSDJOINACCOUNT",_
-                   "SAFEMODEADMINPASSWORD","OSDJOINPASSWORD"
+		 "ADMINPASSWORD", "BDEPIN", "TPMOWNERPASSWORD", "ADDSUSERNAME", "ADDSPASSWORD", _
+		 "SAFEMODEADMINPASSWORD", "USERNAME", "USERPASSWORD", "PRODUCTKEY", "OSDJOINACCOUNT", "OSDJOINPASSWORD"
 			ObfuscateDecode = oStrings.Base64Decode(sCurrent)
 
 
@@ -2255,20 +2255,11 @@ Class Utility
 					oLogging.CreateEntry "  Console > " & sLine, LogTypeInfo
 
 					if oExec.Status = 0 then
-						' If the output contains a percentage, then interpret it a status.
-						
-						' Check for DISM-style progress
-						Set oMatch = oRegEx.GetRegExMatches("([01]?[0-9]?[0-9])\.[0-9]\%",sLine)
+						' If the output contains a percentage, then intrepret it a status.
+						set oMatch = oRegEx.GetRegExMatches("([01]?[0-9]?[0-9]) ?\%",sLine)
 						If oMatch.Count > 0 then
 							iLastProgress = cint(oMatch(oMatch.Count -1).SubMatches(0))
 							oLogging.ReportProgress sLine, iLastProgress
-						Else
-							' Check for "other" percentage
-							set oMatch = oRegEx.GetRegExMatches("([01]?[0-9]?[0-9]) ?\%",sLine)
-							If oMatch.Count > 0 then
-								iLastProgress = cint(oMatch(oMatch.Count -1).SubMatches(0))
-								oLogging.ReportProgress sLine, iLastProgress
-							End if
 						End if
 					End if
 				Next
@@ -3256,11 +3247,6 @@ Class Utility
 
 	End Function
 
-	Private Sub SetIfChanged(sVar, sVal)
-		If oEnvironment.Item(sVar) <> sVal then
-			oEnvironment.Item(sVar) = sVal
-		End if
-	End Sub
 
 	Sub SetTaskSequenceProperties(tsID)
 
@@ -3285,8 +3271,7 @@ Class Utility
 
 		If tsID <> "" then
 
-			' Get the task sequence record
-
+			' Get the build record
 			tsID = Ucase(tsID)
 
 			Set oTaskSequences = oUtility.CreateXMLDOMObjectEx(oEnvironment.Item("DeployRoot") & "\Control\TaskSequences.xml")
@@ -3302,154 +3287,103 @@ Class Utility
 			oEnvironment.Item("TaskSequenceName") = oUtility.SelectSingleNodeString(oTaskSequence,"Name")
 			oEnvironment.Item("TaskSequenceVersion") = oUtility.SelectSingleNodeStringEx(oTaskSequence,"Version", False)
 			oEnvironment.Item("TaskSequenceTemplate") = oUtility.SelectSingleNodeStringEx(oTaskSequence,"TaskSequenceTemplate", False)
-
-
-			' Blank out any previous values			
-
-			SetIfChanged "ImageIndex", ""
-			SetIfChanged "ImageSize", ""
-			SetIfChanged "ImageFlags", ""
-			SetIfChanged "ImageBuild", ""
-			SetIfChanged "InstallFromPath", ""
-			SetIfChanged "ImageMemory", ""
-			SetIfChanged "ImageProcessor", ""
-			SetIfChanged "OSGUID", ""
-			SetIfChanged "IsOSUpgrade", ""
-
-
-			' Load the TS.XML
+			
+			' Load the TS.XML and get the OSGUID
 
 			Set oTS = oUtility.CreateXMLDOMObjectEx(oEnvironment.Item("DeployRoot") & "\Control\" & tsID & "\TS.xml")
-
-
-			' Determine the deployment type
-
-			If (oTS.SelectSingleNode("//step[@type='BDD_InstallOS' and @disable='false']") is nothing) and (oTS.SelectSingleNode("//step[@type='BDD_UpgradeOS' and @disable='false']") is nothing) then
-				oLogging.CreateEntry "Task Sequence does not contain an OS and does not contain a LTIApply.wsf step, possibly a Custom Step or a Client Replace.", LogTypeInfo
-				oEnvironment.Item("OSGUID")=""
-				If not (oTS.SelectSingleNode("//group[@name='State Restore']") is nothing) then
-					oEnvironment.Item("DeploymentType") = "StateRestore"
-				ElseIf oEnvironment.Item("TaskSequenceTemplate") <> "ClientReplace.xml" and oTS.SelectSingleNode("//step[@name='Capture User State']") is nothing then
-					oEnvironment.Item("DeploymentType") = "CUSTOM"
-				Else
-					oEnvironment.Item("DeploymentType") = "REPLACE"
-					oEnvironment.Item("ImageProcessor") = Ucase(oEnvironment.Item("Architecture"))
-				End if
-
-			Elseif oEnvironment.Item("OSVERSION")="WinPE" Then
-
-				oEnvironment.Item("DeploymentType") = "NEWCOMPUTER"		
-
-			Else
-
-				oLogging.CreateEntry "Task Sequence contains a LTIApply.wsf step, and is not running within WinPE.", LogTypeInfo
-				If oTS.SelectSingleNode("//globalVarList/variable[@name='IsOSUpgrade']") is nothing then
-					oEnvironment.Item("DeploymentType") = "REFRESH"
-				Else 
-					oEnvironment.Item("DeploymentType") = "UPGRADE"
-					oEnvironment.Item("IsOSUpgrade") = "1"
-				End if
-
-			End if
-
-			If oEnvironment.Item("IsOSUpgrade") = "" then
-				oEnvironment.Item("IsOSUpgrade") = "0"
-			End if
-
-
-			' Get the OS details
-
 			Set oOSGUID = oTS.SelectSingleNode("//globalVarList/variable[@name='OSGUID']")
-			If not (oOSGUID is Nothing) then
+			If oOSGUID is Nothing then
 
-				' Get the OS record
+				Exit Sub
+			End if
+			oEnvironment.Item("OSGUID")=oOSGUID.text
 
-				oEnvironment.Item("OSGUID") = oOSGUID.text
-				Set oOperatingSystems = oUtility.CreateXMLDOMObjectEx(oEnvironment.Item("DeployRoot") & "\Control\OperatingSystems.xml")
-				Set oOS = oOperatingSystems.selectSingleNode("//os[@guid='" & oOSGUID.text & "']")
-				If oOS is Nothing then
-					oLogging.CreateEntry "ERROR: Invalid OS GUID " & oOSGUID.text & " specified for task sequence " & tsID & " specified", LogTypeInfo
-					Exit Sub
-				End if
+			' Get the OS record
 
-
-				' Set the simple OS properties
-
-				oEnvironment.Item("ImageIndex") = oUtility.SelectSingleNodeString(oOS,"ImageIndex")
-				oEnvironment.Item("ImageSize") = oUtility.SelectSingleNodeString(oOS,"Size")
-				on error resume next
-				oEnvironment.Item("ImageFlags") = oOS.selectSingleNode("Flags").text
-				on error goto 0
-				oEnvironment.Item("ImageBuild") = oUtility.SelectSingleNodeString(oOS,"Build")
-				oEnvironment.Item("ImageProcessor") = oUtility.SelectSingleNodeString(oOS,"Platform")
+			Set oOperatingSystems = oUtility.CreateXMLDOMObjectEx(oEnvironment.Item("DeployRoot") & "\Control\OperatingSystems.xml")
+			Set oOS = oOperatingSystems.selectSingleNode("//os[@guid='" & oOSGUID.text & "']")
+			If oOS is Nothing then
+				oLogging.CreateEntry "ERROR: Invalid OS GUID " & oOSGUID.text & " specified for task sequence " & tsID & " specified", LogTypeInfo
+				Exit Sub
+			End if
 
 
-				' Get the languages
+			' Set the simple OS properties
 
-				Set oImageLang = oOS.selectNodes("Language")
-				sImageLang = ""
-				If not (oImageLang is Nothing) then
-					For each oLanguage in oImageLang
-						sImageLang = sImageLang & oLanguage.text & vbTab
-					Next
-				End if
-				If right(sImageLang,1) = vbTab then
-					sImageLang = Left(sImageLang, Len(sImageLang)-1)  ' Remove trailing tab
-				End if
-				oEnvironment.ListItem("ImageLanguage") = split(sImageLang, vbTab)
+			oEnvironment.Item("ImageIndex") = oUtility.SelectSingleNodeString(oOS,"ImageIndex")
+			oEnvironment.Item("ImageSize") = oUtility.SelectSingleNodeString(oOS,"Size")
+			on error resume next
+			oEnvironment.Item("ImageFlags") = oOS.selectSingleNode("Flags").text
+			on error goto 0
+			oEnvironment.Item("ImageBuild") = oUtility.SelectSingleNodeString(oOS,"Build")
+			oEnvironment.Item("ImageProcessor") = oUtility.SelectSingleNodeString(oOS,"Platform")
 
 
-				' Set the image path
+			' Get the languages
 
-				If oOS.selectSingleNode("ImageFile") is nothing then
+			Set oImageLang = oOS.selectNodes("Language")
+			sImageLang = ""
+			If not (oImageLang is Nothing) then
+				For each oLanguage in oImageLang
+					sImageLang = sImageLang & oLanguage.text & vbTab
+				Next
+			End if
+			If right(sImageLang,1) = vbTab then
+				sImageLang = Left(sImageLang, Len(sImageLang)-1)  ' Remove trailing tab
+			End if
+			oEnvironment.ListItem("ImageLanguage") = split(sImageLang, vbTab)
+
+
+			' Set the image path
+
+			If oOS.selectSingleNode("ImageFile") is nothing then
+				sImagePath = "."
+			Else
+				sImagePath = oOS.selectSingleNode("ImageFile").Text
+				If sImagePath = "" and left(oEnvironment.Item("ImageBuild"),1) = "5" then
 					sImagePath = "."
+				End if
+			End if
+
+
+			If Left(sImagePath, 1) = "." then
+
+				' See if this is a WDS image
+
+				Set oWDSServer = oOS.selectSingleNode("WDSServer")
+				If not (oWDSServer is Nothing) then
+					sWDSServer = oWDSServer.Text
+				End if
+
+
+				' Make sure that's where we want to pull it from
+
+				If sWDSServer <> "" then
+					If oEnvironment.Item("WDSServer") <> "" then
+						sWDSServer = oEnvironment.Item("WDSServer")
+					End if
+				End if
+
+
+				' Set the actual image path
+
+				If sWDSServer <> "" then
+					sImagePath = "\\" & sWDSServer & "\REMINST" & Mid(sImagePath, 2)
 				Else
-					sImagePath = oOS.selectSingleNode("ImageFile").Text
-					If sImagePath = "" and left(oEnvironment.Item("ImageBuild"),1) = "5" then
-						sImagePath = "."
-					End if
+					sImagePath = oEnvironment.Item("DeployRoot") & Mid(sImagePath, 2)
 				End if
-
-				If Left(sImagePath, 1) = "." then
-
-					' See if this is a WDS image
-
-					Set oWDSServer = oOS.selectSingleNode("WDSServer")
-					If not (oWDSServer is Nothing) then
-						sWDSServer = oWDSServer.Text
-					End if
-
-
-					' Make sure that's where we want to pull it from
-
-					If sWDSServer <> "" then
-						If oEnvironment.Item("WDSServer") <> "" then
-							sWDSServer = oEnvironment.Item("WDSServer")
-						End if
-					End if
-
-
-					' Set the actual image path
-
-					If sWDSServer <> "" then
-						sImagePath = "\\" & sWDSServer & "\REMINST" & Mid(sImagePath, 2)
-					Else
-						sImagePath = oEnvironment.Item("DeployRoot") & Mid(sImagePath, 2)
-					End if
-
-				End if
-
-				oLogging.CreateEntry "InstallFromPath: " & sImagePath, LogTypeInfo
-				oEnvironment.Item("InstallFromPath") = oFileHandling.NormalizePath(sImagePath)
-
-				sSourcePath = oUtility.SelectSingleNodeString(oOS,"Source")
-				If Left(sSourcePath, 1) = "." then
-					sSourcePath = oEnvironment.Item("DeployRoot") & Mid(sSourcePath, 2)
-				End if
-				oLogging.CreateEntry "SourcePath: " & sSourcePath, LogTypeInfo
-				oEnvironment.Item("SourcePath") = sSourcePath
 
 			End if
+
+			oLogging.CreateEntry "InstallFromPath: " & sImagePath, LogTypeInfo
+			oEnvironment.Item("InstallFromPath") = oFileHandling.NormalizePath(sImagePath)
+
+			sSourcePath = oUtility.SelectSingleNodeString(oOS,"Source")
+			If Left(sSourcePath, 1) = "." then
+				sSourcePath = oEnvironment.Item("DeployRoot") & Mid(sSourcePath, 2)
+			End if
+			oLogging.CreateEntry "SourcePath: " & sSourcePath, LogTypeInfo
+			oEnvironment.Item("SourcePath") = sSourcePath
 
 		End if
 
@@ -3832,7 +3766,7 @@ Class Utility
 			SelectSingleNodeStringEx = oXMLDomNode.SelectSingleNode(sXPath).Text
 		Else
 			If bError then
-				oLogging.CreateEntry "SelectSingleNodeString(" & sXPath & ") Missing Node.", LogTypeWarning
+				'oLogging.CreateEntry "SelectSingleNodeString(" & sXPath & ") Missing Node.", LogTypeWarning
 			End if
 			SelectSingleNodeStringEx = ""
 		End if
@@ -4029,8 +3963,6 @@ Class Utility
 			case "ULTIMATE", "ULTIMATEE", "ULTIMATEN"
 				IsHighEndSKUEx = TRUE
 			case "ENTERPRISE", "ENTERPRISEN", "ENTERPRISES", "ENTERPRISESN"
-				IsHighEndSKUEx = TRUE
-			case "PROFESSIONAL", "PROFESSIONALN"
 				IsHighEndSKUEx = TRUE
 			case "EDUCATION", "EDUCATIONN"
 				IsHighEndSKUEx = TRUE

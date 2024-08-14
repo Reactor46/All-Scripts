@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<modulestrings version="1">
- <module id="m_gfisetup">
-  <string id="IDS_CURVERLATER">A(z) %s olyan verzióját próbálja telepíteni, amely régebbi a már telepítettnél. Kérjük, e verzió telepítéséhez távolítsa el a jelenlegi verziót.</string> 
-  <string id="IDS_FAILREMOVE">Hiba történt a(z) %s eltávolítása közben. A(z) %s kézi eltávolítása után futtassa újra ezt a telepítőt.</string> 
-  <string id="IDS_ALREADYINSTALLED">A(z) %s %s verziója már telepítve van. A(z) %s %s verziójának telepítése előtt el kell távolítania a jelenlegi verziót.\r\n\r\nEl akarja távolítani a(z) %s jelenlegi verzióját?</string> 
-  <string id="IDS_MAJORUPGRADE">Fontos megjegyzés: a frissítés telepítését követő 10 napon belül új licenckulcsot kell megadnia. A http://customers.gfi.com webhely ismerteti az új licenckulcs megszerzésének mikéntjét.</string>   
- </module>
-</modulestrings>

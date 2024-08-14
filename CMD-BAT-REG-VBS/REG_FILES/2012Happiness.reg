@@ -285,7 +285,7 @@ Windows Registry Editor Version 5.00
 
 ;Set DNS SearchList
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Tcpip\Parameters]
-"SearchList"="server,server,server"
+"SearchList"="corp.srelay.com,ext.srelay.com,sorenson.com"
 
 ;Powershell Unrestricted
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell]

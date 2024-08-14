@@ -10,7 +10,7 @@ rem	.AddAttachment "D:\Argent Jobslot Check\Jobslot.log"
 	.Configuration.Fields.Item _
 	("http://schemas.microsoft.com/cdo/configuration/sendusing") = 2 
 	.Configuration.Fields.Item _
-	("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "mailgateway.Contoso.corp"
+	("http://schemas.microsoft.com/cdo/configuration/smtpserver") = "mailgateway.fnbm.corp"
 	.Configuration.Fields.Item _
 	("http://schemas.microsoft.com/cdo/configuration/smtpserverport") = 25
 	.Configuration.Fields.Update

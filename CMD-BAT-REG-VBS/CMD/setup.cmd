@@ -1,0 +1,8 @@
+@ECHO OFF
+
+SETLOCAL
+SET _FILENAME=splash.hta
+SET _CMD=%~d0%~p0\%_FILENAME%
+IF NOT EXIST "%_CMD%" SET _CMD=%~d0%~p0\setup.exe
+IF EXIST "%_CMD%" START "" /MIN "%_CMD%"
+ENDLOCAL

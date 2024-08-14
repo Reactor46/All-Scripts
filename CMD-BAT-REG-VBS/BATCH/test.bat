@@ -1,25 +1,8 @@
 @echo off
-setlocal
-
-set ELECTRON_RUN_AS_NODE=1
-
-pushd %~dp0\..
-
-for /f "tokens=2 delims=:," %%a in ('findstr /R /C:"\"nameShort\":.*" product.json') do set NAMESHORT=%%~a
-set NAMESHORT=%NAMESHORT: "=%
-set NAMESHORT=%NAMESHORT:"=%.exe
-set CODE=".build\electron\%NAMESHORT%"
-
-rem TFS Builds
-if not "%BUILD_BUILDID%" == "" (
-	%CODE% .\node_modules\mocha\bin\_mocha %*
-)
-
-rem Otherwise
-if "%BUILD_BUILDID%" == "" (
-	%CODE% .\node_modules\mocha\bin\_mocha --reporter dot %*
-)
-popd
-
-endlocal
-exit /b %errorlevel%
+cls
+set /p n=Source_server:
+set /p h=Destination_server:
+set /p m=database:
+sqlcmd -S %n% -E -i"C:\Documents and Settings\MayurS2\Desktop\sd\query1.sql" -v db=%m% s2=%h% -o "mydata.csv" -W -w 999 -s"," 
+call mydata.csv
+exit

@@ -1,0 +1,1 @@
+powershell .\config.ps1

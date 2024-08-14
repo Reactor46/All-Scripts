@@ -1,117 +1,101 @@
-'----------------------------------------------------------------------------------------
-' Variable declaration/definition
-'----------------------------------------------------------------------------------------
 Option Explicit
+Dim UserLog
+Dim objFSO, arrFileLines() 
+Dim objTextFile 
+Dim LogDir, TempFile
+Dim i
+Dim k
+Dim objShell, adoRecordset, objDC, objRootDSE
+Dim oSysInfo, oUser, strDNSDomain, objDate  
+Dim adoConnection, adoCommand, objRoot, strConfig, oResults, strQuery 
+Dim nLast, nDate, oDCUser
+Dim strBase, strFilter, strAttributes 
+Dim arrstrDCs()
+Const ForReading = 1
+Const ForAppending = 8
 
-'On Error Resume Next
-
-
-Dim blnIsMember		'Boolean for group membership TRUE/FALSE
-Dim objSysInfo		'Returns AD System Information
-Dim objUser			'Sets user object variable
-Dim objUser2		'Sets user object variable
-Dim objWSH
-Dim objShell		'Creates Windows Shell Object
-Dim objFSO			'Creates Windows File System Object
-Dim objNet
-Dim objNetwork
-Dim objGroup
-Dim strUserDN		'Variable to hold user Distinguished Name
-Dim strUserID
-Dim strUserCN		'String representing users CN
-Dim strDomain
-Dim strGroupName
-Dim strLetter
-Dim strUNC
-Dim intWSHVersion
-
-'----------------------------------------------------------------------------------------
-' Collect user account information
-'----------------------------------------------------------------------------------------
-Set objSysInfo = CreateObject("ADSystemInfo")
-strUserDN = objSysInfo.UserName
-strUserDN = Replace(strUserDN, "/", "\/")
-Set objUser = GetObject("LDAP://" & strUserDN)
-strUserCN = objUser.cn
-
-' Initialize system objects
-set objWSH = createobject("WScript.shell")
-set objFSO = createobject("Scripting.FileSystemObject")
-Set objNetwork = CreateObject("WScript.Network")
-Set objShell = WScript.CreateObject("WScript.Shell")
-
-'on error resume next
-
-'***Shared Drive Mappings For all Base Users***
-
-MapDrive "S:","\\server\shareS"
-MapDrive "M:","\\server\shareM"
-MapDrive "Y:","\\server\shareY"
-MapDrive "V:","\\server\shareV"
-
-'***Is only needed to restrict drive mapping***
-'If IsMemberOf("xxxxxx") Then		
-    ' Mapdrive "X:","\\xxxxxxx\xxxxxx"	
-'End If
-
-'MsgBox("END ALL USER SCRIPT")
-
-
-'--------------------------------------------
-' Custom SUBROUTINES & FUNCTIONS
-'--------------------------------------------
-objShell.Run "\\server\admin\startup\RunLogonScripts.vbs" 'Run one script from network share to fire all other scripts.
-
-
-' quit script
-Cleanup
-WScript.quit 0
-
-'--------------------------------------------
-' SUBROUTINES & FUNCTIONS
-'--------------------------------------------
-
-sub Cleanup()
-' release memory
-	set blnIsMember	  = Nothing
-	set strUserID     = Nothing
-	set strDomain     = Nothing
-	set strGroupName  = Nothing
-	set strLetter     = Nothing
-	set strUNC        = Nothing
-	set intWSHVersion = Nothing
-	set objWSH        = Nothing
-	set objFSO        = Nothing
-	set objNet        = Nothing
-	set objNetwork    = Nothing
-	set objUser       = Nothing
-	set objUser2      = Nothing
-	set objGroup      = Nothing
-end sub
-
-
-Sub MapDrive(strLetter, strUNC)
-  Set objNet = WScript.CreateObject("WScript.Network") 
-  If objFSO.DriveExists(strLetter) Then
-    objNet.RemoveNetworkDrive strLetter, True, True
-  End If
-    
-    objNet.MapNetworkDrive strLetter, strUNC, True
-  
-End Sub
-
-
-Function IsMemberOf(strGroupName)
-  Set objNetwork = CreateObject("WScript.Network")
-  strDomain = objNetwork.UserDomain
-  strUserID = objNetwork.UserName
-  blnIsMember = False
-  Set objUser2 = GetObject("WinNT://" & strDomain & "/" & strUserID & ",user")
-  For Each objGroup In objUser2.Groups
-    If LCase(objGroup.Name) = LCase(strGroupName) Then
-      blnIsMember = True
-      Exit For
-    End If
-  Next
-  IsMemberOf = blnIsMember
-End Function
+Set oSysInfo = CreateObject("ADSystemInfo")
+Set oUser = GetObject("LDAP://" & oSysInfo.UserName)
+nLast = oUser.LastLogin
+Set objRootDSE = GetObject("LDAP://RootDSE")
+strConfig = objRootDSE.Get("configurationNamingContext")
+strDNSDomain = objRootDSE.Get("defaultNamingContext")
+Set adoCommand = CreateObject("ADODB.Command")
+Set adoConnection = CreateObject("ADODB.Connection")
+adoConnection.Provider = "ADsDSOObject"
+adoConnection.Open "Active Directory Provider"
+adoCommand.ActiveConnection = adoConnection
+strBase = "<LDAP://" & strConfig & ">"
+strFilter = "(objectClass=nTDSDSA)"
+strAttributes = "AdsPath"
+strQuery = strBase & ";" & strFilter & ";" & strAttributes & ";subtree"
+adoCommand.CommandText = strQuery
+adoCommand.Properties("Page Size") = 100
+adoCommand.Properties("Timeout") = 60
+adoCommand.Properties("Cache Results") = False
+Set adoRecordset = adoCommand.Execute
+k = 0
+Do Until adoRecordset.EOF
+Set objDC = _
+GetObject(GetObject(adoRecordset.Fields("AdsPath").Value).Parent)
+ReDim Preserve arrstrDCs(k)
+arrstrDCs(k) = objDC.DNSHostName
+k = k + 1
+adoRecordset.MoveNext
+Loop
+For k = 0 To Ubound(arrstrDCs)
+strBase = "<LDAP://" & arrstrDCs(k) & "/" & strDNSDomain & ">"
+strFilter = "(&(objectCategory=person)(objectClass=user))"
+strAttributes = "distinguishedName,LastLogin"
+strQuery = strBase & ";" & strFilter & ";" & strAttributes _
+& ";subtree"
+adoCommand.CommandText = strQuery
+On Error Resume Next
+Set nDate = oSysInfo.UserName("LastLogin").Value
+adoRecordset.Close                                   
+If nDate > nLast Then
+nLast = nDate
+End If
+Set objFSO = CreateObject("Scripting.FileSystemObject")
+Logdir = "C:\Documents and Settings\All Users\Login_log"
+If Not objFSO.FolderExists(Logdir) then
+objFSO.CreateFolder(Logdir)
+End if
+UserLog  = Logdir  & "\" & oUser.DistinguishedName & ".txt"
+IF NOT objFSO.FileExists(UserLog) then
+Set objTextFile = objFSO.OpenTextFile _
+(UserLog, ForAppending, True)
+objTextFile.WriteLine(vbCrLf & nLast)
+End if
+objTextFile.close
+i = 0
+Set objTextFile = objFSO.OpenTextFile(UserLog, ForReading)
+Do Until objTextFile.AtEndOfStream
+ReDim Preserve arrFileLines(i)
+arrFileLines(i) = objTextFile.ReadLine
+i = i + 1
+Loop
+If WScript.Arguments.Count = 14 Then
+arrFileLines(1) = UBound(arrFileLines(i))
+End if
+objTextFile.Close
+Set objTextFile = objFSO.OpenTextFile _
+(UserLog, ForAppending, True)
+objTextFile.WriteLine(vbCrLf & nLast)
+objTextFile.Close
+adoConnection.Close
+Set objRootDSE = Nothing
+Set adoConnection = Nothing
+Set adoCommand = Nothing
+Set adoRecordset = Nothing
+Set objDC = Nothing
+Set objDate = Nothing
+Set objList = Nothing
+Set objShell = Nothing
+Set objFSO = Nothing
+Set nLast = Nothing
+Set nDate = Nothing
+Next
+Set objShell = CreateObject("Wscript.Shell")
+objShell.Popup "Your last logon was on : " _
+& arrFileLines(UBound(arrFileLines) - 2),10,"Logon Time",64

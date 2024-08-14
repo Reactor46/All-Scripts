@@ -1,0 +1,1 @@
+powershell .\MonitorDnsRecords.ps1

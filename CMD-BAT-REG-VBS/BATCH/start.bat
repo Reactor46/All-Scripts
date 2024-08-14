@@ -1,1 +1,2 @@
-"C:\wamp\bin\php\php5.3.8\php-cgi.exe" -c "C:\wamp\bin\apache\Apache2.2.21\bin\php.ini" -f "C:\reports\mu2.php" param=Start
+cd /d %~dp0
+powershell.exe -ExecutionPolicy Bypass -File .\DiskSpace_Report.ps1

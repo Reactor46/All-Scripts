@@ -1,0 +1,1 @@
+powershell .\ExpirationListExp.ps1

@@ -6,7 +6,7 @@
 ' //
 ' // File:      DeployWiz_Initialization.vbs
 ' // 
-' // Version:   6.3.8456.1000
+' // Version:   6.3.8298.1000
 ' // 
 ' // Purpose:   Main Client Deployment Wizard Initialization routines
 ' // 
@@ -15,6 +15,7 @@
 
 Option Explicit
 
+Dim strPattern
 
 Function InitializeComputerName
 
@@ -26,6 +27,48 @@ Function InitializeComputerName
 		OSDComputerName.disabled = true
 	End if
 
+	' Add Design pattern for computername like pc* or s*
+	Dim i
+	
+	If oEnvironment.Item("WizardSelectionProfile")="--- SERVEUR ---" Then
+			OSDComputerName.Value ="s*"
+			i=1
+	ElseIf Instr(1,OSDComputerName.Value,"*") > 1 Then ' Pattern schémas nom de PC*
+		If Instr(1,OSDComputerName.Value,"-") > 1 Then
+			If Instr(1,OSDComputerName.Value,"*") < Instr(1,OSDComputerName.Value,"-") Then
+				i = Instr(1,OSDComputerName.Value,"*") - 1
+			Else
+				i = Instr(1,OSDComputerName.Value,"-") - 1
+			End If
+		Else
+			i = Instr(1,OSDComputerName.Value,"*") - 1
+		End If
+		' Pattern pour nom du serveur ( sp ou sv )
+		' ou Serveur ebkp
+		'If Property("ROLE001") = "--- SERVEUR ---" Then
+		'	i = 3 ' Nombre de caractère du pattern
+		'	If oEnvironment.Item("IsVM") Then 
+		'		OSDComputerName.Value = "sv-*"
+		'	Else
+		'		OSDComputerName.Value = "sp-*"
+		'	End If	
+		'End If
+		
+		If LEN(OSDComputerName.Value) > i Then 
+			strPattern = Mid(OSDComputerName.Value,1,i)
+		Else
+			strPattern = "NO"
+		End If
+		
+		' Affichage du pattern à l'écran pour information
+		document.getElementById("cNamePattern").innerHTML = "(" & strPattern & "...)"
+		
+		
+	Else
+		strPattern = "NO"
+	End If
+	
+	
 End Function
 
 
@@ -40,7 +83,7 @@ Function ValidateComputerName
 		TooLong.style.display = "inline"
 		ValidateComputerName = false
 		ButtonNext.disabled = true
-	ElseIf IsValidComputerName ( OSDComputerName.Value ) then
+	ElseIf IsValidComputerName ( OSDComputerName.Value )and ( (Instr(1,OSDComputerName.Value,strPattern) = 1) Or (strPattern = "NO" )) then
 		ValidateComputerName = TRUE
 		InvalidChar.style.display = "none"
 		TooLong.style.display = "none"

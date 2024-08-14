@@ -1,1 +1,0 @@
-shutdown /r /t 300 /c "Computer is restarting in 5 minutes please save and log off"
