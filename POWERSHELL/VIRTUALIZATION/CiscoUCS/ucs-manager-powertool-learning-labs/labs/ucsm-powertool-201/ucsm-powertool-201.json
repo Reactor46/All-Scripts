@@ -1,0 +1,28 @@
+{
+    "labId": "ucsm-powertool-201",
+    "title": "Intermediate UCS PowerTool Part I",
+    "slug": "This Intermediate UCS PowerTool Learning Lab will guide you through the use of UCS PowerTool to connect to a UCS Manager, add/set several UCS Manager settings, export UCS Manager configurations (backup), and import a backup export.",
+    "time": "30",
+    "byod": true,
+    "tags": [{
+        "title": "Data Center"
+    }, {
+        "title": "PowerShell"
+    }, {
+        "title": "PowerTool"
+    }, {
+        "title": "UCS"
+    }],
+    "files": [{
+        "title": "1.md"
+    }, {
+        "title": "2.md"
+    }, {
+        "title": "3.md"
+    }],
+    "authors": [{
+        "name": "John McDonough",
+        "email": "jomcdono@cisco.com"
+    }],
+    "active": true
+}

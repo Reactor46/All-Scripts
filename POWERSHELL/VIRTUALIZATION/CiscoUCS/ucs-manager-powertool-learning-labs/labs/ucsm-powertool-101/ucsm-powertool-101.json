@@ -1,0 +1,35 @@
+{
+    "labId": "ucsm-powertool-101",
+    "title": "Introduction to UCS PowerTool Part I",
+    "slug": "This Introduction to UCS PowerTool Learning Lab will guide you through the use of UCS PowerTool to connect to a UCS Manager, perform queries against UCS Manager objects and disconnect from the UCS Manager. UCS Manager Objects are representations of pools, policies, other logical constructs and physical entities.",
+    "time": "30",
+    "byod": true,
+    "tags": [{
+        "title": "Data Center"
+    }, {
+        "title": "PowerShell"
+    }, {
+        "title": "PowerTool"
+    }, {
+        "title": "UCS"
+    }],
+    "files": [{
+        "title": "1.md"
+    }, {
+        "title": "2.md"
+    }, {
+        "title": "3.md"
+    }],
+    "related": [{
+        "labId": "ucsm-powertool-102",
+        "title": "Introduction to UCS PowerTool Part II"
+    }, {
+        "labId": "ucsm-powertool-103",
+        "title": "Introduction to UCS PowerTool Part III"
+    }],
+    "authors": [{
+        "name": "John McDonough",
+        "email": "jomcdono@cisco.com"
+    }],
+    "active": true
+}
