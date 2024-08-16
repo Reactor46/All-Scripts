@@ -1,0 +1,3 @@
+#TYPE System.Management.Automation.PSCustomObject
+"Identity","AddressSpaces","IsSmtpConnector","MaxMessageSize","Port","SmartHostAuthMechanism","SmartHosts","SourceTransportServers"
+"Primary SMTP Outbound to C160's","SMTP:*;1","True","Unlimited","25","None","lassmtp02.fnbm.corp lassmtp01.fnbm.corp","LASEXCH04 LASEXCH02 LASEXCH03 LASEXCH01 LASEXCAS02 LASEXCAS01"

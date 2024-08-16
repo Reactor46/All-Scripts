@@ -1,0 +1,3 @@
+﻿Failed to load Exchange Shell... stopping script
+ 
+ 

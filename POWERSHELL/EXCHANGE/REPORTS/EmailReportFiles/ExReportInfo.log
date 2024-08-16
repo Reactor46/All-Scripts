@@ -1,0 +1,24 @@
+***************************************************************************************************
+Started processing at [11/13/2018 10:16:55].
+***************************************************************************************************
+
+2018-11-13 10:16:55: Info log file C:\LazyWinAdmin\EXCHANGE\REPORTS\EmailReportFiles\ExReportInfo.log is created successfully
+2018-11-13 10:16:55: Error log file C:\LazyWinAdmin\EXCHANGE\REPORTS\EmailReportFiles\ExReportError.log is created successfully
+2018-11-13 10:16:55: Detailed log file C:\LazyWinAdmin\EXCHANGE\REPORTS\EmailReportFiles\ExReportDetailed.log is created successfully
+2018-11-13 10:16:55:
+2018-11-13 10:16:55: Starting Get-CorpEmailReport_v2.4.9.ps1
+2018-11-13 10:16:55: (System.Management.Automation.PSBoundParametersDictionary | out-string)
+2018-11-13 10:16:55: PowerShell Host Version :5
+2018-11-13 10:16:55:
+2018-11-13 10:16:55:
+2018-11-13 10:16:55: ------------------------------------------------------------
+2018-11-13 10:16:55:[Module 1 Customization] : Pass
+2018-11-13 10:16:55: ------------------------------------------------------------
+2018-11-13 10:16:55:[Module 3 Function] : Pass
+2018-11-13 10:16:55: ------------------------------------------------------------
+2018-11-13 10:16:55: [Module Factory]
+2018-11-13 10:16:55: Starting script stopwatch
+2018-11-13 10:16:55: Clearing the console screen and displaying script headings
+2018-11-13 10:16:55: Checking Script PowerShell Environment
+2018-11-13 10:16:55:    - Exchange Install Directory : C:\Program Files\Microsoft\Exchange Server\V15\ 
+2018-11-13 10:16:55: Exiting script... Please check ErrorLog file for detail.

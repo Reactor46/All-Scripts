@@ -1,0 +1,10 @@
+#TYPE System.Management.Automation.PSCustomObject
+"BasicAuthentication","DigestAuthentication","FormsAuthentication","WindowsAuthentication","Externalurl","Internalurl","Identity"
+"False",,,"True","https://monsoon.creditone.com/OAB","https://monsoon.creditone.com/OAB","LASEXCAS01\OAB (Default Web Site)"
+"False",,,"True","https://monsoon.creditone.com/OAB","https://monsoon.creditone.com/OAB","LASEXCAS02\OAB (Default Web Site)"
+"False",,,"True",,"http://lasexdb01.fnbm.corp/OAB","LASEXDB01\OAB (Default Web Site)"
+"False",,,"True",,"http://lasexdb02.fnbm.corp/OAB","LASEXDB02\OAB (Default Web Site)"
+"False",,,"True","https://monsoon.creditone.com/OAB","https://mail.fnbm.corp/OAB","LASEXCH01\OAB (Default Web Site)"
+"False",,,"True","https://monsoon.creditone.com/OAB","https://mail.fnbm.corp/OAB","LASEXCH03\OAB (Default Web Site)"
+"False",,,"True","https://monsoon.creditone.com/OAB","https://mail.fnbm.corp/OAB","LASEXCH02\OAB (Default Web Site)"
+"False",,,"True",,"https://lasexch04.fnbm.corp/OAB","LASEXCH04\OAB (Default Web Site)"

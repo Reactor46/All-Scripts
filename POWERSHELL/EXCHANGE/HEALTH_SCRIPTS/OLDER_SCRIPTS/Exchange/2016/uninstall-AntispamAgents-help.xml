@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<helpItems schema="maml">
+  <_locDefinition>
+    <_locDefault _loc="locNone"/>
+    <_locTag _loc="locData">maml:para</_locTag>
+    <_locTag _loc="locData">maml:title</_locTag>
+  </_locDefinition>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>uninstall-AntispamAgents.ps1</command:name>
+      <maml:description>
+        <maml:para _locID="CommandShortDescription">Uninstalls and disables all the antispam agents. The following agents will be uninstalled:
+1) Connection Filtering
+2) Content Filtering
+3) Sender ID 
+4) Sender Filter
+5) Recipient Filter
+6) Protocol Analysis</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para _locID="Copyright">Copyright (c) Microsoft.  All rights reserved.</maml:para>
+      </maml:copyright>
+      <command:verb>uninstall</command:verb>
+      <command:noun>AntispamAgents.ps1</command:noun>
+      <dev:version/>
+    </command:details>
+    <maml:description>
+      <maml:para _locID="CommandLongDescription"></maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <command:name>uninstall-AntispamAgents.ps1</command:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:examples>
+      <command:example>
+        <maml:title _locID="Example_Title_1">-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>C:\PS&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>.\uninstall-AntispamAgents</dev:code>
+        <dev:remarks>
+          <maml:para _locID="Example_1_Remarks_1">This script doesn't take any parameters.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+  </command:command>
+</helpItems>

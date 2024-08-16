@@ -1,0 +1,10 @@
+#TYPE System.Management.Automation.PSCustomObject
+"BasicAuthentication","DigestAuthentication","FormsAuthentication","WindowsAuthentication","Externalurl","Internalurl","Identity"
+"True","False",,"True",,,"LASEXCAS01\Autodiscover (Default Web Site)"
+"True","False",,"True",,,"LASEXCAS02\Autodiscover (Default Web Site)"
+"True","False",,"True",,,"LASEXDB01\Autodiscover (Default Web Site)"
+"True","False",,"True",,,"LASEXDB02\Autodiscover (Default Web Site)"
+"True","False",,"True",,,"LASEXCH01\Autodiscover (Default Web Site)"
+"True","False",,"True",,,"LASEXCH03\Autodiscover (Default Web Site)"
+"True","False",,"True",,,"LASEXCH02\Autodiscover (Default Web Site)"
+"True","False",,"True",,,"LASEXCH04\Autodiscover (Default Web Site)"

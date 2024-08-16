@@ -1,0 +1,854 @@
+        static List<SetItemFieldType> DiffConact(ContactItemType cnContact1, ContactItemType cnContact2)
+        {
+            List<SetItemFieldType> rlReturnList = new List<SetItemFieldType>();
+            if (cnContact1.AssistantName != null)
+            {
+                if (cnContact2.AssistantName != null)
+                {
+                    if (cnContact1.AssistantName.ToString() != cnContact2.AssistantName.ToString())
+                    {
+                        ContactItemType asAssistantName = new ContactItemType();
+                        asAssistantName.AssistantName = cnContact1.AssistantName;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsAssistantName, asAssistantName));
+                    }
+                }
+                else
+                {
+                    ContactItemType asAssistantName = new ContactItemType();
+                    asAssistantName.AssistantName = cnContact1.AssistantName;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsAssistantName, asAssistantName));
+                }
+            }
+            if (cnContact1.BusinessHomePage != null)
+            {
+                if (cnContact2.BusinessHomePage != null)
+                {
+                    if (cnContact1.BusinessHomePage.ToString() != cnContact2.BusinessHomePage.ToString())
+                    {
+                        ContactItemType bhBusinessHomePage = new ContactItemType();
+                        bhBusinessHomePage.BusinessHomePage = cnContact1.BusinessHomePage;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsBusinessHomePage, bhBusinessHomePage));
+                    }
+                }
+                else
+                {
+                    ContactItemType bhBusinessHomePage = new ContactItemType();
+                    bhBusinessHomePage.BusinessHomePage = cnContact1.BusinessHomePage;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsBusinessHomePage, bhBusinessHomePage));
+                }
+            }
+            if (cnContact1.Categories != null)
+            {
+                if (cnContact2.Categories != null)
+                {
+                    string cnContact1Cateogies = String.Join(";", cnContact1.Categories);
+                    string cnContact2Cateogies = String.Join(";", cnContact2.Categories);
+                    if (cnContact1Cateogies != cnContact2Cateogies)
+                    {
+                        ContactItemType cnCategories = new ContactItemType();
+                        cnCategories.Categories = cnContact1.Categories;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.itemCategories, cnCategories));
+                    }
+                }
+                else
+                {
+                    ContactItemType cnCategories = new ContactItemType();
+                    cnCategories.Categories = cnContact1.Categories;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.itemCategories, cnCategories));
+                }
+            }
+            if (cnContact1.Children != null)
+            {
+                if (cnContact2.Children != null)
+                {
+                    string cnContact1Children = String.Join(";", cnContact1.Children);
+                    string cnContact2Children = String.Join(";", cnContact2.Children);
+                    if (cnContact1Children != cnContact2Children)
+                    {
+                        ContactItemType cnChildren = new ContactItemType();
+                        cnChildren.Children = cnContact1.Children;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsChildren, cnChildren));
+                    }
+                }
+                else
+                {
+                    ContactItemType cnChildren = new ContactItemType();
+                    cnChildren.Children = cnContact1.Children;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsChildren, cnChildren));
+                }
+            }
+            if (cnContact1.Companies != null)
+            {
+                if (cnContact2.Companies != null)
+                {
+                    string cnContact1Companies = String.Join(";", cnContact1.Companies);
+                    string cnContact2Companies = String.Join(";", cnContact2.Companies);
+                    if (cnContact1Companies != cnContact2Companies)
+                    {
+                        ContactItemType cnCompanies = new ContactItemType();
+                        cnCompanies.Companies = cnContact1.Companies;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsCompanies, cnCompanies));
+                    }
+                }
+                else
+                {
+                    ContactItemType cnCompanies = new ContactItemType();
+                    cnCompanies.Companies = cnContact1.Companies;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsCompanies, cnCompanies));
+                }
+            }
+
+            if (cnContact1.CompanyName != null)
+            {
+                if (cnContact2.CompanyName != null)
+                {
+                    if (cnContact1.CompanyName.ToString() != cnContact2.CompanyName.ToString())
+                    {
+                        ContactItemType cnCompanyName = new ContactItemType();
+                        cnCompanyName.CompanyName = cnContact1.CompanyName;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsCompanyName, cnCompanyName));
+                    }
+                }
+                else
+                {
+                    ContactItemType cnCompanyName = new ContactItemType();
+                    cnCompanyName.CompanyName = cnContact1.CompanyName;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsCompanyName, cnCompanyName));
+                }
+            }
+            if (cnContact1.Department != null)
+            {
+                if (cnContact2.Department != null)
+                {
+                    if (cnContact1.Department.ToString() != cnContact2.Department.ToString())
+                    {
+                        ContactItemType cnDepartment = new ContactItemType();
+                        cnDepartment.Department = cnContact1.Department;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsDepartment, cnDepartment));
+                    }
+                }
+                else
+                {
+                    ContactItemType cnDepartment = new ContactItemType();
+                    cnDepartment.Department = cnContact1.Department;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsDepartment, cnDepartment));
+                }
+            }
+            if (cnContact1.DisplayName != null)
+            {
+                if (cnContact2.DisplayName != null)
+                {
+                    if (cnContact1.DisplayName.ToString() != cnContact2.DisplayName.ToString())
+                    {
+                        ContactItemType dnDisplayName = new ContactItemType();
+                        dnDisplayName.DisplayName = cnContact1.DisplayName;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsDisplayName, dnDisplayName));
+                    }
+                }
+                else
+                {
+                    ContactItemType dnDisplayName = new ContactItemType();
+                    dnDisplayName.DisplayName = cnContact1.DisplayName;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsDisplayName, dnDisplayName));
+                }
+            }
+            if (cnContact1.EmailAddresses != null)
+            {
+                if (cnContact2.EmailAddresses != null)
+                {
+                    Hashtable emAddress1 = new Hashtable();
+                    Hashtable emAddress2 = new Hashtable();
+                    for (int emadarr = 0; emadarr < cnContact1.EmailAddresses.Length; emadarr++)
+                    {
+                        emAddress1.Add(cnContact1.EmailAddresses[emadarr].Key.ToString(), cnContact1.EmailAddresses[emadarr].Value.ToString());
+                    }
+                    for (int emadarr = 0; emadarr < cnContact2.EmailAddresses.Length; emadarr++)
+                    {
+                        emAddress2.Add(cnContact2.EmailAddresses[emadarr].Key.ToString(), cnContact2.EmailAddresses[emadarr].Value.ToString());
+                    }
+                    foreach (String key in emAddress1.Keys)
+                    {
+                        Boolean upUpdateEmail = false;
+                        if (emAddress2.ContainsKey(key))
+                        {
+                            if (emAddress2[key].ToString() != emAddress1[key].ToString()) { upUpdateEmail = true; }
+                        }
+                        else { upUpdateEmail = true; }
+                        if (upUpdateEmail == true)
+                        {
+                            switch (key)
+                            {
+                                case "EmailAddress1": rlReturnList.Add(AddContactDifferanceEmail("EmailAddress1", EmailAddressKeyType.EmailAddress1, emAddress1[key].ToString()));
+                                    break;
+                                case "EmailAddress2": rlReturnList.Add(AddContactDifferanceEmail("EmailAddress2", EmailAddressKeyType.EmailAddress2, emAddress1[key].ToString()));
+                                    break;
+                                case "EmailAddress3": rlReturnList.Add(AddContactDifferanceEmail("EmailAddress3", EmailAddressKeyType.EmailAddress3, emAddress1[key].ToString()));
+                                    break;
+                            }
+                        }
+
+                    }
+                }
+                else
+                {
+                    for (int emadarr = 0; emadarr < cnContact1.EmailAddresses.Length; emadarr++)
+                    {
+                        switch (cnContact1.EmailAddresses[emadarr].Key)
+                        {
+                            case EmailAddressKeyType.EmailAddress1: rlReturnList.Add(AddContactDifferanceEmail("EmailAddress1", EmailAddressKeyType.EmailAddress1, cnContact1.EmailAddresses[emadarr].Value));
+                                break;
+                            case EmailAddressKeyType.EmailAddress2: rlReturnList.Add(AddContactDifferanceEmail("EmailAddress2", EmailAddressKeyType.EmailAddress2, cnContact1.EmailAddresses[emadarr].Value));
+                                break;
+                            case EmailAddressKeyType.EmailAddress3: rlReturnList.Add(AddContactDifferanceEmail("EmailAddress3", EmailAddressKeyType.EmailAddress3, cnContact1.EmailAddresses[emadarr].Value));
+                                break;
+                        }
+                    }
+                }
+            }
+            if (cnContact1.GivenName != null)
+            {
+                if (cnContact2.GivenName != null)
+                {
+                    if (cnContact1.GivenName.ToString() != cnContact2.GivenName.ToString())
+                    {
+                        ContactItemType cnGivenName = new ContactItemType();
+                        cnGivenName.GivenName = cnContact1.GivenName;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsGivenName, cnGivenName));
+                    }
+                }
+                else
+                {
+                    ContactItemType cnGivenName = new ContactItemType();
+                    cnGivenName.GivenName = cnContact1.GivenName;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsGivenName, cnGivenName));
+                }
+            }
+            if (cnContact1.JobTitle != null)
+            {
+                if (cnContact2.JobTitle != null)
+                {
+                    if (cnContact1.JobTitle.ToString() != cnContact2.JobTitle.ToString())
+                    {
+                        ContactItemType jnJobTitle = new ContactItemType();
+                        jnJobTitle.JobTitle = cnContact1.JobTitle;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsJobTitle, jnJobTitle));
+                    }
+                }
+                else
+                {
+                    ContactItemType jnJobTitle = new ContactItemType();
+                    jnJobTitle.JobTitle = cnContact1.JobTitle;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsJobTitle, jnJobTitle));
+                }
+            }
+            if (cnContact1.Manager != null)
+            {
+                if (cnContact2.Manager != null)
+                {
+                    if (cnContact1.Manager.ToString() != cnContact2.Manager.ToString())
+                    {
+                        ContactItemType mnManager = new ContactItemType();
+                        mnManager.Manager = cnContact1.Manager;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsManager, mnManager));
+                    }
+                }
+                else
+                {
+                    ContactItemType mnManager = new ContactItemType();
+                    mnManager.Manager = cnContact1.Manager;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsManager, mnManager));
+                }
+            }
+            if (cnContact1.MiddleName != null)
+            {
+                if (cnContact2.MiddleName != null)
+                {
+                    if (cnContact1.MiddleName.ToString() != cnContact2.MiddleName.ToString())
+                    {
+                        ContactItemType mnMiddleName = new ContactItemType();
+                        mnMiddleName.MiddleName = cnContact1.MiddleName;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsMiddleName, mnMiddleName));
+                    }
+                }
+                else
+                {
+                    ContactItemType mnMiddleName = new ContactItemType();
+                    mnMiddleName.MiddleName = cnContact1.MiddleName;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsMiddleName, mnMiddleName));
+                }
+            }
+            if (cnContact1.Mileage != null)
+            {
+                if (cnContact2.Mileage != null)
+                {
+                    if (cnContact1.Mileage.ToString() != cnContact2.Mileage.ToString())
+                    {
+                        ContactItemType mnMileage = new ContactItemType();
+                        mnMileage.Mileage = cnContact1.Mileage;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsMileage, mnMileage));
+                    }
+                }
+                else
+                {
+                    ContactItemType mnMileage = new ContactItemType();
+                    mnMileage.Mileage = cnContact1.Mileage;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsMileage, mnMileage));
+                }
+            }
+            if (cnContact1.Nickname != null)
+            {
+                if (cnContact2.Nickname != null)
+                {
+                    if (cnContact1.Nickname.ToString() != cnContact2.Nickname.ToString())
+                    {
+                        ContactItemType nnNickName = new ContactItemType();
+                        nnNickName.Nickname = cnContact1.Nickname;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsNickname, nnNickName));
+                    }
+                }
+                else
+                {
+                    ContactItemType nnNickName = new ContactItemType();
+                    nnNickName.Nickname = cnContact1.Nickname;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsNickname, nnNickName));
+                }
+            }
+            if (cnContact1.OfficeLocation != null)
+            {
+                if (cnContact2.OfficeLocation != null)
+                {
+                    if (cnContact1.OfficeLocation.ToString() != cnContact2.OfficeLocation.ToString())
+                    {
+                        ContactItemType onOfficeName = new ContactItemType();
+                        onOfficeName.OfficeLocation = cnContact1.OfficeLocation;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsOfficeLocation, onOfficeName));
+                    }
+                }
+                else
+                {
+                    ContactItemType onOfficeName = new ContactItemType();
+                    onOfficeName.OfficeLocation = cnContact1.OfficeLocation;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsOfficeLocation, onOfficeName));
+                }
+            }
+            if (cnContact1.PhysicalAddresses != null)
+            {
+                if (cnContact2.PhysicalAddresses != null)
+                {
+                    Hashtable phAddress1 = new Hashtable();
+                    Hashtable phAddress2 = new Hashtable();
+                    for (int phadarr = 0; phadarr < cnContact1.PhysicalAddresses.Length; phadarr++)
+                    {
+                        Hashtable phAddress3 = new Hashtable();
+                        if (cnContact1.PhysicalAddresses[phadarr].City != null) { phAddress3.Add("City", cnContact1.PhysicalAddresses[phadarr].City); }
+                        if (cnContact1.PhysicalAddresses[phadarr].CountryOrRegion != null) { phAddress3.Add("CountryOrRegion", cnContact1.PhysicalAddresses[phadarr].CountryOrRegion); }
+                        if (cnContact1.PhysicalAddresses[phadarr].PostalCode != null) { phAddress3.Add("PostalCode", cnContact1.PhysicalAddresses[phadarr].PostalCode); }
+                        if (cnContact1.PhysicalAddresses[phadarr].State != null) { phAddress3.Add("State", cnContact1.PhysicalAddresses[phadarr].State); }
+                        if (cnContact1.PhysicalAddresses[phadarr].Street != null) { phAddress3.Add("Street", cnContact1.PhysicalAddresses[phadarr].Street); }
+                        phAddress1.Add(cnContact1.PhysicalAddresses[phadarr].Key.ToString(), phAddress3);
+                    }
+                    for (int phadarr = 0; phadarr < cnContact2.PhysicalAddresses.Length; phadarr++)
+                    {
+                        Hashtable phAddress4 = new Hashtable();
+                        if (cnContact2.PhysicalAddresses[phadarr].City != null) { phAddress4.Add("City", cnContact2.PhysicalAddresses[phadarr].City); }
+                        if (cnContact2.PhysicalAddresses[phadarr].CountryOrRegion != null) { phAddress4.Add("CountryOrRegion", cnContact2.PhysicalAddresses[phadarr].CountryOrRegion); }
+                        if (cnContact2.PhysicalAddresses[phadarr].PostalCode != null) { phAddress4.Add("PostalCode", cnContact2.PhysicalAddresses[phadarr].PostalCode); }
+                        if (cnContact2.PhysicalAddresses[phadarr].State != null) { phAddress4.Add("State", cnContact2.PhysicalAddresses[phadarr].State); }
+                        if (cnContact2.PhysicalAddresses[phadarr].Street != null) { phAddress4.Add("Street", cnContact2.PhysicalAddresses[phadarr].Street); }
+                        phAddress2.Add(cnContact2.PhysicalAddresses[phadarr].Key.ToString(), phAddress4);
+                    }
+                    foreach (String key in phAddress1.Keys)
+                    {
+                        if (phAddress2.ContainsKey(key))
+                        {
+                            Hashtable adhash1 = (Hashtable)phAddress1[key];
+                            Hashtable adhash2 = (Hashtable)phAddress2[key];
+                            foreach (String ahhashkey in adhash1.Keys)
+                            {
+                                Boolean upUpdateAddress = false;
+                                if (adhash2.ContainsKey(ahhashkey))
+                                {
+                                    if (adhash1[ahhashkey].ToString() != adhash2[ahhashkey].ToString())
+                                    {
+                                        upUpdateAddress = true;
+                                    }
+                                }
+                                else { upUpdateAddress = true; }
+                                if (upUpdateAddress == true)
+                                {
+                                    PhysicalAddressDictionaryEntryType paAddress = new PhysicalAddressDictionaryEntryType();
+                                    switch (key)
+                                    {
+                                        case "Business": paAddress.Key = PhysicalAddressKeyType.Business;
+                                            break;
+                                        case "Home": paAddress.Key = PhysicalAddressKeyType.Home;
+                                            break;
+                                        case "Other": paAddress.Key = PhysicalAddressKeyType.Other;
+                                            break;
+                                    }
+                                    switch (ahhashkey)
+                                    {
+                                        case "City": paAddress.City = adhash1[ahhashkey].ToString();
+                                            rlReturnList.Add(AddContactDifferancePhyicalAddress(paAddress.Key.ToString(), DictionaryURIType.contactsPhysicalAddressCity, paAddress));
+                                            break;
+                                        case "CountryOrRegion": paAddress.CountryOrRegion = adhash1[ahhashkey].ToString();
+                                            rlReturnList.Add(AddContactDifferancePhyicalAddress(paAddress.Key.ToString(), DictionaryURIType.contactsPhysicalAddressCountryOrRegion, paAddress));
+                                            break;
+                                        case "PostalCode": paAddress.PostalCode = adhash1[ahhashkey].ToString();
+                                            rlReturnList.Add(AddContactDifferancePhyicalAddress(paAddress.Key.ToString(), DictionaryURIType.contactsPhysicalAddressPostalCode, paAddress));
+                                            break;
+                                        case "State": paAddress.State = adhash1[ahhashkey].ToString();
+                                            rlReturnList.Add(AddContactDifferancePhyicalAddress(paAddress.Key.ToString(), DictionaryURIType.contactsPhysicalAddressState, paAddress));
+                                            break;
+                                        case "Street": paAddress.Street = adhash1[ahhashkey].ToString();
+                                            rlReturnList.Add(AddContactDifferancePhyicalAddress(paAddress.Key.ToString(), DictionaryURIType.contactsPhysicalAddressStreet, paAddress));
+                                            break;
+
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+                else
+                {
+                    for (int phadarr = 0; phadarr < cnContact1.PhysicalAddresses.Length; phadarr++)
+                    {
+                        PhysicalAddressDictionaryEntryType paAddress = new PhysicalAddressDictionaryEntryType();
+                        paAddress.Key = cnContact1.PhysicalAddresses[phadarr].Key;
+                        if (cnContact1.PhysicalAddresses[phadarr].City != null)
+                        {
+                            paAddress.City = cnContact1.PhysicalAddresses[phadarr].City;
+                            rlReturnList.Add(AddContactDifferancePhyicalAddress(cnContact1.PhysicalAddresses[phadarr].Key.ToString(), DictionaryURIType.contactsPhysicalAddressCity, paAddress));
+                        }
+                        if (cnContact1.PhysicalAddresses[phadarr].CountryOrRegion != null)
+                        {
+                            paAddress.CountryOrRegion = cnContact1.PhysicalAddresses[phadarr].CountryOrRegion;
+                            AddContactDifferancePhyicalAddress(cnContact1.PhysicalAddresses[phadarr].Key.ToString(), DictionaryURIType.contactsPhysicalAddressCountryOrRegion, paAddress);
+                        }
+                        if (cnContact1.PhysicalAddresses[phadarr].PostalCode != null)
+                        {
+                            paAddress.PostalCode = cnContact1.PhysicalAddresses[phadarr].PostalCode;
+                            AddContactDifferancePhyicalAddress(cnContact1.PhysicalAddresses[phadarr].Key.ToString(), DictionaryURIType.contactsPhysicalAddressPostalCode, paAddress);
+                        }
+                        if (cnContact1.PhysicalAddresses[phadarr].State != null)
+                        {
+                            paAddress.State = cnContact1.PhysicalAddresses[phadarr].State;
+                            AddContactDifferancePhyicalAddress(cnContact1.PhysicalAddresses[phadarr].Key.ToString(), DictionaryURIType.contactsPhysicalAddressState, paAddress);
+                        }
+                        if (cnContact1.PhysicalAddresses[phadarr].Street != null)
+                        {
+                            paAddress.Street = cnContact1.PhysicalAddresses[phadarr].Street;
+                            AddContactDifferancePhyicalAddress(cnContact1.PhysicalAddresses[phadarr].Key.ToString(), DictionaryURIType.contactsPhysicalAddressStreet, paAddress);
+                        }
+                    }
+                }
+            }
+            if (cnContact1.PhoneNumbers != null)
+            {
+                if (cnContact2.PhoneNumbers != null)
+                {
+                    Hashtable phPhone1 = new Hashtable();
+                    Hashtable phPhone2 = new Hashtable();
+                    for (int phPhoneint = 0; phPhoneint < cnContact1.PhoneNumbers.Length; phPhoneint++)
+                    {
+                        phPhone1.Add(cnContact1.PhoneNumbers[phPhoneint].Key.ToString(), cnContact1.PhoneNumbers[phPhoneint].Value);
+                    }
+                    for (int phPhoneint = 0; phPhoneint < cnContact2.PhoneNumbers.Length; phPhoneint++)
+                    {
+                        phPhone2.Add(cnContact2.PhoneNumbers[phPhoneint].Key.ToString(), cnContact2.PhoneNumbers[phPhoneint].Value);
+                    }
+                    foreach (String key in phPhone1.Keys)
+                    {
+                        Boolean upUpdatePhone = false;
+                        if (phPhone2.ContainsKey(key))
+                        {
+                            if (phPhone2[key].ToString() != phPhone1[key].ToString()) { upUpdatePhone = true; }
+                        }
+                        else { upUpdatePhone = true; }
+                        if (upUpdatePhone == true)
+                        {
+                            switch (key)
+                            {
+                                case "AssistantPhone": rlReturnList.Add(AddContactDifferancePhone("AssistantPhone", PhoneNumberKeyType.AssistantPhone, phPhone1[key].ToString()));
+                                    break;
+                                case "BusinessFax": rlReturnList.Add(AddContactDifferancePhone("BusinessFax", PhoneNumberKeyType.BusinessFax, phPhone1[key].ToString()));
+                                    break;
+                                case "BusinessPhone": rlReturnList.Add(AddContactDifferancePhone("BusinessPhone", PhoneNumberKeyType.BusinessPhone, phPhone1[key].ToString()));
+                                    break;
+                                case "BusinessPhone2": rlReturnList.Add(AddContactDifferancePhone("BusinessPhone2", PhoneNumberKeyType.BusinessPhone2, phPhone1[key].ToString()));
+                                    break;
+                                case "Callback": rlReturnList.Add(AddContactDifferancePhone("Callback", PhoneNumberKeyType.Callback, phPhone1[key].ToString()));
+                                    break;
+                                case "CarPhone": rlReturnList.Add(AddContactDifferancePhone("CarPhone", PhoneNumberKeyType.CarPhone, phPhone1[key].ToString()));
+                                    break;
+                                case "CompanyMainPhone": rlReturnList.Add(AddContactDifferancePhone("CompanyMainPhone", PhoneNumberKeyType.CompanyMainPhone, phPhone1[key].ToString()));
+                                    break;
+                                case "HomeFax": rlReturnList.Add(AddContactDifferancePhone("HomeFax", PhoneNumberKeyType.HomeFax, phPhone1[key].ToString()));
+                                    break;
+                                case "HomePhone": rlReturnList.Add(AddContactDifferancePhone("HomePhone", PhoneNumberKeyType.HomePhone, phPhone1[key].ToString()));
+                                    break;
+                                case "HomePhone2": rlReturnList.Add(AddContactDifferancePhone("HomePhone2", PhoneNumberKeyType.HomePhone2, phPhone1[key].ToString()));
+                                    break;
+                                case "Isdn": rlReturnList.Add(AddContactDifferancePhone("Isdn", PhoneNumberKeyType.Isdn, phPhone1[key].ToString()));
+                                    break;
+                                case "MobilePhone": rlReturnList.Add(AddContactDifferancePhone("MobilePhone", PhoneNumberKeyType.MobilePhone, phPhone1[key].ToString()));
+                                    break;
+                                case "OtherFax": rlReturnList.Add(AddContactDifferancePhone("OtherFax", PhoneNumberKeyType.OtherFax, phPhone1[key].ToString()));
+                                    break;
+                                case "OtherTelephone": rlReturnList.Add(AddContactDifferancePhone("OtherTelephone", PhoneNumberKeyType.OtherTelephone, phPhone1[key].ToString()));
+                                    break;
+                                case "Pager": rlReturnList.Add(AddContactDifferancePhone("Pager", PhoneNumberKeyType.Pager, phPhone1[key].ToString()));
+                                    break;
+                                case "PrimaryPhone": rlReturnList.Add(AddContactDifferancePhone("PrimaryPhone", PhoneNumberKeyType.PrimaryPhone, phPhone1[key].ToString()));
+                                    break;
+                                case "RadioPhone": rlReturnList.Add(AddContactDifferancePhone("RadioPhone", PhoneNumberKeyType.RadioPhone, phPhone1[key].ToString()));
+                                    break;
+                                case "Telex": rlReturnList.Add(AddContactDifferancePhone("Telex", PhoneNumberKeyType.Telex, phPhone1[key].ToString()));
+                                    break;
+                                case "TtyTddPhone": rlReturnList.Add(AddContactDifferancePhone("TtyTddPhone", PhoneNumberKeyType.TtyTddPhone, phPhone1[key].ToString()));
+                                    break;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    for (int phPhoneint = 0; phPhoneint < cnContact1.PhoneNumbers.Length; phPhoneint++)
+                    {
+                        switch (cnContact1.PhoneNumbers[phPhoneint].Key)
+                        {
+                            case PhoneNumberKeyType.AssistantPhone: rlReturnList.Add(AddContactDifferancePhone("AssistantPhone", PhoneNumberKeyType.AssistantPhone, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.BusinessFax: rlReturnList.Add(AddContactDifferancePhone("BusinessFax", PhoneNumberKeyType.BusinessFax, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.BusinessPhone: rlReturnList.Add(AddContactDifferancePhone("BusinessPhone", PhoneNumberKeyType.BusinessPhone, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.BusinessPhone2: rlReturnList.Add(AddContactDifferancePhone("BusinessPhone2", PhoneNumberKeyType.BusinessPhone2, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.Callback: rlReturnList.Add(AddContactDifferancePhone("Callback", PhoneNumberKeyType.Callback, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.CarPhone: rlReturnList.Add(AddContactDifferancePhone("CarPhone", PhoneNumberKeyType.CarPhone, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.CompanyMainPhone: rlReturnList.Add(AddContactDifferancePhone("CompanyMainPhone", PhoneNumberKeyType.CompanyMainPhone, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.HomeFax: rlReturnList.Add(AddContactDifferancePhone("HomeFax", PhoneNumberKeyType.HomeFax, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.HomePhone: rlReturnList.Add(AddContactDifferancePhone("HomePhone", PhoneNumberKeyType.HomePhone, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.HomePhone2: rlReturnList.Add(AddContactDifferancePhone("HomePhone2", PhoneNumberKeyType.HomePhone2, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.Isdn: rlReturnList.Add(AddContactDifferancePhone("Isdn", PhoneNumberKeyType.Isdn, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.MobilePhone: rlReturnList.Add(AddContactDifferancePhone("MobilePhone", PhoneNumberKeyType.MobilePhone, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.OtherFax: rlReturnList.Add(AddContactDifferancePhone("OtherFax", PhoneNumberKeyType.OtherFax, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.OtherTelephone: rlReturnList.Add(AddContactDifferancePhone("OtherTelephone", PhoneNumberKeyType.OtherTelephone, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.Pager: rlReturnList.Add(AddContactDifferancePhone("Pager", PhoneNumberKeyType.Pager, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.PrimaryPhone: rlReturnList.Add(AddContactDifferancePhone("PrimaryPhone", PhoneNumberKeyType.PrimaryPhone, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.RadioPhone: rlReturnList.Add(AddContactDifferancePhone("RadioPhone", PhoneNumberKeyType.RadioPhone, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.Telex: rlReturnList.Add(AddContactDifferancePhone("Telex", PhoneNumberKeyType.Telex, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                            case PhoneNumberKeyType.TtyTddPhone: rlReturnList.Add(AddContactDifferancePhone("TtyTddPhone", PhoneNumberKeyType.TtyTddPhone, cnContact1.PhoneNumbers[phPhoneint].Value));
+                                break;
+                        }
+                    }
+                }
+            }
+
+            if (cnContact1.Profession != null)
+            {
+                if (cnContact2.Profession != null)
+                {
+                    if (cnContact1.Profession.ToString() != cnContact2.Profession.ToString())
+                    {
+                        ContactItemType prProfession = new ContactItemType();
+                        prProfession.Profession = cnContact1.Profession;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsProfession, prProfession));
+                    }
+                }
+                else
+                {
+                    ContactItemType prProfession = new ContactItemType();
+                    prProfession.Profession = cnContact1.Profession;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsProfession, prProfession));
+                }
+            }
+            if (cnContact1.SpouseName != null)
+            {
+                if (cnContact2.SpouseName != null)
+                {
+                    if (cnContact1.SpouseName.ToString() != cnContact2.SpouseName.ToString())
+                    {
+                        ContactItemType snSpouseName = new ContactItemType();
+                        snSpouseName.SpouseName = cnContact1.SpouseName;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsSpouseName, snSpouseName));
+                    }
+                }
+                else
+                {
+                    ContactItemType snSpouseName = new ContactItemType();
+                    snSpouseName.SpouseName = cnContact1.SpouseName;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsSpouseName, snSpouseName));
+                }
+            }
+            if (cnContact1.Subject != null)
+            {
+                if (cnContact2.Subject != null)
+                {
+                    if (cnContact1.Subject.ToString() != cnContact2.Subject.ToString())
+                    {
+                        ContactItemType snSubject = new ContactItemType();
+                        snSubject.Subject = cnContact1.Subject;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.itemSubject, snSubject));
+                    }
+                }
+                else
+                {
+                    ContactItemType snSubject = new ContactItemType();
+                    snSubject.Subject = cnContact1.Subject;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.itemSubject, snSubject));
+                }
+            }
+            if (cnContact1.Surname != null)
+            {
+                if (cnContact2.Surname != null)
+                {
+                    if (cnContact1.Surname.ToString() != cnContact2.Surname.ToString())
+                    {
+                        ContactItemType snSurname = new ContactItemType();
+                        snSurname.Surname = cnContact1.Surname;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsSurname, snSurname));
+                    }
+                }
+                else
+                {
+                    ContactItemType snSurname = new ContactItemType();
+                    snSurname.Surname = cnContact1.Surname;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsSurname, snSurname));
+                }
+            }
+            if (cnContact1.WeddingAnniversary != null)
+            {
+                if (cnContact2.WeddingAnniversary != null)
+                {
+                    if (cnContact1.WeddingAnniversary.ToLongDateString() != cnContact2.WeddingAnniversary.ToLongDateString())
+                    {
+                        ContactItemType waWeddingAnv = new ContactItemType();
+                        waWeddingAnv.WeddingAnniversarySpecified = true;
+                        waWeddingAnv.WeddingAnniversary = cnContact1.WeddingAnniversary;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsWeddingAnniversary, waWeddingAnv));
+                    }
+                }
+                else
+                {
+                    ContactItemType waWeddingAnv = new ContactItemType();
+                    waWeddingAnv.WeddingAnniversarySpecified = true;
+                    waWeddingAnv.WeddingAnniversary = cnContact1.WeddingAnniversary;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsWeddingAnniversary, waWeddingAnv));
+                }
+            }
+            if (cnContact1.Birthday != null)
+            {
+                if (cnContact2.Birthday != null)
+                {
+                    if (cnContact1.Birthday.ToLongDateString() != cnContact2.Birthday.ToLongDateString())
+                    {
+                        ContactItemType biBirthday = new ContactItemType();
+                        biBirthday.BirthdaySpecified = true;
+                        biBirthday.Birthday = cnContact1.Birthday;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsBirthday, biBirthday));
+                    }
+                }
+                else
+                {
+                    ContactItemType biBirthday = new ContactItemType();
+                    biBirthday.BirthdaySpecified = true;
+                    biBirthday.Birthday = cnContact1.Birthday;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsBirthday, biBirthday));
+                }
+            }
+            if (cnContact1.Initials != null)
+            {
+                if (cnContact2.Initials != null)
+                {
+                    if (cnContact1.Initials != cnContact2.Initials)
+                    {
+                        ContactItemType inInitials = new ContactItemType();
+                        inInitials.Initials = cnContact1.Initials;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsInitials, inInitials));
+                    }
+                }
+                else
+                {
+                    ContactItemType inInitials = new ContactItemType();
+                    inInitials.Initials = cnContact1.Initials;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsInitials, inInitials));
+                }
+            }
+            if (cnContact1.PostalAddressIndexSpecified == true)
+            {
+                if (cnContact2.PostalAddressIndexSpecified == true)
+                {
+                    if (cnContact1.PostalAddressIndex != cnContact2.PostalAddressIndex)
+                    {
+                        ContactItemType paAddressIndex = new ContactItemType();
+                        paAddressIndex.PostalAddressIndexSpecified = true;
+                        paAddressIndex.PostalAddressIndex = cnContact1.PostalAddressIndex;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsPostalAddressIndex, paAddressIndex));
+                    }
+                }
+                else
+                {
+                    ContactItemType paAddressIndex = new ContactItemType();
+                    paAddressIndex.PostalAddressIndexSpecified = true;
+                    paAddressIndex.PostalAddressIndex = cnContact1.PostalAddressIndex;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsPostalAddressIndex, paAddressIndex));
+                }
+            }
+            if (cnContact1.Generation != null)
+            {
+                if (cnContact2.Generation != null)
+                {
+                    if (cnContact1.Generation.ToString() != cnContact2.Generation.ToString())
+                    {
+                        ContactItemType gnGeneration = new ContactItemType();
+                        gnGeneration.Generation = cnContact1.Generation;
+                        rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsGeneration, gnGeneration));
+                    }
+                }
+                else
+                {
+                    ContactItemType gnGeneration = new ContactItemType();
+                    gnGeneration.Generation = cnContact1.Generation;
+                    rlReturnList.Add(AddContactDifferance(UnindexedFieldURIType.contactsGeneration, gnGeneration));
+                }
+            }
+            if (cnContact1.ExtendedProperty != null)
+            {
+                if (cnContact2.ExtendedProperty != null)
+                {
+                    Hashtable exProp1 = new Hashtable();
+                    Hashtable exProp2 = new Hashtable();
+                    for (int exPropint = 0; exPropint < cnContact1.ExtendedProperty.Length; exPropint++)
+                    {
+                        if (cnContact1.ExtendedProperty[exPropint].ExtendedFieldURI.PropertyIdSpecified == true)
+                        {
+                            exProp1.Add(cnContact1.ExtendedProperty[exPropint].ExtendedFieldURI.PropertyId.ToString(), cnContact1.ExtendedProperty[exPropint]);
+                        }
+                        else
+                        {
+                            exProp1.Add(cnContact1.ExtendedProperty[exPropint].ExtendedFieldURI.PropertyTag, cnContact1.ExtendedProperty[exPropint]);
+                        }
+                    }
+                    for (int exPropint = 0; exPropint < cnContact2.ExtendedProperty.Length; exPropint++)
+                    {
+                        if (cnContact2.ExtendedProperty[exPropint].ExtendedFieldURI.PropertyIdSpecified == true)
+                        {
+                            exProp2.Add(cnContact2.ExtendedProperty[exPropint].ExtendedFieldURI.PropertyId.ToString(), cnContact2.ExtendedProperty[exPropint]);
+                        }
+                        else
+                        {
+                            exProp2.Add(cnContact2.ExtendedProperty[exPropint].ExtendedFieldURI.PropertyTag, cnContact2.ExtendedProperty[exPropint]);
+                        }
+                    }
+                    foreach (String key in exProp1.Keys)
+                    {
+                        if (exProp2.ContainsKey(key))
+                        {
+                            if (((ExtendedPropertyType)exProp2[key]).Item.ToString() != ((ExtendedPropertyType)exProp1[key]).Item.ToString())
+                            {
+                                rlReturnList.Add(AddContactDifferanceExtendedProp((ExtendedPropertyType)exProp1[key]));
+                            }
+                        }
+                        else
+                        {
+                            rlReturnList.Add(AddContactDifferanceExtendedProp((ExtendedPropertyType)exProp1[key]));
+                        }
+
+
+                    }
+
+                }
+                else
+                {
+                    for (int exPropint = 0; exPropint < cnContact1.ExtendedProperty.Length; exPropint++)
+                    {
+                        rlReturnList.Add(AddContactDifferanceExtendedProp(cnContact1.ExtendedProperty[exPropint]));
+                    }
+                }
+            }
+            return rlReturnList;
+
+
+        }
+        static SetItemFieldType AddContactDifferance(UnindexedFieldURIType ptFieldURI, ContactItemType ctContact)
+        {
+            SetItemFieldType setItem = new SetItemFieldType();
+            PathToUnindexedFieldType epExPath = new PathToUnindexedFieldType();
+            epExPath.FieldURI = ptFieldURI;
+            setItem.Item = epExPath;
+            setItem.Item1 = ctContact;
+            return setItem;
+        }
+        static SetItemFieldType AddContactDifferanceEmail(String fiFieldIndex, EmailAddressKeyType ktEmailKeyType, String emEmailAddress)
+        {
+            SetItemFieldType setItem = new SetItemFieldType();
+            PathToIndexedFieldType em1indexedField = new PathToIndexedFieldType();
+            em1indexedField.FieldIndex = fiFieldIndex;
+            em1indexedField.FieldURI = DictionaryURIType.contactsEmailAddress;
+            EmailAddressDictionaryEntryType emailAddress = new EmailAddressDictionaryEntryType();
+            emailAddress.Key = ktEmailKeyType;
+            emailAddress.Value = emEmailAddress;
+            ContactItemType cnContact = new ContactItemType();
+            cnContact.EmailAddresses = new EmailAddressDictionaryEntryType[1];
+            cnContact.EmailAddresses[0] = emailAddress;
+            setItem.Item = em1indexedField;
+            setItem.Item1 = cnContact;
+            return setItem;
+        }
+        static SetItemFieldType AddContactDifferancePhone(String fiFieldIndex, PhoneNumberKeyType pkPhoneKeyType, String phPhoneNumber)
+        {
+            SetItemFieldType setItem = new SetItemFieldType();
+            PathToIndexedFieldType phindexedField = new PathToIndexedFieldType();
+            phindexedField.FieldIndex = pkPhoneKeyType.ToString();
+            phindexedField.FieldURI = DictionaryURIType.contactsPhoneNumber;
+            PhoneNumberDictionaryEntryType phPhoneNumber1 = new PhoneNumberDictionaryEntryType();
+            phPhoneNumber1.Key = pkPhoneKeyType;
+            phPhoneNumber1.Value = phPhoneNumber;
+            ContactItemType cnContact = new ContactItemType();
+            cnContact.PhoneNumbers = new PhoneNumberDictionaryEntryType[1];
+            cnContact.PhoneNumbers[0] = phPhoneNumber1;
+            setItem.Item = phindexedField;
+            setItem.Item1 = cnContact;
+            return setItem;
+        }
+        static SetItemFieldType AddContactDifferancePhyicalAddress(String fiFieldIndex, DictionaryURIType diDictionaryURI, PhysicalAddressDictionaryEntryType paAddress)
+        {
+            SetItemFieldType setItem = new SetItemFieldType();
+            PathToIndexedFieldType pa1indexedField = new PathToIndexedFieldType();
+            pa1indexedField.FieldIndex = fiFieldIndex;
+            pa1indexedField.FieldURI = diDictionaryURI;
+            ContactItemType cnContact = new ContactItemType();
+            cnContact.PhysicalAddresses = new PhysicalAddressDictionaryEntryType[1];
+            cnContact.PhysicalAddresses[0] = paAddress;
+            setItem.Item = pa1indexedField;
+            setItem.Item1 = cnContact;
+            return setItem;
+        }
+        static SetItemFieldType AddContactDifferanceExtendedProp(ExtendedPropertyType exProp)
+        {
+            ContactItemType cnContact = new ContactItemType();
+            cnContact.ExtendedProperty = new ExtendedPropertyType[1];
+            cnContact.ExtendedProperty[0] = exProp;
+            SetItemFieldType setItem = new SetItemFieldType();
+            setItem.Item = exProp.ExtendedFieldURI;
+            setItem.Item1 = cnContact;
+            return setItem;
+        }

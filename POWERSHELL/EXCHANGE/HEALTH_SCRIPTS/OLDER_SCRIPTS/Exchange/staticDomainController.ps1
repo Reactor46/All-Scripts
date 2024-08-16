@@ -1,0 +1,1 @@
+Set-ExchangeServer -Identity ANEXCA01 -StaticDomainControllers:andc07.dmacc.edu,andc08.campus.dmacc.edu

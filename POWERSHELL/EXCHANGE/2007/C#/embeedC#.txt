@@ -1,0 +1,146 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+using System.IO;
+using System.Diagnostics;
+using Microsoft.Exchange.Data.Transport;
+using Microsoft.Exchange.Data.Mime;
+using Microsoft.Exchange.Data.Transport.Email;
+using Microsoft.Exchange.Data.Transport.Smtp;
+using Microsoft.Exchange.Data.Transport.Routing;
+using Microsoft.Exchange.Data.Common;
+
+namespace msgdevExchangeRoutingAgents
+{
+    public class EmailArchivingFactory : RoutingAgentFactory
+    {
+        public override RoutingAgent CreateAgent(SmtpServer server)
+        {
+            RoutingAgent emMailArchive = new EmailArchivingRoutingAgent();
+            return emMailArchive;
+        }
+    }
+}
+
+public class EmailArchivingRoutingAgent : RoutingAgent
+{
+    public EmailArchivingRoutingAgent()
+    {
+        base.OnSubmittedMessage += new SubmittedMessageEventHandler(EmailArchivingRoutingAgent_OnSubmittedMessage);
+    }
+
+    void EmailArchivingRoutingAgent_OnSubmittedMessage(SubmittedMessageEventSource source, QueuedMessageEventArgs e)
+    {
+        EmailMessage emMessage = e.MailItem.Message;
+        String MessageGuid = Guid.NewGuid().ToString();
+        ProcessMessage(emMessage, MessageGuid);
+
+    }
+    public static byte[] ReadFully(Stream stream, int initialLength)
+    {
+        // ref Function from http://www.yoda.arachsys.com/csharp/readbinary.html
+        // If we've been passed an unhelpful initial length, just
+        // use 32K.
+        if (initialLength < 1)
+        {
+            initialLength = 32768;
+        }
+
+        byte[] buffer = new byte[initialLength];
+        int read = 0;
+
+        int chunk;
+        while ((chunk = stream.Read(buffer, read, buffer.Length - read)) > 0)
+        {
+            read += chunk;
+
+            // If we've reached the end of our buffer, check to see if there's
+            // any more information
+            if (read == buffer.Length)
+            {
+                int nextByte = stream.ReadByte();
+
+                // End of stream? If so, we're done
+                if (nextByte == -1)
+                {
+                    return buffer;
+                }
+
+                // Nope. Resize the buffer, put in the byte we've just
+                // read, and continue
+                byte[] newBuffer = new byte[buffer.Length * 2];
+                Array.Copy(buffer, newBuffer, buffer.Length);
+                newBuffer[read] = (byte)nextByte;
+                buffer = newBuffer;
+                read++;
+            }
+        }
+        // Buffer is now too big. Shrink it.
+        byte[] ret = new byte[read];
+        Array.Copy(buffer, ret, read);
+        return ret;
+    }
+    static void ProcessMessage(EmailMessage emEmailMessage, String MessageGuid)
+    {
+        //Archive Message
+
+
+        if (emEmailMessage.MimeDocument != null)
+        {
+
+            Stream fsFileStream = new FileStream(@"C:\temp\archive\messages\" + MessageGuid + ".eml", FileMode.OpenOrCreate);
+            emEmailMessage.MimeDocument.WriteTo(fsFileStream);
+            fsFileStream.Close();
+        }
+        //Archive Any Attachments Check for pdf attachments under 20 K and delete
+        ArrayList adAttachmenttoDelete = new ArrayList();
+        for (int index = emEmailMessage.Attachments.Count - 1; index >= 0; index--)
+        {
+            Attachment atAttach = emEmailMessage.Attachments[index];
+            if (atAttach.EmbeddedMessage != null)
+            {
+                EmailMessage ebmMessage = atAttach.EmbeddedMessage;
+                ProcessMessage(ebmMessage, MessageGuid);
+            }
+            else
+            {
+                if (atAttach.AttachmentType == AttachmentType.Regular & atAttach.FileName != null)
+                {
+                    FileStream atFileStream = File.Create(Path.Combine(@"C:\temp\archive\attachments\", MessageGuid + "-" + atAttach.FileName));
+                    Stream attachstream = atAttach.GetContentReadStream();
+                    byte[] bytes = ReadFully(attachstream, (int)attachstream.Length);
+                    atFileStream.Write(bytes, 0, bytes.Length);
+                    atFileStream.Close();
+                    atFileStream = null;
+                    bytes = null;
+                    // Find Any PDF attachments less then 20 KB
+                    if (atAttach.FileName.Length >= 3)
+                    {
+                        String feFileExtension = atAttach.FileName.Substring((atAttach.FileName.Length - 4), 4);
+                        if (feFileExtension.ToLower() == ".pdf" & attachstream.Length < 20480)
+                        {
+                            adAttachmenttoDelete.Add(atAttach);
+                        }
+
+                    }
+                    attachstream.Close();
+                    attachstream = null;
+                }
+                atAttach = null;
+            }
+        }
+        //Delete Attachments
+        if (adAttachmenttoDelete.Count != 0)
+        {
+            IEnumerator Enumerator = adAttachmenttoDelete.GetEnumerator();
+            while (Enumerator.MoveNext())
+            {
+                emEmailMessage.Attachments.Remove((Attachment)Enumerator.Current);
+            }
+        }
+
+    }
+}
+
+

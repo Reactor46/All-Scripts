@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>Remote Powershell - (Exchange Online)</Title>
+      <ShortCut>Remote Powershell - (Exchange Online)</ShortCut>
+      <Description>Remote Powershell Connection to Exchange Online</Description>
+      <Author>Glen Scales</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+      </Declarations>
+      <Code Language="powershell"><![CDATA[#Get Remote Powershell Connection 
+if((Get-PSSession | Where-Object {$_.ConfigurationName -eq "Microsoft.Exchange"}) -eq $null){
+	$psCred = Get-Credential 
+	$rpRemotePowershell = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://ps.outlook.com/powershell -credential $psCred  -Authentication Basic -AllowRedirection  
+	$importresults = Import-PSSession $rpRemotePowershell 
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

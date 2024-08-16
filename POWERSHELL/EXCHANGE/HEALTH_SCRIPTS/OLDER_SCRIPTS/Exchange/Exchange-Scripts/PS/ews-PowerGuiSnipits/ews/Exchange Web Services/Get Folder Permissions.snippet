@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>Get Folder Permissions</Title>
+      <ShortCut>Get Folder Permissions</ShortCut>
+      <Description>Get Folder Permissions</Description>
+      <Author>Glen Scales</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+      </Declarations>
+      <Code Language="powershell"><![CDATA[$folderid= new-object Microsoft.Exchange.WebServices.Data.FolderId([Microsoft.Exchange.WebServices.Data.WellKnownFolderName]::Inbox,$MailboxName)     
+$Folder = [Microsoft.Exchange.WebServices.Data.Folder]::Bind($service,$folderid)  
+foreach($Permission in $Folder.Permissions){  
+    if($Permission.UserId.StandardUser -eq $null){  
+        "User : " + $Permission.UserId.PrimarySmtpAddress  
+    }  
+    else{  
+        "User : " + $Permission.UserId.StandardUser.ToString()  
+    }  
+    $Permission  
+} ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

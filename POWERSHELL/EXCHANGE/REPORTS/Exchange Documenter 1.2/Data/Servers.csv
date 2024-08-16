@@ -1,0 +1,10 @@
+#TYPE System.Management.Automation.PSCustomObject
+"Identity","AdminDisplayVersion","Site","Edition"
+"LASEXCAS01","Version 14.3 (Build 123.4)",,"Enterprise"
+"LASEXCAS02","Version 14.3 (Build 123.4)",,"Enterprise"
+"LASEXDB01","Version 14.3 (Build 123.4)",,"Enterprise"
+"LASEXDB02","Version 14.3 (Build 123.4)",,"Enterprise"
+"LASEXCH01","Version 15.1 (Build 669.32)",,"Enterprise"
+"LASEXCH03","Version 15.1 (Build 669.32)",,"Enterprise"
+"LASEXCH02","Version 15.1 (Build 669.32)",,"Enterprise"
+"LASEXCH04","Version 15.1 (Build 669.32)",,"Enterprise"

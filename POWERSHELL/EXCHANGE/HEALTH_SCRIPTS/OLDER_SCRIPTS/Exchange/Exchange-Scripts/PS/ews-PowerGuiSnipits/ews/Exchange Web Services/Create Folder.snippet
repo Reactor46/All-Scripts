@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>Create Folder</Title>
+      <ShortCut>Create Folder</ShortCut>
+      <Description>Create Folder</Description>
+      <Author>Glen Scales</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+      </Declarations>
+      <Code Language="powershell"><![CDATA[$NewFolder = new-object Microsoft.Exchange.WebServices.Data.Folder($service)  
+$NewFolder.DisplayName = "My New Folder123"  
+$NewFolder.FolderClass = "IPF.Note"
+$NewFolder.Save($ParentFolder.Id)  ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,1 @@
+powershell .\ExchangeDailyCheckList.ps1

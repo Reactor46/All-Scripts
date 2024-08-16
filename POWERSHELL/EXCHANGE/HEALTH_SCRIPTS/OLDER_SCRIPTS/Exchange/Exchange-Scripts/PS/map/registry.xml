@@ -1,0 +1,25 @@
+<Registry xmlns="http://schemas.microsoft.com/exchange/2004/02/formsregistry.xsd" Name="PremiumExtensions" InheritsFrom="Premium" IsRichClient="true">
+  <Experience Name="Premium">
+
+    <Client Application="MSIE" MinimumVersion="6" Platform="Windows NT" />
+    <Client Application="MSIE" MinimumVersion="6" Platform="Windows 2000" />
+    <Client Application="MSIE" MinimumVersion="6" Platform="Windows 98; Win 9x 4.90" />
+
+ 
+    <ApplicationElement Name="Item">
+	<ElementClass Value="IPM.Contact.Map">
+			<Mapping Form="Map.aspx"/>
+			<Mapping Action="Open" Form="Map.aspx"/>
+			<Mapping Action="Preview" Form="Map.aspx"/>
+			<Mapping Action="Print" Form="Map.aspx"/>
+	</ElementClass>
+    </ApplicationElement>
+
+    <ApplicationElement Name="PreFormAction">
+      <ElementClass Value="IPM.Contact.Map">
+        <Mapping Form="Microsoft.Exchange.Clients.Owa.Premium.Controls.CustomFormRedirectPreFormAction,Microsoft.Exchange.Clients.Owa"/>
+      </ElementClass>
+    </ApplicationElement>
+
+  </Experience>
+</Registry>

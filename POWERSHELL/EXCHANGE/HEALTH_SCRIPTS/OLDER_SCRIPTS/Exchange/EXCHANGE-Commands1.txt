@@ -1,0 +1,11 @@
+Get-MailboxDatabaseCopyStatus * -Active | Select Name,Status,MailboxServer,ActivationPreference,ContentIndexState
+Get-MailboxDatabaseCopyStatus * | ft -auto
+
+Get-MailboxDatabaseCopyStatus * | sort name | ft -auto
+
+RedistributeActiveDatabases.ps1 -DagName LASEXDAG16 -BalanceDbsByActivationPreference -Confirm:$false
+
+
+DAGNAMES
+LASEXDAG
+LASEXDAG16

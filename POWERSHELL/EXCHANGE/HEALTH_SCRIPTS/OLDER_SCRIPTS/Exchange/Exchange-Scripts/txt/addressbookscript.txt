@@ -1,0 +1,15 @@
+<script type="text/javascript" language="JavaScript" defer>
+ 	var dc=0
+        var divCollection = document.getElementsByTagName("div");
+        for (var i=0; i<divCollection.length; i++) {
+            if(divCollection[i].getAttribute("id") == "divEnts") {	
+		if(dc == 1){
+			var pfId = "PSF.LgAAAAAaRHOQqmYRzZvIAKoAL8RaAwACQRpk/O1eTKnFP2PCsr25AAXCkNnpAAAB"
+			var pfName = "The Dudes Contacts"
+			var newContactEntry = "<div class=snlEntW><div id=divEnt class=\"snlEnt snlDef\" _onclick=onClkCntFld() _fid=\"" + pfId +"\" type=\"IPF.Contact\"><img src=\"current/themes/base/cntctsmll.gif\"><span id=spn>" + pfName + "</span></div></div>";
+               	        divCollection[i].innerHTML = divCollection[i].innerHTML + newContactEntry
+		}
+                dc++;
+            } 
+        }
+</script>
