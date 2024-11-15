@@ -1,20 +1,13 @@
-﻿function Get-ActivationStatus {
-[CmdletBinding()]
-    param(
-        [Parameter(ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true)]
-        [string]$DNSHostName = $Env:COMPUTERNAME
-    )
-    process {
-        try {
-            $wpa = Get-WmiObject SoftwareLicensingProduct -ComputerName $DNSHostName `
-            -Filter "ApplicationID = '55c92734-d682-4d71-983e-d6ec3f16059f'" `
-            -Property LicenseStatus -ErrorAction Stop
+﻿    $Servers = GC C:\LazyWinAdmin\Servers\Servers-All-Alive2.txt
+
+    ForEach ($server in $Servers){
+            $wpa = Get-CimInstance SoftwareLicensingProduct -ComputerName $server -Filter "ApplicationID = '55c92734-d682-4d71-983e-d6ec3f16059f'" -Property LicenseStatus -ErrorAction SilentlyContinue
         } catch {
             $status = New-Object ComponentModel.Win32Exception ($_.Exception.ErrorCode)
             $wpa = $null    
         }
         $out = New-Object psobject -Property @{
-            ComputerName = $DNSHostName;
+            ComputerName = $server;
             Status = [string]::Empty;
         }
         if ($wpa) {
@@ -32,5 +25,3 @@
             }
         } else {$out.Status = $status.Message}
         $out
-    }
-}

@@ -1,4 +1,32 @@
-﻿function Out-FileUtf8NoBom {
+﻿<#
+.SYNOPSIS
+  Outputs to a UTF-8-encoded file *without a BOM* (byte-order mark).
+
+.DESCRIPTION
+  Mimics the most important aspects of Out-File:
+  * Input objects are sent to Out-String first.
+  * -Append allows you to append to an existing file, -NoClobber prevents
+    overwriting of an existing file.
+  * -Width allows you to specify the line width for the text representations
+     of input objects that aren't strings.
+  However, it is not a complete implementation of all Out-String parameters:
+  * Only a literal output path is supported, and only as a parameter.
+  * -Force is not supported.
+
+  Caveat: *All* pipeline input is buffered before writing output starts,
+          but the string representations are generated and written to the target
+          file one by one.
+
+.NOTES
+  The raison d'être for this advanced function is that, as of PowerShell v5,
+  Out-File still lacks the ability to write UTF-8 files without a BOM:
+  using -Encoding UTF8 invariably prepends a BOM.
+
+  Copyright (c) 2017 Michael Klement <mklement0@gmail.com> (http://same2u.net), 
+  released under the [MIT license](https://spdx.org/licenses/MIT#licenseText).
+
+#>
+function Out-FileUtf8NoBom {
 
   [CmdletBinding()]
   param(
@@ -46,4 +74,10 @@
   }
 
 }
-## End Out-File in UTF8 NonBom
+
+# If this script is invoked directly - as opposed to being dot-sourced in order
+# to define the embedded function for later use - invoke the embedded function,
+# relaying any arguments passed.
+if (-not ($MyInvocation.InvocationName -eq '.' -or $MyInvocation.Line -eq '')) {
+  Out-FileUtf8NoBom @Args
+}
