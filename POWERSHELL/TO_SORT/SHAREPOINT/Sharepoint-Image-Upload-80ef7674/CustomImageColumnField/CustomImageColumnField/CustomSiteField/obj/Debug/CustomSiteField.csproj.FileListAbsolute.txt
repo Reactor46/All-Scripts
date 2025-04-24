@@ -1,0 +1,6 @@
+D:\Projects\Sharepoint\CustomSiteField\CustomSiteField\bin\Debug\CustomSiteField.dll
+D:\Projects\Sharepoint\CustomSiteField\CustomSiteField\bin\Debug\CustomSiteField.pdb
+D:\Projects\Sharepoint\CustomSiteField\CustomSiteField\bin\Debug\Microsoft.Sharepoint.Sandbox.dll
+D:\Projects\Sharepoint\CustomSiteField\CustomSiteField\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\Sharepoint\CustomSiteField\CustomSiteField\obj\Debug\CustomSiteField.dll
+D:\Projects\Sharepoint\CustomSiteField\CustomSiteField\obj\Debug\CustomSiteField.pdb

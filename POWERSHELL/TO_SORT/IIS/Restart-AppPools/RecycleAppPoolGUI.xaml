@@ -1,0 +1,13 @@
+<Window x:Class="RecycleAppPoolGUI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Recycle App Pool" Height="150" Width="300">
+    <Grid>
+        <Label Content="Remote Server:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="RemoteServerTextBox" HorizontalAlignment="Left" Margin="100,10,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label Content="App Pool Name:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="AppPoolTextBox" HorizontalAlignment="Left" Margin="100,40,0,0" VerticalAlignment="Top" Width="150"/>
+        <Button x:Name="RecycleButton" Content="Recycle" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Width="75" Click="RecycleButton_Click"/>
+        <Label x:Name="StatusLabel" Content="" HorizontalAlignment="Left" Margin="100,85,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

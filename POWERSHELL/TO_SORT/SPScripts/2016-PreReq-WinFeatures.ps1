@@ -1,0 +1,50 @@
+Import-Module ServerManager
+
+#$SXSSource = “\\kscfs\it-misc$\IT_ESS_Team\KSC-ESS-DSC\SXS-2016”
+
+Add-WindowsFeature NET-Framework-Features -Source "\\kscfs\it-misc$\IT_ESS_Team\KSC-ESS-DSC\SXS-2019\"
+Add-WindowsFeature Web-Server 
+Add-WindowsFeature Web-WebServer 
+Add-WindowsFeature Web-Common-Http 
+Add-WindowsFeature Web-Static-Content 
+Add-WindowsFeature Web-Default-Doc 
+Add-WindowsFeature Web-Dir-Browsing 
+Add-WindowsFeature Web-Http-Errors 
+Add-WindowsFeature Web-App-Dev 
+Add-WindowsFeature Web-Asp-Net 
+Add-WindowsFeature Web-Net-Ext 
+Add-WindowsFeature Web-ISAPI-Ext 
+Add-WindowsFeature Web-ISAPI-Filter 
+Add-WindowsFeature Web-Health 
+Add-WindowsFeature Web-Http-Logging 
+Add-WindowsFeature Web-Log-Libraries 
+Add-WindowsFeature Web-Request-Monitor 
+Add-WindowsFeature Web-Http-Tracing 
+Add-WindowsFeature Web-Security 
+Add-WindowsFeature Web-Basic-Auth 
+Add-WindowsFeature Web-Windows-Auth 
+Add-WindowsFeature Web-Filtering 
+Add-WindowsFeature Web-Digest-Auth 
+Add-WindowsFeature Web-Performance 
+Add-WindowsFeature Web-Stat-Compression 
+Add-WindowsFeature Web-Dyn-Compression 
+Add-WindowsFeature Web-Mgmt-Tools 
+Add-WindowsFeature Web-Mgmt-Console 
+Add-WindowsFeature Web-Mgmt-Compat 
+Add-WindowsFeature Web-Metabase 
+Add-WindowsFeature Application-Server 
+Add-WindowsFeature AS-Web-Support 
+Add-WindowsFeature AS-TCP-Port-Sharing 
+Add-WindowsFeature AS-WAS-Support 
+Add-WindowsFeature AS-HTTP-Activation 
+Add-WindowsFeature AS-TCP-Activation 
+Add-WindowsFeature AS-Named-Pipes 
+Add-WindowsFeature AS-Net-Framework 
+Add-WindowsFeature WAS 
+Add-WindowsFeature WAS-Process-Model 
+Add-WindowsFeature WAS-NET-Environment 
+Add-WindowsFeature WAS-Config-APIs 
+Add-WindowsFeature Web-Lgcy-Scripting 
+Add-WindowsFeature Windows-Identity-Foundation 
+Add-WindowsFeature Server-Media-Foundation 
+Add-WindowsFeature Xps-Viewer 

@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Create a New SharePoint Server 2010 Farm Using PowerShell</title>        
+        <meta name="description" content="This script creates a new SharePoint Server 2010 farm, creates the SharePoint Central Administration Web Application, registers a service connection point for the farm in Active Directory, and creates a SQL alias for SharePoint to use when communicating with the database server." />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<div class="endscriptcode">
+<p>This script creates a new SharePoint Server 2010 farm, creates the SharePoint Central Administration Web Application, registers a service connection point for the farm in Active Directory, and creates a SQL alias for SharePoint to use when communicating
+ with the database server.</p>
+<p>There are several variables to define at the top of the script.&nbsp; Once this script has been executed, you will have a SharePoint farm.&nbsp; Additional configuration will be required in order to add functionality to the farm.&nbsp; These configurations
+ include creating service applications, creating web applications, creating site collections, etc.</p>
+<p>More details regarding the use of this script can be found on my blog:<br>
+<a title="PowerShell: Creating and Joining SharePoint 2010 Farms" href="http://blogs.msdn.com/b/rcormier/archive/2012/04/09/powershell-creating-and-joining-sharepoint-2010-farms.aspx" target="_blank">PowerShell: Creating and Joining SharePoint 2010 Farms</a></p>
+<p>Download the script for a fully commented version of this script that provides feedback during farm configuration.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">#Set Script Variables
+
+$SQLServer = &quot;SQLServerName&quot;
+$SQLAlias = &quot;AliasForSharePointSQL&quot;
+$FarmAccountUserName = &quot;Domain\User&quot;
+$FarmAccountPassword = &quot;AccountPassword&quot;
+$PassPhrase = &quot;FarmPassphrase&quot;
+$FarmConfigDatabase = &quot;SPFarm_ConfigDatabase&quot;
+$AdminContentDatabase = &quot;SPFarm_Admin_ContentDB&quot;
+$CentralAdminPort = 8080
+
+#Begin Farm Creation Script
+
+$x86 = &quot;HKLM:\Software\Microsoft\MSSQLServer\Client\ConnectTo&quot;
+$x64 = &quot;HKLM:\Software\Wow6432Node\Microsoft\MSSQLServer\Client\ConnectTo&quot;  
+
+
+if ((test-path -path $x86) -ne $True) 
+{
+     write-host &quot;$x86 doesn't exist&quot;    
+	New-Item $x86 
+} 
+
+if ((test-path -path $x64) -ne $True) 
+{
+     write-host &quot;$x64 doesn't exist&quot;    
+	New-Item $x64 
+}   
+
+$TCPAlias = &quot;DBMSSOCN,&quot; &#43; $SQLServer
+
+New-ItemProperty -Path $x86 -Name $SQLAlias -PropertyType String -Value $TCPAlias 
+New-ItemProperty -Path $x64 -Name $SQLAlias -PropertyType String -Value $TCPAlias
+
+$FarmCredentials = New-Object System.Management.Automation.PSCredential $FarmAccountUserName, (ConvertTo-SecureString $FarmAccountPassword -AsPlainText -Force)
+$FarmPassphrase = (ConvertTo-SecureString $Passphrase -AsPlainText -force)
+New-SPConfigurationDatabase -DatabaseServer $SQLAlias -DatabaseName $FarmConfigDatabase -AdministrationContentDatabaseName $AdminContentDatabase -Passphrase $FarmPassphrase -FarmCredentials $FarmCredentials
+
+Initialize-SPResourceSecurity
+Install-SPService  
+Install-SPFeature -AllExistingFeatures 
+
+New-SPCentralAdministration -Port $CentralAdminPort -WindowsAuthProvider NTLM 
+Install-SPHelpCollection -All
+Install-SPApplicationContent
+
+$ServiceConnectionPoint = get-SPTopologyServiceApplication | select URI
+Set-SPFarmConfig -ServiceConnectionPointBindingInformation $ServiceConnectionPoint -Confirm:$False
+</pre>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__com">#Set&nbsp;Script&nbsp;Variables</span>&nbsp;
+&nbsp;
+<span class="powerShell__variable">$SQLServer</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;SQLServerName&quot;</span>&nbsp;
+<span class="powerShell__variable">$SQLAlias</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;AliasForSharePointSQL&quot;</span>&nbsp;
+<span class="powerShell__variable">$FarmAccountUserName</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;Domain\User&quot;</span>&nbsp;
+<span class="powerShell__variable">$FarmAccountPassword</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;AccountPassword&quot;</span>&nbsp;
+<span class="powerShell__variable">$PassPhrase</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;FarmPassphrase&quot;</span>&nbsp;
+<span class="powerShell__variable">$FarmConfigDatabase</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;SPFarm_ConfigDatabase&quot;</span>&nbsp;
+<span class="powerShell__variable">$AdminContentDatabase</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;SPFarm_Admin_ContentDB&quot;</span>&nbsp;
+<span class="powerShell__variable">$CentralAdminPort</span>&nbsp;=&nbsp;8080&nbsp;
+&nbsp;
+<span class="powerShell__com">#Begin&nbsp;Farm&nbsp;Creation&nbsp;Script</span>&nbsp;
+&nbsp;
+<span class="powerShell__variable">$x86</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;HKLM:\Software\Microsoft\MSSQLServer\Client\ConnectTo&quot;</span>&nbsp;
+<span class="powerShell__variable">$x64</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;HKLM:\Software\Wow6432Node\Microsoft\MSSQLServer\Client\ConnectTo&quot;</span>&nbsp;&nbsp;&nbsp;
+&nbsp;
+&nbsp;
+<span class="powerShell__keyword">if</span>&nbsp;((<span class="powerShell__cmdlets">test-path</span>&nbsp;<span class="powerShell__operator">-</span>path&nbsp;<span class="powerShell__variable">$x86</span>)&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__variable">$True</span>)&nbsp;&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write<span class="powerShell__operator">-</span>host&nbsp;<span class="powerShell__string">&quot;$x86&nbsp;doesn't&nbsp;exist&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__cmdlets">New-Item</span>&nbsp;<span class="powerShell__variable">$x86</span>&nbsp;&nbsp;
+}&nbsp;&nbsp;
+&nbsp;
+<span class="powerShell__keyword">if</span>&nbsp;((<span class="powerShell__cmdlets">test-path</span>&nbsp;<span class="powerShell__operator">-</span>path&nbsp;<span class="powerShell__variable">$x64</span>)&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__variable">$True</span>)&nbsp;&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write<span class="powerShell__operator">-</span>host&nbsp;<span class="powerShell__string">&quot;$x64&nbsp;doesn't&nbsp;exist&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__cmdlets">New-Item</span>&nbsp;<span class="powerShell__variable">$x64</span>&nbsp;&nbsp;
+}&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;
+<span class="powerShell__variable">$TCPAlias</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;DBMSSOCN,&quot;</span>&nbsp;<span class="powerShell__operator">&#43;</span>&nbsp;<span class="powerShell__variable">$SQLServer</span>&nbsp;
+&nbsp;
+<span class="powerShell__cmdlets">New-ItemProperty</span>&nbsp;<span class="powerShell__operator">-</span>Path&nbsp;<span class="powerShell__variable">$x86</span>&nbsp;<span class="powerShell__operator">-</span>Name&nbsp;<span class="powerShell__variable">$SQLAlias</span>&nbsp;<span class="powerShell__operator">-</span>PropertyType&nbsp;String&nbsp;<span class="powerShell__operator">-</span>Value&nbsp;<span class="powerShell__variable">$TCPAlias</span>&nbsp;&nbsp;
+<span class="powerShell__cmdlets">New-ItemProperty</span>&nbsp;<span class="powerShell__operator">-</span>Path&nbsp;<span class="powerShell__variable">$x64</span>&nbsp;<span class="powerShell__operator">-</span>Name&nbsp;<span class="powerShell__variable">$SQLAlias</span>&nbsp;<span class="powerShell__operator">-</span>PropertyType&nbsp;String&nbsp;<span class="powerShell__operator">-</span>Value&nbsp;<span class="powerShell__variable">$TCPAlias</span>&nbsp;
+&nbsp;
+<span class="powerShell__variable">$FarmCredentials</span>&nbsp;=&nbsp;<span class="powerShell__cmdlets">New-Object</span>&nbsp;System.Management.Automation.PSCredential&nbsp;<span class="powerShell__variable">$FarmAccountUserName</span>,&nbsp;(<span class="powerShell__cmdlets">ConvertTo-SecureString</span>&nbsp;<span class="powerShell__variable">$FarmAccountPassword</span>&nbsp;<span class="powerShell__operator">-</span>AsPlainText&nbsp;<span class="powerShell__operator">-</span>Force)&nbsp;
+<span class="powerShell__variable">$FarmPassphrase</span>&nbsp;=&nbsp;(<span class="powerShell__cmdlets">ConvertTo-SecureString</span>&nbsp;<span class="powerShell__variable">$Passphrase</span>&nbsp;<span class="powerShell__operator">-</span>AsPlainText&nbsp;<span class="powerShell__operator">-</span>force)&nbsp;
+New<span class="powerShell__operator">-</span>SPConfigurationDatabase&nbsp;<span class="powerShell__operator">-</span>DatabaseServer&nbsp;<span class="powerShell__variable">$SQLAlias</span>&nbsp;<span class="powerShell__operator">-</span>DatabaseName&nbsp;<span class="powerShell__variable">$FarmConfigDatabase</span>&nbsp;<span class="powerShell__operator">-</span>AdministrationContentDatabaseName&nbsp;<span class="powerShell__variable">$AdminContentDatabase</span>&nbsp;<span class="powerShell__operator">-</span>Passphrase&nbsp;<span class="powerShell__variable">$FarmPassphrase</span>&nbsp;<span class="powerShell__operator">-</span>FarmCredentials&nbsp;<span class="powerShell__variable">$FarmCredentials</span>&nbsp;
+&nbsp;
+Initialize<span class="powerShell__operator">-</span>SPResourceSecurity&nbsp;
+Install<span class="powerShell__operator">-</span>SPService&nbsp;&nbsp;&nbsp;
+Install<span class="powerShell__operator">-</span>SPFeature&nbsp;<span class="powerShell__operator">-</span>AllExistingFeatures&nbsp;&nbsp;
+&nbsp;
+New<span class="powerShell__operator">-</span>SPCentralAdministration&nbsp;<span class="powerShell__operator">-</span>Port&nbsp;<span class="powerShell__variable">$CentralAdminPort</span>&nbsp;<span class="powerShell__operator">-</span>WindowsAuthProvider&nbsp;NTLM&nbsp;&nbsp;
+Install<span class="powerShell__operator">-</span>SPHelpCollection&nbsp;<span class="powerShell__operator">-</span>All&nbsp;
+Install<span class="powerShell__operator">-</span>SPApplicationContent&nbsp;
+&nbsp;
+<span class="powerShell__variable">$ServiceConnectionPoint</span>&nbsp;=&nbsp;get<span class="powerShell__operator">-</span>SPTopologyServiceApplication&nbsp;<span class="powerShell__operator">|</span>&nbsp;<span class="powerShell__alias">select</span>&nbsp;URI&nbsp;
+Set<span class="powerShell__operator">-</span>SPFarmConfig&nbsp;<span class="powerShell__operator">-</span>ServiceConnectionPointBindingInformation&nbsp;<span class="powerShell__variable">$ServiceConnectionPoint</span>&nbsp;<span class="powerShell__operator">-</span>Confirm:<span class="powerShell__variable">$False</span>&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p></p>
+</div>
+
+        </div>
+    </body>
+</html>

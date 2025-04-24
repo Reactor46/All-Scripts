@@ -1,0 +1,1 @@
+Dir=c:\inetpub\logs\LogFiles;MaxAge=30

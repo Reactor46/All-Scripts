@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Create new SharePoint enterprise search index component</title>        
+        <meta name="description" content="This script creates new/replica of index partition on a server in existing enterprise search topology. You need to specify the server name and directory to store index data. This script has been thoroughly commented to explain its usage and working-how." />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<p>This script creates new/replica of index partition on a server in existing enterprise search topology. You need to specify the server name and directory to store index data. This script has been thoroughly commented to explain its usage and working-how.</p>
+<p>Assumptions:<br>
+&nbsp; 1. Current logged on user has required privileges to perform the operations on search topology.<br>
+&nbsp; 2. Existing search toplogy is online and running.<br>
+&nbsp; 3. This script is running locally on the server on which new index partition needs to be created, as this checks for the partition directory locally</p>
+<p>Please run this script in your development environment first as part of best practices, for testing purposes and getting familiar with the script execution and other details.</p>
+<p>Here, is the script code:</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">#####################################################################################################################################
+# Filename: New-SPEnterpriseSearchIndexComponent.ps1
+# Version : 1.0
+# Description : This script creates new search index partition on another/same server in existing enteprise search topology. This 
+#               script assumes that all running crawls have been stopped already, as precautionary step. 
+# Written by  : Mohit Goyal
+#####################################################################################################################################
+
+#load SharePoint Snap-in
+Add-PSSnapin Microsoft.SharePoint.PowerShell
+
+#Mention server name where existing index component exists
+$FromServer = &quot;CON-SPAPPVDEV-01&quot;
+#Mention server name on which you need to create an additional index component
+$Server = &quot;CON-SPAPPVDEV-02&quot;
+#Mention directory location for storing search index data for new component
+$Directory = &quot;E:\SearchIndex&quot;
+
+Try{
+    Start-SPAssignment -Global
+
+    #Gets the existing search service application
+    Write-Output &quot;Fetching search service application...&quot;
+    $SSA = Get-SPEnterpriseSearchServiceApplication
+    if(!$?)
+    {
+        throw &quot;Unable to fetch search service application. Pls make sure its up and running fine&quot;
+    }
+
+    #Gets the Search Service Instance on the specified Server
+    Write-Output &quot;Fetching search service instance on server $Server...&quot;
+    $Instance = Get-SPEnterpriseSearchServiceInstance -Identity $Server
+    if(!$?){
+        throw &quot;Unable to fetch search service instance on the server $Server&quot;
+    }
+
+    #Starts Search Service Instance on the specified server.
+    if($Instance.Status -ne &quot;Online&quot;){
+        Write-Output &quot;Starting service instance...&quot;   
+        Start-SPEnterpriseSearchServiceInstance $Instance
+        Write-Output &quot;Waiting for 60 seconds for instance to come online...&quot;
+        sleep 60
+        for ($Count=1;$Count -lt 5;$Count&#43;&#43;){
+            $Instance = Get-SPEnterpriseSearchServiceInstance -Identity $Server
+            if($Instance.Status -ne &quot;Online&quot;){
+                Write-Output &quot;Waiting for another 60 seconds...&quot;
+                sleep 60
+            }
+            else{
+                $Count = 6
+            }
+        }
+        if($Count -eq 5){
+            throw &quot;Failed to start search service instance on server. Pls start manually and run script again&quot;
+        }
+    }
+
+    #Clone existing topology
+    Write-Output &quot;Fetching active topology and cloning it...&quot;
+    $ActiveToplogy = Get-SPEnterpriseSearchTopology -Active -SearchApplication $SSA
+    $ClonedTopology = New-SPEnterpriseSearchTopology -SearchApplication $SSA -Clone &ndash;SearchTopology $ActiveToplogy
+
+    #Checks if index directory already exists. If yes, removes it and all sub-directories and files. If not, creates it.
+    Remove-Item -Recurse -Force -Path $Directory -ErrorAction SilentlyContinue 
+    New-Item -ItemType Directory -Path $Directory -Force
+
+    #Add index component for another server
+    Write-Output &quot;Getting existing index component number for specified server...&quot;
+    $IndexPartition = Get-SPEnterpriseSearchComponent -SearchTopology $ClonedTopology | Where-Object {$_.servername -eq $FromServer -and $_.name -like &quot;IndexComponent*&quot;} 
+    $IndexPartitionNo = $IndexPartition.IndexPartitionOrdinal
+    $IndexComponentName = $IndexPartition.Name
+
+    Write-Output &quot;Adding index component number for specified server...&quot;
+    New-SPEnterpriseSearchIndexComponent -SearchTopology $ClonedTopology -RootDirectory $Directory -IndexPartition $IndexPartitionNo -SearchServiceInstance $Instance
+
+    #Pause search service application for repartitioning
+    Write-Output &quot;Pausing search service application...&quot;
+    $SSA.PauseForIndexRepartitioning() 
+
+    #Sets new search toplogy as active on the server
+    Write-Output &quot;Setting new search topology as active. This might take several hours.&quot;
+    Set-SPEnterpriseSearchTopology -Identity $ClonedTopology
+
+    #Monitors progress of index partitioning
+    $SSA = Get-SPEnterpriseSearchServiceApplication
+    $Status = Get-SPEnterpriseSearchStatus -SearchApplication $SSA -HealthReport -Component $IndexComponentName | Where-Object { ($_.name -match &quot;repart&quot;) -or ( $_.name -match &quot;splitting&quot;)}
+    While($Status -ne $null){
+        Write-Output &quot;Waiting for 5 mins for new index partition to be completed...&quot;
+        Sleep 300
+        $SSA = Get-SPEnterpriseSearchServiceApplication
+        $Status = Get-SPEnterpriseSearchStatus -SearchApplication $SSA -HealthReport -Component $IndexComponentName | Where-Object { ($_.name -match &quot;repart&quot;) -or ( $_.name -match &quot;splitting&quot;)}
+    }
+
+    #Displays Current topology components to user
+    Write-Output &quot;&quot;
+    Write-Output &quot;Here are the current search components:&quot;
+    $ActiveToplogy = Get-SPEnterpriseSearchTopology -Active -SearchApplication $SSA
+    Get-SPEnterpriseSearchComponent -SearchTopology $ActiveToplogy
+
+    #Resume search service application for repartitioning
+    Write-Output &quot;Resuming search service application...&quot;
+    $SSA.ResumeAfterIndexRepartitioning()
+
+    Write-Output &quot;&quot;
+    Write-Output &quot;Script Execution finished&quot;
+}
+
+Catch{
+    Write-Error &quot;Exception Type: $($_.Exception.GetType().FullName)&quot;
+    Write-Error &quot;Exception Message: $($_.Exception.Message)&quot;
+    Write-Output &quot;&quot;
+    Write-Output &quot;Script Execution finished&quot;
+}
+finally{
+    Stop-SPAssignment -Global
+}
+
+#########################################################################################################################################
+## End of Script
+#########################################################################################################################################</pre>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__com">#####################################################################################################################################</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Filename:&nbsp;New-SPEnterpriseSearchIndexComponent.ps1</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Version&nbsp;:&nbsp;1.0</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Description&nbsp;:&nbsp;This&nbsp;script&nbsp;creates&nbsp;new&nbsp;search&nbsp;index&nbsp;partition&nbsp;on&nbsp;another/same&nbsp;server&nbsp;in&nbsp;existing&nbsp;enteprise&nbsp;search&nbsp;topology.&nbsp;This&nbsp;</span>&nbsp;
+<span class="powerShell__com">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;script&nbsp;assumes&nbsp;that&nbsp;all&nbsp;running&nbsp;crawls&nbsp;have&nbsp;been&nbsp;stopped&nbsp;already,&nbsp;as&nbsp;precautionary&nbsp;step.&nbsp;</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Written&nbsp;by&nbsp;&nbsp;:&nbsp;Mohit&nbsp;Goyal</span>&nbsp;
+<span class="powerShell__com">#####################################################################################################################################</span>&nbsp;
+&nbsp;
+<span class="powerShell__com">#load&nbsp;SharePoint&nbsp;Snap-in</span>&nbsp;
+<span class="powerShell__cmdlets">Add-PSSnapin</span>&nbsp;Microsoft.SharePoint.PowerShell&nbsp;
+&nbsp;
+<span class="powerShell__com">#Mention&nbsp;server&nbsp;name&nbsp;where&nbsp;existing&nbsp;index&nbsp;component&nbsp;exists</span>&nbsp;
+<span class="powerShell__variable">$FromServer</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;CON-SPAPPVDEV-01&quot;</span>&nbsp;
+<span class="powerShell__com">#Mention&nbsp;server&nbsp;name&nbsp;on&nbsp;which&nbsp;you&nbsp;need&nbsp;to&nbsp;create&nbsp;an&nbsp;additional&nbsp;index&nbsp;component</span>&nbsp;
+<span class="powerShell__variable">$Server</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;CON-SPAPPVDEV-02&quot;</span>&nbsp;
+<span class="powerShell__com">#Mention&nbsp;directory&nbsp;location&nbsp;for&nbsp;storing&nbsp;search&nbsp;index&nbsp;data&nbsp;for&nbsp;new&nbsp;component</span>&nbsp;
+<span class="powerShell__variable">$Directory</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;E:\SearchIndex&quot;</span>&nbsp;
+&nbsp;
+<span class="powerShell__keyword">Try</span>{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Start<span class="powerShell__operator">-</span>SPAssignment&nbsp;<span class="powerShell__operator">-</span>Global&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Gets&nbsp;the&nbsp;existing&nbsp;search&nbsp;service&nbsp;application</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Fetching&nbsp;search&nbsp;service&nbsp;application...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SSA</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchServiceApplication&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__operator">!</span><span class="powerShell__variable">$</span>?)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">throw</span>&nbsp;<span class="powerShell__string">&quot;Unable&nbsp;to&nbsp;fetch&nbsp;search&nbsp;service&nbsp;application.&nbsp;Pls&nbsp;make&nbsp;sure&nbsp;its&nbsp;up&nbsp;and&nbsp;running&nbsp;fine&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Gets&nbsp;the&nbsp;Search&nbsp;Service&nbsp;Instance&nbsp;on&nbsp;the&nbsp;specified&nbsp;Server</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Fetching&nbsp;search&nbsp;service&nbsp;instance&nbsp;on&nbsp;server&nbsp;$Server...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Instance</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchServiceInstance&nbsp;<span class="powerShell__operator">-</span>Identity&nbsp;<span class="powerShell__variable">$Server</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__operator">!</span><span class="powerShell__variable">$</span>?){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">throw</span>&nbsp;<span class="powerShell__string">&quot;Unable&nbsp;to&nbsp;fetch&nbsp;search&nbsp;service&nbsp;instance&nbsp;on&nbsp;the&nbsp;server&nbsp;$Server&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Starts&nbsp;Search&nbsp;Service&nbsp;Instance&nbsp;on&nbsp;the&nbsp;specified&nbsp;server.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$Instance</span>.Status&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__string">&quot;Online&quot;</span>){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Starting&nbsp;service&nbsp;instance...&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start<span class="powerShell__operator">-</span>SPEnterpriseSearchServiceInstance&nbsp;<span class="powerShell__variable">$Instance</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Waiting&nbsp;for&nbsp;60&nbsp;seconds&nbsp;for&nbsp;instance&nbsp;to&nbsp;come&nbsp;online...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__alias">sleep</span>&nbsp;60&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">for</span>&nbsp;(<span class="powerShell__variable">$Count</span>=1;<span class="powerShell__variable">$Count</span>&nbsp;<span class="powerShell__operator">-</span>lt&nbsp;5;<span class="powerShell__variable">$Count</span><span class="powerShell__operator">&#43;</span><span class="powerShell__operator">&#43;</span>){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Instance</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchServiceInstance&nbsp;<span class="powerShell__operator">-</span>Identity&nbsp;<span class="powerShell__variable">$Server</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$Instance</span>.Status&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__string">&quot;Online&quot;</span>){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Waiting&nbsp;for&nbsp;another&nbsp;60&nbsp;seconds...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__alias">sleep</span>&nbsp;60&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">else</span>{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Count</span>&nbsp;=&nbsp;6&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$Count</span>&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;5){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">throw</span>&nbsp;<span class="powerShell__string">&quot;Failed&nbsp;to&nbsp;start&nbsp;search&nbsp;service&nbsp;instance&nbsp;on&nbsp;server.&nbsp;Pls&nbsp;start&nbsp;manually&nbsp;and&nbsp;run&nbsp;script&nbsp;again&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Clone&nbsp;existing&nbsp;topology</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Fetching&nbsp;active&nbsp;topology&nbsp;and&nbsp;cloning&nbsp;it...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$ActiveToplogy</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchTopology&nbsp;<span class="powerShell__operator">-</span>Active&nbsp;<span class="powerShell__operator">-</span>SearchApplication&nbsp;<span class="powerShell__variable">$SSA</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$ClonedTopology</span>&nbsp;=&nbsp;New<span class="powerShell__operator">-</span>SPEnterpriseSearchTopology&nbsp;<span class="powerShell__operator">-</span>SearchApplication&nbsp;<span class="powerShell__variable">$SSA</span>&nbsp;<span class="powerShell__operator">-</span>Clone&nbsp;&ndash;SearchTopology&nbsp;<span class="powerShell__variable">$ActiveToplogy</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Checks&nbsp;if&nbsp;index&nbsp;directory&nbsp;already&nbsp;exists.&nbsp;If&nbsp;yes,&nbsp;removes&nbsp;it&nbsp;and&nbsp;all&nbsp;sub-directories&nbsp;and&nbsp;files.&nbsp;If&nbsp;not,&nbsp;creates&nbsp;it.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__cmdlets">Remove-Item</span>&nbsp;<span class="powerShell__operator">-</span>Recurse&nbsp;<span class="powerShell__operator">-</span>Force&nbsp;<span class="powerShell__operator">-</span>Path&nbsp;<span class="powerShell__variable">$Directory</span>&nbsp;<span class="powerShell__operator">-</span>ErrorAction&nbsp;SilentlyContinue&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__cmdlets">New-Item</span>&nbsp;<span class="powerShell__operator">-</span>ItemType&nbsp;Directory&nbsp;<span class="powerShell__operator">-</span>Path&nbsp;<span class="powerShell__variable">$Directory</span>&nbsp;<span class="powerShell__operator">-</span>Force&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Add&nbsp;index&nbsp;component&nbsp;for&nbsp;another&nbsp;server</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Getting&nbsp;existing&nbsp;index&nbsp;component&nbsp;number&nbsp;for&nbsp;specified&nbsp;server...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$IndexPartition</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchComponent&nbsp;<span class="powerShell__operator">-</span>SearchTopology&nbsp;<span class="powerShell__variable">$ClonedTopology</span>&nbsp;<span class="powerShell__operator">|</span>&nbsp;Where<span class="powerShell__operator">-</span>Object&nbsp;{<span class="powerShell__variable">$_</span>.servername&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$FromServer</span>&nbsp;<span class="powerShell__operator">-</span>and&nbsp;<span class="powerShell__variable">$_</span>.name&nbsp;<span class="powerShell__operator">-</span>like&nbsp;<span class="powerShell__string">&quot;IndexComponent*&quot;</span>}&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$IndexPartitionNo</span>&nbsp;=&nbsp;<span class="powerShell__variable">$IndexPartition</span>.IndexPartitionOrdinal&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$IndexComponentName</span>&nbsp;=&nbsp;<span class="powerShell__variable">$IndexPartition</span>.Name&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Adding&nbsp;index&nbsp;component&nbsp;number&nbsp;for&nbsp;specified&nbsp;server...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;New<span class="powerShell__operator">-</span>SPEnterpriseSearchIndexComponent&nbsp;<span class="powerShell__operator">-</span>SearchTopology&nbsp;<span class="powerShell__variable">$ClonedTopology</span>&nbsp;<span class="powerShell__operator">-</span>RootDirectory&nbsp;<span class="powerShell__variable">$Directory</span>&nbsp;<span class="powerShell__operator">-</span>IndexPartition&nbsp;<span class="powerShell__variable">$IndexPartitionNo</span>&nbsp;<span class="powerShell__operator">-</span>SearchServiceInstance&nbsp;<span class="powerShell__variable">$Instance</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Pause&nbsp;search&nbsp;service&nbsp;application&nbsp;for&nbsp;repartitioning</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Pausing&nbsp;search&nbsp;service&nbsp;application...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SSA</span>.PauseForIndexRepartitioning()&nbsp;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Sets&nbsp;new&nbsp;search&nbsp;toplogy&nbsp;as&nbsp;active&nbsp;on&nbsp;the&nbsp;server</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Setting&nbsp;new&nbsp;search&nbsp;topology&nbsp;as&nbsp;active.&nbsp;This&nbsp;might&nbsp;take&nbsp;several&nbsp;hours.&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Set<span class="powerShell__operator">-</span>SPEnterpriseSearchTopology&nbsp;<span class="powerShell__operator">-</span>Identity&nbsp;<span class="powerShell__variable">$ClonedTopology</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Monitors&nbsp;progress&nbsp;of&nbsp;index&nbsp;partitioning</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SSA</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchServiceApplication&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Status</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchStatus&nbsp;<span class="powerShell__operator">-</span>SearchApplication&nbsp;<span class="powerShell__variable">$SSA</span>&nbsp;<span class="powerShell__operator">-</span>HealthReport&nbsp;<span class="powerShell__operator">-</span>Component&nbsp;<span class="powerShell__variable">$IndexComponentName</span>&nbsp;<span class="powerShell__operator">|</span>&nbsp;Where<span class="powerShell__operator">-</span>Object&nbsp;{&nbsp;(<span class="powerShell__variable">$_</span>.name&nbsp;<span class="powerShell__operator">-</span>match&nbsp;<span class="powerShell__string">&quot;repart&quot;</span>)&nbsp;<span class="powerShell__operator">-</span>or&nbsp;(&nbsp;<span class="powerShell__variable">$_</span>.name&nbsp;<span class="powerShell__operator">-</span>match&nbsp;<span class="powerShell__string">&quot;splitting&quot;</span>)}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">While</span>(<span class="powerShell__variable">$Status</span>&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__variable">$null</span>){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Waiting&nbsp;for&nbsp;5&nbsp;mins&nbsp;for&nbsp;new&nbsp;index&nbsp;partition&nbsp;to&nbsp;be&nbsp;completed...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__alias">Sleep</span>&nbsp;300&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SSA</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchServiceApplication&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Status</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchStatus&nbsp;<span class="powerShell__operator">-</span>SearchApplication&nbsp;<span class="powerShell__variable">$SSA</span>&nbsp;<span class="powerShell__operator">-</span>HealthReport&nbsp;<span class="powerShell__operator">-</span>Component&nbsp;<span class="powerShell__variable">$IndexComponentName</span>&nbsp;<span class="powerShell__operator">|</span>&nbsp;Where<span class="powerShell__operator">-</span>Object&nbsp;{&nbsp;(<span class="powerShell__variable">$_</span>.name&nbsp;<span class="powerShell__operator">-</span>match&nbsp;<span class="powerShell__string">&quot;repart&quot;</span>)&nbsp;<span class="powerShell__operator">-</span>or&nbsp;(&nbsp;<span class="powerShell__variable">$_</span>.name&nbsp;<span class="powerShell__operator">-</span>match&nbsp;<span class="powerShell__string">&quot;splitting&quot;</span>)}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Displays&nbsp;Current&nbsp;topology&nbsp;components&nbsp;to&nbsp;user</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Here&nbsp;are&nbsp;the&nbsp;current&nbsp;search&nbsp;components:&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$ActiveToplogy</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchTopology&nbsp;<span class="powerShell__operator">-</span>Active&nbsp;<span class="powerShell__operator">-</span>SearchApplication&nbsp;<span class="powerShell__variable">$SSA</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchComponent&nbsp;<span class="powerShell__operator">-</span>SearchTopology&nbsp;<span class="powerShell__variable">$ActiveToplogy</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Resume&nbsp;search&nbsp;service&nbsp;application&nbsp;for&nbsp;repartitioning</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Resuming&nbsp;search&nbsp;service&nbsp;application...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SSA</span>.ResumeAfterIndexRepartitioning()&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Script&nbsp;Execution&nbsp;finished&quot;</span>&nbsp;
+}&nbsp;
+&nbsp;
+<span class="powerShell__keyword">Catch</span>{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__cmdlets">Write-Error</span>&nbsp;<span class="powerShell__string">&quot;Exception&nbsp;Type:&nbsp;$($_.Exception.GetType().FullName)&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__cmdlets">Write-Error</span>&nbsp;<span class="powerShell__string">&quot;Exception&nbsp;Message:&nbsp;$($_.Exception.Message)&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Script&nbsp;Execution&nbsp;finished&quot;</span>&nbsp;
+}&nbsp;
+<span class="powerShell__keyword">finally</span>{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Stop<span class="powerShell__operator">-</span>SPAssignment&nbsp;<span class="powerShell__operator">-</span>Global&nbsp;
+}&nbsp;
+&nbsp;
+<span class="powerShell__com">#########################################################################################################################################</span>&nbsp;
+<span class="powerShell__com">##&nbsp;End&nbsp;of&nbsp;Script</span>&nbsp;
+<span class="powerShell__com">#########################################################################################################################################</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+
+        </div>
+    </body>
+</html>

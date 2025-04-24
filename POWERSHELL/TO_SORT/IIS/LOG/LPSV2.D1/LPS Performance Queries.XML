@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfLPQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LPQuery>
+    <QueryName>ACTIVESYNC_WP: Clients by percent</QueryName>
+    <QueryDescription>Calculates all ActiveSync requests broken down by user-agent and percentage of each client to the total numbe of requests.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/*  ActiveSync Clients by Percentage  */
+/*  Press F6 to chart results  */
+
+SELECT TOP 100
+EXTRACT_PREFIX(EXTRACT_SUFFIX(cs(user-agent), 0, '('), 0, ')') as Client,
+MUL(PROPCOUNT(*), 100.0) as [Percent] 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/Microsoft-Server-ActiveSync%' 
+GROUP BY Client
+ORDER BY [Percent] DESC</QueryData>
+    <QueryID>27c24a45-9b97-49d9-bd27-2b3eed3d5264</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>MAS</QueryCategory>
+    <IsFavorite>false</IsFavorite>
+    <DateModified>2014-11-11T11:41:53.6453693-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>ACTIVESYNC_WP: Requests per hour (CSV)</QueryName>
+    <QueryDescription>Lists the ActiveSync requests per hour.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* ActiveSync requests per hour (CSV) */
+
+
+SELECT 
+TO_STRING(QUANTIZE(TO_LOCALTIME(time), 3600), 'hh:mm:ss') as Hour,
+Count(*) AS Requests,
+TO_STRING(Date, 'MM/dd/yyyy') as Date,
+sc-status As Status
+INTO '[OUTFILEPATH]\MASRequestsPerHour.csv' 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/Microsoft-Server-ActiveSync%' 
+AND cs-username NOT LIKE '%HealthMailbox%' 
+AND cs-username &lt;&gt; '' AND cs-username IS NOT NULL
+GROUP BY Date, Hour, Status
+ 
+ 
+</QueryData>
+    <QueryID>8ed2c4ba-77be-4fd8-9978-1f6f60132518</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>MAS</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:42:06.9894497-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>ACTIVESYNC_WP: Requests per user (CSV)</QueryName>
+    <QueryDescription>Lists ActiveSync requests per user and sends the output to a CSV file.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/*  ActiveSync requests per user, per hour   */
+/*  Press F6 to chart the results */
+
+SELECT
+cs-username AS UserID,
+Count(*) AS Requests,
+TO_STRING(Date, 'MM/dd/yyyy') as Date, 
+cs-method AS Method,
+cs(user-agent) as Client,
+sc-status As Status
+INTO '[OUTFILEPATH]\MASRequestsPerHourUser.CSV' 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/Microsoft-Server-ActiveSync%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+GROUP BY Date, UserID,  Method, Client,  Status
+ORDER by Requests DESC
+ 
+ 
+</QueryData>
+    <QueryID>e8d04d47-61de-4399-a07a-8d6b7d1aa66a</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>MAS</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:42:12.6387427-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>ACTIVESYNC_WP: Requests per user (Top 10k)</QueryName>
+    <QueryDescription>Lists ActiveSync requests per user for the top 10,000 users.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/*  ActiveSync requests per user, per hour for the top 10k users  */
+/*  Press F6 to chart the results */
+
+SELECT TOP 10000
+cs-username AS UserID,
+Count(*) AS Requests,
+TO_STRING(Date, 'MM/dd/yyyy') as Date, 
+cs-method AS Method,
+cs(user-agent) as Client,
+sc-status As Status
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/Microsoft-Server-ActiveSync%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+GROUP BY Date, UserID,  Method, Client,  Status
+ORDER by Requests DESC
+ 
+ 
+</QueryData>
+    <QueryID>30b67da4-1680-4ffc-a002-77201f6c960c</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>MAS</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:42:17.839821-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>ACTIVESYNC_WP: Top Talkers (CSV)</QueryName>
+    <QueryDescription>Lists the top ActiveSync clients from highest to lowest request count and sends the result to a CSV file.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* 
+
+ActiveSync requests per user, Per day (CSV)
+
+*/
+
+SELECT 
+cs-username AS UserID,
+Count(*) AS Requests, 
+TO_STRING(Date, 'MM/dd/yyyy') as Date, 
+cs(user-agent) as Client,
+sc-status As Status
+INTO '[OUTFILEPATH]\OWAPerUserPerDay.csv' 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/Microsoft-Server-ActiveSync%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+GROUP BY Date, UserID, Client,  Status
+ORDER BY Requests DESC
+ 
+ 
+</QueryData>
+    <QueryID>b94c3389-6c74-4939-aabe-2f07ba5a4727</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>MAS</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:42:27.8992584-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>EWS_WP: Clients by percent</QueryName>
+    <QueryDescription>Calculates all EWS requests broken down by user-agent and percentage of each client to the total numbe of requests.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/*  EWS Clients by Percentage  */
+/*  Press F6 to chart results  */
+
+SELECT TOP 100
+EXTRACT_PREFIX(EXTRACT_SUFFIX(cs(user-agent), 0, '('), 0, ')') as Client,
+MUL(PROPCOUNT(*), 100.0) as [Percent] 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/ews%' 
+GROUP BY Client
+ORDER BY [Percent] DESC</QueryData>
+    <QueryID>c869740d-2713-472b-9c72-05a567da59fd</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>EWS</QueryCategory>
+    <IsFavorite>false</IsFavorite>
+    <DateModified>2014-11-11T11:42:35.93522-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>EWS_WP: Lync GetUserPhoto requests</QueryName>
+    <QueryDescription>All Lync requests for GetUserPhoto listed in descending order.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* Lync Get User Photo calls */
+
+SELECT TOP 10000 cs-username AS UserID, 
+                cs(User-Agent) AS Application, 
+                cs-uri-stem AS Vdir,
+                c-ip AS CLIENT,
+                cs-method, sc-status,
+                Count(*)
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%EWS%' AND cs-uri-stem LIKE '%GetUserPhoto%'
+AND UserID IS NOT NULL
+GROUP BY UserID, Application, Vdir, Client, cs-method, sc-status
+ORDER BY COUNT(*) DESC</QueryData>
+    <QueryID>3742bfd3-33a0-4f82-a238-916c7ed3ab6a</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>ALL</QueryCategory>
+    <IsFavorite>false</IsFavorite>
+    <DateModified>2014-11-11T11:42:39.5784432-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>EWS_WP: MacMail User Requests by user/request</QueryName>
+    <QueryDescription>MacMail requests by user and number of requests sorted descending.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* Mac Mail Clients by number of requests */
+
+SELECT TOP 10000 cs-username AS UserID, 
+Count(*) AS Requests,
+cs(User-Agent) AS Application, 
+cs-uri-stem AS Vdir,
+c-ip AS CLIENT,
+cs-method
+FROM '[LOGFILEPATH]'
+WHERE UserID NOT LIKE '%$' AND cs-uri-stem LIKE '%EWS%' AND cs-uri-stem NOT LIKE '%GetUserPhoto%' AND Application LIKE '%Mac%' AND Application NOT LIKE '%Outlook%'
+GROUP BY UserID, Application, Vdir, Client, cs-method
+ORDER BY COUNT(*) DESC</QueryData>
+    <QueryID>31a0a0b9-ff18-4431-9ae8-ca8b5e8c9bb8</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>ALL</QueryCategory>
+    <IsFavorite>false</IsFavorite>
+    <DateModified>2014-11-11T11:42:44.3306195-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>EWS_WP: MacOutlook User Requests by client/request</QueryName>
+    <QueryDescription>MacOutlook User Requests by client/request from highest to lowest hits.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* MacOutlook User Requests by client/request */
+SELECT TOP 10000
+cs-username AS UserID, 
+Count(*) As Requests,
+cs(User-Agent) AS Application, 
+cs-uri-stem AS Vdir,
+c-ip AS CLIENT,
+cs-method        
+FROM '[LOGFILEPATH]'
+WHERE UserID NOT LIKE '%$' AND UserID IS NOT NULL
+AND cs-uri-stem LIKE '%EWS%' AND Application LIKE '%MacOutlook%'
+GROUP BY UserID, Application, Vdir, Client, cs-method
+ORDER BY COUNT(*) DESC</QueryData>
+    <QueryID>a306e683-83d1-4236-a015-a2179ee14d61</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>ALL</QueryCategory>
+    <IsFavorite>false</IsFavorite>
+    <DateModified>2014-11-11T11:42:50.7064891-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>EWS_WP: Non Outlook or Mac Requests</QueryName>
+    <QueryDescription>Lists all EWS requests that are not generated by either Outlook or Mac ordered by highest to lowest.
+
+
+
+Note: Does not track anonymous requests without credentials.</QueryDescription>
+    <QueryData>/* EWS Clients and calls – Other */
+
+SELECT TOP 10000 cs-username AS UserID, 
+Count(*) AS Requests,
+cs(User-Agent) AS Application, 
+cs-uri-stem AS Vdir,
+c-ip AS CLIENT,
+cs-method
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%EWS%' AND cs-uri-stem NOT LIKE '%GetUserPhoto%' 
+AND Application NOT LIKE '%Mac+OS%' AND Application NOT LIKE '%Outlook%'
+AND UserID IS NOT NULL
+GROUP BY UserID, Application, Vdir, Client, cs-method
+ORDER BY COUNT(*) DESC</QueryData>
+    <QueryID>d54d665d-2a60-4e69-bee7-2b2e48f710f5</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>ALL</QueryCategory>
+    <IsFavorite>false</IsFavorite>
+    <DateModified>2014-11-11T11:43:01.826291-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>EWS_WP: Requests per hour (CSV)</QueryName>
+    <QueryDescription>Lists the EWS requests per hour.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* EWS requests per hour (CSV) */
+
+
+SELECT 
+TO_STRING(QUANTIZE(TO_LOCALTIME(time), 3600), 'hh:mm:ss') as Hour,
+Count(*) AS Requests,
+TO_STRING(Date, 'MM/dd/yyyy') as Date,
+sc-status As Status
+INTO '[OUTFILEPATH]\EWSRequestsPerHour.csv' 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/ews%' 
+AND cs-username NOT LIKE '%HealthMailbox%' 
+AND cs-username &lt;&gt; '' AND cs-username IS NOT NULL
+GROUP BY Date, Hour, Status
+ 
+ 
+</QueryData>
+    <QueryID>2bef8cd0-2658-4d89-836e-2f0822da30e8</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>EWS</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:43:13.8657555-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>EWS_WP: Requests per user (CSV)</QueryName>
+    <QueryDescription>Lists EWS requests per user and sends the output to a CSV file.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/*  EWS requests per user, per hour   */
+/*  Press F6 to chart the results */
+
+SELECT
+cs-username AS UserID,
+Count(*) AS Requests,
+TO_STRING(Date, 'MM/dd/yyyy') as Date, 
+cs-method AS Method,
+cs(user-agent) as Client,
+sc-status As Status
+INTO '[OUTFILEPATH]\EWSRequestsPerHourUser.CSV' 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/ews%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+GROUP BY Date, UserID,  Method, Client,  Status
+ORDER by Requests DESC
+ 
+ 
+</QueryData>
+    <QueryID>6f616377-5de2-40c6-ac5d-a7b44f053073</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>EWS</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:43:19.0230724-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>EWS_WP: Requests per user (Top 10k)</QueryName>
+    <QueryDescription>Lists EWS requests per user for the top 10,000 users.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/*  EWS requests per user, per hour for the top 10k users  */
+/*  Press F6 to chart the results */
+
+SELECT TOP 10000
+cs-username AS UserID,
+Count(*) AS Requests,
+TO_STRING(Date, 'MM/dd/yyyy') as Date, 
+cs-method AS Method,
+cs(user-agent) as Client,
+sc-status As Status
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/ews%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+GROUP BY Date, UserID,  Method, Client,  Status
+ORDER by Requests DESC
+ 
+ 
+</QueryData>
+    <QueryID>7fa03929-1aa6-4da9-aa6c-3869b3eb40de</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>EWS</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:43:23.4991148-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>EWS_WP: Top Talkers (CSV)</QueryName>
+    <QueryDescription>Lists the top EWS clients from highest to lowest request count.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* 
+
+EWS requests per user, Per day (CSV)
+
+*/
+
+SELECT 
+cs-username AS UserID,
+Count(*) AS Requests, 
+TO_STRING(Date, 'MM/dd/yyyy') as Date, 
+cs(user-agent) as Client,
+sc-status As Status
+INTO '[OUTFILEPATH]\EWSPerUserPerDay.csv' 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/EWS%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+GROUP BY Date, UserID, Client,  Status
+ORDER BY Requests DESC
+ 
+ 
+</QueryData>
+    <QueryID>489f19c5-24a3-4260-b451-d7dbc7682f06</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>EWS</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:43:27.7572379-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>OLA_WP: Errors, per user, per hour, per day </QueryName>
+    <QueryDescription>Outlook Anywhere users by number of requests.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* 
+   Outlook Anywhere errors per user, per Hour, per day 
+   Use F6 to chart the results  
+*/
+
+SELECT TOP 100000
+TO_STRING(QUANTIZE(TO_LOCALTIME(time), 3600), 'hh:mm:ss') as Hour,
+Count(*) AS Requests, 
+TO_STRING(Date, 'MM/dd/yyyy') as [Date], 
+cs-username AS UserID,
+cs(user-agent) as Client,
+sc-status As Status
+
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/RPC%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+AND (cs-method = 'RPC_IN_DATA' OR cs-method = 'RPC_OUT_DATA')
+AND sc-status &gt; 399
+GROUP BY Date, Hour, UserID, Client,  Status
+ORDER BY Hour, UserID ASC
+ 
+ 
+</QueryData>
+    <QueryID>e3916342-163c-4438-b2e9-5311e5ac87f6</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>OLA</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:43:32.0702424-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>OLA_WP: Errors, per user, per hour, per day (CSV)</QueryName>
+    <QueryDescription>Outlook Anywhere users by number of requests.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* 
+   Outlook Anywhere errors per user, per Hour, per day 
+
+*/
+
+SELECT
+TO_STRING(QUANTIZE(TO_LOCALTIME(time), 3600), 'hh:mm:ss') as Hour,
+Count(*) AS Requests, 
+TO_STRING(Date, 'MM/dd/yyyy') as [Date], 
+cs-username AS UserID,
+cs(user-agent) as Client,
+sc-status As Status
+INTO '[OUTFILEPATH]\OLAErrorsPerHour.csv' 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/RPC%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+AND (cs-method = 'RPC_IN_DATA' OR cs-method = 'RPC_OUT_DATA')
+AND sc-status &gt; 399
+GROUP BY Date, Hour, UserID, Client,  Status
+ORDER BY Hour, UserID ASC
+ 
+ 
+</QueryData>
+    <QueryID>b0fdc9b7-b3ae-4f05-a104-a3761d436bdb</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>OLA</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:43:36.148388-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>OLA_WP: Requests per hour</QueryName>
+    <QueryDescription>Lists the Outlook Anywhere requests per hour.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* Outlook Anywhere requests per hour */
+/*    Use F6 to chart the results  */
+
+SELECT TOP 100000
+TO_STRING(QUANTIZE(TO_LOCALTIME(time), 3600), 'hh:mm:ss') as Hour,
+Count(*) AS Requests,
+TO_STRING(Date, 'MM/dd/yyyy') as Date,
+sc-status As Status
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/RPC%' 
+AND cs-username NOT LIKE '%HealthMailbox%' 
+AND cs-username &lt;&gt; '' AND cs-username IS NOT NULL
+AND (cs-method = 'RPC_IN_DATA' OR cs-method = 'RPC_OUT_DATA')
+GROUP BY Date, Hour, Status
+ 
+ 
+</QueryData>
+    <QueryID>aab00128-29d3-49a1-9a0c-d5887322b5d1</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>OLA</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:43:40.6867854-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>OLA_WP: Requests per hour (CSV)</QueryName>
+    <QueryDescription>Lists the Outlook Anywhere requests per hour.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* Outlook Anywhere requests per hour */
+
+
+SELECT 
+TO_STRING(QUANTIZE(TO_LOCALTIME(time), 3600), 'hh:mm:ss') as Hour,
+Count(*) AS Requests,
+TO_STRING(Date, 'MM/dd/yyyy') as Date,
+sc-status As Status
+INTO '[OUTFILEPATH]\OLARequestsPerHour.csv' 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/RPC%' 
+AND cs-username NOT LIKE '%HealthMailbox%' 
+AND cs-username &lt;&gt; '' AND cs-username IS NOT NULL
+AND (cs-method = 'RPC_IN_DATA' OR cs-method = 'RPC_OUT_DATA')
+GROUP BY Date, Hour, Status
+ 
+ 
+</QueryData>
+    <QueryID>aba67c82-3fc8-4144-b1c7-6e0c6c2f4dae</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>OLA</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:43:48.773424-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>OLA_WP: Requests per hour, per user</QueryName>
+    <QueryDescription>Lists the Outlook Anywhere requests per hour, per user.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* Outlook Anywhere requests per user, per hour */
+/*    Use F6 to chart the results  */
+
+SELECT TOP 100000
+TO_STRING(QUANTIZE(TO_LOCALTIME(time), 3600), 'hh:mm:ss') as Hour,
+Count(*) AS Requests,
+TO_STRING(Date, 'MM/dd/yyyy') as Date,
+cs-username AS UserID,
+cs(user-agent) as Client,
+sc-status As Status
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/RPC%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+AND (cs-method = 'RPC_IN_DATA' OR cs-method = 'RPC_OUT_DATA')
+GROUP BY Date, Hour, UserID, Client,  Status
+ 
+ 
+</QueryData>
+    <QueryID>5e6fe0c6-97b8-44f1-a4c1-d02b59616dae</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>OLA</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:43:53.3056757-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>OLA_WP: Requests per hour, per user (CSV)</QueryName>
+    <QueryDescription>Lists the Outlook Anywhere requests per hour, per user.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* Outlook Anywhere requests per user, per hour */
+
+SELECT 
+TO_STRING(QUANTIZE(TO_LOCALTIME(time), 3600), 'hh:mm:ss') as Hour,
+Count(*) AS Requests,
+TO_STRING(Date, 'MM/dd/yyyy') as Date,
+cs-username AS UserID,
+cs(user-agent) as Client,
+sc-status As Status
+INTO '[OUTFILEPATH]\OLARequestsPerUserPerHour.csv' 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/RPC%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+AND (cs-method = 'RPC_IN_DATA' OR cs-method = 'RPC_OUT_DATA')
+GROUP BY Date, Hour, UserID, Client,  Status
+ 
+ 
+</QueryData>
+    <QueryID>bceab881-c505-45e4-aab1-4f5753357684</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>OLA</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:43:57.9619101-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>OLA_WP: Requests per user (CSV)</QueryName>
+    <QueryDescription>Lists Outlook Anywhere requests per user.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/*  Outlook Anywhere requests per user  */
+
+
+SELECT 
+cs-username AS UserID,
+Count(*) AS Requests,
+TO_STRING(Date, 'MM/dd/yyyy') as Date, 
+TO_STRING(QUANTIZE(TO_LOCALTIME(time), 3600), 'hh:mm:ss') as Hour,
+cs-method AS Method,
+cs(user-agent) as Client,
+sc-status As Status
+INTO '[OUTFILEPATH]\RequestsPerUser.CSV' 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/RPC%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+AND (cs-method = 'RPC_IN_DATA' OR cs-method = 'RPC_OUT_DATA')
+GROUP BY Date, Hour, UserID,  Method, Client,  Status
+ 
+ 
+</QueryData>
+    <QueryID>d8b48394-658f-4a97-9a58-93242fe5d352</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>OLA</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:44:01.5864336-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>OLA_WP: Requests per user (Top 10k)</QueryName>
+    <QueryDescription>Lists Outlook Anywhere requests per user.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/*  Outlook Anywhere requests per user  */
+/*    Use F6 to chart the results  */
+
+SELECT TOP 100000
+cs-username AS UserID,
+Count(*) AS Requests,
+TO_STRING(Date, 'MM/dd/yyyy') as Date, 
+cs-method AS Method,
+cs(user-agent) as Client,
+sc-status As Status
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/RPC%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+AND (cs-method = 'RPC_IN_DATA' OR cs-method = 'RPC_OUT_DATA')
+GROUP BY Date, UserID,  Method, Client,  Status
+ORDER BY Requests DESC
+ 
+ 
+</QueryData>
+    <QueryID>5a5ec7d6-d0a5-4574-a2d9-a0d8c8e3ef77</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>OLA</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:44:06.3837241-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>OLA_WP: Top Talkers </QueryName>
+    <QueryDescription>Lists the top Outlook Anywhere clients from highest to lowest request count.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* 
+
+Outlook Anywhere Top Talkers 
+Use F6 to chart the results 
+
+*/
+
+SELECT TOP 100000
+cs-username AS UserID,
+Count(*) AS Requests, 
+TO_STRING(Date, 'MM/dd/yyyy') as Date, 
+cs(user-agent) as Client,
+sc-status As Status 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/RPC%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+AND (cs-method = 'RPC_IN_DATA' OR cs-method = 'RPC_OUT_DATA')
+GROUP BY Date, UserID, Client,  Status
+ORDER BY Requests DESC
+ 
+ 
+</QueryData>
+    <QueryID>9b679845-1b80-453e-a209-15fb3657896a</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>OLA</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:44:10.2583711-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>OLA_WP: Top Talkers (CSV)</QueryName>
+    <QueryDescription>Lists the top Outlook Anywhere clients from highest to lowest request count.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* 
+
+Outlook Anywhere requests per user, Per day 
+
+*/
+
+SELECT 
+cs-username AS UserID,
+Count(*) AS Requests, 
+TO_STRING(Date, 'MM/dd/yyyy') as Date, 
+cs(user-agent) as Client,
+sc-status As Status
+INTO '[OUTFILEPATH]\OLAPerUserPerDay.csv' 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/RPC%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+AND (cs-method = 'RPC_IN_DATA' OR cs-method = 'RPC_OUT_DATA')
+GROUP BY Date, UserID, Client,  Status
+ORDER BY Requests DESC
+ 
+ 
+</QueryData>
+    <QueryID>9c56d6dd-dc95-43fc-9558-6de14d428833</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>OLA</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:44:14.3291352-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>OWA_WP:  Clients by percent</QueryName>
+    <QueryDescription>Calculates all OWA requests broken down by user-agent and percentage of each client to the total numbe of requests.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/*  OWA Clients by Percentage  */
+/*  Press F6 to chart results  */
+
+SELECT TOP 10000
+EXTRACT_PREFIX(EXTRACT_SUFFIX(cs(user-agent), 0, '('), 0, ')') as Client,
+MUL(PROPCOUNT(*), 100.0) as [Percent] 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/owa%' 
+GROUP BY Client
+ORDER BY [Percent] DESC</QueryData>
+    <QueryID>01861b99-406d-47b8-8665-cbb4b95dacdd</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>ALL</QueryCategory>
+    <IsFavorite>false</IsFavorite>
+    <DateModified>2014-11-11T11:44:18.2359986-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>OWA_WP: Requests per hour (CSV)</QueryName>
+    <QueryDescription>Lists the OWA requests per hour.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* OWA requests per hour (CSV) */
+
+
+SELECT 
+TO_STRING(QUANTIZE(TO_LOCALTIME(time), 3600), 'hh:mm:ss') as Hour,
+Count(*) AS Requests,
+TO_STRING(Date, 'MM/dd/yyyy') as Date,
+sc-status As Status
+INTO '[OUTFILEPATH]\OWARequestsPerHour.csv' 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/owa%' 
+AND cs-username NOT LIKE '%HealthMailbox%' 
+AND cs-username &lt;&gt; '' AND cs-username IS NOT NULL
+GROUP BY Date, Hour, Status
+ 
+ 
+</QueryData>
+    <QueryID>a4823f15-c90b-4629-8cf8-35147fddd932</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>OLA</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:44:22.1887233-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>OWA_WP: Requests per user (CSV)</QueryName>
+    <QueryDescription>Lists OWA requests per user and sends the output to a CSV file.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/*  OWA requests per user, per hour   */
+/*  Press F6 to chart the results */
+
+SELECT
+cs-username AS UserID,
+Count(*) AS Requests,
+TO_STRING(Date, 'MM/dd/yyyy') as Date, 
+cs-method AS Method,
+cs(user-agent) as Client,
+sc-status As Status
+INTO '[OUTFILEPATH]\OWARequestsPerHourUser.CSV' 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/owa%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+GROUP BY Date, UserID,  Method, Client,  Status
+ORDER by Requests DESC
+ 
+ 
+</QueryData>
+    <QueryID>6ba60b8d-24ce-4077-aad7-6590ae993db0</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>OLA</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:44:26.2117246-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>OWA_WP: Requests per user (Top 10k)</QueryName>
+    <QueryDescription>Lists OWA requests per user for the top 10,000 users.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/*  OWA requests per user, per hour for the top 10k users  */
+/*  Press F6 to chart the results */
+
+SELECT TOP 10000
+cs-username AS UserID,
+Count(*) AS Requests,
+TO_STRING(Date, 'MM/dd/yyyy') as Date, 
+cs-method AS Method,
+cs(user-agent) as Client,
+sc-status As Status
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/owa%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+GROUP BY Date, UserID,  Method, Client,  Status
+ORDER by Requests DESC
+ 
+ 
+</QueryData>
+    <QueryID>88d250af-5c03-40c0-ac18-07328a8286c4</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>OLA</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:44:30.0554802-05:00</DateModified>
+  </LPQuery>
+  <LPQuery>
+    <QueryName>OWA_WP: Top Talkers (CSV)</QueryName>
+    <QueryDescription>Lists the top OWA clients from highest to lowest request count and sends the result to a CSV file.
+
+Note: Does not track anonymous requests without credentials</QueryDescription>
+    <QueryData>/* 
+
+OWA requests per user, Per day (CSV)
+
+*/
+
+SELECT 
+cs-username AS UserID,
+Count(*) AS Requests, 
+TO_STRING(Date, 'MM/dd/yyyy') as Date, 
+cs(user-agent) as Client,
+sc-status As Status
+INTO '[OUTFILEPATH]\OWAPerUserPerDay.csv' 
+FROM '[LOGFILEPATH]'
+WHERE cs-uri-stem LIKE '%/owa%' 
+AND UserID NOT LIKE '%HealthMailbox%' 
+AND UserID &lt;&gt; '' AND UserID IS NOT NULL
+GROUP BY Date, UserID, Client,  Status
+ORDER BY Requests DESC
+ 
+ 
+</QueryData>
+    <QueryID>c39324c2-04f9-43b1-a7ae-33c517472036</QueryID>
+    <LogType>IISW3CLOG</LogType>
+    <QueryCategory>OLA</QueryCategory>
+    <IsFavorite>true</IsFavorite>
+    <DateModified>2014-11-11T11:44:35.3526186-05:00</DateModified>
+  </LPQuery>
+</ArrayOfLPQuery>

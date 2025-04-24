@@ -1,0 +1,1 @@
+﻿Remove-SPEnterpriseSearchServiceApplication "Search Service Application" -RemoveData -confirm:$false

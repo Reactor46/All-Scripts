@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <Code Content="(Get-SPUser -Web &lt;url&gt; -Limit ALL).count" />
+  <Code Content="Get-SPUser -Web &lt;url&gt; -Limit ALL | Where-Object {$_.IsDomainGroup -ne $true}" />
+  <Code Content="Get-SPUser -Web &lt;url&gt; -Limit ALL | Where-Object {$_.IsDomainGroup -ne $true} | Measure-Object | select Count" />
+  <Code Content="Get-SPSite -Limit ALL |&#xD;&#xA;Get-SPWeb -Limit ALL |&#xD;&#xA;%{Get-SPUser -Web $_.Url -Limit ALL} |&#xD;&#xA;Where-Object {$_.IsDomainGroup -ne $true} |&#xD;&#xA;Measure-Object |&#xD;&#xA;select Count" />
+  <Code Content="Get-SPSite -Limit ALL |&#xD;&#xA;Get-SPWeb -Limit ALL |&#xD;&#xA;%{Get-SPUser -Web $_.Url -Limit ALL} |&#xD;&#xA;Where-Object {$_.IsDomainGroup -ne $true} |&#xD;&#xA;select -Unique loginname |&#xD;&#xA;Measure-Object |&#xD;&#xA;select Count" />
+  <Code Content="(Get-SPSite -Limit All | &#xD;&#xA;Get-SPWeb -Limit All | &#xD;&#xA;select -ExpandProperty SiteUsers | &#xD;&#xA;?{$_.IsDomainGroup -ne $true} | &#xD;&#xA;select -Unique LoginName).count" />
+  <Code Content="(Get-SPSite -Limit All | &#xD;&#xA;select -ExpandProperty AllWebs | &#xD;&#xA;select -ExpandProperty AllUsers | &#xD;&#xA;?{$_.IsDomainGroup -ne $true} | &#xD;&#xA;select -Unique LoginName).count" />
+  <Code Content="(Get-SPUser -Web &lt;url&gt; -Limit ALL).count" />
+  <Code Content="Get-SPUser -Web &lt;url&gt; -Limit ALL | Where-Object {$_.IsDomainGroup -ne $true}" />
+  <Code Content="Get-SPUser -Web &lt;url&gt; -Limit ALL | Where-Object {$_.IsDomainGroup -ne $true} | Measure-Object | select Count" />
+  <Code Content="Get-SPSite -Limit ALL |&#xD;&#xA;Get-SPWeb -Limit ALL |&#xD;&#xA;%{Get-SPUser -Web $_.Url -Limit ALL} |&#xD;&#xA;Where-Object {$_.IsDomainGroup -ne $true} |&#xD;&#xA;Measure-Object |&#xD;&#xA;select Count" />
+  <Code Content="Get-SPSite -Limit ALL |&#xD;&#xA;Get-SPWeb -Limit ALL |&#xD;&#xA;%{Get-SPUser -Web $_.Url -Limit ALL} |&#xD;&#xA;Where-Object {$_.IsDomainGroup -ne $true} |&#xD;&#xA;select -Unique loginname |&#xD;&#xA;Measure-Object |&#xD;&#xA;select Count" />
+  <Code Content="(Get-SPSite -Limit All | &#xD;&#xA;Get-SPWeb -Limit All | &#xD;&#xA;select -ExpandProperty SiteUsers | &#xD;&#xA;?{$_.IsDomainGroup -ne $true} | &#xD;&#xA;select -Unique LoginName).count" />
+  <Code Content="(Get-SPSite -Limit All | &#xD;&#xA;select -ExpandProperty AllWebs | &#xD;&#xA;select -ExpandProperty AllUsers | &#xD;&#xA;?{$_.IsDomainGroup -ne $true} | &#xD;&#xA;select -Unique LoginName).count" />
+</CodeSnippets>

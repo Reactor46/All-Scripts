@@ -1,0 +1,17 @@
+PSConfig.exe -cmd upgrade -inplace b2b -wait
+PSConfig.exe -cmd upgrade -inplace b2b -force -cmd applicationcontent -install -cmd installfeatures
+
+Upgrade Problems and Possible Resolutions:
+
+#1) ***An update conflict has occurred***
+
+Elevated CMD prompt (SP2013 PowerShell Admin) Run:
+stsadm -o setproperty -pn command-line-upgrade-running -pv No
+Then:
+psconfig -cmd -upgrade inplace b2b -force 
+Or:
+PSConfig.exe -cmd upgrade -inplace b2b -force -cmd applicationcontent -install -cmd installfeatures
+Or:
+PSConfig.exe -cmd upgrade -inplace b2b -wait -force -cmd applicationcontent -install -cmd installfeatures -cmd secureresources 
+
+PSConfig.exe -cmd upgrade -inplace b2b -wait -cmd applicationcontent -install -cmd installfeatures -cmd secureresources -cmd services -install

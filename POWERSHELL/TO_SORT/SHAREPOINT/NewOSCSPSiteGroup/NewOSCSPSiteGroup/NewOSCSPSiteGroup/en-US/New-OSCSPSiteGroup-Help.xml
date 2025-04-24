@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<helpItems xmlns="http:///msh" schema="maml">
+  <command:command xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:maml="http://schemas.microsoft.com/maml/2004/10">
+    <command:details>
+      <command:name>New-OSCSPSiteGroup</command:name>
+      <maml:description>
+        <maml:para>Creates a new SharePoint group.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para></maml:para>
+      </maml:copyright>
+      <command:verb>New</command:verb>
+      <command:noun>OSCSPSiteGroup</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>The New-OSCSPSiteGroup creates a new SharePoint group and sets its member and permissions. </maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-OSCSPSiteGroup</maml:name>
+        <command:parameter globbing="false" variableLength="false" position="1" required="true" pipelineInput="false">
+          <maml:name>SiteUrl</maml:name>
+          <maml:description>
+            <maml:para>Specifies the URL of a SharePoint site, in the form http://server_name/sites/sitename.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="2" required="true" pipelineInput="false">
+          <maml:name>Name</maml:name>
+          <maml:description>
+            <maml:para>Specifies the name of a SharePoint group that will be created.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="3" required="true" pipelineInput="false">
+          <maml:name>Description</maml:name>
+          <maml:description>
+            <maml:para>Specifies the description of this SharePoint group.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="4" required="true" pipelineInput="false">
+          <maml:name>Owner</maml:name>
+          <maml:description>
+            <maml:para>Specifies the owner of this SharePoint group, in the form domain\user.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="5" required="false" pipelineInput="false">
+          <maml:name>Member</maml:name>
+          <maml:description>
+            <maml:para>Specifies the group members that will be added to this SharePoint group.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+        <command:parameter globbing="false" variableLength="false" position="6" required="false" pipelineInput="false">
+          <maml:name>PermissionLevel</maml:name>
+          <maml:description>
+            <maml:para>Specifies the permission level that you want members of this SharePoint group to have on this site.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter globbing="false" variableLength="false" position="1" required="true" pipelineInput="false">
+        <maml:name>SiteURL</maml:name>
+        <maml:description>
+          <maml:para>Specifies the URL of a SharePoint site, in the form http://server_name/sites/sitename.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        <dev:type>
+          <maml:name>string</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="2" required="true" pipelineInput="false">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifies the name of a SharePoint group that will be created.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        <dev:type>
+          <maml:name>string</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="3" required="true" pipelineInput="false">
+        <maml:name>Description</maml:name>
+        <maml:description>
+          <maml:para>Specifies the description of this SharePoint group.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        <dev:type>
+          <maml:name>string</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="4" required="true" pipelineInput="false">
+        <maml:name>Owner</maml:name>
+        <maml:description>
+          <maml:para>Specifies the owner of this SharePoint group, in the form domain\user.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        <dev:type>
+          <maml:name>string</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="5" required="false" pipelineInput="false">
+        <maml:name>Member</maml:name>
+        <maml:description>
+          <maml:para>Specifies the group members that will be added to this SharePoint group.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">string[]</command:parameterValue>
+        <dev:type>
+          <maml:name>string[]</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+      <command:parameter globbing="false" variableLength="false" position="6" required="false" pipelineInput="false">
+        <maml:name>PermissionLevel</maml:name>
+        <maml:description>
+          <maml:para>Specifies the permission level that you want members of this SharePoint group to have on this site.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+        <dev:type>
+          <maml:name>string</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description>
+            <maml:para></maml:para>
+          </maml:description>
+        </dev:type>
+        <dev:defaultValue></dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description></maml:description>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Microsoft.SharePoint.SPGroup</maml:name>
+          <maml:uri></maml:uri>
+          <maml:description></maml:description>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors></command:terminatingErrors>
+    <command:nonTerminatingErrors></command:nonTerminatingErrors>
+    <maml:alertSet>
+      <maml:title>None</maml:title>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>PS C:\&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>New-OSCSPSiteGroup -SiteURL "http://server_name/sites/sitename" -Name "GroupName" -Member "domain\johnd","domain\janed","domain\managers" -Description "description" -Owner "domain\johnd" -PermissionLevel "Read" -Verbose</dev:code>
+        <dev:remarks>
+          <maml:para>Description</maml:para>
+          <maml:para>-----------</maml:para>
+          <maml:para>Creates a new SharePoint group with permission level and add group members (Domain users and domain groups)</maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText></command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>PS C:\&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>New-OSCSPSiteGroup -SiteURL "http://server_name/sites/sitename" -Name "GroupName" -Description "description" -Owner "domain\johnd" -PermissionLevel "Contribute" -Verbose</dev:code>
+        <dev:remarks>
+          <maml:para>Description</maml:para>
+          <maml:para>-----------</maml:para>
+          <maml:para>Creates a new SharePoint group with permission level</maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+          <maml:para></maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText></command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Windows PowerShell Advanced Function</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Microsoft.SharePoint.SPWeb class</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Microsoft.SharePoint.SPRoleAssignment</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+</helpItems>

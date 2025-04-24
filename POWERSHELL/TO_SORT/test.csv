@@ -1,0 +1,207 @@
+Release date,Product,Platform,Impact,Max Severity,Article,Download,Build Number,Details
+"Dec 10, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Low,4530715,Security Update,,CVE-2019-1485
+"Nov 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4523205,Security Update,,CVE-2019-1426
+"Nov 12, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4523205,Security Update,,CVE-2019-1390
+"Nov 12, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4523205,Security Update,,CVE-2019-1429
+"Nov 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Security Feature Bypass,Low,4523205,Security Update,,CVE-2019-1413
+"Nov 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4523205,Security Update,,CVE-2019-1428
+"Nov 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4523205,Security Update,,CVE-2019-1427
+"Oct 8, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Low,4519338,Security Update,,CVE-2019-1371
+"Oct 8, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Spoofing,Important,4519338,Security Update,,CVE-2019-1357
+"Oct 8, 2019",Internet Explorer 11,Windows Server 2019,Spoofing,Low,4519338,Security Update,,CVE-2019-1357
+"Oct 8, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Information Disclosure,Low,4519338,Security Update,,CVE-2019-1356
+"Oct 8, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4519338,Security Update,,CVE-2019-1308
+"Oct 8, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Critical,4519338,Security Update,,CVE-2019-1239
+"Oct 8, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4519338,Security Update,,CVE-2019-1238
+"Oct 8, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Spoofing,Low,4519338,Security Update,,CVE-2019-0608
+"Oct 8, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4519338,Security Update,,CVE-2019-1366
+"Oct 8, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4519338,Security Update,,CVE-2019-1335
+"Oct 8, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4519338,Security Update,,CVE-2019-1307
+"Oct 8, 2019",Internet Explorer 11,Windows Server 2019,Spoofing,Low,4519338,Security Update,,CVE-2019-0608
+"Sep 23, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4519338,Security Update,,CVE-2019-1367
+"Sep 23, 2019",Windows Defender,Windows Server 2019,Elevation of Privilege,Important,,,,CVE-2019-1255
+"Sep 10, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4512578,Security Update,,CVE-2019-1138
+"Sep 10, 2019",Adobe Flash Player,Windows Server 2019,Remote Code Execution,Critical,4516115,Security Update,,ADV190022
+"Sep 10, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4512578,Security Update,,CVE-2019-1300
+"Sep 10, 2019",Microsoft .NET Framework 3.5 AND 4.7.2,Windows Server 2019,Elevation of Privilege,Important,4514601,Security Update,,CVE-2019-1142
+"Sep 10, 2019",Microsoft .NET Framework 3.5 AND 4.8,Windows Server 2019,Elevation of Privilege,Important,4514601,Security Update,,CVE-2019-1142
+"Sep 10, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Information Disclosure,Important,4512578,Security Update,,CVE-2019-1299
+"Sep 10, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4512578,Security Update,,CVE-2019-1237
+"Sep 10, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4512578,Security Update,,CVE-2019-1221
+"Sep 10, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4512578,Security Update,,CVE-2019-1208
+"Sep 10, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4512578,Security Update,,CVE-2019-1298
+"Sep 10, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Security Feature Bypass,Low,4512578,Security Update,,CVE-2019-1220
+"Sep 10, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4512578,Security Update,,CVE-2019-1236
+"Sep 10, 2019",Internet Explorer 11,Windows Server 2019,Security Feature Bypass,Low,4512578,Security Update,,CVE-2019-1220
+"Sep 10, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4512578,Security Update,,CVE-2019-1217
+"Aug 13, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4511553,Security Update,,CVE-2019-1131
+"Aug 13, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4511553,Security Update,,CVE-2019-1195
+"Aug 13, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Low,4511553,Security Update,,CVE-2019-1193
+"Aug 13, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4511553,Security Update,,CVE-2019-1194
+"Aug 13, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Information Disclosure,Low,4511553,Security Update,,CVE-2019-1030
+"Aug 13, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4511553,Security Update,,CVE-2019-1196
+"Aug 13, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Security Feature Bypass,Low,4519338,Security Update,,CVE-2019-1192
+"Aug 13, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4511553,Security Update,,CVE-2019-1139
+"Aug 13, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4511553,Security Update,,CVE-2019-1133
+"Aug 13, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4511553,Security Update,,CVE-2019-1197
+"Aug 13, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Low,4511553,Security Update,,CVE-2019-1193
+"Aug 13, 2019",Internet Explorer 11,Windows Server 2019,Security Feature Bypass,Low,4519338,Security Update,,CVE-2019-1192
+"Aug 13, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4511553,Security Update,,CVE-2019-1141
+"Aug 13, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4511553,Security Update,,CVE-2019-1140
+"Jul 9, 2019",Microsoft .NET Framework 3.5 AND 4.7.2,Windows Server 2019,Remote Code Execution,Critical,4507419,Security Update,,CVE-2019-1113
+"Jul 9, 2019",Microsoft .NET Framework 3.5 AND 4.8,Windows Server 2019,Remote Code Execution,Critical,4507419,Security Update,,CVE-2019-1113
+"Jul 9, 2019",Microsoft .NET Framework 3.5 AND 4.7.2,Windows Server 2019,Denial of Service,Important,4507419,Security Update,,CVE-2019-1083
+"Jul 9, 2019",Microsoft .NET Framework 3.5 AND 4.8,Windows Server 2019,Denial of Service,Important,4507419,Security Update,,CVE-2019-1083
+"Jul 9, 2019",Microsoft .NET Framework 3.5 AND 4.7.2,Windows Server 2019,Elevation of Privilege,Important,4507419,Security Update,,CVE-2019-1006
+"Jul 9, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4507469,Security Update,,CVE-2019-1107
+"Jul 9, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4507469,Security Update,,CVE-2019-1103
+"Jul 9, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4507469,Security Update,,CVE-2019-1059
+"Jul 9, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4507469,Security Update,,CVE-2019-1092
+"Jul 9, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4507469,Security Update,,CVE-2019-1106
+"Jul 9, 2019",Microsoft .NET Framework 3.5 AND 4.8,Windows Server 2019,Elevation of Privilege,Important,4507419,Security Update,,CVE-2019-1006
+"Jul 9, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4507469,Security Update,,CVE-2019-1062
+"Jul 9, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4507469,Security Update,,CVE-2019-1063
+"Jul 9, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4507469,Security Update,,CVE-2019-1001
+"Jul 9, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4507469,Security Update,,CVE-2019-1104
+"Jul 9, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4507469,Security Update,,CVE-2019-1104
+"Jul 9, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4507469,Security Update,,CVE-2019-1056
+"Jul 9, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4507469,Security Update,,CVE-2019-1001
+"Jul 9, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4507469,Security Update,,CVE-2019-1004
+"Jun 11, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4503327,Security Update,,CVE-2019-1055
+"Jun 11, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4503327,Security Update,,CVE-2019-0990
+"Jun 11, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4503327,Security Update,,CVE-2019-0989
+"Jun 11, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4503327,Security Update,,CVE-2019-0992
+"Jun 11, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4503327,Security Update,,CVE-2019-1051
+"Jun 11, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4503327,Security Update,,CVE-2019-1024
+"Jun 11, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4503327,Security Update,,CVE-2019-1038
+"Jun 11, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Information Disclosure,Low,4503327,Security Update,,CVE-2019-1081
+"Jun 11, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4503327,Security Update,,CVE-2019-1003
+"Jun 11, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4503327,Security Update,,CVE-2019-0993
+"Jun 11, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Information Disclosure,Important,4503327,Security Update,,CVE-2019-1023
+"Jun 11, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4503327,Security Update,,CVE-2019-1080
+"Jun 11, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4503327,Security Update,,CVE-2019-0920
+"Jun 11, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4503327,Security Update,,CVE-2019-1038
+"Jun 11, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4503327,Security Update,,CVE-2019-0988
+"Jun 11, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Security Feature Bypass,Low,4503327,Security Update,,CVE-2019-1054
+"Jun 11, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4503327,Security Update,,CVE-2019-1052
+"Jun 11, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Low,4503327,Security Update,,CVE-2019-1005
+"Jun 11, 2019",Internet Explorer 11,Windows Server 2019,Information Disclosure,Low,4503327,Security Update,,CVE-2019-1081
+"Jun 11, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4503327,Security Update,,CVE-2019-0991
+"Jun 11, 2019",Adobe Flash Player,Windows Server 2019,Remote Code Execution,Critical,4503308,Security Update,,ADV190015
+"May 14, 2019",Internet Explorer 11,Windows Server 2019,Spoofing,Low,4494441,Security Update,,CVE-2019-0921
+"May 14, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0884
+"May 14, 2019",Microsoft .NET Framework 4.8,Windows Server 2019,Denial of Service,Important,4499405,Security Update,,CVE-2019-0820
+"May 14, 2019",Microsoft .NET Framework 4.8,Windows Server 2019,Denial of Service,Important,4499405,Security Update,,CVE-2019-0980
+"May 14, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0911
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0937
+"May 14, 2019",Adobe Flash Player,Windows Server 2019,Remote Code Execution,Critical,4497932,Security Update,,ADV190012
+"May 14, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0929
+"May 14, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0918
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0914
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0927
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0926
+"May 14, 2019",Microsoft .NET Framework 4.7.2,Windows Server 2019,Denial of Service,Important,4499405,Security Update,,CVE-2019-0820
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Elevation of Privilege,Low,4494441,Security Update,,CVE-2019-0938
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0925
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0884
+"May 14, 2019",Microsoft .NET Framework 4.8,Windows Server 2019,Denial of Service,Important,4499405,Security Update,,CVE-2019-0981
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0924
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0917
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0915
+"May 14, 2019",Microsoft .NET Framework 3.5,Windows Server 2019,Denial of Service,Important,4499405,Security Update,,CVE-2019-0980
+"May 14, 2019",Internet Explorer 11,Windows Server 2019,Security Feature Bypass,Low,4494441,Security Update,,CVE-2019-0995
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0933
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0922
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0913
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0911
+"May 14, 2019",Microsoft .NET Framework 4.7.2,Windows Server 2019,Denial of Service,Important,4499405,Security Update,,CVE-2019-0864
+"May 14, 2019",Microsoft .NET Framework 3.5,Windows Server 2019,Denial of Service,Important,4499405,Security Update,,CVE-2019-0981
+"May 14, 2019",Microsoft .NET Framework 4.7.2,Windows Server 2019,Denial of Service,Important,4499405,Security Update,,CVE-2019-0981
+"May 14, 2019",Microsoft .NET Framework 4.8,Windows Server 2019,Denial of Service,Important,4499405,Security Update,,CVE-2019-0864
+"May 14, 2019",Internet Explorer 11,Windows Server 2019,Information Disclosure,Low,4494441,Security Update,,CVE-2019-0930
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Low,4494441,Security Update,,CVE-2019-0923
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0916
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0912
+"May 14, 2019",Microsoft .NET Framework 3.5,Windows Server 2019,Denial of Service,Important,4499405,Security Update,,CVE-2019-0864
+"May 14, 2019",Microsoft .NET Framework 3.5,Windows Server 2019,Denial of Service,Important,4499405,Security Update,,CVE-2019-0820
+"May 14, 2019",Microsoft .NET Framework 4.7.2,Windows Server 2019,Denial of Service,Important,4499405,Security Update,,CVE-2019-0980
+"May 14, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0940
+"May 14, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4494441,Security Update,,CVE-2019-0940
+"Apr 9, 2019",Internet Explorer 11,Windows Server 2019,Information Disclosure,Low,4493509,Security Update,,CVE-2019-0835
+"Apr 9, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Low,4493509,Security Update,,CVE-2019-0862
+"Apr 9, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Tampering,Low,4493509,Security Update,,CVE-2019-0764
+"Apr 9, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4493509,Security Update,,CVE-2019-0739
+"Apr 9, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4493509,Security Update,,CVE-2019-0861
+"Apr 9, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Information Disclosure,Low,4493509,Security Update,,CVE-2019-0833
+"Apr 9, 2019",Adobe Flash Player,Windows Server 2019,Remote Code Execution,Critical,4493478,Security Update,,ADV190011
+"Apr 9, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4493509,Security Update,,CVE-2019-0753
+"Apr 9, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4493509,Security Update,,CVE-2019-0812
+"Apr 9, 2019",Internet Explorer 11,Windows Server 2019,Tampering,Low,4493509,Security Update,,CVE-2019-0764
+"Apr 9, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4493509,Security Update,,CVE-2019-0860
+"Apr 9, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4493509,Security Update,,CVE-2019-0829
+"Apr 9, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4493509,Security Update,,CVE-2019-0810
+"Apr 9, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4493509,Security Update,,CVE-2019-0806
+"Apr 9, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Low,4493509,Security Update,,CVE-2019-0752
+"Mar 12, 2019",Internet Explorer 11,Windows Server 2019,Security Feature Bypass,Low,4489899,Security Update,,CVE-2019-0761
+"Mar 12, 2019",Adobe Flash Player,Windows Server 2019,Defense in Depth,Low,4489907,Security Update,,ADV190008
+"Mar 12, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Low,4489899,Security Update,,CVE-2019-0783
+"Mar 12, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Low,4489899,Security Update,,CVE-2019-0780
+"Mar 12, 2019",Internet Explorer 11,Windows Server 2019,Security Feature Bypass,Low,4489899,Security Update,,CVE-2019-0762
+"Mar 12, 2019",Internet Explorer 11,Windows Server 2019,Information Disclosure,Low,4489899,Security Update,,CVE-2019-0746
+"Mar 12, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4489899,Security Update,,CVE-2019-0609
+"Mar 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4489899,Security Update,,CVE-2019-0773
+"Mar 12, 2019",Internet Explorer 11,Windows Server 2019,Security Feature Bypass,Low,4489899,Security Update,,CVE-2019-0768
+"Mar 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4489899,Security Update,,CVE-2019-0769
+"Mar 12, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4489899,Security Update,,CVE-2019-0763
+"Mar 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Security Feature Bypass,Low,4489899,Security Update,,CVE-2019-0762
+"Mar 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Low,4489899,Security Update,,CVE-2019-0678
+"Mar 12, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Critical,4489899,Security Update,,CVE-2019-0667
+"Mar 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Security Feature Bypass,Low,4489899,Security Update,,CVE-2019-0612
+"Mar 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Information Disclosure,Low,4489899,Security Update,,CVE-2019-0611
+"Mar 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4489899,Security Update,,CVE-2019-0609
+"Mar 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Elevation of Privilege,Moderate,4489899,Security Update,,CVE-2019-0592
+"Mar 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Low,4489899,Security Update,,CVE-2019-0780
+"Mar 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4489899,Security Update,,CVE-2019-0771
+"Mar 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Information Disclosure,Low,4489899,Security Update,,CVE-2019-0746
+"Mar 12, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4489899,Security Update,,CVE-2019-0680
+"Mar 12, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4489899,Security Update,,CVE-2019-0666
+"Mar 12, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Important,4489899,Security Update,,CVE-2019-0665
+"Mar 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4489899,Security Update,,CVE-2019-0639
+"Feb 12, 2019",Internet Explorer 11,Windows Server 2019,Information Disclosure,Low,4487044,Security Update,,CVE-2019-0676
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Information Disclosure,Low,4487044,Security Update,,CVE-2019-0648
+"Feb 12, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Moderate,4487044,Security Update,,CVE-2019-0606
+"Feb 12, 2019",Microsoft .NET Framework 4.7.2,Windows Server 2019,Spoofing,Important,4483452,Monthly Rollup,,CVE-2019-0657
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4487044,Security Update,,CVE-2019-0644
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4487044,Security Update,,CVE-2019-0605
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4487044,Security Update,,CVE-2019-0655
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4487044,Security Update,,CVE-2019-0645
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4487044,Security Update,,CVE-2019-0593
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4487044,Security Update,,CVE-2019-0591
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Information Disclosure,Low,4487044,Security Update,,CVE-2019-0658
+"Feb 12, 2019",Microsoft .NET Framework 3.5,Windows Server 2019,Spoofing,Important,4483452,Monthly Rollup,,CVE-2019-0657
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Spoofing,Important,4487044,Security Update,,CVE-2019-0654
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Information Disclosure,Low,4487044,Security Update,,CVE-2019-0643
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4487044,Security Update,,CVE-2019-0642
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Security Feature Bypass,Low,4487044,Security Update,,CVE-2019-0641
+"Feb 12, 2019",Microsoft .NET Framework 3.5,Windows Server 2019,Remote Code Execution,Important,4483452,Monthly Rollup,,CVE-2019-0613
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Low,4487044,Security Update,,CVE-2019-0610
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4487044,Security Update,,CVE-2019-0590
+"Feb 12, 2019",Adobe Flash Player,Windows Server 2019,Information Disclosure,Important,4487038,Security Update,,ADV190003
+"Feb 12, 2019",Internet Explorer 11,Windows Server 2019,Spoofing,Low,4487044,Security Update,,CVE-2019-0654
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4487044,Security Update,,CVE-2019-0652
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4487044,Security Update,,CVE-2019-0651
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4487044,Security Update,,CVE-2019-0650
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Elevation of Privilege,Low,4487044,Security Update,,CVE-2019-0649
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4487044,Security Update,,CVE-2019-0640
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4487044,Security Update,,CVE-2019-0634
+"Feb 12, 2019",Microsoft .NET Framework 4.7.2,Windows Server 2019,Remote Code Execution,Important,4483452,Monthly Rollup,,CVE-2019-0613
+"Feb 12, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4487044,Security Update,,CVE-2019-0607
+"Jan 8, 2019",Adobe Flash Player,Windows Server 2019,,,4480979,Update,,ADV190001
+"Jan 8, 2019",Microsoft .NET Framework 4.7.2,Windows Server 2019,Information Disclosure,Important,4480056,Monthly Rollup,,CVE-2019-0545
+"Jan 8, 2019",Microsoft .NET Framework 3.5,Windows Server 2019,Information Disclosure,Important,4480056,Monthly Rollup,,CVE-2019-0545
+"Jan 8, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4480116,Security Update,,CVE-2019-0539
+"Jan 8, 2019",Internet Explorer 11,Windows Server 2019,Remote Code Execution,Low,4480116,Security Update,,CVE-2019-0541
+"Jan 8, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4480116,Security Update,,CVE-2019-0568
+"Jan 8, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4480116,Security Update,,CVE-2019-0567
+"Jan 8, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Elevation of Privilege,Low,4480116,Security Update,,CVE-2019-0566
+"Jan 8, 2019",Microsoft Edge (EdgeHTML-based),Windows Server 2019,Remote Code Execution,Moderate,4480116,Security Update,,CVE-2019-0565

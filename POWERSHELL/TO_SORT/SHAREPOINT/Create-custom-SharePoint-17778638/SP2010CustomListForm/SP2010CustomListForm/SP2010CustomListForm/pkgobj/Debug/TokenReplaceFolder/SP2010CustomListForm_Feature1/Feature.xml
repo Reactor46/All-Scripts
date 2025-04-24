@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Id="650614ed-396f-4402-9847-a9e9297fb729" Scope="Web" Title="SP2010CustomListForm Activate">
+  <ElementManifests>
+    <ElementManifest Location="MyContentType\Elements.xml" />
+    <ElementManifest Location="ListInstance1\Elements.xml" />
+    <ElementManifest Location="MyListDef\Elements.xml" />
+    <ElementFile Location="MyListDef\Schema.xml" />
+  </ElementManifests>
+</Feature>

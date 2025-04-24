@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>SharePoint: Get SPField details for SharePoint Lists using PowerShell</title>        
+        <meta name="description" content="I have seen multiple posts on different forums to get details of list columns (like field type) for all SharePoint Lists or any specific list.Attached script will only show the columns defined in list Views. But with a litlle modification in code you can get details of all fields" />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<p>I have seen multiple posts on different forums to get details of list columns (like field type) for all SharePoint Lists or any specific list.</p>
+<p>Attached script will only show the columns defined in list Views. But with a litlle modification in code you can get details of all fields associated with a SharePoint List.</p>
+<p>There are two functions in attached powershell script:</p>
+<p><span style="text-decoration:underline"><strong>1 - GetSPFieldDetailsForAllLists</strong></span></p>
+<p>This function takes one parameter (Site URL), and will print all fields in SharePoint site associated with list views.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">function GetSPFieldDetailsForAllLists($SiteCollectionURL)
+{
+    $site = new-object Microsoft.SharePoint.SPSite($SiteCollectionURL) #Change site URL#
+    $web = $site.openweb() 
+    
+    foreach ($list in $web.Lists) #Get all list in web
+    {
+        foreach ($view in $list.Views) #Get all views in lists
+        {
+            $spView = $web.GetViewFromUrl($view.Url) #Grab views URL
+            Write-Host &quot;List Name: &quot; $list.Title  ##Print List title
+            Write-Host &quot;------------------------------------------------------&quot;
+            Write-Host &quot;Field Name | Field Title &quot; -ForegroundColor DarkGreen
+            Write-Host &quot;------------------------------------------------------&quot;
+            foreach ($spField in $spView.ViewFields) #Loop through all view URLs and get Fields (columns)
+            {
+                foreach ($field in $list.Fields) #Get all fields in lists
+                {
+                    if($spField -eq $field.Title) #if field in lists equals field in views
+                        {
+                            Write-Host $spField &quot; | &quot; $field.Type -ForegroundColor Green #Write out each field (column)                        
+                        }
+                }
+            }
+            Write-Host &quot;------------------------------------------------------&quot;
+            Write-Host &quot; &quot;
+        }
+    }
+    $web.Dispose()
+    $site.Dispose()
+}</pre>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__keyword">function</span>&nbsp;GetSPFieldDetailsForAllLists(<span class="powerShell__variable">$SiteCollectionURL</span>)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$site</span>&nbsp;=&nbsp;<span class="powerShell__cmdlets">new-object</span>&nbsp;Microsoft.SharePoint.SPSite(<span class="powerShell__variable">$SiteCollectionURL</span>)&nbsp;<span class="powerShell__com">#Change&nbsp;site&nbsp;URL#</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$web</span>&nbsp;=&nbsp;<span class="powerShell__variable">$site</span>.openweb()&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>&nbsp;(<span class="powerShell__variable">$list</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$web</span>.Lists)&nbsp;<span class="powerShell__com">#Get&nbsp;all&nbsp;list&nbsp;in&nbsp;web</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>&nbsp;(<span class="powerShell__variable">$view</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$list</span>.Views)&nbsp;<span class="powerShell__com">#Get&nbsp;all&nbsp;views&nbsp;in&nbsp;lists</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spView</span>&nbsp;=&nbsp;<span class="powerShell__variable">$web</span>.GetViewFromUrl(<span class="powerShell__variable">$view</span>.Url)&nbsp;<span class="powerShell__com">#Grab&nbsp;views&nbsp;URL</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;List&nbsp;Name:&nbsp;&quot;</span>&nbsp;<span class="powerShell__variable">$list</span>.Title&nbsp;&nbsp;<span class="powerShell__com">##Print&nbsp;List&nbsp;title</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;------------------------------------------------------&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;Field&nbsp;Name&nbsp;|&nbsp;Field&nbsp;Title&nbsp;&quot;</span>&nbsp;<span class="powerShell__operator">-</span>ForegroundColor&nbsp;DarkGreen&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;------------------------------------------------------&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>&nbsp;(<span class="powerShell__variable">$spField</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$spView</span>.ViewFields)&nbsp;<span class="powerShell__com">#Loop&nbsp;through&nbsp;all&nbsp;view&nbsp;URLs&nbsp;and&nbsp;get&nbsp;Fields&nbsp;(columns)</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>&nbsp;(<span class="powerShell__variable">$field</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$list</span>.Fields)&nbsp;<span class="powerShell__com">#Get&nbsp;all&nbsp;fields&nbsp;in&nbsp;lists</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$spField</span>&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$field</span>.Title)&nbsp;<span class="powerShell__com">#if&nbsp;field&nbsp;in&nbsp;lists&nbsp;equals&nbsp;field&nbsp;in&nbsp;views</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__variable">$spField</span>&nbsp;<span class="powerShell__string">&quot;&nbsp;|&nbsp;&quot;</span>&nbsp;<span class="powerShell__variable">$field</span>.<span class="powerShell__alias">Type</span>&nbsp;<span class="powerShell__operator">-</span>ForegroundColor&nbsp;Green&nbsp;<span class="powerShell__com">#Write&nbsp;out&nbsp;each&nbsp;field&nbsp;(column)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;------------------------------------------------------&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;&nbsp;&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$web</span>.Dispose()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$site</span>.Dispose()&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;<strong>Function Call</strong>: Function can be called as
+<em>GetSPFieldDetailsForAllLists http://&lt;siteURL&gt;</em></div>
+<p>&nbsp;</p>
+<p><span style="text-decoration:underline"><strong>2 - GetSPFieldDetailsForList</strong></span></p>
+<p>This function takes two parameter (Site URL &amp; List name). It's functionality is same as of
+<em>GetSPFieldDetailsForAllLists </em>but it will print field details of only single list which is passed as paramenter.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">function GetSPFieldDetailsForList($SiteCollectionURL, $listName)
+{
+    $site = new-object Microsoft.SharePoint.SPSite($SiteCollectionURL) #Change site URL#
+    $web = $site.openweb() 
+    $list = $web.Lists[$listName] #Get Field Details for specified list
+    
+    foreach ($view in $list.Views) #Get all views in lists
+    {
+        $spView = $web.GetViewFromUrl($view.Url) #Grab views URL
+        Write-Host &quot;List Name: &quot; $list.Title  ##Print List title
+        Write-Host &quot;------------------------------------------------------&quot;
+        Write-Host &quot;Field Name | Field Title &quot;
+        Write-Host &quot;------------------------------------------------------&quot;
+        foreach ($spField in $spView.ViewFields) #Loop through all view URLs and get Fields (columns)
+        {
+            foreach ($field in $list.Fields) #Get all fields in lists
+            {
+                if($spField -eq $field.Title) #if field in lists equals field in views
+                {
+                    Write-Host $spField &quot; | &quot; $field.Type -ForegroundColor Green #Write out each field (column)                        
+                }
+            }
+        }
+        Write-Host &quot;------------------------------------------------------&quot;
+        Write-Host &quot; &quot;
+    }    
+    $web.Dispose()
+    $site.Dispose()
+}</pre>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__keyword">function</span>&nbsp;GetSPFieldDetailsForList(<span class="powerShell__variable">$SiteCollectionURL</span>,&nbsp;<span class="powerShell__variable">$listName</span>)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$site</span>&nbsp;=&nbsp;<span class="powerShell__cmdlets">new-object</span>&nbsp;Microsoft.SharePoint.SPSite(<span class="powerShell__variable">$SiteCollectionURL</span>)&nbsp;<span class="powerShell__com">#Change&nbsp;site&nbsp;URL#</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$web</span>&nbsp;=&nbsp;<span class="powerShell__variable">$site</span>.openweb()&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$list</span>&nbsp;=&nbsp;<span class="powerShell__variable">$web</span>.Lists[<span class="powerShell__variable">$listName</span>]&nbsp;<span class="powerShell__com">#Get&nbsp;Field&nbsp;Details&nbsp;for&nbsp;specified&nbsp;list</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>&nbsp;(<span class="powerShell__variable">$view</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$list</span>.Views)&nbsp;<span class="powerShell__com">#Get&nbsp;all&nbsp;views&nbsp;in&nbsp;lists</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spView</span>&nbsp;=&nbsp;<span class="powerShell__variable">$web</span>.GetViewFromUrl(<span class="powerShell__variable">$view</span>.Url)&nbsp;<span class="powerShell__com">#Grab&nbsp;views&nbsp;URL</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;List&nbsp;Name:&nbsp;&quot;</span>&nbsp;<span class="powerShell__variable">$list</span>.Title&nbsp;&nbsp;<span class="powerShell__com">##Print&nbsp;List&nbsp;title</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;------------------------------------------------------&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;Field&nbsp;Name&nbsp;|&nbsp;Field&nbsp;Title&nbsp;&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;------------------------------------------------------&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>&nbsp;(<span class="powerShell__variable">$spField</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$spView</span>.ViewFields)&nbsp;<span class="powerShell__com">#Loop&nbsp;through&nbsp;all&nbsp;view&nbsp;URLs&nbsp;and&nbsp;get&nbsp;Fields&nbsp;(columns)</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>&nbsp;(<span class="powerShell__variable">$field</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$list</span>.Fields)&nbsp;<span class="powerShell__com">#Get&nbsp;all&nbsp;fields&nbsp;in&nbsp;lists</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$spField</span>&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$field</span>.Title)&nbsp;<span class="powerShell__com">#if&nbsp;field&nbsp;in&nbsp;lists&nbsp;equals&nbsp;field&nbsp;in&nbsp;views</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__variable">$spField</span>&nbsp;<span class="powerShell__string">&quot;&nbsp;|&nbsp;&quot;</span>&nbsp;<span class="powerShell__variable">$field</span>.<span class="powerShell__alias">Type</span>&nbsp;<span class="powerShell__operator">-</span>ForegroundColor&nbsp;Green&nbsp;<span class="powerShell__com">#Write&nbsp;out&nbsp;each&nbsp;field&nbsp;(column)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;------------------------------------------------------&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;&nbsp;&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$web</span>.Dispose()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$site</span>.Dispose()&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"><strong>Function Call</strong>: Function can be called as
+<em>GetSPFieldDetailsForList http://&lt;siteURL&gt; &lt;List Name&gt;</em></div>
+<div class="endscriptcode"></div>
+<div class="endscriptcode"></div>
+<div class="endscriptcode"><span style="text-decoration:underline"><strong>Get Details of all fields associated with SharePoint List:</strong></span></div>
+<div class="endscriptcode">With a little modification in above code, you can get details of all fields associated with List. In above code snippet I have used fields for List view only. For fetching all list fields, you will need to do below modification.</div>
+<div class="endscriptcode"></div>
+<div class="endscriptcode">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">$site = new-object Microsoft.SharePoint.SPSite(&quot;http://&lt;Site URL&gt;&quot;) #Change site URL#
+    $web = $site.openweb() 
+    $list = $web.Lists[&quot;&lt;List Name&gt;&quot;] #Get Field Details for specified list
+    
+    Write-Host &quot;List Name: &quot; $list.Title  ##Print List title
+    Write-Host &quot;------------------------------------------------------&quot;
+    Write-Host &quot;Field Name | Field Title &quot;
+    Write-Host &quot;------------------------------------------------------&quot;        
+    
+    foreach ($field in $list.Fields) #Get all views in lists
+    {
+        Write-Host $field.Title &quot; | &quot; $field.Type -ForegroundColor Green #Write out each field (column)                        
+        
+    }   
+    Write-Host &quot;------------------------------------------------------&quot;
+    Write-Host &quot; &quot; 
+
+    $web.Dispose()
+    $site.Dispose()</pre>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__variable">$site</span>&nbsp;=&nbsp;<span class="powerShell__cmdlets">new-object</span>&nbsp;Microsoft.SharePoint.SPSite(<span class="powerShell__string">&quot;http://&lt;Site&nbsp;URL&gt;&quot;</span>)&nbsp;<span class="powerShell__com">#Change&nbsp;site&nbsp;URL#</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$web</span>&nbsp;=&nbsp;<span class="powerShell__variable">$site</span>.openweb()&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$list</span>&nbsp;=&nbsp;<span class="powerShell__variable">$web</span>.Lists[<span class="powerShell__string">&quot;&lt;List&nbsp;Name&gt;&quot;</span>]&nbsp;<span class="powerShell__com">#Get&nbsp;Field&nbsp;Details&nbsp;for&nbsp;specified&nbsp;list</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;List&nbsp;Name:&nbsp;&quot;</span>&nbsp;<span class="powerShell__variable">$list</span>.Title&nbsp;&nbsp;<span class="powerShell__com">##Print&nbsp;List&nbsp;title</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;------------------------------------------------------&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;Field&nbsp;Name&nbsp;|&nbsp;Field&nbsp;Title&nbsp;&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;------------------------------------------------------&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>&nbsp;(<span class="powerShell__variable">$field</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$list</span>.Fields)&nbsp;<span class="powerShell__com">#Get&nbsp;all&nbsp;views&nbsp;in&nbsp;lists</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__variable">$field</span>.Title&nbsp;<span class="powerShell__string">&quot;&nbsp;|&nbsp;&quot;</span>&nbsp;<span class="powerShell__variable">$field</span>.<span class="powerShell__alias">Type</span>&nbsp;<span class="powerShell__operator">-</span>ForegroundColor&nbsp;Green&nbsp;<span class="powerShell__com">#Write&nbsp;out&nbsp;each&nbsp;field&nbsp;(column)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;------------------------------------------------------&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;&nbsp;&quot;</span>&nbsp;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$web</span>.Dispose()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$site</span>.Dispose()</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">Do update me for any further detail.</div>
+</div>
+
+        </div>
+    </body>
+</html>

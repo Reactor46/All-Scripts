@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>SharePoint Form Library - Relink Documents mode - Select All feature</title>        
+        <meta name="description" content="In a s SharePoint form library, there is occasionally a need to correct linkage between the forms in the library, and the current version of the template or content type.&#160; From the user interface, this is accomplished through the &#39;Relink Documents&#39; view on a form library.&#160; That v" />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<p>In a s SharePoint form library, there is occasionally a need to correct linkage between the forms in the library, and the current version of the template or content type.&nbsp; From the user interface, this is accomplished through the 'Relink Documents'
+ view on a form library.&nbsp; That view can be filtered to a subset of forms by content type or template link.&nbsp; But once the subset is found there is no easy way to apply the 'Relink Documents' to all items in the list.&nbsp; One has to manually check
+ each item, then click the 'Relink Documents' button at the top of the list view.</p>
+<p>This script does the 'Select All' part, checking the box for any item that is showing after filtering is applied.</p>
+<p>It can be ran through the IE Developer Tools, or a similar feature for your browser, or deployed as a bookmarklet on your computer.</p>
+<p>To run the script manually:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">var form = document.aspnetForm;
+for (var i=0; i&lt;form.elements.length; i&#43;&#43;){
+if (form.elements[i].type == &quot;checkbox&quot;){
+if (form.elements[i].id == 'chkRepair'){
+form.elements[i].checked = true;}}}</pre>
+<div class="preview">
+<pre class="js"><span class="js__statement">var</span>&nbsp;form&nbsp;=&nbsp;document.aspnetForm;&nbsp;
+<span class="js__statement">for</span>&nbsp;(<span class="js__statement">var</span>&nbsp;i=<span class="js__num">0</span>;&nbsp;i&lt;form.elements.length;&nbsp;i&#43;&#43;)<span class="js__brace">{</span>&nbsp;
+<span class="js__statement">if</span>&nbsp;(form.elements[i].type&nbsp;==&nbsp;<span class="js__string">&quot;checkbox&quot;</span>)<span class="js__brace">{</span>&nbsp;
+<span class="js__statement">if</span>&nbsp;(form.elements[i].id&nbsp;==&nbsp;<span class="js__string">'chkRepair'</span>)<span class="js__brace">{</span>&nbsp;
+form.elements[i].checked&nbsp;=&nbsp;true;<span class="js__brace">}</span><span class="js__brace">}</span><span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>To deploy as a bookmarklet:</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">javascript:(function(){var form=document.aspnetForm;for(var i=0;i&lt;form.elements.length;i&#43;&#43;){if(form.elements[i].type==&quot;checkbox&quot;){if(form.elements[i].id=='chkRepair'){form.elements[i].checked=true;}}}})();</pre>
+<div class="preview">
+<pre class="js">javascript:(<span class="js__operator">function</span>()<span class="js__brace">{</span><span class="js__statement">var</span>&nbsp;form=document.aspnetForm;<span class="js__statement">for</span>(<span class="js__statement">var</span>&nbsp;i=<span class="js__num">0</span>;i&lt;form.elements.length;i&#43;&#43;)<span class="js__brace">{</span><span class="js__statement">if</span>(form.elements[i].type==<span class="js__string">&quot;checkbox&quot;</span>)<span class="js__brace">{</span><span class="js__statement">if</span>(form.elements[i].id==<span class="js__string">'chkRepair'</span>)<span class="js__brace">{</span>form.elements[i].checked=true;<span class="js__brace">}</span><span class="js__brace">}</span><span class="js__brace">}</span><span class="js__brace">}</span>)();</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+
+        </div>
+    </body>
+</html>

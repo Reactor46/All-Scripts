@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Get SharePoint Web Analytics using PowerShell Programmatically</title>        
+        <meta name="description" content="&#160;PowerShell example on how to get SharePoint Web Analytics Data" />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">#-------------------------------------------------------------------------------------------
+# Name:			Get-WASummaryReport
+# Description: 	This script will get the Web Analytics Summary Report
+# Usage:		Run the function with the required parameters
+#				Context can be SPWebApplication, SPSite or SPWeb
+# By: 			Ivan Josipovic, softlanding.ca
+#-------------------------------------------------------------------------------------------
+
+Function Get-WASummaryReport($Context,$DaysToGoBack){
+	Add-PSSnapin Microsoft.SharePoint.PowerShell -ea 0;
+	[System.Reflection.Assembly]::Load(&quot;Microsoft.Office.Server.WebAnalytics, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c&quot;) | Out-Null;
+	[System.Reflection.Assembly]::Load(&quot;Microsoft.Office.Server.WebAnalytics.UI, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c&quot;) | Out-Null;
+	
+	Function DateTimeToDateId ([System.DateTime]$dt){
+		if (![System.String]::IsNullOrEmpty($dt.ToString())){
+			return [System.Int32]::Parse($dt.ToString(&quot;yyyyMMdd&quot;, [System.Globalization.CultureInfo]::InvariantCulture), [System.Globalization.CultureInfo]::InvariantCulture);
+		}else{
+			return 0;
+		}
+	}
+	
+	#Not used in this report but other report types require it.
+	Function GetSortOrder([String]$sortColumn,[Microsoft.Office.Server.WebAnalytics.ProcessedDataRetriever.OrderType]$order){
+		$SortOrders = New-Object System.Collections.Generic.List[Microsoft.Office.Server.WebAnalytics.ProcessedDataRetriever.SortOrder];
+		$sortOrders.Add((New-Object Microsoft.Office.Server.WebAnalytics.ProcessedDataRetriever.SortOrder($sortColumn, $order)));
+		return ,$SortOrders
+	}
+	
+	$AggregationContext = [Microsoft.Office.Server.WebAnalytics.ProcessedDataRetriever.AggregationContext]::GetContext($Context);
+	if (!$?){throw &quot;Cant get the Aggregation Context&quot;;}
+	
+	$viewParamsList = New-Object System.Collections.Generic.List[Microsoft.Office.Server.WebAnalytics.ProcessedDataRetriever.ViewParameterValue]
+	$viewParamsList.Add((New-Object Microsoft.Office.Server.WebAnalytics.ProcessedDataRetriever.ViewParameterValue(&quot;PreviousStartDateId&quot;, (DateTimeToDateId([System.DateTime]::UtcNow.AddDays(-($DaysToGoBack * 2)))))));
+	$viewParamsList.Add((New-Object Microsoft.Office.Server.WebAnalytics.ProcessedDataRetriever.ViewParameterValue(&quot;CurrentStartDateId&quot;, (DateTimeToDateId([System.DateTime]::UtcNow.AddDays(-($DaysToGoBack)))))));
+	$viewParamsList.Add((New-Object Microsoft.Office.Server.WebAnalytics.ProcessedDataRetriever.ViewParameterValue(&quot;Duration&quot;, $DaysToGoBack)));
+
+	$dataPacket = [Microsoft.Office.Server.WebAnalytics.Reporting.FrontEndDataRetriever]::QueryData($AggregationContext, $null, &quot;fn_WA_GetSummary&quot;, $viewParamsList, $null, $null, 1, 25000, $False);
+	if (!$?){throw &quot;Unable to get the Data. Try running the script as the Farm Account. If that doesnt work, make sure that the Web Analytics Service Application is connected to the Web Application and that the Site Web Analytics reports work through the browser.&quot;;}
+	
+	return $dataPacket.DataTable
+}
+
+$WebApp = Get-SPWebApplication http://sp.client.com
+$Site = Get-SPSite http://sp.client.com
+$Web = Get-SPWeb http://sp.client.com
+
+Get-WASummaryReport -Context $WebApp -DaysToGoBack 30 
+Get-WASummaryReport -Context $Site -DaysToGoBack 30
+Get-WASummaryReport -Context $Web -DaysToGoBack 30
+</pre>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__com">#-------------------------------------------------------------------------------------------</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get-WASummaryReport</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;script&nbsp;will&nbsp;get&nbsp;the&nbsp;Web&nbsp;Analytics&nbsp;Summary&nbsp;Report</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Usage:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Run&nbsp;the&nbsp;function&nbsp;with&nbsp;the&nbsp;required&nbsp;parameters</span>&nbsp;
+<span class="powerShell__com">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Context&nbsp;can&nbsp;be&nbsp;SPWebApplication,&nbsp;SPSite&nbsp;or&nbsp;SPWeb</span>&nbsp;
+<span class="powerShell__com">#&nbsp;By:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ivan&nbsp;Josipovic,&nbsp;softlanding.ca</span>&nbsp;
+<span class="powerShell__com">#-------------------------------------------------------------------------------------------</span>&nbsp;
+&nbsp;
+<span class="powerShell__keyword">Function</span>&nbsp;Get<span class="powerShell__operator">-</span>WASummaryReport(<span class="powerShell__variable">$Context</span>,<span class="powerShell__variable">$DaysToGoBack</span>){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__cmdlets">Add-PSSnapin</span>&nbsp;Microsoft.SharePoint.PowerShell&nbsp;<span class="powerShell__operator">-</span>ea&nbsp;0;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[System.Reflection.Assembly]::Load(<span class="powerShell__string">&quot;Microsoft.Office.Server.WebAnalytics,&nbsp;Version=14.0.0.0,&nbsp;Culture=neutral,&nbsp;PublicKeyToken=71e9bce111e9429c&quot;</span>)&nbsp;<span class="powerShell__operator">|</span>&nbsp;<span class="powerShell__cmdlets">Out-Null</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[System.Reflection.Assembly]::Load(<span class="powerShell__string">&quot;Microsoft.Office.Server.WebAnalytics.UI,&nbsp;Version=14.0.0.0,&nbsp;Culture=neutral,&nbsp;PublicKeyToken=71e9bce111e9429c&quot;</span>)&nbsp;<span class="powerShell__operator">|</span>&nbsp;<span class="powerShell__cmdlets">Out-Null</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">Function</span>&nbsp;DateTimeToDateId&nbsp;([System.DateTime]<span class="powerShell__variable">$dt</span>){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__operator">!</span>[System.String]::IsNullOrEmpty(<span class="powerShell__variable">$dt</span>.ToString())){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">return</span>&nbsp;[System.Int32]::Parse(<span class="powerShell__variable">$dt</span>.ToString(<span class="powerShell__string">&quot;yyyyMMdd&quot;</span>,&nbsp;[System.Globalization.CultureInfo]::InvariantCulture),&nbsp;[System.Globalization.CultureInfo]::InvariantCulture);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<span class="powerShell__keyword">else</span>{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">return</span>&nbsp;0;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Not&nbsp;used&nbsp;in&nbsp;this&nbsp;report&nbsp;but&nbsp;other&nbsp;report&nbsp;types&nbsp;require&nbsp;it.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">Function</span>&nbsp;GetSortOrder([String]<span class="powerShell__variable">$sortColumn</span>,[Microsoft.Office.Server.WebAnalytics.ProcessedDataRetriever.OrderType]<span class="powerShell__variable">$order</span>){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SortOrders</span>&nbsp;=&nbsp;<span class="powerShell__cmdlets">New-Object</span>&nbsp;System.Collections.Generic.List[Microsoft.Office.Server.WebAnalytics.ProcessedDataRetriever.SortOrder];&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$sortOrders</span>.Add((<span class="powerShell__cmdlets">New-Object</span>&nbsp;Microsoft.Office.Server.WebAnalytics.ProcessedDataRetriever.SortOrder(<span class="powerShell__variable">$sortColumn</span>,&nbsp;<span class="powerShell__variable">$order</span>)));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">return</span>&nbsp;,<span class="powerShell__variable">$SortOrders</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$AggregationContext</span>&nbsp;=&nbsp;[Microsoft.Office.Server.WebAnalytics.ProcessedDataRetriever.AggregationContext]::GetContext(<span class="powerShell__variable">$Context</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__operator">!</span><span class="powerShell__variable">$</span>?){<span class="powerShell__keyword">throw</span>&nbsp;<span class="powerShell__string">&quot;Cant&nbsp;get&nbsp;the&nbsp;Aggregation&nbsp;Context&quot;</span>;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$viewParamsList</span>&nbsp;=&nbsp;<span class="powerShell__cmdlets">New-Object</span>&nbsp;System.Collections.Generic.List[Microsoft.Office.Server.WebAnalytics.ProcessedDataRetriever.ViewParameterValue]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$viewParamsList</span>.Add((<span class="powerShell__cmdlets">New-Object</span>&nbsp;Microsoft.Office.Server.WebAnalytics.ProcessedDataRetriever.ViewParameterValue(<span class="powerShell__string">&quot;PreviousStartDateId&quot;</span>,&nbsp;(DateTimeToDateId([System.DateTime]::UtcNow.AddDays(<span class="powerShell__operator">-</span>(<span class="powerShell__variable">$DaysToGoBack</span>&nbsp;<span class="powerShell__operator">*</span>&nbsp;2)))))));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$viewParamsList</span>.Add((<span class="powerShell__cmdlets">New-Object</span>&nbsp;Microsoft.Office.Server.WebAnalytics.ProcessedDataRetriever.ViewParameterValue(<span class="powerShell__string">&quot;CurrentStartDateId&quot;</span>,&nbsp;(DateTimeToDateId([System.DateTime]::UtcNow.AddDays(<span class="powerShell__operator">-</span>(<span class="powerShell__variable">$DaysToGoBack</span>)))))));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$viewParamsList</span>.Add((<span class="powerShell__cmdlets">New-Object</span>&nbsp;Microsoft.Office.Server.WebAnalytics.ProcessedDataRetriever.ViewParameterValue(<span class="powerShell__string">&quot;Duration&quot;</span>,&nbsp;<span class="powerShell__variable">$DaysToGoBack</span>)));&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$dataPacket</span>&nbsp;=&nbsp;[Microsoft.Office.Server.WebAnalytics.Reporting.FrontEndDataRetriever]::QueryData(<span class="powerShell__variable">$AggregationContext</span>,&nbsp;<span class="powerShell__variable">$null</span>,&nbsp;<span class="powerShell__string">&quot;fn_WA_GetSummary&quot;</span>,&nbsp;<span class="powerShell__variable">$viewParamsList</span>,&nbsp;<span class="powerShell__variable">$null</span>,&nbsp;<span class="powerShell__variable">$null</span>,&nbsp;1,&nbsp;25000,&nbsp;<span class="powerShell__variable">$False</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__operator">!</span><span class="powerShell__variable">$</span>?){<span class="powerShell__keyword">throw</span>&nbsp;<span class="powerShell__string">&quot;Unable&nbsp;to&nbsp;get&nbsp;the&nbsp;Data.&nbsp;Try&nbsp;running&nbsp;the&nbsp;script&nbsp;as&nbsp;the&nbsp;Farm&nbsp;Account.&nbsp;If&nbsp;that&nbsp;doesnt&nbsp;work,&nbsp;make&nbsp;sure&nbsp;that&nbsp;the&nbsp;Web&nbsp;Analytics&nbsp;Service&nbsp;Application&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;Web&nbsp;Application&nbsp;and&nbsp;that&nbsp;the&nbsp;Site&nbsp;Web&nbsp;Analytics&nbsp;reports&nbsp;work&nbsp;through&nbsp;the&nbsp;browser.&quot;</span>;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">return</span>&nbsp;<span class="powerShell__variable">$dataPacket</span>.DataTable&nbsp;
+}&nbsp;
+&nbsp;
+<span class="powerShell__variable">$WebApp</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPWebApplication&nbsp;http:<span class="powerShell__operator">/</span><span class="powerShell__operator">/</span><span class="powerShell__alias">sp</span>.client.com&nbsp;
+<span class="powerShell__variable">$Site</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPSite&nbsp;http:<span class="powerShell__operator">/</span><span class="powerShell__operator">/</span><span class="powerShell__alias">sp</span>.client.com&nbsp;
+<span class="powerShell__variable">$Web</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPWeb&nbsp;http:<span class="powerShell__operator">/</span><span class="powerShell__operator">/</span><span class="powerShell__alias">sp</span>.client.com&nbsp;
+&nbsp;
+Get<span class="powerShell__operator">-</span>WASummaryReport&nbsp;<span class="powerShell__operator">-</span>Context&nbsp;<span class="powerShell__variable">$WebApp</span>&nbsp;<span class="powerShell__operator">-</span>DaysToGoBack&nbsp;30&nbsp;&nbsp;
+Get<span class="powerShell__operator">-</span>WASummaryReport&nbsp;<span class="powerShell__operator">-</span>Context&nbsp;<span class="powerShell__variable">$Site</span>&nbsp;<span class="powerShell__operator">-</span>DaysToGoBack&nbsp;30&nbsp;
+Get<span class="powerShell__operator">-</span>WASummaryReport&nbsp;<span class="powerShell__operator">-</span>Context&nbsp;<span class="powerShell__variable">$Web</span>&nbsp;<span class="powerShell__operator">-</span>DaysToGoBack&nbsp;30&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;SharePoint 2010 provides a Web Analytics feature which presents a number of useful metrics.&nbsp;However, they do not provide an easy way to get this data using PowerShell. Aside from not having any Out of the Box PowerShell commandlets the API is
+ completely undocumented.</p>
+<p>I have provided this script which will return the fn_WA_GetSummary report for a WebApplication,SiteCollection or Site.<br>
+<br>
+</p>
+<p>More info on other report types can be found below:<br>
+http://msdn.microsoft.com/en-ca/library/ff385583(v=office.12).aspx<br>
+http://msdn.microsoft.com/en-us/library/ff385276(office.12).aspx</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div class="endscriptcode"></div>
+
+        </div>
+    </body>
+</html>

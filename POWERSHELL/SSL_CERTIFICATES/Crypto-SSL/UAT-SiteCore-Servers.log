@@ -1,0 +1,41 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20240209153828
+Username: KELSEY-SEYBOLD\a24696
+RunAs User: KELSEY-SEYBOLD\a24696
+Configuration Name: 
+Machine: FBV-WBDV20-D01 (Microsoft Windows NT 10.0.17763.0)
+Host Application: C:\Windows\system32\WindowsPowerShell\v1.0\PowerShell_ISE.exe
+Process ID: 5040
+PSVersion: 5.1.17763.5328
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.5328
+BuildVersion: 10.0.17763.5328
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName                                                                                           PSComputerName
+-------  ------    -----      -----     ------     --  -- -----------                                                                                           --------------
+     19       3      692       1244       0.05   4756   0 reg                                                                                                   FBV-SCRCM10-T01
+     19       3      688       1240       0.03  10820   0 reg                                                                                                   FBV-SCRCD10-T01
+     19       3      684       1244       0.03  10160   0 reg                                                                                                   FBV-SCRCD10-T02
+     19       3      700       1244       0.02   4220   0 reg                                                                                                   FBV-SCRXC10-T01
+     19       3      700       1244       0.06   8012   0 reg                                                                                                   FBV-SCSLR10-T01
+     19       3      688       1244       0.05   2620   0 reg                                                                                                   FBV-SCSLR10-T02
+     19       3      696       1244       0.06   8544   0 reg                                                                                                   FBV-SCSLR10-T03
+     19       3      688       1252       0.03   5160   0 reg                                                                                                   FBV-SCSLR10-T04
+VERBOSE: Performing the operation "Enable the Remote shutdown access rights and restart the computer." on target "FBV-SCRCM10-T01".
+VERBOSE: Performing the operation "Enable the Remote shutdown access rights and restart the computer." on target "FBV-SCRCD10-T01".
+VERBOSE: Performing the operation "Enable the Remote shutdown access rights and restart the computer." on target "FBV-SCRCD10-T02".
+VERBOSE: Performing the operation "Enable the Remote shutdown access rights and restart the computer." on target "FBV-SCRXC10-T01".
+VERBOSE: Performing the operation "Enable the Remote shutdown access rights and restart the computer." on target "FBV-SCSLR10-T01".
+VERBOSE: Performing the operation "Enable the Remote shutdown access rights and restart the computer." on target "FBV-SCSLR10-T02".
+VERBOSE: Performing the operation "Enable the Remote shutdown access rights and restart the computer." on target "FBV-SCSLR10-T03".
+VERBOSE: Performing the operation "Enable the Remote shutdown access rights and restart the computer." on target "FBV-SCSLR10-T04".
+**********************
+Windows PowerShell transcript end
+End time: 20240209153907
+**********************

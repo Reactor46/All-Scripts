@@ -1,0 +1,1 @@
+﻿.\WinServer-Testing.ps1 -L .\Configs\Test.txt  -O C:\inetpub\wwwroot\testing\reports\ -CPUW 5 -CPUA 90 -MW 80 -MA 90 -RW 30 -RA 100 -SMW 1650 -SMA 2000 -CW 225 -CA 300

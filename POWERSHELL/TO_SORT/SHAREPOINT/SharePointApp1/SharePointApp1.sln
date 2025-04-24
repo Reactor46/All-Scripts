@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointApp1", "SharePointApp1\SharePointApp1.csproj", "{B372C7D6-F6B8-49F9-82F8-FE67BB2077B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointApp1Web", "SharePointApp1Web\SharePointApp1Web.csproj", "{50A7A1E7-0C0C-413E-803F-8AF8C05AA36A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B372C7D6-F6B8-49F9-82F8-FE67BB2077B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B372C7D6-F6B8-49F9-82F8-FE67BB2077B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B372C7D6-F6B8-49F9-82F8-FE67BB2077B5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B372C7D6-F6B8-49F9-82F8-FE67BB2077B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B372C7D6-F6B8-49F9-82F8-FE67BB2077B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B372C7D6-F6B8-49F9-82F8-FE67BB2077B5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{50A7A1E7-0C0C-413E-803F-8AF8C05AA36A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50A7A1E7-0C0C-413E-803F-8AF8C05AA36A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50A7A1E7-0C0C-413E-803F-8AF8C05AA36A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50A7A1E7-0C0C-413E-803F-8AF8C05AA36A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

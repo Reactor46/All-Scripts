@@ -1,0 +1,51 @@
+$farm = [Microsoft.SharePoint.Administration.SPFarm]::Local
+
+$services = $farm.get_Services() #get all SharePoint services
+$sessionStateService = ($services | ? { $_.TypeName -like "*session state*" } ) #find the existing Session State Service -> it was "NULL" for me!
+
+if( $sessionStateService -eq $null ) {
+    #Recreate the Service
+    $newSessionStateService = New-Object Microsoft.Office.Server.Administration.SessionStateService ("", $farm)
+    $newSessionStateService.Id = [System.Guid]::NewGuid()
+    $newSessionStateService.Name=[String]::Empty
+    $newSessionStateService.Update()
+    $farm.Update()
+    $newSessionStateService.Provision()
+    $newSessionStateService.Name=[String]::Empty
+    $newSessionStateService.Update()
+}
+
+$services = $farm.get_Services()
+$sessionStateService = ($services | ? { $_.TypeName -like "*session state*" } ) 
+
+$servers=(Get-SPServer)
+
+#Create service instances on all application servers of the SharePoint farm
+$servers | % {
+    if( $_.Role -eq "Application" ) {
+      $currentSessionStateSvcOnServer = ($_.ServiceInstances | ? { $_.TypeName -like "*session state*" } )
+      if( $currentSessionStateSvcOnServer -eq $null ) {
+        #write-host $_.Name $server.Role $_.gettype().fullname
+
+        #To create a service instance you must use a "protected" constructor
+        [type]$t = "Microsoft.SharePoint.Administration.SPServiceInstance" -as "Type"
+        $p = @( ("string" -as [Type]), ("Microsoft.SharePoint.Administration.SPServer" -as [Type]),
+                ("Microsoft.SharePoint.Administration.SPService" -as [Type]) )
+        $c = $t.GetConstructor([System.Reflection.BindingFlags]::NonPublic -bor [System.Reflection.BindingFlags]::Instance,$null, $p, $null)
+        #these are the parameters for creating a service instance by using the protected constructor
+        [Object[]]$params = @([Object]"Session State Service Instance",
+                              [Object]([Microsoft.SharePoint.Administration.SPFarm]::Local.Servers[$_.Name]),
+                              [Object]([Microsoft.SharePoint.Administration.SPFarm]::Local.Services[$sessionStateService.Id]))
+        $newSvcInstance = $c.Invoke($params)
+        #update & provisioning
+        $newSvcInstance.Update()
+        $newSvcInstance.Provision()
+      }
+    }
+}
+
+if( (Get-SPSessionStateService -ErrorAction SilentlyContinue) -ne $null ) {
+  Write-Host "Successfull :-) " -ForegroundColor Green
+} else {
+  Write-Host "Failed :-( " -ForegroundColor Red
+}

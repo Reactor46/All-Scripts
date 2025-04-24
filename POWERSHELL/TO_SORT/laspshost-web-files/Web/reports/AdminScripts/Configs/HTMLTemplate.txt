@@ -1,0 +1,14 @@
+<HTML>
+    <TITLE> CreditOne Bank Services Status Page</TITLE> 
+        <header>
+            <meta http-equiv=""refresh"" content=""5"" >
+        </header>
+    <BODY background-color:white> 
+        <font color =""#0099ff"" face=""Microsoft Tai le"" > 
+       <H2> Service Status </H2></font> 
+        
+
+        
+        <Table border=1 cellpadding=0 cellspacing=0 width=""350"" font face=""Microsoft Tai le"" size=""6""> 
+            <TR bgcolor=white align=center> 
+				

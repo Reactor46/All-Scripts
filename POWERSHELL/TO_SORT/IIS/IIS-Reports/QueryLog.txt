@@ -1,0 +1,12 @@
+============================================
+Executed: 6/5/2023 1:40:52 PM
+Name: New Query
+Query: 
+SELECT 
+TO_LOWERCASE(EXTRACT_TOKEN(EXTRACT_EXTENSION(cs-uri-stem), -1, '/')) AS Site,
+COUNT(*) AS TotalRequests,
+SUM(CASE WHEN sc-status = 200 THEN 1 ELSE 0 END) AS SuccessfulRequests,
+SUM(CASE WHEN sc-status <> 200 THEN 1 ELSE 0 END) AS FailedRequests
+INTO HTML 'D:\Reports\IISLogAnalysis.html'
+FROM 'C:\inetpub\logs\LogFiles\W3SVC1\*.log'
+GROUP BY Site

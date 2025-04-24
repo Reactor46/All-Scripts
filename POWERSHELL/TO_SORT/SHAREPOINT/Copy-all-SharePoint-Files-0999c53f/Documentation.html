@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Copy all SharePoint Files and Folders Using PowerShell</title>        
+        <meta name="description" content="This script uses PowerShell to copy all files and folders from one document library to another document library.&#160; This script will allow you to copy an entire document library, along with user-defined metadata from one site collection to another." />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<p>This script uses PowerShell to copy all files and folders from one document library to another document library.&nbsp; This script will allow you to copy an entire document library, along with user-defined metadata from one site collection to another.</p>
+<p>More details regarding this script can be found in the snippet below or in my recent blog posting:</p>
+<p><a title="How to Copy SharePoint Documents Between Site Collections Using PowerShell" href="http://blogs.msdn.com/b/rcormier/archive/2012/11/16/how-to-copy-sharepoint-documents-between-site-collections-using-powershell.aspx" target="_blank">How to Copy SharePoint
+ Documents Between Site Collections Using PowerShell</a></p>
+<p>Download the script for a fully commented version.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">$ver = $host | select version
+if($Ver.version.major -gt 1) {$Host.Runspace.ThreadOptions = &quot;ReuseThread&quot;}
+if(!(Get-PSSnapin Microsoft.SharePoint.PowerShell -ea 0))
+{
+Write-Progress -Activity &quot;Loading Modules&quot; -Status &quot;Loading Microsoft.SharePoint.PowerShell&quot;
+Add-PSSnapin Microsoft.SharePoint.PowerShell
+}
+
+##
+#Set Static Variables
+##
+
+$SourceWebURL = &quot;http://www.contoso.com&quot;
+$SourceLibraryTitle = &quot;Shared Documents&quot;
+$DestinationWebURL = &quot;http://archive.contoso.com/WWWArchive&quot;
+$DestinationLibraryTitle = &quot;Shared Documents&quot;
+
+##
+#Begin Script
+##
+
+$sWeb = Get-SPWeb $SourceWebURL
+$sList = $sWeb.Lists | ? {$_.Title -eq $SourceLibraryTitle}
+$dWeb = Get-SPWeb $DestinationWebURL
+$dList = $dWeb.Lists | ? {$_.title -like $DestinationLibraryTitle}
+
+$AllFolders = $sList.Folders
+$RootFolder = $sList.RootFolder
+$RootItems = $RootFolder.files
+
+foreach($RootItem in $RootItems)
+{
+    $sBytes = $RootItem.OpenBinary()
+    $dFile = $dList.RootFolder.Files.Add($RootItem.Name, $sBytes, $true)
+
+    $AllFields = $RootItem.Item.Fields | ? {!($_.sealed)}
+
+    foreach($Field in $AllFields)
+    {
+        if($RootItem.Properties[$Field.Title])
+        {
+            if(!($dFile.Properties[$Field.title]))
+            {
+                $dFile.AddProperty($Field.Title, $RootItem.Properties[$Field.Title])
+            }
+            else
+            {
+                $dFile.Properties[$Field.Title] = $RootItem.Properties[$Field.Title]
+            }
+        }
+    }
+    $dFile.Update()
+}
+
+foreach($Folder in $AllFolders)
+{
+    Remove-Variable ParentFolderURL
+    $i = 0
+    
+    $FolderURL = $Folder.url.Split(&quot;/&quot;)
+        
+    while($i -lt ($FolderURL.count-1))
+    {
+    $ParentFolderURL = &quot;$ParentFolderURL/&quot; &#43; $FolderURL[$i]
+    $i&#43;&#43;
+    }
+    
+    $CurrentFolder = $dList.Folders | ? {$_.url -eq $ParentFolderURL.substring(1)}
+    if(!($CurrentFolder.Folders | ? {$_.name -eq $Folder.Name}))
+    {
+        $NewFolder = $dlist.Folders.Add((&quot;$DestinationWebURL&quot; &#43; $ParentFolderURL), [Microsoft.SharePoint.SPFileSystemObjectType]::Folder, $Folder.name)
+        $NewFolder.update()
+    }
+    else
+    {
+        $NewFolder = $dList.Folders | ? {$_.name -eq $Folder.Name}
+    }
+    $AllFiles = $sList.Items
+    $sItems = $Folder.folder.Files
+    
+    if($Folder.Folder.Files.count -gt 0)
+    {
+        foreach($item in $sItems)
+        {
+            
+            $Relative = ($Item.ServerRelativeUrl).substring(1)
+            $TargetItem = $AllFiles | ? {$_.URL -eq $Relative}
+            $sBytes = $TargetItem.File.OpenBinary()
+            $dFile = $Newfolder.Folder.Files.Add($TargetItem.Name, $sBytes, $true)
+            $AllFields = $TargetItem.Fields | ? {!($_.sealed)}
+            
+            foreach($Field in $AllFields)
+            {
+                if($TargetItem.Properties[$Field.Title])
+                {
+                    if(!($dFile.Properties[$Field.title]))
+                    {
+                        $dFile.AddProperty($Field.Title, $TargetItem.Properties[$Field.Title])
+                    }
+                    else
+                    {
+                        $dFile.Properties[$Field.Title] = $TargetItem.Properties[$Field.Title]
+                    }
+                }
+            }
+            $dFile.Update()
+        }
+    }
+}</pre>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__variable">$ver</span>&nbsp;=&nbsp;<span class="powerShell__variable">$host</span>&nbsp;<span class="powerShell__operator">|</span>&nbsp;<span class="powerShell__alias">select</span>&nbsp;version&nbsp;
+<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$Ver</span>.version.major&nbsp;<span class="powerShell__operator">-</span>gt&nbsp;1)&nbsp;{<span class="powerShell__variable">$Host</span>.Runspace.ThreadOptions&nbsp;=&nbsp;<span class="powerShell__string">&quot;ReuseThread&quot;</span>}&nbsp;
+<span class="powerShell__keyword">if</span>(<span class="powerShell__operator">!</span>(<span class="powerShell__cmdlets">Get-PSSnapin</span>&nbsp;Microsoft.SharePoint.PowerShell&nbsp;<span class="powerShell__operator">-</span>ea&nbsp;0))&nbsp;
+{&nbsp;
+<span class="powerShell__cmdlets">Write-Progress</span>&nbsp;<span class="powerShell__operator">-</span>Activity&nbsp;<span class="powerShell__string">&quot;Loading&nbsp;Modules&quot;</span>&nbsp;<span class="powerShell__operator">-</span>Status&nbsp;<span class="powerShell__string">&quot;Loading&nbsp;Microsoft.SharePoint.PowerShell&quot;</span>&nbsp;
+<span class="powerShell__cmdlets">Add-PSSnapin</span>&nbsp;Microsoft.SharePoint.PowerShell&nbsp;
+}&nbsp;
+&nbsp;
+<span class="powerShell__com">##</span>&nbsp;
+<span class="powerShell__com">#Set&nbsp;Static&nbsp;Variables</span>&nbsp;
+<span class="powerShell__com">##</span>&nbsp;
+&nbsp;
+<span class="powerShell__variable">$SourceWebURL</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;http://www.contoso.com&quot;</span>&nbsp;
+<span class="powerShell__variable">$SourceLibraryTitle</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;Shared&nbsp;Documents&quot;</span>&nbsp;
+<span class="powerShell__variable">$DestinationWebURL</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;http://archive.contoso.com/WWWArchive&quot;</span>&nbsp;
+<span class="powerShell__variable">$DestinationLibraryTitle</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;Shared&nbsp;Documents&quot;</span>&nbsp;
+&nbsp;
+<span class="powerShell__com">##</span>&nbsp;
+<span class="powerShell__com">#Begin&nbsp;Script</span>&nbsp;
+<span class="powerShell__com">##</span>&nbsp;
+&nbsp;
+<span class="powerShell__variable">$sWeb</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPWeb&nbsp;<span class="powerShell__variable">$SourceWebURL</span>&nbsp;
+<span class="powerShell__variable">$sList</span>&nbsp;=&nbsp;<span class="powerShell__variable">$sWeb</span>.Lists&nbsp;<span class="powerShell__operator">|</span>&nbsp;?&nbsp;{<span class="powerShell__variable">$_</span>.Title&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$SourceLibraryTitle</span>}&nbsp;
+<span class="powerShell__variable">$dWeb</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPWeb&nbsp;<span class="powerShell__variable">$DestinationWebURL</span>&nbsp;
+<span class="powerShell__variable">$dList</span>&nbsp;=&nbsp;<span class="powerShell__variable">$dWeb</span>.Lists&nbsp;<span class="powerShell__operator">|</span>&nbsp;?&nbsp;{<span class="powerShell__variable">$_</span>.title&nbsp;<span class="powerShell__operator">-</span>like&nbsp;<span class="powerShell__variable">$DestinationLibraryTitle</span>}&nbsp;
+&nbsp;
+<span class="powerShell__variable">$AllFolders</span>&nbsp;=&nbsp;<span class="powerShell__variable">$sList</span>.Folders&nbsp;
+<span class="powerShell__variable">$RootFolder</span>&nbsp;=&nbsp;<span class="powerShell__variable">$sList</span>.RootFolder&nbsp;
+<span class="powerShell__variable">$RootItems</span>&nbsp;=&nbsp;<span class="powerShell__variable">$RootFolder</span>.files&nbsp;
+&nbsp;
+<span class="powerShell__keyword">foreach</span>(<span class="powerShell__variable">$RootItem</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$RootItems</span>)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$sBytes</span>&nbsp;=&nbsp;<span class="powerShell__variable">$RootItem</span>.OpenBinary()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$dFile</span>&nbsp;=&nbsp;<span class="powerShell__variable">$dList</span>.RootFolder.Files.Add(<span class="powerShell__variable">$RootItem</span>.Name,&nbsp;<span class="powerShell__variable">$sBytes</span>,&nbsp;<span class="powerShell__variable">$true</span>)&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$AllFields</span>&nbsp;=&nbsp;<span class="powerShell__variable">$RootItem</span>.Item.Fields&nbsp;<span class="powerShell__operator">|</span>&nbsp;?&nbsp;{<span class="powerShell__operator">!</span>(<span class="powerShell__variable">$_</span>.sealed)}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>(<span class="powerShell__variable">$Field</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$AllFields</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$RootItem</span>.Properties[<span class="powerShell__variable">$Field</span>.Title])&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__operator">!</span>(<span class="powerShell__variable">$dFile</span>.Properties[<span class="powerShell__variable">$Field</span>.title]))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$dFile</span>.AddProperty(<span class="powerShell__variable">$Field</span>.Title,&nbsp;<span class="powerShell__variable">$RootItem</span>.Properties[<span class="powerShell__variable">$Field</span>.Title])&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$dFile</span>.Properties[<span class="powerShell__variable">$Field</span>.Title]&nbsp;=&nbsp;<span class="powerShell__variable">$RootItem</span>.Properties[<span class="powerShell__variable">$Field</span>.Title]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$dFile</span>.Update()&nbsp;
+}&nbsp;
+&nbsp;
+<span class="powerShell__keyword">foreach</span>(<span class="powerShell__variable">$Folder</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$AllFolders</span>)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__cmdlets">Remove-Variable</span>&nbsp;ParentFolderURL&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$i</span>&nbsp;=&nbsp;0&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$FolderURL</span>&nbsp;=&nbsp;<span class="powerShell__variable">$Folder</span>.url.Split(<span class="powerShell__string">&quot;/&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">while</span>(<span class="powerShell__variable">$i</span>&nbsp;<span class="powerShell__operator">-</span>lt&nbsp;(<span class="powerShell__variable">$FolderURL</span>.count<span class="powerShell__operator">-</span>1))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$ParentFolderURL</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;$ParentFolderURL/&quot;</span>&nbsp;<span class="powerShell__operator">&#43;</span>&nbsp;<span class="powerShell__variable">$FolderURL</span>[<span class="powerShell__variable">$i</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$i</span><span class="powerShell__operator">&#43;</span><span class="powerShell__operator">&#43;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$CurrentFolder</span>&nbsp;=&nbsp;<span class="powerShell__variable">$dList</span>.Folders&nbsp;<span class="powerShell__operator">|</span>&nbsp;?&nbsp;{<span class="powerShell__variable">$_</span>.url&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$ParentFolderURL</span>.substring(1)}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__operator">!</span>(<span class="powerShell__variable">$CurrentFolder</span>.Folders&nbsp;<span class="powerShell__operator">|</span>&nbsp;?&nbsp;{<span class="powerShell__variable">$_</span>.name&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$Folder</span>.Name}))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$NewFolder</span>&nbsp;=&nbsp;<span class="powerShell__variable">$dlist</span>.Folders.Add((<span class="powerShell__string">&quot;$DestinationWebURL&quot;</span>&nbsp;<span class="powerShell__operator">&#43;</span>&nbsp;<span class="powerShell__variable">$ParentFolderURL</span>),&nbsp;[Microsoft.SharePoint.SPFileSystemObjectType]::Folder,&nbsp;<span class="powerShell__variable">$Folder</span>.name)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$NewFolder</span>.update()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$NewFolder</span>&nbsp;=&nbsp;<span class="powerShell__variable">$dList</span>.Folders&nbsp;<span class="powerShell__operator">|</span>&nbsp;?&nbsp;{<span class="powerShell__variable">$_</span>.name&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$Folder</span>.Name}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$AllFiles</span>&nbsp;=&nbsp;<span class="powerShell__variable">$sList</span>.Items&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$sItems</span>&nbsp;=&nbsp;<span class="powerShell__variable">$Folder</span>.folder.Files&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$Folder</span>.Folder.Files.count&nbsp;<span class="powerShell__operator">-</span>gt&nbsp;0)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>(<span class="powerShell__variable">$item</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$sItems</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Relative</span>&nbsp;=&nbsp;(<span class="powerShell__variable">$Item</span>.ServerRelativeUrl).substring(1)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$TargetItem</span>&nbsp;=&nbsp;<span class="powerShell__variable">$AllFiles</span>&nbsp;<span class="powerShell__operator">|</span>&nbsp;?&nbsp;{<span class="powerShell__variable">$_</span>.URL&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$Relative</span>}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$sBytes</span>&nbsp;=&nbsp;<span class="powerShell__variable">$TargetItem</span>.File.OpenBinary()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$dFile</span>&nbsp;=&nbsp;<span class="powerShell__variable">$Newfolder</span>.Folder.Files.Add(<span class="powerShell__variable">$TargetItem</span>.Name,&nbsp;<span class="powerShell__variable">$sBytes</span>,&nbsp;<span class="powerShell__variable">$true</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$AllFields</span>&nbsp;=&nbsp;<span class="powerShell__variable">$TargetItem</span>.Fields&nbsp;<span class="powerShell__operator">|</span>&nbsp;?&nbsp;{<span class="powerShell__operator">!</span>(<span class="powerShell__variable">$_</span>.sealed)}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>(<span class="powerShell__variable">$Field</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$AllFields</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$TargetItem</span>.Properties[<span class="powerShell__variable">$Field</span>.Title])&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__operator">!</span>(<span class="powerShell__variable">$dFile</span>.Properties[<span class="powerShell__variable">$Field</span>.title]))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$dFile</span>.AddProperty(<span class="powerShell__variable">$Field</span>.Title,&nbsp;<span class="powerShell__variable">$TargetItem</span>.Properties[<span class="powerShell__variable">$Field</span>.Title])&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$dFile</span>.Properties[<span class="powerShell__variable">$Field</span>.Title]&nbsp;=&nbsp;<span class="powerShell__variable">$TargetItem</span>.Properties[<span class="powerShell__variable">$Field</span>.Title]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$dFile</span>.Update()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+
+        </div>
+    </body>
+</html>

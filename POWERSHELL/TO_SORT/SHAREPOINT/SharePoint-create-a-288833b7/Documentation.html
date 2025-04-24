@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>SharePoint: create a dynamic site directory populated by PowerShell</title>        
+        <meta name="description" content="most of our customers are requesting a security trimmed site directory which is listing all site collections of a user in a root collection. With SharePoint 2013 you find a feature similar to that that leverages the “following” feature in each user’s MySite. This, however, requir" />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<p>most of our customers are requesting a security trimmed site directory which is
+<br>
+listing all site collections of a user in a root collection. With SharePoint <br>
+2013 you find a feature similar to that that leverages the &ldquo;following&rdquo; feature
+<br>
+in each user&rsquo;s MySite. This, however, requires every user following a site <br>
+before getting listed there. For all other cases not able to leverage this or <br>
+similar features I was thinking for creating a PowerShell script that solves at <br>
+least some use cases.</p>
+<p>Find further information on this blog post: <a href="http://nubo-corp.com/patrick-lamber/2012/11/sharepoint-create-a-dynamic-site-directory-populated-by-powershell/">
+http://nubo-corp.com/patrick-lamber/2012/11/sharepoint-create-a-dynamic-site-directory-populated-by-powershell/</a></p>
+<p></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">Add-PSSnapin Microsoft.SharePoint.Powershell -ea 0
+
+# settings
+$webApplication = &quot;http://lrd02sha:20000/&quot;
+$excludeUrl = @(&quot;http://lrd02sha:20000&quot;)
+
+$targetDirectory = &quot;http://lrd02sha:20000&quot;
+$basePermissionLevel = &quot;Read Only Items&quot;
+$linksList = &quot;Workspaces&quot;
+# end settings
+
+# this function resets the unique role assignments of an item and breaks the role inheritance
+# afterwards we are going to add a single entry for every user with permissions on the target web assigned to the link item
+function AssignPermissions($web, $listItem) {
+    if ($listItem.HasUniqueRoleAssignments) {
+      $listItem.ResetRoleInheritance()
+    }
+    $listItem.BreakRoleInheritance($false)
+    
+    Get-SPUser -Web $web.Url | where { $_.Roles.Count -gt 0 -or $_.Groups.Count -gt 0 } | ForEach-Object {
+        $roleDefinition = $rootWeb.RoleDefinitions[$basePermissionLevel]
+        $roleAssignment = New-Object Microsoft.SharePoint.SPRoleAssignment($_.LoginName, $_.Email, $_.Name, $_.Notes)
+        $roleAssignment.RoleDefinitionBindings.Add($roleDefinition)
+        $listItem.RoleAssignments.Add($roleAssignment)
+    }
+    
+    $listItem.Update()
+}
+
+# get the root web and list
+$rootWeb = Get-SPWeb $targetDirectory
+$list = $rootWeb.Lists[$linksList]
+
+# check if the Permissionssetting is available, if not, then create one
+if($rootWeb.RoleDefinitions[$basePermissionLevel] -eq $null)
+{
+    # Role Definition named &quot;Add Only&quot; does not yet exist
+    $spRoleDefinition = New-Object Microsoft.SharePoint.SPRoleDefinition
+    $spRoleDefinition.Name = $basePermissionLevel
+    $spRoleDefinition.BasePermissions = &quot;ViewListItems, Open, ViewPages&quot;
+    $rootWeb.RoleDefinitions.Add($spRoleDefinition)
+}
+
+# loop through all spsites in the specified web application and exclude the urls located under $excludeUrl
+Get-SPWebApplication $webApplication | Get-SPSite -Limit All | where { $excludeUrl -notcontains $_.Url } | Foreach-Object  {
+    # get the user of the web and verify in the links list of the directory if there is already an entry
+    $myWeb = Get-SPWeb $_.Url
+    $query=new-object Microsoft.SharePoint.SPQuery
+    $caml = '&lt;Where&gt;
+                &lt;BeginsWith&gt;
+                    &lt;FieldRef Name=&quot;URL&quot;/&gt;
+                        &lt;Value Type=&quot;URL&quot;&gt;{0}&lt;/Value&gt;
+                &lt;/BeginsWith&gt;
+             &lt;/Where&gt;' -f $myWeb.ServerRelativeUrl
+
+    $query.Query=$caml
+    $items = $list.GetItems($query);
+    
+    # if one or more items are returned, modify them accordingly. else create a new entry in the directory
+    if ($items.Count -gt 0) {
+        $items | ForEach-Object {
+            $listItem = $_
+            
+            # modify the exiting item url by specifying the url and title of the web
+            $listItem[&quot;URL&quot;] = '{0}, {1}' -f $myWeb.Url, $myWeb.Title
+            $listItem.Update()
+            
+            # re-assign the permissions to this item for security trimming
+            AssignPermissions $myWeb $listItem
+        }
+    }
+    else {
+        # create a new item and assign the url and title of the current web
+        $listItem = $list.Items.Add()
+        $listItem[&quot;URL&quot;] = '{0}, {1}' -f $myWeb.Url, $myWeb.Title
+        $listItem.Update()
+        
+        # assign the permissions to this item for security trimming
+        AssignPermissions $myWeb $listItem
+    }
+}</pre>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__cmdlets">Add-PSSnapin</span>&nbsp;Microsoft.SharePoint.Powershell&nbsp;<span class="powerShell__operator">-</span>ea&nbsp;0&nbsp;
+&nbsp;
+<span class="powerShell__com">#&nbsp;settings</span>&nbsp;
+<span class="powerShell__variable">$webApplication</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;http://lrd02sha:20000/&quot;</span>&nbsp;
+<span class="powerShell__variable">$excludeUrl</span>&nbsp;=&nbsp;@(<span class="powerShell__string">&quot;http://lrd02sha:20000&quot;</span>)&nbsp;
+&nbsp;
+<span class="powerShell__variable">$targetDirectory</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;http://lrd02sha:20000&quot;</span>&nbsp;
+<span class="powerShell__variable">$basePermissionLevel</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;Read&nbsp;Only&nbsp;Items&quot;</span>&nbsp;
+<span class="powerShell__variable">$linksList</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;Workspaces&quot;</span>&nbsp;
+<span class="powerShell__com">#&nbsp;end&nbsp;settings</span>&nbsp;
+&nbsp;
+<span class="powerShell__com">#&nbsp;this&nbsp;function&nbsp;resets&nbsp;the&nbsp;unique&nbsp;role&nbsp;assignments&nbsp;of&nbsp;an&nbsp;item&nbsp;and&nbsp;breaks&nbsp;the&nbsp;role&nbsp;inheritance</span>&nbsp;
+<span class="powerShell__com">#&nbsp;afterwards&nbsp;we&nbsp;are&nbsp;going&nbsp;to&nbsp;add&nbsp;a&nbsp;single&nbsp;entry&nbsp;for&nbsp;every&nbsp;user&nbsp;with&nbsp;permissions&nbsp;on&nbsp;the&nbsp;target&nbsp;web&nbsp;assigned&nbsp;to&nbsp;the&nbsp;link&nbsp;item</span>&nbsp;
+<span class="powerShell__keyword">function</span>&nbsp;AssignPermissions(<span class="powerShell__variable">$web</span>,&nbsp;<span class="powerShell__variable">$listItem</span>)&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$listItem</span>.HasUniqueRoleAssignments)&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$listItem</span>.ResetRoleInheritance()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$listItem</span>.BreakRoleInheritance(<span class="powerShell__variable">$false</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Get<span class="powerShell__operator">-</span>SPUser&nbsp;<span class="powerShell__operator">-</span>Web&nbsp;<span class="powerShell__variable">$web</span>.Url&nbsp;<span class="powerShell__operator">|</span>&nbsp;where&nbsp;{&nbsp;<span class="powerShell__variable">$_</span>.Roles.Count&nbsp;<span class="powerShell__operator">-</span>gt&nbsp;0&nbsp;<span class="powerShell__operator">-</span>or&nbsp;<span class="powerShell__variable">$_</span>.Groups.Count&nbsp;<span class="powerShell__operator">-</span>gt&nbsp;0&nbsp;}&nbsp;<span class="powerShell__operator">|</span>&nbsp;<span class="powerShell__keyword">ForEach</span><span class="powerShell__operator">-</span>Object&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$roleDefinition</span>&nbsp;=&nbsp;<span class="powerShell__variable">$rootWeb</span>.RoleDefinitions[<span class="powerShell__variable">$basePermissionLevel</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$roleAssignment</span>&nbsp;=&nbsp;<span class="powerShell__cmdlets">New-Object</span>&nbsp;Microsoft.SharePoint.SPRoleAssignment(<span class="powerShell__variable">$_</span>.LoginName,&nbsp;<span class="powerShell__variable">$_</span>.Email,&nbsp;<span class="powerShell__variable">$_</span>.Name,&nbsp;<span class="powerShell__variable">$_</span>.Notes)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$roleAssignment</span>.RoleDefinitionBindings.Add(<span class="powerShell__variable">$roleDefinition</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$listItem</span>.RoleAssignments.Add(<span class="powerShell__variable">$roleAssignment</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$listItem</span>.Update()&nbsp;
+}&nbsp;
+&nbsp;
+<span class="powerShell__com">#&nbsp;get&nbsp;the&nbsp;root&nbsp;web&nbsp;and&nbsp;list</span>&nbsp;
+<span class="powerShell__variable">$rootWeb</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPWeb&nbsp;<span class="powerShell__variable">$targetDirectory</span>&nbsp;
+<span class="powerShell__variable">$list</span>&nbsp;=&nbsp;<span class="powerShell__variable">$rootWeb</span>.Lists[<span class="powerShell__variable">$linksList</span>]&nbsp;
+&nbsp;
+<span class="powerShell__com">#&nbsp;check&nbsp;if&nbsp;the&nbsp;Permissionssetting&nbsp;is&nbsp;available,&nbsp;if&nbsp;not,&nbsp;then&nbsp;create&nbsp;one</span>&nbsp;
+<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$rootWeb</span>.RoleDefinitions[<span class="powerShell__variable">$basePermissionLevel</span>]&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$null</span>)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;Role&nbsp;Definition&nbsp;named&nbsp;&quot;Add&nbsp;Only&quot;&nbsp;does&nbsp;not&nbsp;yet&nbsp;exist</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spRoleDefinition</span>&nbsp;=&nbsp;<span class="powerShell__cmdlets">New-Object</span>&nbsp;Microsoft.SharePoint.SPRoleDefinition&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spRoleDefinition</span>.Name&nbsp;=&nbsp;<span class="powerShell__variable">$basePermissionLevel</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spRoleDefinition</span>.BasePermissions&nbsp;=&nbsp;<span class="powerShell__string">&quot;ViewListItems,&nbsp;Open,&nbsp;ViewPages&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$rootWeb</span>.RoleDefinitions.Add(<span class="powerShell__variable">$spRoleDefinition</span>)&nbsp;
+}&nbsp;
+&nbsp;
+<span class="powerShell__com">#&nbsp;loop&nbsp;through&nbsp;all&nbsp;spsites&nbsp;in&nbsp;the&nbsp;specified&nbsp;web&nbsp;application&nbsp;and&nbsp;exclude&nbsp;the&nbsp;urls&nbsp;located&nbsp;under&nbsp;$excludeUrl</span>&nbsp;
+Get<span class="powerShell__operator">-</span>SPWebApplication&nbsp;<span class="powerShell__variable">$webApplication</span>&nbsp;<span class="powerShell__operator">|</span>&nbsp;Get<span class="powerShell__operator">-</span>SPSite&nbsp;<span class="powerShell__operator">-</span>Limit&nbsp;All&nbsp;<span class="powerShell__operator">|</span>&nbsp;where&nbsp;{&nbsp;<span class="powerShell__variable">$excludeUrl</span>&nbsp;<span class="powerShell__operator">-</span>notcontains&nbsp;<span class="powerShell__variable">$_</span>.Url&nbsp;}&nbsp;<span class="powerShell__operator">|</span>&nbsp;<span class="powerShell__keyword">Foreach</span><span class="powerShell__operator">-</span>Object&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;get&nbsp;the&nbsp;user&nbsp;of&nbsp;the&nbsp;web&nbsp;and&nbsp;verify&nbsp;in&nbsp;the&nbsp;links&nbsp;list&nbsp;of&nbsp;the&nbsp;directory&nbsp;if&nbsp;there&nbsp;is&nbsp;already&nbsp;an&nbsp;entry</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$myWeb</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPWeb&nbsp;<span class="powerShell__variable">$_</span>.Url&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$query</span>=<span class="powerShell__cmdlets">new-object</span>&nbsp;Microsoft.SharePoint.SPQuery&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$caml</span>&nbsp;=&nbsp;'&lt;Where&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;BeginsWith&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;FieldRef&nbsp;Name=<span class="powerShell__string">&quot;URL&quot;</span><span class="powerShell__operator">/</span>&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Value&nbsp;<span class="powerShell__alias">Type</span>=<span class="powerShell__string">&quot;URL&quot;</span>&gt;{0}&lt;<span class="powerShell__operator">/</span>Value&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="powerShell__operator">/</span>BeginsWith&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="powerShell__operator">/</span>Where&gt;'&nbsp;<span class="powerShell__operator">-</span>f&nbsp;<span class="powerShell__variable">$myWeb</span>.ServerRelativeUrl&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$query</span>.Query=<span class="powerShell__variable">$caml</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$items</span>&nbsp;=&nbsp;<span class="powerShell__variable">$list</span>.GetItems(<span class="powerShell__variable">$query</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;if&nbsp;one&nbsp;or&nbsp;more&nbsp;items&nbsp;are&nbsp;returned,&nbsp;modify&nbsp;them&nbsp;accordingly.&nbsp;else&nbsp;create&nbsp;a&nbsp;new&nbsp;entry&nbsp;in&nbsp;the&nbsp;directory</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$items</span>.Count&nbsp;<span class="powerShell__operator">-</span>gt&nbsp;0)&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$items</span>&nbsp;<span class="powerShell__operator">|</span>&nbsp;<span class="powerShell__keyword">ForEach</span><span class="powerShell__operator">-</span>Object&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$listItem</span>&nbsp;=&nbsp;<span class="powerShell__variable">$_</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;modify&nbsp;the&nbsp;exiting&nbsp;item&nbsp;url&nbsp;by&nbsp;specifying&nbsp;the&nbsp;url&nbsp;and&nbsp;title&nbsp;of&nbsp;the&nbsp;web</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$listItem</span>[<span class="powerShell__string">&quot;URL&quot;</span>]&nbsp;=&nbsp;<span class="powerShell__string">'{0},&nbsp;{1}'</span>&nbsp;<span class="powerShell__operator">-</span>f&nbsp;<span class="powerShell__variable">$myWeb</span>.Url,&nbsp;<span class="powerShell__variable">$myWeb</span>.Title&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$listItem</span>.Update()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;re-assign&nbsp;the&nbsp;permissions&nbsp;to&nbsp;this&nbsp;item&nbsp;for&nbsp;security&nbsp;trimming</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AssignPermissions&nbsp;<span class="powerShell__variable">$myWeb</span>&nbsp;<span class="powerShell__variable">$listItem</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">else</span>&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;create&nbsp;a&nbsp;new&nbsp;item&nbsp;and&nbsp;assign&nbsp;the&nbsp;url&nbsp;and&nbsp;title&nbsp;of&nbsp;the&nbsp;current&nbsp;web</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$listItem</span>&nbsp;=&nbsp;<span class="powerShell__variable">$list</span>.Items.Add()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$listItem</span>[<span class="powerShell__string">&quot;URL&quot;</span>]&nbsp;=&nbsp;<span class="powerShell__string">'{0},&nbsp;{1}'</span>&nbsp;<span class="powerShell__operator">-</span>f&nbsp;<span class="powerShell__variable">$myWeb</span>.Url,&nbsp;<span class="powerShell__variable">$myWeb</span>.Title&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$listItem</span>.Update()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;assign&nbsp;the&nbsp;permissions&nbsp;to&nbsp;this&nbsp;item&nbsp;for&nbsp;security&nbsp;trimming</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AssignPermissions&nbsp;<span class="powerShell__variable">$myWeb</span>&nbsp;<span class="powerShell__variable">$listItem</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p></p>
+
+        </div>
+    </body>
+</html>

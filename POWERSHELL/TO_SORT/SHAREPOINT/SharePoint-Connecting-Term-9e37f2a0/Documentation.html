@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>SharePoint: Connecting Term Set with Managed Metadata columns using PowerShell</title>        
+        <meta name="description" content="&#160;The script is used for connecting Term Sets with Managed Metadata columns using PowerShell in SharePoint 2013/2010." />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<div>&nbsp;</div>
+<div><span style="font-size:medium">
+<div>The script is used for connecting Term Sets with Managed Metadata columns using PowerShell in SharePoint 2013/2010. It works for all the site collections within a web application. Make sure to change it, if you want to run it for a single site collection.</div>
+<div></div>
+<div></div>
+<div>
+<div>
+<div>
+<div>
+<div></div>
+<div>For example, if you have a Term Set Name as Country and Metadata Column name as Country as well, script can bind both Term Set and MMS column.</div>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">$snapin = Get-PSSnapin | Where-Object {$_.Name -eq 'Microsoft.SharePoint.Powershell'} 
+if ($snapin -eq $null) 
+{    
+	Write-Host &quot;Loading SharePoint Powershell Snapin&quot;    
+	Add-PSSnapin &quot;Microsoft.SharePoint.Powershell&quot; 
+}
+#Name of MMS Proxy
+$mmsServiceName = &quot;Metadata Service Application Proxy&quot;
+#Name of Group
+$grpName = &quot;CustomGroup&quot;
+ 
+[xml]$xmlinput =  (get-content .\Config.xml)
+
+$item = $xmlinput.Config
+$WebApplications = $item.WebApplications
+foreach($WebApplication in $WebApplications.WebApplication)
+{
+
+	#iterates though all the site collections 
+	$Mywebapplication = Get-SPWebApplication $WebApplication.url
+	#$Mywebapplication.FormDigestSettings.Enabled = $false
+	foreach($site in $Mywebapplication.Sites)
+	{
+		#Declaring the Name of the Term Set and Metadata Columns, it is the same in both cases.
+		$customContentTypesArray = @(&quot;Country&quot;, &quot;City&quot;, &quot;County&quot;, &quot;Province&quot;)
+		Write-Host &quot;In the Site Collection&quot; $site.url
+		foreach ($taxonomy in $customContentTypesArray) 
+		{
+			
+			$spweb = $site.RootWeb		
+			$session = new-object Microsoft.SharePoint.Taxonomy.TaxonomySession($site)
+			$termStore = $Session.TermStores[$mmsServiceName];
+			$group=$termStore.Groups[$grpName]
+			$termSet = $group.TermSets[$taxonomy]					
+			$targetField = [Microsoft.SharePoint.Taxonomy.TaxonomyField]$spweb.Fields[$taxonomy]
+			if($targetField -ne $null)
+			{
+				 Write-Host &quot;Connecting with Term set!&quot; $termSet.id &quot; Namely&quot;  $termSet.Name 
+				$targetField.sspid = $termstore.id
+				$targetField.termsetid = $termSet.id
+				$targetField.Update($true)								
+			}	
+			$spweb.Dispose()
+								
+		}		
+    }	
+	$site.Dispose()	
+}
+       
+
+</pre>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__variable">$snapin</span>&nbsp;=&nbsp;<span class="powerShell__cmdlets">Get-PSSnapin</span>&nbsp;<span class="powerShell__operator">|</span>&nbsp;Where<span class="powerShell__operator">-</span>Object&nbsp;{<span class="powerShell__variable">$_</span>.Name&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__string">'Microsoft.SharePoint.Powershell'</span>}&nbsp;&nbsp;
+<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$snapin</span>&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$null</span>)&nbsp;&nbsp;
+{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;Loading&nbsp;SharePoint&nbsp;Powershell&nbsp;Snapin&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__cmdlets">Add-PSSnapin</span>&nbsp;<span class="powerShell__string">&quot;Microsoft.SharePoint.Powershell&quot;</span>&nbsp;&nbsp;
+}&nbsp;
+<span class="powerShell__com">#Name&nbsp;of&nbsp;MMS&nbsp;Proxy</span>&nbsp;
+<span class="powerShell__variable">$mmsServiceName</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;Metadata&nbsp;Service&nbsp;Application&nbsp;Proxy&quot;</span>&nbsp;
+<span class="powerShell__com">#Name&nbsp;of&nbsp;Group</span>&nbsp;
+<span class="powerShell__variable">$grpName</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;CustomGroup&quot;</span>&nbsp;
+&nbsp;&nbsp;
+[xml]<span class="powerShell__variable">$xmlinput</span>&nbsp;=&nbsp;&nbsp;(<span class="powerShell__cmdlets">get-content</span>&nbsp;.\Config.xml)&nbsp;
+&nbsp;
+<span class="powerShell__variable">$item</span>&nbsp;=&nbsp;<span class="powerShell__variable">$xmlinput</span>.Config&nbsp;
+<span class="powerShell__variable">$WebApplications</span>&nbsp;=&nbsp;<span class="powerShell__variable">$item</span>.WebApplications&nbsp;
+<span class="powerShell__keyword">foreach</span>(<span class="powerShell__variable">$WebApplication</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$WebApplications</span>.WebApplication)&nbsp;
+{&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#iterates&nbsp;though&nbsp;all&nbsp;the&nbsp;site&nbsp;collections&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Mywebapplication</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPWebApplication&nbsp;<span class="powerShell__variable">$WebApplication</span>.url&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#$Mywebapplication.FormDigestSettings.Enabled&nbsp;=&nbsp;$false</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>(<span class="powerShell__variable">$site</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$Mywebapplication</span>.Sites)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Declaring&nbsp;the&nbsp;Name&nbsp;of&nbsp;the&nbsp;Term&nbsp;Set&nbsp;and&nbsp;Metadata&nbsp;Columns,&nbsp;it&nbsp;is&nbsp;the&nbsp;same&nbsp;in&nbsp;both&nbsp;cases.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$customContentTypesArray</span>&nbsp;=&nbsp;@(<span class="powerShell__string">&quot;Country&quot;</span>,&nbsp;<span class="powerShell__string">&quot;City&quot;</span>,&nbsp;<span class="powerShell__string">&quot;County&quot;</span>,&nbsp;<span class="powerShell__string">&quot;Province&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;In&nbsp;the&nbsp;Site&nbsp;Collection&quot;</span>&nbsp;<span class="powerShell__variable">$site</span>.url&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>&nbsp;(<span class="powerShell__variable">$taxonomy</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$customContentTypesArray</span>)&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spweb</span>&nbsp;=&nbsp;<span class="powerShell__variable">$site</span>.RootWeb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$session</span>&nbsp;=&nbsp;<span class="powerShell__cmdlets">new-object</span>&nbsp;Microsoft.SharePoint.Taxonomy.TaxonomySession(<span class="powerShell__variable">$site</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$termStore</span>&nbsp;=&nbsp;<span class="powerShell__variable">$Session</span>.TermStores[<span class="powerShell__variable">$mmsServiceName</span>];&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$group</span>=<span class="powerShell__variable">$termStore</span>.Groups[<span class="powerShell__variable">$grpName</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$termSet</span>&nbsp;=&nbsp;<span class="powerShell__variable">$group</span>.TermSets[<span class="powerShell__variable">$taxonomy</span>]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$targetField</span>&nbsp;=&nbsp;[Microsoft.SharePoint.Taxonomy.TaxonomyField]<span class="powerShell__variable">$spweb</span>.Fields[<span class="powerShell__variable">$taxonomy</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$targetField</span>&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__variable">$null</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;Connecting&nbsp;with&nbsp;Term&nbsp;set!&quot;</span>&nbsp;<span class="powerShell__variable">$termSet</span>.id&nbsp;<span class="powerShell__string">&quot;&nbsp;Namely&quot;</span>&nbsp;&nbsp;<span class="powerShell__variable">$termSet</span>.Name&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$targetField</span>.sspid&nbsp;=&nbsp;<span class="powerShell__variable">$termstore</span>.id&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$targetField</span>.termsetid&nbsp;=&nbsp;<span class="powerShell__variable">$termSet</span>.id&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$targetField</span>.Update(<span class="powerShell__variable">$true</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spweb</span>.Dispose()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$site</span>.Dispose()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;P.S. Download the PowerShell (ps1)&nbsp;and Configuration file in same folder,&nbsp;run the ps1 file.</div>
+</div>
+</div>
+</div>
+</div>
+</span></div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Script to Download SharePoint 2013 Pre-Requisites for Windows Server 2012</title>        
+        <meta name="description" content="
+﻿This Powershell script that downloads each item in a list of URLs (of SharePoint 2013 pre-requisites) to a user-specified location. This PowerShell Script use in a situation when you don’t have internet access (install sharepoint 2013 offline) in the
+ SharePoint 2013 server.A" />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<div class="mcePaste" id="_mcePaste" style="width:1px; height:1px; overflow:hidden; top:0px; left:-10000px">
+</div>
+<p>This Powershell script that downloads each item in a list of URLs (of SharePoint 2013 pre-requisites) to a user-specified location. This PowerShell Script use in a situation when you don&rsquo;t have internet access (install sharepoint 2013 offline) in the
+ SharePoint 2013 server.</p>
+<p>All that you need Run this PowerShell Script as Administrator, write the destination path.)</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden"># This commands script file creates a new BITS transfer job that downloads all Sharepoint 2013 Prerequisites files for Windows Server 2012
+# Author: Muawiyah Shannak (@MuShannak)
+# Blog: http://mushannak.blogspot.com/
+# Last Update : 9/28/2013
+# Source: http://gallery.technet.microsoft.com/Script-to-SharePoint-2013-702e07df
+
+$DestinationFolder = Read-Host -Prompt &quot;Please enter the destination path for Sharepoint 2013 Prerequisites files&quot;
+
+# Note: The Prerequisite Files URLs are subject to change at Microsoft's discretion - check http://technet.microsoft.com/en-us/library/cc262485(v=office.15).aspx and update the links.
+$FilesUrlList = ( 
+		&quot;http://download.microsoft.com/download/9/1/3/9138773A-505D-43E2-AC08-9A77E1E0490B/1033/x64/sqlncli.msi&quot;, # SQL Server 2008 R2 SP1 Native Client
+		&quot;http://download.microsoft.com/download/8/F/9/8F93DBBD-896B-4760-AC81-646F61363A6D/WcfDataServices.exe&quot;, # Microsoft WCF Data Services 5.0
+		&quot;http://download.microsoft.com/download/9/1/D/91DA8796-BE1D-46AF-8489-663AB7811517/setup_msipc_x64.msi&quot;, # Microsoft Information Protection and Control Client (MSIPC)
+		&quot;http://download.microsoft.com/download/E/0/0/E0060D8F-2354-4871-9596-DC78538799CC/Synchronization.msi&quot;, # Microsoft Sync Framework Runtime v1.0 SP1 (x64) 
+		&quot;http://download.microsoft.com/download/0/1/D/01D06854-CA0C-46F1-ADBA-EBF86010DCC6/r2/MicrosoftIdentityExtensions-64.msi&quot;, # Windows Identity Extensions
+		&quot;http://download.microsoft.com/download/D/7/2/D72FD747-69B6-40B7-875B-C2B40A6B2BDD/Windows6.1-KB974405-x64.msu&quot;, # Windows Identity Foundation (KB974405)
+		&quot;http://download.microsoft.com/download/A/6/7/A678AB47-496B-4907-B3D4-0A2D280A13C0/WindowsServerAppFabricSetup_x64.exe&quot;, #Windows Server AppFabric
+		&quot;http://download.microsoft.com/download/7/B/5/7B51D8D1-20FD-4BF0-87C7-4714F5A1C313/AppFabric1.1-RTM-KB2671763-x64-ENU.exe&quot; # CU 1 for AppFabric 1.1 (KB2671763)
+             )
+
+function CreateDestinationFolder()
+{
+	Try
+	{
+		## Return true if the Destination Folder exists, otherwise return false
+		If (!(Test-Path &quot;$DestinationFolder&quot; -pathType container))
+		{
+			##Creates the destination folder if it does not exist
+			New-Item $DestinationFolder -ItemType Directory
+		}
+	}
+	Catch
+	{
+		Write-Host &quot;An error occurred creating destination folder (`'$DestinationFolder`'), Please check the path,and try again.&quot;
+		Pause
+		break
+	}
+}
+
+function DownloadSP2013Files()
+{
+	Import-Module BitsTransfer
+	Write-Host &quot;BitsTransfer Module is loaded&quot;
+	Write-Host &quot;Downloading...&quot;
+
+	ForEach ($FileUrl in $FilesUrlList)
+	{
+		## Get the file name
+		$DestinationFileName = $FileUrl.Split('/')[-1]
+	
+		Try
+		{
+			
+			## Return true if the file exists, otherwise return false
+			If (!(Test-Path &quot;$DestinationFolder\$DestinationFileName&quot;))
+			{
+				Write-Host &quot;`'$FileUrl`' ...&quot;
+				Start-BitsTransfer -Source $FileUrl -Destination $DestinationFolder\$DestinationFileName -Priority High -ErrorVariable err
+				If ($err) {Throw &quot;&quot;}
+			}
+			Else
+			{
+				Write-Host &quot;File $DestinationFileName already exists, skipping...&quot;
+			}
+		}
+		Catch
+		{
+			Write-Warning &quot;An error occurred downloading `'$DestinationFileName`'&quot;
+			break
+		}
+	}
+}
+
+function Pause($Message=&quot;Press any key to continue...&quot;)
+{
+	Write-Host -NoNewLine $Message
+	$null = $host.UI.RawUI.ReadKey(&quot;NoEcho,IncludeKeyDown&quot;)
+	Write-Host &quot;&quot;
+}
+
+CreateDestinationFolder 
+DownloadSP2013Files
+Pause
+</pre>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__com">#&nbsp;This&nbsp;commands&nbsp;script&nbsp;file&nbsp;creates&nbsp;a&nbsp;new&nbsp;BITS&nbsp;transfer&nbsp;job&nbsp;that&nbsp;downloads&nbsp;all&nbsp;Sharepoint&nbsp;2013&nbsp;Prerequisites&nbsp;files&nbsp;for&nbsp;Windows&nbsp;Server&nbsp;2012</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Author:&nbsp;Muawiyah&nbsp;Shannak&nbsp;(@MuShannak)</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Blog:&nbsp;http://mushannak.blogspot.com/</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Last&nbsp;Update&nbsp;:&nbsp;9/28/2013</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Source:&nbsp;http://gallery.technet.microsoft.com/Script-to-SharePoint-2013-702e07df</span>&nbsp;
+&nbsp;
+<span class="powerShell__variable">$DestinationFolder</span>&nbsp;=&nbsp;<span class="powerShell__cmdlets">Read-Host</span>&nbsp;<span class="powerShell__operator">-</span>Prompt&nbsp;<span class="powerShell__string">&quot;Please&nbsp;enter&nbsp;the&nbsp;destination&nbsp;path&nbsp;for&nbsp;Sharepoint&nbsp;2013&nbsp;Prerequisites&nbsp;files&quot;</span>&nbsp;
+&nbsp;
+<span class="powerShell__com">#&nbsp;Note:&nbsp;The&nbsp;Prerequisite&nbsp;Files&nbsp;URLs&nbsp;are&nbsp;subject&nbsp;to&nbsp;change&nbsp;at&nbsp;Microsoft's&nbsp;discretion&nbsp;-&nbsp;check&nbsp;http://technet.microsoft.com/en-us/library/cc262485(v=office.15).aspx&nbsp;and&nbsp;update&nbsp;the&nbsp;links.</span>&nbsp;
+<span class="powerShell__variable">$FilesUrlList</span>&nbsp;=&nbsp;(&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__string">&quot;http://download.microsoft.com/download/9/1/3/9138773A-505D-43E2-AC08-9A77E1E0490B/1033/x64/sqlncli.msi&quot;</span>,&nbsp;<span class="powerShell__com">#&nbsp;SQL&nbsp;Server&nbsp;2008&nbsp;R2&nbsp;SP1&nbsp;Native&nbsp;Client</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__string">&quot;http://download.microsoft.com/download/8/F/9/8F93DBBD-896B-4760-AC81-646F61363A6D/WcfDataServices.exe&quot;</span>,&nbsp;<span class="powerShell__com">#&nbsp;Microsoft&nbsp;WCF&nbsp;Data&nbsp;Services&nbsp;5.0</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__string">&quot;http://download.microsoft.com/download/9/1/D/91DA8796-BE1D-46AF-8489-663AB7811517/setup_msipc_x64.msi&quot;</span>,&nbsp;<span class="powerShell__com">#&nbsp;Microsoft&nbsp;Information&nbsp;Protection&nbsp;and&nbsp;Control&nbsp;Client&nbsp;(MSIPC)</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__string">&quot;http://download.microsoft.com/download/E/0/0/E0060D8F-2354-4871-9596-DC78538799CC/Synchronization.msi&quot;</span>,&nbsp;<span class="powerShell__com">#&nbsp;Microsoft&nbsp;Sync&nbsp;Framework&nbsp;Runtime&nbsp;v1.0&nbsp;SP1&nbsp;(x64)&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__string">&quot;http://download.microsoft.com/download/0/1/D/01D06854-CA0C-46F1-ADBA-EBF86010DCC6/r2/MicrosoftIdentityExtensions-64.msi&quot;</span>,&nbsp;<span class="powerShell__com">#&nbsp;Windows&nbsp;Identity&nbsp;Extensions</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__string">&quot;http://download.microsoft.com/download/D/7/2/D72FD747-69B6-40B7-875B-C2B40A6B2BDD/Windows6.1-KB974405-x64.msu&quot;</span>,&nbsp;<span class="powerShell__com">#&nbsp;Windows&nbsp;Identity&nbsp;Foundation&nbsp;(KB974405)</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__string">&quot;http://download.microsoft.com/download/A/6/7/A678AB47-496B-4907-B3D4-0A2D280A13C0/WindowsServerAppFabricSetup_x64.exe&quot;</span>,&nbsp;<span class="powerShell__com">#Windows&nbsp;Server&nbsp;AppFabric</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__string">&quot;http://download.microsoft.com/download/7/B/5/7B51D8D1-20FD-4BF0-87C7-4714F5A1C313/AppFabric1.1-RTM-KB2671763-x64-ENU.exe&quot;</span>&nbsp;<span class="powerShell__com">#&nbsp;CU&nbsp;1&nbsp;for&nbsp;AppFabric&nbsp;1.1&nbsp;(KB2671763)</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;
+&nbsp;
+<span class="powerShell__keyword">function</span>&nbsp;CreateDestinationFolder()&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">Try</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">##&nbsp;Return&nbsp;true&nbsp;if&nbsp;the&nbsp;Destination&nbsp;Folder&nbsp;exists,&nbsp;otherwise&nbsp;return&nbsp;false</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">If</span>&nbsp;(<span class="powerShell__operator">!</span>(<span class="powerShell__cmdlets">Test-Path</span>&nbsp;<span class="powerShell__string">&quot;$DestinationFolder&quot;</span>&nbsp;<span class="powerShell__operator">-</span>pathType&nbsp;container))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">##Creates&nbsp;the&nbsp;destination&nbsp;folder&nbsp;if&nbsp;it&nbsp;does&nbsp;not&nbsp;exist</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__cmdlets">New-Item</span>&nbsp;<span class="powerShell__variable">$DestinationFolder</span>&nbsp;<span class="powerShell__operator">-</span>ItemType&nbsp;Directory&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">Catch</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;An&nbsp;error&nbsp;occurred&nbsp;creating&nbsp;destination&nbsp;folder&nbsp;(`'$DestinationFolder`'),&nbsp;Please&nbsp;check&nbsp;the&nbsp;path,and&nbsp;try&nbsp;again.&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pause&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">break</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}&nbsp;
+&nbsp;
+<span class="powerShell__keyword">function</span>&nbsp;DownloadSP2013Files()&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Import<span class="powerShell__operator">-</span>Module&nbsp;BitsTransfer&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;BitsTransfer&nbsp;Module&nbsp;is&nbsp;loaded&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;Downloading...&quot;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">ForEach</span>&nbsp;(<span class="powerShell__variable">$FileUrl</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$FilesUrlList</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">##&nbsp;Get&nbsp;the&nbsp;file&nbsp;name</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$DestinationFileName</span>&nbsp;=&nbsp;<span class="powerShell__variable">$FileUrl</span>.Split(<span class="powerShell__string">'/'</span>)[<span class="powerShell__operator">-</span>1]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">Try</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">##&nbsp;Return&nbsp;true&nbsp;if&nbsp;the&nbsp;file&nbsp;exists,&nbsp;otherwise&nbsp;return&nbsp;false</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">If</span>&nbsp;(<span class="powerShell__operator">!</span>(<span class="powerShell__cmdlets">Test-Path</span>&nbsp;<span class="powerShell__string">&quot;$DestinationFolder\$DestinationFileName&quot;</span>))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;`'$FileUrl`'&nbsp;...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start<span class="powerShell__operator">-</span>BitsTransfer&nbsp;<span class="powerShell__operator">-</span>Source&nbsp;<span class="powerShell__variable">$FileUrl</span>&nbsp;<span class="powerShell__operator">-</span>Destination&nbsp;<span class="powerShell__variable">$DestinationFolder</span>\<span class="powerShell__variable">$DestinationFileName</span>&nbsp;<span class="powerShell__operator">-</span>Priority&nbsp;High&nbsp;<span class="powerShell__operator">-</span>ErrorVariable&nbsp;err&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">If</span>&nbsp;(<span class="powerShell__variable">$err</span>)&nbsp;{<span class="powerShell__keyword">Throw</span>&nbsp;<span class="powerShell__string">&quot;&quot;</span>}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">Else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;File&nbsp;$DestinationFileName&nbsp;already&nbsp;exists,&nbsp;skipping...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">Catch</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__cmdlets">Write-Warning</span>&nbsp;<span class="powerShell__string">&quot;An&nbsp;error&nbsp;occurred&nbsp;downloading&nbsp;`'$DestinationFileName`'&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">break</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}&nbsp;
+&nbsp;
+<span class="powerShell__keyword">function</span>&nbsp;Pause(<span class="powerShell__variable">$Message</span>=<span class="powerShell__string">&quot;Press&nbsp;any&nbsp;key&nbsp;to&nbsp;continue...&quot;</span>)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__operator">-</span>NoNewLine&nbsp;<span class="powerShell__variable">$Message</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$null</span>&nbsp;=&nbsp;<span class="powerShell__variable">$host</span>.UI.RawUI.ReadKey(<span class="powerShell__string">&quot;NoEcho,IncludeKeyDown&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;&quot;</span>&nbsp;
+}&nbsp;
+&nbsp;
+CreateDestinationFolder&nbsp;&nbsp;
+DownloadSP2013Files&nbsp;
+Pause&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+
+        </div>
+    </body>
+</html>

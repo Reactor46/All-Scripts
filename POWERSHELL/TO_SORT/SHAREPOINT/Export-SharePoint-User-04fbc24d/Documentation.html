@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Export SharePoint User Profile Information values in CSV or HTML</title>        
+        <meta name="description" content="Export User Profile Information values in Excel and HTML" />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<p>One of our customer requested to get user profile information report from SharePoint 2010 mysite. One of the department needs to present a statistics report and to manipulate the few fields as per their requirement.</p>
+<p><span style="text-decoration:underline; background-color:#ffff00"><strong>Requirement:</strong></span></p>
+<p>1. Get all the users profile information in CSV file for easy manipulations.</p>
+<p>2. Include all custom fields.</p>
+<p>3. The report needs to be delivered every month.</p>
+<p>4. Version SharePoint 2010 and SharePoint 2013</p>
+<p><span style="text-decoration:underline"><strong><span style="background-color:#ffff00">Considertions:</span></strong></span></p>
+<p>1. Please collect the internal names of the user profile property.</p>
+<p>2. Do test in acceptance environment before executing in production.</p>
+<p>3. Do confirm UPA and UPS are running as expected.</p>
+<p>4. Execute the script as Farm Administrator.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden"># -----------------------------------------------------------------------------
+# Script	: To Export User Profile Information Value in Excel and HTML
+# Author	: Chendrayan Venkatesan
+# Date		: October 1 2014
+# Version	: 1.1
+# -----------------------------------------------------------------------------
+
+
+#. Use Internal name of the user profile property.
+#. Any custom user fields will have &quot;SPS-&quot;.
+#. Remove comment &quot;#&quot; in line 43 and do the same in line 48 if you need HTML output.
+#. Provide location after out-file to save the HTML file.
+#. In Line 59 use the same location as Out-File.
+#. Append if you have any custom fields in mysite user profile property
+#. For HTML look and feel please copy and paste the style.css in C:\.
+#. Use any style.css as per organization standard and policy.
+
+Add-PSSnapin Microsoft.SharePoint.PowerShell -ErrorAction SilentlyContinue
+
+$siteUrl = &quot;Your Mysite Host Name&quot;
+$outputFile = &quot;Save the Output File in your desired Location&quot;
+
+$serviceContext = Get-SPServiceContext -Site $siteUrl
+$profileManager = New-Object Microsoft.Office.Server.UserProfiles.UserProfileManager($serviceContext);
+$profiles = $profileManager.GetEnumerator()
+
+$collection = @()
+foreach ($profile in $profiles) {
+ 
+   $profileData = &quot;&quot; | 
+   select &quot;AccountName&quot;, &quot;PreferredName&quot; , &quot;Department&quot; , &quot;Manager&quot; , &quot;Office&quot; , &quot;Location&quot; , &quot;WorkEmail&quot; , &quot;Assistant&quot; , &quot;AboutMe&quot; , &quot;Language&quot; , &quot;PictureURL&quot; , &quot;Role&quot;
+   
+   $profileData.AccountName = $profile[&quot;AccountName&quot;]
+   $profileData.PreferredName = $profile[&quot;PreferredName&quot;]
+   $profileData.Manager = $profile[&quot;Manager&quot;]
+   $profileData.Department = $profile[&quot;Department&quot;]
+   $profileData.Office = $profile[&quot;Office&quot;]
+   $profileData.Location = $profile[&quot;Location&quot;]
+   $profileData.WorkEmail = $profile[&quot;WorkEmail&quot;]
+   $profileData.Assistant = $profile[&quot;Assistant&quot;]
+   $profileData.AboutMe = $profile[&quot;AboutMe&quot;].Value
+   $profileData.Language = $profile[&quot;Language&quot;]
+   $profileData.PictureURL = $profile[&quot;PictureURL&quot;]
+   $profileData.Role = $profile[&quot;Role&quot;]
+   
+   #$collection &#43;= $profileData | ConvertTo-Html -Fragment
+   $collection &#43;= $profileData
+}
+
+#ConvertTo-Html -Body &quot;$collection&quot; -CssUri C:\style.CSS | Out-File &quot;Location to save&quot;
+
+$collection | Export-Csv $outputFile -NoTypeInformation
+
+#Send Mail to Box for easy access
+$SMTP = &quot;Name of the SMTP Server&quot;
+$From = &quot;Email Address&quot;
+$To = &quot;Email Address&quot; , &quot;Email Address&quot;
+$Subject = &quot;User Profile Information Report&quot;
+Send-MailMessage -From $From -To $To -SmtpServer $SMTP -Subject $Subject -Attachments &quot;Same as Out-File Location&quot;</pre>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__com">#&nbsp;-----------------------------------------------------------------------------</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Script&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;To&nbsp;Export&nbsp;User&nbsp;Profile&nbsp;Information&nbsp;Value&nbsp;in&nbsp;Excel&nbsp;and&nbsp;HTML</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Author&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;Chendrayan&nbsp;Venkatesan</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;October&nbsp;1&nbsp;2014</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Version&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;1.1</span>&nbsp;
+<span class="powerShell__com">#&nbsp;-----------------------------------------------------------------------------</span>&nbsp;
+&nbsp;
+&nbsp;
+<span class="powerShell__com">#.&nbsp;Use&nbsp;Internal&nbsp;name&nbsp;of&nbsp;the&nbsp;user&nbsp;profile&nbsp;property.</span>&nbsp;
+<span class="powerShell__com">#.&nbsp;Any&nbsp;custom&nbsp;user&nbsp;fields&nbsp;will&nbsp;have&nbsp;&quot;SPS-&quot;.</span>&nbsp;
+<span class="powerShell__com">#.&nbsp;Remove&nbsp;comment&nbsp;&quot;#&quot;&nbsp;in&nbsp;line&nbsp;43&nbsp;and&nbsp;do&nbsp;the&nbsp;same&nbsp;in&nbsp;line&nbsp;48&nbsp;if&nbsp;you&nbsp;need&nbsp;HTML&nbsp;output.</span>&nbsp;
+<span class="powerShell__com">#.&nbsp;Provide&nbsp;location&nbsp;after&nbsp;out-file&nbsp;to&nbsp;save&nbsp;the&nbsp;HTML&nbsp;file.</span>&nbsp;
+<span class="powerShell__com">#.&nbsp;In&nbsp;Line&nbsp;59&nbsp;use&nbsp;the&nbsp;same&nbsp;location&nbsp;as&nbsp;Out-File.</span>&nbsp;
+<span class="powerShell__com">#.&nbsp;Append&nbsp;if&nbsp;you&nbsp;have&nbsp;any&nbsp;custom&nbsp;fields&nbsp;in&nbsp;mysite&nbsp;user&nbsp;profile&nbsp;property</span>&nbsp;
+<span class="powerShell__com">#.&nbsp;For&nbsp;HTML&nbsp;look&nbsp;and&nbsp;feel&nbsp;please&nbsp;copy&nbsp;and&nbsp;paste&nbsp;the&nbsp;style.css&nbsp;in&nbsp;C:\.</span>&nbsp;
+<span class="powerShell__com">#.&nbsp;Use&nbsp;any&nbsp;style.css&nbsp;as&nbsp;per&nbsp;organization&nbsp;standard&nbsp;and&nbsp;policy.</span>&nbsp;
+&nbsp;
+<span class="powerShell__cmdlets">Add-PSSnapin</span>&nbsp;Microsoft.SharePoint.PowerShell&nbsp;<span class="powerShell__operator">-</span>ErrorAction&nbsp;SilentlyContinue&nbsp;
+&nbsp;
+<span class="powerShell__variable">$siteUrl</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;Your&nbsp;Mysite&nbsp;Host&nbsp;Name&quot;</span>&nbsp;
+<span class="powerShell__variable">$outputFile</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;Save&nbsp;the&nbsp;Output&nbsp;File&nbsp;in&nbsp;your&nbsp;desired&nbsp;Location&quot;</span>&nbsp;
+&nbsp;
+<span class="powerShell__variable">$serviceContext</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPServiceContext&nbsp;<span class="powerShell__operator">-</span>Site&nbsp;<span class="powerShell__variable">$siteUrl</span>&nbsp;
+<span class="powerShell__variable">$profileManager</span>&nbsp;=&nbsp;<span class="powerShell__cmdlets">New-Object</span>&nbsp;Microsoft.Office.Server.UserProfiles.UserProfileManager(<span class="powerShell__variable">$serviceContext</span>);&nbsp;
+<span class="powerShell__variable">$profiles</span>&nbsp;=&nbsp;<span class="powerShell__variable">$profileManager</span>.GetEnumerator()&nbsp;
+&nbsp;
+<span class="powerShell__variable">$collection</span>&nbsp;=&nbsp;@()&nbsp;
+<span class="powerShell__keyword">foreach</span>&nbsp;(<span class="powerShell__variable">$profile</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$profiles</span>)&nbsp;{&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$profileData</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;&quot;</span>&nbsp;<span class="powerShell__operator">|</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__alias">select</span>&nbsp;<span class="powerShell__string">&quot;AccountName&quot;</span>,&nbsp;<span class="powerShell__string">&quot;PreferredName&quot;</span>&nbsp;,&nbsp;<span class="powerShell__string">&quot;Department&quot;</span>&nbsp;,&nbsp;<span class="powerShell__string">&quot;Manager&quot;</span>&nbsp;,&nbsp;<span class="powerShell__string">&quot;Office&quot;</span>&nbsp;,&nbsp;<span class="powerShell__string">&quot;Location&quot;</span>&nbsp;,&nbsp;<span class="powerShell__string">&quot;WorkEmail&quot;</span>&nbsp;,&nbsp;<span class="powerShell__string">&quot;Assistant&quot;</span>&nbsp;,&nbsp;<span class="powerShell__string">&quot;AboutMe&quot;</span>&nbsp;,&nbsp;<span class="powerShell__string">&quot;Language&quot;</span>&nbsp;,&nbsp;<span class="powerShell__string">&quot;PictureURL&quot;</span>&nbsp;,&nbsp;<span class="powerShell__string">&quot;Role&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$profileData</span>.AccountName&nbsp;=&nbsp;<span class="powerShell__variable">$profile</span>[<span class="powerShell__string">&quot;AccountName&quot;</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$profileData</span>.PreferredName&nbsp;=&nbsp;<span class="powerShell__variable">$profile</span>[<span class="powerShell__string">&quot;PreferredName&quot;</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$profileData</span>.Manager&nbsp;=&nbsp;<span class="powerShell__variable">$profile</span>[<span class="powerShell__string">&quot;Manager&quot;</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$profileData</span>.Department&nbsp;=&nbsp;<span class="powerShell__variable">$profile</span>[<span class="powerShell__string">&quot;Department&quot;</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$profileData</span>.Office&nbsp;=&nbsp;<span class="powerShell__variable">$profile</span>[<span class="powerShell__string">&quot;Office&quot;</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$profileData</span>.Location&nbsp;=&nbsp;<span class="powerShell__variable">$profile</span>[<span class="powerShell__string">&quot;Location&quot;</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$profileData</span>.WorkEmail&nbsp;=&nbsp;<span class="powerShell__variable">$profile</span>[<span class="powerShell__string">&quot;WorkEmail&quot;</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$profileData</span>.Assistant&nbsp;=&nbsp;<span class="powerShell__variable">$profile</span>[<span class="powerShell__string">&quot;Assistant&quot;</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$profileData</span>.AboutMe&nbsp;=&nbsp;<span class="powerShell__variable">$profile</span>[<span class="powerShell__string">&quot;AboutMe&quot;</span>].Value&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$profileData</span>.Language&nbsp;=&nbsp;<span class="powerShell__variable">$profile</span>[<span class="powerShell__string">&quot;Language&quot;</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$profileData</span>.PictureURL&nbsp;=&nbsp;<span class="powerShell__variable">$profile</span>[<span class="powerShell__string">&quot;PictureURL&quot;</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$profileData</span>.Role&nbsp;=&nbsp;<span class="powerShell__variable">$profile</span>[<span class="powerShell__string">&quot;Role&quot;</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#$collection&nbsp;&#43;=&nbsp;$profileData&nbsp;|&nbsp;ConvertTo-Html&nbsp;-Fragment</span>&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$collection</span>&nbsp;<span class="powerShell__operator">&#43;</span>=&nbsp;<span class="powerShell__variable">$profileData</span>&nbsp;
+}&nbsp;
+&nbsp;
+<span class="powerShell__com">#ConvertTo-Html&nbsp;-Body&nbsp;&quot;$collection&quot;&nbsp;-CssUri&nbsp;C:\style.CSS&nbsp;|&nbsp;Out-File&nbsp;&quot;Location&nbsp;to&nbsp;save&quot;</span>&nbsp;
+&nbsp;
+<span class="powerShell__variable">$collection</span>&nbsp;<span class="powerShell__operator">|</span>&nbsp;<span class="powerShell__cmdlets">Export-Csv</span>&nbsp;<span class="powerShell__variable">$outputFile</span>&nbsp;<span class="powerShell__operator">-</span>NoTypeInformation&nbsp;
+&nbsp;
+<span class="powerShell__com">#Send&nbsp;Mail&nbsp;to&nbsp;Box&nbsp;for&nbsp;easy&nbsp;access</span>&nbsp;
+<span class="powerShell__variable">$SMTP</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;Name&nbsp;of&nbsp;the&nbsp;SMTP&nbsp;Server&quot;</span>&nbsp;
+<span class="powerShell__variable">$From</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;Email&nbsp;Address&quot;</span>&nbsp;
+<span class="powerShell__variable">$To</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;Email&nbsp;Address&quot;</span>&nbsp;,&nbsp;<span class="powerShell__string">&quot;Email&nbsp;Address&quot;</span>&nbsp;
+<span class="powerShell__variable">$Subject</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;User&nbsp;Profile&nbsp;Information&nbsp;Report&quot;</span>&nbsp;
+Send<span class="powerShell__operator">-</span>MailMessage&nbsp;<span class="powerShell__operator">-</span><span class="powerShell__keyword">From</span>&nbsp;<span class="powerShell__variable">$From</span>&nbsp;<span class="powerShell__operator">-</span>To&nbsp;<span class="powerShell__variable">$To</span>&nbsp;<span class="powerShell__operator">-</span>SmtpServer&nbsp;<span class="powerShell__variable">$SMTP</span>&nbsp;<span class="powerShell__operator">-</span>Subject&nbsp;<span class="powerShell__variable">$Subject</span>&nbsp;<span class="powerShell__operator">-</span>Attachments&nbsp;<span class="powerShell__string">&quot;Same&nbsp;as&nbsp;Out-File&nbsp;Location&quot;</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Get all unique SharePoint user</title>        
+        <meta name="description" content="How many user do we have? I wondered how can I count the all unique user in a SharePoint farm, because I need this information for planning the new SharePoint farm. We have a good cmdlet for get all users from a site which is the Get-SPUser." />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<p><strong>How many user do we have?</strong></p>
+<p>I wondered how can I count the all unique user in a SharePoint farm, because I need this information for planning the new SharePoint farm. We have a good cmdlet for get all users from a site which is the Get-SPUser. Such a way I can see how many user is
+ in a site.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">(Get-SPUser -Web &lt;url&gt; -Limit ALL).count</pre>
+<div class="preview">
+<pre class="powershell">(Get<span class="powerShell__operator">-</span>SPUser&nbsp;<span class="powerShell__operator">-</span>Web&nbsp;&lt;url&gt;&nbsp;<span class="powerShell__operator">-</span>Limit&nbsp;ALL).count</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;Yes, but it contains the all user and domain group object. We can filter the output and remove all object which type is domain group.</div>
+<div class="endscriptcode">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">Get-SPUser -Web &lt;url&gt; -Limit ALL | Where-Object {$_.IsDomainGroup -ne $true}</pre>
+<div class="preview">
+<pre class="powershell">Get<span class="powerShell__operator">-</span>SPUser&nbsp;<span class="powerShell__operator">-</span>Web&nbsp;&lt;url&gt;&nbsp;<span class="powerShell__operator">-</span>Limit&nbsp;ALL&nbsp;<span class="powerShell__operator">|</span>&nbsp;Where<span class="powerShell__operator">-</span>Object&nbsp;{<span class="powerShell__variable">$_</span>.IsDomainGroup&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__variable">$true</span>}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="endscriptcode">However the previous command give us a giant list about the all user object, we don't know how many object in it. Fortunately the powershell give us a useful method which can show us the correct information.</div>
+<div class="endscriptcode">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">Get-SPUser -Web &lt;url&gt; -Limit ALL | Where-Object {$_.IsDomainGroup -ne $true} | Measure-Object | select Count</pre>
+<div class="preview">
+<pre class="powershell">Get<span class="powerShell__operator">-</span>SPUser&nbsp;<span class="powerShell__operator">-</span>Web&nbsp;&lt;url&gt;&nbsp;<span class="powerShell__operator">-</span>Limit&nbsp;ALL&nbsp;<span class="powerShell__operator">|</span>&nbsp;Where<span class="powerShell__operator">-</span>Object&nbsp;{<span class="powerShell__variable">$_</span>.IsDomainGroup&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__variable">$true</span>}&nbsp;<span class="powerShell__operator">|</span>&nbsp;<span class="powerShell__cmdlets">Measure-Object</span>&nbsp;<span class="powerShell__operator">|</span>&nbsp;<span class="powerShell__alias">select</span>&nbsp;Count</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">Great, but we need this information from all site. &nbsp;<br>
+How can do it?</div>
+<div class="endscriptcode">It is not so difficult. We know how to get the all site url and we can use it for the Get-SPUser cmdlet.</div>
+<div class="endscriptcode">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">Get-SPSite -Limit ALL |
+Get-SPWeb -Limit ALL |
+%{Get-SPUser -Web $_.Url -Limit ALL} |
+Where-Object {$_.IsDomainGroup -ne $true} |
+Measure-Object |
+select Count</pre>
+<div class="preview">
+<pre class="powershell">Get<span class="powerShell__operator">-</span>SPSite&nbsp;<span class="powerShell__operator">-</span>Limit&nbsp;ALL&nbsp;<span class="powerShell__operator">|</span>&nbsp;
+Get<span class="powerShell__operator">-</span>SPWeb&nbsp;<span class="powerShell__operator">-</span>Limit&nbsp;ALL&nbsp;<span class="powerShell__operator">|</span>&nbsp;
+%{Get<span class="powerShell__operator">-</span>SPUser&nbsp;<span class="powerShell__operator">-</span>Web&nbsp;<span class="powerShell__variable">$_</span>.Url&nbsp;<span class="powerShell__operator">-</span>Limit&nbsp;ALL}&nbsp;<span class="powerShell__operator">|</span>&nbsp;
+Where<span class="powerShell__operator">-</span>Object&nbsp;{<span class="powerShell__variable">$_</span>.IsDomainGroup&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__variable">$true</span>}&nbsp;<span class="powerShell__operator">|</span>&nbsp;
+<span class="powerShell__cmdlets">Measure-Object</span>&nbsp;<span class="powerShell__operator">|</span>&nbsp;
+<span class="powerShell__alias">select</span>&nbsp;Count</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">What's the problem?</div>
+</div>
+<div class="endscriptcode">All site can contain the same user object. So, the result won't be real. We need to count the all unique objet. The simpliest way the select -unique method.</div>
+<div class="endscriptcode">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">Get-SPSite -Limit ALL |
+Get-SPWeb -Limit ALL |
+%{Get-SPUser -Web $_.Url -Limit ALL} |
+Where-Object {$_.IsDomainGroup -ne $true} |
+select -Unique loginname |
+Measure-Object |
+select Count</pre>
+<div class="preview">
+<pre class="powershell">Get<span class="powerShell__operator">-</span>SPSite&nbsp;<span class="powerShell__operator">-</span>Limit&nbsp;ALL&nbsp;<span class="powerShell__operator">|</span>&nbsp;
+Get<span class="powerShell__operator">-</span>SPWeb&nbsp;<span class="powerShell__operator">-</span>Limit&nbsp;ALL&nbsp;<span class="powerShell__operator">|</span>&nbsp;
+%{Get<span class="powerShell__operator">-</span>SPUser&nbsp;<span class="powerShell__operator">-</span>Web&nbsp;<span class="powerShell__variable">$_</span>.Url&nbsp;<span class="powerShell__operator">-</span>Limit&nbsp;ALL}&nbsp;<span class="powerShell__operator">|</span>&nbsp;
+Where<span class="powerShell__operator">-</span>Object&nbsp;{<span class="powerShell__variable">$_</span>.IsDomainGroup&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__variable">$true</span>}&nbsp;<span class="powerShell__operator">|</span>&nbsp;
+<span class="powerShell__alias">select</span>&nbsp;<span class="powerShell__operator">-</span>Unique&nbsp;loginname&nbsp;<span class="powerShell__operator">|</span>&nbsp;
+<span class="powerShell__cmdlets">Measure-Object</span>&nbsp;<span class="powerShell__operator">|</span>&nbsp;
+<span class="powerShell__alias">select</span>&nbsp;Count</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;WARNING: This script will create a large object and probably the run time will be extremly long. You should schedule this script after business hours and put the result into an output file.</div>
+<div class="endscriptcode"></div>
+<div class="endscriptcode">The next script result is same as before script, it just collects all SiteUsers even the user has no rights on any sites.</div>
+<div class="endscriptcode">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">(Get-SPSite -Limit All | 
+Get-SPWeb -Limit All | 
+select -ExpandProperty SiteUsers | 
+?{$_.IsDomainGroup -ne $true} | 
+select -Unique LoginName).count</pre>
+<div class="preview">
+<pre class="powershell">(Get<span class="powerShell__operator">-</span>SPSite&nbsp;<span class="powerShell__operator">-</span>Limit&nbsp;All&nbsp;<span class="powerShell__operator">|</span>&nbsp;&nbsp;
+Get<span class="powerShell__operator">-</span>SPWeb&nbsp;<span class="powerShell__operator">-</span>Limit&nbsp;All&nbsp;<span class="powerShell__operator">|</span>&nbsp;&nbsp;
+<span class="powerShell__alias">select</span>&nbsp;<span class="powerShell__operator">-</span>ExpandProperty&nbsp;SiteUsers&nbsp;<span class="powerShell__operator">|</span>&nbsp;&nbsp;
+?{<span class="powerShell__variable">$_</span>.IsDomainGroup&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__variable">$true</span>}&nbsp;<span class="powerShell__operator">|</span>&nbsp;&nbsp;
+<span class="powerShell__alias">select</span>&nbsp;<span class="powerShell__operator">-</span>Unique&nbsp;LoginName).count</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">Use this script to get all unique user instead of script before, because it is faster and easier. This script collect all users from object directly instead of call another cmdlet which collects them (Get-SPUser). The result is
+ more punctual than the first script, because it not contains such a user who has no rights.<br>
+We can use the expanded AllWebs object instead of the Get-SPWeb -Limit All.</div>
+</div>
+<div class="endscriptcode">
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">(Get-SPSite -Limit All | 
+select -ExpandProperty AllWebs | 
+select -ExpandProperty AllUsers | 
+?{$_.IsDomainGroup -ne $true} | 
+select -Unique LoginName).count</pre>
+<div class="preview">
+<pre class="powershell">(Get<span class="powerShell__operator">-</span>SPSite&nbsp;<span class="powerShell__operator">-</span>Limit&nbsp;All&nbsp;<span class="powerShell__operator">|</span>&nbsp;&nbsp;
+<span class="powerShell__alias">select</span>&nbsp;<span class="powerShell__operator">-</span>ExpandProperty&nbsp;AllWebs&nbsp;<span class="powerShell__operator">|</span>&nbsp;&nbsp;
+<span class="powerShell__alias">select</span>&nbsp;<span class="powerShell__operator">-</span>ExpandProperty&nbsp;AllUsers&nbsp;<span class="powerShell__operator">|</span>&nbsp;&nbsp;
+?{<span class="powerShell__variable">$_</span>.IsDomainGroup&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__variable">$true</span>}&nbsp;<span class="powerShell__operator">|</span>&nbsp;&nbsp;
+<span class="powerShell__alias">select</span>&nbsp;<span class="powerShell__operator">-</span>Unique&nbsp;LoginName).count</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+</div>
+&nbsp;</div>
+</div>
+
+        </div>
+    </body>
+</html>
