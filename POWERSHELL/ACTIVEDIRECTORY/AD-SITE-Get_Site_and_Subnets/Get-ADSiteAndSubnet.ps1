@@ -1,44 +1,40 @@
-﻿function Get-ADSiteAndSubnet {
-<#
-	.SYNOPSIS
-		This function will retrieve Site names, subnets names and descriptions.
+function Get-ADSiteAndSubnet {
+    <#
+    .SYNOPSIS
+        This function will retrieve Site names, subnets names and descriptions.
 
-	.DESCRIPTION
-		This function will retrieve Site names, subnets names and descriptions.
+    .DESCRIPTION
+        This function will retrieve Site names, subnets names and descriptions.
 
-	.EXAMPLE
-		Get-ADSiteAndSubnet
-	
-	.EXAMPLE
-		Get-ADSiteAndSubnet | Export-Csv -Path .\ADSiteInventory.csv
+    .EXAMPLE
+        Get-ADSiteAndSubnet
 
-	.OUTPUTS
-		PSObject
+    .EXAMPLE
+        Get-ADSiteAndSubnet | Export-Csv -Path .\ADSiteInventory.csv
 
-	.NOTES
-		AUTHOR	: Francois-Xavier Cat
-		DATE	: 2014/02/03
-		
-		HISTORY	:
-	
-			1.0		2014/02/03	Initial Version
-			
-	
+    .OUTPUTS
+        PSObject
+
+    .NOTES
+        CHANGE HISTORY:
+            1.0 | 2014/02/03 | @lazywinadmin
+                Initial Version
+    .link
+        https://github.com/lazywinadmin/PowerShell
 #>
-	[CmdletBinding()]
+    [CmdletBinding()]
     PARAM()
-    BEGIN {Write-Verbose -Message "[BEGIN] Starting Script..."}
-    PROCESS
-    {
-		TRY{
-	        # Domain and Sites Information
-	        $Forest = [System.DirectoryServices.ActiveDirectory.Forest]::GetCurrentForest()
-	        $SiteInfo = [System.DirectoryServices.ActiveDirectory.Forest]::GetCurrentForest().Sites
+    BEGIN { Write-Verbose -Message "[BEGIN] Starting Script..." }
+    PROCESS {
+        TRY {
+            # Domain and Sites Information
+            $Forest = [System.DirectoryServices.ActiveDirectory.Forest]::GetCurrentForest()
+            $SiteInfo = [System.DirectoryServices.ActiveDirectory.Forest]::GetCurrentForest().Sites
 
-	        # Forest Context
-	        $ForestType = [System.DirectoryServices.ActiveDirectory.DirectoryContexttype]"forest"
-	        $ForestContext = New-Object -TypeName System.DirectoryServices.ActiveDirectory.DirectoryContext -ArgumentList $ForestType,$Forest
-            
+            # Forest Context
+            $ForestType = [System.DirectoryServices.ActiveDirectory.DirectoryContexttype]"forest"
+            $ForestContext = New-Object -TypeName System.DirectoryServices.ActiveDirectory.DirectoryContext -ArgumentList $ForestType, $Forest
+
             # Distinguished Name of the Configuration Partition
             $Configuration = ([ADSI]"LDAP://RootDSE").configurationNamingContext
 
@@ -46,35 +42,32 @@
             $SubnetsContainer = [ADSI]"LDAP://CN=Subnets,CN=Sites,$Configuration"
             $SubnetsContainerchildren = $SubnetsContainer.Children
 
-	        FOREACH ($item in $SiteInfo){
-				
-				Write-Verbose -Message "[PROCESS] SITE: $($item.name)"
+            FOREACH ($item in $SiteInfo) {
+
+                Write-Verbose -Message "[PROCESS] SITE: $($item.name)"
 
                 $output = @{
                     Name = $item.name
                 }
-                    FOREACH ($i in $item.Subnets.name){
-                        Write-verbose -message "[PROCESS] SUBNET: $i"
-                        $output.Subnet = $i
-                        $SubnetAdditionalInfo = $SubnetsContainerchildren.Where({$_.name -match $i})
+                FOREACH ($i in $item.Subnets.name) {
+                    Write-Verbose -message "[PROCESS] SUBNET: $i"
+                    $output.Subnet = $i
+                    $SubnetAdditionalInfo = $SubnetsContainerchildren.Where( { $_.name -match $i })
 
-                        Write-verbose -message "[PROCESS] SUBNET: $i - DESCRIPTION: $($SubnetAdditionalInfo.Description)"
-                        $output.Description = $($SubnetAdditionalInfo.Description)
-                        
-                        Write-verbose -message "[PROCESS] OUTPUT INFO"
+                    Write-Verbose -message "[PROCESS] SUBNET: $i - DESCRIPTION: $($SubnetAdditionalInfo.Description)"
+                    $output.Description = $($SubnetAdditionalInfo.Description)
 
-                        New-Object -TypeName PSObject -Property $output
-                    }
-	        }#Foreach ($item in $SiteInfo)
-		}#TRY
-		CATCH
-		{
-			Write-Warning -Message "[PROCESS] Something Wrong Happened"
-			Write-Warning -Message $Error[0]
-		}#CATCH
+                    Write-Verbose -message "[PROCESS] OUTPUT INFO"
+
+                    New-Object -TypeName PSObject -Property $output
+                }
+            }#Foreach ($item in $SiteInfo)
+        }#TRY
+        CATCH {
+            $PSCmdlet.ThrowTerminatingError($_)
+        }#CATCH
     }#PROCESS
-    END
-	{
-		Write-Verbose -Message "[END] Script Completed!"
-	}#END
+    END {
+        Write-Verbose -Message "[END] Script Completed!"
+    }#END
 }#get-ADSiteServicesInfo
