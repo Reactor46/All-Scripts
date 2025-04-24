@@ -1,6 +1,0 @@
-package.nuspec
-*.nupkg
-_tbd/
-Modules/**/todo
-.packages/
-.tools/

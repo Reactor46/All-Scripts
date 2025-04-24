@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = Wpf.Ui.Demo.Console
+build_property.ProjectDir = D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Demo.Console\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "R/WFosSW0+dwE3cVqiLTzrdcPiiFTA2q85dKSAH93WlHZFkk6L0J9IztoCZck2xAGEhdFkyLRN2GbZJlJXm7xw==",
+  "success": true,
+  "projectFilePath": "D:\\SCRIPTS\\GITS\\wpfui\\src\\Wpf.Ui.Demo.Simple\\Wpf.Ui.Demo.Simple.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\a24696\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\a24696\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.507\\stylecop.analyzers.1.2.0-beta.507.nupkg.sha512",
+    "C:\\Users\\a24696\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.507\\stylecop.analyzers.unstable.1.2.0.507.nupkg.sha512",
+    "C:\\Users\\a24696\\.nuget\\packages\\system.drawing.common\\8.0.0\\system.drawing.common.8.0.0.nupkg.sha512",
+    "C:\\Users\\a24696\\.nuget\\packages\\wpfanalyzers\\4.1.1\\wpfanalyzers.4.1.1.nupkg.sha512",
+    "C:\\Users\\a24696\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.31\\microsoft.windows.sdk.net.ref.10.0.22621.31.nupkg.sha512"
+  ],
+  "logs": []
+}

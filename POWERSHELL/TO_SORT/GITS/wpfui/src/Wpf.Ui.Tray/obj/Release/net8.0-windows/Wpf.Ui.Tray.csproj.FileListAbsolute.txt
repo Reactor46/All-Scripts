@@ -1,0 +1,20 @@
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\bin\Release\net8.0-windows\License - Fluent System Icons.txt
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\bin\Release\net8.0-windows\License - Microsoft.Ui.Xaml.txt
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\bin\Release\net8.0-windows\License - Segoe Fluent Icons.txt
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\bin\Release\net8.0-windows\License - VirtualizingWrapPanel.txt
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\bin\Release\net8.0-windows\License - Windows Presentation Foundation.txt
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\bin\Release\net8.0-windows\Wpf.Ui.Tray.deps.json
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\bin\Release\net8.0-windows\Wpf.Ui.Tray.dll
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\bin\Release\net8.0-windows\Wpf.Ui.Tray.xml
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\bin\Release\net8.0-windows\Wpf.Ui.dll
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\bin\Release\net8.0-windows\Wpf.Ui.xml
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\obj\Release\net8.0-windows\Wpf.Ui.Tray.csproj.AssemblyReference.cache
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\obj\Release\net8.0-windows\Wpf.Ui.Tray.GeneratedMSBuildEditorConfig.editorconfig
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\obj\Release\net8.0-windows\Wpf.Ui.Tray.AssemblyInfoInputs.cache
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\obj\Release\net8.0-windows\Wpf.Ui.Tray.AssemblyInfo.cs
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\obj\Release\net8.0-windows\Wpf.Ui.Tray.csproj.CoreCompileInputs.cache
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\obj\Release\net8.0-windows\Wpf.Ui.Tray.csproj.CopyComplete
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\obj\Release\net8.0-windows\Wpf.Ui.Tray.dll
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\obj\Release\net8.0-windows\refint\Wpf.Ui.Tray.dll
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\obj\Release\net8.0-windows\Wpf.Ui.Tray.xml
+D:\SCRIPTS\GITS\wpfui\src\Wpf.Ui.Tray\obj\Release\net8.0-windows\ref\Wpf.Ui.Tray.dll
