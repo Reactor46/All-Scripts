@@ -1,0 +1,59 @@
+{
+  "name": "Material Darker",
+  "description": "Material Darker scheme by Nate Peterson.",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#212121",
+    "DarkGray": "#303030",
+    "Cyan": "#353535",
+    "Blue": "#4a4a4a",
+    "Yellow": "#b2ccd6",
+    "Green": "#eeffff",
+    "Gray": "#eeffff",
+    "White": "#ffffff",
+    "DarkRed": "#f07178",
+    "Red": "#f78c6c",
+    "DarkYellow": "#ffcb6b",
+    "DarkGreen": "#c3e88d",
+    "DarkCyan": "#89ddff",
+    "DarkBlue": "#82aaff",
+    "DarkMagenta": "#c792ea",
+    "Magenta": "#ff5370"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "Circus",
+  "description": "Circus scheme by Stephan Boyer (https://github.com/stepchowfun) and Esther Wang (https://github.com/ewang12).",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#191919",
+    "DarkGray": "#202020",
+    "Cyan": "#303030",
+    "Blue": "#5f5a60",
+    "Yellow": "#505050",
+    "Green": "#a7a7a7",
+    "Gray": "#808080",
+    "White": "#ffffff",
+    "DarkRed": "#dc657d",
+    "Red": "#4bb1a7",
+    "DarkYellow": "#c3ba63",
+    "DarkGreen": "#84b97c",
+    "DarkCyan": "#4bb1a7",
+    "DarkBlue": "#639ee4",
+    "DarkMagenta": "#b888e2",
+    "Magenta": "#b888e2"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

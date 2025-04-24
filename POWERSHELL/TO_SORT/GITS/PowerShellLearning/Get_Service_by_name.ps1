@@ -1,0 +1,1 @@
+﻿Get-Service -Name ALG

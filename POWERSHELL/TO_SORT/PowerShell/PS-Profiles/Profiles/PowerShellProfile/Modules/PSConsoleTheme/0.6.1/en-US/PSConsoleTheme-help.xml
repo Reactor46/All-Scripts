@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-ConsoleTheme</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>ConsoleTheme</command:noun>
+      <maml:description>
+        <maml:para>Gets the current console theme or a list of available themes.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-ConsoleTheme cmdlet returns the attributes of console themes available in the PSConsoleTheme repository. Without parameters, Get-ConsoleTheme returns the currently loaded console theme. To get all installed themes, specify the ListAvailable parameter.</maml:para>
+      <maml:para>Available themes are loaded when the PSConsoleTheme module is imported. If themes are added, removed, or modified during a PowerShell session, the Refresh parameter can be specified to reload available themes. This is especially helpful when developing and testing new themes.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-ConsoleTheme</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ListAvailable</maml:name>
+          <maml:Description>
+            <maml:para>Indicates that this cmdlet gets all installed console themes.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-ConsoleTheme</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:Description>
+            <maml:para>Specifies the name of the console theme this cmdlet gets. If not specified, the cmdlet returns the currently loaded console theme.</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">3024</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Apathy</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Ashes</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Cave</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Cave Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Dune</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Dune Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Estuary</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Estuary Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Forest</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Forest Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Heath</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Heath Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Lakeside</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Lakeside Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Plateau</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Plateau Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Savanna</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Savanna Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Seaside</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Seaside Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Sulphurpool</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Sulphurpool Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Bespin</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Brewer</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Bright</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Brush Trees</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Brush Trees Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Chalk</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Chester</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Circus</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Classic Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Classic Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Codeschool</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Cupcake</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Cupertino</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Darktooth</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Default Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Default Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Dracula</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Eighties</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Embers</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Flat</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Github</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Google Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Google Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Grayscale Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Grayscale Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Green Screen</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Gruvbox dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">hard</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Gruvbox dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">medium</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Gruvbox dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">pale</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Gruvbox dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">soft</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Gruvbox light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">hard</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Gruvbox light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">medium</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Gruvbox light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">soft</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Harmonic16 Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Harmonic16 Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Hopscotch</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Icy Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">IR Black</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Isotope</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">London Tube</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Macintosh</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Marrakesh</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Materia</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Material</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Material Darker</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Material Lighter</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Material Palenight</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Mellow Purple</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Mexico Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Mocha</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Monokai</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Nord</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Ocean</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OceanicNext</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">One Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OneDark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Paraiso</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PhD</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Pico</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Pop</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Porple</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Railscasts</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Rebecca</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Redmond</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Seti UI</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Shapeshifter</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Solar Flare</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Solarized Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Solarized Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Spacemacs</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Summerfruit Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Summerfruit Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Tomorrow</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Tomorrow Night</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Twilight</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Unikitty Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Unikitty Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Woodland</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">XCode Dusk</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Zenburn</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>ShowColors</maml:name>
+          <maml:Description>
+            <maml:para>Indicates that this cmdlet displays a table with the colors of the current console theme. If a theme name is specifed, this parameter is ignored.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Get-ConsoleTheme</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Refresh</maml:name>
+          <maml:Description>
+            <maml:para>Indicates that this cmdlet reload available console themes.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ListAvailable</maml:name>
+        <maml:Description>
+          <maml:para>Indicates that this cmdlet gets all installed console themes.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:Description>
+          <maml:para>Specifies the name of the console theme this cmdlet gets. If not specified, the cmdlet returns the currently loaded console theme.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Refresh</maml:name>
+        <maml:Description>
+          <maml:para>Indicates that this cmdlet reload available console themes.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>ShowColors</maml:name>
+        <maml:Description>
+          <maml:para>Indicates that this cmdlet displays a table with the colors of the current console theme. If a theme name is specifed, this parameter is ignored.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>PSCustomObject</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Get-ConsoleTheme</dev:code>
+        <dev:remarks>
+          <maml:para>Get the attributes of the currently loaded console theme.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Get-ConsoleTheme 'Solarized Dark'</dev:code>
+        <dev:remarks>
+          <maml:para>Get the attributes of the Solarized Dark console theme.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 3 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Get-ConsoleTheme -ListAvailable</dev:code>
+        <dev:remarks>
+          <maml:para>List the name and description of all available console themes.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Set-ConsoleTheme</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-ConsoleTheme</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>ConsoleTheme</command:noun>
+      <maml:description>
+        <maml:para>Sets the console and PSReadline token colors.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The Set-ConsoleTheme cmdlet sets the console colors to a predefined theme in the PSConsoleTheme repository. If a theme contains the optional tokens attribute and the PSReadline module is installed, the PSReadline token colors are also set. To reset the console colors and PSReadline token colors to the system defaults, specify the Clear parameter.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-ConsoleTheme</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Name</maml:name>
+          <maml:Description>
+            <maml:para>Specifies the name of the console theme to set.</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">3024</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Apathy</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Ashes</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Cave</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Cave Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Dune</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Dune Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Estuary</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Estuary Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Forest</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Forest Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Heath</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Heath Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Lakeside</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Lakeside Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Plateau</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Plateau Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Savanna</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Savanna Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Seaside</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Seaside Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Sulphurpool</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Atelier Sulphurpool Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Bespin</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Brewer</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Bright</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Brush Trees</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Brush Trees Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Chalk</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Chester</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Circus</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Classic Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Classic Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Codeschool</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Cupcake</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Cupertino</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Darktooth</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Default Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Default Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Dracula</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Eighties</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Embers</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Flat</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Github</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Google Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Google Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Grayscale Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Grayscale Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Green Screen</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Gruvbox dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">hard</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Gruvbox dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">medium</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Gruvbox dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">pale</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Gruvbox dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">soft</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Gruvbox light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">hard</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Gruvbox light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">medium</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Gruvbox light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">soft</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Harmonic16 Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Harmonic16 Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Hopscotch</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Icy Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">IR Black</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Isotope</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">London Tube</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Macintosh</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Marrakesh</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Materia</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Material</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Material Darker</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Material Lighter</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Material Palenight</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Mellow Purple</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Mexico Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Mocha</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Monokai</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Nord</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Ocean</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OceanicNext</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">One Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">OneDark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Paraiso</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">PhD</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Pico</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Pop</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Porple</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Railscasts</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Rebecca</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Redmond</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Seti UI</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Shapeshifter</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Solar Flare</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Solarized Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Solarized Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Spacemacs</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Summerfruit Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Summerfruit Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Tomorrow</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Tomorrow Night</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Twilight</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Unikitty Dark</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Unikitty Light</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Woodland</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">XCode Dusk</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">Zenburn</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Session</maml:name>
+          <maml:Description>
+            <maml:para>Set the console theme for the current session only. Theme changes will not be saved.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>Set-ConsoleTheme</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Reset</maml:name>
+          <maml:Description>
+            <maml:para>Indicates that this cmdlet set all console colors and PSReadline tokens to the system defaults.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>Session</maml:name>
+          <maml:Description>
+            <maml:para>Set the console theme for the current session only. Theme changes will not be saved.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Name</maml:name>
+        <maml:Description>
+          <maml:para>Specifies the name of the console theme to set.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Reset</maml:name>
+        <maml:Description>
+          <maml:para>Indicates that this cmdlet set all console colors and PSReadline tokens to the system defaults.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+        <maml:name>Session</maml:name>
+        <maml:Description>
+          <maml:para>Set the console theme for the current session only. Theme changes will not be saved.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Set-ConsoleTheme 'Solarized Dark'</dev:code>
+        <dev:remarks>
+          <maml:para>Set the console theme to Solarized Dark.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Set-ConsoleTheme -Reset</dev:code>
+        <dev:remarks>
+          <maml:para>Set all console colors and PSReadline tokens to the system defaults.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Get-ConsoleTheme</maml:linkText>
+        <maml:uri></maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>

@@ -1,0 +1,59 @@
+{
+  "name": "Harmonic16 Light",
+  "description": "Harmonic16 Light scheme by Jannik Siebert (https://github.com/janniks).",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#f7f9fb",
+    "DarkGray": "#e5ebf1",
+    "Cyan": "#cbd6e2",
+    "Blue": "#aabcce",
+    "Yellow": "#627e99",
+    "Green": "#405c79",
+    "Gray": "#223b54",
+    "White": "#0b1c2c",
+    "DarkRed": "#bf8b56",
+    "Red": "#bfbf56",
+    "DarkYellow": "#8bbf56",
+    "DarkGreen": "#56bf8b",
+    "DarkCyan": "#568bbf",
+    "DarkBlue": "#8b56bf",
+    "DarkMagenta": "#bf568b",
+    "Magenta": "#bf5656"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

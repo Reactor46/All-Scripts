@@ -1,0 +1,6 @@
+<ModulePackages>
+   <Package Id="VMware.VimAutomation.Cis.Nsxt.Commands" Version="11.5.0.14900141" />
+   <Package Id="VMware.VimAutomation.Cis.Nsxt.Impl" Version="11.5.0.14900141" />
+   <Package Id="VMware.VimAutomation.Cis.Nsxt.Interop" Version="11.5.0.14900141" />
+   <Package Id="VMware.VimAutomation.Cis.Nsxt.Types" Version="11.5.0.14900141" />
+</ModulePackages>

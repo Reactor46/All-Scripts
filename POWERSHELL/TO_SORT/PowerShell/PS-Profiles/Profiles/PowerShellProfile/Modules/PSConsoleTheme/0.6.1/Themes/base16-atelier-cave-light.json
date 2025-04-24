@@ -1,0 +1,59 @@
+{
+  "name": "Atelier Cave Light",
+  "description": "Atelier Cave Light scheme by Bram de Haan (http://atelierbramdehaan.nl).",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#efecf4",
+    "DarkGray": "#e2dfe7",
+    "Cyan": "#8b8792",
+    "Blue": "#7e7887",
+    "Yellow": "#655f6d",
+    "Green": "#585260",
+    "Gray": "#26232a",
+    "White": "#19171c",
+    "DarkRed": "#be4678",
+    "Red": "#aa573c",
+    "DarkYellow": "#a06e3b",
+    "DarkGreen": "#2a9292",
+    "DarkCyan": "#398bc6",
+    "DarkBlue": "#576ddb",
+    "DarkMagenta": "#955ae7",
+    "Magenta": "#bf40bf"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.vscode-test/
+logs/
+modules
+modules/
+node_modules/
+obj/
+bin/
+out/
+sessions/
+test-results.xml
+*.vsix
+*.DS_Store

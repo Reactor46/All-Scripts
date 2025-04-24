@@ -1,0 +1,59 @@
+{
+  "name": "Grayscale Light",
+  "description": "Grayscale Light scheme by Alexandre Gavioli (https://github.com/Alexx2/).",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#f7f7f7",
+    "DarkGray": "#e3e3e3",
+    "Cyan": "#b9b9b9",
+    "Blue": "#ababab",
+    "Yellow": "#525252",
+    "Green": "#464646",
+    "Gray": "#252525",
+    "White": "#101010",
+    "DarkRed": "#7c7c7c",
+    "Red": "#999999",
+    "DarkYellow": "#a0a0a0",
+    "DarkGreen": "#8e8e8e",
+    "DarkCyan": "#868686",
+    "DarkBlue": "#686868",
+    "DarkMagenta": "#747474",
+    "Magenta": "#5e5e5e"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

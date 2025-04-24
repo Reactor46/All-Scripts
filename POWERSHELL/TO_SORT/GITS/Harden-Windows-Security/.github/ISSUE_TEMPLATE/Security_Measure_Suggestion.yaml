@@ -1,0 +1,29 @@
+name: New Security Measure Suggestion 🫰
+description: Suggest a new Security Measure to be added
+title: "[Suggestion]: "
+labels: ["Suggestion ⚡"]
+projects: "Project: Harden Windows Security"
+assignees:
+  - HotCakeX
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a new Security measure!
+  - type: checkboxes
+    id: Not-Duplicate
+    attributes:
+      label: Are you sure the Security measure is not already implemented?
+      description: Please make sure the new Security measure that you are suggesting to be added isn't already implemented in this GitHub repository, Thank you! 😊
+      options:
+        - label: Yes, I have checked and the Security measure I'm suggesting to be implemented is not duplicate. 🫡
+          required: true
+  - type: textarea
+    id: Explanation
+    attributes:
+      label: Please explain your new Security measure suggestion
+      description: Please explain your new Security measure suggestion and be as detailed as possible. 🙏
+      placeholder: "I want to suggest..."
+    validations:
+      required: true
+

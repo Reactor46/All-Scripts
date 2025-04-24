@@ -1,0 +1,2 @@
+﻿#Converting a basic ping test script into an exe file with PS2EXE
+Invoke-PS2EXE C:\Users\silad\Documents\Powershell_stuff\PowerShellLearning\Basic_Ping_Test.ps1 C:\Users\silad\Documents\Powershell_stuff\PowerShellLearning\Basic_Ping_Test.exe

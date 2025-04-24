@@ -1,0 +1,59 @@
+{
+  "name": "One Light",
+  "description": "One Light scheme by Daniel Pfeifer (http://github.com/purpleKarrot).",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#fafafa",
+    "DarkGray": "#f0f0f1",
+    "Cyan": "#e5e5e6",
+    "Blue": "#a0a1a7",
+    "Yellow": "#696c77",
+    "Green": "#383a42",
+    "Gray": "#202227",
+    "White": "#090a0b",
+    "DarkRed": "#ca1243",
+    "Red": "#d75f00",
+    "DarkYellow": "#c18401",
+    "DarkGreen": "#50a14f",
+    "DarkCyan": "#0184bc",
+    "DarkBlue": "#4078f2",
+    "DarkMagenta": "#a626a4",
+    "Magenta": "#986801"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

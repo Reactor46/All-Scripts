@@ -1,0 +1,59 @@
+{
+  "name": "Mexico Light",
+  "description": "Mexico Light scheme by Sheldon Johnson.",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#f8f8f8",
+    "DarkGray": "#e8e8e8",
+    "Cyan": "#d8d8d8",
+    "Blue": "#b8b8b8",
+    "Yellow": "#585858",
+    "Green": "#383838",
+    "Gray": "#282828",
+    "White": "#181818",
+    "DarkRed": "#ab4642",
+    "Red": "#dc9656",
+    "DarkYellow": "#f79a0e",
+    "DarkGreen": "#538947",
+    "DarkCyan": "#4b8093",
+    "DarkBlue": "#7cafc2",
+    "DarkMagenta": "#96609e",
+    "Magenta": "#a16946"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

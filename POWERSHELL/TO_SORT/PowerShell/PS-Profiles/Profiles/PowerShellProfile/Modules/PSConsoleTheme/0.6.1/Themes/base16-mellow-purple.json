@@ -1,0 +1,59 @@
+{
+  "name": "Mellow Purple",
+  "description": "Mellow Purple scheme by gidsi.",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#1e0528",
+    "DarkGray": "#1a092d",
+    "Cyan": "#331354",
+    "Blue": "#320f55",
+    "Yellow": "#873582",
+    "Green": "#ffeeff",
+    "Gray": "#ffeeff",
+    "White": "#f8c0ff",
+    "DarkRed": "#00d9e9",
+    "Red": "#aa00a3",
+    "DarkYellow": "#955ae7",
+    "DarkGreen": "#05cb0d",
+    "DarkCyan": "#b900b1",
+    "DarkBlue": "#550068",
+    "DarkMagenta": "#8991bb",
+    "Magenta": "#4d6fff"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

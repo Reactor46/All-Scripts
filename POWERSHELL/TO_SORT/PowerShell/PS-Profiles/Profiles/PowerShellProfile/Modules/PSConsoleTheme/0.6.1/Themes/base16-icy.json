@@ -1,0 +1,59 @@
+{
+  "name": "Icy Dark",
+  "description": "Icy Dark scheme by icyphox (https://icyphox.ga).",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#021012",
+    "DarkGray": "#031619",
+    "Cyan": "#041f23",
+    "Blue": "#052e34",
+    "Yellow": "#064048",
+    "Green": "#095b67",
+    "Gray": "#0c7c8c",
+    "White": "#109cb0",
+    "DarkRed": "#16c1d9",
+    "Red": "#b3ebf2",
+    "DarkYellow": "#80deea",
+    "DarkGreen": "#4dd0e1",
+    "DarkCyan": "#26c6da",
+    "DarkBlue": "#00bcd4",
+    "DarkMagenta": "#00acc1",
+    "Magenta": "#0097a7"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

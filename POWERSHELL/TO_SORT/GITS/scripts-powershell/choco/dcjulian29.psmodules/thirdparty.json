@@ -1,0 +1,5 @@
+[
+  "Microsoft.PowerShell.SecretManagement",
+  "Microsoft.PowerShell.SecretStore",
+  "PSScriptAnalyzer"
+]

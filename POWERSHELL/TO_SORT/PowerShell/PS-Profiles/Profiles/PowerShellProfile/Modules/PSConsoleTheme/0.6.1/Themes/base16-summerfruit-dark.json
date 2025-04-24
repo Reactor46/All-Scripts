@@ -1,0 +1,59 @@
+{
+  "name": "Summerfruit Dark",
+  "description": "Summerfruit Dark scheme by Christopher Corley (http://christop.club/).",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#151515",
+    "DarkGray": "#202020",
+    "Cyan": "#303030",
+    "Blue": "#505050",
+    "Yellow": "#b0b0b0",
+    "Green": "#d0d0d0",
+    "Gray": "#e0e0e0",
+    "White": "#ffffff",
+    "DarkRed": "#ff0086",
+    "Red": "#fd8900",
+    "DarkYellow": "#aba800",
+    "DarkGreen": "#00c918",
+    "DarkCyan": "#1faaaa",
+    "DarkBlue": "#3777e6",
+    "DarkMagenta": "#ad00a1",
+    "Magenta": "#cc6633"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

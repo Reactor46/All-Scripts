@@ -1,0 +1,59 @@
+{
+  "name": "Tomorrow",
+  "description": "Tomorrow scheme by Chris Kempson (http://chriskempson.com).",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#ffffff",
+    "DarkGray": "#e0e0e0",
+    "Cyan": "#d6d6d6",
+    "Blue": "#8e908c",
+    "Yellow": "#969896",
+    "Green": "#4d4d4c",
+    "Gray": "#282a2e",
+    "White": "#1d1f21",
+    "DarkRed": "#c82829",
+    "Red": "#f5871f",
+    "DarkYellow": "#eab700",
+    "DarkGreen": "#718c00",
+    "DarkCyan": "#3e999f",
+    "DarkBlue": "#4271ae",
+    "DarkMagenta": "#8959a8",
+    "Magenta": "#a3685a"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "Eighties",
+  "description": "Eighties scheme by Chris Kempson (http://chriskempson.com).",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#2d2d2d",
+    "DarkGray": "#393939",
+    "Cyan": "#515151",
+    "Blue": "#747369",
+    "Yellow": "#a09f93",
+    "Green": "#d3d0c8",
+    "Gray": "#e8e6df",
+    "White": "#f2f0ec",
+    "DarkRed": "#f2777a",
+    "Red": "#f99157",
+    "DarkYellow": "#ffcc66",
+    "DarkGreen": "#99cc99",
+    "DarkCyan": "#66cccc",
+    "DarkBlue": "#6699cc",
+    "DarkMagenta": "#cc99cc",
+    "Magenta": "#d27b53"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

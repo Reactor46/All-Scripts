@@ -1,0 +1,59 @@
+{
+  "name": "Solarized Light",
+  "description": "Solarized Light scheme by Ethan Schoonover (http://ethanschoonover.com/solarized).",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#fdf6e3",
+    "DarkGray": "#eee8d5",
+    "Cyan": "#93a1a1",
+    "Blue": "#839496",
+    "Yellow": "#657b83",
+    "Green": "#586e75",
+    "Gray": "#073642",
+    "White": "#002b36",
+    "DarkRed": "#dc322f",
+    "Red": "#cb4b16",
+    "DarkYellow": "#b58900",
+    "DarkGreen": "#859900",
+    "DarkCyan": "#2aa198",
+    "DarkBlue": "#268bd2",
+    "DarkMagenta": "#6c71c4",
+    "Magenta": "#d33682"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "Outrun Dark",
+  "description": "Outrun Dark scheme by Hugo Delahousse (http://github.com/hugodelahousse/).",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#00002a",
+    "DarkGray": "#20204a",
+    "Cyan": "#30305a",
+    "Blue": "#50507a",
+    "Yellow": "#b0b0da",
+    "Green": "#d0d0fa",
+    "Gray": "#e0e0ff",
+    "White": "#f5f5ff",
+    "DarkRed": "#ff4242",
+    "Red": "#fc8d28",
+    "DarkYellow": "#f3e877",
+    "DarkGreen": "#59f176",
+    "DarkCyan": "#0ef0f0",
+    "DarkBlue": "#66b0ff",
+    "DarkMagenta": "#f10596",
+    "Magenta": "#f003ef"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

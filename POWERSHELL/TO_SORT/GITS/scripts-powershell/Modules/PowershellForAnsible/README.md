@@ -1,0 +1,37 @@
+
+# PowershellForAnsible ![Version](https://img.shields.io/myget/dcjulian29-powershell/v/PowershellForAnsible)
+
+Provides functions to interact with an Ansible control node via Docker for Desktop on a Windows host system. From a Powershell prompt and assuming the current directory contains all "Ansible" files, a user of this module should be able to use Ansible as if it were running natively on the Windows host system.
+
+## Functions
+
+- [Confirm-AnsiblePlaybookSyntax](docs/Confirm-AnsiblePlaybookSyntax.md)
+- [Edit-AnsibleVault](docs/Edit-AnsibleVault.md)
+- [Export-AnsibleFacts](docs/Export-AnsibleFacts.md)
+- [Get-AnsibleConfig](docs/Get-AnsibleConfig.md)
+- [Get-AnsibleConfigDump](docs/Get-AnsibleConfigDump.md)
+- [Get-AnsibleConfigFile](docs/Get-AnsibleConfigFile.md)
+- [Get-AnsibleFacts](docs/Get-AnsibleFacts.md)
+- [Get-AnsibleHostVariables](docs/Get-AnsibleHostVariables.md)
+- [Get-AnsibleInventoryAsJson](docs/Get-AnsibleInventoryAsJson.md)
+- [Get-AnsibleInventoryAsToml](docs/Get-AnsibleInventoryAsToml.md)
+- [Get-AnsibleInventoryAsYaml](docs/Get-AnsibleInventoryAsYaml.md)
+- [Get-AnsibleInventoryGraph](docs/Get-AnsibleInventoryGraph.md)
+- [Get-AnsibleLintRules](docs/Get-AnsibleLintRules.md)
+- [Get-AnsibleLintTags](docs/Get-AnsibleLintTags.md)
+- [Get-AnsiblePlaybookHosts](docs/Get-AnsiblePlaybookHosts.md)
+- [Get-AnsiblePlaybookTags](docs/Get-AnsiblePlaybookTags.md)
+- [Get-AnsiblePlaybookTasks](docs/Get-AnsiblePlaybookTasks.md)
+- [Get-AnsibleVariables](docs/Get-AnsibleVariables.md)
+- [Invoke-AnsibleContainer](docs/Invoke-AnsibleContainer.md)
+- [Invoke-AnsibleHostCommand](docs/Invoke-AnsibleHostCommand.md)
+- [Invoke-AnsibleLintPlaybook](docs/Invoke-AnsibleLintPlaybook.md)
+- [Invoke-AnsibleLintRole](docs/Invoke-AnsibleLintRole.md)
+- [Ping-AnsibleHost](docs/Ping-AnsibleHost.md)
+- [Protect-AnsibleVariable](docs/Protect-AnsibleVariable.md)
+- [Show-AnsibleFacts](docs/Show-AnsibleFacts.md)
+- [Show-AnsibleVariables](docs/Show-AnsibleVariables.md)
+- [Show-AnsibleVault](docs/Show-AnsibleVault.md)
+- [Test-AnsiblePlaybookSyntax](docs/Test-AnsiblePlaybookSyntax.md)
+- [Test-AnsibleProvision](docs/Test-AnsibleProvision.md)
+- [Update-AnsibleHost](docs/Update-AnsibleHost.md)

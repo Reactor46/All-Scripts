@@ -1,0 +1,59 @@
+{
+  "name": "Gruvbox dark, pale",
+  "description": "Gruvbox dark, pale scheme by Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox).",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#262626",
+    "DarkGray": "#3a3a3a",
+    "Cyan": "#4e4e4e",
+    "Blue": "#8a8a8a",
+    "Yellow": "#949494",
+    "Green": "#dab997",
+    "Gray": "#d5c4a1",
+    "White": "#ebdbb2",
+    "DarkRed": "#d75f5f",
+    "Red": "#ff8700",
+    "DarkYellow": "#ffaf00",
+    "DarkGreen": "#afaf00",
+    "DarkCyan": "#85ad85",
+    "DarkBlue": "#83adad",
+    "DarkMagenta": "#d485ad",
+    "Magenta": "#d65d0e"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

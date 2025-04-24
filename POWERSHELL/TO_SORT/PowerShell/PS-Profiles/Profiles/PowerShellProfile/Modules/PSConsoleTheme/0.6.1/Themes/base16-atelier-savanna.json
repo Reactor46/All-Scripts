@@ -1,0 +1,59 @@
+{
+  "name": "Atelier Savanna",
+  "description": "Atelier Savanna scheme by Bram de Haan (http://atelierbramdehaan.nl).",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#171c19",
+    "DarkGray": "#232a25",
+    "Cyan": "#526057",
+    "Blue": "#5f6d64",
+    "Yellow": "#78877d",
+    "Green": "#87928a",
+    "Gray": "#dfe7e2",
+    "White": "#ecf4ee",
+    "DarkRed": "#b16139",
+    "Red": "#9f713c",
+    "DarkYellow": "#a07e3b",
+    "DarkGreen": "#489963",
+    "DarkCyan": "#1c9aa0",
+    "DarkBlue": "#478c90",
+    "DarkMagenta": "#55859b",
+    "Magenta": "#867469"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

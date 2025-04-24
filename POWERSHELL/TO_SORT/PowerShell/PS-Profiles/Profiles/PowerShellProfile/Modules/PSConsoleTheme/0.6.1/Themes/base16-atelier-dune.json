@@ -1,0 +1,59 @@
+{
+  "name": "Atelier Dune",
+  "description": "Atelier Dune scheme by Bram de Haan (http://atelierbramdehaan.nl).",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#20201d",
+    "DarkGray": "#292824",
+    "Cyan": "#6e6b5e",
+    "Blue": "#7d7a68",
+    "Yellow": "#999580",
+    "Green": "#a6a28c",
+    "Gray": "#e8e4cf",
+    "White": "#fefbec",
+    "DarkRed": "#d73737",
+    "Red": "#b65611",
+    "DarkYellow": "#ae9513",
+    "DarkGreen": "#60ac39",
+    "DarkCyan": "#1fad83",
+    "DarkBlue": "#6684e1",
+    "DarkMagenta": "#b854d4",
+    "Magenta": "#d43552"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "Atelier Seaside Light",
+  "description": "Atelier Seaside Light scheme by Bram de Haan (http://atelierbramdehaan.nl).",
+  "repository": "https://github.com/mmims",
+  "background": "Black",
+  "foreground": "Green",
+  "popupBackground": "Cyan",
+  "popupForeground": "Gray",
+  "palette": {
+    "Black": "#f4fbf4",
+    "DarkGray": "#cfe8cf",
+    "Cyan": "#8ca68c",
+    "Blue": "#809980",
+    "Yellow": "#687d68",
+    "Green": "#5e6e5e",
+    "Gray": "#242924",
+    "White": "#131513",
+    "DarkRed": "#e6193c",
+    "Red": "#87711d",
+    "DarkYellow": "#98981b",
+    "DarkGreen": "#29a329",
+    "DarkCyan": "#1999b3",
+    "DarkBlue": "#3d62f5",
+    "DarkMagenta": "#ad2bee",
+    "Magenta": "#e619c3"
+  },
+  "tokens": {
+    "readline": {
+      "foreground": {
+        "Command": "DarkBlue",
+        "Comment": "Yellow",
+        "ContinuationPrompt": "Green",
+        "DefaultToken": "Green",
+        "Emphasis": "DarkCyan",
+        "Error": "DarkRed",
+        "Keyword": "DarkMagenta",
+        "Member": "White",
+        "Number": "White",
+        "Operator": "Green",
+        "Parameter": "Blue",
+        "String": "DarkGreen",
+        "Type": "DarkMagenta",
+        "Variable": "Red"
+      }
+    },
+    "write": {
+      "foreground": {
+        "Error": "DarkRed",
+        "Warning": "DarkYellow",
+        "Verbose": "DarkYellow",
+        "Debug": "DarkYellow",
+        "Progress": "Yellow"
+      },
+      "background": {
+        "Progress": "DarkGray"
+      }
+    }
+  }
+}

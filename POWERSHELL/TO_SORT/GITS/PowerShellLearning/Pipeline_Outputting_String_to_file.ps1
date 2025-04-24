@@ -1,0 +1,1 @@
+﻿"Maybe the force be with you!" | Out-File file.txt
