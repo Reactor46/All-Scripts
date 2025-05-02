@@ -1,0 +1,13 @@
+department,office,title,logon proc,permissions,folder,db,ou,supervisor
+IDD DSP-ICS-HCS,MR Allen,DSP,mrthertech.bat,IDD DSP,misfs1,MailboxDB,Users,sobiandu@lifepathsystems.org
+IDD DSP-SHL,MR Allen,DSP,mrthertech.bat,IDD DSP,misfs1,MailboxDB,Users,drischer@lifepathsystems.org
+BH Client Financial Rep-Front,Alma,Client Financial Rep,billing.bat,BH Client Financial Rep-Alma,misfs1,MailboxDB,Users,pkambeitz@lifepathsystems.org
+BH Client Financial Rep-Front,Avenues,Client Financial Rep,billing.bat,BH Client Financial Rep-Avenues,misfs1,MailboxDB,Users,pkambeitz@lifepathsystems.org
+BH Client Financial Rep-Back,Alma,Client Financial Rep,billing.bat,BH Client Financial Rep-Alma,misfs1,MailboxDB,Users,mfrost@lifepathsystems.org
+BH Client Financial Rep-Back,Avenues,Client Financial Rep,billing.bat,BH Client Financial Rep-Avenues,misfs1,MailboxDB,Users,mfrost@lifepathsystems.org
+ECI Speech Language Pathologist,All,Speech Language Pathologist,ecistaff.bat,ECI Speech Language Pathologist,misfs1\ECI USERS,MailboxDB,Users,cwilson@lifepathsystems.org
+ECI Speech Language Pathologist-FirstSteps,ECI Allen,Speech Language Pathologist,firststepsstaff.bat,ECI Speech Language Pathologist-FirstSteps,misfs1\ECI USERS,MailboxDB,Users,JBorchert@lifepathsystems.org
+,,,,,,,,
+Branch- Abilene,,,,,,Abilene,Abilene,lcrouch@angelsofcare.com
+Accounting,,,,,,Administration,Accounting,cweaver@angelsofcare.com
+Administration,,,,,,Administration,Administration,itsupport@angelsofcare.com

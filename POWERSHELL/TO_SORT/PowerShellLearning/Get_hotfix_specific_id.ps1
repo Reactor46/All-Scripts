@@ -1,0 +1,1 @@
+﻿Get-HotFix -Id KB5027122

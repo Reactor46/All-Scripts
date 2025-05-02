@@ -1,0 +1,106 @@
+﻿##########################################################################################################
+#    PowerShell script to monitor Group Policy object changes                                            #
+#         Version:     1.0 (20/05/2015)                                                                  #
+#         Author:      Alex Silivestru                                                                   #
+##########################################################################################################
+
+#Import GroupPolicy Module
+Import-module GroupPolicy
+#get the Policy that will be monitored
+$Policy = Get-GPO -Id fc22df3d-e786-4d05-a234-9d075e436657
+#Get revision number of that Policy
+$PolicyVersion = $Policy.Computer.DSVersion
+#Get modification Time
+$PolicyModificationTime = $Policy.ModificationTime
+#Send the alert (message)
+	If ($PolicyVersion -ne [int]"4") 
+        {
+            $smtpserver="mail.endava.com"
+            $smtpFrom="asilivestru@endava.com"
+            $smtpTo1="asilivestru@endava.com"
+            #$smtpTo2="david.freeman@endava.com"
+            $smtpSubject="Default Domain Policy has been changed"
+            $smtpBody="This is to inform you that 'Default Domain Policy' has been changed. Modification time:  $PolicyModificationTime "
+            Send-MailMessage -From $smtpFrom -to $smtpTo1 -SmtpServer $smtpserver -Subject $smtpSubject -Body $smtpBody -BodyAsHtml
+        }
+#End
+
+# SIG # Begin signature block
+# MIIOXwYJKoZIhvcNAQcCoIIOUDCCDkwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
+# gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUYHrFxOvAVHV71h714vXokKUI
+# Pw+gggoUMIIElDCCA3ygAwIBAgIRAJ/qyBGw8WJHpfwg2AUjrOYwDQYJKoZIhvcN
+# AQEFBQAwgZUxCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJVVDEXMBUGA1UEBxMOU2Fs
+# dCBMYWtlIENpdHkxHjAcBgNVBAoTFVRoZSBVU0VSVFJVU1QgTmV0d29yazEhMB8G
+# A1UECxMYaHR0cDovL3d3dy51c2VydHJ1c3QuY29tMR0wGwYDVQQDExRVVE4tVVNF
+# UkZpcnN0LU9iamVjdDAeFw0xNTA1MDUwMDAwMDBaFw0xNTEyMzEyMzU5NTlaMH4x
+# CzAJBgNVBAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNV
+# BAcTB1NhbGZvcmQxGjAYBgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMSQwIgYDVQQD
+# ExtDT01PRE8gVGltZSBTdGFtcGluZyBTaWduZXIwggEiMA0GCSqGSIb3DQEBAQUA
+# A4IBDwAwggEKAoIBAQC8NaA2cCKBEcOyg7nTKMY2zSVrqXuyHPabUZzvNfTtCI5e
+# OAj4dzwKQuDzcNyj18r1TAvP/yKcCn5o1gmiKoR7pp20qcEz4u8fF0jKOs1G5sWq
+# d73jd5r6R1NAKFlDk/GkgervgLVPpwjOum68ynYMl2RZhiS7PYKQqFWxktOgpwWs
+# n1MlCBBHmc2Y3mjltFB4o68BzFlDWOR2bn6sx+KeH0+wRy3IDKNJJ4B1jLsGkWUP
+# kJv0utGByFxq7BTpJQm/Ixb0lUZAQCG7g5b9hh96yA0QjqL4GQdYf5+9NwJg8qTp
+# nUQ/MAXkp3CZUZroF/FVyrJhiWVGp2ryWEZ+qqAHAgMBAAGjgfQwgfEwHwYDVR0j
+# BBgwFoAU2u1kdBScFDyr3ZmpvVsoTYs8ydgwHQYDVR0OBBYEFC4tsApEStOHwAIH
+# zpd9UGIg/Q+DMA4GA1UdDwEB/wQEAwIGwDAMBgNVHRMBAf8EAjAAMBYGA1UdJQEB
+# /wQMMAoGCCsGAQUFBwMIMEIGA1UdHwQ7MDkwN6A1oDOGMWh0dHA6Ly9jcmwudXNl
+# cnRydXN0LmNvbS9VVE4tVVNFUkZpcnN0LU9iamVjdC5jcmwwNQYIKwYBBQUHAQEE
+# KTAnMCUGCCsGAQUFBzABhhlodHRwOi8vb2NzcC51c2VydHJ1c3QuY29tMA0GCSqG
+# SIb3DQEBBQUAA4IBAQANu61gERu18A3M5kg6ej4OM9wcuerWIP6jTdDMdk7oGNh5
+# 39NPmkJkI4opcoo6bGamPDoXqHBFZcZzw9DOiVT7rGkPWLAZy4affrl+61GSv5vd
+# 69Fl8CV7iHzevaXItRRRvMCBMIqFOHvmef5nVZOH/k/ojQ7t83KStcKJgG3RWeMd
+# DeqxOO4DnQAZpashm3nDzMI+aH69yU1pTbRkUfuyKHTiU4nOnfqt4tvOq3t+BkR0
+# /QqjybenMM1J0pJk8SKmuChFdHnpp847M/mDUJR9aMAdScdgeHo8ZCbVvvoKbeQe
+# 4QlTj6nFI6zHnWFCIfAsFnFJOxCvLG8a5jHxFP1sMIIFeDCCBGCgAwIBAgIKOQpJ
+# qwABAAB3JjANBgkqhkiG9w0BAQUFADA+MRMwEQYKCZImiZPyLGQBGRYDbmV0MRYw
+# FAYKCZImiZPyLGQBGRYGZW5kYXZhMQ8wDQYDVQQDEwZFbmRhdmEwHhcNMTUxMDE0
+# MjEzNTEyWhcNMTYxMDEzMjEzNTEyWjBvMRMwEQYKCZImiZPyLGQBGRYDbmV0MRYw
+# FAYKCZImiZPyLGQBGRYGZW5kYXZhMREwDwYDVQQLEwhDaGlzaW5hdTEOMAwGA1UE
+# CxMFVXNlcnMxHTAbBgNVBAMTFEFsZXhhbmRydSBTaWxpdmVzdHJ1MIGfMA0GCSqG
+# SIb3DQEBAQUAA4GNADCBiQKBgQDis4s/GJBuVvLH5q2Ge+kzEDRH3q9Q5yeTMWJs
+# UwVjRP2lDfjuK/JYzYuttnIBreI7srlhaBAiT0L2QIKluDOSUlt8Q1H1lsOyZg2G
+# O2OpK9n/VwrzPb2QRMgRq8sGqASQVeNThXPfshnpxPVsNRPkK8EhxkNWxoK0CjIq
+# 4NSQ2QIDAQABo4ICyTCCAsUwJQYJKwYBBAGCNxQCBBgeFgBDAG8AZABlAFMAaQBn
+# AG4AaQBuAGcwEwYDVR0lBAwwCgYIKwYBBQUHAwMwCwYDVR0PBAQDAgeAMB0GA1Ud
+# DgQWBBQS7jig8tM1pg3kPTDwjMI4GUs7UTAfBgNVHSMEGDAWgBRRw41MFCGJql4C
+# uCIcicsHiJDfXzCB9gYDVR0fBIHuMIHrMIHooIHloIHihoGtbGRhcDovLy9DTj1F
+# bmRhdmEsQ049TURDSERDMDEsQ049Q0RQLENOPVB1YmxpYyUyMEtleSUyMFNlcnZp
+# Y2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9ZW5kYXZhLERDPW5l
+# dD9jZXJ0aWZpY2F0ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9Y1JM
+# RGlzdHJpYnV0aW9uUG9pbnSGMGh0dHA6Ly9tZGNoZGMwMS5lbmRhdmEubmV0L0Nl
+# cnRFbnJvbGwvRW5kYXZhLmNybDCCAQwGCCsGAQUFBwEBBIH/MIH8MIGkBggrBgEF
+# BQcwAoaBl2xkYXA6Ly8vQ049RW5kYXZhLENOPUFJQSxDTj1QdWJsaWMlMjBLZXkl
+# MjBTZXJ2aWNlcyxDTj1TZXJ2aWNlcyxDTj1Db25maWd1cmF0aW9uLERDPWVuZGF2
+# YSxEQz1uZXQ/Y0FDZXJ0aWZpY2F0ZT9iYXNlP29iamVjdENsYXNzPWNlcnRpZmlj
+# YXRpb25BdXRob3JpdHkwUwYIKwYBBQUHMAKGR2h0dHA6Ly9tZGNoZGMwMS5lbmRh
+# dmEubmV0L0NlcnRFbnJvbGwvTURDSERDMDEuZW5kYXZhLm5ldF9FbmRhdmEoMSku
+# Y3J0MDEGA1UdEQQqMCigJgYKKwYBBAGCNxQCA6AYDBZhc2lsaXZlc3RydUBlbmRh
+# dmEubmV0MA0GCSqGSIb3DQEBBQUAA4IBAQAT0InwOflyK/NAzOQWPB5IDcTkIMpk
+# KVdG0ztLGnxN8d2l33CCDWU9NRy80RQLyhkLRZtkn8BXHQx5lYTt8I5xvq9/T4gS
+# XzbMo0osZwdTfAZEOayiFk6PM2xK+dz1TxdFYNFoWapayBChq8Sy2yOxJQzvrcD0
+# y+iWozyBDIXLpW7hRuf6QPFWADvwhikEmGys/c85488e/TgBV0xaK8uZ/2mZSNlF
+# r60qdMQLAhkzXyhQKC0CUWSPcezLTH9+Y4xiLPEofgj23+2ao9/JULWXu6titnPa
+# kANjaidCgSOA25HuycI46bZ5hyFYy24ctQTqFTzB+Y7ag2OeevhwUTo/MYIDtTCC
+# A7ECAQEwTDA+MRMwEQYKCZImiZPyLGQBGRYDbmV0MRYwFAYKCZImiZPyLGQBGRYG
+# ZW5kYXZhMQ8wDQYDVQQDEwZFbmRhdmECCjkKSasAAQAAdyYwCQYFKw4DAhoFAKB4
+# MBgGCisGAQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcNAQkDMQwGCisGAQQB
+# gjcCAQQwHAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkE
+# MRYEFGmGDNFJjceSePFDqayRLEXrN/4wMA0GCSqGSIb3DQEBAQUABIGAKANqc59H
+# g1p9avA+rbBthrmVoR+H2YSfL08StrV8drLL15NlWWRb78RJ4RNoi2Bx7v9zVj+g
+# cfoMdognu11Pi5UXmuc7fXjmjOHsQ+oqzhpEe9W89JMhgtZ+T1SbXUIxLgFypm3U
+# TdD6SqMiLum1xLwMh4+3jYODX5GbXuxmSRuhggJFMIICQQYJKoZIhvcNAQkGMYIC
+# MjCCAi4CAQAwgaswgZUxCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJVVDEXMBUGA1UE
+# BxMOU2FsdCBMYWtlIENpdHkxHjAcBgNVBAoTFVRoZSBVU0VSVFJVU1QgTmV0d29y
+# azEhMB8GA1UECxMYaHR0cDovL3d3dy51c2VydHJ1c3QuY29tMR0wGwYDVQQDExRV
+# VE4tVVNFUkZpcnN0LU9iamVjdAIRAJ/qyBGw8WJHpfwg2AUjrOYwCQYFKw4DAhoF
+# AKBdMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE1
+# MTAxODIyMjIzN1owIwYJKoZIhvcNAQkEMRYEFIhJrJXocz/OuNyOg/wWSX1wy7RQ
+# MA0GCSqGSIb3DQEBAQUABIIBACtZKaA6fwoQurL0K05Bokqr/fusYfTyIWz5YC1h
+# tgr1I3DLWahZDTUZwvQuvpeUpKnp0mPzGowxz2KF+MpKq343wKMxRnL84gsPhay+
+# nB0U0x+coNGKDiW6MirajRLUmz+xP+R60/TrUN25QQhzRUAxKFW3mzVdlwCO/lak
+# OQM2opf9kKJoNDdWHs4XVDxwUUSWIU0AS1F1FCMLGkW0zWWKQkLSjUnHWnM64zrk
+# YA/AmMUp2HufdxsOGVTUvOst8IM2n85dhX9n+Sbp2CT5S4ctL8IrHvVaAoKF/wRk
+# MX3RJDVElA6VdL5yeMLzrGqQDexDE+TXjcCJpTVPoLo7rW8=
+# SIG # End signature block

@@ -1,0 +1,6 @@
+LASDC01.Contoso.corp
+LASDC02.Contoso.corp
+lascoll01.Contoso.corp
+lascoll03.Contoso.corp
+lascoll04.Contoso.corp
+lasetl01.Contoso.corp

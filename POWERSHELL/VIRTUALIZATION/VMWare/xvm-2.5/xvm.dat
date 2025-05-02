@@ -1,0 +1,15 @@
+[ {
+  "sitename" : "vvcvcsap04",
+  "hostname" : "vvcvcsap04.vegas.com",
+  "username" : "administrator@vdcvsphere.local",
+  "password" : null,
+  "insecure" : true,
+  "connected" : true
+}, {
+  "sitename" : "vvcvcsap02",
+  "hostname" : "vvcvcsap02.corp.vegas.com",
+  "username" : "john.advisor",
+  "password" : null,
+  "insecure" : true,
+  "connected" : true
+} ]

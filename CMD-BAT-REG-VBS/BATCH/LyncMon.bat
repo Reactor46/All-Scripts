@@ -1,0 +1,1 @@
+powershell .\LyncMOn.ps1

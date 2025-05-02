@@ -1,0 +1,1 @@
+powershell .\reg.ps1

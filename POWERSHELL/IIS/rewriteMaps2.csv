@@ -1,0 +1,5 @@
+"website", "apppool", "map", "key", "value"
+"Rewrite-demo", "Rewrite-demo", "PermRedirects", "/escape/from/new york", "/escaped/from/new york"
+"Rewrite-demo", "Rewrite-demo", "PermRedirects", "/escape/from/los angeles", "/escaped/from/los angeles"
+"Rewrite-demo", "Rewrite-demo", "PermRedirects", "/snake/pliskin/mercenary", "/snake/pliskin/badass"
+"Rewrite-demo", "Rewrite-demo", "PermRedirects", "/escape/from/gilligans island", "/escaped/from/gilligans_island"

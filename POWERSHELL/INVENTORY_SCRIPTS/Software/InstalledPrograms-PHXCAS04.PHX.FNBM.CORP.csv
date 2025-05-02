@@ -1,0 +1,26 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"BMC Track-It! 11.3 Agent";"PHXCAS04.PHX.FNBM.CORP";"BMC Software";;"11.3.0.355";;;;
+"Commvault ContentStore";"PHXCAS04.PHX.FNBM.CORP";"Commvault";;"11.80.70.0";;;;
+"Microsoft Access database engine 2010 (English)";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20171020";"14.0.7015.1000";;;;
+"Microsoft Report Viewer 2012 Runtime";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20150414";"11.1.3452.0";;;;
+"Microsoft Silverlight";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20170420";"5.1.50906.0";;;;
+"Microsoft SQL Server 2012 Data-Tier App Framework ";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20151109";"11.1.2807.0";;;;
+"Microsoft SQL Server 2012 Data-Tier App Framework ";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20151109";"11.1.2807.0";;;;
+"Microsoft SQL Server 2012 Management Objects ";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20151109";"11.1.3000.0";;;;
+"Microsoft SQL Server 2012 Management Objects  (x64)";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20151109";"11.1.3000.0";;;;
+"Microsoft SQL Server 2012 Transact-SQL ScriptDom ";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20151109";"11.0.2100.60";;;;
+"Microsoft System CLR Types for SQL Server 2012";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20151109";"11.1.3000.0";;;;
+"Microsoft System CLR Types for SQL Server 2012 (x64)";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20150414";"11.1.3000.0";;;;
+"Microsoft Visual C++ 2005 Redistributable (x64)";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20150425";"8.0.61000";;;;
+"Microsoft Visual C++ 2005 Redistributable (x64)";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20150410";"8.0.56336";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20150401";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20150401";"9.0.30729.4148";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20150425";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20150425";"10.0.40219";;;;
+"Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.21005";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";;"12.0.21005.1";;;;
+"Microsoft Web Deploy 3.5";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20151109";"3.1237.1764";;;;
+"Microsoft Web Platform Installer 5.0";"PHXCAS04.PHX.FNBM.CORP";"Microsoft Corporation";"20151109";"5.0.50430.0";;;;
+"Software Developer's Kit";"PHXCAS04.PHX.FNBM.CORP";"Sybase, Inc.";"Fri Apr 10 16:10:45 PDT 2015";"15.7.0.127000";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"PHXCAS04.PHX.FNBM.CORP";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"Symantec Endpoint Protection";"PHXCAS04.PHX.FNBM.CORP";"Symantec Corporation";"20180121";"14.0.3876.1100";;;;"0"
+"VMware Tools";"PHXCAS04.PHX.FNBM.CORP";"VMware, Inc.";"20170503";"10.0.6.3560309";;;;

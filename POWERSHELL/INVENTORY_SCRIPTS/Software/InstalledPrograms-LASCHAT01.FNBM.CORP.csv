@@ -1,0 +1,34 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"BMC Track-It! 11.3 Agent";"LASCHAT01.FNBM.CORP";"BMC Software";;"11.3.0.355";;;;
+"Commvault ContentStore";"LASCHAT01.FNBM.CORP";"Commvault";;"11.80.110.0";;;;
+"Infognition ScreenPressor v2.1 (Remove Only)";"LASCHAT01.FNBM.CORP";;;;;;;
+"Microsoft .NET Compact Framework 2.0 SP2";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20100213";"2.0.7045";;;;
+"Microsoft .NET Framework 1.1";"LASCHAT01.FNBM.CORP";;;;;;;
+"Microsoft .NET Framework 3.5 SP1";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";;;;;;
+"Microsoft .NET Framework 4.5.2";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";;"4.5.51209";;;;
+"Microsoft Baseline Security Analyzer 2.1";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20100213";"2.1.0000";;;;
+"Microsoft Office 2003 Web Components";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20110723";"11.0.8173.0";;;;
+"Microsoft Silverlight";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20170429";"5.1.50906.0";;;;
+"Microsoft SQL Server 2005";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";;;;;;
+"Microsoft SQL Server 2005 Backward compatibility";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20100810";"8.05.2312";;;;
+"Microsoft SQL Server 2008 Native Client";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20110608";"10.0.1600.22";;;;
+"Microsoft SQL Server Native Client";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20100810";"9.00.4035.00";;;;
+"Microsoft SQL Server Setup Support Files (English)";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20100810";"9.00.4035.00";;;;
+"Microsoft SQL Server VSS Writer";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20100810";"9.00.4035.00";;;;
+"Microsoft Visual C++ 2005 ATL Update kb973923 - x86 8.0.50727.4053";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20100213";"8.0.50727.4053";;;;
+"Microsoft Visual C++ 2005 Redistributable";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20111027";"8.0.59193";;;;
+"Microsoft Visual C++ 2005 Redistributable";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20110723";"8.0.61001";;;;
+"Microsoft Visual C++ 2008 ATL Update kb973924 - x86 9.0.30729.4148";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20100213";"9.0.30729.4148";;;;
+"Microsoft Visual C++ 2008 Redistributable - KB2467174 - x86 9.0.30729.5570";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20110510";"9.0.30729.5570";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.21022";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20100724";"9.0.21022";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.17";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20100213";"9.0.30729";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20141122";"9.0.30729.4148";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20110723";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20170429";"10.0.40219";;;;
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.21005";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";;"12.0.21005.1";;;;
+"Microsoft Visual C++ 2017 Redistributable (x86) - 14.11.25325";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";;"14.11.25325.0";;;;
+"SolarWinds Client Components - (2.1.5.6002)";"LASCHAT01.FNBM.CORP";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"Symantec Endpoint Protection";"LASCHAT01.FNBM.CORP";"Symantec Corporation";"20180728";"14.0.3876.1100";;;;"0"
+"VMware Tools";"LASCHAT01.FNBM.CORP";"VMware, Inc.";"20180224";"10.1.7.5541682";;;;
+"WhosOn Installable Version 5";"LASCHAT01.FNBM.CORP";"Parker Software";;"5.2.770";;;;
+"Windows Resource Kit Tools";"LASCHAT01.FNBM.CORP";"Microsoft Corporation";"20100213";"5.2.3790";;;;

@@ -1,0 +1,8 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"Kits Configuration Installer";"LASMT04.FNBM.CORP";"Microsoft";"20180421";"8.100.25984";;;;"1"
+"Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.21005";"LASMT04.FNBM.CORP";"Microsoft Corporation";"20180324";"12.0.21005";;;;"1"
+"Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.21005";"LASMT04.FNBM.CORP";"Microsoft Corporation";"20180324";"12.0.21005";;;;"1"
+"SolarWinds Client Components";"LASMT04.FNBM.CORP";"SolarWinds, Inc.";"20180214";"2.1.5.6002";;;;"1"
+"Windows Software Development Kit EULA";"LASMT04.FNBM.CORP";"Microsoft Corporations";"20180421";"8.100.25984";;;;"1"
+"WPT Redistributables";"LASMT04.FNBM.CORP";"Microsoft";"20180421";"8.100.26936";;;;"1"
+"WPTx64";"LASMT04.FNBM.CORP";"Microsoft";"20180421";"8.100.26936";;;;"1"

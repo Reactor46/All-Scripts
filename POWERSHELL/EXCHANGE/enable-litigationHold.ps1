@@ -1,0 +1,1 @@
+set-mailbox <username> -LitigationHoldEnabled:true$

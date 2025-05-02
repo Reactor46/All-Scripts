@@ -1,0 +1,77 @@
+using System;
+using System.Runtime.InteropServices;
+using CDO;
+using ADODB;
+using SEO;
+
+namespace SMTPonarrival
+{
+	[Guid("E045FD54-4E2D-4a8e-8431-FF351F98B14A")]
+	public class Catchall : ISMTPOnArrival , IEventIsCacheable
+	{
+		void ISMTPOnArrival.OnArrival(IMessage msg, ref CdoEventStatus EventStatus) 
+		{
+			try 
+			{
+				if (msg.Fields["urn:schemas:mailheader:X-catchall"].Value == null)
+				{
+					ProcessMessage(msg);
+				};
+			}
+			catch(Exception e)
+			{
+				System.IO.StreamWriter logfile = new System.IO.StreamWriter("c:\\SMTPEventerrorlog.txt",true);
+				logfile.WriteLine("Sink Fired : " + System.DateTime.Now);
+				logfile.WriteLine("Error : " + e.Message);
+				logfile.Close();	
+			}
+			//Set Event Status to CDO_RUN_NEXT_SINK
+			EventStatus = CDO.CdoEventStatus.cdoRunNextSink;
+		}
+		void IEventIsCacheable.IsCacheable()
+		{
+			// This will return S_OK by default.
+		}
+
+		private void ProcessMessage(IMessage msg1)
+		{
+			string RECIPLIST;
+			RECIPLIST = "http://schemas.microsoft.com/cdo/smtpenvelope/recipientlist";
+			string strFixedListlc;
+			string searchdomain = "@catchdomain.com";
+			string strreplaceaddr  = "SMTP:catchmailbox@yourdomain.com;";
+			string strFixedList = msg1.EnvelopeFields[RECIPLIST].Value.ToString();
+			while (strFixedList.IndexOf(searchdomain ,1) != -1 )
+			{
+				strFixedListlc = strFixedList.ToLower();
+				int nDomainPart = strFixedListlc.IndexOf(searchdomain,1);
+				int nNamePart = strFixedList.LastIndexOf(";",nDomainPart);
+				int nNextAddress = strFixedList.IndexOf("SMTP:",nDomainPart);
+				if (nNamePart == -1)
+				{
+					if (nNextAddress == -1)
+					{
+						strFixedList = strreplaceaddr;}
+					else 
+					{
+						strFixedList = strreplaceaddr + strFixedList.Remove(0,nNextAddress);}
+				}
+				else
+				{
+					if (nNextAddress == -1)
+					{
+						strFixedList = strFixedList.Remove(nNamePart,strFixedList.Length-nNamePart) + ";" + strreplaceaddr;}
+					else 
+					{
+						strFixedList = strFixedList.Remove(nNamePart,strFixedList.Length-nNamePart) + ";" + strreplaceaddr + strFixedList.Remove(0,nNextAddress);
+					}
+				}				
+			}
+			msg1.EnvelopeFields[RECIPLIST].Value = strFixedList;
+			msg1.EnvelopeFields.Update();
+			msg1.Fields["urn:schemas:mailheader:X-catchall"].Value = "Server-CatchALL";
+			msg1.Fields.Update();
+			msg1.DataSource.Save();
+		}
+	}
+}

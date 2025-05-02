@@ -1,0 +1,3 @@
+"Domain","Site","Name","IPv4Address","Operating System","Hostname","Infra","Naming","Schema","RID","PDC","SMB Port Open","SMB1(NT LM 0.12)","SMB2(0x0202)","SMB2(0x0210)","SMB3(0x0300)","SMB3(0x0302)","SMB3(0x0311)","SMB Signing"
+"corp.vegas.com","VegasCampus","VDCMADDC01","10.25.16.46","Windows Server 2012 R2 Standard6.3 (9600)","vdcmaddc01.corp.vegas.com","True","True","True","True","True","True","True","True","True","True","True","False","True"
+"corp.vegas.com","VegasCampus","VVCMADDC02","10.25.16.48","Windows Server 2016 Standard10.0 (14393)","vvcmaddc02.corp.vegas.com","False","False","False","False","False","True","True","True","True","True","True","False","True"

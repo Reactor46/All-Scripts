@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>SharePoint Document Versions Size Report for SharePoint 2010 and MOSS 2007</title>        
+        <meta name="description" content="Ever wanted to get a report on versioning sizes on SharePoint?  Unlimited No. of versions enabled in various document library across web  application. As part of regular auditing, wanted to generate report for  the entire web application ,with Number of versions,  Amount of stora" />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<p>Ever wanted to get a report on versioning sizes on SharePoint? Unlimited No. of versions enabled in various document library across web application. As part of regular auditing, wanted to generate report for the entire web application ,with Number of versions,
+ Amount of storage consumed by versions. Of course there are some third-party products like
+<a href="http://www.axceler.com/Products/ControlPoint.aspx" target="_blank">Axceler Control Point</a> with additional capabilities. But How about wring my own code? Sounds good.</p>
+<div style="overflow:hidden; color:#000000; background-color:#ffffff; text-align:left; text-decoration:none; border:medium none">
+</div>
+<div style="overflow:hidden; color:#000000; background-color:#ffffff; text-align:left; text-decoration:none; border:medium none">
+This is a PowerShell version of my existing post <a href="http://www.sharepointdiary.com/2012/02/versioning-size-report-for-entire.html" target="_blank">
+Version History Size Report for SharePoint</a> which uses C# object model to generate versioning report and gives insights, such as:</div>
+<ul>
+<li>Site/Library's Total versions size </li><li>Total No. of versions created </li><li>Which documents are with more versions </li><li>Type of the documents </li><li>Library in which the document stored. Library Size with/Without versions </li><li>When was the last version modified </li><li>Size of the document's latest version </li><li>How much storage space being occupied by versions </li><li>Total size of the document including versions </li></ul>
+<div style="overflow:hidden; color:#000000; background-color:#ffffff; text-align:left; text-decoration:none; border:medium none">
+<br>
+Read more: <a href="http://www.sharepointdiary.com/2013/01/document-versions-size-report-powershell.html">
+http://www.sharepointdiary.com/2013/01/document-versions-size-report-powershell.html</a></div>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__com">#&nbsp;Get&nbsp;Size&nbsp;of&nbsp;all&nbsp;Sub-sites&nbsp;in&nbsp;a&nbsp;Site&nbsp;Collection</span>&nbsp;
+[void][System.Reflection.Assembly]::LoadWithPartialName(<span class="powerShell__string">&quot;Microsoft.SharePoint&quot;</span>)&nbsp;&gt;&nbsp;<span class="powerShell__variable">$null</span>&nbsp;
+&nbsp;
+<span class="powerShell__com">#Region&nbsp;MOSS2007-CmdLets</span>&nbsp;
+&nbsp;
+<span class="powerShell__keyword">Function</span>&nbsp;Get<span class="powerShell__operator">-</span>SPWebApplication()&nbsp;
+{&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;<span class="powerShell__keyword">Param</span>(&nbsp;[Parameter(Mandatory=<span class="powerShell__variable">$true</span>)]&nbsp;[string]<span class="powerShell__variable">$WebAppURL</span>&nbsp;)&nbsp;
+&nbsp;&nbsp;<span class="powerShell__keyword">return</span>&nbsp;[Microsoft.SharePoint.Administration.SPWebApplication]::Lookup(<span class="powerShell__variable">$WebAppURL</span>)&nbsp;
+}&nbsp;
+&nbsp;
+<span class="powerShell__keyword">Function</span>&nbsp;global:Get<span class="powerShell__operator">-</span>SPSite()&nbsp;
+{&nbsp;
+&nbsp;&nbsp;<span class="powerShell__keyword">Param</span>(&nbsp;[Parameter(Mandatory=<span class="powerShell__variable">$true</span>)]&nbsp;[string]<span class="powerShell__variable">$SiteCollURL</span>&nbsp;)&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$SiteCollURL</span>&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__string">''</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">return</span>&nbsp;<span class="powerShell__cmdlets">new-Object</span>&nbsp;Microsoft.SharePoint.SPSite(<span class="powerShell__variable">$SiteCollURL</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}&nbsp;
+&nbsp;&nbsp;
+<span class="powerShell__keyword">Function</span>&nbsp;global:Get<span class="powerShell__operator">-</span>SPWeb()&nbsp;
+{&nbsp;
+&nbsp;<span class="powerShell__keyword">Param</span>(&nbsp;[Parameter(Mandatory=<span class="powerShell__variable">$true</span>)]&nbsp;[string]<span class="powerShell__variable">$SiteURL</span>&nbsp;)&nbsp;
+&nbsp;&nbsp;<span class="powerShell__variable">$site</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPSite(<span class="powerShell__variable">$SiteURL</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$site</span>&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__variable">$null</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$web</span>=<span class="powerShell__variable">$site</span>.OpenWeb();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">return</span>&nbsp;<span class="powerShell__variable">$web</span>&nbsp;
+}&nbsp;
+<span class="powerShell__com">#EndRegion</span>&nbsp;
+&nbsp;
+&nbsp;<span class="powerShell__keyword">Function</span>&nbsp;GenerateVersionSizeReport()&nbsp;
+&nbsp;{&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Define&nbsp;'Web&nbsp;Application&nbsp;URL'&nbsp;as&nbsp;Mandatory&nbsp;Parameter</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">Param</span>(&nbsp;[Parameter(Mandatory=<span class="powerShell__variable">$true</span>)]&nbsp;[string]<span class="powerShell__variable">$WebAppURL</span>&nbsp;)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Get&nbsp;the&nbsp;Web&nbsp;Application</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$WebApp</span>=Get<span class="powerShell__operator">-</span>SPWebApplication(<span class="powerShell__variable">$WebAppURL</span>)&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Write&nbsp;the&nbsp;CSV&nbsp;Header&nbsp;-&nbsp;Tab&nbsp;Separated</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__string">&quot;Site&nbsp;Name`t&nbsp;Library&nbsp;`t&nbsp;File&nbsp;Name&nbsp;`t&nbsp;File&nbsp;URL&nbsp;`t&nbsp;File&nbsp;Type&nbsp;`t&nbsp;Last&nbsp;Modified&nbsp;`t&nbsp;No.&nbsp;of&nbsp;Versions&nbsp;`t&nbsp;Latest&nbsp;Version&nbsp;Size(MB)&nbsp;`t&nbsp;Versions&nbsp;Size(MB)&nbsp;`t&nbsp;Total&nbsp;File&nbsp;Size(MB)&quot;</span>&nbsp;<span class="powerShell__operator">|</span>&nbsp;out<span class="powerShell__operator">-</span>file&nbsp;VersionSizeReport.csv&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Loop&nbsp;through&nbsp;each&nbsp;site&nbsp;collection</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>(<span class="powerShell__variable">$Site</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$WebApp</span>.Sites)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Loop&nbsp;through&nbsp;each&nbsp;site&nbsp;in&nbsp;the&nbsp;site&nbsp;collection</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>(<span class="powerShell__variable">$Web</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$Site</span>.AllWebs)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Loop&nbsp;through&nbsp;&nbsp;each&nbsp;List</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>&nbsp;(<span class="powerShell__variable">$List</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$Web</span>.Lists)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Get&nbsp;only&nbsp;Document&nbsp;Libraries&nbsp;&amp;&nbsp;Exclude&nbsp;Hidden&nbsp;System&nbsp;libraries</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(&nbsp;(<span class="powerShell__variable">$List</span>.BaseType&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__string">&quot;DocumentLibrary&quot;</span>)&nbsp;<span class="powerShell__operator">-</span>and&nbsp;(<span class="powerShell__variable">$List</span>.Hidden&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$false</span>)&nbsp;)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>&nbsp;(<span class="powerShell__variable">$ListItem</span>&nbsp;&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$List</span>.Items)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Consider&nbsp;items&nbsp;with&nbsp;5&#43;&nbsp;versions</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$ListItem</span>.Versions.Count&nbsp;<span class="powerShell__operator">-</span>gt&nbsp;1)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$versionSize</span>=0&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Get&nbsp;the&nbsp;versioning&nbsp;details</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>&nbsp;(<span class="powerShell__variable">$FileVersion</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$ListItem</span>.File.Versions)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$versionSize</span>&nbsp;=&nbsp;<span class="powerShell__variable">$versionSize</span>&nbsp;<span class="powerShell__operator">&#43;</span>&nbsp;<span class="powerShell__variable">$FileVersion</span>.Size;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#To&nbsp;Calculate&nbsp;Total&nbsp;Size(MB)</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$ToalFileSize</span>=&nbsp;[Math]::Round((((<span class="powerShell__variable">$ListItem</span>.File.Length&nbsp;<span class="powerShell__operator">&#43;</span>&nbsp;<span class="powerShell__variable">$versionSize</span>)<span class="powerShell__operator">/</span>1024)<span class="powerShell__operator">/</span>1024),2)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Convert&nbsp;Size&nbsp;to&nbsp;MB</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$VersionSize</span>=&nbsp;[Math]::Round(((<span class="powerShell__variable">$versionSize</span><span class="powerShell__operator">/</span>1024)<span class="powerShell__operator">/</span>1024),2)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Get&nbsp;the&nbsp;Size&nbsp;of&nbsp;the&nbsp;current&nbsp;version</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$CurrentVersionSize</span>=&nbsp;[Math]::Round(((<span class="powerShell__variable">$ListItem</span>.File.Length<span class="powerShell__operator">/</span>1024)<span class="powerShell__operator">/</span>1024),2)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Get&nbsp;Site&nbsp;Name</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$Web</span>.IsRootWeb&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$true</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$siteName</span>&nbsp;=&nbsp;<span class="powerShell__variable">$Web</span>.Title&nbsp;<span class="powerShell__operator">&#43;</span><span class="powerShell__string">&quot;&nbsp;-&nbsp;Root&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$siteName</span>=&nbsp;<span class="powerShell__variable">$Site</span>.RootWeb.Title&nbsp;<span class="powerShell__operator">&#43;</span>&nbsp;<span class="powerShell__string">&quot;&nbsp;-&nbsp;&quot;</span>&nbsp;<span class="powerShell__operator">&#43;</span>&nbsp;<span class="powerShell__variable">$Web</span>.Title;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Log&nbsp;the&nbsp;data&nbsp;to&nbsp;a&nbsp;CSV&nbsp;file&nbsp;where&nbsp;versioning&nbsp;size&nbsp;&gt;&nbsp;0MB!</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$versionSize</span>&nbsp;<span class="powerShell__operator">-</span>gt&nbsp;0)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__string">&quot;$($siteName)&nbsp;`t&nbsp;$($List.Title)&nbsp;`t&nbsp;$($ListItem.Name)&nbsp;`t&nbsp;$($Web.Url)/$($ListItem.Url)&nbsp;`t&nbsp;$($ListItem['File&nbsp;Type'].ToString())&nbsp;`t&nbsp;$($ListItem['Modified'].ToString())`t&nbsp;$($ListItem.Versions.Count)&nbsp;`t&nbsp;$CurrentVersionSize&nbsp;`t&nbsp;$($versionSize)&nbsp;`t&nbsp;$($ToalFileSize)&quot;</span>&nbsp;<span class="powerShell__operator">|</span>&nbsp;Out<span class="powerShell__operator">-</span>File&nbsp;VersionSizeReport.csv&nbsp;<span class="powerShell__operator">-</span>Append&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Web</span>.Dispose()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Site</span>.Dispose()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Send&nbsp;message&nbsp;to&nbsp;console</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;write<span class="powerShell__operator">-</span>host&nbsp;<span class="powerShell__string">&quot;Versioning&nbsp;Report&nbsp;Generated&nbsp;Successfully!&quot;</span>&nbsp;
+}&nbsp;
+&nbsp;
+<span class="powerShell__com">#Call&nbsp;the&nbsp;Function&nbsp;to&nbsp;Generate&nbsp;Version&nbsp;History&nbsp;Report</span>&nbsp;
+GenerateVersionSizeReport&nbsp;<span class="powerShell__string">&quot;http://sharepoint.company.com&quot;</span></pre>
+</div>
+</div>
+</div>
+<p>and the output after importing Data to Microsoft Excel:</p>
+<div class="separator" style="clear:both; text-align:center"><a href="http://2.bp.blogspot.com/-hBj5TaUknTE/UPv2QItAj4I/AAAAAAAABKo/q3Y1Zp3Pz3w/s1600/version&#43;Report.png" style="margin-left:1em; margin-right:1em"><img src="C:\Users\John\Documents\WindowsPowerShell\Scripts\SharePoint-Document-e9701c96\Documentation_files\tmp66F5Resources.png" border="0" alt="" width="640" height="187"></a></div>
+<p>&nbsp;After adding Pivot chart for analysis:<br>
+<a href="http://1.bp.blogspot.com/-wsWdjvAqwRA/UPv2SkuC4zI/AAAAAAAABKw/4zmO_tkzZE0/s1600/version&#43;analysis.png" style="margin-left:1em; margin-right:1em"><img src="C:\Users\John\Documents\WindowsPowerShell\Scripts\SharePoint-Document-e9701c96\Documentation_files\tmp66F6Resources.png" border="0" alt="" width="640" height="414"></a></p>
+<div style="overflow:hidden; color:#000000; background-color:#ffffff; text-align:left; text-decoration:none; border:medium none">
+</div>
+
+        </div>
+    </body>
+</html>

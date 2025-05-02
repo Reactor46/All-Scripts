@@ -1,0 +1,573 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="description" content="Created by Martin Pugh">
+<meta name="description" content="Last Update: 04/26/2012">
+<meta name="description" content="Version: 1.2">
+<title>Employee Directory User Editor</title>
+<HTA:APPLICATION 
+     APPLICATIONNAME="Employee Directory User Editor"
+     SCROLL="no"
+     SINGLEINSTANCE="yes"
+>
+<style type='text/css'>
+body { background-color:#D3E4E5;
+}
+</style>
+</head>
+
+<script language="VBScript">
+
+	Dim colADInfo
+	strLDAPbegin = ""
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	window_onload
+    '#	PURPOSE........:	Initial load of user information and screen setup
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub window_onload
+		window.resizeTo 1000,725
+		subLoadUsers
+		subSearchUsers
+		subClearFields
+		
+		txtSearchUser.Focus()
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	window_onBeforeUnload
+    '#	PURPOSE........:	Remove temporary files on program exit
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub window_onBeforeUnload
+		Set objFSO = CreateObject("Scripting.FileSystemObject")
+		If objFSO.FileExists("newpic.jpg") Then objFSO.DeleteFile "newpic.jpg"
+		If objFSO.FileExists("pic.jpg") Then objFSO.DeleteFile "pic.jpg"
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	*_onFocus
+    '#	PURPOSE........:	Display field specific information if the field is clicked
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub txtName_onFocus
+		spDetailText.InnerHTML = "<b>Name:</b>  This field is not editable"
+	End Sub
+	
+	Sub txtUsername_onFocus
+		spDetailText.InnerHTML = "<b>Username:</b>  This field is not editable"
+	End Sub
+	
+	Sub txtEmail_onFocus
+		spDetailText.InnerHTML = "<b>Email:</b>  This field is not editable"
+	End Sub
+	
+	Sub txtStatus_onFocus
+		spDetailText.InnerHTML = "<b>Status:</b><br>Active - user is not disabled or locked out<br>Locked - user is locked out from too many password attempts<br>Disabled - user has been disabled by IT"
+	End Sub
+	
+	Sub txtTitle_onFocus
+		spDetailText.InnerHTML = "<b>Title:</b>  Employee Title"
+	End Sub
+	
+	Sub txtDept_onFocus
+		spDetailText.InnerHTML = "<b>Department:</b>  Not currently in use"
+	End Sub
+	
+	Sub txtOffice_onFocus
+		spDetailText.InnerHTML = "<b>Location:</b>  By default, leave blank.<br><br>  Possible overrides:<br>EXCLUDE - Exclude this user from the Employee Directory<br>Milford A<br>Milford C<br>Milford Offsite - Typically used for Sales people"
+	End Sub
+	
+	Sub txtTele_onFocus
+		spDetailText.InnerHTML = "<b>Extension:</b>  Just the 4 digit phone extension.  Leave out the 508-244 for 64xx extensions"
+	End Sub
+	
+	Sub txtMobile_onFocus
+		spDetailText.InnerHTML = "<b>Cell Phone:</b>  Full 10-digit phone number"
+	End Sub
+	
+	Sub txtFax_onFocus
+		spDetailText.InnerHTML = "<b>Fax Number:</b>  Due to space limitations on the Employee Directory only enter the 4 digit fax extension (64xx, 42xx)"
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	*_onKeyUp
+    '#	PURPOSE........:	If a field is change, activate save/cancel buttons
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub txtTitle_onKeyUp
+		save_button.disabled = False
+		cancel_button.disabled = False
+	End Sub
+	
+	Sub txtDept_onKeyUp
+		save_button.disabled = False
+		cancel_button.disabled = False
+	End Sub
+	
+	Sub txtOffice_onKeyUp
+		save_button.disabled = False
+		cancel_button.disabled = False
+	End Sub
+	
+	Sub txtTele_onKeyUp
+		save_button.disabled = False
+		cancel_button.disabled = False
+	End Sub
+	
+	Sub txtMobile_onKeyUp
+		save_button.disabled = False
+		cancel_button.disabled = False
+	End Sub
+	
+	Sub txtFax_onKeyUp
+		save_button.disabled = False
+		cancel_button.disabled = False
+	End Sub
+
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	subClearSpan
+    '#	PURPOSE........:	Clear field specific information
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	Nice, documentation is longer then the subroutine ;)
+    '#--------------------------------------------------------------------------
+	Sub subClearSpan
+		spDetailText.InnerHTML = ""
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	subSearchUsers
+    '#	PURPOSE........:	Search pre-loaded user information for a match as
+	'#                      txtSearchUser input is changed.
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+    Sub subSearchUsers
+		strSearch = txtSearchUser.Value
+		
+		For Each objOption in selectUser.Options
+			objOption.RemoveNode
+		Next
+		
+		txtName.Value = ""
+		txtUsername.Value = ""
+		txtTitle.Value = ""
+		txtEmail.Value = ""
+		txtStatus.Value = ""
+		txtDept.Value = ""
+		txtOffice.Value = ""
+		txtTele.Value = ""
+		txtMobile.Value = ""
+		txtFax.Value = ""
+		
+		For Each strADInfo in colADInfo
+			arrADInfo = Split(strADInfo, "~")
+			strToSearch = arrADInfo(0) & "~" & arrADInfo(1)
+			If IsNull(strSearch) or InStr(UCase(strToSearch), UCase(strSearch)) > 0 Then
+				Set objOption = Document.createElement("OPTION")
+				If arrADInfo(1) = "" Then
+					objOption.Text = arrADInfo(0)
+				Else
+					objOption.Text = arrADInfo(0) & ", " & arrADInfo(1)
+				End If
+				objOption.Value = arrADInfo(2)
+				selectUser.Add(objOption)
+			End If
+		Next
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	subLoadUsers
+    '#	PURPOSE........:	Query Active Directory for user information.  Calls
+	'#                      subImportADUsers to do the bulk of the work.
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------	
+	Sub subLoadUsers
+		Set objOption = Document.createElement("OPTION")
+		objOption.Text = "Loading Users, please wait..."
+		selectUser.Add(objOption)
+		
+		Set colADInfo = CreateObject("System.Collections.ArrayList")
+		' Get Domain Information
+		Set objRootDSE = GetObject("LDAP://RootDSE")
+		objDomainContainer = objRootDSE.Get("defaultNamingContext")
+		Set objDomain = GetObject("LDAP://" & objDomainContainer)
+		
+		'Begin user load
+		subImportADUsers(objDomain)
+		
+		colADInfo.Sort()
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	subSelectUser
+    '#	PURPOSE........:	When a user is selected in the selectUser control
+	'#                      load fields 
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub subSelectUser
+		If save_button.disabled = False Then
+			MsgBox "You have made a change to this record.  Click on 'Save' to save it or click 'Cancel' to discard."
+		Else
+			For Each strADInfo in colADInfo
+				arrADInfo = Split(strADInfo, "~")
+				If selectUser.Value = arrADInfo(2) Then
+					txtName.disabled = False
+					txtUsername.disabled = False
+					txtTitle.disabled = False
+					txtEmail.disabled = False
+					txtStatus.disabled = False
+					txtDept.disabled = False
+					txtOffice.disabled = False
+					txtTele.disabled = False
+					txtMobile.disabled = False
+					txtFax.disabled = False
+					txtName.Value = arrADInfo(1) & " " & arrADInfo(0)
+					txtUsername.Value = arrADInfo(2)
+					txtTitle.Value = arrADInfo(3)
+					txtEmail.Value = arrADInfo(8)
+					txtStatus.Value = arrADInfo(9)
+					txtDept.Value = arrADInfo(10)
+					txtOffice.Value = arrADInfo(4)
+					txtTele.Value = arrADInfo(5)
+					txtMobile.Value = arrADInfo(6)
+					txtFax.Value = arrADInfo(7)
+					subLoadPictureFromAD arrADInfo(11)
+					clear_button.disabled = False
+					Exit For
+				End If
+			Next
+		End If
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	subLoadImage
+    '#	PURPOSE........:	Display common dialog box so user can select a new
+	'#                      user photograph.  Must be in JPG format.
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub subLoadImage
+		strOldPath = imgUserPic.src
+		strFilePath = dlgHelper.OpenFileDlg(,,"JPG Files(*.jpg, *.jpeg)|*.jpg;*.jpeg;","Choose a picture")
+		If strFilePath = "" Then
+			imgUserPic.src = strOldPath
+		Else
+			imgUserPic.src = strFilePath
+			save_button.disabled = False
+			cancel_button.disabled = False
+		End If
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	subClearImage
+    '#	PURPOSE........:	Remove picture for AD
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub subClearImage
+		clear_button.disabled = True
+		imgUserPic.src = "nopic.jpg"
+		save_button.disabled = False
+		cancel_button.disabled = False
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	subImportADUsers
+    '#	PURPOSE........:	Loops through all AD objects looking for users.  Uses
+	'#                      strLDAPBegin to filter results.  
+    '#	ARGUMENTS......:	objContainer: LDAP container, OU or domain object
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------	
+	Sub subImportADUsers(objContainer)
+		For Each objUser in objContainer
+			Select Case objUser.Class
+				Case "user"
+					If InStr(UCase(objUser.distinguishedName), UCase(strLDAPbegin)) > 0 Then
+						If objUser.AccountDisabled = False Then
+							If objUser.isAccountlocked = False Then
+								strAcctStatus = "Active"
+							Else
+								strAcctStatus = "Account Locked"
+							End If
+						Else
+							strAcctStatus = "Account Disabled"
+						End If
+						If objUser.sn = "" and objUser.givenName = "" Then
+							strSN = objUser.sAMAccountName
+						Else
+							strSN = objUser.sn
+						End If
+
+						colADInfo.Add strSN & "~" & objUser.givenName & "~" & objUser.sAMAccountName & "~" & objUser.Title & "~" & objUser.physicalDeliveryOfficeName & "~" & objUser.telephoneNumber & "~" & objUser.Mobile & "~" & objUser.facsimileTelephoneNumber & "~" & objUser.Mail & "~" & strAcctStatus & "~" & objUser.department & "~" & objUser.distinguishedName
+					End If
+				Case "organizationalUnit" , "container"
+					subImportADUsers(objUser)
+			End Select
+		Next
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	subLoadPictureFromAD
+    '#	PURPOSE........:	Pull picture data from AD and save it in a temp file
+	'#                      (pic.jpg)
+    '#	ARGUMENTS......:	strDN - Full LDAP distinguished name of a user object
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub subLoadPictureFromAD(strDN)
+		Set objFSO = CreateObject("Scripting.FileSystemObject")
+		strDN = fixDN(strDN)
+		Set objUser = GetObject("LDAP://" & strDN)
+		'Pull the file from AD
+		jpegphoto = objUser.jpegphoto
+		thumbnailphoto = objUser.thumbnailphoto
+		Thumbnailpath = "pic.jpg" 
+		If Len(thumbnailphoto) = 0 then
+			imgUserPic.src = "nopic.jpg"
+			load_button.Value = "Load Image"
+		Else
+			Set rs = CreateObject("ADODB.Recordset")
+			rs.Fields.Append "temp", 201, LenB(thumbnailphoto)
+			rs.Open
+			rs.AddNew
+			rs("temp").AppendChunk thumbnailphoto
+			rs.Update
+			ByteArray2Text = rs("temp")
+			rs.Close
+			Set rs = Nothing
+			thumbnailphoto = ByteArray2Text
+			Set jpgFile = objFSO.CreateTextFile(thumbnailpath, True)
+			jpgFile.Write (thumbnailphoto)
+			jpgFile.Close
+			imgUserPic.src = "nopic.jpg"
+			imgUserPic.src = Thumbnailpath
+			load_button.Value = "Change Image"
+		End If
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	subCancelButton
+    '#	PURPOSE........:	Cancel button press clears data from fields and resets
+	'#                      form
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub subCancelButton
+		save_button.disabled = True
+		cancel_button.disabled = True
+		subSelectUser
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	subSaveButton
+    '#	PURPOSE........:	Resets form and saves all data back to AD
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub subSaveButton
+		save_button.disabled = True
+		cancel_button.disabled = True
+		
+		'First modify the ArrayList
+		For Each strADInfo in colADInfo
+			arrADInfo = Split(strADInfo, "~")
+			If txtUsername.Value = arrADInfo(2) Then
+				colADInfo.Remove strADInfo
+				colADInfo.Add arrADInfo(0) & "~" & arrADInfo(1) & "~" & arrADInfo(2) & "~" & txtTitle.Value & "~" & txtOffice.Value & "~" & txtTele.Value & "~" & txtMobile.Value & "~" & txtFax.Value & "~" & arrADInfo(8) & "~" & arrADInfo(9) & "~" & txtDept.Value & "~" & arrADInfo(11)
+				Exit For
+			End If
+		Next
+		
+		'Transform picture, if necessary
+		'Thanks Gef for this code:  http://community.spiceworks.com/profile/show/gef
+		Set objFSO = CreateObject("Scripting.FileSystemObject")
+		If objFSO.FileExists("newpic.jpg") then
+			objFSO.DeleteFile "newpic.jpg"
+		End If
+			
+		If UCase(Right(imgUserPic.src, 9)) <> "NOPIC.JPG" Then
+			If UCase(Right(imgUserPic.src, 7)) <> "PIC.JPG" Then
+				Set objImg = CreateObject("WIA.ImageFile")
+				Set objIP = CreateObject("WIA.ImageProcess")
+				objImg.LoadFile fixPath(imgUserPic.src)
+				If objImg.Width > 300 Then
+					objIP.Filters.Add objIP.FilterInfos("Scale").FilterID
+					objIP.Filters(1).Properties("MaximumWidth") = 300
+					objIP.Filters(1).Properties("MaximumHeight") = 300
+					Set objImg = objIP.Apply(objImg)
+					objImg.SaveFile "newpic.jpg"
+				Else
+					objFSO.CopyFile fixPath(imgUserPic.src),"newpic.jpg"
+				End If
+			End If
+		End If
+		
+		'Update Active Directory
+		strDN = fixDN(arrADInfo(11))
+		Set objUser = GetObject("LDAP://" & strDN)
+		putUP objUser, "Title", txtTitle.Value
+		putUP objUser, "department", txtDept.Value
+		putUP objUser, "physicalDeliveryOfficeName", txtOffice.Value
+		putUP objUser, "telephoneNumber", txtTele.Value
+		putUP objUser, "Mobile", txtMobile.Value
+		putUP objUser, "facsimileTelephoneNumber", txtFax.Value
+		
+		'Prep the picture for upload to AD, if there's a change
+		If Right(UCase(imgUserPic.src), 9) = "NOPIC.JPG" and clear_button.disabled = True Then
+			objUser.PutEx 1, "thumbnailPhoto", 0
+		End If
+		If objFSO.FileExists("newpic.jpg") then
+			Set adoStreamRead = CreateObject("ADODB.Stream")
+			adoStreamRead.Type = 1
+			adoStreamRead.Open
+			adoStreamRead.LoadFromFile "newpic.jpg"
+			objBytesRead = adoStreamRead.Read()
+			adoStreamRead.Close
+			'Save the image to AD
+			objUser.Put "thumbnailPhoto", objBytesRead
+		End If
+
+		'Commit all changes to AD
+		objUser.SetInfo
+		
+		subClearFields
+		subSearchUsers
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	SUBROUTINE.....:	subClearFields
+    '#	PURPOSE........:	Reset form to blank
+    '#	ARGUMENTS......:	
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Sub subClearFields
+		txtName.Value = ""
+		txtUsername.Value = ""
+		txtTitle.Value = ""
+		txtEmail.Value = ""
+		txtStatus.Value = ""
+		txtDept.Value = ""
+		txtOffice.Value = ""
+		txtTele.Value = ""
+		txtMobile.Value = ""
+		txtFax.Value = ""
+		txtName.disabled = True
+		txtUsername.disabled = True
+		txtTitle.disabled = True
+		txtEmail.disabled = True
+		txtStatus.disabled = True
+		txtDept.disabled = True
+		txtOffice.disabled = True
+		txtTele.disabled = True
+		txtMobile.disabled = True
+		txtFax.disabled = True
+		imgUserPic.src = "nopic.jpg"
+	End Sub
+	
+	'#--------------------------------------------------------------------------
+    '#	FUNCTION.......:	putUp
+    '#	PURPOSE........:	If new field is blank save NULL to AD, otherwise save
+	'#                      actual value
+    '#	ARGUMENTS......:	ObjU: user object, strField: field name, strValue: 
+	'#                      field value
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	Cannot save "" to AD, so have to use PutEx method 
+	'#                      save a Null
+    '#--------------------------------------------------------------------------
+	Function putUp(objU, strField, strValue)
+		If strValue = "" then
+			objU.PutEx 1, strField, 0
+		Else
+			objU.Put strField, strValue
+		End If
+	End Function
+	
+	'#--------------------------------------------------------------------------
+    '#	FUNCTION.......:	fixDN
+    '#	PURPOSE........:	If AD container contains a \\ or # use a 'break'
+	'#                      character to properly display and use
+    '#	ARGUMENTS......:	strLDAP: LDAP distinguished name of the object
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Function fixDN(strLDAP)
+		strLDAP = Replace(strLDAP, "/", "\\/")
+		strLDAP = Replace(strLDAP, "#", "\\#")
+		fixDN = strLDAP
+	End Function
+	
+	'#--------------------------------------------------------------------------
+    '#	FUNCTION.......:	fixPath
+    '#	PURPOSE........:	HTML image object uses different path format then
+	'#                      Windows, so need to transform it
+    '#	ARGUMENTS......:	strPath: pathname from an HTML image object
+    '#	EXAMPLE........:	
+    '#	NOTES..........:	
+    '#--------------------------------------------------------------------------
+	Function fixPath(strPath)
+		strPath = Replace(strPath,"file:///","")
+		strPath = Replace(strPath,"%20"," ")
+		fixPath = strPath
+	End Function
+	
+</script>
+
+<body>
+<center><span style="color:#5C443A; font-weight:bold;"><h1>Employee Directory Editor</h1></span></center>
+	<Table width="100%"><TR valign="top"><TD width="40%">
+	Search User List<BR>
+    <input type="text" name="txtSearchUser" size="45" onKeyUp="subSearchUsers">
+	</TD>
+	<TD width="30%">&nbsp;</TD><td width="30%">&nbsp;</td></tr>
+	<tr valign="top"><td><select size="20" style="width:350" name="selectUser" onChange="subSelectUser"></select>
+	<P>&nbsp;<P><span id="spDetailText"></span>
+	</td>
+	<td>Name<br><input type="text" name="txtName" size="45" readonly="readonly" onblur="subClearSpan" style="background-color:lightgrey;"><br><br>
+	Username<br><input type="text" name="txtUsername" size="45" readonly="readonly" onblur="subClearSpan" style="background-color:lightgrey;"><br><br>
+	Email<br><input type="text" name="txtEmail" size="45" readonly="readonly" onblur="subClearSpan" style="background-color:lightgrey;"><br><br>
+	Account Status<br><input type="text" name="txtStatus" size="45"readonly="readonly" onblur="subClearSpan" style="background-color:lightgrey;">
+	</td>
+	<td>
+	Title<br><input type="text" name="txtTitle" size="45" onblur="subClearSpan"><br><br>
+	Department<br><input type="text" name="txtDept" size="45" onblur="subClearSpan"><br><br>
+	Location<br><input type="text" name="txtOffice" size="45" onblur="subClearSpan"><br><br>
+	Extension<br><input type="text" name="txtTele" size="45" onblur="subClearSpan"><br><br>
+	Cell<br><input type="text" name="txtMobile" size="45" onblur="subClearSpan"><br><br>
+	Fax<br><input type="text" name="txtFax" size="45" onblur="subClearSpan"><br><br>
+	Picture<br><img id=imgUserPic height="100" width="100" src="nopic.jpg"><br>
+	<input type="button" name="load_button" value="Load Image" onClick="subLoadImage">&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="button" name="clear_button" value="Clear Image" onClick="subClearImage">
+	<OBJECT id=dlgHelper CLASSID="clsid:3050F4E1-98B5-11CF-BB82-00AA00BDCE0B" width="0px" height="0px"></OBJECT>
+	</td>
+
+	</tr>
+	<tr><td></td><td></td>
+	<td align="right">
+	<br>
+	<input type="button" name="save_button" value="Save" disabled="disabled" onClick="subSaveButton">&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="button" name="cancel_button" value="Cancel" disabled="disabled" onClick="subCancelButton">
+	</td>
+	</tr>
+	</table>
+</body>

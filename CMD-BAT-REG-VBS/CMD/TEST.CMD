@@ -1,0 +1,1 @@
+for /f "usebackq delims=|" %%f in ('dir /b "C:\Scripts\Repository\jbattista\Web\Sydi\TST\"') do cscript.exe C:\Scripts\Repository\jbattista\SYDI\sydi-server\tools\sydi-transform.vbs -x"C:\Scripts\Repository\jbattista\Web\Sydi\TST\%%f" -s"C:\Scripts\Repository\jbattista\SYDI\sydi-server\xml\serverhtml.xsl" -o"%%f.html"

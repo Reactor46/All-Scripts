@@ -1,0 +1,3 @@
+AppName;AppPoolName;AppPoolUserName;URL;Hostheader;Port;DatabaseName
+Intranet;Intranet;DOMAIN\username;http://webapp1;hostheader1;80;SP_Content_Intranet_01
+MySite;MySite;DOMAIN\username;http://webapp2;hostheader2;80;SP_Content_MySite_01

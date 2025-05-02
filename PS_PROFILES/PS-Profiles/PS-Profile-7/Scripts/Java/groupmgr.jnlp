@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2002-2012 by Dell Inc.
+
+  All rights reserved.  This software may not be copied, disclosed,
+  transferred, or used except in accordance with a license granted
+  by Dell Inc.  This software embodies proprietary information
+  and trade secrets of Dell Inc.
+
+  This notice applies only to Dell's modifications of Rapid Logic's code.
+-->
+<!-- JNLP File for EqualLogic PS Group Manager Application -->
+<jnlp
+  spec="1.5+"
+  codebase="http://192.168.10.165/"
+  href="/groupmgr.jnlp">
+  <information>
+    <title>GRP1 PS Group Manager</title>
+    <vendor>Dell Inc.</vendor>
+    <description>GRP1 - EqualLogic Group Manager</description>
+    <homepage href="http://www.dell.com/equallogic"/>
+    <icon href="/logoicon.gif"/>
+    <shortcut online="true">
+      <desktop/>
+      <menu submenu="EqualLogic "/>
+    </shortcut>
+  </information>
+  <resources>
+    <property name="jnlp.packEnabled" value="true" />
+    <j2se version="1.6+"/>
+    <jar href="/lib/equallogic-8.1.jar" download="eager" main="true"/>
+    <jar href="/lib/plastic_laf-8.1.jar" download="eager" main="false"/>
+    <jar href="/lib/nanoxml-lite-2.2.jar" download="eager" main="false"/>
+    <jar href="/eqli18n-8.1.jar" download="eager" main="false"/>
+  </resources>
+  <security>
+    <all-permissions/>
+  </security>
+  <applet-desc
+    documentBase="./"
+    name="EqlGroupMgrApplet"
+    main-class="com.equallogic.eqlgroupmgr.EqlGroupMgrApplet"
+    width="1024"
+    height="768">
+    <param name="LAUNCH_TYPE" value="APPLICATION"/>
+    <param name="groupname"  value="GRP1"/>
+  </applet-desc>
+</jnlp>

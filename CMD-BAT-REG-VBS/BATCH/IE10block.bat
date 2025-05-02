@@ -1,0 +1,1 @@
+for /f %%C in (C:\Temp\computers.txt) do  C:\pstools\psexec \\%%C REG ADD "HKLM\SOFTWARE\Microsoft\Internet Explorer\Setup\10.0" /v DoNotAllowIE10 /t REG_DWORD /d 1 /f

@@ -1,0 +1,6 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"Microsoft Visual C++ 2013 x64 Additional Runtime - 12.0.21005";"PHXCAS03.PHX.FNBM.CORP";"Microsoft Corporation";"20170425";"12.0.21005";;;;"1"
+"Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.21005";"PHXCAS03.PHX.FNBM.CORP";"Microsoft Corporation";"20170425";"12.0.21005";;;;"1"
+"SolarWinds Client Components";"PHXCAS03.PHX.FNBM.CORP";"SolarWinds, Inc.";"20180214";"2.1.5.6002";;;;"1"
+"WindowsFileSystemiDataAgentAdvanced Instance001";"PHXCAS03.PHX.FNBM.CORP";"Commvault";"20170425";"11.80.70.0";;;;"1"
+"WindowsFileSystemiDataAgentCore Instance001";"PHXCAS03.PHX.FNBM.CORP";"Commvault";"20170425";"11.80.70.0";;;;"1"

@@ -1,0 +1,42 @@
+
+function event_button_find() 
+{m_szUrlParams = ""
+m_fHasResults = false;m_iLastIndex = -1;addMessage("", false);if (!g_fAddToContacts || selFindIn.value == 0)
+{for (var x=0;x<m_rgPostFields.length;x++)
+{if (m_rgPostFields[x].value != "")
+m_szUrlParams += "&" + m_rgPostFields[x].name + "=" + toUTF8(m_rgPostFields[x].value);}
+if (m_szUrlParams.length > 0)
+{queryGetData();}
+else
+{alert(L_NoSearchInf);g_winDocAll["DN"].focus();}
+}
+// ------------------------------------------------------------------------------------------------------------------
+else if (selFindIn.value == 1 || selFindIn.value == 2)
+// ------------------------------------------------------------------------------------------------------------------
+{var sWhere = "\"DAV:contentclass\" = 'urn:content-classes:person' ";var fCriteria = false;for (var x = 0;x < m_rgPostFields.length;x++)
+{if (m_rgPostFields[x].value != "")
+{fCriteria = true;if (m_rgPostFields[x].name != "AN")
+{sWhere += "AND (\"" + g_rgContactProps[m_rgPostFields[x].name] + "\" LIKE '" + 
+m_rgPostFields[x].value.replace("'", "''") + "%') ";}
+else
+{sWhere += "AND (" + 
+"(\"" + g_rgContactProps[m_rgPostFields[x].name] + "1emailaddress\" LIKE '" + 
+m_rgPostFields[x].value.replace("'", "''") + "%') OR " + 
+"(\"" + g_rgContactProps[m_rgPostFields[x].name] + "2emailaddress\" LIKE '" + 
+m_rgPostFields[x].value.replace("'", "''") + "%') OR " + 
+"(\"" + g_rgContactProps[m_rgPostFields[x].name] + "3emailaddress\" LIKE '" + 
+m_rgPostFields[x].value.replace("'", "''") + "%') OR " + 
+"(\"" + g_rgContactProps[m_rgPostFields[x].name] + "1originaldisplayname\" LIKE '" + 
+m_rgPostFields[x].value.replace("'", "''") + "%') OR " + 
+"(\"" + g_rgContactProps[m_rgPostFields[x].name] + "2originaldisplayname\" LIKE '" + 
+m_rgPostFields[x].value.replace("'", "''") + "%') OR " + 
+"(\"" + g_rgContactProps[m_rgPostFields[x].name] + "3originaldisplayname\" LIKE '" + 
+m_rgPostFields[x].value.replace("'", "''") + "%')) ";}
+}
+}
+if (fCriteria)
+{queryGetContactsData("WHERE " + sWhere);}
+else
+{alert(L_NoSearchInf);g_winDocAll['DN'].focus();}	
+}
+enableRecipientButtons(false);}

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<helpItems schema="maml">
+  <_locDefinition>
+    <_locDefault _loc="locNone"/>
+    <_locTag _loc="locData">maml:para</_locTag>
+    <_locTag _loc="locData">maml:title</_locTag>
+  </_locDefinition>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>CheckInvalidRecipients.ps1</command:name>
+      <maml:description>
+        <maml:para _locID="CommandShortDescription">This script is designed to return information on invalid recipient objects and possible attemtpt to fix them.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para _locID="Copyright">Copyright (c) Microsoft.  All rights reserved.</maml:para>
+      </maml:copyright>
+      <command:verb>CheckInvalidRecipients.ps1</command:verb>
+      <command:noun></command:noun>
+      <dev:version/>
+    </command:details>
+    <maml:description>
+      <maml:para _locID="CommandLongDescription"></maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <command:name>CheckInvalidRecipients.ps1</command:name>
+        <command:parameter>
+          <maml:name>OrganizationalUnit</maml:name>
+          <command:parameterValue>String</command:parameterValue>
+        </command:parameter>
+        <command:parameter>
+          <maml:name>ResultSize</maml:name>
+          <command:parameterValue>String</command:parameterValue>
+        </command:parameter>
+        <command:parameter>
+          <maml:name>Filter</maml:name>
+          <command:parameterValue>String</command:parameterValue>
+        </command:parameter>
+        <command:parameter>
+          <maml:name>DomainController</maml:name>
+          <command:parameterValue>String</command:parameterValue>
+        </command:parameter>
+        <command:parameter>
+          <maml:name>FixErrors</maml:name>
+          <command:parameterValue>SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter>
+          <maml:name>RemoveInvalidProxies</maml:name>
+          <command:parameterValue>SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter>
+          <maml:name>ShowInvalidProxies</maml:name>
+          <command:parameterValue>SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter>
+          <maml:name>OutputObjects</maml:name>
+          <command:parameterValue>SwitchParameter</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="" globbing="" pipelineInput="false" position="1">
+        <maml:name>OrganizationalUnit</maml:name>
+        <maml:description>
+          <maml:para _locID="Param_Description_OrganizationalUnit">The OU the script will run against. The default is to run against the current session scope.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue/>
+      </command:parameter>
+      <command:parameter required="false" variableLength="" globbing="" pipelineInput="false" position="2">
+        <maml:name>ResultSize</maml:name>
+        <maml:description>
+          <maml:para _locID="Param_Description_ResultSize">The maximum number of recipients of each type to return. The four types are: User, Contact, Group, and DynamicDistributionGroup. The default will return all recipients in the current scope.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue/>
+      </command:parameter>
+      <command:parameter required="false" variableLength="" globbing="" pipelineInput="false" position="3">
+        <maml:name>Filter</maml:name>
+        <maml:description>
+          <maml:para _locID="Param_Description_Filter">The filter that should used to retrieve recipients.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue/>
+      </command:parameter>
+      <command:parameter required="false" variableLength="" globbing="" pipelineInput="false" position="4">
+        <maml:name>DomainController</maml:name>
+        <maml:description>
+          <maml:para _locID="Param_Description_DomainController">The domain controller the script should run against. The default is to run against a well-connected domain controller in the current scope.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue/>
+      </command:parameter>
+      <command:parameter required="false" variableLength="" globbing="" pipelineInput="false" position="named">
+        <maml:name>FixErrors</maml:name>
+        <maml:description>
+          <maml:para _locID="Param_Description_FixErrors">Script will attempt to fix recipient errors it encounters.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue/>
+      </command:parameter>
+      <command:parameter required="false" variableLength="" globbing="" pipelineInput="false" position="named">
+        <maml:name>RemoveInvalidProxies</maml:name>
+        <maml:description>
+          <maml:para _locID="Param_Description_RemoveInvalidProxies">Script will attempt to remove invalid email addresses it encounters. (-RemoveInvalidProxies must be specified with -FixErrors)</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue/>
+      </command:parameter>
+      <command:parameter required="false" variableLength="" globbing="" pipelineInput="false" position="named">
+        <maml:name>ShowInvalidProxies</maml:name>
+        <maml:description>
+          <maml:para _locID="Param_Description_ShowInvalidProxies">Script will display invalid email addresses it encounters.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue/>
+      </command:parameter>
+      <command:parameter required="false" variableLength="" globbing="" pipelineInput="false" position="named">
+        <maml:name>OutputObjects</maml:name>
+        <maml:description>
+          <maml:para _locID="Param_Description_OutputObjects">Script will output any objects it processes to the pipeline.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue/>
+      </command:parameter>
+    </command:parameters>
+    <maml:alertSet>
+      <maml:title></maml:title>
+      <maml:alert>
+        <maml:para _locID="Alert_1_Note">This script may re-read recipient data if it is necessary to complete the desired operation.
+To improve performance, we will not re-read the data unless one of the following parameters
+is specified: -FixErrors, -ShowInvalidProxies
+This means piping objects from the Get-Recipient task will only work correctly if one of these
+parameters is specified. (This is because the output from Get-Recipient never returns
+validation errors)
+Currently, the script can fix the following errors:
+1. Primary SMTP Address Problems: If a recipient has multiple SMTP addresses listed as primary or  the primary SMTP is invalid, the script	will try to set the WindowsEmailAddress as the primary SMTP address, since that is the address Exchange 2003 would have recognized as the primary (although E12 does not).
+2. External Email Address Problems: If a recipient has an external email address, but that address is missing from the EmailAddresses collection, the script will attempt to add it to the EmailAddresses.
+3. Invalid Email Addresses: If a recipient has invalid email addresses in their EmailAddresses collection it may prevent some scripts from working correctly on that recipient. In order to prevent this potential problem the script is capable of removing any offending email addresses from the recipient. To remove invalid email addresses, please specify both the -FixErrors and the -RemoveInvalidProxies parameters.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title _locID="Example_Title_1">-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>C:\PS&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>CheckInvalidRecipients.ps1</dev:code>
+        <dev:remarks>
+          <maml:para _locID="Example_1_Remarks_1">Display validation errors for all recipients in the current scope:</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title _locID="Example_Title_2">-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>C:\PS&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>CheckInvalidRecipients.ps1 -OrganizationalUnit 'Users' -FixErrors</dev:code>
+        <dev:remarks>
+          <maml:para _locID="Example_2_Remarks_1">Fix all recipients in the 'Users' container that have invalid Primary SMTP addresses:</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title _locID="Example_Title_3">-------------------------- EXAMPLE 3 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>C:\PS&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>CheckInvalidRecipients.ps1 -FixErrors -RemoveInvalidProxies -OutputObjects</dev:code>
+        <dev:remarks>
+          <maml:para _locID="Example_3_Remarks_1">Return all recipients in the current scope after fixing any email address problems:</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title _locID="Example_Title_4">-------------------------- EXAMPLE 4 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>C:\PS&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>Get-Recipient -RecipientType UserMailbox | .\CheckInvalidRecipients.ps1 -ShowInvalidProxies</dev:code>
+        <dev:remarks>
+          <maml:para _locID="Example_4_Remarks_1">Display validation errors and invalid email addresses for mailboxes in the current scope:</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+  </command:command>
+</helpItems>

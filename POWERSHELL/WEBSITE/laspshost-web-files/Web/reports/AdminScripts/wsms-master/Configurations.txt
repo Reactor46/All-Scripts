@@ -1,0 +1,4 @@
+Server=<xxx.xxx.xxx.xxx>
+mailto=<youremail@address.mailserver.com>
+emailFrom=<scriptreporter@smtp.mailserver.com>
+smtpServer=<smtp.mailserver.com>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Upgrade>
+  <SiteCollections>
+    <SiteCollection Name="The Pulse" URL="" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Marketing" URL="/business-development/marketing" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Occupational Medicine Home" URL="/business-development/occupational-medicine" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Wellness Home" URL="/business-development/wellness" HostHeaderWebApplication="https://pulse.int.kscpulse.com"/>
+    <SiteCollection Name="Cash Accounting" URL="/corporate-finance/cash-accounting" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Finance and Accounting" URL="/corporate-finance/home" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Payroll" URL="/corporate-finance/payroll" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Purchasing" URL="/corporate-finance/purchasing" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Central Business Office Home" URL="/hcf/cbo" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="HCF" URL="/hcf/home" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Health Plan Pharmacy Services" URL="/hcf/hpps" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Human Resources" URL="/hr/home" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="EMR" URL="/it/emr" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Help Desk Home" URL="/it/helpdesk" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <!--<SiteCollection Name="Information Technology" URL="/it/home" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />-->
+    <SiteCollection Name="Information Security" URL="/it/infosec" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Information Technology" URL="/it/support-information" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Telecom" URL="/it/telecom" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Training Home" URL="/it/training" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Managed Care" URL="/managed-care/home" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="KCA" URL="/managed-care/kca" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="After-Hours Nurse Triage" URL="/operations/ahnt" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="ASC Home" URL="/operations/asc" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Cancer Center Home" URL="/operations/cancer-center" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Cancer Services" URL="/operations/cancer-services" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Clinical Education" URL="/operations/clinical-education" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Contact Center Home" URL="/operations/contact-center" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Operations" URL="/operations/home" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="LabCorp" URL="/operations/labcorp" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="LabCorp Onsite Home" URL="/operations/labcorponsite" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Lab Services" URL="/operations/lab-services" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Medical Imaging Home" URL="/operations/medical-imaging" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Patient Education" URL="/operations/patient-education" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Pharmacy" URL="/operations/pharmacy" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Sleep Center" URL="/operations/sleep-center" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Patient Experience" URL="/patient-experience/home" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Physician's Lunchroom" URL="/physicians-lunchroom/home" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Coding Improvement" URL="/strategic-planning/coding" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="EHS Home" URL="/strategic-planning/ehs" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Facilities" URL="/strategic-planning/facilities" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Forms" URL="/strategic-planning/forms" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Medical Records" URL="/strategic-planning/medical-records" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Quality Improvement" URL="/strategic-planning/qi" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+    <SiteCollection Name="Risk Management" URL="/strategic-planning/risk-management" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
+  </SiteCollections>
+</Upgrade>
+

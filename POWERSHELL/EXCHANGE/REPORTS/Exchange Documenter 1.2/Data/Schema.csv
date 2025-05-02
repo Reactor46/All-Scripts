@@ -1,0 +1,3 @@
+#TYPE System.Management.Automation.PSCustomObject
+"Exchange Schema Version"
+"15326"

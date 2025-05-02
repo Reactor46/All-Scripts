@@ -1,0 +1,50 @@
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%">
+<script language="vbscript">
+set xdXmlDocument = CreateObject("Microsoft.XMLDOM")
+xdXmlDocument.async="false"
+frun = 0
+xdXmlDocument.load("c:\oval\ovaltestresult.xml")
+Set xnOvalNodes = xdXmlDocument.selectNodes("Exchange_Oval_Test_Results")
+For Each xnOvalNode In xnOvalNodes
+	set xnOvalDefNodes = xnOvalNode.childNodes
+	for each xnOvalDefnode in xnOvalDefNodes
+		if frun = 0 then 
+			document.writeln "<tr><td colspan=""3"" align=""center"" bgcolor=""#008000""><font color=""#FFFFFF""><B>Server Tested : " _
+			& xnOvalNode.attributes.getNamedItem("Servername").nodeValue &  "</B></font></td></tr>"
+			document.writeln "<tr><td colspan=""3"">&nbsp;</td></tr>"
+			frun = 1
+		else
+			document.writeln "<tr><td colspan=""3"">&nbsp;</td></tr>"
+		end if
+		document.writeln "<tr>" & "<td width=""15%"" bgcolor=""#000000"" td colspan=""2"" align=""center""><a href=""http://oval.mitre.org/oval/definitions/data/" _
+		& lcase(xnOvalDefNode.Nodename) & ".html""><font color=""#FFFFFF""><b> Oval Definition " & xnOvalDefNode.Nodename  & "</a></b></font></td>" 
+		set xnOvalTestnodes = xnOvalDefNode.childnodes
+		for each xnOvalTestnode in xnOvalTestnodes
+			select case  xnOvalTestnode.nodename
+				case "description" document.writeln "<td width=""85%"" colspan=""1"">" & xnOvalTestnode.Text & "</td></tr>"
+				case "Tests" document.writeln "<tr><td width=""15%"">&nbsp;</td><td width=""85%""  colspan=""2"">Number of Tests: " & xnOvalTestnode.attributes.getNamedItem("Number_Tests").nodeValue & "</td></tr>" 
+					     document.writeln "<tr><td colspan=""3"" align=""center"" bgcolor=""#0066FF""><font color=""#FFFFFF""><b>Tests</b></font></td></tr>"
+					     set onOvalInvTestnodes = xnOvalTestnode.childnodes
+					     for each onOvalInvTestnode in onOvalInvTestnodes
+					     	  document.writeln "<tr>" & "<td width=""15%"" align=""center""><b>"  & onOvalInvTestnode.Nodename _
+						  & "</b></td><td width=""15%"">" & onOvalInvTestnode.attributes.getNamedItem("test_type").nodeValue &"</td>"
+						  document.writeln "<td width=""70%"">" & onOvalInvTestnode.attributes.getNamedItem("comment").nodeValue &"</td></tr>"
+   				     	  	  set onOvalTestResultNodes = onOvalInvTestnode.childnodes
+						  vtOption = ""
+						  vtValue = ""
+						  vtresult = ""
+						  for each onOvalTestResultNode in onOvalTestResultNodes
+							document.writeln "<tr>" & "<td width=""15%"">&nbsp;</td><td width=""15%"" align = ""center"">" & onOvalTestResultNode.nodename &"</td>"
+							document.writeln "<td width=""70%"">" & onOvalTestResultNode.text &"</td></tr>"
+						  next
+
+					          document.writeln "<tr><td colspan=""3"">&nbsp;</td></tr>"				  
+					     next
+			end select
+			
+		next
+	next
+next
+</script>
+</table>
+ 

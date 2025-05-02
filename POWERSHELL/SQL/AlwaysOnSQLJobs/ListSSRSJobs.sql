@@ -1,0 +1,10 @@
+﻿-- Must run in SQLCMD.
+
+--:connect PRIMARYSVR
+go
+use msdb
+go
+SELECT ','''+NAME+''' `' SSRS FROM SYSJOBS J WHERE LEN(NAME)=36 ORDER  BY 1
+go
+SELECT ','''+NAME+''' `' NonSSRS FROM SYSJOBS J WHERE LEN(NAME)<>36 ORDER  BY 1
+go

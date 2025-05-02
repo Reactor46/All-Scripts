@@ -1,0 +1,27 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"BMC Track-It! 11.3 Agent";"LASMDT01.FNBM.CORP";"BMC Software";;"11.3.0.355";;;;
+"Infognition ScreenPressor v2.1 (Remove Only)";"LASMDT01.FNBM.CORP";;;;;;;
+"Microsoft Deployment Toolkit (6.3.8443.1000)";"LASMDT01.FNBM.CORP";"Microsoft Corporation";"20171019";"6.3.8443.1000";;;;
+"Microsoft Silverlight";"LASMDT01.FNBM.CORP";"Microsoft Corporation";"20170413";"5.1.50906.0";;;;
+"Microsoft SQL Server 2008 Setup Support Files ";"LASMDT01.FNBM.CORP";"Microsoft Corporation";"20150814";"10.1.2731.0";;;;
+"Microsoft SQL Server 2012";"LASMDT01.FNBM.CORP";"Microsoft Corporation";;;;;;
+"Microsoft SQL Server 2012 Native Client ";"LASMDT01.FNBM.CORP";"Microsoft Corporation";"20150814";"11.0.2100.60";;;;
+"Microsoft SQL Server 2012 Setup (English)";"LASMDT01.FNBM.CORP";"Microsoft Corporation";"20150814";"11.0.2100.60";;;;
+"Microsoft SQL Server 2012 Transact-SQL ScriptDom ";"LASMDT01.FNBM.CORP";"Microsoft Corporation";"20150814";"11.0.2100.60";;;;
+"Microsoft Visual C++ 2005 Redistributable";"LASMDT01.FNBM.CORP";"Microsoft Corporation";"20160512";"8.0.61001";;;;
+"Microsoft Visual C++ 2005 Redistributable (x64)";"LASMDT01.FNBM.CORP";"Microsoft Corporation";"20150817";"8.0.50727.42";;;;
+"Microsoft Visual C++ 2005 Redistributable (x64)";"LASMDT01.FNBM.CORP";"Microsoft Corporation";"20160512";"8.0.61000";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161";"LASMDT01.FNBM.CORP";"Microsoft Corporation";"20150814";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148";"LASMDT01.FNBM.CORP";"Microsoft Corporation";"20150814";"9.0.30729.4148";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161";"LASMDT01.FNBM.CORP";"Microsoft Corporation";"20160512";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219";"LASMDT01.FNBM.CORP";"Microsoft Corporation";"20150814";"10.0.40219";;;;
+"Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219";"LASMDT01.FNBM.CORP";"Microsoft Corporation";"20150814";"10.0.40219";;;;
+"Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.60610";"LASMDT01.FNBM.CORP";"Microsoft Corporation";;"11.0.60610.1";;;;
+"Microsoft VSS Writer for SQL Server 2012";"LASMDT01.FNBM.CORP";"Microsoft Corporation";"20150814";"11.0.2100.60";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"LASMDT01.FNBM.CORP";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"SQL Server Browser for SQL Server 2012";"LASMDT01.FNBM.CORP";"Microsoft Corporation";"20150814";"11.0.2100.60";;;;
+"Symantec Endpoint Protection";"LASMDT01.FNBM.CORP";"Symantec Corporation";"20180726";"14.0.3876.1100";;;;"0"
+"VMware Tools";"LASMDT01.FNBM.CORP";"VMware, Inc.";"20180215";"10.1.7.5541682";;;;
+"Windows Assessment and Deployment Kit - Windows 10";"LASMDT01.FNBM.CORP";"Microsoft Corporation";;"10.1.15063.0";;;;
+"Windows Assessment and Deployment Kit for Windows 8.1";"LASMDT01.FNBM.CORP";"Microsoft Corporation";;"8.100.26866";;;;
+"Xshell 5";"LASMDT01.FNBM.CORP";"NetSarang Computer, Inc.";"20180105";"5.0.0556";;;;

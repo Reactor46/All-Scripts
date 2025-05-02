@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<helpItems schema="maml">
+  <_locDefinition>
+    <_locDefault _loc="locNone" />
+    <_locTag _loc="locData">maml:para</_locTag>
+    <_locTag _loc="locData">maml:title</_locTag>
+  </_locDefinition>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>AggregatePFData.ps1</command:name>
+      <maml:description>
+        <maml:para _locID="CommandShortDescription">Crawls to the public folder hierarchy and displays usage information about each folder.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para _locID="Copyright">Copyright (c) Microsoft.  All rights reserved.</maml:para>
+      </maml:copyright>
+      <command:verb>AggregatePFData.ps1</command:verb>
+      <command:noun></command:noun>
+      <dev:version />
+    </command:details>
+    <maml:description>
+      <maml:para _locID="CommandLongDescription"></maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <command:name>AggregatePFData.ps1</command:name>
+        <command:parameter required="false" position="1">
+          <maml:name>PublicFolder</maml:name>
+          <command:parameterValue>String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="2">
+          <maml:name>Server</maml:name>
+          <command:parameterValue>String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="" globbing="" pipelineInput="false" position="1">
+        <maml:name>PublicFolder</maml:name>
+        <maml:description>
+          <maml:para _locID="Param_Description_PublicFolder">The folder identity of the public folder to operate against. If none is specified, then all the folders in the hierarchy are returned.</maml:para>
+        </maml:description>
+        <command:parameterValue>String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+      <command:parameter required="false" variableLength="" globbing="" pipelineInput="false" position="2">
+        <maml:name>Server</maml:name>
+        <maml:description>
+          <maml:para _locID="Param_Description_Server">The server to operate against. Must be an Exchange 2010 or later Mailbox server with a public folder database. Defaults to a convenient server.</maml:para>
+        </maml:description>
+        <command:parameterValue>String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue />
+      </command:parameter>
+    </command:parameters>
+    <command:examples>
+      <command:example>
+        <maml:title _locID="Example_Title_1">-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>C:\PS&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>AggregatePFData.ps1 -PublicFolder PF1</dev:code>
+        <dev:remarks />
+      </command:example>
+      <command:example>
+        <maml:title _locID="Example_Title_2">-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>C:\PS&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>AggregatePFData.ps1 -PublicFolder PF1 -Server Server1</dev:code>
+        <dev:remarks />
+      </command:example>
+    </command:examples>
+  </command:command>
+</helpItems>

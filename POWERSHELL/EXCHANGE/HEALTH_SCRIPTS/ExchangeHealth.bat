@@ -1,0 +1,1 @@
+PowerShell.exe -PSConsoleFile "D:\Program Files\Microsoft\Exchange Server\V15\Bin\ExShell.psc1" -Command ". 'D:\HealthScript\HealthScript.ps1'"

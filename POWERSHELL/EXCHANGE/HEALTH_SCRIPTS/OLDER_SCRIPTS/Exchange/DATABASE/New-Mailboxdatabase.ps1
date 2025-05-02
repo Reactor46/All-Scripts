@@ -1,0 +1,1 @@
+New-MailboxDatabase -Server ANEXMBX02 -Name "Students_15" -EdbFilePath H:\Students_15\Students_15.edb -LogFolderPath H:\Trx\exchange\Logs\Students_15 -DomainController andc08.campus.dmacc.edu

@@ -1,0 +1,3 @@
+#TYPE System.Management.Automation.PSCustomObject
+"BasicAuthentication","DigestAuthentication","FormsAuthentication","WindowsAuthentication","Externalurl","Internalurl","Identity"
+"True","False","True","True","https://monsoon.creditone.com/owa","https://monsoon.creditone.com/owa","LASEXCAS01\owa (Default Web Site)"

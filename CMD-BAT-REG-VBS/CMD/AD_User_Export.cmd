@@ -1,0 +1,1 @@
+csvde -f C:\ACU_Users.csv -p subtree -r "(&(objectCategory=person)(objectClass=User)(givenname=*))" -l "cn,givenName,objectclass,samAccountName"

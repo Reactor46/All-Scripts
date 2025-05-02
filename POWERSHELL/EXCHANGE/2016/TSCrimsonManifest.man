@@ -1,0 +1,30 @@
+<!-- <?xml version="1.0" encoding="UTF-16"?> -->
+<instrumentationManifest xmlns="http://schemas.microsoft.com/win/2004/08/events">
+  
+  <instrumentation xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:win="http://manifests.microsoft.com/win/2004/08/windows/events">
+    
+    <events xmlns="http://schemas.microsoft.com/win/2004/08/events">
+      
+    <!--e14 bug 65784: Update managereplservice.cs if the name is changed. -->
+    <provider name="Microsoft-Exchange-Troubleshooters"
+      guid="{D46A5E4C-6A53-411f-91F1-D205C8310818}" 
+      symbol="SymExchangeTSPublisher">
+      
+    <!--Channel to which this Publisher can publish -->
+    <channels>
+      <channel 
+        chid="TSChannel" 
+        name="Microsoft-Exchange-Troubleshooters/Operational" 
+        type="Operational" 
+        symbol="SymTSChannel" 
+        isolation="Application" 
+        enabled="true">
+        <logging>
+          <maxSize>20971520</maxSize>
+        </logging>
+      </channel>
+    </channels>
+  </provider>
+ </events>
+ </instrumentation>
+</instrumentationManifest>

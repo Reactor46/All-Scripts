@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Create new SharePoint enterprise search service application - SharePoint 2013</title>        
+        <meta name="description" content="This script creates enterprise search service application in the current sharepoint farm. Using this script to create search application, eliminates creation of search databases having GUID appended in their names. This script has been thoroughly commented to explain its usage." />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<p>This script creates enterprise search service application in the SharePoint 2013 farm. Using this script to create search application, eliminates possibility of search databases having GUIDs appended in their names. This script has been thoroughly commented
+ to explain its usage and working-how.</p>
+<p>Assumptions:<br>
+&nbsp; 1. Index partition will be created as locally on the server. So run this script on server, which will host search admin component. Index partition can be moved out later, once the application is created.<br>
+&nbsp; 2. The service account for application pool, has been registered under managed accounts in SP farm.<br>
+&nbsp; 3. Current logged-in user has required privilegese to create search service application.</p>
+<p>Following variables needs to be updated in the script as per the SharePoint 2013 farm:</p>
+<p><strong>$IndexLocation : </strong>This specifies the directory to store search index location. This directory should not contain any data as script will delete all data stored in this location.</p>
+<p><strong>$SearchAppPoolName :</strong> This specifies the application pool to be used by search service application. You can specify existing pool name or you can create a new one. Script will check first&nbsp;if the pool already exist. If not, it will proceed
+ to create a new one.</p>
+<p><strong>$SearchAppPoolAccountName :</strong> This is required to specify the account context under which search service application pool runs. If you are using an existing pool, it is not required. Just specify the empty string &quot;&quot; if your app pool already
+ exists.</p>
+<p><strong>$SearchServiceName :</strong> Specify the name for search service application</p>
+<p><strong>$SearchServiceProxyName :</strong> Specify the name for search service application proxy service.</p>
+<p><strong>$DatabaseName :</strong>&nbsp;This specify the prefix for databases name. Please note that there will be 4 databases created starting with this prefix.</p>
+<p>Please run this script in your&nbsp;Dev/QA environment first as part of best practices, for testing purposes and getting familiar with the script execution and other details.</p>
+<p>Here, is the script code:</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">&lt;##############################################################################
+This script creates enterprise search service application in the current 
+SharePoint 2013 farm. 
+
+Assumptions: 1. Index partition will be created as locally on the server. So 
+run this script on server, which will host search admin component.
+2. The service account for application pool, has been registered under managed 
+accounts in SP farm.
+3. Current logged-in user has required privileges to create search service 
+application
+################################################################################&gt;
+
+#Specify Settings for the search service configuration.
+#Specify the directory to store search index data. This directory should not contain any data.
+$IndexLocation = &quot;D:\SearchIndex&rdquo; 
+
+#Specify the search application pool name. 
+#You can have a new pool or specify any existing one, too.
+$SearchAppPoolName = &quot;SearchSvcAppPool&quot; 
+
+#Specify the service account for application pool, in case you want to have a 
+#n ew application pool. Else this value will not be  used.
+$SearchAppPoolAccountName = &quot;contoso\spsearchpool&quot; 
+$SearchServerName = (Get-ChildItem env:computername).value 
+
+#Specify the name for search service application and application proxy
+$SearchServiceName = &quot;Contoso Search Service Application&quot; 
+$SearchServiceProxyName = &quot;Contoso Search Service Application Proxy&quot;
+
+#Specify the prefix for database names. Pls note that there will be 4 databases created 
+# starting with this as prefix. Also they will not have any GUID's in their names. 
+$DatabaseName = &quot;Contoso_SearchService_Dev&quot; 
+
+Add-PSSnapin Microsoft.SharePoint.PowerShell -ErrorAction SilentlyContinue
+
+Try{
+    Start-SPAssignment -Global
+
+    #Check if application pool already exist. If not, create a new one.
+    Write-Output &quot;Checking if Search Application Pool exists...&quot; 
+    $SearchServiceAppPool = Get-SPServiceApplicationPool -Identity $SearchAppPoolName -ErrorAction SilentlyContinue
+    if ($SearchServiceAppPool -eq $null){ 
+        Write-Output &quot;Creating Search Application Pool&quot;
+        $SearchServiceAppPool = New-SPServiceApplicationPool -Name $SearchAppPoolName -Account $SearchAppPoolAccountName -Verbose
+        if(-not $?){
+            throw &quot;Failed to create service application pool. Pls check if this account is added to managed accounts and this console is running in admin mode.&quot;
+        }
+    }
+
+    #Starts the Search Service Instance on the specified Server
+    Write-Output &quot;Start Search Service instance on this server...&quot; 
+    Start-SPEnterpriseSearchServiceInstance $SearchServerName
+    Start-SPEnterpriseSearchQueryAndSiteSettingsServiceInstance $SearchServerName
+    $Instance = Get-SPEnterpriseSearchServiceInstance -Identity $SearchServerName
+    sleep 60
+    if($Instance.Status -ne &quot;Online&quot;){
+        Write-Output &quot;Waiting for 60 seconds for instance to come online...&quot;
+        sleep 60
+        for ($Count=1;$Count -lt 5;$Count&#43;&#43;){
+            $Instance = Get-SPEnterpriseSearchServiceInstance -Identity $SearchServerName
+            if($Instance.Status -ne &quot;Online&quot;){
+                Write-Output &quot;Waiting for another 60 seconds...&quot;
+                sleep 60
+            }
+            else{
+                $Count = 6
+            }
+        }
+        if($Count -eq 5){
+            throw &quot;Failed to start search service instance on server. Pls start manually and run script again&quot;
+        }
+    }
+
+    #Check if Search Service Application already exist. If not, create a new one.
+    Write-Output &quot;Checking if Search Service Application exists&quot; 
+    $ServiceApplication = Get-SPEnterpriseSearchServiceApplication -Identity $SearchServiceName -ErrorAction SilentlyContinue
+    if ($ServiceApplication -eq $null){ 
+        Write-Output &quot;Creating Search Service Application...&quot; 
+        $ServiceApplication = New-SPEnterpriseSearchServiceApplication -Partitioned -Name $SearchServiceName -ApplicationPool $SearchServiceAppPool.Name -DatabaseName $DatabaseName -Verbose
+        if(-not $?){
+            throw &quot;Failed to create search service application. Pls check for errors manually.&quot;
+        }
+
+    }
+
+    #Check if Search Service Application Proxy already exist. If not, create a new one.
+    Write-Output &quot;Checking if Search Service Application Proxy exists&quot; 
+    $Proxy = Get-SPEnterpriseSearchServiceApplicationProxy -Identity $SearchServiceProxyName -ErrorAction SilentlyContinue
+    if ($Proxy -eq $null){ 
+        Write-Output &quot;Creating Search Service Application Proxy&quot; 
+        New-SPEnterpriseSearchServiceApplicationProxy -Partitioned -Name $SearchServiceProxyName -SearchApplication $ServiceApplication -Verbose
+        if(-not $?){
+            throw &quot;Failed to create search service application. Pls check for errors manually.&quot;
+        }
+    }
+
+    #Checks if index directory already exists. If yes, removes it and all sub-directories and files. If not, creates it.
+    Remove-Item -Recurse -Force -LiteralPath $IndexLocation -ErrorAction SilentlyContinue 
+    New-Item -ItemType Directory -Path $IndexLocation -Force
+
+    # Clone the default Topology (which is empty) and create a new one and then activate it 
+    Write-Output &quot;Configuring Search Component Topology....&quot; 
+    $ClonedTopology = $ServiceApplication.ActiveTopology.Clone() 
+    $SSI = Get-SPEnterpriseSearchServiceInstance -local 
+    New-SPEnterpriseSearchAdminComponent &ndash;SearchTopology $ClonedTopology -SearchServiceInstance $SSI 
+    New-SPEnterpriseSearchContentProcessingComponent &ndash;SearchTopology $ClonedTopology -SearchServiceInstance $SSI 
+    New-SPEnterpriseSearchAnalyticsProcessingComponent &ndash;SearchTopology $ClonedTopology -SearchServiceInstance $SSI 
+    New-SPEnterpriseSearchCrawlComponent &ndash;SearchTopology $ClonedTopology -SearchServiceInstance $SSI 
+    New-SPEnterpriseSearchIndexComponent &ndash;SearchTopology $ClonedTopology -SearchServiceInstance $SSI -RootDirectory $IndexLocation 
+    New-SPEnterpriseSearchQueryProcessingComponent &ndash;SearchTopology $ClonedTopology -SearchServiceInstance $SSI 
+    
+    #Sets new topology as active one
+    Write-Output &quot;Setting new search topology as active...&quot;
+    Set-SPEnterpriseSearchTopology -Identity $ClonedTopology
+
+    #Displays Current topology components to user
+    Write-Output &quot;&quot;
+    Write-Output &quot;Here are the current search components:&quot;
+    $ActiveToplogy = Get-SPEnterpriseSearchTopology -Active -SearchApplication $ServiceApplication
+    Get-SPEnterpriseSearchComponent -SearchTopology $ActiveToplogy    
+}
+Catch{
+    Write-Error &quot;Exception Type: $($_.Exception.GetType().FullName)&quot;
+    Write-Error &quot;Exception Message: $($_.Exception.Message)&quot;
+}
+finally{
+    Stop-SPAssignment -Global
+
+    Write-Output &quot;&quot;
+    Write-Output &quot;Script Execution finished&quot;
+}
+
+&lt;###############################################################################
+End of Script
+###############################################################################&gt;</pre>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__mlcom">&lt;##############################################################################&nbsp;
+This&nbsp;script&nbsp;creates&nbsp;enterprise&nbsp;search&nbsp;service&nbsp;application&nbsp;in&nbsp;the&nbsp;current&nbsp;&nbsp;
+SharePoint&nbsp;2013&nbsp;farm.&nbsp;&nbsp;
+&nbsp;
+Assumptions:&nbsp;1.&nbsp;Index&nbsp;partition&nbsp;will&nbsp;be&nbsp;created&nbsp;as&nbsp;locally&nbsp;on&nbsp;the&nbsp;server.&nbsp;So&nbsp;&nbsp;
+run&nbsp;this&nbsp;script&nbsp;on&nbsp;server,&nbsp;which&nbsp;will&nbsp;host&nbsp;search&nbsp;admin&nbsp;component.&nbsp;
+2.&nbsp;The&nbsp;service&nbsp;account&nbsp;for&nbsp;application&nbsp;pool,&nbsp;has&nbsp;been&nbsp;registered&nbsp;under&nbsp;managed&nbsp;&nbsp;
+accounts&nbsp;in&nbsp;SP&nbsp;farm.&nbsp;
+3.&nbsp;Current&nbsp;logged-in&nbsp;user&nbsp;has&nbsp;required&nbsp;privileges&nbsp;to&nbsp;create&nbsp;search&nbsp;service&nbsp;&nbsp;
+application&nbsp;
+################################################################################&gt;</span>&nbsp;
+&nbsp;
+<span class="powerShell__com">#Specify&nbsp;Settings&nbsp;for&nbsp;the&nbsp;search&nbsp;service&nbsp;configuration.</span>&nbsp;
+<span class="powerShell__com">#Specify&nbsp;the&nbsp;directory&nbsp;to&nbsp;store&nbsp;search&nbsp;index&nbsp;data.&nbsp;This&nbsp;directory&nbsp;should&nbsp;not&nbsp;contain&nbsp;any&nbsp;data.</span>&nbsp;
+<span class="powerShell__variable">$IndexLocation</span>&nbsp;=&nbsp;&quot;D:\SearchIndex&rdquo;&nbsp;&nbsp;
+&nbsp;
+<span class="powerShell__com">#Specify&nbsp;the&nbsp;search&nbsp;application&nbsp;pool&nbsp;name.&nbsp;</span>&nbsp;
+<span class="powerShell__com">#You&nbsp;can&nbsp;have&nbsp;a&nbsp;new&nbsp;pool&nbsp;or&nbsp;specify&nbsp;any&nbsp;existing&nbsp;one,&nbsp;too.</span>&nbsp;
+<span class="powerShell__variable">$SearchAppPoolName</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;SearchSvcAppPool&quot;</span>&nbsp;&nbsp;
+&nbsp;
+<span class="powerShell__com">#Specify&nbsp;the&nbsp;service&nbsp;account&nbsp;for&nbsp;application&nbsp;pool,&nbsp;in&nbsp;case&nbsp;you&nbsp;want&nbsp;to&nbsp;have&nbsp;a&nbsp;</span>&nbsp;
+<span class="powerShell__com">#n&nbsp;ew&nbsp;application&nbsp;pool.&nbsp;Else&nbsp;this&nbsp;value&nbsp;will&nbsp;not&nbsp;be&nbsp;&nbsp;used.</span>&nbsp;
+<span class="powerShell__variable">$SearchAppPoolAccountName</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;contoso\spsearchpool&quot;</span>&nbsp;&nbsp;
+<span class="powerShell__variable">$SearchServerName</span>&nbsp;=&nbsp;(<span class="powerShell__cmdlets">Get-ChildItem</span>&nbsp;env:computername).value&nbsp;&nbsp;
+&nbsp;
+<span class="powerShell__com">#Specify&nbsp;the&nbsp;name&nbsp;for&nbsp;search&nbsp;service&nbsp;application&nbsp;and&nbsp;application&nbsp;proxy</span>&nbsp;
+<span class="powerShell__variable">$SearchServiceName</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;Contoso&nbsp;Search&nbsp;Service&nbsp;Application&quot;</span>&nbsp;&nbsp;
+<span class="powerShell__variable">$SearchServiceProxyName</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;Contoso&nbsp;Search&nbsp;Service&nbsp;Application&nbsp;Proxy&quot;</span>&nbsp;
+&nbsp;
+<span class="powerShell__com">#Specify&nbsp;the&nbsp;prefix&nbsp;for&nbsp;database&nbsp;names.&nbsp;Pls&nbsp;note&nbsp;that&nbsp;there&nbsp;will&nbsp;be&nbsp;4&nbsp;databases&nbsp;created&nbsp;</span>&nbsp;
+<span class="powerShell__com">#&nbsp;starting&nbsp;with&nbsp;this&nbsp;as&nbsp;prefix.&nbsp;Also&nbsp;they&nbsp;will&nbsp;not&nbsp;have&nbsp;any&nbsp;GUID's&nbsp;in&nbsp;their&nbsp;names.&nbsp;</span>&nbsp;
+<span class="powerShell__variable">$DatabaseName</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;Contoso_SearchService_Dev&quot;</span>&nbsp;&nbsp;
+&nbsp;
+<span class="powerShell__cmdlets">Add-PSSnapin</span>&nbsp;Microsoft.SharePoint.PowerShell&nbsp;<span class="powerShell__operator">-</span>ErrorAction&nbsp;SilentlyContinue&nbsp;
+&nbsp;
+<span class="powerShell__keyword">Try</span>{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Start<span class="powerShell__operator">-</span>SPAssignment&nbsp;<span class="powerShell__operator">-</span>Global&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Check&nbsp;if&nbsp;application&nbsp;pool&nbsp;already&nbsp;exist.&nbsp;If&nbsp;not,&nbsp;create&nbsp;a&nbsp;new&nbsp;one.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Checking&nbsp;if&nbsp;Search&nbsp;Application&nbsp;Pool&nbsp;exists...&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SearchServiceAppPool</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPServiceApplicationPool&nbsp;<span class="powerShell__operator">-</span>Identity&nbsp;<span class="powerShell__variable">$SearchAppPoolName</span>&nbsp;<span class="powerShell__operator">-</span>ErrorAction&nbsp;SilentlyContinue&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$SearchServiceAppPool</span>&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$null</span>){&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Creating&nbsp;Search&nbsp;Application&nbsp;Pool&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SearchServiceAppPool</span>&nbsp;=&nbsp;New<span class="powerShell__operator">-</span>SPServiceApplicationPool&nbsp;<span class="powerShell__operator">-</span>Name&nbsp;<span class="powerShell__variable">$SearchAppPoolName</span>&nbsp;<span class="powerShell__operator">-</span>Account&nbsp;<span class="powerShell__variable">$SearchAppPoolAccountName</span>&nbsp;<span class="powerShell__operator">-</span>Verbose&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__operator">-</span>not&nbsp;<span class="powerShell__variable">$</span>?){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">throw</span>&nbsp;<span class="powerShell__string">&quot;Failed&nbsp;to&nbsp;create&nbsp;service&nbsp;application&nbsp;pool.&nbsp;Pls&nbsp;check&nbsp;if&nbsp;this&nbsp;account&nbsp;is&nbsp;added&nbsp;to&nbsp;managed&nbsp;accounts&nbsp;and&nbsp;this&nbsp;console&nbsp;is&nbsp;running&nbsp;in&nbsp;admin&nbsp;mode.&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Starts&nbsp;the&nbsp;Search&nbsp;Service&nbsp;Instance&nbsp;on&nbsp;the&nbsp;specified&nbsp;Server</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Start&nbsp;Search&nbsp;Service&nbsp;instance&nbsp;on&nbsp;this&nbsp;server...&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Start<span class="powerShell__operator">-</span>SPEnterpriseSearchServiceInstance&nbsp;<span class="powerShell__variable">$SearchServerName</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Start<span class="powerShell__operator">-</span>SPEnterpriseSearchQueryAndSiteSettingsServiceInstance&nbsp;<span class="powerShell__variable">$SearchServerName</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Instance</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchServiceInstance&nbsp;<span class="powerShell__operator">-</span>Identity&nbsp;<span class="powerShell__variable">$SearchServerName</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__alias">sleep</span>&nbsp;60&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$Instance</span>.Status&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__string">&quot;Online&quot;</span>){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Waiting&nbsp;for&nbsp;60&nbsp;seconds&nbsp;for&nbsp;instance&nbsp;to&nbsp;come&nbsp;online...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__alias">sleep</span>&nbsp;60&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">for</span>&nbsp;(<span class="powerShell__variable">$Count</span>=1;<span class="powerShell__variable">$Count</span>&nbsp;<span class="powerShell__operator">-</span>lt&nbsp;5;<span class="powerShell__variable">$Count</span><span class="powerShell__operator">&#43;</span><span class="powerShell__operator">&#43;</span>){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Instance</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchServiceInstance&nbsp;<span class="powerShell__operator">-</span>Identity&nbsp;<span class="powerShell__variable">$SearchServerName</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$Instance</span>.Status&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__string">&quot;Online&quot;</span>){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Waiting&nbsp;for&nbsp;another&nbsp;60&nbsp;seconds...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__alias">sleep</span>&nbsp;60&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">else</span>{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Count</span>&nbsp;=&nbsp;6&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$Count</span>&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;5){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">throw</span>&nbsp;<span class="powerShell__string">&quot;Failed&nbsp;to&nbsp;start&nbsp;search&nbsp;service&nbsp;instance&nbsp;on&nbsp;server.&nbsp;Pls&nbsp;start&nbsp;manually&nbsp;and&nbsp;run&nbsp;script&nbsp;again&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Check&nbsp;if&nbsp;Search&nbsp;Service&nbsp;Application&nbsp;already&nbsp;exist.&nbsp;If&nbsp;not,&nbsp;create&nbsp;a&nbsp;new&nbsp;one.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Checking&nbsp;if&nbsp;Search&nbsp;Service&nbsp;Application&nbsp;exists&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$ServiceApplication</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchServiceApplication&nbsp;<span class="powerShell__operator">-</span>Identity&nbsp;<span class="powerShell__variable">$SearchServiceName</span>&nbsp;<span class="powerShell__operator">-</span>ErrorAction&nbsp;SilentlyContinue&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$ServiceApplication</span>&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$null</span>){&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Creating&nbsp;Search&nbsp;Service&nbsp;Application...&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$ServiceApplication</span>&nbsp;=&nbsp;New<span class="powerShell__operator">-</span>SPEnterpriseSearchServiceApplication&nbsp;<span class="powerShell__operator">-</span>Partitioned&nbsp;<span class="powerShell__operator">-</span>Name&nbsp;<span class="powerShell__variable">$SearchServiceName</span>&nbsp;<span class="powerShell__operator">-</span>ApplicationPool&nbsp;<span class="powerShell__variable">$SearchServiceAppPool</span>.Name&nbsp;<span class="powerShell__operator">-</span>DatabaseName&nbsp;<span class="powerShell__variable">$DatabaseName</span>&nbsp;<span class="powerShell__operator">-</span>Verbose&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__operator">-</span>not&nbsp;<span class="powerShell__variable">$</span>?){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">throw</span>&nbsp;<span class="powerShell__string">&quot;Failed&nbsp;to&nbsp;create&nbsp;search&nbsp;service&nbsp;application.&nbsp;Pls&nbsp;check&nbsp;for&nbsp;errors&nbsp;manually.&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Check&nbsp;if&nbsp;Search&nbsp;Service&nbsp;Application&nbsp;Proxy&nbsp;already&nbsp;exist.&nbsp;If&nbsp;not,&nbsp;create&nbsp;a&nbsp;new&nbsp;one.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Checking&nbsp;if&nbsp;Search&nbsp;Service&nbsp;Application&nbsp;Proxy&nbsp;exists&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Proxy</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchServiceApplicationProxy&nbsp;<span class="powerShell__operator">-</span>Identity&nbsp;<span class="powerShell__variable">$SearchServiceProxyName</span>&nbsp;<span class="powerShell__operator">-</span>ErrorAction&nbsp;SilentlyContinue&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$Proxy</span>&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$null</span>){&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Creating&nbsp;Search&nbsp;Service&nbsp;Application&nbsp;Proxy&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New<span class="powerShell__operator">-</span>SPEnterpriseSearchServiceApplicationProxy&nbsp;<span class="powerShell__operator">-</span>Partitioned&nbsp;<span class="powerShell__operator">-</span>Name&nbsp;<span class="powerShell__variable">$SearchServiceProxyName</span>&nbsp;<span class="powerShell__operator">-</span>SearchApplication&nbsp;<span class="powerShell__variable">$ServiceApplication</span>&nbsp;<span class="powerShell__operator">-</span>Verbose&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__operator">-</span>not&nbsp;<span class="powerShell__variable">$</span>?){&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">throw</span>&nbsp;<span class="powerShell__string">&quot;Failed&nbsp;to&nbsp;create&nbsp;search&nbsp;service&nbsp;application.&nbsp;Pls&nbsp;check&nbsp;for&nbsp;errors&nbsp;manually.&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Checks&nbsp;if&nbsp;index&nbsp;directory&nbsp;already&nbsp;exists.&nbsp;If&nbsp;yes,&nbsp;removes&nbsp;it&nbsp;and&nbsp;all&nbsp;sub-directories&nbsp;and&nbsp;files.&nbsp;If&nbsp;not,&nbsp;creates&nbsp;it.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__cmdlets">Remove-Item</span>&nbsp;<span class="powerShell__operator">-</span>Recurse&nbsp;<span class="powerShell__operator">-</span>Force&nbsp;<span class="powerShell__operator">-</span>LiteralPath&nbsp;<span class="powerShell__variable">$IndexLocation</span>&nbsp;<span class="powerShell__operator">-</span>ErrorAction&nbsp;SilentlyContinue&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__cmdlets">New-Item</span>&nbsp;<span class="powerShell__operator">-</span>ItemType&nbsp;Directory&nbsp;<span class="powerShell__operator">-</span>Path&nbsp;<span class="powerShell__variable">$IndexLocation</span>&nbsp;<span class="powerShell__operator">-</span>Force&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;Clone&nbsp;the&nbsp;default&nbsp;Topology&nbsp;(which&nbsp;is&nbsp;empty)&nbsp;and&nbsp;create&nbsp;a&nbsp;new&nbsp;one&nbsp;and&nbsp;then&nbsp;activate&nbsp;it&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Configuring&nbsp;Search&nbsp;Component&nbsp;Topology....&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$ClonedTopology</span>&nbsp;=&nbsp;<span class="powerShell__variable">$ServiceApplication</span>.ActiveTopology.Clone()&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SSI</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchServiceInstance&nbsp;<span class="powerShell__operator">-</span>local&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;New<span class="powerShell__operator">-</span>SPEnterpriseSearchAdminComponent&nbsp;&ndash;SearchTopology&nbsp;<span class="powerShell__variable">$ClonedTopology</span>&nbsp;<span class="powerShell__operator">-</span>SearchServiceInstance&nbsp;<span class="powerShell__variable">$SSI</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;New<span class="powerShell__operator">-</span>SPEnterpriseSearchContentProcessingComponent&nbsp;&ndash;SearchTopology&nbsp;<span class="powerShell__variable">$ClonedTopology</span>&nbsp;<span class="powerShell__operator">-</span>SearchServiceInstance&nbsp;<span class="powerShell__variable">$SSI</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;New<span class="powerShell__operator">-</span>SPEnterpriseSearchAnalyticsProcessingComponent&nbsp;&ndash;SearchTopology&nbsp;<span class="powerShell__variable">$ClonedTopology</span>&nbsp;<span class="powerShell__operator">-</span>SearchServiceInstance&nbsp;<span class="powerShell__variable">$SSI</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;New<span class="powerShell__operator">-</span>SPEnterpriseSearchCrawlComponent&nbsp;&ndash;SearchTopology&nbsp;<span class="powerShell__variable">$ClonedTopology</span>&nbsp;<span class="powerShell__operator">-</span>SearchServiceInstance&nbsp;<span class="powerShell__variable">$SSI</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;New<span class="powerShell__operator">-</span>SPEnterpriseSearchIndexComponent&nbsp;&ndash;SearchTopology&nbsp;<span class="powerShell__variable">$ClonedTopology</span>&nbsp;<span class="powerShell__operator">-</span>SearchServiceInstance&nbsp;<span class="powerShell__variable">$SSI</span>&nbsp;<span class="powerShell__operator">-</span>RootDirectory&nbsp;<span class="powerShell__variable">$IndexLocation</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;New<span class="powerShell__operator">-</span>SPEnterpriseSearchQueryProcessingComponent&nbsp;&ndash;SearchTopology&nbsp;<span class="powerShell__variable">$ClonedTopology</span>&nbsp;<span class="powerShell__operator">-</span>SearchServiceInstance&nbsp;<span class="powerShell__variable">$SSI</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Sets&nbsp;new&nbsp;topology&nbsp;as&nbsp;active&nbsp;one</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Setting&nbsp;new&nbsp;search&nbsp;topology&nbsp;as&nbsp;active...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Set<span class="powerShell__operator">-</span>SPEnterpriseSearchTopology&nbsp;<span class="powerShell__operator">-</span>Identity&nbsp;<span class="powerShell__variable">$ClonedTopology</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Displays&nbsp;Current&nbsp;topology&nbsp;components&nbsp;to&nbsp;user</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Here&nbsp;are&nbsp;the&nbsp;current&nbsp;search&nbsp;components:&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$ActiveToplogy</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchTopology&nbsp;<span class="powerShell__operator">-</span>Active&nbsp;<span class="powerShell__operator">-</span>SearchApplication&nbsp;<span class="powerShell__variable">$ServiceApplication</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Get<span class="powerShell__operator">-</span>SPEnterpriseSearchComponent&nbsp;<span class="powerShell__operator">-</span>SearchTopology&nbsp;<span class="powerShell__variable">$ActiveToplogy</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}&nbsp;
+<span class="powerShell__keyword">Catch</span>{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__cmdlets">Write-Error</span>&nbsp;<span class="powerShell__string">&quot;Exception&nbsp;Type:&nbsp;$($_.Exception.GetType().FullName)&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__cmdlets">Write-Error</span>&nbsp;<span class="powerShell__string">&quot;Exception&nbsp;Message:&nbsp;$($_.Exception.Message)&quot;</span>&nbsp;
+}&nbsp;
+<span class="powerShell__keyword">finally</span>{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Stop<span class="powerShell__operator">-</span>SPAssignment&nbsp;<span class="powerShell__operator">-</span>Global&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Output&nbsp;<span class="powerShell__string">&quot;Script&nbsp;Execution&nbsp;finished&quot;</span>&nbsp;
+}&nbsp;
+&nbsp;
+<span class="powerShell__mlcom">&lt;###############################################################################&nbsp;
+End&nbsp;of&nbsp;Script&nbsp;
+###############################################################################&gt;</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+
+        </div>
+    </body>
+</html>

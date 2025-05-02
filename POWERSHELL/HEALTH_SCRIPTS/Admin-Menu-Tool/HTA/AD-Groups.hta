@@ -1,0 +1,107 @@
+<html> 
+<!--  
+  AD Group Membership Utility -  ADGroupMembershipUtility.hta   
+  Written by Marcus Cotey on 01.15.2011 
+  Feel free to use and reuse and modify.  
+  Version 1.0  
+-->  
+ 
+<head> 
+    <title>*** AD Group Membership Utility ***</title> 
+</head> 
+ 
+<HTA:APPLICATION  
+      APPLICATIONNAME = " AD Group Membership Utility " 
+    SCROLL = "No" 
+    SINGLEINSTANCE = "Yes" 
+    WINDOWSTATE = "normal" 
+    Border = Thick 
+    BorderStyle = Simple 
+    ShowInTaskBar = "Yes" 
+    MaximizeButton = "No" 
+    MinimizeButton = "No" 
+    SysMenu = "Yes" 
+    Caption = "Yes" 
+> 
+ 
+<SCRIPT LANGUAGE="VBScript"> 
+ 
+    Sub Window_onLoad 
+        window.resizeTo 600,470 
+        'On Error Resume Next 
+        Const ADS_SCOPE_SUBTREE = 2  
+        Const ADS_GROUP_TYPE_GLOBAL_GROUP = &h2  
+        Const ADS_GROUP_TYPE_LOCAL_GROUP = &h4  
+        Const ADS_GROUP_TYPE_UNIVERSAL_GROUP = &h8  
+        Const ADS_GROUP_TYPE_SECURITY_ENABLED = &h80000000  
+        Const E_ADS_PROPERTY_NOT_FOUND = &h8000500D 
+' 
+        Set objConnection = CreateObject("ADODB.Connection") 
+        Set objCommand =   CreateObject("ADODB.Command") 
+        objConnection.Provider = "ADsDSOObject" 
+        objConnection.Open "Active Directory Provider" 
+        Set objCommand.ActiveConnection = objConnection 
+ 
+        objCommand.Properties("Page Size") = 1000 
+        objCommand.Properties("Searchscope") = ADS_SCOPE_SUBTREE  
+ 
+        Set objRootDSE = GetObject("LDAP://RootDSE")  
+         
+        objCommand.CommandText = _ 
+            "SELECT ADsPath, distinguishedName, Name, sAMAccountName FROM 'LDAP://" & objRootDSE.get("defaultNamingContext") & "'" & _ 
+                " WHERE objectCategory='Group' ORDER by Name" 
+        Set objRecordSet = objCommand.Execute 
+ 
+        objRecordSet.MoveFirst 
+        Do Until objRecordSet.EOF 
+            Set objOption = Document.createElement("OPTION") 
+            objOption.Text = objRecordSet.Fields("Name").Value 
+            objOption.Value = objRecordSet.Fields("distinguishedName").Value 
+            AvailableGroups.Add(objOption) 
+            objRecordSet.MoveNext 
+        Loop 
+' 
+        Set objConnection = Nothing 
+        Set objCommand = Nothing 
+    End Sub 
+' 
+    Sub ListGroupMembers 
+        Set objGroup = GetObject("LDAP://" & AvailableGroups.Value) 
+        objGroup.GetInfo    
+' 
+        For Each objMember in objGroup.Members 
+            strHTML = strHTML & objMember.displayName & "<br>" 
+        Next 
+'     
+        Set objIE = CreateObject("InternetExplorer.Application") 
+        objIE.Navigate("about:blank") 
+        objIE.ToolBar = 0 
+        objIE.StatusBar = 0 
+        Set objDoc = objIE.Document.Body 
+        objDoc.InnerHTML = strHTML & "<br>" & "<input type='button' onclick='window.print()' value='Print These Results'>" 
+        objIE.Visible = True 
+        objIE.Width = 320 
+        objIE.Height = 380 
+    End Sub 
+' 
+    Sub ExitProgram 
+        window.close() 
+    End Sub 
+</SCRIPT> 
+' 
+<body> 
+<p> 
+<body bgcolor="white" text="red"> 
+        <h1><font face = "arial"><center>AD Group Membership Utility</center></h1> 
+        <font color=black>Use this utility to enumerate user accounts associated with a particular Active Directory group. Simply click the drop down menu and select the group you want to evaluate.  
+        <br> 
+        <br> 
+        Select AD Group</font> 
+        <br> 
+        <select size="1" name="AvailableGroups" style="width:300"></select><p> 
+        <br> 
+        <br> 
+    <input id=runbutton type="button" value=" List Group Members " onClick="ListGroupMembers">         
+    <center><input id=runbutton type="button" value=" Exit " onClick="ExitProgram"></center> 
+</body> 
+</html>

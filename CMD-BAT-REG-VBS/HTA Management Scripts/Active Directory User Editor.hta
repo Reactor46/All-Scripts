@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>Contingency Preparedness Assistant v1.0</title>
+
+<HTA:APPLICATION 
+     ID="objTSBITGuys" 
+     APPLICATIONNAME="Contingency Preparedness Assistant v1.0"
+     SCROLL="Yes"
+     SINGLEINSTANCE="yes"
+     WINDOWSTATE="normal"
+     BORDER="dialog"
+     CAPTION="e-Assistant"
+>
+</head>
+
+
+<SCRIPT Language="VBScript">
+
+Sub Window_Onload
+window.resizeTo 600,750
+Set objWshNet = CreateObject("Wscript.Network")
+strCN = lcase(objWshNet.ComputerName)
+strCU = lcase(objWshNet.UserName)
+
+Dim objFS, objFile, append
+append = 8
+
+Const ForWriting = 2
+
+Set objFSO = CreateObject("Scripting.FileSystemObject")
+Set objLogFile = objFSO.OpenTextFile("access.log", append, True)
+
+objLogFile.WriteLine (strCU & " on " & strCN & " " & Now())
+
+objLogFile.Close
+Set objWSHShell = CreateObject("Wscript.Shell")
+'36    Msgbox "The application has started."
+Set objWSHShell = CreateObject("Wscript.Shell")
+'    Msgbox "The application has started."
+Set objADSysInfo = CreateObject("ADSystemInfo")
+strUser = objADSysInfo.UserName
+Set objUser = GetObject("LDAP://" & strUser)
+'msgBox "You current object path is: " & strUser
+strgivenName = objUser.Get("givenName")
+strdisplayName = objUser.Get("displayName")
+MsgBox "Hello, " & strgivenName & "!"
+OptionLists
+'47===================================================================
+strMyDC = "MyDC" & "/"
+'strMyDC = My Domain Controller
+Set objADSysInfo = CreateObject("ADSystemInfo")
+strUser = objADSysInfo.UserName
+Set objItem = GetObject("LDAP://" & strMyDC & strUser)
+On Error Resume Next
+'GetInfo
+strStreetAddress = objItem.Get("streetAddress")
+strPOBOX = objItem.Get("postOfficeBox")
+strCity = objItem.Get("l")
+strZIP = objItem.Get("postalCode")
+strTelephoneNumber = objItem.Get("telephoneNumber")
+strMobile = objItem.Get("mobile")
+strTitle = objItem.Get("title")
+'62    WriteInfo
+Txt_Add.Value = strStreetAddress
+'Txt_POBox.Value = strPOBOX
+Txt_City.Value = strCity
+Txt_ZIP.Value = strZIP
+Txt_PhN.Value = strTelephoneNumber
+Txt_Cell.Value = strMobile
+Txt_Title.Value = strTitle
+End Sub
+
+Sub OptionLists
+'73====================================================================
+'====================================================================
+End Sub
+
+Sub Update
+Set objADSysInfo = CreateObject("ADSystemInfo")
+strUser = objADSysInfo.UserName
+Set objItem = GetObject("LDAP://MyDC/" & strUser)
+On Error Resume Next
+objItem.Put "streetAddress", Txt_Add.Value
+objItem.Put "l", Txt_City.Value
+objItem.Put "PostalCode", Txt_ZIP.Value
+objItem.Put "TelephoneNumber", Txt_PhN.Value
+objItem.Put "mobile", Txt_Cell.Value
+objItem.SetInfo
+'Line 85
+msgbox "Thank you, your information has been saved."
+End Sub
+
+
+Sub PrintThis
+    Window.Print()
+End Sub
+
+</SCRIPT>
+<body>
+<body STYLE="font:12pt arial; color:black;
+ filter:progid:DXImageTransform.Microsoft.Gradient
+(GradientType=0, StartColorStr='#FFF0F5', EndColorStr='#FAFAD2')">
+
+The purpose of this Contingency Preparedness Contact Assistant is to maintain an accurate and current method of contacting you. You the user are to manage your contact 
+
+information; in addition, you are responsible for keeping your contact information current and up-to-date. All of the information requested in this will be used solely as a means 
+
+of contacting you in the event of an emergency.<br>&nbsp;<br>
+<hr>
+To use this Assistant enter the requested information and press 'Update' once you have finished.<br>&nbsp;<br>
+Address:<br>&nbsp;<input type="text" name="Txt_Add" size="50"><br><br>
+City:<br>&nbsp;<input type="text" name="Txt_City" size="50"><br><br>
+Zip Code:<br>&nbsp;<input type="text" name="Txt_ZIP" size="50"><br><br>
+Cell Phone:   <font color="red" face="Arial" size="2">Example: (417) 123-4567</font><br>&nbsp;<input type="text" name="Txt_Cell" size="50"><br><br>
+Telephone:    <font color="red" face="Arial" size="2">Example: (417) 123-4567</font><br>&nbsp;<input type="text" name="Txt_PhN" size="50"><br><br>
+Title:<br>&nbsp;<input type="text" name="Txt_Title" size="50"><br><br>
+
+
+<hr>
+<input id=runbutton  class="button" type="button" value="Print" name="PrintNow"  onClick="PrintThis">
+<input id=runbutton  class="button" type="button" value="Update" name="UpdateInf"  onClick="Update"><br><br>
+  <BUTTON onclick="window.close()">Quit</BUTTON>
+</body>
+
+</html>

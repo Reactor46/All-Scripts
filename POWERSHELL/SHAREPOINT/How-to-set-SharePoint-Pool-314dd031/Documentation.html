@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>How to set SharePoint Pool Identity In IIS Pool</title>        
+        <meta name="description" content="How to set SharePoint Pool Identity In IIS Pool" />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<p><strong><span lang="EN-US" style="font-size:14.0pt; line-height:115%; font-family:&quot;Cambria&quot;,&quot;serif&quot;; color:black">How to
+<span>set SharePoint application pool identity in IIS Pool</span> (PowerShell)</span></strong></p>
+<p class="MsoNormal" style="margin-top:10.0pt; margin-right:0cm; margin-bottom:.0001pt; margin-left:0cm">
+<strong><span lang="EN-US" style="font-size:13.0pt; line-height:115%; font-family:&quot;Cambria&quot;,&quot;serif&quot;; color:black">Introduction
+</span></strong></p>
+<p class="MsoNormal" style="layout-grid-mode:char"><span lang="EN-US">The goal of this script is to set SharePoint application pool identity in IIS Pool.</span><span lang="EN-US" style="font-size:10.5pt; line-height:115%">
+</span></p>
+<p class="MsoNormal" style="margin-top:10.0pt; margin-right:0cm; margin-bottom:.0001pt; margin-left:0cm">
+<strong><span lang="EN-US" style="font-size:13.0pt; line-height:115%; font-family:&quot;Cambria&quot;,&quot;serif&quot;">Scenarios
+</span></strong></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><span lang="EN-US" style="color:black">When we change the IIS Pool identity password, the site will not be visited unless we reset the identity. This idea is to reset the identity for
+ all SharePoint application pools. </span></p>
+<p class="MsoNormal" style="margin-top:10.0pt; margin-right:0cm; margin-bottom:.0001pt; margin-left:0cm">
+<strong><span lang="EN-US" style="font-size:13.0pt; line-height:115%; font-family:&quot;Cambria&quot;,&quot;serif&quot;">Script
+</span></strong></p>
+<p class="MsoNormal"><strong><span lang="EN-US" style="color:black">Step 1: </span>
+</strong><span lang="EN-US" style="color:black">right click the script, and select &quot;Run with PowerShell&quot;.
+</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="color:black"><img src="C:\Users\John\Documents\WindowsPowerShell\Scripts\How-to-set-SharePoint-Pool-314dd031\Documentation_files\tmp6136Resources.png" alt="" width="258" height="136" align="middle">
+</span></p>
+<p class="MsoNormal"><strong><span lang="EN-US" style="color:black">Step 2:</span></strong><span lang="EN-US">
+</span><span lang="EN-US" style="color:black">Select the application pool needed to be set identity and enter credential.
+</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="color:black"><img src="C:\Users\John\Documents\WindowsPowerShell\Scripts\How-to-set-SharePoint-Pool-314dd031\Documentation_files\tmp6137Resources.png" alt="" width="867" height="343" align="middle">
+</span></p>
+<p class="MsoNormal"><strong><span lang="EN-US" style="color:black">Step 3: </span>
+</strong><span lang="EN-US" style="color:black">After few seconds, it will return the execution result.
+</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="color:black"><img src="C:\Users\John\Documents\WindowsPowerShell\Scripts\How-to-set-SharePoint-Pool-314dd031\Documentation_files\tmp6138Resources.png" alt="" width="860" height="306" align="middle">
+</span></p>
+<p class="MsoNormal"><span lang="EN-US">Here are some code snippets for your references.<br>
+</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">Foreach($Num in $NumCol)
+{
+    If($Num -lt $AppCol.Count)
+    {
+           
+        $item =  $AppCol[$Num-1]
+        $objPool = Get-ChildItem -Path IIS:\AppPools | Where-Object {$_.Name -eq $item.Name}
+        $objpool.processModel.userName = $userName
+        $objpool.processModel.password =  $PlainPassword
+        $objPool | Set-Item    
+        Write-Host &quot;Set Applicatuin Pool identity &quot;  $item.name  &quot; successfully.&quot; -ForegroundColor Green
+            
+ 
+    }
+    else
+    {
+        Write-Warning &quot;The specific number is not in the array.&quot;
+    }</pre>
+<div class="preview">
+<pre class="js">Foreach($Num&nbsp;<span class="js__operator">in</span>&nbsp;$NumCol)&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;If($Num&nbsp;-lt&nbsp;$AppCol.Count)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$item&nbsp;=&nbsp;&nbsp;$AppCol[$Num<span class="js__num">-1</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$objPool&nbsp;=&nbsp;Get-ChildItem&nbsp;-Path&nbsp;IIS:\AppPools&nbsp;|&nbsp;Where-<span class="js__object">Object</span>&nbsp;<span class="js__brace">{</span>$_.Name&nbsp;-eq&nbsp;$item.Name<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$objpool.processModel.userName&nbsp;=&nbsp;$userName&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$objpool.processModel.password&nbsp;=&nbsp;&nbsp;$PlainPassword&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$objPool&nbsp;|&nbsp;Set-Item&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write-Host&nbsp;<span class="js__string">&quot;Set&nbsp;Applicatuin&nbsp;Pool&nbsp;identity&nbsp;&quot;</span>&nbsp;&nbsp;$item.name&nbsp;&nbsp;<span class="js__string">&quot;&nbsp;successfully.&quot;</span>&nbsp;-ForegroundColor&nbsp;Green&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write-Warning&nbsp;<span class="js__string">&quot;The&nbsp;specific&nbsp;number&nbsp;is&nbsp;not&nbsp;in&nbsp;the&nbsp;array.&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"><strong><span lang="EN-US" style="font-size:13.0pt; line-height:115%; font-family:&quot;Cambria&quot;,&quot;serif&quot;; color:black">Prerequisite</span></strong></div>
+<p class="MsoNormal" style="margin-bottom:.0001pt; line-height:normal"><span lang="EN-US">Windows Server 2008R2 or later version</span></p>
+<p style="line-height:0.6pt; color:white">Microsoft All-In-One Script Framework is an automation script sample library for IT Professionals. The key value that All-In-One Script Framework is trying to deliver is Scenario-Focused Script Samples driven by IT
+ Pros' real-world pains and needs. The team is monitoring all TechNet forums, IT Pros' support calls to Microsoft, and script requests submitted to TechNet Script Repository. We collect frequently asked IT scenarios, and create script samples to automate the
+ tasks and save some time for IT Pros. The team of All-In-One Script Framework sincerely hope that these customer-driven automation script samples can help our IT community in this script-centric move.</p>
+
+        </div>
+    </body>
+</html>

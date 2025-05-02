@@ -1,0 +1,2127 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SharePoint Theme</title>
+    <link />
+    <link />
+    <link />
+    <link />
+    <link />
+    <link />
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.4.0/css/fabric.min.css" />
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css" />
+    <style>body
+{
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+/* animation classes */
+.animate-transition
+{
+            transition: 0.3s ease;
+       -moz-transition: 0.3s ease;
+         -o-transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+}
+
+.animate-all
+{
+    transition-property: all;
+}
+
+/* Layout */
+#top-bar
+{
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    z-index: 999;
+}
+
+#utility-bar
+{
+    overflow-y: auto!important;
+    position: fixed;
+    z-index: 998;
+}
+
+#main-content
+{
+    padding-top: 40px;
+    z-index: 996;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* Responsive layout */
+
+@media screen and (min-width: 501px)
+{
+    #utility-bar
+    {
+        width: 0;
+        height: 100vh;
+    }
+
+    #wrapper.menuToggled &gt; #utility-bar
+    {
+        width: 250px;
+    }
+
+}
+
+@media screen and (min-width: 1025px)
+{
+    #wrapper.menuToggled &gt; #main-content
+    {
+        padding-left: 250px;
+    }
+}
+
+@media screen and (max-width: 1024px)
+{
+    body.inactive
+    {
+        overflow-y: hidden;
+    }
+
+    #wrapper.menuToggled &gt; #overlay
+    {
+        opacity: 0.5;
+        background: #000000;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        position: fixed;
+        z-index: 997;
+    }
+}
+
+@media screen and (max-width: 500px)
+{
+
+    #utility-bar
+    {
+        width: 100%;
+        max-height: 0;
+    }
+
+    #wrapper.menuToggled &gt; #utility-bar
+    {
+        max-height: 100%;
+    }
+
+}
+body
+{
+    font-family: "Segoe UI"!important;
+}
+
+/* top bar style */
+.topbar,
+.topbar-content,
+.topbar-button,
+.topbar,
+.topbar-title
+{
+    height: 100%;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.topbar-button
+{
+    border: none;
+    width: 40px;
+    display: inline-block;
+
+}
+.topbar-title
+{
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+.topbar-separator
+{
+
+    height: 30px;
+    border-left: 2px solid #3c3c3c;
+}
+
+/* utility bar style */
+
+/* turn off overflow when menu is beeing toggled for nice animation */
+
+.utilitybar
+{
+    height: 100%;
+    width: 100%;
+}
+
+/* This moves first caterory 40px (just uder top bar) and fixes overflow */
+.utilitybar &gt; .utilitybar-category:first-child
+{
+    padding-top: 40px;
+}
+
+.utilitybar-category-header
+{
+    padding: 10px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    background: #212121;
+}
+
+.utilitybar-category-header::after
+{
+    display: inline-block;
+    font-family: "FabricMDL2Icons";
+    content: "\E70D";
+}
+
+.utilitybar-category-header.open::after
+{
+    content: "\E70E";
+}
+.utilitybar-category-content
+{
+    overflow: hidden!important;
+    white-space: nowrap!important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+button.ms-Button--menu
+{
+    padding: 0px 0px 0px;
+    min-width: 60px;
+}
+
+button.ms-Button--menu &gt; .ms-Button-label
+{
+    font-weight: normal;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+button.ms-Button--menu.active &gt; .ms-Button-label
+{
+    font-weight: 600;
+}
+
+/* animation for collapsing elements classes */
+
+.animate
+{
+            transition: 0.3s ease;
+       -moz-transition: 0.3s ease;
+         -o-transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+}
+
+.uncollapsing
+{
+    transition-property: height, padding, margin;
+    overflow: hidden!important;
+}
+
+.collapsing
+{
+    overflow: hidden!important;
+    transition-property: height, padding, margin;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.collapsed
+{
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 0;
+}
+
+
+/* Loading animation */
+#main-content.loading &gt; #loadingoverlay
+{
+    background: white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 997;
+}
+
+#main-content.loading  &gt; .loader
+{
+    border: 16px solid #f4f4f4;
+    border-radius: 50%;
+    border-top: 16px solid #0078d7;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;    
+    z-index: 998;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    left: 0;
+    right: 0;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+/* alternative css for DataTables.responsive.css */
+
+table.dataTable thead .sorting::after, table.dataTable thead .sorting_asc::after, table.dataTable thead .sorting_desc::after, table.dataTable thead .sorting_asc_disabled::after, table.dataTable thead .sorting_desc_disabled::after {
+    font-family: FabricMDL2Icons;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: block;
+}
+
+table.dataTable thead .sorting::after {
+    opacity: 0.5;
+    content: '\E8CB';
+}
+
+table.dataTable thead .sorting_asc::after {
+    content: "\EE69";
+}
+
+table.dataTable thead .sorting_desc::after {
+    content: "\EE68";
+}
+
+table.dataTable.dtr-inline.collapsed&gt;tbody&gt;tr[role="row"]&gt;td:first-child
+{
+    white-space: nowrap;
+}
+
+table.dataTable.dtr-inline.collapsed&gt;tbody&gt;tr[role="row"]&gt;td:first-child::before {
+    font-family: "FabricMDL2Icons";
+    content: '\E70D';
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    padding-right: 5px;
+}
+
+table.dataTable.dtr-inline.collapsed&gt;tbody&gt;tr[role="row"]&gt;td:first-child::before {
+    font-family: "FabricMDL2Icons";
+    content: '\E70D';
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    padding-right: 5px;
+}
+
+table.dataTable.dtr-inline.collapsed&gt;tbody&gt;tr.parent&gt;td:first-child:before {
+    content: '\E70E';
+}
+
+table.dataTable.dtr-inline.collapsed&gt;tbody&gt;tr[role="row"]&gt;td:first-child {
+    cursor: pointer!important;
+}
+
+ul.dtr-details {
+    list-style: none;
+}
+
+ul.dtr-details li {
+    border-bottom: 1px #eaeaea solid;
+}
+
+ul li span.dtr-title {
+    font-weight: bold;
+    display: inline-block;
+    min-width: 75px;
+}
+
+.paginate_button {
+    box-sizing: border-box;
+    box-shadow: none;
+    -webkit-font-smoothing: antialiased;
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #f4f4f4;
+    border: 1px solid #f4f4f4;
+    cursor: pointer;
+    display: inline-block;
+    height: 32px;
+    padding: 4px 20px 6px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative
+}
+
+@media screen and (max-width: 500px) {
+    .paginate_button {
+        padding: 6px;
+    }
+    .ellipsis 
+    {
+        padding: 6px;
+    }
+}
+
+.ellipsis 
+{
+    background-color: #eaeaea;
+    border-color: #0078d7;
+    outline: 1px solid transparent;
+    box-sizing: border-box;
+    box-shadow: none;
+    -webkit-font-smoothing: antialiased;
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #f4f4f4;
+    border: 1px solid #f4f4f4;
+    display: inline-block;
+    height: 32px;
+    padding: 4px 20px 6px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+
+.paginate_button:active {
+    background-color: #eaeaea;
+    border-color: #0078d7;
+    outline: 1px solid transparent;
+}
+
+.paginate_button:focus {
+    background-color: #0078d7;
+    border-color: #0078d7;
+    color: #eaeaea;
+}
+
+.paginate_button.current {
+    background-color: #0078d7;
+    border-color: #0078d7;
+    color: #eaeaea;
+}
+
+.dataTables_paginate, .dataTables_info {
+    text-align: center;
+    padding: 5px;
+}
+
+/* End of overide */
+
+/* Table styles */
+
+table {
+    margin-top: 20px!important;
+    margin-bottom: 20px!important;
+}
+
+table *
+{
+    font-weight: 400;
+}
+
+table th
+{
+    white-space: nowrap;
+    position: relative;
+}
+
+table&gt;tbody&gt;tr:hover&gt;td {
+    background: #eff6fc
+}
+
+table&gt;tbody&gt;tr.rowselected&gt;td {
+    background: #deecf9
+}
+
+/* Conditional formating */
+
+td.status-warning {
+    color: #ff8c00;
+    background: #f8f3ee;
+    font-weight: bold;
+}
+
+td.status-error {
+    color: #a80000;
+    background-color: #ffebee;
+    font-weight: bold;
+}
+
+td.status-ok {
+    color: #004b1c;
+    font-weight: bold;
+}
+
+/* table header */
+
+.table-header
+{
+    margin-top: 20px;
+    margin-bottom: 0;
+    white-space: nowrap;
+    border-bottom: 1px solid #a6a6a6;
+    padding: 5px;
+    font-weight: 400;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.header-text
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100% - 20px);
+}
+
+@media screen and (max-width: 1024px) 
+{
+    h2 &gt; span
+    {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.table-header:hover
+{
+    background: #f8f8f8;
+    cursor: pointer;
+}
+
+
+.table-header::after
+{
+    font-family: "FabricMDL2Icons";
+    content: '\E70E';
+    display: inline-block;
+    position: absolute;
+    right: 5;
+}
+
+.table-header.tablecollapsed::after
+{
+    content: '\E70D';
+}
+
+.event-container
+{
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.header-event
+{
+    padding: 2px;
+    display: inline-block;
+    text-align: center;
+    width: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.header-event.ok
+{
+    background: #107c10;
+
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(16,124,16,1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(16,124,16,1);
+    box-shadow: 0px 0px 10px 0px rgba(16,124,16,1);
+}
+
+.header-event.ok::after
+{
+    font-family: "FabricMDL2Icons";
+    content: "\E73E";
+    color: white;
+}
+
+.header-event.warning
+{
+    background: #ffb900;
+    color: black;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(255,185,0,1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(255,185,0,1);
+    box-shadow: 0px 0px 10px 0px rgba(255,185,0,1);
+}
+
+.header-event.error
+{
+    background: #a80000;
+    color: white;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(168,0,0,0.5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(168,0,0,0.5);
+    box-shadow: 0px 0px 10px 0px rgba(168,0,0,0.5);
+}
+/* Navigation classes */
+
+.utilitybar-category-content &gt; a
+{
+    color: white;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+
+.nav-icon
+{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.icon-info:before {
+    background: #0078d7;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: white;
+    display: inline-block;
+    line-height: 14px;
+    text-align: center;
+    width: 14px;
+    content: "i";
+    font-size: 11px;
+  }
+  
+  .icon-ok:before {
+    font-size: 12px;
+    background: #107c10; 
+    font-family: "FabricMDL2Icons";
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: white;
+    display: inline-block;
+    line-height: 14px;
+    text-align: center;
+    width: 14px;
+    content: "\E73E"
+  }
+
+  .icon-error:before {
+    font-size: 12px;
+    background: #a80000;
+    font-family: "FabricMDL2Icons";
+    color: white;
+    display: inline-block;
+    line-height: 14px;
+    text-align: center;
+    width: 14px;
+    content: "\E711"
+  }
+  
+  .icon-warning:before {
+    background: #ffb900;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: black;
+    display: inline-block;
+    line-height: 14px;
+    text-align: center;
+    width: 14px;
+    content: "!";
+    font-size: 14px;
+  }
+.ms-ContextualMenu-link.search-options.checked::before
+{
+    font-family: "FabricMDL2Icons";
+    content: '\E8FB';
+    display: inline-block;
+    font-size: 12px;
+    position: absolute;
+    left: 7px;
+}
+
+
+.ms-ContextualMenu-link.search-options.regex-toggle::after
+{
+    font-family: "FabricMDL2Icons";
+    content: '\E943';
+    color: #0078d7;
+    display: inline-block;
+    position: absolute;
+    right: 7px;
+}
+
+.ms-ContextualMenu-link.column-picker.checked::before
+{
+    font-family: "FabricMDL2Icons";
+    content: '\E8FB';
+    display: inline-block;
+    font-size: 12px;
+    position: absolute;
+    left: 7px;
+}
+
+.ms-ContextualMenu-link.js-Paginate-Select.checked::before
+{
+    font-family: "FabricMDL2Icons";
+    content: '\E8FB';
+    display: inline-block;
+    font-size: 12px;
+    position: absolute;
+    left: 7px;
+}
+
+@media only screen and (max-width: 639px) {
+    .ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active 
+    {
+        margin-left: 40px!important;
+        max-width: calc(100% - 40px);
+    }
+}
+
+@media only screen and (min-width: 640px)
+{
+    .ms-CommandBar .ms-SearchBox {
+        margin-right: 0!important;
+    }
+}
+
+
+@media only screen and (max-height: 440px)
+{
+    .ms-ContextualMenu-link {
+        line-height: 24px!important;
+        height: unset!important;
+    }
+}
+
+
+/* Search box "return" icon debug */
+.ms-CommandButton-icon &gt; .ms-Icon.ms-Icon--ChromeBack::after
+{
+    content: "\E830";
+    color: #0078d7;
+}
+
+
+/* Export buttons css*/
+
+.ms-ContextualMenu-link.export-csv::after
+{
+    font-family: "FabricMDL2Icons";
+    content: '\F52B';
+    color: #0078d7;
+    display: inline-block;
+    position: absolute;
+    right: 7px;
+    font-size: 18px;
+}
+
+.ms-ContextualMenu-link.export-excel::after
+{
+    font-family: "FabricMDL2Icons";
+    content: '\F1E5';
+    color: #0078d7;
+    display: inline-block;
+    position: absolute;
+    right: 7px;
+    font-size: 18px;
+}
+.ms-Overlay
+{
+    z-index: 1000!important;
+}
+
+.ms-Dialog
+{
+    z-index: 1001!important;
+}
+
+.ms-Dialog-subText
+{
+    font-weight: 400!important;
+}
+.ms-Button #about_button:active,.ms-Button #report_button:active
+{
+    background-color: #0078d7;
+    border-color: #0078d7;
+    color: #eaeaea;
+    font-weight: bold;
+}
+
+.ms-Dialog--lgHeader
+{
+    max-width: unset!important;;
+}
+</style>
+  </head>
+  <body class="ms-Fabric ms-normalize">
+    <div id="wrapper">
+      <div id="top-bar">
+        <nav class="topbar ms-bgColor-black ms-fontColor-white ms-font-xl">
+          <div class="topbar-content">
+            <button class="topbar-button ms-bgColor-themePrimary">
+              <i class="ms-Icon ms-Icon--Waffle ms-fontColor-white ms-font-xl" aria-hidden="true">
+              </i>
+            </button>
+            <a class="topbar-title">Health Report: SharePoint</a>
+          </div>
+        </nav>
+      </div>
+      <div id="utility-bar" class="animate-transition animate-all">
+        <nav class="utilitybar ms-fontColor-white  ms-bgColor-neutralDark ms-font-m-plus">
+          <div class="utilitybar-category" id="Navigation">
+            <div class="utilitybar-category-header ms-bgColor-neutralSecondary--hover">
+              <a>
+                <i class="ms-Icon ms-Icon--ContextMenu" style="padding-right: 10px;" aria-hidden="true">
+                </i>
+                            Navigation
+                        </a>
+            </div>
+            <div class="utilitybar-category-content ms-bgColor-neutralPrimary" style="display: none;">
+            </div>
+          </div>
+          <div class="utilitybar-category">
+            <div class="utilitybar-category-header ms-bgColor-neutralSecondary--hover">
+              <a>
+                <i class="ms-Icon ms-Icon--FilterSolid" style="padding-right: 10px;" aria-hidden="true">
+                </i>
+                            Filters
+                        </a>
+            </div>
+            <div class="utilitybar-category-content ms-bgColor-neutralPrimary" style="display: none;">
+              <button class="ms-Button ms-Button--menu filter-button">
+                <span class="ms-Button-label">OK</span>
+              </button>
+              <button class="ms-Button ms-Button--menu filter-button">
+                <span class="ms-Button-label">Warning</span>
+              </button>
+              <button class="ms-Button ms-Button--menu filter-button">
+                <span class="ms-Button-label">Error</span>
+              </button>
+            </div>
+          </div>
+          <div class="utilitybar-category">
+            <div class="utilitybar-category-header ms-bgColor-neutralSecondary--hover">
+              <a>
+                <i class="ms-Icon ms-Icon--ServerProcesses" style="padding-right: 10px;" aria-hidden="true">
+                </i>
+                            Options
+                        </a>
+            </div>
+            <div class="utilitybar-category-content ms-bgColor-neutralPrimary" style="display: none;">
+              <a style="cursor: unset;">
+                <span class="nav-icon">
+                  <i class="ms-Icon ms-Icon--ColumnOptions">
+                  </i>
+                </span>
+                <span class="nav-text">Tables</span>
+              </a>
+              <button id="collapse-tables" class="ms-Button ms-Button--menu">
+                <span class="ms-Button-label">Collapse</span>
+              </button>
+              <button id="expand-tables" class="ms-Button ms-Button--menu">
+                <span class="ms-Button-label">Expand</span>
+              </button>
+              <a style="cursor: unset;">
+                <span class="nav-icon">
+                  <i class="ms-Icon ms-Icon--DocumentSearch">
+                  </i>
+                </span>
+                <span class="nav-text">Search</span>
+              </a>
+              <button id="toggle-regex" class="ms-Button ms-Button--menu">
+                <span class="ms-Button-label">RegEx</span>
+              </button>
+              <a style="cursor: unset;">
+                <span class="nav-icon">
+                  <i class="ms-Icon ms-Icon--ViewList">
+                  </i>
+                </span>
+                <span class="nav-text">View</span>
+              </a>
+              <button id="view-10" class="ms-Button ms-Button--menu">
+                <span class="ms-Button-label">10 entries</span>
+              </button>
+              <button id="view-all" class="ms-Button ms-Button--menu">
+                <span class="ms-Button-label">All entries</span>
+              </button>
+            </div>
+          </div>
+          <div class="utilitybar-category">
+            <div class="utilitybar-category-header ms-bgColor-neutralSecondary--hover">
+              <a>
+                <i class="ms-Icon ms-Icon--InfoSolid" style="padding-right: 10px;" aria-hidden="true">
+                </i>
+                            Information
+                        </a>
+            </div>
+            <div class="utilitybar-category-content ms-bgColor-neutralPrimary" style="display: none;">
+              <button id="details_Button" class="ms-Button ms-Button--menu">
+                <span class="ms-Button-label">Report details</span>
+              </button>
+              <button id="about_Button" class="ms-Button ms-Button--menu">
+                <span class="ms-Button-label">About</span>
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div id="overlay" class="animate-transition animate-all">
+      </div>
+      <div id="main-content" class="animate-transition animate-all loading">
+        <div id="loadingoverlay">
+        </div>
+        <div class="loader">
+        </div>
+        <div id="Tables">
+        </div>
+      </div>
+    </div>
+    <div id="about_Dialog">
+      <div class="ms-Dialog ms-Dialog--lgHeader">
+        <div class="ms-Dialog-title">About</div>
+        <div class="ms-Dialog-content">
+          <p class="ms-Dialog-subText">This application was created by: Lukasz Gorski.</p>
+        </div>
+        <div class="ms-Dialog-actions">
+          <button class="ms-Button ms-Dialog-action ms-Button--primary">
+            <span class="ms-Button-label">Ok</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="details_Dialog">
+      <div class="ms-Dialog ms-Dialog--lgHeader">
+        <div class="ms-Dialog-title">Report details</div>
+        <div class="ms-Dialog-content">
+          <p class="ms-Dialog-subText">This report was generated by PowerShell report solution server:
+                    <span class="ms-fontWeight-semibold">SERVERPLACEHOLDER</span><br /> Data was gathered on:
+                    <span class="ms-fontWeight-semibold">DATEPLACEHOLDER</span>.
+                </p>
+        </div>
+        <div class="ms-Dialog-actions">
+          <button class="ms-Button ms-Dialog-action ms-Button--primary">
+            <span class="ms-Button-label">Ok</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js">
+    </script>
+    <script type="text/javascript" src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js">
+    </script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.js">
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js">
+    </script>
+    <script>
+    </script>
+    <script>
+    </script>
+    <script>
+    </script>
+    <script>
+    </script>
+    <script>
+    </script>
+    <script>
+    </script>
+    <script>
+    </script>
+    <script>
+    </script>
+  </body>
+  <script>$(document).ready(() =&gt; {
+
+
+    render_HeadersMenu();
+    render_HeadersInfo();
+
+    toggle_DataTables();
+
+    create_CommandBar();
+
+    collapse_tables();
+
+    release_overlay();
+
+    handle_windowReajust();
+});
+
+function release_overlay() {
+    if ($(window).innerWidth() &lt;= 500) {
+        setTimeout(
+            function () {
+                $("#main-content").removeClass("loading");
+            }, 300
+        );
+    }
+    else {
+        $("#main-content").removeClass("loading");
+    }
+}
+
+$('.topbar-button').click(
+    function () {
+        $("body").toggleClass("inactive");
+        $('#wrapper').toggleClass('menuToggled');
+    }
+);
+
+$('.utilitybar-category-header').click(
+    function () {
+        $(this).toggleClass("open");
+        let element = $(this).parent().find(".utilitybar-category-content");
+        toggle_Collapse(element);
+    }
+);
+
+$(".ms-Button--menu").click(
+    function () {
+        $(this).toggleClass("active ms-Button--primary");
+    }
+);
+
+
+/* Creates animation for navigation */
+function toggle_Collapse(element) {
+
+    var elementHeigth = element.height();
+
+    if (element.css("display") == "none") {
+        element.toggleClass("animate uncollapsing collapsed");
+        element.toggle();
+        element.toggleClass("collapsed")
+        element.css("height", elementHeigth);
+
+        setTimeout(
+            function () {
+                element.css("height", "");
+                element.toggleClass("animate uncollapsing");
+            }
+            , 300);
+    }
+
+    else {
+        element.toggleClass("animate collapsing");
+
+        element.height(elementHeigth);
+        element.height("0");
+
+        setTimeout(function () {
+            element.toggle();
+            element.height("");
+            element.toggleClass("animate collapsing");
+        }, 300);
+    }
+}
+
+var ToggleElements = document.querySelectorAll(".ms-Toggle");
+for (var i = 0; i &lt; ToggleElements.length; i++) {
+    new fabric['Toggle'](ToggleElements[i]);
+}
+
+
+/* Helper function */
+function triggerEvent(el, type) {
+    if ('createEvent' in document) {
+        // modern browsers, IE9+
+        var e = document.createEvent('HTMLEvents');
+        e.initEvent(type, false, true);
+        el.dispatchEvent(e);
+    } else {
+        // IE 8
+        var e = document.createEventObject();
+        e.eventType = type;
+        el.fireEvent('on' + e.eventType, e);
+    }
+}
+
+function collapse_tables() {
+    if ($(window).innerWidth() &lt;= 500) {
+        $(".table-header").click();
+    }
+}
+
+// reajust tables if orientation is changed
+
+function handle_windowReajust()
+{
+    function adjust_Tables()
+    {
+        $('table').DataTable()
+            .columns.adjust()
+            .responsive.recalc();
+    }
+
+    $(window).resize(adjust_Tables())
+             .on( "orientationchange", adjust_Tables());
+}
+function toggle_DataTables() {
+
+    // Add table-header and table id to header
+    $("h2").each(
+        function () {
+            var element = $(this);
+            var tableID = element.next("table").attr("id")
+            element.addClass("table-header").attr("id", tableID + "_header");
+        }
+    );
+
+    $(".table-header").click(
+        function()
+        {
+            var header = $(this);
+            header.toggleClass("tablecollapsed");
+
+            var ID = get_ID(header)
+            toggle_Collapse($("#" + ID + "_wrapper"));
+        }
+    );
+
+    conditional_formating()
+
+    var tables = $("table")
+    tables.addClass("ms-Table").attr("width", "100%");
+
+    tables.each(
+        function () 
+        {
+            var table = $(this);
+            var headers = table.find("thead").find("th");
+            var containsStatus;
+
+            headers.each(
+                function () {
+                    if ($(this).text() == "Status") {
+                        containsStatus = true;
+                    }
+                }
+            );
+
+            if(containsStatus == true)
+            {
+                table.DataTable(
+                    {
+                        "aaSorting": [],
+                        "responsive": true,
+                        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        "dom": 'tip',
+                        buttons: [
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                fieldSeparator: ';',
+                                filename: function (){ return ExportFileName },
+                                exportOptions: {
+                                    modifier: {
+                                        search: 'none'
+                                    }
+                                }
+                            },
+                            {
+                                extend: 'excel',
+                                text: 'Excel',
+                                title: '',
+                                filename: function (){ return ExportFileName },
+                                exportOptions: {
+                                    modifier: {
+                                        search: 'none'
+                                    }
+                                }
+
+                            }
+
+                        ],
+                        columnDefs: [
+                            { responsivePriority: 1, targets: 0 },
+                            { responsivePriority: 1, targets: -1 }
+                        ],
+                    }
+                );
+            }
+
+            else
+            {
+                table.DataTable(
+                    {
+                        "aaSorting": [],
+                        "responsive": true,
+                        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        "dom": 'tip',
+                        buttons: [
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                fieldSeparator: ';',
+                                filename: function (){ return ExportFileName },
+                                exportOptions: {
+                                    modifier: {
+                                        search: 'none'
+                                    }
+                                }
+                            },
+                            {
+                                extend: 'excel',
+                                text: 'Excel',
+                                title: '',
+                                filename:  function (){ return ExportFileName },
+                                exportOptions: {
+                                    modifier: {
+                                        search: 'none'
+                                    }
+                                }
+
+                            }
+
+                        ],
+                    }
+                );
+            }
+
+        }
+
+    );
+    var TableElements = document.querySelectorAll(".ms-Table");
+    for (var i = 0; i &lt; TableElements.length; i++) {
+        new fabric['Table'](TableElements[i]);
+    }
+}
+
+
+/* utility function */
+function get_TableData(table, ColumnName) {
+    var headers = table.find("thead").find("th");
+    var index;
+
+    headers.each(
+        function () {
+            if ($(this).text() == ColumnName) {
+                index = $(this).index();
+            }
+        }
+    );
+
+    var allData = table.find("tbody").find("td");
+
+    var selectedData = [];
+
+    allData.each(
+        function () {
+            if ($(this).index() == index) {
+                selectedData.push($(this)[0]);
+            }
+        }
+    )
+
+    return selectedData;
+}
+
+/* colors statuses in tables */
+function conditional_formating() {
+    let tables = $("table");
+
+    tables.each(
+        function () {
+            let tableData = get_TableData($(this), "Status")
+
+            $(tableData).each(
+                function () {
+                    if ($(this).text() == "OK") {
+                        $(this).addClass("status-ok");
+                    }
+
+                    if ($(this).text() == "Warning") {
+                        $(this).addClass("status-warning");
+                    }
+
+                    if ($(this).text() == "Error") {
+                        $(this).addClass("status-error");
+                    }
+                }
+            );
+
+        }
+    );
+}
+
+/* creates select row effect on table */
+$("tbody").find("tr").click(
+    function () {
+        $(this).siblings().removeClass("rowselected");
+        $(this).toggleClass("rowselected");
+    }
+);
+
+// renders informational icon on table headers
+function render_HeadersInfo() {
+
+    $("table").each(
+        function () {
+
+            var table = $(this);
+            var tableId = $(this).attr("id");
+            var header = table.prev("h2");
+            var tableData_Status = get_TableData(table, "Status");
+            var errorCount = 0;
+            var warningCount = 0;
+
+            // Create a elements
+            var Icon = $("&lt;span&gt;&lt;/span&gt;")
+
+            var tableDataArray = tableData_Status.map(data =&gt; $(data).text());
+            
+            // Count events
+            tableDataArray.map(
+                function (element) {
+                    if (element == "Error") {
+                        errorCount++
+                    }
+                    if (element == "Warning") {
+                        warningCount++
+                    }
+                }
+            );
+
+            var events = $("&lt;span&gt;&lt;/span&gt;").addClass("event-container");  
+
+            var TextSpan = $("&lt;span&gt;&lt;/span&gt;").text(header.text()).addClass("header-text").attr('title',header.text());
+            var textElement = $("&lt;span&gt;&lt;/span&gt;").append(TextSpan)
+
+            if(errorCount !== 0)
+            {
+                var errors = $("&lt;span&gt;&lt;/span&gt;").text(errorCount).addClass("header-event error");
+                events.append(errors);
+            }
+            
+            if(warningCount !== 0)
+            {
+               var warnings = $("&lt;span&gt;&lt;/span&gt;").text(warningCount).addClass("header-event warning");
+               events.append(warnings);
+            }
+            if(table_hasHeader(table, "Status") &amp;&amp; errorCount == 0 &amp;&amp; warningCount == 0)
+            {
+                var ok = $("&lt;span&gt;&lt;/span&gt;").addClass("header-event ok");
+                events.append(ok);
+            }
+            
+            textElement.append(events)
+            header.text("").append(textElement)
+        }
+    );
+
+}
+
+function table_hasHeader(table, header)
+{
+    var headers = $(table).find("th");
+    var hasHeader = false;
+
+    headers.each(
+        function()
+        {
+            if($(this).text() == header)
+            {
+                hasHeader = true;
+            }
+        }
+    );
+
+    return hasHeader
+}
+function render_HeadersMenu() {
+
+    var navigationDiv = $("#Navigation").find(".utilitybar-category-content");
+
+    $("table").each(
+        function () {
+
+            var table = $(this);
+            var tableId = $(this).attr("id");
+            var headerText = table.prev("h2").text();
+            var tableData_Status = get_TableData(table, "Status");
+
+            // Create a elements
+            var a = $("&lt;a&gt;&lt;/a&gt;").addClass("ms-bgColor-neutralSecondary--hover").attr("data-target", "#" + tableId + "_header");
+            var spanIcon = $("&lt;span&gt;&lt;/span&gt;").addClass("nav-icon");
+            var spanText = $("&lt;span&gt;&lt;/span&gt;").addClass("nav-text").html(headerText);
+            var Icon = $("&lt;span&gt;&lt;/span&gt;")
+
+            var tableDataArray = tableData_Status.map(data =&gt; $(data).text());
+
+            //  Check what icon shoud be assigned based on the properties in Status column
+            if (tableDataArray.length == 0) {
+                Icon.addClass("icon-info");
+            }
+            else if (tableDataArray.includes("Error")) {
+                Icon.addClass("icon-error");
+            }
+            else if (tableDataArray.includes("Warning")) {
+                Icon.addClass("icon-warning");
+            }
+            else if (tableDataArray.includes("OK")) {
+                Icon.addClass("icon-ok");
+            }
+
+            // Glue elements
+            spanIcon.html(Icon);
+            a.append(spanIcon).append(spanText);
+
+            // Append it to navigationDiv to create navigation
+            navigationDiv.append(a);
+        }
+    );
+
+    /* event handler to scroll table into view */
+    $(".utilitybar-category-content").find("a").click(
+        function () {
+
+            var targetID = $(this).attr("data-target")
+
+            // if view mode is tablet or smaller, close utilitybar nad open table
+            if ($(window).innerWidth() &lt;= 1024) {
+                $(".topbar-button").click();
+            }
+
+            // if table is collapsed, uncollapse it
+            if ($(targetID).hasClass("tablecollapsed") == true) {
+                $(targetID).click();
+
+                // scroll into view after anmiation
+                setTimeout(function(){scroll_IntoView(targetID)}, 301)
+            }
+            else
+            {
+                // scroll into view
+                scroll_IntoView(targetID)
+            }
+
+        }
+    );
+}
+
+function scroll_IntoView(id)
+{
+    $(id)[0].scrollIntoView(true);
+
+    // fix position due to fixed top bar
+    var topbarHeight = $("#top-bar").height();
+    var scrolledY = window.scrollY;
+    if (scrolledY) 
+    {
+        window.scroll(0, scrolledY - topbarHeight);
+    }
+}
+function create_CommandBar() {
+
+    build_CommandBar()
+
+    create_ColumnDropDown();
+    
+    initialize_commandBar();
+
+    handle_Pagination();
+
+    handle_searchOptions()
+
+    handle_SeachBox()
+
+    Handle_ExportButtons()
+}
+
+function build_CommandBar() {
+
+    $("table").each(
+        function () {
+            var table = $(this)
+            var tableID = table.attr("id")
+            var commandBar = (` &lt;div id="tablename_commandBar"&gt;
+                                &lt;div class="ms-CommandBar"&gt;
+                                    &lt;div class="ms-CommandBar-sideCommands"&gt;
+                                        &lt;div class="ms-CommandButton"&gt;
+                                            &lt;button class="ms-CommandButton-button js-Paginate-Select" title="Pick how many entries in table to show"&gt;
+                                                &lt;span class="ms-CommandButton-icon ms-fontColor-themePrimary"&gt;
+                                                    &lt;i class="ms-Icon ms-Icon--ViewList"&gt;&lt;/i&gt;
+                                                &lt;/span&gt;
+                                                &lt;span class="ms-CommandButton-label"&gt;View&lt;/span&gt;
+                                                &lt;span class="ms-CommandButton-dropdownIcon"&gt;
+                                                    &lt;i class="ms-Icon ms-Icon--ChevronDown"&gt;&lt;/i&gt;
+                                                &lt;/span&gt;
+                                            &lt;/button&gt;
+                                            &lt;ul class="ms-ContextualMenu is-opened" id="tablename_paginatecontrol" style="min-width: 100px;"&gt;
+                                                &lt;li class="ms-ContextualMenu-item"&gt;
+                                                    &lt;a class="ms-ContextualMenu-link checked js-Paginate-Select" tabindex="1" value="10"&gt;10 entries&lt;/a&gt;
+                                                &lt;/li&gt;
+                                                &lt;li class="ms-ContextualMenu-item"&gt;
+                                                    &lt;a class="ms-ContextualMenu-link js-Paginate-Select" tabindex="1" value="25"&gt;25 entries&lt;/a&gt;
+                                                &lt;/li&gt;
+                                                &lt;li class="ms-ContextualMenu-item"&gt;
+                                                    &lt;a class="ms-ContextualMenu-link js-Paginate-Select" tabindex="1" value="50"&gt;50 entries&lt;/a&gt;
+                                                &lt;/li&gt;
+                                                &lt;li class="ms-ContextualMenu-item"&gt;
+                                                    &lt;a class="ms-ContextualMenu-link js-Paginate-Select" tabindex="1" value="100"&gt;100 entries&lt;/a&gt;
+                                                &lt;/li&gt;
+                                                &lt;li class="ms-ContextualMenu-item"&gt;
+                                                    &lt;a class="ms-ContextualMenu-link js-Paginate-Select" tabindex="1" value="-1"&gt;All entries&lt;/a&gt;
+                                                &lt;/li&gt;
+                                            &lt;/ul&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="ms-CommandBar-mainArea"&gt;
+                        
+                                        &lt;div id="tablename_search" class="ms-SearchBox ms-SearchBox--commandBar"&gt;
+                                            &lt;input class="ms-SearchBox-field" type="text" value="" placeholder="Search" data-type="normal"&gt;
+                                            &lt;label class="ms-SearchBox-label"&gt;
+                                                &lt;i class="ms-SearchBox-icon ms-Icon ms-Icon--Search"&gt;&lt;/i&gt;
+                                                &lt;span class="ms-SearchBox-text" style="display: none;"&gt;Search&lt;/span&gt;
+                                            &lt;/label&gt;
+                                            &lt;div class="ms-CommandButton ms-SearchBox-clear ms-CommandButton--noLabel"&gt;
+                                                &lt;button class="ms-CommandButton-button"&gt;
+                                                    &lt;span class="ms-CommandButton-icon"&gt;
+                                                        &lt;i class="ms-Icon ms-Icon--Cancel"&gt;&lt;/i&gt;
+                                                    &lt;/span&gt;
+                                                    &lt;span class="ms-CommandButton-label"&gt;&lt;/span&gt;
+                                                &lt;/button&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class="ms-CommandButton ms-SearchBox-exit ms-CommandButton--noLabel"&gt;
+                                                &lt;button class="ms-CommandButton-button"&gt;
+                                                    &lt;span class="ms-CommandButton-icon"&gt;
+                                                        &lt;i class="ms-Icon ms-Icon--ChromeBack"&gt;&lt;/i&gt;
+                                                    &lt;/span&gt;
+                                                    &lt;span class="ms-CommandButton-label"&gt;&lt;/span&gt;
+                                                &lt;/button&gt;
+                                            &lt;/div&gt;
+                                            &lt;div class="ms-CommandButton ms-SearchBox-filter ms-CommandButton--noLabel"&gt;
+                                                &lt;button class="ms-CommandButton-button"&gt;
+                                                    &lt;span class="ms-CommandButton-icon"&gt;
+                                                        &lt;i class="ms-Icon ms-Icon--Search"&gt;&lt;/i&gt;
+                                                    &lt;/span&gt;
+                                                    &lt;span class="ms-CommandButton-label"&gt;&lt;/span&gt;
+                                                &lt;/button&gt;
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                        
+                                        &lt;div class="ms-CommandButton ms-CommandButton--noLabel column-picker"&gt;
+                                            &lt;button class="ms-CommandButton-button" title="Pick a table column to search in"&gt;
+                                                &lt;span class="ms-CommandButton-icon ms-fontColor-themePrimary"&gt;
+                                                    &lt;i class="ms-Icon ms-Icon--CaretSolidDown"&gt;&lt;/i&gt;
+                                                &lt;/span&gt;
+                                                &lt;span class="ms-CommandButton-label"&gt;&lt;/span&gt;
+                                            &lt;/button&gt;
+                                            &lt;ul class="ms-ContextualMenu is-opened" id="tablename_ColumnPicker"&gt;
+                                                &lt;li class="ms-ContextualMenu-item"&gt;
+                                                    &lt;a class="ms-ContextualMenu-link column-picker checked" tabindex="1"&gt;Any column&lt;/a&gt;
+                                                &lt;/li&gt;
+                                            &lt;/ul&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="ms-CommandButton"&gt;
+                                            &lt;button class="ms-CommandButton-button js-SearchOptions-select"&gt;
+                                                &lt;span class="ms-CommandButton-icon ms-fontColor-themePrimary"&gt;
+                                                    &lt;i class="ms-Icon ms-Icon--DocumentSearch"&gt;&lt;/i&gt;
+                                                &lt;/span&gt;
+                                                &lt;span class="ms-CommandButton-label"&gt;Options&lt;/span&gt;
+                                                &lt;span class="ms-CommandButton-dropdownIcon"&gt;
+                                                    &lt;i class="ms-Icon ms-Icon--ChevronDown"&gt;&lt;/i&gt;
+                                                &lt;/span&gt;
+                                            &lt;/button&gt;
+                                            &lt;ul id="tablename_searchOptions" class="ms-ContextualMenu" style="min-width: 116px;"&gt;
+                                                &lt;li class="ms-ContextualMenu-item"&gt;
+                                                    &lt;a class="ms-ContextualMenu-link search-options regex-toggle" tabindex="1"&gt;RexEx&lt;/a&gt;
+                                                &lt;/li&gt;
+                                            &lt;/ul&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="ms-CommandButton"&gt;
+                                            &lt;button class="ms-CommandButton-button"&gt;
+                                                &lt;span class="ms-CommandButton-icon ms-fontColor-themePrimary"&gt;
+                                                    &lt;i class="ms-Icon ms-Icon--Generate"&gt;&lt;/i&gt;
+                                                &lt;/span&gt;
+                                                &lt;span class="ms-CommandButton-label"&gt;Export&lt;/span&gt;
+                                                &lt;span class="ms-CommandButton-dropdownIcon"&gt;
+                                                    &lt;i class="ms-Icon ms-Icon--ChevronDown"&gt;&lt;/i&gt;
+                                                &lt;/span&gt;
+                                            &lt;/button&gt;
+                                            &lt;ul id="tablename_Export" class="ms-ContextualMenu" style="min-width: 116px;"&gt;
+                                                &lt;li class="ms-ContextualMenu-item"&gt;   
+                                                    &lt;a class="ms-ContextualMenu-link export-excel" tabindex="1"&gt;Excel&lt;/a&gt;
+                                                    &lt;a class="ms-ContextualMenu-link export-csv" tabindex="1"&gt;Csv&lt;/a&gt;
+                                                &lt;/li&gt;
+                                            &lt;/ul&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="ms-CommandButton ms-CommandBar-overflowButton ms-CommandButton--noLabel"&gt;
+                                            &lt;button class="ms-CommandButton-button"&gt;
+                                                &lt;span class="ms-CommandButton-icon"&gt;
+                                                    &lt;i class="ms-Icon ms-Icon--More"&gt;&lt;/i&gt;
+                                                &lt;/span&gt;
+                                                &lt;span class="ms-CommandButton-label"&gt;&lt;/span&gt;
+                                            &lt;/button&gt;
+                                            &lt;ul class="ms-ContextualMenu is-opened ms-ContextualMenu--hasIcons"&gt;
+                                                &lt;li class="ms-ContextualMenu-item"&gt;
+                                                    &lt;a class="ms-ContextualMenu-link search-options" tabindex="1"&gt;Debug&lt;/a&gt;
+                                                    &lt;i class="ms-Icon ms-Icon--CodeEdit"&gt;&lt;/i&gt;
+                                                &lt;/li&gt;
+                                            &lt;/ul&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;`).replace(/tablename/g, tableID)
+
+            $(commandBar).insertBefore(table)
+        }
+    );
+}
+
+function DebugCommandBar() {
+    var commandBar = $("#tablename_commandBar");
+    var wrapperDiv = $("#tablename_wrapper");
+    wrapperDiv.prepend(commandBar);
+}
+
+var CommandBar;
+
+function initialize_commandBar() {
+
+    overwrite_handleBlur();
+
+    var CommandBarElements = document.querySelectorAll(".ms-CommandBar");
+    for (var i = 0; i &lt; CommandBarElements.length; i++) {
+        CommandBar = new fabric['CommandBar'](CommandBarElements[i]);
+        // Disable drawing overflow
+        CommandBar._runOverflow = function() {}
+    }
+
+    // This ensures that clear button in search bar clears results
+    $(".ms-SearchBox-clear").mousedown(
+        function () {
+            $(this).parent().find(".ms-SearchBox-field").keyup();
+        }
+    );
+}
+
+// Handle pagination switch
+function handle_Pagination() {
+    $(".ms-ContextualMenu-link.js-Paginate-Select").click(
+        function () {
+           
+            let paginateButton = $(this);
+            let tableID = get_ID(paginateButton)
+
+            $("#" + tableID + "_paginatecontrol").find(".ms-ContextualMenu-link.js-Paginate-Select.checked").removeClass("checked");
+
+            paginateButton.parent()
+            paginateButton.toggleClass("checked");
+            let value = paginateButton.attr("value")
+            
+
+            $("#" + tableID).DataTable().page.len(value).draw();
+        }
+    );
+}
+
+
+// Send queries to DataTables API via Office UI JS search box
+function handle_SeachBox() {
+    $(".ms-SearchBox-field").keyup(
+        function () {
+
+            var element = $(this);
+            let tableID = get_ID(element);
+            //let tableID = element.parent(".ms-SearchBox").attr("id").replace("_search", "");
+            let table = $("#" + tableID);
+            let query = element.val();
+
+            let searchMode = element.next(".ms-SearchBox-label").find(".ms-SearchBox-text");
+
+            var searchType = element.attr("data-type");
+
+            if (searchType == "regex") {
+                var regex = true;
+                var smart = false
+            }
+            else {
+                var regex = false;
+                var smart = true;
+            }
+
+            var columnIndex = searchMode.attr("value");
+
+            if (searchMode.text() == "Search") {
+                table.DataTable().search(query, regex, smart).draw();
+            }
+            else {
+                table.DataTable().column(columnIndex).search(query, regex, smart).draw();
+            }
+
+        }
+    );
+}
+
+
+// Overwrites the _handleBlur prototype form search to prevent unfocusing 
+function overwrite_handleBlur() {
+    SearchBlur = function (e) {
+    }
+
+    fabric.SearchBox.prototype._handleBlur = SearchBlur;
+}
+
+// Attach event handler to do check mark on options
+function handle_searchOptions() {
+
+    //handle regex
+    $(".ms-ContextualMenu-link.search-options").click(
+        function () {
+
+            var element = $(this);
+            element.toggleClass("checked");
+
+            var ID = get_ID(element);
+
+            if (element.hasClass("checked") == true) {
+                var searchBox = $("#" + ID + "_search")
+                searchBox.find(".ms-SearchBox-field").attr("data-type", "regex");
+            }
+            else {
+                var searchBox = $("#" + ID + "_search")
+                searchBox.find(".ms-SearchBox-field").attr("data-type", "normal")
+            }
+        }
+    );
+}
+
+
+// Create collumn select based on Headers
+function create_ColumnDropDown() {
+
+    var tables = $("table");
+
+    tables.each(
+
+        function () {
+            var table = $(this)
+            var tableID = $(this).attr("id")
+            var headers = table.find("thead").find("th");
+
+            headers.each(
+                function () {
+
+                    var header = $(this);
+                    var li = $("&lt;li&gt;&lt;/li&gt;").addClass("ms-ContextualMenu-item")
+                    var a = $("&lt;a&gt;&lt;/a&gt;").addClass("ms-ContextualMenu-link column-picker")
+                        .attr("tabindex", '1')
+                        .attr("value", header.index())
+                        .text(header.text());
+
+                    li.append(a)
+
+                    var ul = $("#" + tableID + "_ColumnPicker");
+
+                    ul.append(li);
+                }
+            );
+        }
+    );
+
+    handle_ColumnPicker();
+}
+
+
+function handle_ColumnPicker() {
+
+    // Change column filter 
+    $(".ms-ContextualMenu-link.column-picker").click(
+        function () {
+
+            let element = $(this)
+            let value = element.text()
+            let valueAttr = element.attr("value")
+
+            var ID = get_ID(element);
+            var searchBox = $("#" + ID + "_search")
+
+            // Using helper function to trigger cleaning up query
+            triggerEvent((searchBox.find(".ms-SearchBox-clear"))[0], 'mousedown')
+
+            if (value == "Any column") {
+                value = "Search";
+                valueAttr = "";
+            }
+
+            searchBox.find(".ms-SearchBox-field").attr("placeholder", value);
+            searchBox.find(".ms-SearchBox-text").text(value).attr("value", valueAttr);
+        }
+    );
+
+    //Attach event handler to do check mark on column picker
+    $(".ms-ContextualMenu-link.column-picker").click(
+        function () {
+            let element = $(this);
+            element.parent().parent().find(".ms-ContextualMenu-link").removeClass("checked");
+            element.toggleClass("checked");
+        }
+    );
+}
+
+
+/* Helper functions */
+
+
+
+function get_ID(jQueryElement) {
+    var id = jQueryElement.attr("id")
+
+    if (id == undefined) {
+        id = get_ID(jQueryElement.parent())
+    }
+    else {
+        var n = id.lastIndexOf("_")
+        id = id.substring(0, n)
+    }
+
+    return id
+}
+
+/* Export Button functions */
+
+// Declaring variable for storing name of exported files
+var ExportFileName; 
+function Handle_ExportButtons()
+{
+
+    /* CSV Export trigger */
+    $(".ms-ContextualMenu-link.export-csv").click(
+        function () {
+
+            var element = $(this);
+            var ID = get_ID(element);
+
+            ExportFileName = ID.replace(/-/g,"").replace(/_/g,"");
+            $("#" + ID).DataTable().buttons(".dt-button.buttons-csv").trigger();
+        }
+    );
+
+    /* Excel Export trigger */
+    $(".ms-ContextualMenu-link.export-excel").click(
+        function () {
+
+            var element = $(this);
+            var ID = get_ID(element);
+            
+            ExportFileName = ID.replace(/-/g,"").replace(/_/g,"");
+
+            $("#" + ID).DataTable().buttons(".dt-button.buttons-excel").trigger();
+        }
+    );
+    
+}
+
+(function() {
+    var aboutDiv = $("#about_Dialog");
+    var button = $("#about_Button")[0];
+    var dialog = aboutDiv.find(".ms-Dialog--lgHeader")[0];
+    var actionButtonElements = aboutDiv[0].querySelectorAll(".ms-Dialog-action");
+    var actionButtonComponents = [];
+
+    // Wire up the dialog
+    var dialogComponent = new fabric['Dialog'](dialog);
+
+    // Wire up the buttons
+    for (var i = 0; i &lt; actionButtonElements.length; i++) {
+      actionButtonComponents[i] = new fabric['Button'](actionButtonElements[i], actionHandler);
+    }
+    //unbind event handler for click
+    $(button).unbind("click")
+
+    // When clicking the button, open the dialog
+    button.onclick = function() {
+      openDialog(dialog);
+    };
+    function actionHandler(event) {
+      
+    }
+    function openDialog(dialog) {
+      // Open the dialog
+      dialogComponent.open();
+    }
+  }());
+(function() {
+    var aboutDiv = $("#details_Dialog");
+    var button = $("#details_Button")[0];
+    var dialog = aboutDiv.find(".ms-Dialog--lgHeader")[0];
+    var actionButtonElements = aboutDiv[0].querySelectorAll(".ms-Dialog-action");
+    var actionButtonComponents = [];
+    // Wire up the dialog
+    var dialogComponent = new fabric['Dialog'](dialog);
+    // Wire up the buttons
+    for (var i = 0; i &lt; actionButtonElements.length; i++) {
+      actionButtonComponents[i] = new fabric['Button'](actionButtonElements[i], actionHandler);
+    }
+    //unbind event handler for click
+    $(button).unbind("click")
+
+    // When clicking the button, open the dialog
+    button.onclick = function() {
+      openDialog(dialog);
+    };
+    function actionHandler(event) {
+      
+    }
+    function openDialog(dialog) {
+      // Open the dialog
+      dialogComponent.open();
+    }
+  }());
+// event handler on clicking filter buttons
+handle_Filters2()
+
+
+function handle_filters() {
+    $(".filter-button").click(
+        function () {
+            // get values
+            buttons = $(".filter-button")
+            var filters = [];
+
+            buttons.each(
+                function () {
+                    button = $(this);
+
+                    if (button.hasClass("active") == true) {
+                        filters.push(button.find(".ms-Button-label").text());
+                    }
+                }
+
+            );
+
+            // if query not empty enable regex else disable regex
+            var regexbtn = $("#toggle-regex")
+
+            if (filters.length &lt;= 1) {
+                if (regexbtn.hasClass("active") == true) {
+                    regexbtn.click();
+                }
+            }
+            else if (regexbtn.hasClass("active") == false) {
+                regexbtn.click();
+            }
+
+            //build regex syntax
+            var regexQuery = filters.join("|");
+
+            //add query to search and execute
+            $(".ms-SearchBox-field").val(regexQuery).keyup()
+        }
+    );
+}
+
+
+function handle_Filters2() {
+    $(".filter-button").click(
+        function () 
+        {
+            buttons = $(".filter-button")
+            var filters = [];
+
+            buttons.each(
+                function () {
+                    button = $(this);
+
+                    if (button.hasClass("active") == true) {
+                        filters.push(button.find(".ms-Button-label").text());
+                    }
+                }
+
+            );
+
+            var regexQuery = filters.join("|");
+
+            $("table").each(
+                function()
+                {
+                    var table = $(this);
+                    var hasStatus;
+                    var statusIndex;
+
+                    table.find("th").each(
+                        function()
+                        {
+                            header = $(this);
+                            if (header.text() == "Status")
+                            {
+                                hasStatus = true;
+                                statusIndex = header.index();
+                            }
+                        }
+                    );
+
+                    if(hasStatus == true)
+                    {
+                        $(this).DataTable().column(statusIndex).search(regexQuery, true, false).draw();
+                    }
+                    
+                }
+            );
+        }
+    );
+}
+handle_RegEx();
+handle_Expand();
+handle_Collapse();
+handle_View();
+
+function handle_RegEx() {
+    $("#toggle-regex").click(
+        function () {
+
+            var active = $(this).hasClass("active");
+
+
+            $(".ms-CommandButton-button.js-SearchOptions-select").click();
+
+            $(".search-options.regex-toggle").each(
+                function () {
+                    var regexBtn = $(this);
+
+                    if (active == true &amp;&amp; regexBtn.hasClass("checked") == false) {
+                        regexBtn.click()
+                    }
+                    else if (active == false &amp;&amp; regexBtn.hasClass("checked") == true) {
+                        regexBtn.click()
+                    }
+                }
+            );
+        }
+    );
+
+}
+
+function handle_Expand() {
+
+    // Workaround for default button behavior! Needs to be refactor!
+    $("#expand-tables").unbind("click");
+
+    $("#expand-tables").click(
+        function () {
+            
+            $(".table-header").each(
+                function()
+                {
+                    var header = $(this);
+                    if(header.hasClass("tablecollapsed") == true)
+                    {
+                        this.click();
+                    }
+                }
+            );
+        }
+    );
+}
+
+function handle_Collapse() {
+
+    // Workaround for default button behavior! Needs to be refactor!
+    $("#collapse-tables").unbind("click");
+
+    $("#collapse-tables").click(
+        function () {
+            
+            $(".table-header").each(
+                function()
+                {
+                    var header = $(this);
+                    if(header.hasClass("tablecollapsed") == false)
+                    {
+                        this.click();
+                    }
+                }
+            );
+        }
+    );
+}
+
+function handle_View() {
+
+    // Workaround for default button behavior! Needs to be refactor!
+    $("#view-10").unbind("click");
+    $("#view-all").unbind("click");
+
+    $("#view-10").click(
+        function () 
+        {
+            var button = $(this);
+
+            $(".ms-CommandButton-button.js-Paginate-Select").click();
+
+            $(".ms-ContextualMenu-link.js-Paginate-Select").each(
+                function () {
+                    var paginate = $(this);
+
+                    if(paginate.attr("value") == 10)
+                    {
+                        paginate.click();
+                    }
+                   
+                }
+            );
+            
+        }
+    );
+
+    $("#view-all").click(
+        function () 
+        {
+            var button = $(this);
+
+            $(".ms-CommandButton-button.js-Paginate-Select").click();
+
+            $(".ms-ContextualMenu-link.js-Paginate-Select").each(
+                function () {
+
+                    var paginate = $(this);
+                    
+                    if(paginate.attr("value") == -1)
+                    {
+                        paginate.click();
+                    }
+                }
+            );
+            
+        }
+    );
+}
+</script>
+</html>

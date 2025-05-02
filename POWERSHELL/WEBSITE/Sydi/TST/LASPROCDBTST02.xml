@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="serverhtml.xsl"?>
+<computer>
+ <generated script="sydi-server" version="2.4" scantime="12/8/2017 3:26:03 PM" />
+ <system name="LASPROCDBTST02" />
+ <operatingsystem name="Microsoft Windows Server 2008 R2 Standard " servicepack="Service Pack 1" />
+ <fqdn name="lasprocdbtst02.creditoneapp.tst" />
+ <roles>
+ </roles>
+ <machineinfo manufacturer="VMware, Inc." productname="VMware Virtual Platform" identifyingnumber="VMware-42 2a b2 38 73 43 7d 5f-43 81 90 be b8 3d f6 2d" chassis="Other" />
+ <processor count="1" name="Intel(R) Xeon(R) CPU E5-2640 v3 @ 2.60GHz" description="Intel64 Family 6 Model 58 Stepping 0" speed="2597" l2cachesize="0" externalclock="" htsystem="False" />
+ <memory totalsize="4096">
+  <memorybank bank="RAM slot #0" capacity="4096" formfactor="DIMM" memorytype="DRAM" />
+ </memory>
+ <win32_cdromdrive>
+  <cdrom name="NECVMWar VMware IDE CDR10 ATA Device" drive="Z:" manufacturer="(Standard CD-ROM drives)" />
+ </win32_cdromdrive>
+ <videocontroller>
+  <adapter name="VMware SVGA 3D" adapterram="1032" compatibility="VMware, Inc." />
+ </videocontroller>
+ <win32_sounddevice>
+ </win32_sounddevice>
+ <bios version="INTEL  - 6040000" smbiosversion="6.00" smbiosmajorversion="2" smbbiosminorversion="4">
+  <bioscharacteristics id="4" name="ISA is supported" />
+  <bioscharacteristics id="7" name="PCI is supported" />
+  <bioscharacteristics id="8" name="PC Card (PCMCIA) is supported" />
+  <bioscharacteristics id="9" name="Plug and Play is supported" />
+  <bioscharacteristics id="10" name="APM is supported" />
+  <bioscharacteristics id="11" name="BIOS is Upgradable (Flash)" />
+  <bioscharacteristics id="12" name="BIOS shadowing is allowed" />
+  <bioscharacteristics id="14" name="ESCD support is available" />
+  <bioscharacteristics id="15" name="Boot from CD is supported" />
+  <bioscharacteristics id="16" name="Selectable Boot is supported" />
+  <bioscharacteristics id="19" name="EDD (Enhanced Disk Drive) Specification is supported" />
+  <bioscharacteristics id="26" name="Int 5h, Print Screen Service is supported" />
+  <bioscharacteristics id="27" name="Int 9h, 8042 Keyboard services are supported" />
+  <bioscharacteristics id="28" name="Int 14h, Serial Services are supported" />
+  <bioscharacteristics id="29" name="Int 17h, printer services are supported" />
+  <bioscharacteristics id="30" name="Int 10h, CGA/Mono Video Services are supported" />
+  <bioscharacteristics id="32" name="ACPI supported" />
+  <bioscharacteristics id="39" name="Smart Battery supported" />
+  <bioscharacteristics id="40" name="Unknown (Undocumented)" />
+  <bioscharacteristics id="41" name="Unknown (Undocumented)" />
+  <bioscharacteristics id="42" name="Unknown (Undocumented)" />
+  <bioscharacteristics id="50" name="Unknown (Undocumented)" />
+  <bioscharacteristics id="57" name="Unknown (Undocumented)" />
+  <bioscharacteristics id="58" name="Unknown (Undocumented)" />
+ </bios>
+ <osconfiguration osname="Microsoft Windows Server 2008 R2 Standard " computerrole="Member Server" domainname="creditoneapp.tst" domaintype="domain" windowslocation="C:\Windows" oslanguage="English" installdate="4/4/2014 10:00:33 PM" />
+ <lastuser name="" />
+ <windowscomponents>
+ </windowscomponents>
+ <patches>
+  <patch description="Update" hotfixid="KB981391" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB981392" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB977236" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB981111" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB977238" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2849697" installdate="12/9/2015" />
+  <patch description="Update" hotfixid="KB2849696" installdate="12/9/2015" />
+  <patch description="Update" hotfixid="KB2841134" installdate="12/9/2015" />
+  <patch description="Update" hotfixid="KB977239" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2670838" installdate="12/9/2015" />
+  <patch description="Update" hotfixid="KB2830477" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2592687" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB981390" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2386667" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2425227" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2506014" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2506212" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2506928" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2509553" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2511455" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2515325" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2533552" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2536275" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2536276" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2541014" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2544893" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2545698" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2547666" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2552343" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2560656" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2563227" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2564958" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2570947" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2574819" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2584146" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2585542" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2603229" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2604115" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2607047" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2608658" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2620704" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2621440" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2631813" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2636573" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2640148" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2643719" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2647753" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2653956" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2654428" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2655992" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2656356" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2660075" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2667402" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2676562" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2685811" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2685813" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2685939" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2690533" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2691442" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2698365" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2699779" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2705219" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2706045" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2709630" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2709981" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2712808" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2718704" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2719857" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2726535" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2729094" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2729452" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2732059" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2736422" installdate="4/7/2014" />
+  <patch description="Security Update" hotfixid="KB2742599" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2743555" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2750841" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2756921" installdate="4/7/2014" />
+  <patch description="Security Update" hotfixid="KB2757638" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2758857" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2761217" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2763523" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2765809" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2770660" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2785220" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2786081" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2786400" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2789645" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2791765" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2798162" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2800095" installdate="6/13/2014" />
+  <patch description="Security Update" hotfixid="KB2807986" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2808679" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2813347" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2813430" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2820331" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2832414" installdate="4/7/2014" />
+  <patch description="Update" hotfixid="KB2834140" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2834886" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2836942" installdate="4/7/2014" />
+  <patch description="Update" hotfixid="KB2836943" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2839894" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2840149" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2840631" installdate="4/7/2014" />
+  <patch description="Update" hotfixid="KB2843630" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2844286" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2847311" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2849470" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2852386" installdate="5/16/2014" />
+  <patch description="Update" hotfixid="KB2853952" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2855844" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2857650" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2861191" installdate="4/7/2014" />
+  <patch description="Security Update" hotfixid="KB2861698" installdate="4/7/2014" />
+  <patch description="Security Update" hotfixid="KB2861855" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2862152" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2862330" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2862335" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2862966" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2862973" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2863240" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2864058" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2864202" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2868038" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2868116" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2868623" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2868626" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2868725" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2871997" installdate="5/16/2014" />
+  <patch description="Security Update" hotfixid="KB2872339" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2875783" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2876284" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2876331" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2882822" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2884256" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2887069" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2888049" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2891804" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2892074" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2893294" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2893519" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2894844" installdate="9/12/2014" />
+  <patch description="Security Update" hotfixid="KB2898857" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2900986" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2901112" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2904266" installdate="4/4/2014" />
+  <patch description="Update" hotfixid="KB2908783" installdate="4/11/2014" />
+  <patch description="Security Update" hotfixid="KB2909210" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2911501" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2912390" installdate="12/10/2015" />
+  <patch description="Update" hotfixid="KB2913431" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2916036" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2918614" installdate="8/15/2014" />
+  <patch description="Update" hotfixid="KB2919469" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2922229" installdate="4/11/2014" />
+  <patch description="Update" hotfixid="KB2923545" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2925418" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2926765" installdate="5/16/2014" />
+  <patch description="Update" hotfixid="KB2928562" installdate="4/11/2014" />
+  <patch description="Update" hotfixid="KB2929733" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2930275" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB2931356" installdate="5/16/2014" />
+  <patch description="Security Update" hotfixid="KB2936068" installdate="4/11/2014" />
+  <patch description="Security Update" hotfixid="KB2937610" installdate="8/15/2014" />
+  <patch description="Security Update" hotfixid="KB2939576" installdate="6/13/2014" />
+  <patch description="Security Update" hotfixid="KB2943357" installdate="8/15/2014" />
+  <patch description="Security Update" hotfixid="KB2949927" installdate="10/17/2014" />
+  <patch description="Security Update" hotfixid="KB2957189" installdate="6/13/2014" />
+  <patch description="Security Update" hotfixid="KB2957503" installdate="6/13/2014" />
+  <patch description="Security Update" hotfixid="KB2957509" installdate="6/13/2014" />
+  <patch description="Security Update" hotfixid="KB2957689" installdate="6/13/2014" />
+  <patch description="Security Update" hotfixid="KB2961072" installdate="7/11/2014" />
+  <patch description="Security Update" hotfixid="KB2962872" installdate="7/11/2014" />
+  <patch description="Update" hotfixid="KB2966583" installdate="7/11/2014" />
+  <patch description="Security Update" hotfixid="KB2968294" installdate="10/17/2014" />
+  <patch description="Update" hotfixid="KB2970228" installdate="8/15/2014" />
+  <patch description="Security Update" hotfixid="KB2972100" installdate="10/17/2014" />
+  <patch description="Security Update" hotfixid="KB2972211" installdate="9/12/2014" />
+  <patch description="Security Update" hotfixid="KB2973112" installdate="9/12/2014" />
+  <patch description="Security Update" hotfixid="KB2973201" installdate="7/11/2014" />
+  <patch description="Update" hotfixid="KB2973337" installdate="7/11/2014" />
+  <patch description="Security Update" hotfixid="KB2973351" installdate="7/11/2014" />
+  <patch description="Security Update" hotfixid="KB2976627" installdate="8/15/2014" />
+  <patch description="Security Update" hotfixid="KB2976897" installdate="8/15/2014" />
+  <patch description="Security Update" hotfixid="KB2977292" installdate="10/17/2014" />
+  <patch description="Security Update" hotfixid="KB2977629" installdate="9/12/2014" />
+  <patch description="Hotfix" hotfixid="KB2977728" installdate="12/10/2015" />
+  <patch description="Security Update" hotfixid="KB2978120" installdate="11/14/2014" />
+  <patch description="Security Update" hotfixid="KB2978668" installdate="8/15/2014" />
+  <patch description="Security Update" hotfixid="KB2979570" installdate="10/17/2014" />
+  <patch description="Update" hotfixid="KB2980245" installdate="8/15/2014" />
+  <patch description="Update" hotfixid="KB2981580" installdate="8/15/2014" />
+  <patch description="Security Update" hotfixid="KB2982378" installdate="9/12/2014" />
+  <patch description="Security Update" hotfixid="KB2982791" installdate="8/15/2014" />
+  <patch description="Security Update" hotfixid="KB2984972" installdate="10/17/2014" />
+  <patch description="Security Update" hotfixid="KB2984981" installdate="10/17/2014" />
+  <patch description="Update" hotfixid="KB2985461" installdate="9/12/2014" />
+  <patch description="Security Update" hotfixid="KB2987107" installdate="10/17/2014" />
+  <patch description="Update" hotfixid="KB2990214" installdate="4/17/2015" />
+  <patch description="Security Update" hotfixid="KB2991963" installdate="11/14/2014" />
+  <patch description="Security Update" hotfixid="KB2992611" installdate="11/14/2014" />
+  <patch description="Update" hotfixid="KB2993651" installdate="9/12/2014" />
+  <patch description="Security Update" hotfixid="KB2993958" installdate="11/14/2014" />
+  <patch description="Update" hotfixid="KB2994023" installdate="10/17/2014" />
+  <patch description="Update" hotfixid="KB2998527" installdate="10/17/2014" />
+  <patch description="Update" hotfixid="KB2999226" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3000061" installdate="10/17/2014" />
+  <patch description="Security Update" hotfixid="KB3000483" installdate="3/13/2015" />
+  <patch description="Security Update" hotfixid="KB3000869" installdate="10/17/2014" />
+  <patch description="Update" hotfixid="KB3000988" installdate="10/17/2014" />
+  <patch description="Security Update" hotfixid="KB3002657" installdate="3/13/2015" />
+  <patch description="Security Update" hotfixid="KB3002885" installdate="11/14/2014" />
+  <patch description="Security Update" hotfixid="KB3003057" installdate="12/12/2014" />
+  <patch description="Security Update" hotfixid="KB3003743" installdate="11/14/2014" />
+  <patch description="Security Update" hotfixid="KB3004361" installdate="2/13/2015" />
+  <patch description="Security Update" hotfixid="KB3004375" installdate="2/13/2015" />
+  <patch description="Update" hotfixid="KB3004394" installdate="2/13/2015" />
+  <patch description="Security Update" hotfixid="KB3005607" installdate="11/14/2014" />
+  <patch description="Hotfix" hotfixid="KB3006137" installdate="4/17/2015" />
+  <patch description="Security Update" hotfixid="KB3006226" installdate="11/14/2014" />
+  <patch description="Update" hotfixid="KB3006625" installdate="12/12/2014" />
+  <patch description="Update" hotfixid="KB3008627" installdate="11/14/2014" />
+  <patch description="Security Update" hotfixid="KB3008923" installdate="12/12/2014" />
+  <patch description="Security Update" hotfixid="KB3010788" installdate="11/14/2014" />
+  <patch description="Security Update" hotfixid="KB3011780" installdate="12/12/2014" />
+  <patch description="Security Update" hotfixid="KB3012176" installdate="12/12/2014" />
+  <patch description="Security Update" hotfixid="KB3013126" installdate="12/12/2014" />
+  <patch description="Update" hotfixid="KB3013410" installdate="12/12/2014" />
+  <patch description="Security Update" hotfixid="KB3013455" installdate="2/13/2015" />
+  <patch description="Security Update" hotfixid="KB3014029" installdate="1/16/2015" />
+  <patch description="Update" hotfixid="KB3014406" installdate="12/12/2014" />
+  <patch description="Update" hotfixid="KB3018238" installdate="12/12/2014" />
+  <patch description="Update" hotfixid="KB3020338" installdate="2/13/2015" />
+  <patch description="Update" hotfixid="KB3020369" installdate="5/15/2015" />
+  <patch description="Update" hotfixid="KB3020370" installdate="5/15/2015" />
+  <patch description="Security Update" hotfixid="KB3020388" installdate="1/16/2015" />
+  <patch description="Security Update" hotfixid="KB3021674" installdate="1/16/2015" />
+  <patch description="Security Update" hotfixid="KB3021952" installdate="2/13/2015" />
+  <patch description="Update" hotfixid="KB3022345" installdate="5/15/2015" />
+  <patch description="Security Update" hotfixid="KB3022777" installdate="1/16/2015" />
+  <patch description="Security Update" hotfixid="KB3023215" installdate="5/15/2015" />
+  <patch description="Security Update" hotfixid="KB3023266" installdate="1/16/2015" />
+  <patch description="Security Update" hotfixid="KB3023562" installdate="2/13/2015" />
+  <patch description="Security Update" hotfixid="KB3029944" installdate="2/13/2015" />
+  <patch description="Security Update" hotfixid="KB3030377" installdate="3/13/2015" />
+  <patch description="Security Update" hotfixid="KB3031432" installdate="2/13/2015" />
+  <patch description="Security Update" hotfixid="KB3032323" installdate="3/13/2015" />
+  <patch description="Security Update" hotfixid="KB3032359" installdate="3/13/2015" />
+  <patch description="Security Update" hotfixid="KB3032655" installdate="5/15/2015" />
+  <patch description="Security Update" hotfixid="KB3033889" installdate="3/13/2015" />
+  <patch description="Security Update" hotfixid="KB3033929" installdate="3/13/2015" />
+  <patch description="Security Update" hotfixid="KB3034344" installdate="3/13/2015" />
+  <patch description="Security Update" hotfixid="KB3035126" installdate="3/13/2015" />
+  <patch description="Security Update" hotfixid="KB3035131" installdate="3/13/2015" />
+  <patch description="Security Update" hotfixid="KB3035132" installdate="3/13/2015" />
+  <patch description="Security Update" hotfixid="KB3037574" installdate="4/17/2015" />
+  <patch description="Security Update" hotfixid="KB3038314" installdate="4/17/2015" />
+  <patch description="Security Update" hotfixid="KB3039066" installdate="3/13/2015" />
+  <patch description="Update" hotfixid="KB3040272" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3042058" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3042553" installdate="4/17/2015" />
+  <patch description="Security Update" hotfixid="KB3045171" installdate="5/15/2015" />
+  <patch description="Update" hotfixid="KB3045645" installdate="5/15/2015" />
+  <patch description="Security Update" hotfixid="KB3045685" installdate="4/17/2015" />
+  <patch description="Security Update" hotfixid="KB3045999" installdate="4/17/2015" />
+  <patch description="Security Update" hotfixid="KB3046017" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3046049" installdate="3/13/2015" />
+  <patch description="Security Update" hotfixid="KB3046269" installdate="4/17/2015" />
+  <patch description="Security Update" hotfixid="KB3046306" installdate="4/17/2015" />
+  <patch description="Security Update" hotfixid="KB3046482" installdate="4/17/2015" />
+  <patch description="Security Update" hotfixid="KB3048070" installdate="5/15/2015" />
+  <patch description="Update" hotfixid="KB3048761" installdate="5/15/2015" />
+  <patch description="Security Update" hotfixid="KB3049563" installdate="5/15/2015" />
+  <patch description="Security Update" hotfixid="KB3051768" installdate="5/15/2015" />
+  <patch description="Update" hotfixid="KB3054205" installdate="12/9/2015" />
+  <patch description="Update" hotfixid="KB3054476" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3055642" installdate="5/15/2015" />
+  <patch description="Security Update" hotfixid="KB3059317" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3060716" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3061518" installdate="5/15/2015" />
+  <patch description="Security Update" hotfixid="KB3068457" installdate="12/9/2015" />
+  <patch description="Update" hotfixid="KB3068708" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3069392" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3071756" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3072305" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3072595" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3072630" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3072633" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3074543" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3075226" installdate="12/9/2015" />
+  <patch description="Update" hotfixid="KB3075249" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3076895" installdate="12/9/2015" />
+  <patch description="Update" hotfixid="KB3077715" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3078601" installdate="12/9/2015" />
+  <patch description="Update" hotfixid="KB3078667" installdate="12/9/2015" />
+  <patch description="Update" hotfixid="KB3080079" installdate="12/9/2015" />
+  <patch description="Update" hotfixid="KB3080149" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3080446" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3081320" installdate="12/9/2015" />
+  <patch description="Update" hotfixid="KB3083710" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3084135" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3086255" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3087039" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3088195" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3092601" installdate="12/9/2015" />
+  <patch description="Update" hotfixid="KB3092627" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3093983" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3097966" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3097989" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3099862" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3101246" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3101722" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3101746" installdate="12/9/2015" />
+  <patch description="Update" hotfixid="KB3102429" installdate="3/11/2016" />
+  <patch description="Security Update" hotfixid="KB3104002" installdate="12/10/2015" />
+  <patch description="Update" hotfixid="KB3107998" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3108371" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3108381" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3108664" installdate="1/13/2016" />
+  <patch description="Security Update" hotfixid="KB3108670" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3109094" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3109103" installdate="12/9/2015" />
+  <patch description="Security Update" hotfixid="KB3109560" installdate="1/13/2016" />
+  <patch description="Security Update" hotfixid="KB3110329" installdate="1/13/2016" />
+  <patch description="Update" hotfixid="KB3112148" installdate="12/9/2015" />
+  <patch description="Update" hotfixid="KB3112343" installdate="12/9/2015" />
+  <patch description="Update" hotfixid="KB3118401" installdate="3/9/2016" />
+  <patch description="Security Update" hotfixid="KB3121212" installdate="1/13/2016" />
+  <patch description="Update" hotfixid="KB3121255" installdate="3/9/2016" />
+  <patch description="Security Update" hotfixid="KB3121918" installdate="1/13/2016" />
+  <patch description="Security Update" hotfixid="KB3122648" installdate="2/10/2016" />
+  <patch description="Security Update" hotfixid="KB3123479" installdate="1/13/2016" />
+  <patch description="Security Update" hotfixid="KB3124000" installdate="1/13/2016" />
+  <patch description="Security Update" hotfixid="KB3124001" installdate="1/13/2016" />
+  <patch description="Security Update" hotfixid="KB3124275" installdate="1/13/2016" />
+  <patch description="Security Update" hotfixid="KB3126587" installdate="2/10/2016" />
+  <patch description="Security Update" hotfixid="KB3126593" installdate="2/10/2016" />
+  <patch description="Security Update" hotfixid="KB3127220" installdate="2/10/2016" />
+  <patch description="Security Update" hotfixid="KB3133043" installdate="2/10/2016" />
+  <patch description="Update" hotfixid="KB3133977" installdate="6/17/2016" />
+  <patch description="Security Update" hotfixid="KB3134214" installdate="2/10/2016" />
+  <patch description="Security Update" hotfixid="KB3134814" installdate="2/10/2016" />
+  <patch description="Update" hotfixid="KB3135445" installdate="2/10/2016" />
+  <patch description="Security Update" hotfixid="KB3135983" installdate="3/9/2016" />
+  <patch description="Security Update" hotfixid="KB3135988" installdate="3/9/2016" />
+  <patch description="Update" hotfixid="KB3137061" installdate="6/17/2016" />
+  <patch description="Update" hotfixid="KB3138612" installdate="3/9/2016" />
+  <patch description="Update" hotfixid="KB3138901" installdate="6/17/2016" />
+  <patch description="Security Update" hotfixid="KB3139398" installdate="3/9/2016" />
+  <patch description="Security Update" hotfixid="KB3139852" installdate="3/9/2016" />
+  <patch description="Security Update" hotfixid="KB3139914" installdate="3/9/2016" />
+  <patch description="Update" hotfixid="KB3139923" installdate="6/17/2016" />
+  <patch description="Security Update" hotfixid="KB3139929" installdate="3/9/2016" />
+  <patch description="Security Update" hotfixid="KB3139940" installdate="3/9/2016" />
+  <patch description="Update" hotfixid="KB3140245" installdate="6/17/2016" />
+  <patch description="Security Update" hotfixid="KB3140410" installdate="3/9/2016" />
+  <patch description="Security Update" hotfixid="KB3140735" installdate="3/9/2016" />
+  <patch description="Update" hotfixid="KB3141092" installdate="2/10/2016" />
+  <patch description="Security Update" hotfixid="KB3142042" installdate="6/17/2016" />
+  <patch description="Security Update" hotfixid="KB3145739" installdate="6/17/2016" />
+  <patch description="Security Update" hotfixid="KB3146706" installdate="6/17/2016" />
+  <patch description="Security Update" hotfixid="KB3146963" installdate="6/17/2016" />
+  <patch description="Update" hotfixid="KB3147071" installdate="6/17/2016" />
+  <patch description="Security Update" hotfixid="KB3149090" installdate="6/17/2016" />
+  <patch description="Security Update" hotfixid="KB3159398" installdate="6/17/2016" />
+  <patch description="Security Update" hotfixid="KB3160005" installdate="6/17/2016" />
+  <patch description="Security Update" hotfixid="KB3161561" installdate="6/17/2016" />
+  <patch description="Update" hotfixid="KB3161608" installdate="7/14/2016" />
+  <patch description="Security Update" hotfixid="KB3161664" installdate="6/17/2016" />
+  <patch description="Security Update" hotfixid="KB3161949" installdate="6/17/2016" />
+  <patch description="Security Update" hotfixid="KB3161958" installdate="6/17/2016" />
+  <patch description="Update" hotfixid="KB3162835" installdate="6/17/2016" />
+  <patch description="Security Update" hotfixid="KB3163245" installdate="7/15/2016" />
+  <patch description="Security Update" hotfixid="KB3164033" installdate="6/17/2016" />
+  <patch description="Security Update" hotfixid="KB3164035" installdate="6/17/2016" />
+  <patch description="Security Update" hotfixid="KB3168965" installdate="7/14/2016" />
+  <patch description="Security Update" hotfixid="KB3170106" installdate="7/14/2016" />
+  <patch description="Security Update" hotfixid="KB3170455" installdate="7/14/2016" />
+  <patch description="Security Update" hotfixid="KB3175024" installdate="9/15/2016" />
+  <patch description="Security Update" hotfixid="KB3177186" installdate="9/15/2016" />
+  <patch description="Update" hotfixid="KB3177467" installdate="10/14/2016" />
+  <patch description="Update" hotfixid="KB3177723" installdate="9/15/2016" />
+  <patch description="Security Update" hotfixid="KB3178034" installdate="9/15/2016" />
+  <patch description="Update" hotfixid="KB3181988" installdate="10/13/2016" />
+  <patch description="Update" hotfixid="KB3182203" installdate="10/13/2016" />
+  <patch description="Security Update" hotfixid="KB3184122" installdate="10/13/2016" />
+  <patch description="Security Update" hotfixid="KB3185319" installdate="9/15/2016" />
+  <patch description="Security Update" hotfixid="KB3185911" installdate="10/13/2016" />
+  <patch description="Security Update" hotfixid="KB3188730" installdate="10/13/2016" />
+  <patch description="Update" hotfixid="KB3188740" installdate="10/13/2016" />
+  <patch description="Security Update" hotfixid="KB3192391" installdate="10/13/2016" />
+  <patch description="Update" hotfixid="KB3210131" installdate="1/12/2017" />
+  <patch description="Update" hotfixid="KB4014504" installdate="5/12/2017" />
+  <patch description="Update" hotfixid="KB4014565" installdate="4/14/2017" />
+  <patch description="Security Update" hotfixid="KB4014573" installdate="4/14/2017" />
+  <patch description="Security Update" hotfixid="KB4014579" installdate="5/12/2017" />
+  <patch description="Security Update" hotfixid="KB4014661" installdate="4/14/2017" />
+  <patch description="Security Update" hotfixid="KB4015546" installdate="4/14/2017" />
+  <patch description="Security Update" hotfixid="KB4018271" installdate="5/12/2017" />
+  <patch description="Security Update" hotfixid="KB4019263" installdate="5/12/2017" />
+  <patch description="Update" hotfixid="KB4019990" installdate="6/16/2017" />
+  <patch description="Security Update" hotfixid="KB4021558" installdate="6/16/2017" />
+  <patch description="Security Update" hotfixid="KB4022722" installdate="6/16/2017" />
+  <patch description="Security Update" hotfixid="KB4025252" installdate="7/21/2017" />
+  <patch description="Security Update" hotfixid="KB4025337" installdate="7/21/2017" />
+  <patch description="Security Update" hotfixid="KB4034679" installdate="8/18/2017" />
+  <patch description="Security Update" hotfixid="KB4034733" installdate="8/18/2017" />
+  <patch description="Security Update" hotfixid="KB4036586" installdate="9/15/2017" />
+  <patch description="Security Update" hotfixid="KB4038779" installdate="9/15/2017" />
+  <patch description="Security Update" hotfixid="KB4040685" installdate="10/14/2017" />
+  <patch description="Security Update" hotfixid="KB4040966" installdate="9/15/2017" />
+  <patch description="Update" hotfixid="KB4040980" installdate="9/15/2017" />
+  <patch description="Security Update" hotfixid="KB4041678" installdate="10/14/2017" />
+  <patch description="Security Update" hotfixid="KB4047206" installdate="12/8/2017" />
+  <patch description="Security Update" hotfixid="KB4048960" installdate="12/8/2017" />
+  <patch description="Update" hotfixid="KB976902" installdate="11/21/2010" />
+  <patch description="Update" hotfixid="KB982018" installdate="4/4/2014" />
+  <patch description="Security Update" hotfixid="KB4048957" installdate="12/8/2017" />
+ </patches>
+ <installedapplications>
+  <msiapplication productname="Microsoft .NET Framework 4.5.2" vendor="Microsoft Corporation" version="4.5.51209" installdate="20170914" />
+  <msiapplication productname="Microsoft Application Error Reporting" vendor="Microsoft Corporation" version="12.0.6015.5000" installdate="20140407" />
+  <msiapplication productname="Microsoft Baseline Security Analyzer 2.2" vendor="Microsoft Corporation" version="2.2.2170" installdate="20140407" />
+  <msiapplication productname="Microsoft Report Viewer Redistributable 2008 (KB971119)" vendor="Microsoft Corporation" version="9.0.30731" installdate="20140407" />
+  <msiapplication productname="Microsoft Silverlight" vendor="Microsoft Corporation" version="5.1.50906.0" installdate="20170413" />
+  <msiapplication productname="Microsoft SQL Server 2008 R2 Native Client" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="Microsoft SQL Server 2008 R2 Policies" vendor="Microsoft Corporation" version="10.50.1600.1" installdate="20140407" />
+  <msiapplication productname="Microsoft SQL Server 2008 R2 RsFx Driver" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="Microsoft SQL Server 2008 R2 Setup (English)" vendor="Microsoft Corporation" version="10.53.6220.0" installdate="20160714" />
+  <msiapplication productname="Microsoft SQL Server 2008 Setup Support Files " vendor="Microsoft Corporation" version="10.1.2731.0" installdate="20140407" />
+  <msiapplication productname="Microsoft SQL Server Browser" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="Microsoft SQL Server Compact 3.5 SP2 ENU" vendor="Microsoft Corporation" version="3.5.8080.0" installdate="20140407" />
+  <msiapplication productname="Microsoft SQL Server Compact 3.5 SP2 Query Tools ENU" vendor="Microsoft Corporation" version="3.5.8080.0" installdate="20140407" />
+  <msiapplication productname="Microsoft SQL Server System CLR Types (x64)" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="Microsoft SQL Server VSS Writer" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.4148" vendor="Microsoft Corporation" version="9.0.30729.4148" installdate="20140404" />
+  <msiapplication productname="Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161" vendor="Microsoft Corporation" version="9.0.30729.6161" installdate="20140404" />
+  <msiapplication productname="Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148" vendor="Microsoft Corporation" version="9.0.30729.4148" installdate="20140404" />
+  <msiapplication productname="Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161" vendor="Microsoft Corporation" version="9.0.30729.6161" installdate="20140404" />
+  <msiapplication productname="Microsoft Visual Studio Tools for Applications 2.0 - ENU" vendor="Microsoft Corporation" version="9.0.35191" installdate="20140407" />
+  <msiapplication productname="SolarWinds Client Components" vendor="SolarWinds, Inc." version="2.1.4.5034" installdate="20170914" />
+  <msiapplication productname="SQL Server 2008 R2 SP2 Client Tools" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="SQL Server 2008 R2 SP2 Client Tools" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="SQL Server 2008 R2 SP2 Common Files" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="SQL Server 2008 R2 SP2 Common Files" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="SQL Server 2008 R2 SP2 Database Engine Services" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="SQL Server 2008 R2 SP2 Database Engine Services" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="SQL Server 2008 R2 SP2 Database Engine Shared" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="SQL Server 2008 R2 SP2 Database Engine Shared" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="SQL Server 2008 R2 SP2 Full text search" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="SQL Server 2008 R2 SP2 Management Studio" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="SQL Server 2008 R2 SP2 Management Studio" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="Sql Server Customer Experience Improvement Program" vendor="Microsoft Corporation" version="10.53.6000.34" installdate="20160714" />
+  <msiapplication productname="Symantec Endpoint Protection" vendor="Symantec Corporation" version="12.1.7004.6500" installdate="20160804" />
+  <msiapplication productname="VMware Tools" vendor="VMware, Inc." version="10.1.0.4449150" installdate="20170729" />
+  <regapplication productname="Microsoft .NET Framework 4.5.2" version="4.5.51209" />
+  <regapplication productname="Microsoft SQL Server 2008 R2 (64-bit)" version="" />
+  <regapplication productname="Microsoft SQL Server 2008 R2 (64-bit)" version="" />
+  <productkey productname="Windows Server 2008 R2 Standard" productkey="N/A" />
+ </installedapplications>
+ <storage>
+  <drives name="VMware Virtual disk SCSI Disk Device" deviceid="\\.\PHYSICALDRIVE0" interface="SCSI" totaldisksize="100">
+   <partition name="C:" size="99.9" freespace="8.98" filesystem="NTFS" />
+  </drives>
+  <drives name="VMware Virtual disk SCSI Disk Device" deviceid="\\.\PHYSICALDRIVE1" interface="SCSI" totaldisksize="100">
+   <partition name="D:" size="100" freespace="91.55" filesystem="NTFS" />
+  </drives>
+ </storage>
+ <network>
+  <adapter description="vmxnet3 Ethernet Adapter #3" macaddress="00:50:56:AA:27:86">
+   <ip address="192.168.64.172" subnetmask="255.255.255.0" />
+   <gateway address="192.168.64.254" />
+   <dnsserver address="192.168.64.90" />
+   <dnsserver address="192.168.64.91" />
+   <dnsdomain name="" />
+  </adapter>
+  <ip4routes>
+   <route destination="0.0.0.0" mask="0.0.0.0" nexthop="192.168.64.254" />
+   <route destination="127.0.0.0" mask="255.0.0.0" nexthop="0.0.0.0" />
+   <route destination="127.0.0.1" mask="255.255.255.255" nexthop="0.0.0.0" />
+   <route destination="127.255.255.255" mask="255.255.255.255" nexthop="0.0.0.0" />
+   <route destination="192.168.64.0" mask="255.255.255.0" nexthop="0.0.0.0" />
+   <route destination="192.168.64.172" mask="255.255.255.255" nexthop="0.0.0.0" />
+   <route destination="192.168.64.255" mask="255.255.255.255" nexthop="0.0.0.0" />
+   <route destination="224.0.0.0" mask="240.0.0.0" nexthop="0.0.0.0" />
+   <route destination="224.0.0.0" mask="240.0.0.0" nexthop="0.0.0.0" />
+   <route destination="255.255.255.255" mask="255.255.255.255" nexthop="0.0.0.0" />
+   <route destination="255.255.255.255" mask="255.255.255.255" nexthop="0.0.0.0" />
+  </ip4routes>
+ </network>
+ <eventlogfiles>
+  <eventlogfile name="Application" file="C:\Windows\System32\Winevt\Logs\Application.evtx" maximumsize="20" overwritepolicy="WhenNeeded" />
+  <eventlogfile name="HardwareEvents" file="C:\Windows\System32\Winevt\Logs\HardwareEvents.evtx" maximumsize="20" overwritepolicy="WhenNeeded" />
+  <eventlogfile name="Internet Explorer" file="C:\Windows\System32\Winevt\Logs\Internet Explorer.evtx" maximumsize="1.00390625" overwritepolicy="WhenNeeded" />
+  <eventlogfile name="Key Management Service" file="C:\Windows\System32\Winevt\Logs\Key Management Service.evtx" maximumsize="20" overwritepolicy="WhenNeeded" />
+  <eventlogfile name="Security" file="C:\Windows\System32\Winevt\Logs\Security.evtx" maximumsize="20" overwritepolicy="WhenNeeded" />
+  <eventlogfile name="Symantec Endpoint Protection Client" file="C:\Windows\System32\Winevt\Logs\Symantec Endpoint Protection Client.evtx" maximumsize="8" overwritepolicy="WhenNeeded" />
+  <eventlogfile name="System" file="C:\Windows\System32\Winevt\Logs\System.evtx" maximumsize="20" overwritepolicy="WhenNeeded" />
+  <eventlogfile name="Windows PowerShell" file="C:\Windows\System32\Winevt\Logs\Windows PowerShell.evtx" maximumsize="15" overwritepolicy="WhenNeeded" />
+ </eventlogfiles>
+ <localgroups>
+  <group name="Administrators">
+   <member name="LASPROCDBTST02\CBrown" />
+   <member name="ContosoCORP\svc_SQLServer" />
+   <member name="ContosoCORP\svc_process360_test" />
+   <member name="ContosoCORP\SQL_Admin" />
+   <member name="ContosoCORP\Local_ACCESS_DEV_RW" />
+   <member name="CREDITONEAPPTST\Domain Admins" />
+   <member name="CREDITONEAPPTST\svc_process360_test" />
+   <member name="ContosoCORP\GS-IT-NOC-Advisor" />
+  </group>
+  <group name="Backup Operators">
+  </group>
+  <group name="Certificate Service DCOM Access">
+  </group>
+  <group name="Cryptographic Operators">
+  </group>
+  <group name="Distributed COM Users">
+  </group>
+  <group name="Event Log Readers">
+  </group>
+  <group name="Guests">
+   <member name="LASPROCDBTST02\Guest" />
+  </group>
+  <group name="IIS_IUSRS">
+   <member name="LASPROCDBTST02\IUSR" />
+  </group>
+  <group name="Network Configuration Operators">
+  </group>
+  <group name="Performance Log Users">
+  </group>
+  <group name="Performance Monitor Users">
+  </group>
+  <group name="Power Users">
+  </group>
+  <group name="Print Operators">
+  </group>
+  <group name="Remote Desktop Users">
+  </group>
+  <group name="Replicator">
+  </group>
+  <group name="SQLServer2005SQLBrowserUser$LASPROCDBTST02">
+   <member name="NT SERVICE\SQLBrowser" />
+  </group>
+  <group name="SQLServerFDHostUser$LASPROCDBTST02$MSSQLSERVER">
+  </group>
+  <group name="SQLServerMSSQLServerADHelperUser$LASPROCDBTST02">
+   <member name="LASPROCDBTST02\NETWORK SERVICE" />
+   <member name="LASPROCDBTST02\SYSTEM" />
+  </group>
+  <group name="SQLServerMSSQLUser$LASPROCDBTST02$MSSQLSERVER">
+   <member name="NT SERVICE\MSSQLSERVER" />
+  </group>
+  <group name="SQLServerSQLAgentUser$LASPROCDBTST02$MSSQLSERVER">
+   <member name="NT SERVICE\SQLSERVERAGENT" />
+  </group>
+  <group name="Users">
+   <member name="LASPROCDBTST02\INTERACTIVE" />
+   <member name="LASPROCDBTST02\Authenticated Users" />
+   <member name="CREDITONEAPPTST\Domain Users" />
+  </group>
+ </localgroups>
+ <localusers>
+  <user name="CBrown" description="Local admin account" />
+  <user name="Guest" description="Built-in account for guest access to the computer/domain" />
+ </localusers>
+ <printspooler location="C:\Windows\system32\spool\PRINTERS" />
+ <printers>
+  <printer name="Microsoft XPS Document Writer" drivername="Microsoft XPS Document Writer" portname="XPSPort:" />
+ </printers>
+ <regional timezone="(UTC-08:00) Pacific Time (US &#38; Canada)" />
+ <processes>
+  <process caption="ccSvcHst.exe" executablepath="C:\Program Files (x86)\Symantec\Symantec Endpoint Protection\12.1.7004.6500.105\Bin\ccSvcHst.exe" />
+  <process caption="conhost.exe" executablepath="C:\Windows\system32\conhost.exe" />
+  <process caption="conhost.exe" executablepath="C:\Windows\system32\conhost.exe" />
+  <process caption="csrss.exe" executablepath="C:\Windows\system32\csrss.exe" />
+  <process caption="csrss.exe" executablepath="C:\Windows\system32\csrss.exe" />
+  <process caption="dllhost.exe" executablepath="C:\Windows\system32\dllhost.exe" />
+  <process caption="fdhost.exe" executablepath="d:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\Binn\fdhost.exe" />
+  <process caption="fdlauncher.exe" executablepath="D:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\Binn\fdlauncher.exe" />
+  <process caption="LogonUI.exe" executablepath="C:\Windows\system32\LogonUI.exe" />
+  <process caption="lsass.exe" executablepath="C:\Windows\system32\lsass.exe" />
+  <process caption="lsm.exe" executablepath="C:\Windows\system32\lsm.exe" />
+  <process caption="ManagementAgentHost.exe" executablepath="C:\Program Files\VMware\VMware Tools\VMware CAF\pme\bin\ManagementAgentHost.exe" />
+  <process caption="msdtc.exe" executablepath="C:\Windows\System32\msdtc.exe" />
+  <process caption="services.exe" executablepath="C:\Windows\system32\services.exe" />
+  <process caption="smss.exe" executablepath="" />
+  <process caption="spoolsv.exe" executablepath="C:\Windows\System32\spoolsv.exe" />
+  <process caption="SQLAGENT.EXE" executablepath="D:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\Binn\SQLAGENT.EXE" />
+  <process caption="sqlbrowser.exe" executablepath="C:\Program Files (x86)\Microsoft SQL Server\90\Shared\sqlbrowser.exe" />
+  <process caption="sqlservr.exe" executablepath="D:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\Binn\sqlservr.exe" />
+  <process caption="sqlwriter.exe" executablepath="C:\Program Files\Microsoft SQL Server\90\Shared\sqlwriter.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\System32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\System32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\System32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\System32\svchost.exe" />
+  <process caption="svchost.exe" executablepath="C:\Windows\system32\svchost.exe" />
+  <process caption="System" executablepath="" />
+  <process caption="System Idle Process" executablepath="" />
+  <process caption="TIRemoteService.exe" executablepath="C:\WINDOWS\TIREMOTE\TIRemoteService.exe" />
+  <process caption="TrustedInstaller.exe" executablepath="C:\Windows\servicing\TrustedInstaller.exe" />
+  <process caption="VGAuthService.exe" executablepath="C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe" />
+  <process caption="vmtoolsd.exe" executablepath="C:\Program Files\VMware\VMware Tools\vmtoolsd.exe" />
+  <process caption="wininit.exe" executablepath="C:\Windows\system32\wininit.exe" />
+  <process caption="winlogon.exe" executablepath="C:\Windows\system32\winlogon.exe" />
+  <process caption="WmiPrvSE.exe" executablepath="C:\Windows\system32\wbem\wmiprvse.exe" />
+  <process caption="WmiPrvSE.exe" executablepath="C:\Windows\system32\wbem\wmiprvse.exe" />
+ </processes>
+ <services>
+  <service name="Application Experience" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Application Identity" startmode="Manual" started="False" startname="NT Authority\LocalService" />
+  <service name="Application Information" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Application Layer Gateway Service" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Application Management" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="ASP.NET State Service" startmode="Manual" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Background Intelligent Transfer Service" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Base Filtering Engine" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Certificate Propagation" startmode="Manual" started="True" startname="LocalSystem" />
+  <service name="CNG Key Isolation" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="COM+ Event System" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="COM+ System Application" startmode="Manual" started="True" startname="LocalSystem" />
+  <service name="Computer Browser" startmode="Disabled" started="False" startname="LocalSystem" />
+  <service name="Credential Manager" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Cryptographic Services" startmode="Auto" started="True" startname="NT Authority\NetworkService" />
+  <service name="DCOM Server Process Launcher" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Desktop Window Manager Session Manager" startmode="Auto" started="True" startname="localSystem" />
+  <service name="DHCP Client" startmode="Auto" started="True" startname="NT Authority\LocalService" />
+  <service name="Diagnostic Policy Service" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Diagnostic Service Host" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Diagnostic System Host" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Diagnostics Tracking Service" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Disk Defragmenter" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Distributed Link Tracking Client" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Distributed Transaction Coordinator" startmode="Auto" started="True" startname="NT AUTHORITY\NetworkService" />
+  <service name="DNS Client" startmode="Auto" started="True" startname="NT AUTHORITY\NetworkService" />
+  <service name="Encrypting File System (EFS)" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Extensible Authentication Protocol" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Function Discovery Provider Host" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Function Discovery Resource Publication" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Group Policy Client" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Health Key and Certificate Management" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Human Interface Device Access" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="IKE and AuthIP IPsec Keying Modules" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Interactive Services Detection" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Internet Connection Sharing (ICS)" startmode="Disabled" started="False" startname="LocalSystem" />
+  <service name="Internet Explorer ETW Collector Service" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="IP Helper" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="IPsec Policy Agent" startmode="Manual" started="True" startname="NT Authority\NetworkService" />
+  <service name="KtmRm for Distributed Transaction Coordinator" startmode="Manual" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Link-Layer Topology Discovery Mapper" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Microsoft .NET Framework NGEN v2.0.50727_X64" startmode="Disabled" started="False" startname="LocalSystem" />
+  <service name="Microsoft .NET Framework NGEN v2.0.50727_X86" startmode="Disabled" started="False" startname="LocalSystem" />
+  <service name="Microsoft .NET Framework NGEN v4.0.30319_X64" startmode="Auto" started="False" startname="LocalSystem" />
+  <service name="Microsoft .NET Framework NGEN v4.0.30319_X86" startmode="Auto" started="False" startname="LocalSystem" />
+  <service name="Microsoft Fibre Channel Platform Registration Service" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Microsoft iSCSI Initiator Service" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Microsoft Software Shadow Copy Provider" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Multimedia Class Scheduler" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Net.Msmq Listener Adapter" startmode="Disabled" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Net.Pipe Listener Adapter" startmode="Disabled" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Net.Tcp Listener Adapter" startmode="Disabled" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Net.Tcp Port Sharing Service" startmode="Disabled" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Netlogon" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Network Access Protection Agent" startmode="Manual" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Network Connections" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Network List Service" startmode="Manual" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Network Location Awareness" startmode="Auto" started="True" startname="NT AUTHORITY\NetworkService" />
+  <service name="Network Store Interface Service" startmode="Auto" started="True" startname="NT Authority\LocalService" />
+  <service name="Performance Counter DLL Host" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Performance Logs &#38; Alerts" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Plug and Play" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="PnP-X IP Bus Enumerator" startmode="Disabled" started="False" startname="LocalSystem" />
+  <service name="Portable Device Enumerator Service" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Power" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Print Spooler" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Problem Reports and Solutions Control Panel Support" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Protected Storage" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Remote Access Auto Connection Manager" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Remote Access Connection Manager" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Remote Desktop Configuration" startmode="Manual" started="True" startname="localSystem" />
+  <service name="Remote Desktop Services" startmode="Manual" started="True" startname="NT Authority\NetworkService" />
+  <service name="Remote Desktop Services UserMode Port Redirector" startmode="Manual" started="True" startname="localSystem" />
+  <service name="Remote Procedure Call (RPC)" startmode="Auto" started="True" startname="NT AUTHORITY\NetworkService" />
+  <service name="Remote Procedure Call (RPC) Locator" startmode="Manual" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Remote Registry" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Resultant Set of Policy Provider" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Routing and Remote Access" startmode="Disabled" started="False" startname="localSystem" />
+  <service name="RPC Endpoint Mapper" startmode="Auto" started="True" startname="NT AUTHORITY\NetworkService" />
+  <service name="Secondary Logon" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Secure Socket Tunneling Protocol Service" startmode="Manual" started="False" startname="NT Authority\LocalService" />
+  <service name="Security Accounts Manager" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Server" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Shell Hardware Detection" startmode="Auto" started="False" startname="LocalSystem" />
+  <service name="Smart Card" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Smart Card Removal Policy" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="SNMP Trap" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Software Protection" startmode="Auto" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Special Administration Console Helper" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="SPP Notification Service" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="SQL Active Directory Helper Service" startmode="Disabled" started="False" startname="NT AUTHORITY\NETWORKSERVICE" />
+  <service name="SQL Full-text Filter Daemon Launcher (MSSQLSERVER)" startmode="Manual" started="True" startname="NT AUTHORITY\LOCALSERVICE" />
+  <service name="SQL Server (MSSQLSERVER)" startmode="Auto" started="True" startname="Contosocorp\SVC_SQLServer_Test" />
+  <service name="SQL Server Agent (MSSQLSERVER)" startmode="Auto" started="True" startname="Contosocorp\SVC_SQLServer_Test" />
+  <service name="SQL Server Browser" startmode="Auto" started="True" startname="Contosocorp\svc_SQLServer_Test" />
+  <service name="SQL Server VSS Writer" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="SSDP Discovery" startmode="Disabled" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Symantec Auto-upgrade Agent" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Symantec Endpoint Protection" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Symantec Network Access Control" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="System Event Notification Service" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Task Scheduler" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="TCP/IP NetBIOS Helper" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Telephony" startmode="Manual" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Thread Ordering Server" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Track-It! Workstation Manager" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="UPnP Device Host" startmode="Disabled" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="User Profile Service" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Virtual Disk" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="VMware Alias Manager and Ticket Service" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="VMware CAF AMQP Communication Service" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="VMware CAF Management Agent Service" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="VMware Snapshot Provider" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="VMware Tools" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="Volume Shadow Copy" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Windows Audio" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Windows Audio Endpoint Builder" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Windows CardSpace" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Windows Color System" startmode="Manual" started="False" startname="NT AUTHORITY\LocalService" />
+  <service name="Windows Driver Foundation - User-mode Driver Framework" startmode="Manual" started="False" startname="LocalSystem" />
+  <service name="Windows Error Reporting Service" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Windows Event Collector" startmode="Manual" started="False" startname="NT AUTHORITY\NetworkService" />
+  <service name="Windows Event Log" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Windows Firewall" startmode="Auto" started="True" startname="NT Authority\LocalService" />
+  <service name="Windows Font Cache Service" startmode="Auto" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Windows Installer" startmode="Manual" started="True" startname="LocalSystem" />
+  <service name="Windows Management Instrumentation" startmode="Auto" started="True" startname="localSystem" />
+  <service name="Windows Modules Installer" startmode="Manual" started="True" startname="localSystem" />
+  <service name="Windows Presentation Foundation Font Cache 3.0.0.0" startmode="Manual" started="False" startname="NT Authority\LocalService" />
+  <service name="Windows Remote Management (WS-Management)" startmode="Auto" started="True" startname="NT AUTHORITY\NetworkService" />
+  <service name="Windows Time" startmode="Manual" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Windows Update" startmode="Auto" started="True" startname="LocalSystem" />
+  <service name="WinHTTP Web Proxy Auto-Discovery Service" startmode="Manual" started="True" startname="NT AUTHORITY\LocalService" />
+  <service name="Wired AutoConfig" startmode="Manual" started="False" startname="localSystem" />
+  <service name="WMI Performance Adapter" startmode="Manual" started="False" startname="localSystem" />
+  <service name="Workstation" startmode="Auto" started="True" startname="NT AUTHORITY\NetworkService" />
+ </services>
+ <shares>
+  <share name="ADMIN$" path="C:\Windows" description="Remote Admin" />
+  <share name="C$" path="C:\" description="Default share" />
+  <share name="D$" path="D:\" description="Default share" />
+  <share name="IPC$" path="" description="Remote IPC" />
+ </shares>
+ <win32_startupcommand>
+  <command user="Public" name="BackInfo - Shortcut" command="C:\Patches\BackInfo.exe " />
+  <command user="Public" name="VMware User Process" command="&quot;C:\Program Files\VMware\VMware Tools\vmtoolsd.exe&quot; -n vmusr" />
+ </win32_startupcommand>
+ <pagefiles>
+  <pagefile drive="c:" initialsize="400" maximumsize="400" />
+  <pagefile drive="d:" initialsize="6144" maximumsize="6144" />
+ </pagefiles>
+ <registry currentsize="161" maximumsize="2048" />
+</computer>

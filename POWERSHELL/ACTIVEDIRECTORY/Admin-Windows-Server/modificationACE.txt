@@ -1,0 +1,23 @@
+
+Afficher toutes les acls
+Modification d'une ACE:
+	
+	-sélection de celle qu'on modifie
+		- a qui elle est attibuer 
+			-soit list de tous les groupes et users et ordinateur 
+			-soit DN du groupe ou user
+		- quels droit on lui met
+			-lister
+		- supprimer le dernier "a qui attribuer" ajouté
+		- supprimer le dernier droit ajouté
+		- appliquer les modifications
+Ajout d'une ACE:
+	
+		- a qui elle est attibuer 
+			-soit list de tous les groupes et users et ordinateur 
+			-soit DN du groupe ou user
+		- quels droit on lui met
+			-lister
+		- supprimer le dernier "a qui attribuer" ajouté
+		- supprimer le dernier droit ajouté
+		- appliquer les modifications 	

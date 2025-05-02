@@ -1,0 +1,1 @@
+powershell .\UMPolicy.ps1

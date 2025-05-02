@@ -1,0 +1,1 @@
+powershell .\Diskandservicemon.ps1

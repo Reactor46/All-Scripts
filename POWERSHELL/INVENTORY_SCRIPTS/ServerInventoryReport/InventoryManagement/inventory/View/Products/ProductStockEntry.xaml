@@ -1,0 +1,138 @@
+﻿<UserControl x:Class="inventory.View.ProductStockEntry"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="550">
+    <UserControl.Resources>
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(Validation.Errors).CurrentItem.ErrorContent}" />
+                    <Setter Property="BorderBrush" Value="Red"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="ComboBox">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(Validation.Errors).CurrentItem.ErrorContent}" />
+                    <Setter Property="BorderBrush" Value="Red"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="115"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Product Stock Entry"  HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="4.579,0.692" Grid.Column="1" Margin="101,4,0,0" FontWeight="Bold"/>
+        <Label Content="Select Dealer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,8,0,0" Grid.Row="1" Grid.RowSpan="2"/>
+        <Label Content="Select Category" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.5" Margin="20,0,0,0" Grid.Row="2"/>
+        <Label Content="Select SubCategory" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.5" Grid.Row="3"/>
+        <Label Content="Select Product" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.5" Grid.Row="4" Margin="27,4,0,0"/>
+        <Label Content="Cost Price" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.5" Grid.Row="5" Margin="50,4,0,0"/>
+        <Label Content="Selling Price" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.5" Grid.Row="6" Margin="39,5,0,0" Grid.RowSpan="2"/>
+        <Label Content="Quantity" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.5" Grid.Row="7" Margin="57,1,0,0"/>
+        <Label Content="Amount" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.5" Grid.Row="8" Margin="60,4,0,0"/>
+        <Label Content="Remarks" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.5" Grid.Row="10" Margin="58,0,0,0"/>
+        <ComboBox HorizontalAlignment="Left" Name="ddl_Dealer" ItemsSource="{Binding Dealers, ValidatesOnDataErrors=True}" SelectedItem="{Binding SelectedDealer,ValidatesOnDataErrors=True,NotifyOnValidationError=True}" DisplayMemberPath="dealer_name" IsSynchronizedWithCurrentItem="True" VerticalAlignment="Top" Width="150" Grid.Column="1" Margin="50,5,0,0" Grid.Row="1"/>
+        <ComboBox HorizontalAlignment="Left" Name="ddl_Category" ItemsSource="{Binding Category,ValidatesOnDataErrors=True}" SelectedItem="{Binding SelectedCategory,ValidatesOnDataErrors=True,NotifyOnValidationError=True}" DisplayMemberPath="category_name" IsSynchronizedWithCurrentItem="True" VerticalAlignment="Top" Width="150" Grid.Column="1" Margin="50,4,0,0" Grid.Row="2"/>
+        <ComboBox HorizontalAlignment="Left" Name="ddl_subcategory" ItemsSource="{Binding SubCategory,ValidatesOnDataErrors=True}" SelectedItem="{Binding SelectedSubCategory,ValidatesOnDataErrors=True,NotifyOnValidationError=True}" DisplayMemberPath="subcategory_name" IsSynchronizedWithCurrentItem="True" VerticalAlignment="Top" Width="150" Grid.Column="1" Margin="50,4,0,0" Grid.Row="3"/>
+        <ComboBox HorizontalAlignment="Left" Name="ddl_product" ItemsSource="{Binding Products,ValidatesOnDataErrors=True}" SelectedItem="{Binding SelectedProduct,ValidatesOnDataErrors=True,NotifyOnValidationError=True}" IsSynchronizedWithCurrentItem="True" DisplayMemberPath="product_name" VerticalAlignment="Top" Width="150" Grid.Column="1" Margin="50,4,0,0" Grid.Row="4"/>
+        <TextBox HorizontalAlignment="Left" Name="txt_CostPrice" Text="{Binding CostPrice,UpdateSourceTrigger=PropertyChanged,Mode=OneWay,ValidatesOnDataErrors=True}" Height="18" TextWrapping="Wrap"  IsReadOnly="True" VerticalAlignment="Top" Width="150" Grid.Column="1" Margin="50,4,0,0" Grid.Row="5"/>
+        <TextBox HorizontalAlignment="Left" Name="txt_SellingPrice"  Height="18" TextWrapping="Wrap" Text="{Binding SellingPrice,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}" IsReadOnly="True" VerticalAlignment="Top" Width="150" Grid.Column="1" Margin="50,5,0,0" Grid.Row="6"/>
+        <TextBox HorizontalAlignment="Left" Name="txt_Quantity" Height="18" TextWrapping="Wrap" Text="{Binding Quantity,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}"  VerticalAlignment="Top" Width="150" Grid.Column="1" Margin="50,9,0,0" Grid.Row="7"/>
+        <TextBox HorizontalAlignment="Left" Name="txt_Amount" Height="18" TextWrapping="Wrap" Text="{Binding Amount,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" IsReadOnly="True"  VerticalAlignment="Top" Width="150" Grid.Column="1" Margin="50,10,0,0" Grid.Row="8"/>
+        <TextBox HorizontalAlignment="Left" Height="18" Name="txt_Remarks" TextWrapping="Wrap" Text="{Binding Remarks}"  VerticalAlignment="Top" Width="150" Grid.Column="1" Margin="50,8,0,0" Grid.Row="10"/>
+        <Button Content="Add Stock"  Command="{Binding ClickCommand}"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="50,21,0,0" Grid.Row="11">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="IsEnabled" Value="false" />
+                    <Setter Property="Foreground" Value="#FFFFFF" />
+                    <Setter Property="Width" Value="60" />
+                    <Setter Property="Height" Value="20" />
+                    <Setter Property="FontSize" Value="10" />
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding ElementName= ddl_Dealer, Path=(Validation.HasError)}" Value="false" />
+                                <Condition Binding="{Binding ElementName=ddl_Category, Path=(Validation.HasError)}" Value="false" />
+                                <Condition Binding="{Binding ElementName=ddl_subcategory, Path=(Validation.HasError)}" Value="false" />
+                                <Condition Binding="{Binding ElementName=ddl_product,Path=(Validation.HasError)}" Value="false"></Condition>
+                                <Condition Binding="{Binding ElementName=txt_CostPrice,Path=(Validation.HasError)}" Value="false"></Condition>
+                                <Condition Binding="{Binding ElementName=txt_SellingPrice,Path=(Validation.HasError)}" Value="false"></Condition>
+                                <Condition Binding="{Binding ElementName=txt_Quantity,Path=(Validation.HasError)}" Value="false"></Condition>
+                                <Condition Binding="{Binding ElementName=txt_Amount,Path=(Validation.HasError)}" Value="false"></Condition>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="IsEnabled" Value="true" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Grid>
+                                            <Rectangle x:Name="Rectangle" Stroke="#FF051F42" StrokeMiterLimit="1.000000" StrokeThickness="0.500000" RadiusX="5" RadiusY="5">
+                                                <Rectangle.Fill>
+                                                    <LinearGradientBrush EndPoint="0.501,0.039" StartPoint="0.501,0.971">
+                                                        <GradientStop Color="#FF1F317D" Offset="0.101" />
+                                                        <GradientStop Color="#FF1F317D" Offset="0.49" />
+                                                        <GradientStop Color="#FF6C8EBD" Offset="0.51" />
+                                                        <GradientStop Color="#FF283D8C" Offset="0" />
+                                                        <GradientStop Color="#FF7094C7" Offset="0.986" />
+                                                    </LinearGradientBrush>
+                                                </Rectangle.Fill>
+                                            </Rectangle>
+                                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True" />
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsKeyboardFocused" Value="true" />
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                                <Setter Property="Fill" TargetName="Rectangle">
+                                                    <Setter.Value>
+                                                        <LinearGradientBrush EndPoint="0.501,0.039" StartPoint="0.501,0.971">
+                                                            <GradientStop Color="#FF2C558C" Offset="0.101" />
+                                                            <GradientStop Color="#FF1F317D" Offset="0.49" />
+                                                            <GradientStop Color="#FF9DB5D7" Offset="0.51" />
+                                                            <GradientStop Color="#FF244AAF" Offset="0" />
+                                                            <GradientStop Color="#FF87A4D9" Offset="0.986" />
+                                                        </LinearGradientBrush>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+
+                </Style>
+            </Button.Style>
+        </Button>
+        <Label Content="Payment Type" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.816,1.5" Grid.Row="9" Margin="27,4,0,0"/>
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding PaymentType}"  Width="150" Grid.Column="1" Margin="50,4,0,0" Grid.Row="9">
+            <ComboBox.Items>
+                <ComboBoxItem Content="Cash Payment"  />
+                <ComboBoxItem Content="Cheque Payment"  />                
+            </ComboBox.Items>
+        </ComboBox>
+
+    </Grid>
+</UserControl>

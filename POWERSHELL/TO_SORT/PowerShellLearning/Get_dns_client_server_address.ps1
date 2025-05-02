@@ -1,0 +1,1 @@
+﻿Get-DnsClientServerAddress -InterfaceAlias WiFi

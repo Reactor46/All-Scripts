@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>SharePoint Managed Metadata. Convert List items into Keywords</title>        
+        <meta name="description" content="You have a list in SharePoint 2010\2013 that you want to convert into Keywords in Term Store.In my case, I have a list that was created back in 2007. It contains technologies that have been used during software development in the various projects.That&#39;s a perfect candidate to upg" />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<p>You have a list in SharePoint 2010\2013 that you want to convert into Keywords in Term Store.</p>
+<p>In my case, I have a list that was created back in 2007. It contains technologies that have been used during software development in the various projects.</p>
+<p>That's a perfect candidate to upgrade such metadata into folksomony.</p>
+<p>Here is a quick and dirty script to do it:</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">$siteurl=&quot;&quot;
+$listurl = &quot;&quot;
+$fldName = &quot;&quot;
+
+$session = Get-SPTaxonomySession -Site $siteurl
+$defaultKeywordStore  = $session.DefaultKeywordsTermStore
+$SystemGroup = $defaultKeywordStore.Groups[&quot;System&quot;]
+$KeywordsTermSet = $SystemGroup.TermSets[&quot;Keywords&quot;]
+$existedKeywords = $KeywordsTermSet.GetAllTerms() |Select Name
+
+$list = Get-SPList $listurl 
+$list.Items | % {
+$k =  $_[$fldName];
+write-output $k
+IF ($existedKeywords | ?{$_.Name -eq $k}) {&quot;existed&quot;} ELSE {$KeywordsTermSet.CreateTerm($k,1033)}
+write-output &quot;_________&quot;
+}
+
+$defaultKeywordStore.CommitAll()
+</pre>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__variable">$siteurl</span>=<span class="powerShell__string">&quot;&quot;</span>&nbsp;
+<span class="powerShell__variable">$listurl</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;&quot;</span>&nbsp;
+<span class="powerShell__variable">$fldName</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;&quot;</span>&nbsp;
+&nbsp;
+<span class="powerShell__variable">$session</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPTaxonomySession&nbsp;<span class="powerShell__operator">-</span>Site&nbsp;<span class="powerShell__variable">$siteurl</span>&nbsp;
+<span class="powerShell__variable">$defaultKeywordStore</span>&nbsp;&nbsp;=&nbsp;<span class="powerShell__variable">$session</span>.DefaultKeywordsTermStore&nbsp;
+<span class="powerShell__variable">$SystemGroup</span>&nbsp;=&nbsp;<span class="powerShell__variable">$defaultKeywordStore</span>.Groups[<span class="powerShell__string">&quot;System&quot;</span>]&nbsp;
+<span class="powerShell__variable">$KeywordsTermSet</span>&nbsp;=&nbsp;<span class="powerShell__variable">$SystemGroup</span>.TermSets[<span class="powerShell__string">&quot;Keywords&quot;</span>]&nbsp;
+<span class="powerShell__variable">$existedKeywords</span>&nbsp;=&nbsp;<span class="powerShell__variable">$KeywordsTermSet</span>.GetAllTerms()&nbsp;<span class="powerShell__operator">|</span><span class="powerShell__alias">Select</span>&nbsp;Name&nbsp;
+&nbsp;
+<span class="powerShell__variable">$list</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPList&nbsp;<span class="powerShell__variable">$listurl</span>&nbsp;&nbsp;
+<span class="powerShell__variable">$list</span>.Items&nbsp;<span class="powerShell__operator">|</span>&nbsp;%&nbsp;{&nbsp;
+<span class="powerShell__variable">$k</span>&nbsp;=&nbsp;&nbsp;<span class="powerShell__variable">$_</span>[<span class="powerShell__variable">$fldName</span>];&nbsp;
+write<span class="powerShell__operator">-</span>output&nbsp;<span class="powerShell__variable">$k</span>&nbsp;
+<span class="powerShell__keyword">IF</span>&nbsp;(<span class="powerShell__variable">$existedKeywords</span>&nbsp;<span class="powerShell__operator">|</span>&nbsp;?{<span class="powerShell__variable">$_</span>.Name&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$k</span>})&nbsp;{<span class="powerShell__string">&quot;existed&quot;</span>}&nbsp;<span class="powerShell__keyword">ELSE</span>&nbsp;{<span class="powerShell__variable">$KeywordsTermSet</span>.CreateTerm(<span class="powerShell__variable">$k</span>,1033)}&nbsp;
+write<span class="powerShell__operator">-</span>output&nbsp;<span class="powerShell__string">&quot;_________&quot;</span>&nbsp;
+}&nbsp;
+&nbsp;
+<span class="powerShell__variable">$defaultKeywordStore</span>.CommitAll()&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+
+        </div>
+    </body>
+</html>

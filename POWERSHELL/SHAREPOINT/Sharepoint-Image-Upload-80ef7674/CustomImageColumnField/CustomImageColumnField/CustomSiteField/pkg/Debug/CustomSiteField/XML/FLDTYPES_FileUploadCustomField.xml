@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FieldTypes>
+  <FieldType>
+    <Field Name="TypeName">FileUploadCustomField</Field>
+    <Field Name="TypeDisplayName">File Upload Custom Field</Field>
+    <Field Name="TypeShortDescription">File Upload Custom Field</Field>
+    <Field Name="ParentType">Text</Field>
+    <Field Name="UserCreatable">TRUE</Field>
+    <Field Name="ShowInListCreate">TRUE</Field>
+    <Field Name="ShowInSurveyCreate">TRUE</Field>
+    <Field Name="ShowInDocumentLibraryCreate">TRUE</Field>
+    <Field Name="ShowInColumnTemplateCreate">TRUE</Field>
+    <Field Name="FieldTypeClass">CustomSiteField.FileUploadCustomField, CustomSiteField, Version=1.0.0.0, Culture=neutral, PublicKeyToken=918a4ed53d2b8c02</Field>
+    <Field Name="FieldEditorUserControl">/_controltemplates/FileUploadFieldEditControl.ascx</Field>
+    <PropertySchema>
+      <Fields>
+        <Field Name="UploadDocumentLibrary" DisplayName="Select target Document Library" Type="Text" Hidden="True"/>
+      </Fields>
+    </PropertySchema>
+  </FieldType>
+</FieldTypes>

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Jq1DDj2BDWWvEalhXk9sZB1ckYP4Kho17FHW681RJKrnRqo0pggpN4kV5HGgVbZoFrKxyDJkYqv1QGr5s/2s4Q==",
+  "success": true,
+  "projectFilePath": "D:\\SCRIPTS\\GITS\\wpfui\\src\\Wpf.Ui.SyntaxHighlight\\Wpf.Ui.SyntaxHighlight.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\a24696\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.3\\microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "C:\\Users\\a24696\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net481\\1.0.3\\microsoft.netframework.referenceassemblies.net481.1.0.3.nupkg.sha512",
+    "C:\\Users\\a24696\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,566 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Retrieve SharePoint list data (PowerShell)</title>        
+        <meta name="description" content="This script will demonstrate how to retrieve Microsoft SharePoint list data by Windows PowerShell and Microsoft SharePoint PowerShell snapin. " />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<h1>Retrieve SharePoint list data by powershell</h1>
+<h2>Introduction</h2>
+<p>This script will demonstrate how to retrieve Microsoft SharePoint list data by Windows PowerShell and Microsoft SharePoint PowerShell snapin.</p>
+<h2>Scenarios</h2>
+<p>Retrieve list data is a regular but important task for SharePoint content management. From the related cases, we could see that there are requirements from the IT administrators. There are some scripts in Internet, but all of them just focus on one section
+ (e.g. retrieve all the list items), and also hard to read due to lack of explanations.</p>
+<p>&nbsp;</p>
+<h2>Script</h2>
+<p>This script leverages the capability of Windows PowerShell advanced function. So it will work like a normal complied cmdlet. You can use variety of parameter compositions to get a lot Microsoft SharePoint list data.</p>
+<p>You can use this script by following steps:</p>
+<ol>
+<li>Download the script and copy it to a Microsoft SharePoint 2010 Server which will be used for testing.
+</li><li>Open the script file with Notepad or any other script editors. </li><li>Press &ldquo;Ctrl &#43; End&rdquo; and add the commands which are listed in the Examples section.
+</li></ol>
+<p><strong>Note</strong>: Don&rsquo;t forget to replace server_name and sitename with your own value.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">Function Get-OSCSPListItem
+{
+	&lt;#
+		.SYNOPSIS
+		Get-OSCSPListItem is an advanced function which can be used to retrieve the list data in Microsoft SharePoint 2010.
+		.PARAMETER SiteURL
+		Indicates the URL of a SharePoint site, in the form http://server_Name/sites/sitename.
+		.PARAMETER ListName
+		Indicates the Name of a SharePoint site list, for example, &quot;Shared Documents&quot;, &quot;Calendar&quot;, &quot;Tasks&quot;, &quot;Site Pages&quot;.
+		.PARAMETER Property
+		Indicates the properties of a SharePoint site list item which will be returned by Get-OSCSPListItem.
+		For example, &quot;ID&quot;, &quot;Name&quot;, &quot;ParentList&quot;. Wildcard is accepted if you want get all properties.
+		.PARAMETER ListAllItems
+		Indicates Get-OSCSPListItem will return all items in a specified list.
+		.PARAMETER ItemID
+		Indicates Get-OSCSPListItem will return a item with the specified ID.
+		.PARAMETER StartID
+		Indicates the start ID of an ID range.
+		.PARAMETER EndID
+		Indicates the end ID of an ID range
+		.PARAMETER ItemURL
+		Indicates a URL of an Item which will be downloaded.
+		.PARAMETER DownloadPath
+		Indicates a local path which will be used to save the item.
+		.EXAMPLE
+		#Get all items from a list
+		Get-OSCSPListItem -SiteURL &quot;http://server_name/sites/sitename&quot; -ListName &quot;Shared Documents&quot; -ListAllItems -Property &quot;ID&quot;,&quot;Name&quot;,&quot;ParentList&quot;
+		.EXAMPLE
+		#Get a single item with all properties from a list
+		Get-OSCSPListItem -SiteURL &quot;http://server_name/sites/sitename&quot; -ListName &quot;Shared Documents&quot; -ItemID 1 -Property *
+		.EXAMPLE
+		#Get multiple items from a list
+		Get-OSCSPListItem -SiteURL &quot;http://server_name/sites/sitename&quot; -ListName &quot;Shared Documents&quot; -StartID 4 -EndID 5 -Property &quot;ID&quot;,&quot;Name&quot;
+		.EXAMPLE
+		#Download a file from a document library list
+		Get-OSCSPListItem -SiteURL &quot;http://server_name/sites/sitename&quot; -ListName &quot;Shared Documents&quot; -ItemURL &quot;Shared Documents/NewWordDoc.docx&quot; -DownloadPath &quot;C:\Data&quot; -Verbose
+		.EXAMPLE
+		#Download multiple files from a document library list
+		Get-OSCSPListItem -SiteURL &quot;http://server_name/sites/sitename&quot; -ListName &quot;Shared Documents&quot; -ListAllItems -Property &quot;Name&quot;,&quot;URL&quot;,&quot;ParentList&quot; | ForEach-Object {
+			Get-OSCSPListItem -SiteURL &quot;http://server_name/sites/sitename&quot; -ListName $_.ParentList -ItemURL $_.Url -DownloadPath &quot;C:\Data&quot; -Verbose
+		}
+		.LINK
+		Windows PowerShell Advanced Function
+		http://technet.microsoft.com/en-us/library/dd315326.aspx
+		.LINK
+		Microsoft.SharePoint.SPWeb class
+		http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spweb.aspx
+		.LINK
+		Microsoft.SharePoint.SPList class
+		http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.splist.aspx
+	#&gt;
+	
+	[CmdletBinding(SupportsShouldProcess=$true,DefaultParameterSetName=&quot;SingleID&quot;)]
+    Param
+    (
+		#Define parameters and parameter sets
+        [Parameter(Mandatory=$true,Position=1)]
+        [string]$SiteURL,
+		[Parameter(Mandatory=$true,Position=2)]
+        [string]$ListName,
+		[Parameter(Mandatory=$false,Position=3)]
+        [string[]]$Property=&quot;*&quot;,
+		[Parameter(Mandatory=$true,Position=4,ParameterSetName=&quot;ListAllItems&quot;)]
+        [switch]$ListAllItems=$true,
+        [Parameter(Mandatory=$true,Position=4,ParameterSetName=&quot;SingleID&quot;)]
+        [int]$ItemID,
+        [Parameter(Mandatory=$true,Position=4,ParameterSetName=&quot;MultipleID&quot;)]
+        [int]$StartID,       
+        [Parameter(Mandatory=$true,Position=5,ParameterSetName=&quot;MultipleID&quot;)]
+        [int]$EndID,       
+        [Parameter(Mandatory=$true,ValueFromPipelineByPropertyName=$true,Position=4,ParameterSetName=&quot;SaveItem&quot;)]
+        [string]$ItemURL,
+        [Parameter(Mandatory=$true,Position=5,ParameterSetName=&quot;SaveItem&quot;)]
+        [string]$DownloadPath
+    )
+	Process
+	{
+		Try
+		{
+			#Use Get-SPSite to get a Microsoft SharePoint site object
+			$spSite = Get-SPSite -Identity $SiteURL -ErrorAction Stop -Verbose:$false
+		}
+		Catch 
+		{
+			#If Get-SPSite failed for any reason, this function will be terminated.
+			$customError = New-OSCPSCustomErrorRecord `
+			-ExceptionString $Error[0] `
+			-ErrorCategory ResourceUnavailable -ErrorID 1 -TargetObject $pscmdlet
+			$pscmdlet.WriteError($customError)
+			return $null
+		}
+		#Get the specified web site,$spWeb is a instance of Microsoft.SharePoint.SPWeb class
+		$spWeb = $spSite.OpenWeb()
+		#Get the specified list, $spList is a instance of Microsoft.SharePoint.SPList class
+		$spList = $spWeb.Lists[$ListName]
+		#If the specified list exists, keep on processing, otherwise display an error message
+		if ($spList -ne $null) {
+			#Check the parameter set name
+			Switch ($pscmdlet.ParameterSetName) {
+				&quot;ListAllItems&quot; {
+					#Get all items from a list by default
+					$spList.Items | Select-Object -Property $Property
+				}
+				&quot;SingleID&quot; {
+					#Get a single item from a list
+					if (-not (($ItemID -lt 0) -or ($ItemID -gt $spList.Items.Count))) {
+						$spList.GetItemByID($ItemID) | Select-Object -Property $Property
+					} else {
+						$customError = New-OSCPSCustomErrorRecord `
+						-ExceptionString $Messages.CannotFindItem `
+						-ErrorCategory ObjectNotFound -ErrorID 1 -TargetObject $pscmdlet
+						$pscmdlet.WriteError($customError)								
+					}
+				}
+				&quot;MultipleID&quot; {
+					#Get multiple items from a list
+					if (-not (($StartID -lt 0) -or ($EndID -gt $spList.Items.Count))) {
+						for ($id = $StartID;$id -le $EndID;$id&#43;&#43;) {
+							$spList.GetItemByID($id) | Select-Object -Property $Property
+						}
+					} else {
+						$customError = New-OSCPSCustomErrorRecord `
+						-ExceptionString $Messages.CannotFindItemRange `
+						-ErrorCategory ObjectNotFound -ErrorID 1 -TargetObject $pscmdlet
+						$pscmdlet.WriteError($customError)					
+					}
+				}
+				&quot;SaveItem&quot; {
+					#Download a file from a document library list
+					#User cannot download file from a non-dcoument library list
+					if ($spList.BaseType -ne &quot;DocumentLibrary&quot;) {
+						$customError = New-OSCPSCustomErrorRecord `
+						-ExceptionString $Messages.CannotDLFromNonDocList `
+						-ErrorCategory NotSpecified -ErrorID 1 -TargetObject $pscmdlet
+						$pscmdlet.WriteError($customError)						
+					} else {
+						#spFile is a instance of Microsoft.SharePoint.SPFile class
+						$spFile = $spWeb.GetFile($ItemURL)
+						if (-not $spFile.Exists) {
+							#If file not exists, an error message will be displayed.
+							$errMsg = $Messages.CannotFindSpeciedItem -replace &quot;Placeholder01&quot;,$ItemURL
+							$customError = New-OSCPSCustomErrorRecord `
+							-ExceptionString $errMsg `
+							-ErrorCategory NotSpecified -ErrorID 1 -TargetObject $pscmdlet
+							$pscmdlet.WriteError($customError)
+						} else {
+							#If file exists, use static method WriteAllBytes of System.IO.Path class 
+							#for saving the file to a local path.
+							$spContent = $spFile.OpenBinary()
+							if (($DownloadPath.SubString($DownloadPath.length - 1,1)) -ne &quot;\&quot;) {
+								$spTempFile = $DownloadPath &#43; &quot;\&quot; &#43; $spFile.Name
+							} else {
+								$spTempFile = $DownloadPath &#43; $spFile.Name
+							}
+							$verboseMessage = $Messages.SaveFilePrompt
+							$verboseMessage = $verboseMessage -replace &quot;Placeholder01&quot;,$($spFile.Name)
+							$verboseMessage = $verboseMessage -replace &quot;Placeholder02&quot;,$spTempFile
+							$pscmdlet.WriteVerbose($verboseMessage)
+							[System.IO.File]::WriteAllBytes($spTempFile,$spContent)
+						}
+					}
+				}
+			}
+		} else {
+			#If list not exists, an error message will be displayed.
+			$customError = New-OSCPSCustomErrorRecord `
+			-ExceptionString &quot;Cannot find the specified list: `&quot;$ListName`&quot;.&quot; `
+			-ErrorCategory ResourceUnavailable -ErrorID 1 -TargetObject $pscmdlet
+			$pscmdlet.WriteError($customError)
+		}
+		#Dispose SPSite and SPWeb object according to the article:
+		#Microsoft Press: Using Windows PowerShell to Perform and Automate Farm Administrative Tasks
+		#Memory Considerations When Using Windows PowerShell 
+		$spWeb.Dispose()
+		$spSite.Dispose()
+	}
+}
+</pre>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__keyword">Function</span>&nbsp;Get<span class="powerShell__operator">-</span>OSCSPListItem&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__mlcom">&lt;#&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.SYNOPSIS&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get-OSCSPListItem&nbsp;is&nbsp;an&nbsp;advanced&nbsp;function&nbsp;which&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;retrieve&nbsp;the&nbsp;list&nbsp;data&nbsp;in&nbsp;Microsoft&nbsp;SharePoint&nbsp;2010.&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.PARAMETER&nbsp;SiteURL&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indicates&nbsp;the&nbsp;URL&nbsp;of&nbsp;a&nbsp;SharePoint&nbsp;site,&nbsp;in&nbsp;the&nbsp;form&nbsp;http://server_Name/sites/sitename.&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.PARAMETER&nbsp;ListName&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indicates&nbsp;the&nbsp;Name&nbsp;of&nbsp;a&nbsp;SharePoint&nbsp;site&nbsp;list,&nbsp;for&nbsp;example,&nbsp;&quot;Shared&nbsp;Documents&quot;,&nbsp;&quot;Calendar&quot;,&nbsp;&quot;Tasks&quot;,&nbsp;&quot;Site&nbsp;Pages&quot;.&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.PARAMETER&nbsp;Property&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indicates&nbsp;the&nbsp;properties&nbsp;of&nbsp;a&nbsp;SharePoint&nbsp;site&nbsp;list&nbsp;item&nbsp;which&nbsp;will&nbsp;be&nbsp;returned&nbsp;by&nbsp;Get-OSCSPListItem.&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For&nbsp;example,&nbsp;&quot;ID&quot;,&nbsp;&quot;Name&quot;,&nbsp;&quot;ParentList&quot;.&nbsp;Wildcard&nbsp;is&nbsp;accepted&nbsp;if&nbsp;you&nbsp;want&nbsp;get&nbsp;all&nbsp;properties.&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.PARAMETER&nbsp;ListAllItems&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indicates&nbsp;Get-OSCSPListItem&nbsp;will&nbsp;return&nbsp;all&nbsp;items&nbsp;in&nbsp;a&nbsp;specified&nbsp;list.&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.PARAMETER&nbsp;ItemID&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indicates&nbsp;Get-OSCSPListItem&nbsp;will&nbsp;return&nbsp;a&nbsp;item&nbsp;with&nbsp;the&nbsp;specified&nbsp;ID.&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.PARAMETER&nbsp;StartID&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indicates&nbsp;the&nbsp;start&nbsp;ID&nbsp;of&nbsp;an&nbsp;ID&nbsp;range.&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.PARAMETER&nbsp;EndID&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indicates&nbsp;the&nbsp;end&nbsp;ID&nbsp;of&nbsp;an&nbsp;ID&nbsp;range&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.PARAMETER&nbsp;ItemURL&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indicates&nbsp;a&nbsp;URL&nbsp;of&nbsp;an&nbsp;Item&nbsp;which&nbsp;will&nbsp;be&nbsp;downloaded.&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.PARAMETER&nbsp;DownloadPath&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Indicates&nbsp;a&nbsp;local&nbsp;path&nbsp;which&nbsp;will&nbsp;be&nbsp;used&nbsp;to&nbsp;save&nbsp;the&nbsp;item.&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.EXAMPLE&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Get&nbsp;all&nbsp;items&nbsp;from&nbsp;a&nbsp;list&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get-OSCSPListItem&nbsp;-SiteURL&nbsp;&quot;http://server_name/sites/sitename&quot;&nbsp;-ListName&nbsp;&quot;Shared&nbsp;Documents&quot;&nbsp;-ListAllItems&nbsp;-Property&nbsp;&quot;ID&quot;,&quot;Name&quot;,&quot;ParentList&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.EXAMPLE&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Get&nbsp;a&nbsp;single&nbsp;item&nbsp;with&nbsp;all&nbsp;properties&nbsp;from&nbsp;a&nbsp;list&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get-OSCSPListItem&nbsp;-SiteURL&nbsp;&quot;http://server_name/sites/sitename&quot;&nbsp;-ListName&nbsp;&quot;Shared&nbsp;Documents&quot;&nbsp;-ItemID&nbsp;1&nbsp;-Property&nbsp;*&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.EXAMPLE&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Get&nbsp;multiple&nbsp;items&nbsp;from&nbsp;a&nbsp;list&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get-OSCSPListItem&nbsp;-SiteURL&nbsp;&quot;http://server_name/sites/sitename&quot;&nbsp;-ListName&nbsp;&quot;Shared&nbsp;Documents&quot;&nbsp;-StartID&nbsp;4&nbsp;-EndID&nbsp;5&nbsp;-Property&nbsp;&quot;ID&quot;,&quot;Name&quot;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.EXAMPLE&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Download&nbsp;a&nbsp;file&nbsp;from&nbsp;a&nbsp;document&nbsp;library&nbsp;list&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get-OSCSPListItem&nbsp;-SiteURL&nbsp;&quot;http://server_name/sites/sitename&quot;&nbsp;-ListName&nbsp;&quot;Shared&nbsp;Documents&quot;&nbsp;-ItemURL&nbsp;&quot;Shared&nbsp;Documents/NewWordDoc.docx&quot;&nbsp;-DownloadPath&nbsp;&quot;C:\Data&quot;&nbsp;-Verbose&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.EXAMPLE&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Download&nbsp;multiple&nbsp;files&nbsp;from&nbsp;a&nbsp;document&nbsp;library&nbsp;list&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get-OSCSPListItem&nbsp;-SiteURL&nbsp;&quot;http://server_name/sites/sitename&quot;&nbsp;-ListName&nbsp;&quot;Shared&nbsp;Documents&quot;&nbsp;-ListAllItems&nbsp;-Property&nbsp;&quot;Name&quot;,&quot;URL&quot;,&quot;ParentList&quot;&nbsp;|&nbsp;ForEach-Object&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get-OSCSPListItem&nbsp;-SiteURL&nbsp;&quot;http://server_name/sites/sitename&quot;&nbsp;-ListName&nbsp;$_.ParentList&nbsp;-ItemURL&nbsp;$_.Url&nbsp;-DownloadPath&nbsp;&quot;C:\Data&quot;&nbsp;-Verbose&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.LINK&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Windows&nbsp;PowerShell&nbsp;Advanced&nbsp;Function&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://technet.microsoft.com/en-us/library/dd315326.aspx&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.LINK&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Microsoft.SharePoint.SPWeb&nbsp;class&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spweb.aspx&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.LINK&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Microsoft.SharePoint.SPList&nbsp;class&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.splist.aspx&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;#&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[CmdletBinding(SupportsShouldProcess=<span class="powerShell__variable">$true</span>,DefaultParameterSetName=<span class="powerShell__string">&quot;SingleID&quot;</span>)]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">Param</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Define&nbsp;parameters&nbsp;and&nbsp;parameter&nbsp;sets</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Parameter(Mandatory=<span class="powerShell__variable">$true</span>,Position=1)]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[string]<span class="powerShell__variable">$SiteURL</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Parameter(Mandatory=<span class="powerShell__variable">$true</span>,Position=2)]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[string]<span class="powerShell__variable">$ListName</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Parameter(Mandatory=<span class="powerShell__variable">$false</span>,Position=3)]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[string[]]<span class="powerShell__variable">$Property</span>=<span class="powerShell__string">&quot;*&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Parameter(Mandatory=<span class="powerShell__variable">$true</span>,Position=4,ParameterSetName=<span class="powerShell__string">&quot;ListAllItems&quot;</span>)]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<span class="powerShell__keyword">switch</span>]<span class="powerShell__variable">$ListAllItems</span>=<span class="powerShell__variable">$true</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Parameter(Mandatory=<span class="powerShell__variable">$true</span>,Position=4,ParameterSetName=<span class="powerShell__string">&quot;SingleID&quot;</span>)]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[int]<span class="powerShell__variable">$ItemID</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Parameter(Mandatory=<span class="powerShell__variable">$true</span>,Position=4,ParameterSetName=<span class="powerShell__string">&quot;MultipleID&quot;</span>)]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[int]<span class="powerShell__variable">$StartID</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Parameter(Mandatory=<span class="powerShell__variable">$true</span>,Position=5,ParameterSetName=<span class="powerShell__string">&quot;MultipleID&quot;</span>)]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[int]<span class="powerShell__variable">$EndID</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Parameter(Mandatory=<span class="powerShell__variable">$true</span>,ValueFromPipelineByPropertyName=<span class="powerShell__variable">$true</span>,Position=4,ParameterSetName=<span class="powerShell__string">&quot;SaveItem&quot;</span>)]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[string]<span class="powerShell__variable">$ItemURL</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Parameter(Mandatory=<span class="powerShell__variable">$true</span>,Position=5,ParameterSetName=<span class="powerShell__string">&quot;SaveItem&quot;</span>)]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[string]<span class="powerShell__variable">$DownloadPath</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">Process</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">Try</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Use&nbsp;Get-SPSite&nbsp;to&nbsp;get&nbsp;a&nbsp;Microsoft&nbsp;SharePoint&nbsp;site&nbsp;object</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spSite</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPSite&nbsp;<span class="powerShell__operator">-</span>Identity&nbsp;<span class="powerShell__variable">$SiteURL</span>&nbsp;<span class="powerShell__operator">-</span>ErrorAction&nbsp;Stop&nbsp;<span class="powerShell__operator">-</span>Verbose:<span class="powerShell__variable">$false</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">Catch</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#If&nbsp;Get-SPSite&nbsp;failed&nbsp;for&nbsp;any&nbsp;reason,&nbsp;this&nbsp;function&nbsp;will&nbsp;be&nbsp;terminated.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$customError</span>&nbsp;=&nbsp;New<span class="powerShell__operator">-</span>OSCPSCustomErrorRecord&nbsp;`&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__operator">-</span>ExceptionString&nbsp;<span class="powerShell__variable">$Error</span>[0]&nbsp;`&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__operator">-</span>ErrorCategory&nbsp;ResourceUnavailable&nbsp;<span class="powerShell__operator">-</span>ErrorID&nbsp;1&nbsp;<span class="powerShell__operator">-</span>TargetObject&nbsp;<span class="powerShell__variable">$pscmdlet</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$pscmdlet</span>.WriteError(<span class="powerShell__variable">$customError</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">return</span>&nbsp;<span class="powerShell__variable">$null</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Get&nbsp;the&nbsp;specified&nbsp;web&nbsp;site,$spWeb&nbsp;is&nbsp;a&nbsp;instance&nbsp;of&nbsp;Microsoft.SharePoint.SPWeb&nbsp;class</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spWeb</span>&nbsp;=&nbsp;<span class="powerShell__variable">$spSite</span>.OpenWeb()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Get&nbsp;the&nbsp;specified&nbsp;list,&nbsp;$spList&nbsp;is&nbsp;a&nbsp;instance&nbsp;of&nbsp;Microsoft.SharePoint.SPList&nbsp;class</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spList</span>&nbsp;=&nbsp;<span class="powerShell__variable">$spWeb</span>.Lists[<span class="powerShell__variable">$ListName</span>]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#If&nbsp;the&nbsp;specified&nbsp;list&nbsp;exists,&nbsp;keep&nbsp;on&nbsp;processing,&nbsp;otherwise&nbsp;display&nbsp;an&nbsp;error&nbsp;message</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$spList</span>&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__variable">$null</span>)&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Check&nbsp;the&nbsp;parameter&nbsp;set&nbsp;name</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">Switch</span>&nbsp;(<span class="powerShell__variable">$pscmdlet</span>.ParameterSetName)&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__string">&quot;ListAllItems&quot;</span>&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Get&nbsp;all&nbsp;items&nbsp;from&nbsp;a&nbsp;list&nbsp;by&nbsp;default</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spList</span>.Items&nbsp;<span class="powerShell__operator">|</span>&nbsp;<span class="powerShell__cmdlets">Select-Object</span>&nbsp;<span class="powerShell__operator">-</span>Property&nbsp;<span class="powerShell__variable">$Property</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__string">&quot;SingleID&quot;</span>&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Get&nbsp;a&nbsp;single&nbsp;item&nbsp;from&nbsp;a&nbsp;list</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__operator">-</span>not&nbsp;((<span class="powerShell__variable">$ItemID</span>&nbsp;<span class="powerShell__operator">-</span>lt&nbsp;0)&nbsp;<span class="powerShell__operator">-</span>or&nbsp;(<span class="powerShell__variable">$ItemID</span>&nbsp;<span class="powerShell__operator">-</span>gt&nbsp;<span class="powerShell__variable">$spList</span>.Items.Count)))&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spList</span>.GetItemByID(<span class="powerShell__variable">$ItemID</span>)&nbsp;<span class="powerShell__operator">|</span>&nbsp;<span class="powerShell__cmdlets">Select-Object</span>&nbsp;<span class="powerShell__operator">-</span>Property&nbsp;<span class="powerShell__variable">$Property</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="powerShell__keyword">else</span>&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$customError</span>&nbsp;=&nbsp;New<span class="powerShell__operator">-</span>OSCPSCustomErrorRecord&nbsp;`&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__operator">-</span>ExceptionString&nbsp;<span class="powerShell__variable">$Messages</span>.CannotFindItem&nbsp;`&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__operator">-</span>ErrorCategory&nbsp;ObjectNotFound&nbsp;<span class="powerShell__operator">-</span>ErrorID&nbsp;1&nbsp;<span class="powerShell__operator">-</span>TargetObject&nbsp;<span class="powerShell__variable">$pscmdlet</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$pscmdlet</span>.WriteError(<span class="powerShell__variable">$customError</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__string">&quot;MultipleID&quot;</span>&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Get&nbsp;multiple&nbsp;items&nbsp;from&nbsp;a&nbsp;list</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__operator">-</span>not&nbsp;((<span class="powerShell__variable">$StartID</span>&nbsp;<span class="powerShell__operator">-</span>lt&nbsp;0)&nbsp;<span class="powerShell__operator">-</span>or&nbsp;(<span class="powerShell__variable">$EndID</span>&nbsp;<span class="powerShell__operator">-</span>gt&nbsp;<span class="powerShell__variable">$spList</span>.Items.Count)))&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">for</span>&nbsp;(<span class="powerShell__variable">$id</span>&nbsp;=&nbsp;<span class="powerShell__variable">$StartID</span>;<span class="powerShell__variable">$id</span>&nbsp;<span class="powerShell__operator">-</span>le&nbsp;<span class="powerShell__variable">$EndID</span>;<span class="powerShell__variable">$id</span><span class="powerShell__operator">&#43;</span><span class="powerShell__operator">&#43;</span>)&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spList</span>.GetItemByID(<span class="powerShell__variable">$id</span>)&nbsp;<span class="powerShell__operator">|</span>&nbsp;<span class="powerShell__cmdlets">Select-Object</span>&nbsp;<span class="powerShell__operator">-</span>Property&nbsp;<span class="powerShell__variable">$Property</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="powerShell__keyword">else</span>&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$customError</span>&nbsp;=&nbsp;New<span class="powerShell__operator">-</span>OSCPSCustomErrorRecord&nbsp;`&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__operator">-</span>ExceptionString&nbsp;<span class="powerShell__variable">$Messages</span>.CannotFindItemRange&nbsp;`&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__operator">-</span>ErrorCategory&nbsp;ObjectNotFound&nbsp;<span class="powerShell__operator">-</span>ErrorID&nbsp;1&nbsp;<span class="powerShell__operator">-</span>TargetObject&nbsp;<span class="powerShell__variable">$pscmdlet</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$pscmdlet</span>.WriteError(<span class="powerShell__variable">$customError</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__string">&quot;SaveItem&quot;</span>&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Download&nbsp;a&nbsp;file&nbsp;from&nbsp;a&nbsp;document&nbsp;library&nbsp;list</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#User&nbsp;cannot&nbsp;download&nbsp;file&nbsp;from&nbsp;a&nbsp;non-dcoument&nbsp;library&nbsp;list</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$spList</span>.BaseType&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;<span class="powerShell__string">&quot;DocumentLibrary&quot;</span>)&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$customError</span>&nbsp;=&nbsp;New<span class="powerShell__operator">-</span>OSCPSCustomErrorRecord&nbsp;`&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__operator">-</span>ExceptionString&nbsp;<span class="powerShell__variable">$Messages</span>.CannotDLFromNonDocList&nbsp;`&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__operator">-</span>ErrorCategory&nbsp;NotSpecified&nbsp;<span class="powerShell__operator">-</span>ErrorID&nbsp;1&nbsp;<span class="powerShell__operator">-</span>TargetObject&nbsp;<span class="powerShell__variable">$pscmdlet</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$pscmdlet</span>.WriteError(<span class="powerShell__variable">$customError</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="powerShell__keyword">else</span>&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#spFile&nbsp;is&nbsp;a&nbsp;instance&nbsp;of&nbsp;Microsoft.SharePoint.SPFile&nbsp;class</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spFile</span>&nbsp;=&nbsp;<span class="powerShell__variable">$spWeb</span>.GetFile(<span class="powerShell__variable">$ItemURL</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__operator">-</span>not&nbsp;<span class="powerShell__variable">$spFile</span>.Exists)&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#If&nbsp;file&nbsp;not&nbsp;exists,&nbsp;an&nbsp;error&nbsp;message&nbsp;will&nbsp;be&nbsp;displayed.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$errMsg</span>&nbsp;=&nbsp;<span class="powerShell__variable">$Messages</span>.CannotFindSpeciedItem&nbsp;<span class="powerShell__operator">-</span>replace&nbsp;<span class="powerShell__string">&quot;Placeholder01&quot;</span>,<span class="powerShell__variable">$ItemURL</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$customError</span>&nbsp;=&nbsp;New<span class="powerShell__operator">-</span>OSCPSCustomErrorRecord&nbsp;`&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__operator">-</span>ExceptionString&nbsp;<span class="powerShell__variable">$errMsg</span>&nbsp;`&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__operator">-</span>ErrorCategory&nbsp;NotSpecified&nbsp;<span class="powerShell__operator">-</span>ErrorID&nbsp;1&nbsp;<span class="powerShell__operator">-</span>TargetObject&nbsp;<span class="powerShell__variable">$pscmdlet</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$pscmdlet</span>.WriteError(<span class="powerShell__variable">$customError</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="powerShell__keyword">else</span>&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#If&nbsp;file&nbsp;exists,&nbsp;use&nbsp;static&nbsp;method&nbsp;WriteAllBytes&nbsp;of&nbsp;System.IO.Path&nbsp;class&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#for&nbsp;saving&nbsp;the&nbsp;file&nbsp;to&nbsp;a&nbsp;local&nbsp;path.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spContent</span>&nbsp;=&nbsp;<span class="powerShell__variable">$spFile</span>.OpenBinary()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;((<span class="powerShell__variable">$DownloadPath</span>.SubString(<span class="powerShell__variable">$DownloadPath</span>.length&nbsp;<span class="powerShell__operator">-</span>&nbsp;1,1))&nbsp;<span class="powerShell__operator">-</span>ne&nbsp;&quot;\&quot;)&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spTempFile</span>&nbsp;=&nbsp;<span class="powerShell__variable">$DownloadPath</span>&nbsp;<span class="powerShell__operator">&#43;</span>&nbsp;&quot;\&quot;&nbsp;<span class="powerShell__operator">&#43;</span>&nbsp;<span class="powerShell__variable">$spFile</span>.Name&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="powerShell__keyword">else</span>&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spTempFile</span>&nbsp;=&nbsp;<span class="powerShell__variable">$DownloadPath</span>&nbsp;<span class="powerShell__operator">&#43;</span>&nbsp;<span class="powerShell__variable">$spFile</span>.Name&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$verboseMessage</span>&nbsp;=&nbsp;<span class="powerShell__variable">$Messages</span>.SaveFilePrompt&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$verboseMessage</span>&nbsp;=&nbsp;<span class="powerShell__variable">$verboseMessage</span>&nbsp;<span class="powerShell__operator">-</span>replace&nbsp;<span class="powerShell__string">&quot;Placeholder01&quot;</span>,<span class="powerShell__variable">$</span>(<span class="powerShell__variable">$spFile</span>.Name)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$verboseMessage</span>&nbsp;=&nbsp;<span class="powerShell__variable">$verboseMessage</span>&nbsp;<span class="powerShell__operator">-</span>replace&nbsp;<span class="powerShell__string">&quot;Placeholder02&quot;</span>,<span class="powerShell__variable">$spTempFile</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$pscmdlet</span>.WriteVerbose(<span class="powerShell__variable">$verboseMessage</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[System.IO.File]::WriteAllBytes(<span class="powerShell__variable">$spTempFile</span>,<span class="powerShell__variable">$spContent</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="powerShell__keyword">else</span>&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#If&nbsp;list&nbsp;not&nbsp;exists,&nbsp;an&nbsp;error&nbsp;message&nbsp;will&nbsp;be&nbsp;displayed.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$customError</span>&nbsp;=&nbsp;New<span class="powerShell__operator">-</span>OSCPSCustomErrorRecord&nbsp;`&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__operator">-</span>ExceptionString&nbsp;<span class="powerShell__string">&quot;Cannot&nbsp;find&nbsp;the&nbsp;specified&nbsp;list:&nbsp;`&quot;</span><span class="powerShell__variable">$ListName</span>`<span class="powerShell__string">&quot;.&quot;</span>&nbsp;`&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__operator">-</span>ErrorCategory&nbsp;ResourceUnavailable&nbsp;<span class="powerShell__operator">-</span>ErrorID&nbsp;1&nbsp;<span class="powerShell__operator">-</span>TargetObject&nbsp;<span class="powerShell__variable">$pscmdlet</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$pscmdlet</span>.WriteError(<span class="powerShell__variable">$customError</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Dispose&nbsp;SPSite&nbsp;and&nbsp;SPWeb&nbsp;object&nbsp;according&nbsp;to&nbsp;the&nbsp;article:</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Microsoft&nbsp;Press:&nbsp;Using&nbsp;Windows&nbsp;PowerShell&nbsp;to&nbsp;Perform&nbsp;and&nbsp;Automate&nbsp;Farm&nbsp;Administrative&nbsp;Tasks</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Memory&nbsp;Considerations&nbsp;When&nbsp;Using&nbsp;Windows&nbsp;PowerShell&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spWeb</span>.Dispose()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$spSite</span>.Dispose()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<h2>Examples</h2>
+<p><strong>Example 01</strong>: Displays help about Get-OSCSPListItem<br>
+<strong>Command</strong>: Get-Help Get-OSCSPListItem -Full<br>
+<strong>Screenshot</strong>:</p>
+<p><img src="C:\Users\John\Documents\WindowsPowerShell\Scripts\Retrieve-SharePoint-list-8e7fb421\Documentation_files\tmp336Resources.jpg" alt="" width="576" height="184"></p>
+<p><strong>Example</strong> <strong>02</strong>: Get all items from a list<br>
+<strong>Command</strong>: Get-OSCSPListItem -SiteURL &quot;http://server_name/sites/sitename&quot; -ListName &quot;Shared Documents&quot; -ListAllItems -Property &quot;ID&quot;,&quot;Name&quot;,&quot;ParentList&quot;<br>
+<strong>Screenshot</strong>:</p>
+<p><img src="C:\Users\John\Documents\WindowsPowerShell\Scripts\Retrieve-SharePoint-list-8e7fb421\Documentation_files\tmp337Resources.jpg" alt="" width="581" height="102"></p>
+<p><strong>Example 03</strong>: Get a single item with all properties from a list<br>
+<strong>Command</strong>: <br>
+Get-OSCSPListItem -SiteURL &quot;http://server_name/sites/sitename&quot; -ListName &quot;Shared Documents&quot; -ItemID 1 -Property *<br>
+<strong>Screenshot</strong>:</p>
+<p><img src="C:\Users\John\Documents\WindowsPowerShell\Scripts\Retrieve-SharePoint-list-8e7fb421\Documentation_files\tmp338Resources.jpg" alt="" width="576" height="167"></p>
+<p><strong>Example 04</strong>: Get multiple items from a list<br>
+<strong>Command</strong>: Get-OSCSPListItem -SiteURL &quot;http://server_name/sites/sitename&quot; -ListName &quot;Shared Documents&quot; -StartID 4 -EndID 5 -Property &quot;ID&quot;,&quot;Name&quot;<br>
+<strong>Screenshot</strong>:</p>
+<p><img src="C:\Users\John\Documents\WindowsPowerShell\Scripts\Retrieve-SharePoint-list-8e7fb421\Documentation_files\tmp339Resources.jpg" alt="" width="576" height="64"></p>
+<p><strong>Example 05</strong>: Download a file from a document library list<br>
+<strong>Command</strong>: Get-OSCSPListItem -SiteURL &quot;http://server_name/sites/sitename&quot; -ListName &quot;Shared Documents&quot; -ItemURL &quot;Shared Documents/NewWordDoc.docx&quot; -DownloadPath &quot;C:\Data&quot; -Verbose<br>
+<strong>Screenshot</strong>:</p>
+<p><img src="C:\Users\John\Documents\WindowsPowerShell\Scripts\Retrieve-SharePoint-list-8e7fb421\Documentation_files\tmp33AResources.png" alt="" width="486" height="46"></p>
+<p><strong>Example 06</strong>: Download multiple files <br>
+from a document library list<br>
+<strong>Command</strong>:</p>
+<p>Get-OSCSPListItem -SiteURL &quot;http://server_name/sites/sitename&quot; -ListName &quot;Shared Documents&quot; -ListAllItems -Property &quot;Name&quot;,&quot;URL&quot;,&quot;ParentList&quot; | ForEach-Object {</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Get-OSCSPListItem -SiteURL &quot;http://server_name/sites/sitename&quot; -ListName $_.ParentList -ItemURL $_.Url -DownloadPath &quot;C:\Data&quot; -Verbose</p>
+<p>}<br>
+<strong>Screenshot</strong>:</p>
+<p><img src="/scriptcenter/site/view/file/57460/1/image010.png" alt="" width="636" height="111"></p>
+<p>&nbsp;</p>
+<h2>Prerequisite</h2>
+<p>Windows PowerShell 2.0<br>
+Microsoft SharePoint 2010 PowerShell Snapin</p>
+<p>&nbsp;</p>
+<h2><strong>Additional Resources</strong></h2>
+<p>Technical Resource: <br>
+<a href="http://technet.microsoft.com/en-us/library/dd315326.aspx">Windows <br>
+PowerShell Advanced Function</a><br>
+<a href="http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spweb.aspx">Microsoft.SharePoint.SPWeb class</a><br>
+<a href="http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.splist.aspx">Microsoft.SharePoint.SPList class</a></p>
+<p>Forum Threads<br>
+<a href="http://social.technet.microsoft.com/Forums/en-US/sharepoint2010programming/thread/098f2660-88ef-4fa0-a161-c85d9c167919">http://social.technet.microsoft.com/Forums/en-US/sharepoint2010programming/thread/098f2660-88ef-4fa0-a161-c85d9c167919</a><br>
+<a href="http://social.technet.microsoft.com/Forums/en-US/sharepoint2010programming/thread/555ac605-4d51-4b9e-ae66-1469e9964300">http://social.technet.microsoft.com/Forums/en-US/sharepoint2010programming/thread/555ac605-4d51-4b9e-ae66-1469e9964300</a></p>
+
+        </div>
+    </body>
+</html>

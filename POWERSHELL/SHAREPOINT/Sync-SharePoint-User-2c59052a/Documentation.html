@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Sync SharePoint User Information List</title>        
+        <meta name="description" content="PowerShell script that sync every sites User Information List to the User Profile Service" />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">#-----------------------------------------------------------------------------  
+# Name:               Sync-SPUserInfoList.ps1   v2
+# Description:        This script will update all of the properties in the User
+#                     Information List with from the UPS
+# Usage:              Make sure the UPS is connected to the Central Admin WebApp  
+# By:                 Ivan Josipovic, Softlanding.ca   
+#-----------------------------------------------------------------------------  
+Add-PSSnapin Microsoft.SharePoint.PowerShell -ea 0; 
+$ErrorActionPreference = &quot;SilentlyContinue&quot;; 
+  
+$PropertyMap=@(&quot;Title,PreferredName,Display Name&quot;, 
+&quot;EMail,WorkEmail,EMail&quot;, 
+&quot;MobilePhone,CellPhone,Mobile Phone&quot;, 
+&quot;Notes,AboutMe,About Me&quot;, 
+&quot;SipAddress,WorkEmail,Sip Address&quot;, 
+&quot;Picture,PictureURL,Picture URL&quot;, 
+&quot;Department,Department,Department&quot;, 
+&quot;JobTitle,SPS-JobTitle,Job Title&quot;, 
+&quot;FirstName,FirstName,First Name&quot;, 
+&quot;LastName,LastName,Last Name&quot;, 
+&quot;WorkPhone,WorkPhone,Work Phone&quot;, 
+&quot;UserName,UserName,UserName&quot;, 
+&quot;WebSite,WebSite,WebSite&quot;, 
+&quot;SPSResponsibility,SPS-Responsibility,Ask About Me&quot;, 
+&quot;Office,Office,Office&quot;); 
+ 
+$Context = Get-SPServiceContext $(Get-SPWebApplication -IncludeCentralAdministration | ? {$_.IsAdministrationWebApplication}).Url; 
+$ProfileManager = New-Object Microsoft.Office.Server.UserProfiles.UserProfileManager($Context); 
+ 
+if($ProfileManager){ 
+    foreach ($Site in $(Get-SPSite -Limit All | ? {!$_.Url.Contains(&quot;Office_Viewing_Service_Cache&quot;)})){ 
+        $RootWeb = $Site.RootWeb; 
+        Write-Host $($Site.Url); 
+ 
+        foreach ($User in $($RootWeb.SiteUsers)){ 
+            if ($ProfileManager.UserExists($($User.UserLogin))){ 
+                $UPUser = $ProfileManager.GetUserProfile($($User.UserLogin)); 
+                $UserList = $RootWeb.SiteUserInfoList; 
+ 
+                $Query = New-Object Microsoft.SharePoint.SPQuery; 
+                $Query.Query = &quot;&lt;Where&gt;&lt;Eq&gt;&lt;FieldRef Name='Name' /&gt;&lt;Value Type='Text'&gt;$($User.UserLogin)&lt;/Value&gt;&lt;/Eq&gt;&lt;/Where&gt;&quot;; 
+                $UserItem = $UserList.GetItems($Query)[0]; 
+ 
+                ForEach ($Map in $PropertyMap){ 
+                    $PropName = $Map.Split(',')[0]; 
+                    $SiteProp = $UserItem[$PropName]; 
+                    $UPSProp = $UPUser[$($Map.Split(',')[1])].Value; 
+                    $DisplayName = $Map.Split(',')[2]; 
+  
+                    if($PropName -eq &quot;Notes&quot;){ 
+                        #Write-Host &quot;$DisplayName Updated: $SiteProp - $($UPSProp[0].Replace(&quot;&amp;nbsp;&quot;,&quot; &quot;))&quot;; 
+                        $UserItem[$PropName] = $($UPSProp[0].Replace(&quot;&amp;nbsp;&quot;,&quot; &quot;)); 
+                    }elseif($PropName -eq &quot;Picture&quot;){ 
+                        #Write-Host &quot;$DisplayName Updated: $($SiteProp.Split(&quot;,&quot;)[0]) - $($UPSProp[0])&quot;; 
+                        $UserItem[$PropName] = $UPSProp[0]; 
+                    }elseif($PropName -eq &quot;SPSResponsibility&quot;){ 
+                        #Write-Host &quot;$DisplayName Updated: $SiteProp - $($UPSProp -join ', ')&quot;; 
+                        $UserItem[$PropName] = $($UPSProp -join ', '); 
+                    }else{ 
+                        #Write-Host &quot;$DisplayName Updated: $SiteProp - $UPSProp&quot;; 
+                        $UserItem[$PropName] = $UPSProp; 
+                    } 
+                } 
+                #Write-Host &quot;Saving: $($User.UserLogin)&quot;; 
+                $UserItem.SystemUpdate(); 
+                #Write-Host &quot;&quot;; 
+            } 
+        } 
+        $RootWeb.Dispose(); 
+        #Write-Host &quot;&quot;; 
+    }  
+}else{ 
+    Write-Host -foreground red &quot;Cant connect to the User Profile Service. Please make sure that the UPS is connected to the Central Administration Web Application. Also make sure that you have Administrator Rights to the User Profile Service&quot;; 
+} </pre>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__com">#-----------------------------------------------------------------------------&nbsp;&nbsp;</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sync-SPUserInfoList.ps1&nbsp;&nbsp;&nbsp;v2</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;script&nbsp;will&nbsp;update&nbsp;all&nbsp;of&nbsp;the&nbsp;properties&nbsp;in&nbsp;the&nbsp;User</span>&nbsp;
+<span class="powerShell__com">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Information&nbsp;List&nbsp;with&nbsp;from&nbsp;the&nbsp;UPS</span>&nbsp;
+<span class="powerShell__com">#&nbsp;Usage:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make&nbsp;sure&nbsp;the&nbsp;UPS&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;Central&nbsp;Admin&nbsp;WebApp&nbsp;&nbsp;</span>&nbsp;
+<span class="powerShell__com">#&nbsp;By:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ivan&nbsp;Josipovic,&nbsp;Softlanding.ca&nbsp;&nbsp;&nbsp;</span>&nbsp;
+<span class="powerShell__com">#-----------------------------------------------------------------------------&nbsp;&nbsp;</span>&nbsp;
+<span class="powerShell__cmdlets">Add-PSSnapin</span>&nbsp;Microsoft.SharePoint.PowerShell&nbsp;<span class="powerShell__operator">-</span>ea&nbsp;0;&nbsp;&nbsp;
+<span class="powerShell__variable">$ErrorActionPreference</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;SilentlyContinue&quot;</span>;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+<span class="powerShell__variable">$PropertyMap</span>=@(<span class="powerShell__string">&quot;Title,PreferredName,Display&nbsp;Name&quot;</span>,&nbsp;&nbsp;
+<span class="powerShell__string">&quot;EMail,WorkEmail,EMail&quot;</span>,&nbsp;&nbsp;
+<span class="powerShell__string">&quot;MobilePhone,CellPhone,Mobile&nbsp;Phone&quot;</span>,&nbsp;&nbsp;
+<span class="powerShell__string">&quot;Notes,AboutMe,About&nbsp;Me&quot;</span>,&nbsp;&nbsp;
+<span class="powerShell__string">&quot;SipAddress,WorkEmail,Sip&nbsp;Address&quot;</span>,&nbsp;&nbsp;
+<span class="powerShell__string">&quot;Picture,PictureURL,Picture&nbsp;URL&quot;</span>,&nbsp;&nbsp;
+<span class="powerShell__string">&quot;Department,Department,Department&quot;</span>,&nbsp;&nbsp;
+<span class="powerShell__string">&quot;JobTitle,SPS-JobTitle,Job&nbsp;Title&quot;</span>,&nbsp;&nbsp;
+<span class="powerShell__string">&quot;FirstName,FirstName,First&nbsp;Name&quot;</span>,&nbsp;&nbsp;
+<span class="powerShell__string">&quot;LastName,LastName,Last&nbsp;Name&quot;</span>,&nbsp;&nbsp;
+<span class="powerShell__string">&quot;WorkPhone,WorkPhone,Work&nbsp;Phone&quot;</span>,&nbsp;&nbsp;
+<span class="powerShell__string">&quot;UserName,UserName,UserName&quot;</span>,&nbsp;&nbsp;
+<span class="powerShell__string">&quot;WebSite,WebSite,WebSite&quot;</span>,&nbsp;&nbsp;
+<span class="powerShell__string">&quot;SPSResponsibility,SPS-Responsibility,Ask&nbsp;About&nbsp;Me&quot;</span>,&nbsp;&nbsp;
+<span class="powerShell__string">&quot;Office,Office,Office&quot;</span>);&nbsp;&nbsp;
+&nbsp;&nbsp;
+<span class="powerShell__variable">$Context</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPServiceContext&nbsp;<span class="powerShell__variable">$</span>(Get<span class="powerShell__operator">-</span>SPWebApplication&nbsp;<span class="powerShell__operator">-</span>IncludeCentralAdministration&nbsp;<span class="powerShell__operator">|</span>&nbsp;?&nbsp;{<span class="powerShell__variable">$_</span>.IsAdministrationWebApplication}).Url;&nbsp;&nbsp;
+<span class="powerShell__variable">$ProfileManager</span>&nbsp;=&nbsp;<span class="powerShell__cmdlets">New-Object</span>&nbsp;Microsoft.Office.Server.UserProfiles.UserProfileManager(<span class="powerShell__variable">$Context</span>);&nbsp;&nbsp;
+&nbsp;&nbsp;
+<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$ProfileManager</span>){&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>&nbsp;(<span class="powerShell__variable">$Site</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$</span>(Get<span class="powerShell__operator">-</span>SPSite&nbsp;<span class="powerShell__operator">-</span>Limit&nbsp;All&nbsp;<span class="powerShell__operator">|</span>&nbsp;?&nbsp;{<span class="powerShell__operator">!</span><span class="powerShell__variable">$_</span>.Url.Contains(<span class="powerShell__string">&quot;Office_Viewing_Service_Cache&quot;</span>)})){&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$RootWeb</span>&nbsp;=&nbsp;<span class="powerShell__variable">$Site</span>.RootWeb;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__variable">$</span>(<span class="powerShell__variable">$Site</span>.Url);&nbsp;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>&nbsp;(<span class="powerShell__variable">$User</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$</span>(<span class="powerShell__variable">$RootWeb</span>.SiteUsers)){&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$ProfileManager</span>.UserExists(<span class="powerShell__variable">$</span>(<span class="powerShell__variable">$User</span>.UserLogin))){&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$UPUser</span>&nbsp;=&nbsp;<span class="powerShell__variable">$ProfileManager</span>.GetUserProfile(<span class="powerShell__variable">$</span>(<span class="powerShell__variable">$User</span>.UserLogin));&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$UserList</span>&nbsp;=&nbsp;<span class="powerShell__variable">$RootWeb</span>.SiteUserInfoList;&nbsp;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Query</span>&nbsp;=&nbsp;<span class="powerShell__cmdlets">New-Object</span>&nbsp;Microsoft.SharePoint.SPQuery;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Query</span>.Query&nbsp;=&nbsp;<span class="powerShell__string">&quot;&lt;Where&gt;&lt;Eq&gt;&lt;FieldRef&nbsp;Name='Name'&nbsp;/&gt;&lt;Value&nbsp;Type='Text'&gt;$($User.UserLogin)&lt;/Value&gt;&lt;/Eq&gt;&lt;/Where&gt;&quot;</span>;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$UserItem</span>&nbsp;=&nbsp;<span class="powerShell__variable">$UserList</span>.GetItems(<span class="powerShell__variable">$Query</span>)[0];&nbsp;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">ForEach</span>&nbsp;(<span class="powerShell__variable">$Map</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$PropertyMap</span>){&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$PropName</span>&nbsp;=&nbsp;<span class="powerShell__variable">$Map</span>.Split(<span class="powerShell__string">','</span>)[0];&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SiteProp</span>&nbsp;=&nbsp;<span class="powerShell__variable">$UserItem</span>[<span class="powerShell__variable">$PropName</span>];&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$UPSProp</span>&nbsp;=&nbsp;<span class="powerShell__variable">$UPUser</span>[<span class="powerShell__variable">$</span>(<span class="powerShell__variable">$Map</span>.Split(<span class="powerShell__string">','</span>)[1])].Value;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$DisplayName</span>&nbsp;=&nbsp;<span class="powerShell__variable">$Map</span>.Split(<span class="powerShell__string">','</span>)[2];&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>(<span class="powerShell__variable">$PropName</span>&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__string">&quot;Notes&quot;</span>){&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Write-Host&nbsp;&quot;$DisplayName&nbsp;Updated:&nbsp;$SiteProp&nbsp;-&nbsp;$($UPSProp[0].Replace(&quot;&amp;nbsp;&quot;,&quot;&nbsp;&quot;))&quot;;&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$UserItem</span>[<span class="powerShell__variable">$PropName</span>]&nbsp;=&nbsp;<span class="powerShell__variable">$</span>(<span class="powerShell__variable">$UPSProp</span>[0].Replace(<span class="powerShell__string">&quot;&amp;nbsp;&quot;</span>,<span class="powerShell__string">&quot;&nbsp;&quot;</span>));&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<span class="powerShell__keyword">elseif</span>(<span class="powerShell__variable">$PropName</span>&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__string">&quot;Picture&quot;</span>){&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Write-Host&nbsp;&quot;$DisplayName&nbsp;Updated:&nbsp;$($SiteProp.Split(&quot;,&quot;)[0])&nbsp;-&nbsp;$($UPSProp[0])&quot;;&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$UserItem</span>[<span class="powerShell__variable">$PropName</span>]&nbsp;=&nbsp;<span class="powerShell__variable">$UPSProp</span>[0];&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<span class="powerShell__keyword">elseif</span>(<span class="powerShell__variable">$PropName</span>&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__string">&quot;SPSResponsibility&quot;</span>){&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Write-Host&nbsp;&quot;$DisplayName&nbsp;Updated:&nbsp;$SiteProp&nbsp;-&nbsp;$($UPSProp&nbsp;-join&nbsp;',&nbsp;')&quot;;&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$UserItem</span>[<span class="powerShell__variable">$PropName</span>]&nbsp;=&nbsp;<span class="powerShell__variable">$</span>(<span class="powerShell__variable">$UPSProp</span>&nbsp;<span class="powerShell__operator">-</span>join&nbsp;<span class="powerShell__string">',&nbsp;'</span>);&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<span class="powerShell__keyword">else</span>{&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Write-Host&nbsp;&quot;$DisplayName&nbsp;Updated:&nbsp;$SiteProp&nbsp;-&nbsp;$UPSProp&quot;;&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$UserItem</span>[<span class="powerShell__variable">$PropName</span>]&nbsp;=&nbsp;<span class="powerShell__variable">$UPSProp</span>;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Write-Host&nbsp;&quot;Saving:&nbsp;$($User.UserLogin)&quot;;&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$UserItem</span>.SystemUpdate();&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Write-Host&nbsp;&quot;&quot;;&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$RootWeb</span>.Dispose();&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#Write-Host&nbsp;&quot;&quot;;&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;
+}<span class="powerShell__keyword">else</span>{&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__operator">-</span>foreground&nbsp;red&nbsp;<span class="powerShell__string">&quot;Cant&nbsp;connect&nbsp;to&nbsp;the&nbsp;User&nbsp;Profile&nbsp;Service.&nbsp;Please&nbsp;make&nbsp;sure&nbsp;that&nbsp;the&nbsp;UPS&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;Central&nbsp;Administration&nbsp;Web&nbsp;Application.&nbsp;Also&nbsp;make&nbsp;sure&nbsp;that&nbsp;you&nbsp;have&nbsp;Administrator&nbsp;Rights&nbsp;to&nbsp;the&nbsp;User&nbsp;Profile&nbsp;Service&quot;</span>;&nbsp;&nbsp;
+}&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"><br>
+<br>
+<p>SharePoint contains a User Information List in the Root Web which contains the users Display Name and a number of other properties. This List is supposed to be updated by the User Profile Service.</p>
+<p>&nbsp;</p>
+<p>More info <a href="http://www.softlanding.ca/Blog/Lists/Posts/Post.aspx?ID=46">
+http://www.softlanding.ca/Blog/Lists/Posts/Post.aspx?ID=46</a></p>
+<p>&nbsp;</p>
+<p>Requirements:<br>
+User Profile Service with Synchronization working<br>
+User Profile Service must be connected to the Central Administration Web Application<br>
+The Account running the script must have Rights to the User Profile Service and all Site Collections</p>
+<br>
+<br>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+<div class="endscriptcode"></div>
+<div class="endscriptcode"></div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,2478 @@
+<style>
+		table	{ 
+					padding: 0px 0px 0px 0px;
+					margin: 0px 0px 0px 0px;
+					border: 0px;
+				}
+		h1 {color: #478BF6; font-family: Tahoma, Verdana, Arial, Sans-Serif; font-size: 16pt;}
+		h2 {color: #478BF6; font-family: Tahoma, Verdana, Arial, Sans-Serif; font-size: 14pt;}
+		h3 {color: #478BF6; font-family: Tahoma, Verdana, Arial, Sans-Serif; font-size: 12pt;}
+		th {color: white; font-family: Tahoma, Verdana, Arial, Sans-Serif;  font-style: italic;
+			border-style: solid; border-top: solid black 1.5pt; border-bottom: solid black 1.5pt; 
+			border-left: solid black 1.5pt; border-right: solid black 1.5pt;
+			background-color: #478BF6;
+			}
+		a:link { color: #478BF6; }
+		a:visited { color: #478BF6; }
+		li { color: #478BF6; }
+		td { 
+			color: #478BF6;
+			font-family: Tahoma, Verdana, Arial, Sans-Serif;
+			font-size: x-small;
+			}
+		strong {color: #478BF6; }
+				
+		body { background-color: white; font-family: Tahoma, Verdana, Arial, Sans-Serif;}
+		b { color: gray; }
+	</style>
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-16">
+<title>Documentation for LASPROCWEBTST01</title>
+</head>
+<body>
+<h1>LASPROCWEBTST01</h1><b>NetBIOS: </b>LASPROCWEBTST01<br><b>FQDN: </b>lasprocwebtst01.creditoneapp.tst<br><b>OS: </b>Microsoft Windows Server 2012 R2 Standard <br><b>Roles: </b>
+	None Found<br><b>Identifying Number: </b>VMware-42 20 9d 96 99 30 39 22-19 bd 85 bb e7 b5 39 1c<br><b>Scan Time: </b>12/8/2017 3:26:21 PM<br><br><h1><a>Table Of Contents</a></h1>
+<ol>
+<li><a href="#hardwareplatform">Hardware Platform</a></li>
+<ol>
+<li><a href="#hardwareplatform_general">General Information</a></li>
+<li><a href="#hardwareplatform_bios">BIOS Information</a></li>
+</ol>
+<li><a href="#softwareplatform">Software Platform</a></li>
+<ol>
+<li><a href="#softwareplatform_general">General Information</a></li>
+<li><a href="#softwareplatform_patches">Installed Patches</a></li>
+<li><a href="#softwareplatform_msiapplications">Currently Installed Programs (Windows Installer)</a></li>
+<li><a href="#softwareplatform_productkeys">Product Keys</a></li>
+</ol>
+<li><a href="#storage">Storage</a></li>
+<ol>
+<li><a href="#storage_general">General Information</a></li>
+</ol>
+<li><a href="#network">Network Configuration</a></li>
+<li><a href="#iis">Internet Information Services</a></li>
+<ol>
+<li><a href="#iis_www">Web Server</a></li>
+</ol>
+<li><a href="#miscellaneous">Miscellaneous Configuration</a></li>
+<ol>
+<li><a href="#miscellaneous_eventlog">Event Log Files</a></li>
+<li><a href="#miscellaneous_localgroups">Local Groups</a></li>
+<li><a href="#miscellaneous_localusers">Local Users</a></li>
+<li><a href="#miscellaneous_printers">Printers</a></li>
+<li><a href="#miscellaneous_regional">Regional Settings</a></li>
+<li><a href="#miscellaneous_processes">Currently running processes</a></li>
+<li><a href="#miscellaneous_services">Services</a></li>
+<li><a href="#miscellaneous_shares">Shares</a></li>
+<li><a href="#miscellaneous_startupcommand">Startup Command</a></li>
+<li><a href="#miscellaneous_virtualmemory">Virtual Memory</a></li>
+<li><a href="#miscellaneous_registry">Windows Registry</a></li>
+</ol>
+</ol>
+<h1 id="hardwareplatform">Hardware Platform</h1>
+<h2 id="hardwareplatform_general">General Information</h2><b>Manufacturer: </b>VMware, Inc.<br><b>Product Name: </b>VMware Virtual Platform<br><b>Identifying Number: </b>VMware-42 20 9d 96 99 30 39 22-19 bd 85 bb e7 b5 39 1c<br><b>Chassis: </b>Other<br><br><strong>Processor</strong><br><b>Name: </b>Intel(R) Xeon(R) CPU E5-2640 v3 @ 2.60GHz<br><b>Description: </b>Intel64 Family 6 Model 58 Stepping 0<br><b>Speed: </b>2597 MHz<br><b>L2 Cache Size: </b>0 KB<br><b>External Clock: </b> MHz<br>
+The system has 1 processor(s)<br><br><strong>Memory</strong><br><b>Total Memory: </b>4096 MB<br><table>
+<tr>
+<th>Bank</th>
+<th>Capacity</th>
+<th>Form</th>
+<th>Type</th>
+</tr>
+<tr>
+<td>RAM slot #0</td>
+<td>4096 MB</td>
+<td>DIMM</td>
+<td>DRAM</td>
+</tr>
+</table><br><strong>CD-ROM</strong><br><table>
+<tr>
+<th>Name</th>
+<th>Drive</th>
+<th>Manufacturer</th>
+</tr>
+<tr>
+<td>NECVMWar VMware IDE CDR10 ATA Device</td>
+<td>Z:</td>
+<td>(Standard CD-ROM drives)</td>
+</tr>
+</table><br><strong>Video Controller</strong><br><table>
+<tr>
+<th>Name</th>
+<th>Adapter RAM</th>
+<th>Compatibility</th>
+</tr>
+<tr>
+<td>VMware SVGA 3D</td>
+<td>0 MB</td>
+<td>VMware, Inc.</td>
+</tr>
+</table>
+<h2 id="hardwareplatform_bios">Bios Information</h2><b>Bios Version: </b>INTEL  - 6040000<br><b>SMBios Version: </b>6.00 (Major: 2
+	, Minor: 2)<br><b>Bios Characteristics: </b>ISA is supported, PCI is supported, PC Card (PCMCIA) is supported, Plug and Play is supported, APM is supported, BIOS is Upgradable (Flash), BIOS shadowing is allowed, ESCD support is available, Boot from CD is supported, Selectable Boot is supported, EDD (Enhanced Disk Drive) Specification is supported, Int 5h, Print Screen Service is supported, Int 9h, 8042 Keyboard services are supported, Int 14h, Serial Services are supported, Int 17h, printer services are supported, Int 10h, CGA/Mono Video Services are supported, ACPI supported, Smart Battery supported, Unknown (Undocumented), Unknown (Undocumented), Unknown (Undocumented), Unknown (Undocumented), Unknown (Undocumented), Unknown (Undocumented)<h1 id="softwareplatform">Software Platform</h1>
+<h2 id="softwareplatform_general">General Information</h2><b>OS Name: </b>Microsoft Windows Server 2012 R2 Standard <br><b>OS Configuration: </b>Member Server in the creditoneapp.tst domain<br><b>Windows Location: </b>C:\windows<br><b>Install Date: </b>7/29/2016 10:11:28 AM<br><b>Operating System Language: </b>English<br><b>Last Logged on User: </b><br><h2 id="softwareplatform_patches">Installed Patches</h2>
+<table>
+<tr>
+<th>Patch ID</th>
+<th>Description</th>
+<th>Install Date</th>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2959936">KB2959936</a></td>
+<td>Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2894852">KB2894852</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2894856">KB2894856</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2896496">KB2896496</a></td>
+<td>Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2919355">KB2919355</a></td>
+<td>Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2920189">KB2920189</a></td>
+<td>Security Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2928120">KB2928120</a></td>
+<td>Security Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2933826">KB2933826</a></td>
+<td>Security Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2934520">KB2934520</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2938066">KB2938066</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2938772">KB2938772</a></td>
+<td>Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2949621">KB2949621</a></td>
+<td>Hotfix</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2954879">KB2954879</a></td>
+<td>Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2965500">KB2965500</a></td>
+<td>Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2966407">KB2966407</a></td>
+<td>Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2966826">KB2966826</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2966828">KB2966828</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2967917">KB2967917</a></td>
+<td>Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2968296">KB2968296</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2971203">KB2971203</a></td>
+<td>Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2971850">KB2971850</a></td>
+<td>Security Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2972103">KB2972103</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2973114">KB2973114</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2973351">KB2973351</a></td>
+<td>Security Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2973448">KB2973448</a></td>
+<td>Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2975061">KB2975061</a></td>
+<td>Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2976627">KB2976627</a></td>
+<td>Security Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2977629">KB2977629</a></td>
+<td>Security Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2978122">KB2978122</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2982998">KB2982998</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2987107">KB2987107</a></td>
+<td>Security Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2989647">KB2989647</a></td>
+<td>Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB2989930">KB2989930</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3000483">KB3000483</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3000850">KB3000850</a></td>
+<td>Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3003057">KB3003057</a></td>
+<td>Security Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3004361">KB3004361</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3004365">KB3004365</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3004545">KB3004545</a></td>
+<td>Hotfix</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3012702">KB3012702</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3013172">KB3013172</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3013769">KB3013769</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3013791">KB3013791</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3013816">KB3013816</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3014442">KB3014442</a></td>
+<td>Update</td>
+<td>11/22/2014</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3019978">KB3019978</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3021910">KB3021910</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3022777">KB3022777</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3023219">KB3023219</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3023266">KB3023266</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3024751">KB3024751</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3024755">KB3024755</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3029603">KB3029603</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3030377">KB3030377</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3030947">KB3030947</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3031044">KB3031044</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3033446">KB3033446</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3035126">KB3035126</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3036612">KB3036612</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3037576">KB3037576</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3037924">KB3037924</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3038002">KB3038002</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3041857">KB3041857</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3042085">KB3042085</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3043812">KB3043812</a></td>
+<td>Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3044374">KB3044374</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3044673">KB3044673</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3045634">KB3045634</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3045685">KB3045685</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3045717">KB3045717</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3045719">KB3045719</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3045755">KB3045755</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3045992">KB3045992</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3045999">KB3045999</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3046017">KB3046017</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3046737">KB3046737</a></td>
+<td>Hotfix</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3048043">KB3048043</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3054169">KB3054169</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3054203">KB3054203</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3054256">KB3054256</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3054464">KB3054464</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3055323">KB3055323</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3055343">KB3055343</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3055642">KB3055642</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3059316">KB3059316</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3059317">KB3059317</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3060681">KB3060681</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3060793">KB3060793</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3061512">KB3061512</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3063843">KB3063843</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3071756">KB3071756</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3072307">KB3072307</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3074228">KB3074228</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3074545">KB3074545</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3075220">KB3075220</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3077715">KB3077715</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3078405">KB3078405</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3078676">KB3078676</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3080042">KB3080042</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3080149">KB3080149</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3082089">KB3082089</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3083992">KB3083992</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3084135">KB3084135</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3084905">KB3084905</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3086255">KB3086255</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3087041">KB3087041</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3087137">KB3087137</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3091297">KB3091297</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3092601">KB3092601</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3092627">KB3092627</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3094486">KB3094486</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3095701">KB3095701</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3097992">KB3097992</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3099834">KB3099834</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3100473">KB3100473</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3103616">KB3103616</a></td>
+<td>Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3103696">KB3103696</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3103709">KB3103709</a></td>
+<td>Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3109103">KB3109103</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3109976">KB3109976</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3110329">KB3110329</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3112148">KB3112148</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3115224">KB3115224</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3118401">KB3118401</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3121261">KB3121261</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3121461">KB3121461</a></td>
+<td>Security Update</td>
+<td>9/16/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3121918">KB3121918</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3122651">KB3122651</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3123245">KB3123245</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3126033">KB3126033</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3126434">KB3126434</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3126587">KB3126587</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3127222">KB3127222</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3128650">KB3128650</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3133043">KB3133043</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3133690">KB3133690</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3133924">KB3133924</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3134179">KB3134179</a></td>
+<td>Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3134815">KB3134815</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3137061">KB3137061</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3137728">KB3137728</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3138602">KB3138602</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3138615">KB3138615</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3139164">KB3139164</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3139398">KB3139398</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3139914">KB3139914</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3140219">KB3140219</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3140234">KB3140234</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3145384">KB3145384</a></td>
+<td>Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3145432">KB3145432</a></td>
+<td>Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3146604">KB3146604</a></td>
+<td>Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3146723">KB3146723</a></td>
+<td>Security Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3146751">KB3146751</a></td>
+<td>Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3147071">KB3147071</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3148851">KB3148851</a></td>
+<td>Update</td>
+<td>7/29/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3153704">KB3153704</a></td>
+<td>Security Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3155784">KB3155784</a></td>
+<td>Security Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3156059">KB3156059</a></td>
+<td>Security Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3159398">KB3159398</a></td>
+<td>Security Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3161949">KB3161949</a></td>
+<td>Security Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3161958">KB3161958</a></td>
+<td>Security Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3162343">KB3162343</a></td>
+<td>Security Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3162835">KB3162835</a></td>
+<td>Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3169704">KB3169704</a></td>
+<td>Security Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3170455">KB3170455</a></td>
+<td>Security Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3172614">KB3172614</a></td>
+<td>Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3172729">KB3172729</a></td>
+<td>Security Update</td>
+<td>8/16/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3173424">KB3173424</a></td>
+<td>Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3175443">KB3175443</a></td>
+<td>Security Update</td>
+<td>8/15/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3178539">KB3178539</a></td>
+<td>Security Update</td>
+<td>9/16/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3179574">KB3179574</a></td>
+<td>Update</td>
+<td>9/16/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB3185319">KB3185319</a></td>
+<td>Security Update</td>
+<td>9/16/2016</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4012213">KB4012213</a></td>
+<td>Security Update</td>
+<td>7/30/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4014505">KB4014505</a></td>
+<td>Update</td>
+<td>7/30/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4014512">KB4014512</a></td>
+<td>Update</td>
+<td>7/30/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4014562">KB4014562</a></td>
+<td>Security Update</td>
+<td>7/30/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4014574">KB4014574</a></td>
+<td>Security Update</td>
+<td>7/30/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4014581">KB4014581</a></td>
+<td>Security Update</td>
+<td>7/30/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4015547">KB4015547</a></td>
+<td>Security Update</td>
+<td>7/30/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4019213">KB4019213</a></td>
+<td>Security Update</td>
+<td>7/30/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4022717">KB4022717</a></td>
+<td>Security Update</td>
+<td>7/30/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4025252">KB4025252</a></td>
+<td>Security Update</td>
+<td>7/30/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4025333">KB4025333</a></td>
+<td>Security Update</td>
+<td>7/30/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4034672">KB4034672</a></td>
+<td>Security Update</td>
+<td>8/18/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4034733">KB4034733</a></td>
+<td>Security Update</td>
+<td>8/18/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4036586">KB4036586</a></td>
+<td>Security Update</td>
+<td>9/15/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4038793">KB4038793</a></td>
+<td>Security Update</td>
+<td>9/15/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4040685">KB4040685</a></td>
+<td>Security Update</td>
+<td>10/14/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4040958">KB4040958</a></td>
+<td>Security Update</td>
+<td>9/15/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4040967">KB4040967</a></td>
+<td>Security Update</td>
+<td>9/15/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4040974">KB4040974</a></td>
+<td>Update</td>
+<td>9/15/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4040981">KB4040981</a></td>
+<td>Update</td>
+<td>9/15/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4041687">KB4041687</a></td>
+<td>Security Update</td>
+<td>10/14/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4047206">KB4047206</a></td>
+<td>Security Update</td>
+<td>12/8/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4048961">KB4048961</a></td>
+<td>Security Update</td>
+<td>12/8/2017</td>
+</tr>
+<tr>
+<td><a href="http://support.microsoft.com/kb/KB4048958">KB4048958</a></td>
+<td>Security Update</td>
+<td>12/8/2017</td>
+</tr>
+</table>
+<h2 id="softwareplatform_msiapplications">Currently Installed Programs (Windows Installer)</h2>
+<table>
+<tr>
+<th>Name</th>
+<th>Vendor</th>
+<th>Version</th>
+<th>Install Date</th>
+</tr>
+<tr>
+<td>Microsoft Silverlight</td>
+<td>Microsoft Corporation</td>
+<td>5.1.50906.0</td>
+<td>20170729</td>
+</tr>
+<tr>
+<td>Microsoft Visual C++ 2005 Redistributable</td>
+<td>Microsoft Corporation</td>
+<td>8.0.61001</td>
+<td>20160815</td>
+</tr>
+<tr>
+<td>Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161</td>
+<td>Microsoft Corporation</td>
+<td>9.0.30729.6161</td>
+<td>20160802</td>
+</tr>
+<tr>
+<td>Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.17</td>
+<td>Microsoft Corporation</td>
+<td>9.0.30729</td>
+<td>20160815</td>
+</tr>
+<tr>
+<td>Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148</td>
+<td>Microsoft Corporation</td>
+<td>9.0.30729.4148</td>
+<td>20160802</td>
+</tr>
+<tr>
+<td>Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161</td>
+<td>Microsoft Corporation</td>
+<td>9.0.30729.6161</td>
+<td>20160803</td>
+</tr>
+<tr>
+<td>OpenText</td>
+<td>Open Text, Inc.</td>
+<td>10.4.2.1732</td>
+<td>20160815</td>
+</tr>
+<tr>
+<td>OpenText Process360 SDK</td>
+<td>Open Text, Inc.</td>
+<td>10.4.2.1732</td>
+<td>20160815</td>
+</tr>
+<tr>
+<td>Process360</td>
+<td>Open Text, Inc.</td>
+<td>10.4.2.1732</td>
+<td>20160815</td>
+</tr>
+<tr>
+<td>SolarWinds Client Components</td>
+<td>SolarWinds, Inc.</td>
+<td>2.1.4.5034</td>
+<td>20170914</td>
+</tr>
+<tr>
+<td>Symantec Endpoint Protection</td>
+<td>Symantec Corporation</td>
+<td>12.1.6860.6400</td>
+<td>20160729</td>
+</tr>
+<tr>
+<td>VMware Tools</td>
+<td>VMware, Inc.</td>
+<td>10.1.0.4449150</td>
+<td>20170729</td>
+</tr>
+</table>
+<h2 id="softwareplatform_productkeys">Product Keys</h2>
+<table>
+<tr>
+<th>Product</th>
+<th>Key</th>
+</tr>
+<tr>
+<td>Windows Server 2012 R2 Standard</td>
+<td>N/A</td>
+</tr>
+</table>
+<h1 id="storage">Storage</h1>
+<h2 id="storage_general">General Information</h2><strong>VMware Virtual disk SCSI Disk Device - \\.\PHYSICALDRIVE1</strong><br><b>Interface: </b>SCSI<br><b>Total Disk Size: </b>39.99 Gb<br>D:\ 39.87 Gb (39.78 Gb Free) NTFS<br><strong>VMware Virtual disk SCSI Disk Device - \\.\PHYSICALDRIVE0</strong><br><b>Interface: </b>SCSI<br><b>Total Disk Size: </b>60 Gb<br>C:\ 59.51 Gb (44.17 Gb Free) NTFS<br><h1 id="network">Network Configuration</h1>
+<h2 id="ipconfiguration">IP Configuration</h2><strong>vmxnet3 Ethernet Adapter</strong><br><b>MAC Address: </b>00:50:56:AC:15:16<br><b>IP Address: </b>192.168.64.13/255.255.255.0<br><b>Gateway: </b>192.168.64.254<br><b>DNS Domain: </b><br><b>DNS Server(s): </b>192.168.64.90<br><h2 id="ip4routes">IP Routes</h2>
+<table>
+<tr>
+<th>Destination</th>
+<th>Subnet Mask</th>
+<th>Gateway</th>
+</tr>
+<tr>
+<td>0.0.0.0</td>
+<td>0.0.0.0</td>
+<td>192.168.64.254</td>
+</tr>
+<tr>
+<td>127.0.0.0</td>
+<td>255.0.0.0</td>
+<td>0.0.0.0</td>
+</tr>
+<tr>
+<td>127.0.0.1</td>
+<td>255.255.255.255</td>
+<td>0.0.0.0</td>
+</tr>
+<tr>
+<td>127.255.255.255</td>
+<td>255.255.255.255</td>
+<td>0.0.0.0</td>
+</tr>
+<tr>
+<td>192.168.64.0</td>
+<td>255.255.255.0</td>
+<td>0.0.0.0</td>
+</tr>
+<tr>
+<td>192.168.64.13</td>
+<td>255.255.255.255</td>
+<td>0.0.0.0</td>
+</tr>
+<tr>
+<td>192.168.64.255</td>
+<td>255.255.255.255</td>
+<td>0.0.0.0</td>
+</tr>
+<tr>
+<td>224.0.0.0</td>
+<td>240.0.0.0</td>
+<td>0.0.0.0</td>
+</tr>
+<tr>
+<td>224.0.0.0</td>
+<td>240.0.0.0</td>
+<td>0.0.0.0</td>
+</tr>
+<tr>
+<td>255.255.255.255</td>
+<td>255.255.255.255</td>
+<td>0.0.0.0</td>
+</tr>
+<tr>
+<td>255.255.255.255</td>
+<td>255.255.255.255</td>
+<td>0.0.0.0</td>
+</tr>
+</table>
+<h1 id="iis">Internet Information Services</h1>
+<h2 id="iis_www">Web Server</h2>
+<h3>Default Web Site</h3><b>Home Directory: </b>C:\inetpub\wwwroot<br><br><table>
+<tr>
+<th>Hostname</th>
+<th>Ip</th>
+<th>Port</th>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>80</td>
+</tr>
+</table>
+<h3>Process360 WebParts</h3><b>Home Directory: </b>C:\Program Files (x86)\OpenText\Process360 WebParts\ASP.NET<br><br><table>
+<tr>
+<th>Hostname</th>
+<th>Ip</th>
+<th>Port</th>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>360</td>
+</tr>
+</table>
+<h3>Process360 WebParts Api</h3><b>Home Directory: </b>C:\Program Files (x86)\OpenText\Process360 WebParts\API<br><br><table>
+<tr>
+<th>Hostname</th>
+<th>Ip</th>
+<th>Port</th>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>361</td>
+</tr>
+</table>
+<h1 id="miscellaneous">Miscellaneous Configuration</h1>
+<h2 id="miscellaneous_eventlog">Event Log Files</h2><strong>Application</strong><br><b>File: </b>C:\windows\System32\Winevt\Logs\Application.evtx<br><b>Maximum Size: </b>20 Mb<br><b>Overwritepolicy: </b>WhenNeeded<br><br><strong>HardwareEvents</strong><br><b>File: </b>C:\windows\System32\Winevt\Logs\HardwareEvents.evtx<br><b>Maximum Size: </b>20 Mb<br><b>Overwritepolicy: </b>WhenNeeded<br><br><strong>Internet Explorer</strong><br><b>File: </b>C:\windows\System32\Winevt\Logs\Internet Explorer.evtx<br><b>Maximum Size: </b>1.00390625 Mb<br><b>Overwritepolicy: </b>WhenNeeded<br><br><strong>Key Management Service</strong><br><b>File: </b>C:\windows\System32\Winevt\Logs\Key Management Service.evtx<br><b>Maximum Size: </b>20 Mb<br><b>Overwritepolicy: </b>WhenNeeded<br><br><strong>Security</strong><br><b>File: </b>C:\windows\System32\Winevt\Logs\Security.evtx<br><b>Maximum Size: </b>20 Mb<br><b>Overwritepolicy: </b>WhenNeeded<br><br><strong>Symantec Endpoint Protection Client</strong><br><b>File: </b>C:\windows\System32\Winevt\Logs\Symantec Endpoint Protection Client.evtx<br><b>Maximum Size: </b>8 Mb<br><b>Overwritepolicy: </b>WhenNeeded<br><br><strong>System</strong><br><b>File: </b>C:\windows\System32\Winevt\Logs\System.evtx<br><b>Maximum Size: </b>20 Mb<br><b>Overwritepolicy: </b>WhenNeeded<br><br><strong>Windows PowerShell</strong><br><b>File: </b>C:\windows\System32\Winevt\Logs\Windows PowerShell.evtx<br><b>Maximum Size: </b>15 Mb<br><b>Overwritepolicy: </b>WhenNeeded<br><br><h2 id="miscellaneous_localgroups">Local Groups</h2><b>Access Control Assistance Operators</b><br><b>Administrators</b><br>
+		- LASPROCWEBTST01\Administrator<br>
+		- ContosoCORP\GS-IT-NOC-Advisor<br>
+		- CREDITONEAPPTST\Domain Admins<br>
+		- ContosoCORP\Domain Admins<br>
+		- ContosoCORP\Developers<br>
+		- ContosoCORP\dnavarro<br><b>Backup Operators</b><br><b>Certificate Service DCOM Access</b><br><b>Cryptographic Operators</b><br><b>Distributed COM Users</b><br><b>Event Log Readers</b><br>
+		- ContosoCORP\svc_rsa<br>
+		- PHXC1B\svc_rsa<br><b>Guests</b><br>
+		- LASPROCWEBTST01\Guest<br><b>Hyper-V Administrators</b><br><b>IIS_IUSRS</b><br>
+		- CREDITONEAPPTST\svc_process360_test<br>
+		- ContosoCORP\svc_process360_test<br><b>Network Configuration Operators</b><br><b>Performance Log Users</b><br><b>Performance Monitor Users</b><br><b>Power Users</b><br><b>Print Operators</b><br><b>RDS Endpoint Servers</b><br><b>RDS Management Servers</b><br><b>RDS Remote Access Servers</b><br><b>Remote Desktop Users</b><br><b>Remote Management Users</b><br><b>Replicator</b><br><b>Users</b><br>
+		- LASPROCWEBTST01\INTERACTIVE<br>
+		- LASPROCWEBTST01\Authenticated Users<br>
+		- CREDITONEAPPTST\Domain Users<br><b>WinRMRemoteWMIUsers__</b><br><h2 id="miscellaneous_localusers">Local Users</h2>
+<table>
+<tr>
+<th>User</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Administrator</td>
+<td>Built-in account for administering the computer/domain</td>
+</tr>
+<tr>
+<td>Guest</td>
+<td>Built-in account for guest access to the computer/domain</td>
+</tr>
+</table>
+<h2 id="miscellaneous_printers">Printers</h2><b>Print Spooler Location: </b>C:\Windows\system32\spool\PRINTERS<br><table>
+<tr>
+<th>Name</th>
+<th>Driver</th>
+<th>Port</th>
+</tr>
+<tr>
+<td>Microsoft XPS Document Writer</td>
+<td>Microsoft XPS Document Writer v4</td>
+<td>PORTPROMPT:</td>
+</tr>
+</table>
+<h2 id="miscellaneous_regional">Regional Settings</h2><b>Time Zone: </b>(UTC-08:00) Pacific Time (US &amp; Canada)<br><h2 id="miscellaneous_processes">Currently running processes</h2>
+<table>
+<tr>
+<th>Name</th>
+<th>Executable</th>
+</tr>
+<tr>
+<td>ccSvcHst.exe</td>
+<td>C:\Program Files (x86)\Symantec\Symantec Endpoint Protection\12.1.6860.6400.105\Bin\ccSvcHst.exe</td>
+</tr>
+<tr>
+<td>csrss.exe</td>
+<td></td>
+</tr>
+<tr>
+<td>csrss.exe</td>
+<td></td>
+</tr>
+<tr>
+<td>dllhost.exe</td>
+<td>C:\windows\system32\dllhost.exe</td>
+</tr>
+<tr>
+<td>dwm.exe</td>
+<td>C:\windows\system32\dwm.exe</td>
+</tr>
+<tr>
+<td>inetinfo.exe</td>
+<td>C:\windows\system32\inetsrv\inetinfo.exe</td>
+</tr>
+<tr>
+<td>LogonUI.exe</td>
+<td>C:\windows\system32\LogonUI.exe</td>
+</tr>
+<tr>
+<td>lsass.exe</td>
+<td>C:\windows\system32\lsass.exe</td>
+</tr>
+<tr>
+<td>ManagementAgentHost.exe</td>
+<td>C:\Program Files\VMware\VMware Tools\VMware CAF\pme\bin\ManagementAgentHost.exe</td>
+</tr>
+<tr>
+<td>mqsvc.exe</td>
+<td>C:\windows\system32\mqsvc.exe</td>
+</tr>
+<tr>
+<td>msdtc.exe</td>
+<td>C:\windows\System32\msdtc.exe</td>
+</tr>
+<tr>
+<td>services.exe</td>
+<td></td>
+</tr>
+<tr>
+<td>smss.exe</td>
+<td></td>
+</tr>
+<tr>
+<td>SMSvcHost.exe</td>
+<td>C:\windows\Microsoft.NET\Framework64\v4.0.30319\SMSvcHost.exe</td>
+</tr>
+<tr>
+<td>SMSvcHost.exe</td>
+<td>C:\windows\Microsoft.NET\Framework64\v4.0.30319\SMSvcHost.exe</td>
+</tr>
+<tr>
+<td>snmp.exe</td>
+<td>C:\windows\System32\snmp.exe</td>
+</tr>
+<tr>
+<td>spoolsv.exe</td>
+<td>C:\windows\System32\spoolsv.exe</td>
+</tr>
+<tr>
+<td>svchost.exe</td>
+<td>C:\windows\system32\svchost.exe</td>
+</tr>
+<tr>
+<td>svchost.exe</td>
+<td>C:\windows\system32\svchost.exe</td>
+</tr>
+<tr>
+<td>svchost.exe</td>
+<td>C:\windows\System32\svchost.exe</td>
+</tr>
+<tr>
+<td>svchost.exe</td>
+<td>C:\windows\system32\svchost.exe</td>
+</tr>
+<tr>
+<td>svchost.exe</td>
+<td>C:\windows\system32\svchost.exe</td>
+</tr>
+<tr>
+<td>svchost.exe</td>
+<td>C:\windows\system32\svchost.exe</td>
+</tr>
+<tr>
+<td>svchost.exe</td>
+<td>C:\windows\system32\svchost.exe</td>
+</tr>
+<tr>
+<td>svchost.exe</td>
+<td>C:\windows\system32\svchost.exe</td>
+</tr>
+<tr>
+<td>svchost.exe</td>
+<td>C:\windows\System32\svchost.exe</td>
+</tr>
+<tr>
+<td>svchost.exe</td>
+<td>C:\windows\System32\svchost.exe</td>
+</tr>
+<tr>
+<td>svchost.exe</td>
+<td>C:\windows\system32\svchost.exe</td>
+</tr>
+<tr>
+<td>svchost.exe</td>
+<td>C:\windows\System32\svchost.exe</td>
+</tr>
+<tr>
+<td>svchost.exe</td>
+<td>C:\windows\system32\svchost.exe</td>
+</tr>
+<tr>
+<td>System</td>
+<td></td>
+</tr>
+<tr>
+<td>System Idle Process</td>
+<td></td>
+</tr>
+<tr>
+<td>TIRemoteService.exe</td>
+<td>C:\WINDOWS\TIREMOTE\TIRemoteService.exe</td>
+</tr>
+<tr>
+<td>VGAuthService.exe</td>
+<td>C:\Program Files\VMware\VMware Tools\VMware VGAuth\VGAuthService.exe</td>
+</tr>
+<tr>
+<td>vmtoolsd.exe</td>
+<td>C:\Program Files\VMware\VMware Tools\vmtoolsd.exe</td>
+</tr>
+<tr>
+<td>wininit.exe</td>
+<td>C:\windows\system32\wininit.exe</td>
+</tr>
+<tr>
+<td>winlogon.exe</td>
+<td>C:\windows\system32\winlogon.exe</td>
+</tr>
+<tr>
+<td>WmiPrvSE.exe</td>
+<td>C:\windows\system32\wbem\wmiprvse.exe</td>
+</tr>
+</table>
+<h2 id="miscellaneous_services">Services</h2>
+<table>
+<tr>
+<th>Name</th>
+<th>Startmode</th>
+<th>Started</th>
+<th>StartName</th>
+</tr>
+<tr>
+<td>App Readiness</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Application Experience</td>
+<td>Manual</td>
+<td>False</td>
+<td>localSystem</td>
+</tr>
+<tr>
+<td>Application Host Helper Service</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Application Identity</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT Authority\LocalService</td>
+</tr>
+<tr>
+<td>Application Information</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Application Layer Gateway Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Application Management</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>AppX Deployment Service (AppXSVC)</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>ASP.NET State Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>Background Intelligent Transfer Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Background Tasks Infrastructure Service</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Base Filtering Engine</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Certificate Propagation</td>
+<td>Manual</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>CNG Key Isolation</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>COM+ Event System</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>COM+ System Application</td>
+<td>Manual</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Computer Browser</td>
+<td>Disabled</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Credential Manager</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Cryptographic Services</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT Authority\NetworkService</td>
+</tr>
+<tr>
+<td>DCOM Server Process Launcher</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Device Association Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Device Install Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Device Setup Manager</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>DHCP Client</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT Authority\LocalService</td>
+</tr>
+<tr>
+<td>Diagnostic Policy Service</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Diagnostic Service Host</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Diagnostic System Host</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Diagnostics Tracking Service</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Distributed Link Tracking Client</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Distributed Transaction Coordinator</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>DNS Client</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>Encrypting File System (EFS)</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Extensible Authentication Protocol</td>
+<td>Manual</td>
+<td>False</td>
+<td>localSystem</td>
+</tr>
+<tr>
+<td>Function Discovery Provider Host</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Function Discovery Resource Publication</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Group Policy Client</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Health Key and Certificate Management</td>
+<td>Manual</td>
+<td>False</td>
+<td>localSystem</td>
+</tr>
+<tr>
+<td>Human Interface Device Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Hyper-V Data Exchange Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Hyper-V Guest Service Interface</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Hyper-V Guest Shutdown Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Hyper-V Heartbeat Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Hyper-V Remote Desktop Virtualization Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Hyper-V Time Synchronization Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Hyper-V Volume Shadow Copy Requestor</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>IIS Admin Service</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>IKE and AuthIP IPsec Keying Modules</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Interactive Services Detection</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Internet Connection Sharing (ICS)</td>
+<td>Disabled</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Internet Explorer ETW Collector Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>IP Helper</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>IPsec Policy Agent</td>
+<td>Manual</td>
+<td>True</td>
+<td>NT Authority\NetworkService</td>
+</tr>
+<tr>
+<td>KDC Proxy Server service (KPS)</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>KtmRm for Distributed Transaction Coordinator</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>Link-Layer Topology Discovery Mapper</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Local Session Manager</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Message Queuing</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT Authority\NetworkService</td>
+</tr>
+<tr>
+<td>Microsoft iSCSI Initiator Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Microsoft Software Shadow Copy Provider</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Microsoft Storage Spaces SMP</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>Multimedia Class Scheduler</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Net.Msmq Listener Adapter</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>Net.Pipe Listener Adapter</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Net.Tcp Listener Adapter</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Net.Tcp Port Sharing Service</td>
+<td>Manual</td>
+<td>True</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Netlogon</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Network Access Protection Agent</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>Network Connections</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Network Connectivity Assistant</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Network List Service</td>
+<td>Manual</td>
+<td>True</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Network Location Awareness</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>Network Store Interface Service</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT Authority\LocalService</td>
+</tr>
+<tr>
+<td>Optimize drives</td>
+<td>Manual</td>
+<td>False</td>
+<td>localSystem</td>
+</tr>
+<tr>
+<td>Performance Counter DLL Host</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Performance Logs &amp; Alerts</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Plug and Play</td>
+<td>Manual</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Portable Device Enumerator Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Power</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Print Spooler</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Printer Extensions and Notifications</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Problem Reports and Solutions Control Panel Support</td>
+<td>Manual</td>
+<td>False</td>
+<td>localSystem</td>
+</tr>
+<tr>
+<td>Remote Access Auto Connection Manager</td>
+<td>Manual</td>
+<td>False</td>
+<td>localSystem</td>
+</tr>
+<tr>
+<td>Remote Access Connection Manager</td>
+<td>Manual</td>
+<td>False</td>
+<td>localSystem</td>
+</tr>
+<tr>
+<td>Remote Desktop Configuration</td>
+<td>Manual</td>
+<td>True</td>
+<td>localSystem</td>
+</tr>
+<tr>
+<td>Remote Desktop Services</td>
+<td>Manual</td>
+<td>True</td>
+<td>NT Authority\NetworkService</td>
+</tr>
+<tr>
+<td>Remote Desktop Services UserMode Port Redirector</td>
+<td>Manual</td>
+<td>True</td>
+<td>localSystem</td>
+</tr>
+<tr>
+<td>Remote Procedure Call (RPC)</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>Remote Procedure Call (RPC) Locator</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>Remote Registry</td>
+<td>Auto</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Resultant Set of Policy Provider</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Routing and Remote Access</td>
+<td>Disabled</td>
+<td>False</td>
+<td>localSystem</td>
+</tr>
+<tr>
+<td>RPC Endpoint Mapper</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>Secondary Logon</td>
+<td>Manual</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Secure Socket Tunneling Protocol Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT Authority\LocalService</td>
+</tr>
+<tr>
+<td>Security Accounts Manager</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Shell Hardware Detection</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Smart Card</td>
+<td>Disabled</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Smart Card Device Enumeration Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Smart Card Removal Policy</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>SNMP Service</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>SNMP Trap</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Software Protection</td>
+<td>Auto</td>
+<td>False</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>Special Administration Console Helper</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Spot Verifier</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>SSDP Discovery</td>
+<td>Disabled</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Storage Tiers Management</td>
+<td>Manual</td>
+<td>False</td>
+<td>localSystem</td>
+</tr>
+<tr>
+<td>Superfetch</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Symantec Auto-upgrade Agent</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Symantec Endpoint Protection</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Symantec Network Access Control</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>System Event Notification Service</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>System Events Broker</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Task Scheduler</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>TCP/IP NetBIOS Helper</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Telephony</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>Themes</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Thread Ordering Server</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Track-It! Workstation Manager</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>UPnP Device Host</td>
+<td>Disabled</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>User Access Logging Service</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>User Profile Service</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Virtual Disk</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>VMware Alias Manager and Ticket Service</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>VMware CAF AMQP Communication Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>VMware CAF Management Agent Service</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>VMware Snapshot Provider</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>VMware Tools</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Volume Shadow Copy</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>W3C Logging Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Windows Audio</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Windows Audio Endpoint Builder</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Windows Color System</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Windows Connection Manager</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT Authority\LocalService</td>
+</tr>
+<tr>
+<td>Windows Driver Foundation - User-mode Driver Framework</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Windows Encryption Provider Host Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Windows Error Reporting Service</td>
+<td>Manual</td>
+<td>False</td>
+<td>localSystem</td>
+</tr>
+<tr>
+<td>Windows Event Collector</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>Windows Event Log</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Windows Firewall</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT Authority\LocalService</td>
+</tr>
+<tr>
+<td>Windows Font Cache Service</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Windows Installer</td>
+<td>Manual</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Windows Management Instrumentation</td>
+<td>Auto</td>
+<td>True</td>
+<td>localSystem</td>
+</tr>
+<tr>
+<td>Windows Modules Installer</td>
+<td>Manual</td>
+<td>False</td>
+<td>localSystem</td>
+</tr>
+<tr>
+<td>Windows Presentation Foundation Font Cache 3.0.0.0</td>
+<td>Manual</td>
+<td>False</td>
+<td>NT Authority\LocalService</td>
+</tr>
+<tr>
+<td>Windows Process Activation Service</td>
+<td>Manual</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Windows Remote Management (WS-Management)</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>Windows Store Service (WSService)</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>Windows Time</td>
+<td>Manual</td>
+<td>True</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Windows Update</td>
+<td>Manual</td>
+<td>False</td>
+<td>LocalSystem</td>
+</tr>
+<tr>
+<td>WinHTTP Web Proxy Auto-Discovery Service</td>
+<td>Manual</td>
+<td>True</td>
+<td>NT AUTHORITY\LocalService</td>
+</tr>
+<tr>
+<td>Wired AutoConfig</td>
+<td>Manual</td>
+<td>False</td>
+<td>localSystem</td>
+</tr>
+<tr>
+<td>WMI Performance Adapter</td>
+<td>Manual</td>
+<td>False</td>
+<td>localSystem</td>
+</tr>
+<tr>
+<td>Workstation</td>
+<td>Auto</td>
+<td>True</td>
+<td>NT AUTHORITY\NetworkService</td>
+</tr>
+<tr>
+<td>World Wide Web Publishing Service</td>
+<td>Auto</td>
+<td>True</td>
+<td>LocalSystem</td>
+</tr>
+</table>
+<h2 id="miscellaneous_shares">Shares</h2>
+<table>
+<tr>
+<th>Name</th>
+<th>Path</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>ADMIN$</td>
+<td>C:\windows</td>
+<td>Remote Admin</td>
+</tr>
+<tr>
+<td>C$</td>
+<td>C:\</td>
+<td>Default share</td>
+</tr>
+<tr>
+<td>D$</td>
+<td>D:\</td>
+<td>Default share</td>
+</tr>
+<tr>
+<td>IPC$</td>
+<td> </td>
+<td>Remote IPC</td>
+</tr>
+</table>
+<h2 id="miscellaneous_startupcommand">Startup Command</h2>
+<table>
+<tr>
+<th>User</th>
+<th>Name</th>
+<th>Command</th>
+</tr>
+<tr>
+<td>Public</td>
+<td>VMware User Process</td>
+<td>"C:\Program Files\VMware\VMware Tools\vmtoolsd.exe" -n vmusr</td>
+</tr>
+</table>
+<h2 id="miscellaneous_virtualmemory">Virtual Memory</h2><strong>Pagefile(s)</strong><br><h2 id="miscellaneous_registry">Windows Registry</h2><b>Current Registry Size: </b>81 Mb<br><b>Maximum Registry Size: </b> Mb<br></body>
+</html>

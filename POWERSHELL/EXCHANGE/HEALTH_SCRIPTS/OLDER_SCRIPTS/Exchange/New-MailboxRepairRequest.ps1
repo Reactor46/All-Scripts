@@ -1,0 +1,1 @@
+New-MailboxRepairRequest -Mailbox rabanker -CorruptionType ProvisionedFolder,SearchFolder,AggregateCounts,Folderview

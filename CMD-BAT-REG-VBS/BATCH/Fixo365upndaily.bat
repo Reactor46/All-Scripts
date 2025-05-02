@@ -1,0 +1,1 @@
+powershell .\Fixo365upndaily.ps1

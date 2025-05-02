@@ -1,0 +1,12 @@
+digraph test {
+ rankdir = LR
+             
+ "USONVSVRDC01" -> "USONVSVRDC02"[label = "Replicates To"]            
+ "USONVSVRDC03" -> "USONVSVRDC02"[label = "Replicates To"]            
+ "USONVSVRDC02" -> "USONVSVRDC01"[label = "Replicates To"]            
+ "MSODC04" -> "USONVSVRDC01"[label = "Replicates To"]            
+ "USONVSVRDC01" -> "MSODC04"[label = "Replicates To"]            
+ "MSODC04" -> "USONVSVRDC02"[label = "Replicates To"]            
+ "USONVSVRDC02" -> "MSODC04"[label = "Replicates To"]            
+ "USONVSVRDC02" -> "USONVSVRDC03"[label = "Replicates To"]
+}

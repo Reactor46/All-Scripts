@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<SpaceSnifferConfig>
+    <refreshDelayMs>50</refreshDelayMs>
+    <zoomTimeMs>5</zoomTimeMs>
+    <minElementSizePx>10</minElementSizePx>
+    <showFreeSpace>false</showFreeSpace>
+    <showUnknownSpace>false</showUnknownSpace>
+    <initialStyle>flat</initialStyle>
+    <showFileTooltipDateTime>true</showFileTooltipDateTime>
+    <showFileTooltipAge>true</showFileTooltipAge>
+    <useRealZoom>false</useRealZoom>
+    <useDynaSmooth>true</useDynaSmooth>
+    <useSorting>true</useSorting>
+    <scanADS>false</scanADS>
+    <watchDog>true</watchDog>
+    <logPopup>false</logPopup>
+    <logWarning>false</logWarning>
+    <flashWindow>true</flashWindow>
+    <keepTooltip>true</keepTooltip>
+    <proportions>0</proportions>
+    <initialDetailLevel>3</initialDetailLevel>
+    <fontSize>7</fontSize>
+    <colors>
+        <driveColor>0x000099FF</driveColor>
+        <folderColor>0x0099CCFF</folderColor>
+        <fileColor>0x00FFCC99</fileColor>
+        <freeColor>0x00008000</freeColor>
+        <unknownColor>0x00808080</unknownColor>
+        <levelContrast>15</levelContrast>
+        <borderContrast>35</borderContrast>
+        <mouseHover>true</mouseHover>
+        <mouseTrail>false</mouseTrail>
+        <hilightShadow>false</hilightShadow>
+        <hilightHaloLevels>4</hilightHaloLevels>
+    </colors>
+    <exportConfigs>
+        <exportConfig version="2">
+            <description>Grouped by folder</description>
+            <preferredFileName>File report</preferredFileName>
+            <preferredFileExtension>Text file (*.txt)|*.txt</preferredFileExtension>
+            <headerFormat></headerFormat>
+            <detailFormat>e3NjcmlwdH0NCnsgICBpZiB7PCVpc2ZpbGUlPn0gPT0ge3RydWV9DQogID8geyAgW3tsZWZ0&#x0D;&#x0A;cGFkezwlZGlza3NpemUlPn17IH17OH19XSA8JWZpbGUlPnsmYnJ9fQ0KICA6IHsgICBpZiB7&#x0D;&#x0A;PCVjb250YWluc2ZpbGVzJT59ID09IHt0cnVlfQ0KICAgICAgPyB7eyZicn08JXBhdGhmaWxl&#x0D;&#x0A;JT4gWzwlZGlza3NpemUlPl17JmJyfX0NCiAgICB9DQp9&#x0D;&#x0A;</detailFormat>
+            <footerFormat></footerFormat>
+            <blockSorting>files</blockSorting>
+            <fineSorting>size</fineSorting>
+            <fineSortingDirection>desc</fineSortingDirection>
+        </exportConfig>
+        <exportConfig version="2">
+            <description>Simple file list</description>
+            <preferredFileName>File list</preferredFileName>
+            <preferredFileExtension>Text file (*.txt)|*.txt</preferredFileExtension>
+            <headerFormat></headerFormat>
+            <detailFormat>eyBpZiB7PCVpc2ZpbGUlPn0gPT0ge3RydWV9ID8gezwlcGF0aGZpbGUlPnsmYnJ9fX0=</detailFormat>
+            <footerFormat></footerFormat>
+            <blockSorting>files</blockSorting>
+            <fineSorting>size</fineSorting>
+            <fineSortingDirection>desc</fineSortingDirection>
+        </exportConfig>
+        <exportConfig version="2">
+            <description>Summary</description>
+            <preferredFileName>Summary</preferredFileName>
+            <preferredFileExtension>Text file (*.txt)|*.txt</preferredFileExtension>
+            <headerFormat></headerFormat>
+            <detailFormat></detailFormat>
+            <footerFormat>VG90YWwgc2l6ZTogPCVkaXNrc2l6ZSU+DQpGb2xkZXJzICAgOiA8JWZvbGRlcmNvdW50JT4N&#x0D;&#x0A;CkZpbGVzICAgICA6IDwlZmlsZWNvdW50JT4NCg==&#x0D;&#x0A;</footerFormat>
+            <blockSorting>files</blockSorting>
+            <fineSorting>size</fineSorting>
+            <fineSortingDirection>desc</fineSortingDirection>
+        </exportConfig>
+    </exportConfigs>
+    <fileGroups>
+        <fileGroup>
+            <name>Video/Movies</name>
+            <extensions>qt;mov;mpeg;mpg;mpe;m1s;mp4;avi;mts;vob;wmv;rm;3gp;mkv</extensions>
+            <color>0x000000FF</color>
+        </fileGroup>
+        <fileGroup>
+            <name>Executables/System files</name>
+            <extensions>exe;dll;sys;ini;msi;log</extensions>
+            <color>0x0000FFFF</color>
+        </fileGroup>
+        <fileGroup>
+            <name>Archives/Disk images</name>
+            <extensions>zip;7zip;rar;iso</extensions>
+            <color>0x00FF0000</color>
+        </fileGroup>
+        <fileGroup>
+            <name>Pictures/Images</name>
+            <extensions>jpg;jpeg;gif;png;tif;tiff;nef;raw;rw2;cr2;bmp;psd</extensions>
+            <color>0x0000FF00</color>
+        </fileGroup>
+        <fileGroup>
+            <name>Audio/Music</name>
+            <extensions>mp2;mp3;wav;ogg;aif;alp;au;3gp;ac3;amr;aac;m4a;wma;aiff;flac;m4a;voc</extensions>
+            <color>0x00C080FF</color>
+        </fileGroup>
+    </fileGroups>
+</SpaceSnifferConfig>

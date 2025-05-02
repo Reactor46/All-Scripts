@@ -1,0 +1,1 @@
+Get-InboxRule -mailbox <username>

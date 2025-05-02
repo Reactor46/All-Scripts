@@ -1,0 +1,1 @@
+Powershell .\syncazkeyvault2onprem.ps1

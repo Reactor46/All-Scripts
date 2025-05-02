@@ -1,0 +1,10 @@
+#TYPE System.Management.Automation.PSCustomObject
+"Server","Version","Caption","servicepackmajorversion","OSArchitecture","MaxProcessMemorySize"
+"LASEXCAS01","6.1.7601","Microsoft Windows Server 2008 R2 Standard ","1","64-bit","8589934464"
+"LASEXCAS02","6.1.7601","Microsoft Windows Server 2008 R2 Standard ","1","64-bit","8589934464"
+"LASEXDB01","6.1.7601","Microsoft Windows Server 2008 R2 Enterprise ","1","64-bit","8589934464"
+"LASEXDB02","6.1.7601","Microsoft Windows Server 2008 R2 Enterprise ","1","64-bit","8589934464"
+"LASEXCH01","6.3.9600","Microsoft Windows Server 2012 R2 Standard","0","64-bit","137438953344"
+"LASEXCH03","6.3.9600","Microsoft Windows Server 2012 R2 Standard","0","64-bit","137438953344"
+"LASEXCH02","6.3.9600","Microsoft Windows Server 2012 R2 Standard","0","64-bit","137438953344"
+"LASEXCH04","6.3.9600","Microsoft Windows Server 2012 R2 Standard","0","64-bit","137438953344"

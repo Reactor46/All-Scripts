@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?><ManagementPack ContentReadable="true" SchemaVersion="2.0" OriginalSchemaVersion="2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Manifest>
+    <Identity>
+      <ID>Microsoft.Exchange.15.Addendum</ID>
+      <Version>1.0.0.2</Version>
+    </Identity>
+    <Name>Microsoft Exchange Server 2013 Addendum</Name>
+    <References>
+      <Reference Alias="Windows">
+        <ID>Microsoft.Windows.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="System">
+        <ID>System.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Exchange">
+        <ID>Microsoft.Exchange.15</ID>
+        <Version>15.0.665.19</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="MSIL">
+        <ID>Microsoft.SystemCenter.InstanceGroup.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="MSCL">
+        <ID>Microsoft.SystemCenter.Library</ID>
+        <Version>7.0.8433.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <TypeDefinitions>
+    <EntityTypes>
+      <ClassTypes>
+        <ClassType ID="Microsoft.Exchange.15.Addendum.Seed.Class" Accessibility="Public" Abstract="false" Base="Windows!Microsoft.Windows.LocalApplication" Hosted="true" Singleton="false" Extension="false" />
+        <ClassType ID="Microsoft.Exchange.15.Addendum.Seed.Class.Group" Accessibility="Public" Abstract="false" Base="MSIL!Microsoft.SystemCenter.InstanceGroup" Hosted="false" Singleton="true" Extension="false" />
+      </ClassTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <Monitoring>
+    <Discoveries>
+      <Discovery ID="Microsoft.Exchange.15.Addendum.Seed.Class.Discovery" Enabled="true" Target="Windows!Microsoft.Windows.Server.Computer" ConfirmDelivery="false" Remotable="true" Priority="Normal">
+        <Category>Discovery</Category>
+        <DiscoveryTypes />
+        <DataSource ID="DS" TypeID="Windows!Microsoft.Windows.FilteredRegistryDiscoveryProvider">
+          <ComputerName>$Target/Property[Type="Windows!Microsoft.Windows.Computer"]/PrincipalName$</ComputerName>
+          <RegistryAttributeDefinitions>
+            <RegistryAttributeDefinition>
+              <AttributeName>Exchange15RegExists</AttributeName>
+              <Path>SOFTWARE\Microsoft\ExchangeServer\v15\Setup\MsiInstallPath</Path>
+              <PathType>1</PathType>
+              <AttributeType>0</AttributeType>
+            </RegistryAttributeDefinition>
+          </RegistryAttributeDefinitions>
+          <Frequency>86400</Frequency>
+          <ClassId>$MPElement[Name="Microsoft.Exchange.15.Addendum.Seed.Class"]$</ClassId>
+          <InstanceSettings>
+            <Settings>
+              <Setting>
+                <Name>$MPElement[Name="Windows!Microsoft.Windows.Computer"]/PrincipalName$</Name>
+                <Value>$Target/Property[Type="Windows!Microsoft.Windows.Computer"]/PrincipalName$</Value>
+              </Setting>
+              <Setting>
+                <Name>$MPElement[Name="System!System.Entity"]/DisplayName$</Name>
+                <Value>$Target/Property[Type="Windows!Microsoft.Windows.Computer"]/PrincipalName$</Value>
+              </Setting>
+            </Settings>
+          </InstanceSettings>
+          <Expression>
+            <SimpleExpression>
+              <ValueExpression>
+                <XPathQuery Type="String">Values/Exchange15RegExists</XPathQuery>
+              </ValueExpression>
+              <Operator>Equal</Operator>
+              <ValueExpression>
+                <Value Type="String">True</Value>
+              </ValueExpression>
+            </SimpleExpression>
+          </Expression>
+        </DataSource>
+      </Discovery>
+      <Discovery ID="Microsoft.Exchange.15.Addendum.Seed.Class.Group.DiscoveryRule" Enabled="true" Target="Microsoft.Exchange.15.Addendum.Seed.Class.Group" ConfirmDelivery="false" Remotable="true" Priority="Normal">
+        <Category>Discovery</Category>
+        <DiscoveryTypes>
+          <DiscoveryRelationship TypeID="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities" />
+        </DiscoveryTypes>
+        <DataSource ID="GroupPopulationDataSource" TypeID="MSCL!Microsoft.SystemCenter.GroupPopulator">
+          <RuleId>$MPElement$</RuleId>
+          <GroupInstanceId>$MPElement[Name="Microsoft.Exchange.15.Addendum.Seed.Class.Group"]$</GroupInstanceId>
+          <MembershipRules>
+            <MembershipRule>
+              <MonitoringClass>$MPElement[Name="Windows!Microsoft.Windows.Computer"]$</MonitoringClass>
+              <RelationshipClass>$MPElement[Name="MSIL!Microsoft.SystemCenter.InstanceGroupContainsEntities"]$</RelationshipClass>
+              <Expression>
+                <Contains>
+                  <MonitoringClass>$MPElement[Name="Microsoft.Exchange.15.Addendum.Seed.Class"]$</MonitoringClass>
+                </Contains>
+              </Expression>
+            </MembershipRule>
+          </MembershipRules>
+        </DataSource>
+      </Discovery>
+    </Discoveries>
+    <Overrides>
+      <DiscoveryPropertyOverride ID="OverrideForDiscoveryMicrosoftExchange15ServerDiscoveryRuleForContextMicrosoftWindowsServerComputere00aadffa86640d6b049ae182ed25a03" Context="Windows!Microsoft.Windows.Server.Computer" Enforced="false" Discovery="Exchange!Microsoft.Exchange.15.Server.DiscoveryRule" Property="Enabled">
+        <Value>false</Value>
+      </DiscoveryPropertyOverride>
+      <DiscoveryPropertyOverride ID="OverrideForDiscoveryMicrosoftExchange15ServerDiscoveryRuleForContextMicrosoftExchange15AddendumSeedClassGroupd19fdda4652c406989937b80a22e5be3" Context="Microsoft.Exchange.15.Addendum.Seed.Class.Group" ContextInstance="aebf9ba9-57be-b70a-7eae-b0bdeb934baa" Enforced="false" Discovery="Exchange!Microsoft.Exchange.15.Server.DiscoveryRule" Property="Enabled">
+        <Value>true</Value>
+      </DiscoveryPropertyOverride>
+    </Overrides>
+  </Monitoring>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="Microsoft.Exchange.15.Addendum">
+          <Name>Microsoft Exchange Server 2013 Addendum</Name>
+          <Description>Microsoft Exchange Server 2013 Management Pack Addendum. This management pack will disable the discovery in the Exchange 2013 MP, and enable it for a group based on seed class also contained in this mp.</Description>
+        </DisplayString>
+        <DisplayString ElementID="Microsoft.Exchange.15.Addendum.Seed.Class">
+          <Name>Microsoft Exchange 15 Addendum Seed Class</Name>
+        </DisplayString>
+        <DisplayString ElementID="Microsoft.Exchange.15.Addendum.Seed.Class.Discovery">
+          <Name>Microsoft Exchange 15 Addendum Seed Class Discovery</Name>
+        </DisplayString>
+        <DisplayString ElementID="Microsoft.Exchange.15.Addendum.Seed.Class.Group">
+          <Name>Exchange 15 Seed Addendum Computer Group</Name>
+        </DisplayString>
+        <DisplayString ElementID="Microsoft.Exchange.15.Addendum.Seed.Class.Group.DiscoveryRule">
+          <Name>Populate Exchange 15 Seed Addendum Computer Group</Name>
+          <Description>This discovery rule populates the group 'Exchange 15 Seed Addendum Computer Group'</Description>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+</ManagementPack>

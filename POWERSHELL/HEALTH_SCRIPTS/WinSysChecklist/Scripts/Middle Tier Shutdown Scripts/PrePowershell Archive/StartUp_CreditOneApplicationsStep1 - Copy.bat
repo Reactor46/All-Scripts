@@ -1,0 +1,31 @@
+cscript.exe SvcManager.vbs Contosocorp LASCASMT01 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCASMT02 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCASMT03 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCASMT04 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCASMT05 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCASMT06 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCASMT07 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCASMT08 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCASMT09 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCASMT10 ContosoDataLayerService start 10
+
+cscript.exe SvcManager.vbs Contosocorp LASCOLL01 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCOLL02 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCOLL03 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCOLL04 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCOLL05 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCOLL06 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCOLL07 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCOLL08 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASCOLL09 ContosoDataLayerService start 10
+
+cscript.exe SvcManager.vbs Contosocorp LASMT01 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASMT02 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASMT03 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASMT04 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASMT05 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASMT06 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASMT07 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASMT08 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASMT09 ContosoDataLayerService start 10
+cscript.exe SvcManager.vbs Contosocorp LASMT10 ContosoDataLayerService start 10

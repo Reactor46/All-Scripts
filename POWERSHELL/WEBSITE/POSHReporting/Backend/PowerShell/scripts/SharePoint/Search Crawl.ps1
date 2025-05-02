@@ -1,0 +1,1 @@
+﻿Get-SearchCrawls | Select Name, Type, "Success Count", "Warning Count", "Error Count", "Crawl Started", "Crawl Completed", "Crawl Duration", "Crawl State"

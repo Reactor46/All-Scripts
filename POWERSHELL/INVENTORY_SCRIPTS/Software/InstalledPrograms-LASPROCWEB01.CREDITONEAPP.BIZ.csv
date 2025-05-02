@@ -1,0 +1,18 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"BMC Track-It! 11.3 Agent";"LASPROCWEB01.CREDITONEAPP.BIZ";"BMC Software";;"11.3.0.355";;;;
+"Commvault ContentStore";"LASPROCWEB01.CREDITONEAPP.BIZ";"Commvault";;"11.80.110.0";;;;
+"Microsoft Silverlight";"LASPROCWEB01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20170429";"5.1.50906.0";;;;
+"Microsoft Visual C++ 2005 Redistributable";"LASPROCWEB01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160819";"8.0.61001";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161";"LASPROCWEB01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160818";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.17";"LASPROCWEB01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160819";"9.0.30729";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148";"LASPROCWEB01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160818";"9.0.30729.4148";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161";"LASPROCWEB01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20161119";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219";"LASPROCWEB01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20180129";"10.0.40219";;;;
+"Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.21005";"LASPROCWEB01.CREDITONEAPP.BIZ";"Microsoft Corporation";;"12.0.21005.1";;;;
+"Microsoft Visual C++ 2017 Redistributable (x64) - 14.11.25325";"LASPROCWEB01.CREDITONEAPP.BIZ";"Microsoft Corporation";;"14.11.25325.0";;;;
+"Process360";"LASPROCWEB01.CREDITONEAPP.BIZ";"Open Text, Inc.";"20160819";"10.4.2.1732";;;;
+"Process360 Web Parts";"LASPROCWEB01.CREDITONEAPP.BIZ";"Open Text, Inc.";;"10.4.2.1732";;;;
+"Process360 Web Parts SDK";"LASPROCWEB01.CREDITONEAPP.BIZ";"Open Text, Inc.";;"10.4.2.1732";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"LASPROCWEB01.CREDITONEAPP.BIZ";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"Symantec Endpoint Protection";"LASPROCWEB01.CREDITONEAPP.BIZ";"Symantec Corporation";"20180421";"14.0.3876.1100";;;;"0"
+"VMware Tools";"LASPROCWEB01.CREDITONEAPP.BIZ";"VMware, Inc.";"20180224";"10.1.7.5541682";;;;

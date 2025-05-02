@@ -1,0 +1,4 @@
+cannot delete printer or printer driver
+
+Del this key:
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Providers\Client Side Rendering Print Provider

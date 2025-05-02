@@ -1,0 +1,13 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"BMC Track-It! 11.3 Agent";"LASCAPSMT05.FNBM.CORP";"BMC Software";;"11.3.0.355";;;;
+"Commvault ContentStore";"LASCAPSMT05.FNBM.CORP";"Commvault";;"11.80.70.0";;;;
+"Microsoft Silverlight";"LASCAPSMT05.FNBM.CORP";"Microsoft Corporation";"20170429";"5.1.50906.0";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161";"LASCAPSMT05.FNBM.CORP";"Microsoft Corporation";"20150401";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148";"LASCAPSMT05.FNBM.CORP";"Microsoft Corporation";"20150401";"9.0.30729.4148";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161";"LASCAPSMT05.FNBM.CORP";"Microsoft Corporation";"20150410";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219";"LASCAPSMT05.FNBM.CORP";"Microsoft Corporation";"20150413";"10.0.40219";;;;
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501";"LASCAPSMT05.FNBM.CORP";"Microsoft Corporation";;"12.0.30501.0";;;;
+"Netwitness SFTP Agent";"LASCAPSMT05.FNBM.CORP";"RSA Security Inc";"20180324";"4.1.0";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"LASCAPSMT05.FNBM.CORP";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"Symantec Endpoint Protection";"LASCAPSMT05.FNBM.CORP";"Symantec Corporation";"20180306";"14.0.3876.1100";;;;"0"
+"VMware Tools";"LASCAPSMT05.FNBM.CORP";"VMware, Inc.";"20180225";"10.1.7.5541682";;;;

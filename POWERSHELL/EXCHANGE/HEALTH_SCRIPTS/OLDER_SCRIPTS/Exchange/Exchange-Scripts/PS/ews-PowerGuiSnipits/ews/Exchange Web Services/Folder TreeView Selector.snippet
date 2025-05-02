@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>Folder TreeView Selector</Title>
+      <ShortCut>Folder TreeView Selector</ShortCut>
+      <Description>Folder Trewview Selection</Description>
+      <Author>Glen Scales</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+      </Declarations>
+      <Code Language="powershell"><![CDATA[#Define Extended properties  
+$PR_FOLDER_TYPE = new-object Microsoft.Exchange.WebServices.Data.ExtendedPropertyDefinition(13825,[Microsoft.Exchange.WebServices.Data.MapiPropertyType]::Integer);  
+$folderidcnt = new-object Microsoft.Exchange.WebServices.Data.FolderId([Microsoft.Exchange.WebServices.Data.WellKnownFolderName]::MsgFolderRoot,$MailboxName)  
+# Bind to the Contacts Folder
+
+$rfRootFolder = [Microsoft.Exchange.WebServices.Data.Folder]::Bind($service,$folderidcnt)
+
+#Define the FolderView used for Export should not be any larger then 1000 folders due to throttling  
+$fvFolderView =  New-Object Microsoft.Exchange.WebServices.Data.FolderView(1000)  
+#Deep Transval will ensure all folders in the search path are returned  
+$fvFolderView.Traversal = [Microsoft.Exchange.WebServices.Data.FolderTraversal]::Deep;  
+$psPropertySet = new-object Microsoft.Exchange.WebServices.Data.PropertySet([Microsoft.Exchange.WebServices.Data.BasePropertySet]::FirstClassProperties)  
+$PR_Folder_Path = new-object Microsoft.Exchange.WebServices.Data.ExtendedPropertyDefinition(26293, [Microsoft.Exchange.WebServices.Data.MapiPropertyType]::String);  
+#Add Properties to the  Property Set  
+$psPropertySet.Add($PR_Folder_Path);  
+$fvFolderView.PropertySet = $psPropertySet;  
+#The Search filter will exclude any Search Folders  
+$sfSearchFilter = new-object Microsoft.Exchange.WebServices.Data.SearchFilter+IsEqualTo($PR_FOLDER_TYPE,"1")  
+$fiResult = $null  
+#
+
+$Treeinfo = @{}
+$TNRoot = new-object System.Windows.Forms.TreeNode("Root")
+$TNRoot.Name = "Mailbox"
+$TNRoot.Text = "Mailbox - " + $MailboxName
+#The Do loop will handle any paging that is required if there are more the 1000 folders in a mailbox  
+do {  
+    $fiResult = $Service.FindFolders($folderidcnt,$sfSearchFilter,$fvFolderView)  
+    foreach($ffFolder in $fiResult.Folders){   
+		#Process folder here
+		$TNChild = new-object System.Windows.Forms.TreeNode($ffFolder.DisplayName.ToString())
+		$TNChild.Name = $ffFolder.DisplayName.ToString()
+		$TNChild.Text = $ffFolder.DisplayName.ToString()
+		$TNChild.tag = $ffFolder.Id.UniqueId.ToString()
+		if ($ffFolder.ParentFolderId.UniqueId -eq $rfRootFolder.Id.UniqueId ){
+			$ffFolder.DisplayName
+			[void]$TNRoot.Nodes.Add($TNChild) 
+			$Treeinfo.Add($ffFolder.Id.UniqueId.ToString(),$TNChild)
+		}
+		else{
+			$pfFolder = $Treeinfo[$ffFolder.ParentFolderId.UniqueId.ToString()]
+			[void]$pfFolder.Nodes.Add($TNChild)
+			if ($Treeinfo.ContainsKey($ffFolder.Id.UniqueId.ToString()) -eq $false){
+				$Treeinfo.Add($ffFolder.Id.UniqueId.ToString(),$TNChild)
+			}
+		}
+    } 
+    $fvFolderView.Offset += $fiResult.Folders.Count
+}while($fiResult.MoreAvailable -eq $true)  
+$clickedFolder = $null
+$objForm = New-Object System.Windows.Forms.Form 
+$objForm.Text = "Folder Select Form"
+$objForm.Size = New-Object System.Drawing.Size(600,600) 
+$objForm.StartPosition = "CenterScreen"
+$tvTreView1 = new-object System.Windows.Forms.TreeView
+$tvTreView1.Location = new-object System.Drawing.Size(1,1) 
+$tvTreView1.add_DoubleClick({
+	$clickedFolder = $this.SelectedNode.tag
+	$objForm.Close()
+})
+$tvTreView1.size = new-object System.Drawing.Size(580,580) 
+$tvTreView1.Anchor = "Top,left,Bottom"
+[void]$tvTreView1.Nodes.Add($TNRoot) 
+$objForm.controls.add($tvTreView1)
+$objForm.ShowDialog()
+
+$folderid = new-object Microsoft.Exchange.WebServices.Data.FolderId($clickedFolder)   
+
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

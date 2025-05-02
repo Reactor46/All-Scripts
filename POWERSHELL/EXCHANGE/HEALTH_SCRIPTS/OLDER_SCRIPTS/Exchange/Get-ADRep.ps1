@@ -1,0 +1,1 @@
+﻿get-aduser cduff | get-adreplicationattributemetadata -server dc1 -properties useraccountcontrol | select lastoriginatingchangetime

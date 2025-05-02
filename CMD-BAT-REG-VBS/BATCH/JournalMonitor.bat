@@ -1,0 +1,1 @@
+powershell .\MonitorJournal.ps1

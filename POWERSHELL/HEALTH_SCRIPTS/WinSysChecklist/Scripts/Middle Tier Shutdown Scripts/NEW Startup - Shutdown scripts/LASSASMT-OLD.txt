@@ -1,0 +1,11 @@
+SAS [[]Config-Lev1[]] SASMeta - Metadata Server
+SAS [[]Config-Lev1[]] Connect Spawner
+SAS [[]Config-Lev1[]] SAS Environment Manager Agent
+SAS [[]ConfigMid-Lev1[]] Cache Locator on port 41415
+SAS [[]ConfigMid-Lev1[]] JMS Broker on port 61616
+SAS [[]ConfigMid-Lev1[]] Remote Services
+SAS [[]ConfigMid-Lev1[]] SAS Environment Manager
+SAS [[]ConfigMid-Lev1[]] SAS Environment Manager Agent
+SAS [[]ConfigMid-Lev1[]] WebAppServer SASServer1_1
+SAS Deployment Agent
+SAS[[]ConfigMid-Lev1[]]httpd-WebServer

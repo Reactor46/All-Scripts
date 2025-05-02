@@ -1,0 +1,12 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+	<ShortName>GitHub Code</ShortName>
+	<Description>GitHub Code Search</Description>
+	<InputEncoding>UTF-8</InputEncoding>
+	<Image width="16" height="16">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABrElEQVQ4jY2Sv2pUURDGv7vZ4p77J2dmvnO42ihaK1gEXSKEPIDgC/gC9mJvYW1noliF9OIjbGGeISsSSGUhkRhw12Dg2Oxd7l5114Fpzpnv45sfA/SqqqodVd0jOaHZBc0uSE5Uda+qqp3+fLc2KHLQxJhWNUUOAGz8ITazo3Xits3saMmEIodNjMlExs65+wBe1HX9mWbHNDsO5AzAMwAPTGQ8T3IIAHDOjVpnVd1vUQAoumgAZACgqvvtvHNuhO7eRVFsrYI0h7y7xCOYnTQxJppd5nl+a51Bnuc3A/mziTEFsxMEctbEmEierhMvmJGnTYwpkDMEcjo3OAcw+A/9gGbf5wZTkJy0O4nI43Xquq4fLRiQnxDN3sUQEoAr2dz8VTv38J9i57YD+aVzD29RluU9X/sE4BLA2WAwSFmWTZ1zo1Y4HA53syz72j8oVb0LAAghvGliTBVwpyzLJ76ux977261BURRbItK/xldL8UxkTLNvqnoDgPTTB/LHYnfV93/dkeRrml3R7AzA9c7XtUVs71+upKzePzezjwCsffPeK0U+qOrT/vxvewCKQLKaviEAAAAASUVORK5CYII=</Image>
+	<Url type="text/html" template="https://github.com/search">
+		<Param name="q" value="{searchTerms}"/>
+		<Param name="type" value="Code"/>
+		<Param name="ref" value="opensearch"/>
+	</Url>
+	<moz:SearchForm>https://github.com/search</moz:SearchForm>
+</OpenSearchDescription>

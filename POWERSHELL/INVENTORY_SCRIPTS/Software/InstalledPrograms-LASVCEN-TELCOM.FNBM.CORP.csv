@@ -1,0 +1,11 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"BMC Track-It! 11.3 Agent";"LASVCEN-TELCOM.FNBM.CORP";"BMC Software";;"11.3.0.355";;;;
+"Infognition ScreenPressor v2.1 (Remove Only)";"LASVCEN-TELCOM.FNBM.CORP";;;;;;;
+"Microsoft Silverlight";"LASVCEN-TELCOM.FNBM.CORP";"Microsoft Corporation";"20170721";"5.1.50907.0";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161";"LASVCEN-TELCOM.FNBM.CORP";"Microsoft Corporation";"20170722";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148";"LASVCEN-TELCOM.FNBM.CORP";"Microsoft Corporation";"20170722";"9.0.30729.4148";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161";"LASVCEN-TELCOM.FNBM.CORP";"Microsoft Corporation";"20170721";"9.0.30729.6161";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"LASVCEN-TELCOM.FNBM.CORP";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"Symantec Endpoint Protection";"LASVCEN-TELCOM.FNBM.CORP";"Symantec Corporation";"20180421";"14.0.3876.1100";;;;"0"
+"vCenter Server with an embedded Platform Services Controller";"LASVCEN-TELCOM.FNBM.CORP";"VMware, Inc.";"7/31/2017";"6.0.0.22349";;;;
+"VMware Tools";"LASVCEN-TELCOM.FNBM.CORP";"VMware, Inc.";"20180224";"10.1.7.5541682";;;;

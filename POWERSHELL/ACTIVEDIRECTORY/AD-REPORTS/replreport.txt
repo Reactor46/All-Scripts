@@ -1,0 +1,213 @@
+Report for DCLIST =  
+  
+ 
+Verbose Replication and Connections  echo.  
+
+Repadmin: running command /showrepl against full DC USONVSVRDC03.USON.LOCAL
+MTS-FARM\USONVSVRDC03
+DSA Options: IS_GC 
+Site Options: (none)
+DSA object GUID: d2198335-f21c-405b-bf78-22a3b0d476c5
+DSA invocationID: 969ff7be-26b9-43bb-8157-2424b879763b
+
+==== INBOUND NEIGHBORS ======================================
+
+DC=USON,DC=LOCAL
+    ServerFarm\USONVSVRDC02 via RPC
+        DSA object GUID: aae0c6f7-62e3-4e08-8eeb-00db97e3eda1
+        Last attempt @ 2019-03-25 11:24:15 was successful.
+
+CN=Configuration,DC=USON,DC=LOCAL
+    ServerFarm\USONVSVRDC02 via RPC
+        DSA object GUID: aae0c6f7-62e3-4e08-8eeb-00db97e3eda1
+        Last attempt @ 2019-03-25 11:24:15 was successful.
+
+CN=Schema,CN=Configuration,DC=USON,DC=LOCAL
+    ServerFarm\USONVSVRDC02 via RPC
+        DSA object GUID: aae0c6f7-62e3-4e08-8eeb-00db97e3eda1
+        Last attempt @ 2019-03-25 11:24:15 was successful.
+
+DC=DomainDnsZones,DC=USON,DC=LOCAL
+    ServerFarm\USONVSVRDC02 via RPC
+        DSA object GUID: aae0c6f7-62e3-4e08-8eeb-00db97e3eda1
+        Last attempt @ 2019-03-25 11:24:15 was successful.
+
+DC=ForestDnsZones,DC=USON,DC=LOCAL
+    ServerFarm\USONVSVRDC02 via RPC
+        DSA object GUID: aae0c6f7-62e3-4e08-8eeb-00db97e3eda1
+        Last attempt @ 2019-03-25 11:24:15 was successful.
+
+==== KCC CONNECTION OBJECTS ============================================
+Connection --
+    Connection name : USONVSVRDC02
+    Server DNS name : USONVSVRDC03.USON.LOCAL
+    Server DN  name : CN=NTDS Settings,CN=USONVSVRDC03,CN=Servers,CN=MTS-FARM,CN=Sites,CN=Configuration,DC=USON,DC=LOCAL
+        Source: ServerFarm\USONVSVRDC02
+                No Failures.
+        TransportType: IP
+        ReplicatesNC: CN=Configuration,DC=USON,DC=LOCAL
+        Reason:  IntersiteTopology
+                Replica link has been added.
+        ReplicatesNC: DC=DomainDnsZones,DC=USON,DC=LOCAL
+        Reason:  IntersiteTopology
+                Replica link has been added.
+        ReplicatesNC: DC=ForestDnsZones,DC=USON,DC=LOCAL
+        Reason:  IntersiteTopology
+                Replica link has been added.
+        ReplicatesNC: DC=USON,DC=LOCAL
+        Reason:  IntersiteTopology
+                Replica link has been added.
+1 connections found.
+
+ 
+Bridgeheads  
+  
+
+Repadmin: running command /bridgeheads against full DC USONVSVRDC03.USON.LOCAL
+Gathering topology from site MTS-FARM (USONVSVRDC03.USON.LOCAL):
+
+Bridgeheads for site Default-First-Site-Name (USONVSVRDC01.USON.LOCAL):
+             Source Site    Local Bridge  Trns         Fail. Time    #    Status
+         ===============  ==============  ====  =================   ===  ========
+              ServerFarm    USONVSVRDC01    IP             (never)   0   The operation completed successfully.
+        Naming Context         Attempt Time         Success Time  #Fail  Last Result
+      ================  ===================  ===================  =====  ==============
+         Configuration  2019-03-25 08:48:06  2019-03-25 08:48:06     0   The operation completed successfully.
+        DomainDnsZones  2019-03-25 08:48:07  2019-03-25 08:48:07     0   The operation completed successfully.
+        ForestDnsZones  2019-03-25 08:48:07  2019-03-25 08:48:07     0   The operation completed successfully.
+                  USON  2019-03-25 08:48:06  2019-03-25 08:48:06     0   The operation completed successfully.
+             Source Site    Local Bridge  Trns         Fail. Time    #    Status
+         ===============  ==============  ====  =================   ===  ========
+                MTS-FARM    USONVSVRDC01    IP             (never)   0   The operation completed successfully.
+
+Bridgeheads for site MTS-FARM (USONVSVRDC03.USON.LOCAL):
+             Source Site    Local Bridge  Trns         Fail. Time    #    Status
+         ===============  ==============  ====  =================   ===  ========
+              ServerFarm    USONVSVRDC03    IP             (never)   0   The operation completed successfully.
+        Naming Context         Attempt Time         Success Time  #Fail  Last Result
+      ================  ===================  ===================  =====  ==============
+         Configuration  2019-03-25 11:24:15  2019-03-25 11:24:15     0   The operation completed successfully.
+        DomainDnsZones  2019-03-25 11:24:15  2019-03-25 11:24:15     0   The operation completed successfully.
+        ForestDnsZones  2019-03-25 11:24:15  2019-03-25 11:24:15     0   The operation completed successfully.
+                  USON  2019-03-25 11:24:15  2019-03-25 11:24:15     0   The operation completed successfully.
+             Source Site    Local Bridge  Trns         Fail. Time    #    Status
+         ===============  ==============  ====  =================   ===  ========
+
+Bridgeheads for site ServerFarm (USONVSVRDC02.USON.LOCAL):
+             Source Site    Local Bridge  Trns         Fail. Time    #    Status
+         ===============  ==============  ====  =================   ===  ========
+ Default-First-Site-Name    USONVSVRDC02    IP             (never)   0   The operation completed successfully.
+        Naming Context         Attempt Time         Success Time  #Fail  Last Result
+      ================  ===================  ===================  =====  ==============
+         Configuration  2019-03-25 11:10:56  2019-03-25 11:10:56     0   The operation completed successfully.
+        DomainDnsZones  2019-03-25 11:10:56  2019-03-25 11:10:56     0   The operation completed successfully.
+        ForestDnsZones  2019-03-25 11:10:56  2019-03-25 11:10:56     0   The operation completed successfully.
+                  USON  2019-03-25 11:10:56  2019-03-25 11:10:56     0   The operation completed successfully.
+             Source Site    Local Bridge  Trns         Fail. Time    #    Status
+         ===============  ==============  ====  =================   ===  ========
+                MTS-FARM    USONVSVRDC02    IP             (never)   0   The operation completed successfully.
+        Naming Context         Attempt Time         Success Time  #Fail  Last Result
+      ================  ===================  ===================  =====  ==============
+        DomainDnsZones  2019-03-25 11:10:56  2019-03-25 11:10:56     0   The operation completed successfully.
+         Configuration  2019-03-25 11:10:56  2019-03-25 11:10:56     0   The operation completed successfully.
+        ForestDnsZones  2019-03-25 11:10:56  2019-03-25 11:10:56     0   The operation completed successfully.
+                  USON  2019-03-25 11:10:56  2019-03-25 11:10:56     0   The operation completed successfully.
+             Source Site    Local Bridge  Trns         Fail. Time    #    Status
+         ===============  ==============  ====  =================   ===  ========
+
+ 
+ISTG  
+  
+
+Repadmin: running command /istg against full DC USONVSVRDC03.USON.LOCAL
+Gathering topology from site MTS-FARM (USONVSVRDC03.USON.LOCAL):
+                   Site                ISTG
+      ==================   =================
+ Default-First-Site-Name        USONVSVRDC01
+                MTS-FARM        USONVSVRDC03
+              ServerFarm        USONVSVRDC02
+
+ 
+Outbound DRS Calls  
+  
+
+Repadmin: running command /showoutcalls against full DC USONVSVRDC03.USON.LOCAL
+USONVSVRDC03.USON.LOCAL is making no outgoing DRS RPC calls at this time.
+
+ 
+Queue  
+  
+
+Repadmin: running command /queue against full DC USONVSVRDC03.USON.LOCAL
+Queue contains 0 items.
+
+ 
+KCC Failures  
+  
+
+Repadmin: running command /failcache against full DC USONVSVRDC03.USON.LOCAL
+==== KCC CONNECTION FAILURES ============================
+(none)
+
+==== KCC LINK FAILURES ==================================
+(none)
+
+ 
+Trusts  
+  
+
+Repadmin: running command /showtrust against full DC USONVSVRDC03.USON.LOCAL
+Domain Trust Info:
+    TRUSTED   : DC=USON,DC=LOCAL
+
+ 
+Replication Flags  
+  
+
+Repadmin: running command /bind against full DC USONVSVRDC03.USON.LOCAL
+Bind to USONVSVRDC03.USON.LOCAL succeeded.
+NTDSAPI V1 BindState, printing extended members.
+    bindAddr: USONVSVRDC03.USON.LOCAL
+Extensions supported (cb=48):
+    BASE                             : Yes
+    ASYNCREPL                        : Yes
+    REMOVEAPI                        : Yes
+    MOVEREQ_V2                       : Yes
+    GETCHG_COMPRESS                  : Yes
+    DCINFO_V1                        : Yes
+    RESTORE_USN_OPTIMIZATION         : Yes
+    KCC_EXECUTE                      : Yes
+    ADDENTRY_V2                      : Yes
+    LINKED_VALUE_REPLICATION         : Yes
+    DCINFO_V2                        : Yes
+    INSTANCE_TYPE_NOT_REQ_ON_MOD     : Yes
+    CRYPTO_BIND                      : Yes
+    GET_REPL_INFO                    : Yes
+    STRONG_ENCRYPTION                : Yes
+    DCINFO_VFFFFFFFF                 : Yes
+    TRANSITIVE_MEMBERSHIP            : Yes
+    ADD_SID_HISTORY                  : Yes
+    POST_BETA3                       : Yes
+    GET_MEMBERSHIPS2                 : Yes
+    GETCHGREQ_V6 (WINDOWS XP PREVIEW): Yes
+    NONDOMAIN_NCS                    : Yes
+    GETCHGREQ_V8 (WINDOWS XP BETA 1) : Yes
+    GETCHGREPLY_V5 (WINDOWS XP BETA 2): Yes
+    GETCHGREPLY_V6 (WINDOWS XP BETA 2): Yes
+    ADDENTRYREPLY_V3 (WINDOWS XP BETA 3): Yes
+    GETCHGREPLY_V7 (WINDOWS XP BETA 3) : Yes
+    VERIFY_OBJECT (WINDOWS XP BETA 3): Yes
+    XPRESS_COMPRESSION               : Yes
+    DRS_EXT_ADAM                     : No
+    GETCHGREQ_V10                    : Yes
+    RECYCLE BIN FEATURE              : No
+Site GUID: c3cec231-cadf-4a62-8905-85f9b8295a3c
+Repl epoch: 0
+Forest GUID: 03274da3-f042-40ae-a1b3-24aed1f195ee
+Security information on the binding is as follows:
+    SPN Requested:  LDAP/USONVSVRDC03.USON.LOCAL
+    Authn Service:  9
+    Authn Level:  6
+    Authz Service:  0
+
+ 

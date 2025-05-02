@@ -1,0 +1,3 @@
+#TYPE Selected.Microsoft.Exchange.Data.Directory.Management.MailboxServer
+"Name","DatabaseCopyAutoActivationPolicy"
+"USONVSVRDAG02","Unrestricted"

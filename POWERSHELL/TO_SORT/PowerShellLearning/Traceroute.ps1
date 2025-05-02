@@ -1,0 +1,1 @@
+﻿Test-NetConnection -ComputerName google.com -TraceRoute

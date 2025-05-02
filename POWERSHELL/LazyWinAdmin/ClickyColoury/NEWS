@@ -1,0 +1,41 @@
+
+0.8.0 (2017-09-22)
+ * First public (stripped down) release
+ * Main code condensed into modules/ directory.
+ * Global configuration hash is now populated in starter.ps1
+ * Restructured tools/ again into category-nested subfolders.
+ * Implemented HTML clipboard kludge (collect alongside Out-Gui).
+ * Sigma version for init_intro.ps1 instead of main version.
+
+0.7.x (unreleased)
+ * Open-RemoteRegistry with generic path support
+ * more Out-Gui and Start-Win type and error catching
+ * globalized Out-Gui aliases for type:init scripts
+ * funcs_json / Foreach-KV
+
+0.6.x (unreleased)
+ * Unicode toolbar block
+ * condensed CLI output instead of submenus
+ * unified $cfg. names
+
+0.5.x (unreleased)
+ * basic plugin system
+ * funcs_* init plugins
+ * Scripts held in tools.*/ folders
+ * input+combobox support for param:
+ * Ask-Gui/Get-Params name matching
+
+0.4.x (unreleased)
+ * reduced to single runspace just for GUI/WPF
+ * toolblocks instead of just buttons
+ * menu_editscripts
+ * AD-Search alternatives
+
+0.3.x (unreleased)
+ * preliminary WPF mode without separate runspace
+
+0.2.x (unreleased)
+ * CMD scripts ported
+
+0.1.x (unreleased)
+ * CLI only version

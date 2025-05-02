@@ -1,0 +1,1 @@
+powershell .\GroupPublish.ps1

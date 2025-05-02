@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CommandBar Dev</title>
+    <link rel="stylesheet" href="C:/Users/a672845/Desktop/Scripts Repo/WORKSPACE/HTML/Universal Layout 2/layout/layout.css">
+    <link rel="stylesheet" href="C:/Users/a672845/Desktop/Scripts Repo/WORKSPACE/HTML/Universal Layout 2/main/style.css">
+    <link rel="stylesheet" href="C:/Users/a672845/Desktop/Scripts Repo/WORKSPACE/HTML/Universal Layout 2/table/tables.css">
+    <link rel="stylesheet" href="C:/Users/a672845/Desktop/Scripts Repo/WORKSPACE/HTML/Universal Layout 2/navigation/nav.css">
+    <link rel="stylesheet" href="C:/Users/a672845/Desktop/Scripts Repo/WORKSPACE/HTML/Universal Layout 2/commandBar/commandbar.css">
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.4.0/css/fabric.min.css">
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css" />
+
+</head>
+
+<body>
+    <h2>Basic Utilization</h2>
+    <div id="tablename_commandBar">
+        <div class="ms-CommandBar">
+            <div class="ms-CommandBar-sideCommands">
+                <div class="ms-CommandButton">
+                    <button class="ms-CommandButton-button js-Paginate-Select" title="Pick how many entries in table to show">
+                        <span class="ms-CommandButton-icon ms-fontColor-themePrimary">
+                            <i class="ms-Icon ms-Icon--ViewList"></i>
+                        </span>
+                        <span class="ms-CommandButton-label">View</span>
+                        <span class="ms-CommandButton-dropdownIcon">
+                            <i class="ms-Icon ms-Icon--ChevronDown"></i>
+                        </span>
+                    </button>
+                    <ul class="ms-ContextualMenu is-opened" id="tablename_paginate">
+                        <li class="ms-ContextualMenu-item">
+                            <a class="ms-ContextualMenu-link checked js-Paginate-Select" tabindex="1" value="10">10 entries</a>
+                        </li>
+                        <li class="ms-ContextualMenu-item">
+                            <a class="ms-ContextualMenu-link js-Paginate-Select" tabindex="1" value="25">25 entries</a>
+                        </li>
+                        <li class="ms-ContextualMenu-item">
+                            <a class="ms-ContextualMenu-link js-Paginate-Select" tabindex="1" value="50">50 entries</a>
+                        </li>
+                        <li class="ms-ContextualMenu-item">
+                            <a class="ms-ContextualMenu-link js-Paginate-Select" tabindex="1" value="100">100 entries</a>
+                        </li>
+                        <li class="ms-ContextualMenu-item">
+                            <a class="ms-ContextualMenu-link js-Paginate-Select" tabindex="1" value="-1">All entries</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ms-CommandBar-mainArea">
+
+                <div id="tablename_search" class="ms-SearchBox ms-SearchBox--commandBar">
+                    <input class="ms-SearchBox-field" type="text" value="" placeholder="Search" data-type="normal">
+                    <label class="ms-SearchBox-label">
+                        <i class="ms-SearchBox-icon ms-Icon ms-Icon--Search"></i>
+                        <span class="ms-SearchBox-text" style="display: none;">Search</span>
+                    </label>
+                    <div class="ms-CommandButton ms-SearchBox-clear ms-CommandButton--noLabel">
+                        <button class="ms-CommandButton-button">
+                            <span class="ms-CommandButton-icon">
+                                <i class="ms-Icon ms-Icon--Cancel"></i>
+                            </span>
+                            <span class="ms-CommandButton-label"></span>
+                        </button>
+                    </div>
+                    <div class="ms-CommandButton ms-SearchBox-exit ms-CommandButton--noLabel">
+                        <button class="ms-CommandButton-button">
+                            <span class="ms-CommandButton-icon">
+                                <i class="ms-Icon ms-Icon--ChromeBack"></i>
+                            </span>
+                            <span class="ms-CommandButton-label"></span>
+                        </button>
+                    </div>
+                    <div class="ms-CommandButton ms-SearchBox-filter ms-CommandButton--noLabel">
+                        <button class="ms-CommandButton-button">
+                            <span class="ms-CommandButton-icon">
+                                <i class="ms-Icon ms-Icon--Search"></i>
+                            </span>
+                            <span class="ms-CommandButton-label"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ms-CommandButton ms-CommandButton--noLabel column-picker">
+                    <button class="ms-CommandButton-button" title="Pick a table column to search in">
+                        <span class="ms-CommandButton-icon ms-fontColor-themePrimary">
+                            <i class="ms-Icon ms-Icon--CaretSolidDown"></i>
+                        </span>
+                        <span class="ms-CommandButton-label"></span>
+                    </button>
+                    <ul class="ms-ContextualMenu is-opened" id="tablename_ColumnPicker">
+                        <li class="ms-ContextualMenu-item">
+                            <a class="ms-ContextualMenu-link column-picker checked" tabindex="1">Any column</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ms-CommandButton">
+                    <button class="ms-CommandButton-button js-SearchOptions-select">
+                        <span class="ms-CommandButton-icon ms-fontColor-themePrimary">
+                            <i class="ms-Icon ms-Icon--DocumentSearch"></i>
+                        </span>
+                        <span class="ms-CommandButton-label">Options</span>
+                        <span class="ms-CommandButton-dropdownIcon">
+                            <i class="ms-Icon ms-Icon--ChevronDown"></i>
+                        </span>
+                    </button>
+                    <ul id="tablename_searchOptions" class="ms-ContextualMenu" style="min-width: 116px;">
+                        <li class="ms-ContextualMenu-item">
+                            <a class="ms-ContextualMenu-link search-options regex-toggle" tabindex="1">RexEx</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ms-CommandButton ms-CommandBar-overflowButton ms-CommandButton--noLabel">
+                    <button class="ms-CommandButton-button">
+                        <span class="ms-CommandButton-icon">
+                            <i class="ms-Icon ms-Icon--More"></i>
+                        </span>
+                        <span class="ms-CommandButton-label"></span>
+                    </button>
+                    <ul class="ms-ContextualMenu is-opened ms-ContextualMenu--hasIcons">
+                        <li class="ms-ContextualMenu-item">
+                            <a class="ms-ContextualMenu-link search-options" tabindex="1">Debug</a>
+                            <i class="ms-Icon ms-Icon--CodeEdit"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table id="tablename">
+        <thead>
+            <tr>
+                <th>Server Name</th>
+                <th>Memory Usage (in MB)</th>
+                <th>CPU Usage</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Server 1</td>
+                <td>10%</td>
+                <td>20%</td>
+                <td>OK</td>
+            </tr>
+            <tr>
+                <td>Server 2</td>
+                <td>50%</td>
+                <td>60%</td>
+                <td>Warning</td>
+            </tr>
+            <tr>
+                <td>Server 3</td>
+                <td>99%</td>
+                <td>100%</td>
+                <td>Error</td>
+            </tr>
+            <tr>
+                <td>Server 1</td>
+                <td>10%</td>
+                <td>20%</td>
+                <td>OK</td>
+            </tr>
+            <tr>
+                <td>Server 2</td>
+                <td>50%</td>
+                <td>60%</td>
+                <td>Warning</td>
+            </tr>
+            <tr>
+                <td>Server 3</td>
+                <td>99%</td>
+                <td>100%</td>
+                <td>Error</td>
+            </tr>
+            <tr>
+                <td>Server 1</td>
+                <td>10%</td>
+                <td>20%</td>
+                <td>OK</td>
+            </tr>
+            <tr>
+                <td>Server 2</td>
+                <td>50%</td>
+                <td>60%</td>
+                <td>Warning</td>
+            </tr>
+            <tr>
+                <td>Server 3</td>
+                <td>99%</td>
+                <td>100%</td>
+                <td>Error</td>
+            </tr>
+            <tr>
+                <td>Server 1</td>
+                <td>10%</td>
+                <td>20%</td>
+                <td>OK</td>
+            </tr>
+            <tr>
+                <td>Server 2</td>
+                <td>50%</td>
+                <td>60%</td>
+                <td>Warning</td>
+            </tr>
+            <tr>
+                <td>Server 3</td>
+                <td>99%</td>
+                <td>100%</td>
+                <td>Error</td>
+            </tr>
+            <tr>
+                <td>Server 1</td>
+                <td>10%</td>
+                <td>20%</td>
+                <td>OK</td>
+            </tr>
+            <tr>
+                <td>Server 2</td>
+                <td>50%</td>
+                <td>60%</td>
+                <td>Warning</td>
+            </tr>
+            <tr>
+                <td>Server 3</td>
+                <td>99%</td>
+                <td>100%</td>
+                <td>Error</td>
+            </tr>
+            <tr>
+                <td>Server 1</td>
+                <td>10%</td>
+                <td>20%</td>
+                <td>OK</td>
+            </tr>
+            <tr>
+                <td>Server 2</td>
+                <td>50%</td>
+                <td>60%</td>
+                <td>Warning</td>
+            </tr>
+            <tr>
+                <td>Server 3</td>
+                <td>99%</td>
+                <td>100%</td>
+                <td>Error</td>
+            </tr>
+            <tr>
+                <td>Server 1</td>
+                <td>10%</td>
+                <td>20%</td>
+                <td>OK</td>
+            </tr>
+            <tr>
+                <td>Server 2</td>
+                <td>50%</td>
+                <td>60%</td>
+                <td>Warning</td>
+            </tr>
+            <tr>
+                <td>Server 3</td>
+                <td>99%</td>
+                <td>100%</td>
+                <td>Error</td>
+            </tr>
+            <tr>
+                <td>Server 3</td>
+                <td>99%</td>
+                <td>dupa</td>
+                <td>Non-standard</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.js"></script>
+<script src="C:/Users/a672845/Desktop/Scripts Repo/WORKSPACE/HTML/Universal Layout 2/table/tables.js"></script>
+<script src="C:/Users/a672845/Desktop/Scripts Repo/WORKSPACE/HTML/Universal Layout 2/commandBar/commandbardev.js"></script>
+
+</html>

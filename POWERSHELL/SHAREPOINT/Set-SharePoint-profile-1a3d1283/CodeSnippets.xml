@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <Code Content=".&quot;.\GrantProfSyncRightsInAD.ps1&quot; -profSyncAccountName &quot;spprofsync@kc-dev.com&quot;" />
+  <Code Content=".&quot;.\GrantProfSyncRightsInAD.ps1&quot; -profSyncAccountName &quot;spprofsync@kc-dev.com&quot;" />
+</CodeSnippets>

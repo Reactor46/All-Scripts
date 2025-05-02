@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>Autodiscover - Direct Example</Title>
+      <ShortCut>Autodiscover - Direct Example</ShortCut>
+      <Description>Autodiscover using the Autodiscover class</Description>
+      <Author>Glen Scales</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+      </Declarations>
+      <Code Language="powershell"><![CDATA[$MailboxName = $args[0]
+
+Add-Type -Path "C:\Program Files\Microsoft\Exchange\Web Services\1.2\Microsoft.Exchange.WebServices.dll"
+
+function AutoDiscover{
+	param (
+	        $EmailAddress = "$( throw 'Email is a mandatory Parameter' )",
+			$Credentials = "$( throw 'Credentials is a mandatory Parameter' )"
+		  )
+	process{
+		$version = [Microsoft.Exchange.WebServices.Data.ExchangeVersion]::Exchange2010_SP2
+		$adService = New-Object Microsoft.Exchange.WebServices.Autodiscover.AutodiscoverService($version);
+		#This Example does an Autodiscover against Exchange Online
+		$uri=[system.URI] ("https://autodiscover-s.outlook.com/autodiscover/autodiscover.svc")
+		$adService.Url = $uri  
+		$creds = New-Object System.Net.NetworkCredential($Credentials.UserName.ToString(),$Credentials.GetNetworkCredential().password.ToString())  
+		$adService.Credentials = $creds
+		$adService.EnableScpLookup = $false;
+		$adService.RedirectionUrlValidationCallback = {$true}
+		$adService.PreAuthenticate = $true;
+		$UserSettings = new-object Microsoft.Exchange.WebServices.Autodiscover.UserSettingName[] 1
+		$UserSettings[0] = [Microsoft.Exchange.WebServices.Autodiscover.UserSettingName]::ExternalEwsUrl
+		$adResponse = $adService.GetUserSettings($MailboxName, $UserSettings)
+		$CasURI = $adResponse.Settings[[Microsoft.Exchange.WebServices.Autodiscover.UserSettingName]::ExternalEwsUrl]
+		return $CasURI.ToString()
+	}
+}
+#Example Use
+$CasURL = AutoDiscover -EmailAddress $MailboxName -Credentials (Get-Credential)
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,528 @@
+﻿[8/6/2018 8:21:19] : Starting the Script
+[8/6/2018 8:21:51] : Building of the objects took 32.4994668 total seconds
+[8/6/2018 8:22:22] : Rebuilding of the Raw data collected and placed into the main object took 0.7161068 total Seconds
+[8/6/2018 8:22:22] : [INFO]: Server: LASMT01 Object: LogicalDisk Counter: Avg. Disk sec/Read Instance: (harddiskvolume1). This counter is currently below the average threshold (0.02) and didn't have any spikes greater than the warning threshold. Current Values: Min: 0 Avg: 0 Max: 0
+[8/6/2018 8:22:22] : History Values
+[8/6/2018 8:22:22] : 
+
+Time                 Value
+----                 -----
+8/6/2018 8:22:22 AM      0
+8/6/2018 8:22:19 AM      0
+8/6/2018 8:22:16 AM      0
+8/6/2018 8:22:13 AM      0
+8/6/2018 8:22:10 AM      0
+8/6/2018 8:22:07 AM      0
+8/6/2018 8:22:04 AM      0
+8/6/2018 8:22:01 AM      0
+8/6/2018 8:21:58 AM      0
+8/6/2018 8:21:55 AM      0
+1/1/0001 12:00:00 AM     0
+
+
+[8/6/2018 8:22:22] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:22] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:22] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:22] : [INFO]: Server: LASMT01 Object: LogicalDisk Counter: Avg. Disk sec/Read Instance: (c:). This counter is currently below the average threshold (0.02) and didn't have any spikes greater than the warning threshold. Current Values: Min: 0 Avg: 0 Max: 0
+[8/6/2018 8:22:22] : History Values
+[8/6/2018 8:22:22] : 
+
+Time                 Value
+----                 -----
+8/6/2018 8:22:22 AM      0
+8/6/2018 8:22:19 AM      0
+8/6/2018 8:22:16 AM      0
+8/6/2018 8:22:13 AM      0
+8/6/2018 8:22:10 AM      0
+8/6/2018 8:22:07 AM      0
+8/6/2018 8:22:04 AM      0
+8/6/2018 8:22:01 AM      0
+8/6/2018 8:21:58 AM      0
+8/6/2018 8:21:55 AM      0
+1/1/0001 12:00:00 AM     0
+
+
+[8/6/2018 8:22:22] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:22] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:22] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:22] : [INFO]: Server: LASMT01 Object: LogicalDisk Counter: Avg. Disk sec/Read Instance: (_total). This counter is currently below the average threshold (0.02) and didn't have any spikes greater than the warning threshold. Current Values: Min: 0 Avg: 0 Max: 0
+[8/6/2018 8:22:22] : History Values
+[8/6/2018 8:22:22] : 
+
+Time                 Value
+----                 -----
+8/6/2018 8:22:22 AM      0
+8/6/2018 8:22:19 AM      0
+8/6/2018 8:22:16 AM      0
+8/6/2018 8:22:13 AM      0
+8/6/2018 8:22:10 AM      0
+8/6/2018 8:22:07 AM      0
+8/6/2018 8:22:04 AM      0
+8/6/2018 8:22:01 AM      0
+8/6/2018 8:21:58 AM      0
+8/6/2018 8:21:55 AM      0
+1/1/0001 12:00:00 AM     0
+
+
+[8/6/2018 8:22:22] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:22] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:22] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:22] : [INFO]: Server: LASMT01 Object: LogicalDisk Counter: Avg. Disk sec/Write Instance: (harddiskvolume1). This counter is currently below the average threshold (0.02) and didn't have any spikes greater than the warning threshold. Current Values: Min: 0 Avg: 0 Max: 0
+[8/6/2018 8:22:22] : History Values
+[8/6/2018 8:22:22] : 
+
+Time                 Value
+----                 -----
+8/6/2018 8:22:22 AM      0
+8/6/2018 8:22:19 AM      0
+8/6/2018 8:22:16 AM      0
+8/6/2018 8:22:13 AM      0
+8/6/2018 8:22:10 AM      0
+8/6/2018 8:22:07 AM      0
+8/6/2018 8:22:04 AM      0
+8/6/2018 8:22:01 AM      0
+8/6/2018 8:21:58 AM      0
+8/6/2018 8:21:55 AM      0
+1/1/0001 12:00:00 AM     0
+
+
+[8/6/2018 8:22:22] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:22] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:22] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:23] : [INFO]: This counter is currently below the average threshold (0.02) and had some spikes that were greater than the Warning threshold (0.001) but not enough to increase level of the server. Current Values: Min: 0 Avg: 0.001 Max: 0.002
+[8/6/2018 8:22:23] : History Values
+[8/6/2018 8:22:23] : 
+
+Time                                Value
+----                                -----
+8/6/2018 8:22:22 AM                     0
+8/6/2018 8:22:19 AM    0.0011166642022771
+8/6/2018 8:22:16 AM  0.000599996714147239
+8/6/2018 8:22:13 AM                     0
+8/6/2018 8:22:10 AM   0.00184996796293558
+8/6/2018 8:22:07 AM  0.000589994578342944
+8/6/2018 8:22:04 AM  0.000920065059884667
+8/6/2018 8:22:01 AM  0.000699886638079748
+8/6/2018 8:21:58 AM  0.000499975356104293
+8/6/2018 8:21:55 AM  0.000459993099709202
+1/1/0001 12:00:00 AM                    0
+
+
+[8/6/2018 8:22:23] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:23] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:23] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:23] : [INFO]: This counter is currently below the average threshold (0.02) and had some spikes that were greater than the Warning threshold (0.001) but not enough to increase level of the server. Current Values: Min: 0 Avg: 0.001 Max: 0.002
+[8/6/2018 8:22:23] : History Values
+[8/6/2018 8:22:23] : 
+
+Time                                Value
+----                                -----
+8/6/2018 8:22:22 AM                     0
+8/6/2018 8:22:19 AM    0.0011166642022771
+8/6/2018 8:22:16 AM  0.000599996714147239
+8/6/2018 8:22:13 AM                     0
+8/6/2018 8:22:10 AM   0.00184996796293558
+8/6/2018 8:22:07 AM  0.000589994578342944
+8/6/2018 8:22:04 AM  0.000920065059884667
+8/6/2018 8:22:01 AM  0.000699886638079748
+8/6/2018 8:21:58 AM  0.000499975356104293
+8/6/2018 8:21:55 AM  0.000459993099709202
+1/1/0001 12:00:00 AM                    0
+
+
+[8/6/2018 8:22:23] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:23] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:23] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:23] : [INFO]: Server: LASMT02 Object: LogicalDisk Counter: Avg. Disk sec/Read Instance: (harddiskvolume1). This counter is currently below the average threshold (0.02) and didn't have any spikes greater than the warning threshold. Current Values: Min: 0 Avg: 0 Max: 0
+[8/6/2018 8:22:23] : History Values
+[8/6/2018 8:22:23] : 
+
+Time                 Value
+----                 -----
+8/6/2018 8:22:22 AM      0
+8/6/2018 8:22:19 AM      0
+8/6/2018 8:22:16 AM      0
+8/6/2018 8:22:13 AM      0
+8/6/2018 8:22:10 AM      0
+8/6/2018 8:22:07 AM      0
+8/6/2018 8:22:04 AM      0
+8/6/2018 8:22:01 AM      0
+8/6/2018 8:21:58 AM      0
+8/6/2018 8:21:55 AM      0
+1/1/0001 12:00:00 AM     0
+
+
+[8/6/2018 8:22:23] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:23] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:23] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:23] : [INFO]: Server: LASMT02 Object: LogicalDisk Counter: Avg. Disk sec/Read Instance: (c:). This counter is currently below the average threshold (0.02) and didn't have any spikes greater than the warning threshold. Current Values: Min: 0 Avg: 0 Max: 0
+[8/6/2018 8:22:23] : History Values
+[8/6/2018 8:22:23] : 
+
+Time                 Value
+----                 -----
+8/6/2018 8:22:22 AM      0
+8/6/2018 8:22:19 AM      0
+8/6/2018 8:22:16 AM      0
+8/6/2018 8:22:13 AM      0
+8/6/2018 8:22:10 AM      0
+8/6/2018 8:22:07 AM      0
+8/6/2018 8:22:04 AM      0
+8/6/2018 8:22:01 AM      0
+8/6/2018 8:21:58 AM      0
+8/6/2018 8:21:55 AM      0
+1/1/0001 12:00:00 AM     0
+
+
+[8/6/2018 8:22:23] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:23] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:23] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:23] : [INFO]: Server: LASMT02 Object: LogicalDisk Counter: Avg. Disk sec/Read Instance: (_total). This counter is currently below the average threshold (0.02) and didn't have any spikes greater than the warning threshold. Current Values: Min: 0 Avg: 0 Max: 0
+[8/6/2018 8:22:23] : History Values
+[8/6/2018 8:22:23] : 
+
+Time                 Value
+----                 -----
+8/6/2018 8:22:22 AM      0
+8/6/2018 8:22:19 AM      0
+8/6/2018 8:22:16 AM      0
+8/6/2018 8:22:13 AM      0
+8/6/2018 8:22:10 AM      0
+8/6/2018 8:22:07 AM      0
+8/6/2018 8:22:04 AM      0
+8/6/2018 8:22:01 AM      0
+8/6/2018 8:21:58 AM      0
+8/6/2018 8:21:55 AM      0
+1/1/0001 12:00:00 AM     0
+
+
+[8/6/2018 8:22:23] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:23] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:23] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:23] : [INFO]: Server: LASMT02 Object: LogicalDisk Counter: Avg. Disk sec/Write Instance: (harddiskvolume1). This counter is currently below the average threshold (0.02) and didn't have any spikes greater than the warning threshold. Current Values: Min: 0 Avg: 0 Max: 0
+[8/6/2018 8:22:23] : History Values
+[8/6/2018 8:22:23] : 
+
+Time                 Value
+----                 -----
+8/6/2018 8:22:22 AM      0
+8/6/2018 8:22:19 AM      0
+8/6/2018 8:22:16 AM      0
+8/6/2018 8:22:13 AM      0
+8/6/2018 8:22:10 AM      0
+8/6/2018 8:22:07 AM      0
+8/6/2018 8:22:04 AM      0
+8/6/2018 8:22:01 AM      0
+8/6/2018 8:21:58 AM      0
+8/6/2018 8:21:55 AM      0
+1/1/0001 12:00:00 AM     0
+
+
+[8/6/2018 8:22:23] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:23] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:23] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:23] : [INFO]: Server: LASMT02 Object: LogicalDisk Counter: Avg. Disk sec/Write Instance: (c:). This counter is currently below the average threshold (0.02) and didn't have any spikes greater than the warning threshold. Current Values: Min: 0 Avg: 0.001 Max: 0.001
+[8/6/2018 8:22:23] : History Values
+[8/6/2018 8:22:23] : 
+
+Time                                Value
+----                                -----
+8/6/2018 8:22:22 AM  0.000650007393168712
+8/6/2018 8:22:19 AM  0.000899995071220859
+8/6/2018 8:22:16 AM  0.000622252890181324
+8/6/2018 8:22:13 AM  0.000521408504256353
+8/6/2018 8:22:10 AM  0.000585707948712532
+8/6/2018 8:22:07 AM                     0
+8/6/2018 8:22:04 AM  0.000499975356104293
+8/6/2018 8:22:01 AM  0.000628574245016652
+8/6/2018 8:21:58 AM  0.000821061970318373
+8/6/2018 8:21:55 AM  0.000650007393168712
+1/1/0001 12:00:00 AM                    0
+
+
+[8/6/2018 8:22:23] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:23] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:23] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:23] : [INFO]: Server: LASMT02 Object: LogicalDisk Counter: Avg. Disk sec/Write Instance: (_total). This counter is currently below the average threshold (0.02) and didn't have any spikes greater than the warning threshold. Current Values: Min: 0 Avg: 0.001 Max: 0.001
+[8/6/2018 8:22:23] : History Values
+[8/6/2018 8:22:23] : 
+
+Time                                Value
+----                                -----
+8/6/2018 8:22:22 AM  0.000650007393168712
+8/6/2018 8:22:19 AM  0.000899995071220859
+8/6/2018 8:22:16 AM  0.000622252890181324
+8/6/2018 8:22:13 AM  0.000521408504256353
+8/6/2018 8:22:10 AM  0.000585707948712532
+8/6/2018 8:22:07 AM                     0
+8/6/2018 8:22:04 AM  0.000499975356104293
+8/6/2018 8:22:01 AM  0.000628574245016652
+8/6/2018 8:21:58 AM  0.000821061970318373
+8/6/2018 8:21:55 AM  0.000650007393168712
+1/1/0001 12:00:00 AM                    0
+
+
+[8/6/2018 8:22:23] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:23] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:23] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:23] : [INFO]: Server: LASMT03 Object: LogicalDisk Counter: Avg. Disk sec/Read Instance: (harddiskvolume1). This counter is currently below the average threshold (0.02) and didn't have any spikes greater than the warning threshold. Current Values: Min: 0 Avg: 0 Max: 0
+[8/6/2018 8:22:23] : History Values
+[8/6/2018 8:22:23] : 
+
+Time                 Value
+----                 -----
+8/6/2018 8:22:22 AM      0
+8/6/2018 8:22:19 AM      0
+8/6/2018 8:22:16 AM      0
+8/6/2018 8:22:13 AM      0
+8/6/2018 8:22:10 AM      0
+8/6/2018 8:22:07 AM      0
+8/6/2018 8:22:04 AM      0
+8/6/2018 8:22:01 AM      0
+8/6/2018 8:21:58 AM      0
+8/6/2018 8:21:55 AM      0
+1/1/0001 12:00:00 AM     0
+
+
+[8/6/2018 8:22:23] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:23] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:23] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:23] : [INFO]: Server: LASMT03 Object: LogicalDisk Counter: Avg. Disk sec/Read Instance: (c:). This counter is currently below the average threshold (0.02) and didn't have any spikes greater than the warning threshold. Current Values: Min: 0 Avg: 0 Max: 0
+[8/6/2018 8:22:23] : History Values
+[8/6/2018 8:22:23] : 
+
+Time                 Value
+----                 -----
+8/6/2018 8:22:22 AM      0
+8/6/2018 8:22:19 AM      0
+8/6/2018 8:22:16 AM      0
+8/6/2018 8:22:13 AM      0
+8/6/2018 8:22:10 AM      0
+8/6/2018 8:22:07 AM      0
+8/6/2018 8:22:04 AM      0
+8/6/2018 8:22:01 AM      0
+8/6/2018 8:21:58 AM      0
+8/6/2018 8:21:55 AM      0
+1/1/0001 12:00:00 AM     0
+
+
+[8/6/2018 8:22:23] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:23] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:23] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:23] : [INFO]: Server: LASMT03 Object: LogicalDisk Counter: Avg. Disk sec/Read Instance: (_total). This counter is currently below the average threshold (0.02) and didn't have any spikes greater than the warning threshold. Current Values: Min: 0 Avg: 0 Max: 0
+[8/6/2018 8:22:23] : History Values
+[8/6/2018 8:22:23] : 
+
+Time                 Value
+----                 -----
+8/6/2018 8:22:22 AM      0
+8/6/2018 8:22:19 AM      0
+8/6/2018 8:22:16 AM      0
+8/6/2018 8:22:13 AM      0
+8/6/2018 8:22:10 AM      0
+8/6/2018 8:22:07 AM      0
+8/6/2018 8:22:04 AM      0
+8/6/2018 8:22:01 AM      0
+8/6/2018 8:21:58 AM      0
+8/6/2018 8:21:55 AM      0
+1/1/0001 12:00:00 AM     0
+
+
+[8/6/2018 8:22:23] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:23] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:23] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:23] : [INFO]: Server: LASMT03 Object: LogicalDisk Counter: Avg. Disk sec/Write Instance: (harddiskvolume1). This counter is currently below the average threshold (0.02) and didn't have any spikes greater than the warning threshold. Current Values: Min: 0 Avg: 0 Max: 0
+[8/6/2018 8:22:23] : History Values
+[8/6/2018 8:22:23] : 
+
+Time                 Value
+----                 -----
+8/6/2018 8:22:22 AM      0
+8/6/2018 8:22:19 AM      0
+8/6/2018 8:22:16 AM      0
+8/6/2018 8:22:13 AM      0
+8/6/2018 8:22:10 AM      0
+8/6/2018 8:22:07 AM      0
+8/6/2018 8:22:04 AM      0
+8/6/2018 8:22:01 AM      0
+8/6/2018 8:21:58 AM      0
+8/6/2018 8:21:55 AM      0
+1/1/0001 12:00:00 AM     0
+
+
+[8/6/2018 8:22:23] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:23] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:23] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:23] : [INFO]: Server: LASMT03 Object: LogicalDisk Counter: Avg. Disk sec/Write Instance: (c:). This counter is currently below the average threshold (0.02) and didn't have any spikes greater than the warning threshold. Current Values: Min: 0 Avg: 0.001 Max: 0.001
+[8/6/2018 8:22:23] : History Values
+[8/6/2018 8:22:23] : 
+
+Time                                Value
+----                                -----
+8/6/2018 8:22:22 AM  0.000499975356104293
+8/6/2018 8:22:19 AM   0.00059993099709202
+8/6/2018 8:22:16 AM                     0
+8/6/2018 8:22:13 AM  0.000920065059884667
+8/6/2018 8:22:10 AM  0.000639952683720242
+8/6/2018 8:22:07 AM  0.000999950712208586
+8/6/2018 8:22:04 AM                     0
+8/6/2018 8:22:01 AM  0.000650007393168712
+8/6/2018 8:21:58 AM  0.000580018729360737
+8/6/2018 8:21:55 AM  0.000714306837624892
+1/1/0001 12:00:00 AM                    0
+
+
+[8/6/2018 8:22:23] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:23] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:23] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:23] : [INFO]: Server: LASMT03 Object: LogicalDisk Counter: Avg. Disk sec/Write Instance: (_total). This counter is currently below the average threshold (0.02) and didn't have any spikes greater than the warning threshold. Current Values: Min: 0 Avg: 0.001 Max: 0.001
+[8/6/2018 8:22:23] : History Values
+[8/6/2018 8:22:23] : 
+
+Time                                Value
+----                                -----
+8/6/2018 8:22:22 AM  0.000499975356104293
+8/6/2018 8:22:19 AM   0.00059993099709202
+8/6/2018 8:22:16 AM                     0
+8/6/2018 8:22:13 AM  0.000920065059884667
+8/6/2018 8:22:10 AM  0.000639952683720242
+8/6/2018 8:22:07 AM  0.000999950712208586
+8/6/2018 8:22:04 AM                     0
+8/6/2018 8:22:01 AM  0.000650007393168712
+8/6/2018 8:21:58 AM  0.000580018729360737
+8/6/2018 8:21:55 AM  0.000714306837624892
+1/1/0001 12:00:00 AM                    0
+
+
+[8/6/2018 8:22:23] : [INFO]: Status changed from: 'Healthy' to 'Healthy'
+[8/6/2018 8:22:23] : [INFO]: Last Change Time was at: '08/06/2018 08:21:51'
+[8/6/2018 8:22:23] : [INFO]: New Health Change Time: '08/06/2018 08:22:22'
+[8/6/2018 8:22:54] : Rebuilding of the Raw data collected and placed into the main object took 0.7158666 total Seconds
+[8/6/2018 8:22:54] : [DEG]: This counter is currently below the average threshold (0.02) and had some spikes that were greater than the Warning threshold (0.001) and enough to increase the level of the server to degraded. Current Values: Min: 0 Avg: 0.001 Max: 0.002
+[8/6/2018 8:22:54] : History Values
+[8/6/2018 8:22:54] : 
+
+Time                                Value
+----                                -----
+8/6/2018 8:22:53 AM  0.000499975356104293
+8/6/2018 8:22:50 AM  0.000574991374636503
+8/6/2018 8:22:47 AM     0.001233344833818
+8/6/2018 8:22:44 AM  0.000628574245016652
+8/6/2018 8:22:41 AM  0.000550012321947853
+8/6/2018 8:22:38 AM  0.000399822563950909
+8/6/2018 8:22:35 AM  0.000500011201770776
+8/6/2018 8:22:32 AM  0.000499975356104293
+8/6/2018 8:22:29 AM  0.000749963034156439
+8/6/2018 8:22:26 AM  0.000620000985755828
+8/6/2018 8:22:22 AM                     0
+8/6/2018 8:22:19 AM    0.0011166642022771
+8/6/2018 8:22:16 AM  0.000599996714147239
+8/6/2018 8:22:13 AM                     0
+8/6/2018 8:22:10 AM   0.00184996796293558
+8/6/2018 8:22:07 AM  0.000589994578342944
+8/6/2018 8:22:04 AM  0.000920065059884667
+8/6/2018 8:22:01 AM  0.000699886638079748
+8/6/2018 8:21:58 AM  0.000499975356104293
+8/6/2018 8:21:55 AM  0.000459993099709202
+1/1/0001 12:00:00 AM                    0
+
+
+[8/6/2018 8:22:54] : [INFO]: Status changed from: 'Healthy' to 'Degraded'
+[8/6/2018 8:22:54] : [INFO]: Last Change Time was at: '08/06/2018 08:22:22'
+[8/6/2018 8:22:54] : [INFO]: New Health Change Time: '08/06/2018 08:22:53'
+[8/6/2018 8:22:54] : [DEG]: This counter is currently below the average threshold (0.02) and had some spikes that were greater than the Warning threshold (0.001) and enough to increase the level of the server to degraded. Current Values: Min: 0 Avg: 0.001 Max: 0.002
+[8/6/2018 8:22:54] : History Values
+[8/6/2018 8:22:54] : 
+
+Time                                Value
+----                                -----
+8/6/2018 8:22:53 AM  0.000499975356104293
+8/6/2018 8:22:50 AM  0.000574991374636503
+8/6/2018 8:22:47 AM     0.001233344833818
+8/6/2018 8:22:44 AM  0.000628574245016652
+8/6/2018 8:22:41 AM  0.000550012321947853
+8/6/2018 8:22:38 AM  0.000399822563950909
+8/6/2018 8:22:35 AM  0.000500011201770776
+8/6/2018 8:22:32 AM  0.000499975356104293
+8/6/2018 8:22:29 AM  0.000749963034156439
+8/6/2018 8:22:26 AM  0.000620000985755828
+8/6/2018 8:22:22 AM                     0
+8/6/2018 8:22:19 AM    0.0011166642022771
+8/6/2018 8:22:16 AM  0.000599996714147239
+8/6/2018 8:22:13 AM                     0
+8/6/2018 8:22:10 AM   0.00184996796293558
+8/6/2018 8:22:07 AM  0.000589994578342944
+8/6/2018 8:22:04 AM  0.000920065059884667
+8/6/2018 8:22:01 AM  0.000699886638079748
+8/6/2018 8:21:58 AM  0.000499975356104293
+8/6/2018 8:21:55 AM  0.000459993099709202
+1/1/0001 12:00:00 AM                    0
+
+
+[8/6/2018 8:22:54] : [INFO]: Status changed from: 'Healthy' to 'Degraded'
+[8/6/2018 8:22:54] : [INFO]: Last Change Time was at: '08/06/2018 08:22:22'
+[8/6/2018 8:22:54] : [INFO]: New Health Change Time: '08/06/2018 08:22:53'
+[8/6/2018 8:22:54] : [DEG]: This counter is currently below the average threshold (0.02) and had some spikes that were greater than the Warning threshold (0.001) and enough to increase the level of the server to degraded. Current Values: Min: 0 Avg: 0.001 Max: 0.002
+[8/6/2018 8:22:54] : History Values
+[8/6/2018 8:22:54] : 
+
+Time                                Value
+----                                -----
+8/6/2018 8:22:53 AM  0.000600049287791414
+8/6/2018 8:22:50 AM  0.000775001232194785
+8/6/2018 8:22:47 AM  0.000925000410731595
+8/6/2018 8:22:44 AM   0.00193333004748057
+8/6/2018 8:22:41 AM  0.000566612450096111
+8/6/2018 8:22:38 AM  0.000550051752180985
+8/6/2018 8:22:35 AM  0.000949874316131894
+8/6/2018 8:22:32 AM   0.00118000887180245
+8/6/2018 8:22:29 AM  0.000871430683762489
+8/6/2018 8:22:26 AM   0.00119986199418404
+8/6/2018 8:22:22 AM  0.000650007393168712
+8/6/2018 8:22:19 AM  0.000899995071220859
+8/6/2018 8:22:16 AM  0.000622252890181324
+8/6/2018 8:22:13 AM  0.000521408504256353
+8/6/2018 8:22:10 AM  0.000585707948712532
+8/6/2018 8:22:07 AM                     0
+8/6/2018 8:22:04 AM  0.000499975356104293
+8/6/2018 8:22:01 AM  0.000628574245016652
+8/6/2018 8:21:58 AM  0.000821061970318373
+8/6/2018 8:21:55 AM  0.000650007393168712
+1/1/0001 12:00:00 AM                    0
+
+
+[8/6/2018 8:22:54] : [INFO]: Status changed from: 'Healthy' to 'Degraded'
+[8/6/2018 8:22:54] : [INFO]: Last Change Time was at: '08/06/2018 08:22:22'
+[8/6/2018 8:22:54] : [INFO]: New Health Change Time: '08/06/2018 08:22:53'
+[8/6/2018 8:22:54] : [DEG]: This counter is currently below the average threshold (0.02) and had some spikes that were greater than the Warning threshold (0.001) and enough to increase the level of the server to degraded. Current Values: Min: 0 Avg: 0.001 Max: 0.002
+[8/6/2018 8:22:54] : History Values
+[8/6/2018 8:22:54] : 
+
+Time                                Value
+----                                -----
+8/6/2018 8:22:53 AM  0.000600049287791414
+8/6/2018 8:22:50 AM  0.000775001232194785
+8/6/2018 8:22:47 AM  0.000925000410731595
+8/6/2018 8:22:44 AM   0.00193333004748057
+8/6/2018 8:22:41 AM  0.000566612450096111
+8/6/2018 8:22:38 AM  0.000550051752180985
+8/6/2018 8:22:35 AM  0.000949874316131894
+8/6/2018 8:22:32 AM   0.00118000887180245
+8/6/2018 8:22:29 AM  0.000871430683762489
+8/6/2018 8:22:26 AM   0.00119986199418404
+8/6/2018 8:22:22 AM  0.000650007393168712
+8/6/2018 8:22:19 AM  0.000899995071220859
+8/6/2018 8:22:16 AM  0.000622252890181324
+8/6/2018 8:22:13 AM  0.000521408504256353
+8/6/2018 8:22:10 AM  0.000585707948712532
+8/6/2018 8:22:07 AM                     0
+8/6/2018 8:22:04 AM  0.000499975356104293
+8/6/2018 8:22:01 AM  0.000628574245016652
+8/6/2018 8:21:58 AM  0.000821061970318373
+8/6/2018 8:21:55 AM  0.000650007393168712
+1/1/0001 12:00:00 AM                    0
+
+
+[8/6/2018 8:22:54] : [INFO]: Status changed from: 'Healthy' to 'Degraded'
+[8/6/2018 8:22:54] : [INFO]: Last Change Time was at: '08/06/2018 08:22:22'
+[8/6/2018 8:22:54] : [INFO]: New Health Change Time: '08/06/2018 08:22:53'

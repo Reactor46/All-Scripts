@@ -1,0 +1,6 @@
+###This batch file stops the Oracle services on LASDAWH1###
+###Run this before rebooting the server####
+
+net stop "Oracleagent10gAgent"
+net stop "OracleOraHome92050TNSListener"
+net stop "OracleServicedw"

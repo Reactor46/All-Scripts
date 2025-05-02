@@ -1,0 +1,169 @@
+body
+{
+    font-family: "Segoe UI"!important;
+}
+
+/* top bar style */
+.topbar,
+.topbar-content,
+.topbar-button,
+.topbar,
+.topbar-title
+{
+    height: 100%;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.topbar-button
+{
+    border: none;
+    width: 40px;
+    display: inline-block;
+
+}
+.topbar-title
+{
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+.topbar-separator
+{
+
+    height: 30px;
+    border-left: 2px solid #3c3c3c;
+}
+
+/* utility bar style */
+
+/* turn off overflow when menu is beeing toggled for nice animation */
+
+.utilitybar
+{
+    height: 100%;
+    width: 100%;
+}
+
+/* This moves first caterory 40px (just uder top bar) and fixes overflow */
+.utilitybar > .utilitybar-category:first-child
+{
+    padding-top: 40px;
+}
+
+.utilitybar-category-header
+{
+    padding: 10px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    background: #212121;
+}
+
+.utilitybar-category-header::after
+{
+    display: inline-block;
+    font-family: "FabricMDL2Icons";
+    content: "\E70D";
+}
+
+.utilitybar-category-header.open::after
+{
+    content: "\E70E";
+}
+.utilitybar-category-content
+{
+    overflow: hidden!important;
+    white-space: nowrap!important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+button.ms-Button--menu
+{
+    padding: 0px 0px 0px;
+    min-width: 60px;
+}
+
+button.ms-Button--menu > .ms-Button-label
+{
+    font-weight: normal;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+button.ms-Button--menu.active > .ms-Button-label
+{
+    font-weight: 600;
+}
+
+/* animation for collapsing elements classes */
+
+.animate
+{
+            transition: 0.3s ease;
+       -moz-transition: 0.3s ease;
+         -o-transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+}
+
+.uncollapsing
+{
+    transition-property: height, padding, margin;
+    overflow: hidden!important;
+}
+
+.collapsing
+{
+    overflow: hidden!important;
+    transition-property: height, padding, margin;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.collapsed
+{
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 0;
+}
+
+
+/* Loading animation */
+#main-content.loading > #loadingoverlay
+{
+    background: white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 997;
+}
+
+#main-content.loading  > .loader
+{
+    border: 16px solid #f4f4f4;
+    border-radius: 50%;
+    border-top: 16px solid #0078d7;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;    
+    z-index: 998;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    left: 0;
+    right: 0;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

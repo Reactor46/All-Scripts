@@ -1,0 +1,12 @@
+ body {
+font-family:Calibri;
+ font-size:10pt;
+}
+th { 
+background-color:black;
+color:white;
+}
+td {
+ background-color:#19fff0;
+color:black;
+}

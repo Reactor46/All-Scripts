@@ -1,0 +1,17 @@
+Error:
+
+“A deployment or retraction is already under way for the solution “xyz.wsp”, and only one deployment or retraction at a time is supported”
+
+It occurs if anomalies deployment is running for the same package in the back end due to some previous deployment has been crashed before for some reason. Check services and start the “Windows SharePoint Services Administration” service if it’s stopped and then run the following command:
+
+stsadm -o execadmsvcjobs
+
+To fix this problem do the following:
+Look for the deploy jobId to break the running by the following command:
+stsadm -o enumdeployments
+If the date/time is not within 5 mins of when the deployment was started, end it.
+Look for <Scheduled>
+Cancel the deployment by typing the following command:
+stsadm -o canceldeployment -id “GUID jobId”
+Check that deploy has been canceled by typing the following command:
+stsadm -o enumdeployments

@@ -1,0 +1,1 @@
+powershell .\Automappingreportsetnull.ps1

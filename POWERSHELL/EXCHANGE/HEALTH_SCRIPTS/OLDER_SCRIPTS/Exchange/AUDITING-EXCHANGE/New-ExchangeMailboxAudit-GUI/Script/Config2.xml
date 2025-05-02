@@ -1,0 +1,65 @@
+<Configuration>
+  <EmailReport>False</EmailReport>
+  <EmailSubject>Exchange Mailbox Audit Report</EmailSubject>
+  <EmailRecipient>jbattista@optummso.com</EmailRecipient>
+  <EmailSender>ExchangeMailboxReport@uson.local</EmailSender>
+  <SMTPServer>192.168.1.8</SMTPServer>
+  <SaveReportsLocally>True</SaveReportsLocally>
+  <ReportName>ExchangeMailboxAuditReport.html</ReportName>
+  <ReportFolder>\\msoit01\E$\web\reports\All_Results\Exchange\</ReportFolder>
+  <Server>USONVSVREX01</Server>
+  <UseCurrentUser>True</UseCurrentUser>
+  <User>
+  </User>
+  <Password>
+  </Password>
+  <ScopeEnterprise>True</ScopeEnterprise>
+  <ScopeDAG>
+  </ScopeDAG>
+  <ScopeServer>
+  </ScopeServer>
+  <ScopeMailboxDatabase>
+  </ScopeMailboxDatabase>
+  <IncludeInherited>False</IncludeInherited>
+  <ExcludeZeroResults>True</ExcludeZeroResults>
+  <ExcludeUnknownUsers>True</ExcludeUnknownUsers>
+  <FlagWarnings>True</FlagWarnings>
+  <MailboxSizeWarning>8000</MailboxSizeWarning>
+  <MailboxSizeAlert>10000</MailboxSizeAlert>
+  <DeletedSizeWarning>2048</DeletedSizeWarning>
+  <DeletedSizeAlert>4096</DeletedSizeAlert>
+  <MailboxReportPermissions>
+    <Option>Mailbox Summary Information</Option>
+    <Selected>False</Selected>
+  </MailboxReportPermissions>
+  <MailboxReportPermissions>
+    <Option>Full Access Permissions</Option>
+    <Selected>False</Selected>
+  </MailboxReportPermissions>
+  <MailboxReportPermissions>
+    <Option>Send On Behalf Permissions</Option>
+    <Selected>False</Selected>
+  </MailboxReportPermissions>
+  <MailboxReportPermissions>
+    <Option>Send As Permissions</Option>
+    <Selected>False</Selected>
+  </MailboxReportPermissions>
+  <MailboxReportPermissions>
+    <Option>Calendar Permissions</Option>
+    <Selected>False</Selected>
+  </MailboxReportPermissions>
+  <MailboxReportPermissions>
+    <Option>Mailbox Rule - Forwarding</Option>
+    <Selected>False</Selected>
+  </MailboxReportPermissions>
+  <MailboxReportPermissions>
+    <Option>Mailbox Rule - Redirecting</Option>
+    <Selected>False</Selected>
+  </MailboxReportPermissions>
+  <MailboxReportIgnoredUser>
+    <User>NT AUTHORITY\SYSTEM</User>
+  </MailboxReportIgnoredUser>
+  <MailboxReportIgnoredUser>
+    <User>NT AUTHORITY\SELF</User>
+  </MailboxReportIgnoredUser>
+</Configuration>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="7cb12583-740a-4b8a-a301-e083442ea5a2" solutionId="7cb12583-740a-4b8a-a301-e083442ea5a2" resetWebServer="false" name="CustomSiteField" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <projectItems>
+    <projectItemReference itemId="e287ad6c-42c7-43ee-9959-0e158e3f0ff0" />
+    <projectItemReference itemId="3d440fa2-6ce5-4eed-b00f-ca941672fb91" />
+  </projectItems>
+</package>

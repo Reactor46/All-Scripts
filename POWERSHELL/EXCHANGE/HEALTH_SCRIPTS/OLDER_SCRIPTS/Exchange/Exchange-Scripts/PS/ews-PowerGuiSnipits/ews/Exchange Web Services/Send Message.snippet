@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>Send Message</Title>
+      <ShortCut>Send Message</ShortCut>
+      <Description>Send Message</Description>
+      <Author>Glen Scales</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+      </Declarations>
+      <Code Language="powershell"><![CDATA[$EmailMessage = New-Object Microsoft.Exchange.WebServices.Data.EmailMessage -ArgumentList $service  
+$EmailMessage.Subject = "Message Subject"  
+#Add Recipients    
+$EmailMessage.ToRecipients.Add("user@domain.com")  
+$EmailMessage.Body = New-Object Microsoft.Exchange.WebServices.Data.MessageBody  
+$EmailMessage.Body.BodyType = [Microsoft.Exchange.WebServices.Data.BodyType]::HTML  
+$EmailMessage.Body.Text = "Body" 
+$EmailMessage.SendAndSaveCopy()  ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,2 @@
+LASCAS04-OLD.Contoso.corp
+LASCAS05-OLD.Contoso.corp

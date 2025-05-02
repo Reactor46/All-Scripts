@@ -1,0 +1,26 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"Active Directory Rights Management Services Client 2.1";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160524";"1.0.959.0";;;;
+"AppFabric 1.1 for Windows Server";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";;"1.1.2106.32";;;;
+"Microsoft CCR and DSS Runtime 2008 R3";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160318";"2.2.760";;;;
+"Microsoft Identity Extensions";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160318";"2.0.1459.0";;;;
+"Microsoft SharePoint Server 2013";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";;"15.0.4569.1506";;;;
+"Microsoft Silverlight";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20170429";"5.1.50906.0";;;;
+"Microsoft SQL Server 2005 Analysis Services ADOMD.NET";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160407";"9.00.1399.06";;;;
+"Microsoft SQL Server 2008 R2 Native Client";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160318";"10.51.2500.0";;;;
+"Microsoft SQL Server 2008 Setup Support Files ";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160318";"10.1.2731.0";;;;
+"Microsoft SQL Server 2012 (64-bit)";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";;;;;;
+"Microsoft SQL Server 2012 Native Client ";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160322";"11.1.3000.0";;;;
+"Microsoft SQL Server 2012 RS Add-in for SharePoint ";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160318";"11.1.3000.0";;;;
+"Microsoft SQL Server 2012 Setup (English)";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160318";"11.1.3128.0";;;;
+"Microsoft Sync Framework Runtime v1.0 SP1 (x64)";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160318";"1.0.3010.0";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20150608";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20150608";"9.0.30729.4148";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160216";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160318";"10.0.40219";;;;
+"Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";"20160318";"10.0.40219";;;;
+"Sharegate Extension";"LASSP01.CREDITONEAPP.BIZ";"Sharegate";"20170608";"1.10.2";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"LASSP01.CREDITONEAPP.BIZ";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"Symantec Endpoint Protection";"LASSP01.CREDITONEAPP.BIZ";"Symantec Corporation";"20180421";"14.0.3876.1100";;;;"0"
+"VMware Tools";"LASSP01.CREDITONEAPP.BIZ";"VMware, Inc.";"20180120";"10.1.7.5541682";;;;
+"WCF Data Services 5.0 (OData v3)";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";;"5.0.51212.0";;;;
+"WCF Data Services 5.6 Tools";"LASSP01.CREDITONEAPP.BIZ";"Microsoft Corporation";;"5.6.61587.0";;;;

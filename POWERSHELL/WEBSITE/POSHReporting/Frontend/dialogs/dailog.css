@@ -1,0 +1,26 @@
+.ms-Overlay
+{
+    z-index: 1000!important;
+}
+
+.ms-Dialog
+{
+    z-index: 1001!important;
+}
+
+.ms-Dialog-subText
+{
+    font-weight: 400!important;
+}
+.ms-Button #about_button:active,.ms-Button #report_button:active
+{
+    background-color: #0078d7;
+    border-color: #0078d7;
+    color: #eaeaea;
+    font-weight: bold;
+}
+
+.ms-Dialog--lgHeader
+{
+    max-width: unset!important;;
+}

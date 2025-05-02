@@ -1,0 +1,47 @@
+        static void MailEnable(ExchangeService service, String fpfolderPath) {
+            ExtendedPropertyDefinition PR_PF_PROXY = new ExtendedPropertyDefinition(0x671D, MapiPropertyType.Binary);
+            PropertySet PsPropertySet = new PropertySet(PR_PF_PROXY);
+            PsPropertySet.BasePropertySet = BasePropertySet.FirstClassProperties;
+            Folder PfRoot = Folder.Bind(service, WellKnownFolderName.PublicFoldersRoot,PsPropertySet);
+            String[] faFldArray = fpfolderPath.Split('/');
+            Folder tfTargetFolder = PfRoot;
+            for (int lint = 1; lint < faFldArray.Length; lint++) {
+                FolderView fview = new FolderView(1);
+                fview.SearchFilter = new SearchFilter.IsEqualTo(FolderSchema.DisplayName, faFldArray[lint]);
+                fview.PropertySet = PsPropertySet;
+                FindFoldersResults ffResult = service.FindFolders(tfTargetFolder.Id, fview);
+                if (ffResult.TotalCount == 0)
+                {
+                    Console.WriteLine("Folder Not Found");
+                }
+                else {
+                    tfTargetFolder = ffResult.Folders[0];
+                }
+            }
+            ExtendedPropertyDefinition PR_PUBLISH_IN_ADDRESS_BOOK = new ExtendedPropertyDefinition(0x3FE6, MapiPropertyType.Boolean);
+            ExtendedPropertyDefinition PR_PF_PROXY_REQUIRED = new ExtendedPropertyDefinition(0x671F, MapiPropertyType.Boolean);
+
+            tfTargetFolder.ExtendedProperties.Add(PR_PUBLISH_IN_ADDRESS_BOOK, "1");
+            tfTargetFolder.ExtendedProperties.Add(PR_PF_PROXY_REQUIRED, "1");
+            tfTargetFolder.Update();
+            System.Threading.Thread.Sleep(120000);
+            Folder meMailEnabledFolder = Folder.Bind(service, tfTargetFolder.Id, PsPropertySet);
+            String pfProxy = "";
+            tfTargetFolder.Update();
+            byte[] pfPro = Convert.FromBase64String(meMailEnabledFolder.ExtendedProperties[0].Value.ToString());
+            pfProxy = BitConverter.ToString(pfPro);
+            DirectoryEntry deDirEnt = new DirectoryEntry(("LDAP://<GUID=" + pfProxy.Replace("-", "") + ">"));
+            PropertyValueCollection proxyAddresses = deDirEnt.Properties["proxyAddresses"];
+            if (proxyAddresses != null)
+            {
+                for (int ipar = 0; ipar < proxyAddresses.Count; ipar++)
+                {
+                    Console.WriteLine(proxyAddresses[ipar].ToString());
+                    if (proxyAddresses[ipar].ToString().Contains("SMTP:"))
+                    {
+                        proxyAddresses[ipar] = "SMTP:address@domain.com.au";
+                    }
+                }
+            }
+            deDirEnt.CommitChanges();
+            }  

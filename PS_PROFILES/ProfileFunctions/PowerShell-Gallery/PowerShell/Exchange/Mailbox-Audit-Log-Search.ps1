@@ -1,0 +1,1 @@
+New-MailboxAuditLogSearch –Mailboxes “TestUser1” –LogonTypes admin, Delegate –StartDate 07/12/2017 –EndDate 11/12/2017 –StatusMailRecipientsadministrator@www.domain.com –ShowDetails

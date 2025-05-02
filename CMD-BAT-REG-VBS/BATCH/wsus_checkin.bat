@@ -1,0 +1,1 @@
+Wuauclt /reportnow

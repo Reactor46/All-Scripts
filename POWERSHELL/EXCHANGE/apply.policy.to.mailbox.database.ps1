@@ -1,0 +1,1 @@
+Get-Mailbox -Database Fax | Set-Mailbox -RetentionPolicy "RP-Fax"

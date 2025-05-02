@@ -1,0 +1,1 @@
+Add-MailboxDatabaseCopy -Identity Fax -MailboxServer ANEXMBX01 -ActivationPreference 2

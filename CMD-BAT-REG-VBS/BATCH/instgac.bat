@@ -1,0 +1,1 @@
+"C:\Program Files\Microsoft SDKs\Windows\v7.0\Bin\x64\gacutil.exe" -i PSMap.dll

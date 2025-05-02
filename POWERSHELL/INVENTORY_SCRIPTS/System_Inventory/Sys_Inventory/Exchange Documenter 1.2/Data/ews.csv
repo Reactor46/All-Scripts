@@ -1,0 +1,10 @@
+#TYPE System.Management.Automation.PSCustomObject
+"BasicAuthentication","DigestAuthentication","FormsAuthentication","WindowsAuthentication","Externalurl","Internalurl","Identity"
+"False","False",,"True","https://monsoon.creditone.com/ews/exchange.asmx","https://monsoon.creditone.com/EWS/Exchange.asmx","LASEXCAS01\EWS (Default Web Site)"
+"False","False",,"True","https://monsoon.creditone.com/ews/exchange.asmx","https://monsoon.creditone.com/EWS/Exchange.asmx","LASEXCAS02\EWS (Default Web Site)"
+"False","False",,"True",,"https://lasexdb01.fnbm.corp/EWS/Exchange.asmx","LASEXDB01\EWS (Default Web Site)"
+"False","False",,"True",,"https://lasexdb02.fnbm.corp/EWS/Exchange.asmx","LASEXDB02\EWS (Default Web Site)"
+"False","False",,"True","https://webmail.creditonemail.biz/ews/exchange.asmx","https://outlook.creditonemail.biz/ews/exchange.asmx","LASEXCH01\EWS (Default Web Site)"
+"False","False",,"True","https://webmail.creditonemail.biz/ews/exchange.asmx","https://outlook.creditonemail.biz/ews/exchange.asmx","LASEXCH03\EWS (Default Web Site)"
+"False","False",,"True","https://webmail.creditonemail.biz/ews/exchange.asmx","https://outlook.creditonemail.biz/ews/exchange.asmx","LASEXCH02\EWS (Default Web Site)"
+"False","False",,"True","https://webmail.creditonemail.biz/ews/exchange.asmx","https://outlook.creditonemail.biz/ews/exchange.asmx","LASEXCH04\EWS (Default Web Site)"

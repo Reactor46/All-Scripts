@@ -1,0 +1,31 @@
+﻿╔════════════════════════════════════════════╗ 
+       ***** Log File Information *****
+  Filename:   Menu.ps1
+  Created by: Stewart Basterash
+              ATLED Consulting & Engineering
+              stewart.basterash@hotmail.com
+  Modified:   10-24-2011
+╚════════════════════════════════════════════╝
+ 
+---------------- BEGIN LOG -----------------
+ 
+08:16:01	jbattista.advisor	
+08:16:01	jbattista.advisor		Specified argument was out of the range of valid values.
+Parameter name: times. - Line:(229:16)   $top = "`t╔$("═" * $w)╗"
+
+08:16:01	jbattista.advisor		Object reference not set to an instance of an object.. - Line:(346:1) Exit-PSSession
+
+08:16:08	jbattista.advisor	
+08:16:08	jbattista.advisor		Specified argument was out of the range of valid values.
+Parameter name: times. - Line:(229:16)   $top = "`t╔$("═" * $w)╗"
+
+08:16:08	jbattista.advisor		Object reference not set to an instance of an object.. - Line:(346:1) Exit-PSSession
+
+08:53:21	jbattista.advisor	
+08:53:21	jbattista.advisor	 selected folder - Active Directory Functions
+08:53:21	jbattista.advisor	 selected menuitem - Previous Menu
+08:53:21	jbattista.advisor	 selected folder - Distribution Groups
+08:53:21	jbattista.advisor	 selected menuitem - Get Distribution Group
+08:53:21	jbattista.advisor	 selected menuitem - Get Distribution Group
+08:53:21	jbattista.advisor	 selected menuitem - Previous Menu
+08:53:21	jbattista.advisor	 selected menuitem - Exit Menu

@@ -1,0 +1,1 @@
+﻿Test-NetConnection -RemoteAddress 216.58.201.110 -TraceRoute

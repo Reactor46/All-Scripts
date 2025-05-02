@@ -1,0 +1,207 @@
+<html>
+<head>
+<title>HelpDesk Service Request</title>
+<HTA:APPLICATION
+  APPLICATIONNAME="HelpDesk Service Request"
+  ID="ServiceRequest"
+  VERSION="1.0"
+  SINGLEINSTANCE="yes"
+  CONTEXTMENU="no"/>
+</head>
+<style type="text/css">
+<!--
+BODY {
+	xfont-family: "Verdana,Arial, Helvetica, sans-serif";
+	font:menu;
+	background-color:Buttonface;
+	color:MenuText;
+	xfont-size:8pt;
+}
+TABLE{
+	direction:LTR;
+	border-collapse:collapse;
+	border-width: 0px;
+	font-family: Calibri;
+	xfont-family:"Arial";
+	xfont-size:8pt;
+}
+td{
+	direction: LTR;
+	font-family: Calibri;
+}
+H1{
+	font-family: Calibri;
+	}
+-->
+</style>
+<script language="VBScript">
+'=*=*=*=*=*=*=*=*=*=*=*=*=
+' Author : Assaf Miron 
+' http://sites.google.com/site/assafmiron
+' Date : 15/09/10
+' HelpDesk Service Request.hta
+' Description : 
+'=*=*=*=*=*=*=*=*=*=*=*=*=
+Option Explicit
+On Error Resume Next
+'----------------------------
+' Global Size
+  	Const WIDTH  = 680
+  	Const HEIGHT = 720
+Sub Window_OnLoad
+  'This method will be called when the application loads
+  ResizeWindow Width,Height ' Resizes the Window with the Primary Width and Height
+  Email.Focus
+End Sub
+
+Sub ResizeWindow(Width,Height)
+' This Method will Resize the HTA Window and Center it on the Screen
+' Input: Width, Height
+	Self.ResizeTo WIDTH,HEIGHT ' Resize
+  	Self.MoveTo (screen.AvailWidth-Width)/2,(screen.AvailHeight-Height)/2 ' Move Window to Center
+End Sub
+
+Sub OnClickButtonExit()
+'This method will be called when Exit Button is clicked
+  window.Close ' Close the HTA
+End Sub
+
+Function Getact_CaseRadioValue()
+	Dim i
+  For i=0 to act_Case.length-1
+    If act_Case.Item(i).Checked Then
+      Getact_CaseRadioValue = act_Case.Item(i).Value
+      Exit Function
+    End If
+  Next
+  Getact_CaseRadioValue = ""
+End Function
+
+Sub UpdatePreview
+	SendToData.InnerHTML = "Email: " & Email.Value & vbNewLine & _
+							"<BR>Subject: " & Customer.Value & ", Your SR " & SRID.Value & " is " & Getact_CaseRadioValue
+	txtPreview.Value = "Hello " & Customer.Value & "," & vbNewLine & _
+						"The SR " & SRID.Value & " now " & Getact_CaseRadioValue & " for you, we will keep you posted." &_
+						 vbNewLine & "Note: "
+End Sub
+
+Function fSendMail
+	Dim strSubject, strBody
+	strSubject = Customer.Value & ", Your SR " & SRID.Value & " is " & Getact_CaseRadioValue
+	strBody = txtPreview.Value
+	sSendMail Email.Value, CCEmail.Value, "" , strSubject, strBody, Attachment.Value
+
+End Function
+
+Sub sSendMail(ToAddress, CCAddress, BCCAddress, MessageSubject, MessageBody, AttachmentPath)
+	Const olMail = 0
+	Dim objFSO, objOutlook, objMail
+	' Create The File System Object - To check if the File Exsists
+	Set objFSO = CreateObject("Scripting.FileSystemObject") 
+	' Create the Outlook Application Object
+	Set objOutlook = CreateObject("Outlook.Application")
+	Set objMail = objOutlook.CreateItem(olMail)
+	' Set the Message Properties
+	With objMail
+        .To = ToAddress ' Send To Address
+        .CC = CCAddress ' Add a CC Address
+        .BCC = BCCAddress ' Add a BCC Address
+        .Subject = MessageSubject ' Set the Message Subject
+        .Body = MessageBody & vbCrLf ' Set the Message Body
+        ' Check that there is an Attachment
+        If Not AttachmentPath = "" Then
+        	' Add an Attachment if it Exsits
+        	If objFSO.FileExists(AttachmentPath) Then
+        		.Attachments.Add AttachmentPath 
+        	Else
+        		MsgBox "Attachment Path Does Not Exists"
+        	End If
+        End If
+        .Display ' Show the Message
+        '.Send ' Send the Message
+    End With
+    ' Clean Up
+    Set objMail = Nothing
+    Set objOutlook = Nothing
+End Sub
+
+
+Function BrowseFile
+	' Open a File Using a Open Dialog Box
+	Dim objDialog
+	Dim intError
+	' Create the User Dialog
+	Set objDialog = CreateObject("UserAccounts.CommonDialog")
+  	' File the File Type
+	objDialog.Filter = "All Files|*.*"
+	objDialog.FilterIndex = 1
+	' Set the Initial Directory
+	objDialog.InitialDir = "C:\"
+	' Show the Dialog
+	intError = objDialog.ShowOpen
+	
+	If intError = 0 Then
+		' If no File was Selected
+		Exit Function
+	Else
+		' Return the Selected File Path
+	    BrowseFile = objDialog.FileName
+	End If
+End Function
+
+Sub OnClickButtonbtnBrowse()
+	'This method will be called when button "btnBrowse" is clicked
+	Attachment.Value = BrowseFile
+End Sub
+
+Sub OnClickButtonBrowseContacts()
+  'This method will be called when button "BrowseContacts" is clicked
+  	Dim intReturn
+	intReturn = ShowModalDialog("ShowContactsDetails.hta") ' Open the ShowContactsDetails hta, Return Value is the selected email address	
+	' IntReturn is now an Array with Customer Full NAme and Email Address
+	Customer.Value = intReturn(0)
+	Email.Value = intReturn(1) ' Set the Value in the HTA
+End Sub
+</script>
+
+<body bgcolor="white">
+
+<!--Add your controls here-->
+
+<table border=0 width=100% height=100%>
+  <tr>
+  	<td height=100% width=50% valign=top align=left>
+    	<center><h2>Customer Details</h2></center>
+    	<input type="image" src='contact1.gif' name="BrowseContacts" id="BrowseContacts" value="Browse Contacts" onclick="OnClickButtonBrowseContacts" align=absmiddle>
+    		<span style="text-decoration:underline;color:blue;cursor:hand" onClick="OnClickButtonBrowseContacts">Browse Outlook Contacts</Span></input>
+    	<BR>
+		Email Address: <input type="text" name="Email" id="Email" Size=25><BR>    	
+		SR ID:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="SRID" id="SRID" Size=25><BR>    	
+		Customer: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Customer" id="Customer" Size=25><BR>    	
+    	<h2>Activities</h2>
+    	HelpDesk CC Mail Address: <input type="text" name="CCEmail" id="CCEmail" Value="HelpDesk@Domain.Com" Size=25><BR>    	
+    	<BR><P>
+    		Choose the Case Type<BR>
+			<input type="radio" name="act_Case" value="Opened"  OnClick=UpdatePreview OnChange=UpdatePreview>Open Case<BR>
+			<input type="radio" name="act_Case" value="Closed" OnClick=UpdatePreview OnChange=UpdatePreview>Close Case<BR>    	
+		</P>
+		Add an Attachment: <input type="text" name="Attachment" id="Attachment" size=25>
+		<input type="button" name="btnBrowse" id="btnBrowse" value="Browse" onclick="OnClickButtonbtnBrowse">
+		<!--{{InsertControlsHere}}-Do not remove this line-->		
+    </td>
+    <td height=100% width=50% valign=top align=left>
+    	<center><h2>Preview</h2></center>
+    	Sending to:<BR>
+    	<span id=SendToData></span><BR>
+		<textarea name="txtPreview" id="txtPreview" rows="40" cols="40"></textarea>    	
+    </td>
+  </tr>
+  <tr><td align=right>
+	<input type="button" style="width: 80px" name="SendMail" id="btnSendMail" value="Send Mail" onclick="fSendMail">&nbsp;&nbsp;
+	<input type="button" style="width: 80px" name="Exit" id="Exit" value="Exit" onclick="OnClickButtonExit">
+  </td></tr>
+</table>
+
+
+</body>
+</html>

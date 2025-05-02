@@ -1,0 +1,2111 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File href="../LocalAdminReport.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(2);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../LocalAdminReport.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link="#0563C1" vlink="#954F72" class=xl80>
+
+<table border=0 cellpadding=0 cellspacing=0 width=1413 style='border-collapse:
+ collapse;table-layout:fixed;width:1061pt'>
+ <col class=xl80 width=130 style='mso-width-source:userset;mso-width-alt:4754;
+ width:98pt'>
+ <col class=xl80 width=693 style='mso-width-source:userset;mso-width-alt:25344;
+ width:520pt'>
+ <col class=xl80 width=590 style='mso-width-source:userset;mso-width-alt:21577;
+ width:443pt'>
+ <tr class=xl80 height=21 style='height:15.75pt'>
+  <td height=21 class=xl81 width=130 style='height:15.75pt;width:98pt'>ServerName</td>
+  <td class=xl81 width=693 style='width:520pt'>Current OU</td>
+  <td class=xl81 width=590 style='width:443pt'>Move to OU</td>
+ </tr>
+ <tr class=xl80 height=21 style='height:15.75pt'>
+  <td colspan=3 height=21 class=xl110 style='border-right:.5pt solid black;
+  height:15.75pt'>DOMAIN CONTROLLERS SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDC01</td>
+  <td class=xl83>OU=Domain Controllers,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Domain Controllers,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDC02</td>
+  <td class=xl83>OU=Domain Controllers,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Domain Controllers,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDC05</td>
+  <td class=xl83>OU=Domain Controllers,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Domain Controllers,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDC10</td>
+  <td class=xl83>CN=Computers,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Domain Controllers,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDC11</td>
+  <td class=xl83>CN=Computers,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Domain Controllers,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>ARGENT SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASARGENT03</td>
+  <td class=xl83>OU=Argent
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Argent,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASARGENT04</td>
+  <td class=xl83>OU=Argent
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Argent,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASARGENTTST03</td>
+  <td class=xl83>OU=Argent
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Argent,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASVDISRV01</td>
+  <td class=xl83>OU=Argent,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Argent,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>BACKUP SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMEDIA01</td>
+  <td class=xl83>OU=Backup
+  Servers,OU=Browsers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Backup,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>CAPS SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAPS01</td>
+  <td class=xl83>OU=CAPS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAPS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAPS02</td>
+  <td class=xl83>OU=CAPS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAPS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAPS03</td>
+  <td class=xl83>OU=CAPS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAPS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAPS04</td>
+  <td class=xl83>OU=CAPS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAPS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAPS05</td>
+  <td class=xl83>OU=CAPS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAPS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAPS06</td>
+  <td class=xl83>OU=CAPS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAPS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>CAPSMT SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAPSMT01</td>
+  <td class=xl83>OU=CAPS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAPSMT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAPSMT02</td>
+  <td class=xl83>OU=CAPS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAPSMT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAPSMT05</td>
+  <td class=xl83>OU=CAPS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAPSMT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAPSMT06</td>
+  <td class=xl83>OU=CAPS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAPSMT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>CAS SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASBATCHMT01</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASBATCHMT02</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAS01</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAS02</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAS03</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAS04</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAS05</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAS06</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAS07</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAS08</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CAS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>CASMT SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCASMT01</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CASMT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCASMT02</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CASMT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCASMT03</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CASMT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCASMT04</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CASMT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCASMT05</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CASMT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCASMT06</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CASMT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCASMT07</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CASMT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCASMT08</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CASMT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCASMT09</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CASMT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCASMT10</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CASMT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>MT SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT01</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT02</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT03</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT04</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT05</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT06</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT07</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT08</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT09</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT10</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT11</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT12</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT13</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT14</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT15</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT16</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT17</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT18</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT19</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT20</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT21</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT22</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT23</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT24</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT25</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMT30</td>
+  <td class=xl83>OU=CAS
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>COLL SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCOLL01</td>
+  <td class=xl83>OU=CASH Servers - 2012
+  (Collections),OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=COLL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCOLL02</td>
+  <td class=xl83>OU=CASH Servers - 2012
+  (Collections),OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=COLL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCOLL03</td>
+  <td class=xl83>OU=CASH Servers - 2012
+  (Collections),OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=COLL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCOLL04</td>
+  <td class=xl83>OU=CASH Servers - 2012
+  (Collections),OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=COLL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCOLL05</td>
+  <td class=xl83>OU=CASH Servers - 2012
+  (Collections),OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=COLL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCOLL06</td>
+  <td class=xl83>OU=CASH Servers - 2012
+  (Collections),OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=COLL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCOLL07</td>
+  <td class=xl83>OU=CASH Servers - 2012
+  (Collections),OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=COLL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCOLL08</td>
+  <td class=xl83>OU=CASH Servers - 2012
+  (Collections),OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=COLL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCOLL09</td>
+  <td class=xl83>OU=CASH Servers - 2012
+  (Collections),OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=COLL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>CORRECT ADDRESS SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCADD01</td>
+  <td class=xl83>OU=Correct Address,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Correct Address,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCADD02</td>
+  <td class=xl83>OU=Correct Address,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Correct Address,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>FDR SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASFDR01</td>
+  <td class=xl83>OU=Cyberfusion
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CyberFusion,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASFDR02</td>
+  <td class=xl83>OU=Cyberfusion
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CyberFusion,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASFDR03</td>
+  <td class=xl83>OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CyberFusion,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMONARCH01</td>
+  <td class=xl83>OU=Cyberfusion
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CyberFusion,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST INTRA SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASAIR01</td>
+  <td class=xl83>OU=DEVTEST-INTRA,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INTRA,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASAIRCC01</td>
+  <td class=xl83>OU=DEVTEST-INTRA,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INTRA,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCARBON01</td>
+  <td class=xl83>OU=DEVTEST-INTRA,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INTRA,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASINFRA04</td>
+  <td class=xl83>OU=DEVTEST-INTRA,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INTRA,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSCUP01</td>
+  <td class=xl83>OU=DEVTEST-INTRA,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INTRA,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST SQL SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDSMAPPTST01</td>
+  <td class=xl83>OU=DEVTEST-SQL,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSP01TST</td>
+  <td class=xl83>OU=DEVTEST-SQL,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSP02TST</td>
+  <td class=xl83>OU=DEVTEST-SQL,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSP03TST</td>
+  <td class=xl83>OU=DEVTEST-SQL,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSPSQL01TST</td>
+  <td class=xl83>OU=DEVTEST-SQL,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSPTST01</td>
+  <td class=xl83>OU=DEVTEST-SQL,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSQLSPTST01</td>
+  <td class=xl83>OU=DEVTEST-SQL,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST TABLEAU SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTABDEV01</td>
+  <td class=xl83>OU=DEVTEST-TABLEU,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=TABLEAU,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTABTST01</td>
+  <td class=xl83>OU=DEVTEST-TABLEU,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=TABLEAU,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>EXCHANGE SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASEXCAS01</td>
+  <td class=xl83>OU=Exchange 2010
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Exchange,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASEXCAS02</td>
+  <td class=xl83>OU=Exchange 2010
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Exchange,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASEXDB01</td>
+  <td class=xl83>OU=Exchange 2010
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Exchange,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASEXDB02</td>
+  <td class=xl83>OU=Exchange 2010
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Exchange,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASEXCH01</td>
+  <td class=xl83>OU=Exchange 2016
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Exchange,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASEXCH02</td>
+  <td class=xl83>OU=Exchange 2016
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Exchange,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASEXCH03</td>
+  <td class=xl83>OU=Exchange 2016
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Exchange,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASEXCH04</td>
+  <td class=xl83>OU=Exchange 2016
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Exchange,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASEXCHMGT</td>
+  <td class=xl83>OU=Exchange,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Exchange,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>FILE SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASFS02</td>
+  <td class=xl83>OU=File Share
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=File Servers,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASFS03</td>
+  <td class=xl83>OU=File Share
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=File Servers,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASHAFILE01</td>
+  <td class=xl83>OU=File Share
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=File Servers,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASHAFILE01CLS</td>
+  <td class=xl83>OU=File Share
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=File Servers,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASHAFILE01N01</td>
+  <td class=xl83>OU=File Share
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=File Servers,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASHAFILE01N02</td>
+  <td class=xl83>OU=File Share
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=File Servers,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSDSTUDIO01</td>
+  <td class=xl83>OU=File Share
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=File Servers,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSDSTUDIO02</td>
+  <td class=xl83>OU=File Share
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=File Servers,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASRISK01</td>
+  <td class=xl83>OU=File Share
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=RISK,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>GENERICAPPS SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSERVICE01</td>
+  <td class=xl83>OU=GenericApps,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=GenericApps,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>INFRA SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASHICMD01</td>
+  <td class=xl83>OU=INFRA
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASNETBRAIN01</td>
+  <td class=xl83>OU=INFRA
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASRDS01</td>
+  <td class=xl83>OU=INFRA
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSDS01</td>
+  <td class=xl83>OU=INFRA
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASWDS01</td>
+  <td class=xl83>OU=INFRA
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASORION1000</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASORION1000TST</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASBCM01</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASBMC01</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDISPLAY01</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASINFRA02</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASINFRA02-NEW</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASINFRA03</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASINFRA05</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASPSHOST</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMDT01</td>
+  <td class=xl83>CN=Computers,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASWSUS_DESKTOP</td>
+  <td class=xl83>OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSWPATCH01</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>ITS SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASITS02</td>
+  <td class=xl83>OU=INFRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=ITS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASITS03</td>
+  <td class=xl83>OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=ITS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>vCenter SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASVCEN-TELCOM</td>
+  <td class=xl83>OU=INFRA,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=vCenter,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASVCSTST02</td>
+  <td class=xl83>OU=INFRA,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=vCenter,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='height:15.0pt'>INTRA SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSPENT01</td>
+  <td class=xl83>OU=INTRA
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INTRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSPENT02</td>
+  <td class=xl83>OU=INTRA
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INTRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSPENT03</td>
+  <td class=xl83>OU=INTRA
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INTRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSPENT04</td>
+  <td class=xl83>OU=INTRA
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INTRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASINTRA04</td>
+  <td class=xl83>OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INTRA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>CHAT SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCHAT03</td>
+  <td class=xl83>OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CHAT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCHAT04</td>
+  <td class=xl83>OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CHAT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>MKT-WEB</td>
+  <td class=xl83>OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>&nbsp;</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>NETVR SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASENVISE01</td>
+  <td class=xl83>OU=MDT,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>&nbsp;</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASNETVR01</td>
+  <td class=xl83>OU=INFRA
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=NETVR,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASNETVR03</td>
+  <td class=xl83>OU=MDT,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=NETVR,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASNETVR04</td>
+  <td class=xl83>OU=MDT,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=NETVR,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>MERIT SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMCE01</td>
+  <td class=xl83>OU=Merit
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Merit,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMCE02</td>
+  <td class=xl83>OU=Merit
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Merit,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>MQ SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMQ01</td>
+  <td class=xl83>OU=MQ
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MQ,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMQ02</td>
+  <td class=xl83>OU=MQ
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MQ,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMQ04</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MQ,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMQ05</td>
+  <td class=xl83>OU=MQ
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MQ,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMQ06</td>
+  <td class=xl83>OU=MQ
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MQ,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMQAPP</td>
+  <td class=xl83>OU=MQ
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MQ,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMQCIM</td>
+  <td class=xl83>OU=MQ
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MQ,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>nCACHE SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASNCACHE01</td>
+  <td class=xl83>OU=nCACHE,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=NCACHE,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASNCACHE02</td>
+  <td class=xl83>OU=nCACHE,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=NCACHE,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASBP01</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>&nbsp;</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCHAT01</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CHAT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCHAT02</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CHAT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCODE02</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>&nbsp;</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASJIRA01</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>&nbsp;</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>PROCESS SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASPROCESS01</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=PROCESS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASPROCESS02</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=PROCESS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASPROCESS03</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=PROCESS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>&nbsp;</td>
+  <td class=xl83>&nbsp;</td>
+  <td class=xl83>&nbsp;</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASPROCOFAC01</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=PROCOFAC,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSANMGR</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>&nbsp;</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSVC03</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>&nbsp;</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSVC04</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>&nbsp;</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>TFS SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTFSAPP01</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=TFS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTFSBUILD01</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=TFS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASPEGASQL01</td>
+  <td class=xl83>OU=PEGA,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=PEGA,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>&nbsp;</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASPRINT02</td>
+  <td class=xl83>OU=Print
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=PrintServices,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSCANPATH02</td>
+  <td class=xl83>OU=Print
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=PrintServices,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>CERT SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCAROOT01</td>
+  <td class=xl83>OU=INFRA
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CERT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCA01</td>
+  <td class=xl83>OU=INFRA
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CERT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCA02</td>
+  <td class=xl83>OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CERT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCASUB01</td>
+  <td class=xl83>OU=INFRA
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CERT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCASUB02</td>
+  <td class=xl83>OU=INFRA
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CERT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCERT01</td>
+  <td class=xl83>OU=INFRA
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CERT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>WEBSENSE SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSECSRV01</td>
+  <td class=xl83>OU=Servers,OU=DEVTEST-WDS,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Websense,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTRITON01</td>
+  <td class=xl83>OU=Servers,OU=DEVTEST-WDS,OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Websense,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>SKYPE SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSKYPE01</td>
+  <td class=xl83>OU=SKYPE,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SKYPE,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>SAS SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASAS01</td>
+  <td class=xl83>OU=SQL
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SAS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASAS02</td>
+  <td class=xl83>OU=SQL
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SAS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASAS03</td>
+  <td class=xl83>OU=SQL
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SAS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSASC01</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SAS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSASMT01</td>
+  <td class=xl83>OU=Other Production
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SAS,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>ETL SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASETL01</td>
+  <td class=xl83>OU=SQL
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=ETL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASETL03</td>
+  <td class=xl83>OU=SQL
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=ETL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASETL04</td>
+  <td class=xl83>OU=SQL
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=ETL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>SQL SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSQL02N01</td>
+  <td class=xl83>OU=SQL
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSQL02N02</td>
+  <td class=xl83>OU=SQL
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSQL02N04</td>
+  <td class=xl83>OU=SQL
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSQL02N05</td>
+  <td class=xl83>OU=SQL
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSQL02N06</td>
+  <td class=xl83>OU=SQL
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSQL03</td>
+  <td class=xl83>OU=SQL
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDSMAPP01</td>
+  <td class=xl83>OU=SQL,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSQL04</td>
+  <td class=xl83>OU=SQL,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSQL04N01</td>
+  <td class=xl83>OU=SQL,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSQL04N02</td>
+  <td class=xl83>OU=SQL,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSQL04SP</td>
+  <td class=xl83>OU=SQL,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSQLCLS04</td>
+  <td class=xl83>OU=SQL,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDAWH3</td>
+  <td class=xl83>OU=SQL
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>TABLEAU SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTAB01</td>
+  <td class=xl83>OU=TABLEU,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Tableau,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTAB02</td>
+  <td class=xl83>OU=TABLEU,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Tableau,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTABGW01</td>
+  <td class=xl83>OU=TABLEU,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Tableau,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>TELCOM SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASECAS01</td>
+  <td class=xl83>OU=TelCom
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=TelCom,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASNOBHAR01</td>
+  <td class=xl83>OU=TelCom
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=TelCom,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASNOBWEB01</td>
+  <td class=xl83>OU=TelCom
+  Servers,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=TelCom,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>TrackIT SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTI02</td>
+  <td class=xl83>OU=TrackIT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=TrackIT,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>WEBFARM SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASWEB01</td>
+  <td class=xl83>OU=WEB Servers -
+  2012,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASWEB02</td>
+  <td class=xl83>OU=WEB Servers -
+  2012,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASWEB03</td>
+  <td class=xl83>OU=WEB Servers -
+  2012,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASWEB04</td>
+  <td class=xl83>OU=WEB Servers -
+  2012,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASWEB05</td>
+  <td class=xl83>OU=WEB Servers -
+  2012,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASWEB06</td>
+  <td class=xl83>OU=WEB Servers -
+  2012,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASWEB07</td>
+  <td class=xl83>OU=WEB Servers -
+  2012,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASWEB08</td>
+  <td class=xl83>OU=WEB Servers -
+  2012,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASWEB10</td>
+  <td class=xl83>OU=WEB Servers -
+  2012,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASWEB11</td>
+  <td class=xl83>OU=WEB Servers -
+  2012,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASWEB12</td>
+  <td class=xl83>OU=WEB Servers -
+  2012,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASWEB13</td>
+  <td class=xl83>OU=WEB Servers -
+  2012,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>WEBFARM DMZ SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZWEB01</td>
+  <td class=xl83>OU=WEB,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DMZ,OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZWEB02</td>
+  <td class=xl83>OU=WEB,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DMZ,OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZWEB03</td>
+  <td class=xl83>OU=WEB,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DMZ,OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZWEB04</td>
+  <td class=xl83>OU=WEB,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DMZ,OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZWEB05</td>
+  <td class=xl83>OU=WEB,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DMZ,OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZWEB06</td>
+  <td class=xl83>OU=WEB,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DMZ,OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZWEB07</td>
+  <td class=xl83>OU=WEB,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DMZ,OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZWEB08</td>
+  <td class=xl83>OU=WEB,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DMZ,OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZWEB09</td>
+  <td class=xl83>OU=WEB,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DMZ,OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZWEB10</td>
+  <td class=xl83>OU=WEB,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DMZ,OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZWEB11</td>
+  <td class=xl83>OU=WEB,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DMZ,OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZWEB12</td>
+  <td class=xl83>OU=WEB,OU=PROD_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DMZ,OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZCHAT01</td>
+  <td class=xl83>OU=WEB Servers -
+  2012,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DMZ,OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZCHAT02</td>
+  <td class=xl83>OU=WEB Servers -
+  2012,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DMZ,OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZCHAT03</td>
+  <td class=xl83>OU=WEB Servers -
+  2012,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DMZ,OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZCHAT04</td>
+  <td class=xl83>OU=WEB Servers -
+  2012,OU=Production_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DMZ,OU=WebFarm,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>PSTEST02</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASBPTST01</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCADDTST01</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCHATTST01</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASFPTST01</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASJIRATST01</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASPROCOFACTST1</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSFSUPG01</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST nCACHE SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASNCACHE01TST</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=nCACHE,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASNCACHE02TST</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=nCACHE,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST TRAINING SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTRN01GUI</td>
+  <td class=xl83>OU=Training_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=TRAINING,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTRN01MT</td>
+  <td class=xl83>OU=Training_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=TRAINING,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTRN01WEB</td>
+  <td class=xl83>OU=Training_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=TRAINING,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST GUI SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>DCTEST01GUI</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=GUI,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDCTEST01GUI</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=GUI,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST01GUI</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=GUI,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST02GUI</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=GUI,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST03GUI</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=GUI,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST04GUI</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=GUI,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST05GUI</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=GUI,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST06GUI</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=GUI,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASHF01GUI</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=GUI,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST MT SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>DCTEST01MT</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDCTEST01MT</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST01MT</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST02MT</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST03MT</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST04MT</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST05MT</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST06MT</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASHF01MT</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MT,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST WEB SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>DCTEST01WEB</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WEB,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDCTEST01WEB</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WEB,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST01WEB</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WEB,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST02WEB</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WEB,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST03WEB</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WEB,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST04WEB</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WEB,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST05WEB</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WEB,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTEST06WEB</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WEB,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASHF01WEB</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=WEB,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST MERIT SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMCETST01</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MERIT,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMCETST02</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=MERIT,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST SQL SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSQL2016TST</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSQLTST03</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=SQL,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST ETL SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASETLTST01</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=ETL,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASETLTST03</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=ETL,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASETLTST04</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=ETL,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST BACKUP SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASMEDIATST01</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=Backup,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST TELCO SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTELCOTST01</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=TELCO,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST INTRA SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASTSTINTRA04</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=INTRA,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST QA SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASQA01</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=QA,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST CHAT SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCHATTST02</td>
+  <td class=xl83>OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CHAT,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDMZCHATTST01</td>
+  <td class=xl83>OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CHAT,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST CODE SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASCODETST01</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=CODE,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl108 style='height:15.0pt'>DEVTEST PDEV
+  SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASPDEV01GUI</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=PDEV,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASPDEV01MT</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=PDEV,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASPDEV01WEB</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=PDEV,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST STG SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSTG01GUI</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=STG,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSTG01MT</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=STG,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSTG01WEB</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=STG,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASSTGDEV01</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=STG,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST ROLLOUT SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASRL01GUI</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=ROLLOUT,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASRL01MT</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=ROLLOUT,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASRL01WEB</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=ROLLOUT,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST DEVTOOLS SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDEVTOOLS01</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DEVTOOLS,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDEVTOOLS02</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DEVTOOLS,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASDEVTOOLS03</td>
+  <td class=xl83>OU=Test_Servers,OU=Servers,OU=Las_Vegas,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=DEVTOOLS,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td colspan=3 height=20 class=xl107 style='border-right:.5pt solid black;
+  height:15.0pt'>DEVTEST GENERICAPPS SERVERS</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl82 style='height:15.0pt'>LASAPPDTST01</td>
+  <td class=xl83>OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+  <td class=xl83>OU=GenericApps,OU=.DEVTEST,OU=Las_Vegas_Systems,DC=Contoso,DC=corp</td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl80 style='height:15.0pt'></td>
+  <td class=xl80></td>
+  <td class=xl80></td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl80 style='height:15.0pt'></td>
+  <td class=xl80></td>
+  <td class=xl80></td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl80 style='height:15.0pt'></td>
+  <td class=xl80></td>
+  <td class=xl80></td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl80 style='height:15.0pt'></td>
+  <td class=xl80></td>
+  <td class=xl80></td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl80 style='height:15.0pt'></td>
+  <td class=xl80></td>
+  <td class=xl80></td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl80 style='height:15.0pt'></td>
+  <td class=xl80></td>
+  <td class=xl80></td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl80 style='height:15.0pt'></td>
+  <td class=xl80></td>
+  <td class=xl80></td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl80 style='height:15.0pt'></td>
+  <td class=xl80></td>
+  <td class=xl80></td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl80 style='height:15.0pt'></td>
+  <td class=xl80></td>
+  <td class=xl80></td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl80 style='height:15.0pt'></td>
+  <td class=xl80></td>
+  <td class=xl80></td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl80 style='height:15.0pt'></td>
+  <td class=xl80></td>
+  <td class=xl80></td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl80 style='height:15.0pt'></td>
+  <td class=xl80></td>
+  <td class=xl80></td>
+ </tr>
+ <tr height=20 style='height:15.0pt'>
+  <td height=20 class=xl80 style='height:15.0pt'></td>
+  <td class=xl80></td>
+  <td class=xl80></td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl80 style='height:15.0pt'></td>
+  <td class=xl80></td>
+  <td class=xl80></td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl80 style='height:15.0pt'></td>
+  <td class=xl80></td>
+  <td class=xl80></td>
+ </tr>
+ <tr class=xl80 height=20 style='height:15.0pt'>
+  <td height=20 class=xl80 style='height:15.0pt'></td>
+  <td class=xl80></td>
+  <td class=xl80></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=130 style='width:98pt'></td>
+  <td width=693 style='width:520pt'></td>
+  <td width=590 style='width:443pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>

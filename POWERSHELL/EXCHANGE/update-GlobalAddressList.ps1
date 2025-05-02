@@ -1,0 +1,1 @@
+Update-GlobalAddressList -Identity "Global Address List"

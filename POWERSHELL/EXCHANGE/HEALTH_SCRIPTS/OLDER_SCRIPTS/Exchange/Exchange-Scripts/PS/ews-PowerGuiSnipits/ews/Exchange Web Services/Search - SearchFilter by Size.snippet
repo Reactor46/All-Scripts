@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>Search - SearchFilter by Size</Title>
+      <ShortCut>Search - SearchFilter by Size</ShortCut>
+      <Description>Search - SearchFilter by Size</Description>
+      <Author>Glen Scales</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+      </Declarations>
+      <Code Language="powershell"><![CDATA[#Find Items Greater then 35 MB
+$sfItemSearchFilter = new-object Microsoft.Exchange.WebServices.Data.SearchFilter+IsGreaterThan([Microsoft.Exchange.WebServices.Data.ItemSchema]::Size,(35*1MB)) 
+
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

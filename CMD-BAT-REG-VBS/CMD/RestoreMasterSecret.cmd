@@ -1,0 +1,1 @@
+"%CommonProgramFiles%\Enterprise Single Sign-On\ssoconfig" -restoreSecret "$(MASTERSECRETBACKUPPATH)"

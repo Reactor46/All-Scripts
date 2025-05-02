@@ -1,0 +1,118 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20240118214015
+Username: KELSEY-SEYBOLD\a24696
+RunAs User: KELSEY-SEYBOLD\a24696
+Configuration Name: 
+Machine: FBV-WBDV20-D01 (Microsoft Windows NT 10.0.17763.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe D:\SCRIPTS\IIS\IIS_BACKUPS\Backup IIS Configs.ps1
+Process ID: 9948
+PSVersion: 5.1.17763.5202
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.5202
+BuildVersion: 10.0.17763.5202
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName                                                                                                  PSComputerName
+-------  ------    -----      -----     ------     --  -- -----------                                                                                                  --------------
+     20       6      712       2660       0.02   7464   0 reg                                                                                                          FBV-ICLGM-P01
+     20       6      712       2660       0.03  19488   0 reg                                                                                                          FBV-SPAPPSS-P01
+     20       6      716       2660       0.02   1616   0 reg                                                                                                          FBV-SPSRCSS-P01
+     20       6      712       2656       0.02  13752   0 reg                                                                                                          FBV-SPWFESS-P01
+     21      10      720       2656       0.02  20356   0 reg                                                                                                          FBV-SPWFESS-P02
+     20       6      708       2660       0.00  29256   0 reg                                                                                                          FBV-SPAPPSS-P01
+     20       6      712       2660       0.02  27072   0 reg                                                                                                          FBV-SPSRCSS-P01
+     20       6      716       2660       0.00  22140   0 reg                                                                                                          FBV-SPWFESS-P01
+     21      10      720       2656       0.00  22440   0 reg                                                                                                          FBV-SPWFESS-P02
+[fbv-websql-p01] Connecting to remote server fbv-websql-p01 failed with the following error message : Access is denied. 
+For more information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (fbv-websql-p01:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : AccessDenied,PSSessionStateBroken
+[fbv-websql-p01] Connecting to remote server fbv-websql-p01 failed with the following error message : Access is denied. For more information, see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (fbv-websql-p01:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : AccessDenied,PSSessionStateBroken
+[FBV-ENTAPP-P01] Connecting to remote server FBV-ENTAPP-P01 failed with the following error message : The client cannot 
+connect to the destination specified in the request. Verify that the service on the destination is running and is 
+accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most 
+commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze 
+and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help 
+topic.
+    + CategoryInfo          : OpenError: (FBV-ENTAPP-P01:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : CannotConnect,PSSessionStateBroken
+[FBV-ENTAPP-P01] Connecting to remote server FBV-ENTAPP-P01 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and
+documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information,
+see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (FBV-ENTAPP-P01:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : CannotConnect,PSSessionStateBroken
+[FBV-ENTSQL-P01] Connecting to remote server FBV-ENTSQL-P01 failed with the following error message : The client cannot 
+connect to the destination specified in the request. Verify that the service on the destination is running and is 
+accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most 
+commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze 
+and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help 
+topic.
+    + CategoryInfo          : OpenError: (FBV-ENTSQL-P01:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : CannotConnect,PSSessionStateBroken
+[FBV-ENTSQL-P01] Connecting to remote server FBV-ENTSQL-P01 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and
+documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information,
+see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (FBV-ENTSQL-P01:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : CannotConnect,PSSessionStateBroken
+[FBV-ENTSQL-P01] Connecting to remote server FBV-ENTSQL-P01 failed with the following error message : The client cannot 
+connect to the destination specified in the request. Verify that the service on the destination is running and is 
+accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most 
+commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze 
+and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help 
+topic.
+    + CategoryInfo          : OpenError: (FBV-ENTSQL-P01:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : CannotConnect,PSSessionStateBroken
+[FBV-ENTSQL-P01] Connecting to remote server FBV-ENTSQL-P01 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and
+documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information,
+see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (FBV-ENTSQL-P01:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : CannotConnect,PSSessionStateBroken
+[FBV-ENTSQL-P05] Connecting to remote server FBV-ENTSQL-P05 failed with the following error message : The client cannot 
+connect to the destination specified in the request. Verify that the service on the destination is running and is 
+accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most 
+commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze 
+and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help 
+topic.
+    + CategoryInfo          : OpenError: (FBV-ENTSQL-P05:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : CannotConnect,PSSessionStateBroken
+[FBV-ENTSQL-P05] Connecting to remote server FBV-ENTSQL-P05 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and
+documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information,
+see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (FBV-ENTSQL-P05:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : CannotConnect,PSSessionStateBroken
+[FBV-MITP-P01] Connecting to remote server FBV-MITP-P01 failed with the following error message : The client cannot 
+connect to the destination specified in the request. Verify that the service on the destination is running and is 
+accepting requests. Consult the logs and documentation for the WS-Management service running on the destination, most 
+commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze 
+and configure the WinRM service: "winrm quickconfig". For more information, see the about_Remote_Troubleshooting Help 
+topic.
+    + CategoryInfo          : OpenError: (FBV-MITP-P01:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : CannotConnect,PSSessionStateBroken
+[FBV-MITP-P01] Connecting to remote server FBV-MITP-P01 failed with the following error message : The client cannot connect to the destination specified in the request. Verify that the service on the destination is running and is accepting requests. Consult the logs and
+documentation for the WS-Management service running on the destination, most commonly IIS or WinRM. If the destination is the WinRM service, run the following command on the destination to analyze and configure the WinRM service: "winrm quickconfig". For more information,
+see the about_Remote_Troubleshooting Help topic.
+    + CategoryInfo          : OpenError: (FBV-MITP-P01:String) [], PSRemotingTransportException
+    + FullyQualifiedErrorId : CannotConnect,PSSessionStateBroken
+     19       3      692       1240       0.00   5040   0 reg                                                                                                          FBV-MITP-P02
+     20       6      712       2660       0.00   8236   0 reg                                                                                                          FBV-WEBP6-P02
+     21       9      720       2656       0.00   5084   0 reg                                                                                                          FBV-DOCAVE2-P01
+     18       5      668       1272       0.02  16256   0 reg                                                                                                          FBV-WEBP6-P01
+     18       5      680       1272       0.03  11172   0 reg                                                                                                          FBV-SCRCM10-P01
+     18       5      660       1272       0.00   3472   0 reg                                                                                                          FBV-SCSLR10-P01
+     18       5      672       1272       0.00   6480   0 reg                                                                                                          FBV-SCSLR10-P02
+     18       5      668       1272       0.00   5136   0 reg                                                                                                          FBV-SCSLR10-P03
+     18       5      680       1276       0.00   4852   0 reg                                                                                                          FBV-SCSLR10-P04
+     18       5      680       1276       0.03  14864   0 reg                                                                                                          FBV-SCRDB10-P01
+     18       5      680       1276       0.03  14572   0 reg                                                                                                          FBV-SCRDB10-P02
+     19       3      680       1236       0.00   4656   0 reg                                                                                                          FBV-SCRXC10-P01
+**********************
+Windows PowerShell transcript end
+End time: 20240118214203
+**********************

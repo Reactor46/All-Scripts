@@ -1,0 +1,45 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"BMC Track-It! 11.3 Agent";"LASSDS01.FNBM.CORP";"BMC Software";;"11.3.0.355";;;;
+"Headless Server Registry Update";"LASSDS01.FNBM.CORP";"Hewlett-Packard Company";"20130812";"1.0.0.0";;;;
+"HP Array Configuration Utility (64-bit)";"LASSDS01.FNBM.CORP";"Hewlett-Packard Development Company, L.P.";"20130812";"9.40.12.0";;;;
+"HP Array Configuration Utility CLI (64-bit)";"LASSDS01.FNBM.CORP";"Hewlett-Packard Development Company, L.P.";"20130812";"9.40.12.0";;;;
+"HP Insight Diagnostics  Online Edition for Windows";"LASSDS01.FNBM.CORP";"Hewlett-Packard Development Company, L.P.";"20140612";"9.64.1262";;;;
+"HP Insight Management Agents";"LASSDS01.FNBM.CORP";"Hewlett-Packard Company";"20140912";"9.60.0.0";;;;
+"HP Insight Management WBEM Providers for Windows Server x64 Editions";"LASSDS01.FNBM.CORP";"Hewlett-Packard Company";;"9.5.0.0";;;;
+"HP Lights-Out Online Configuration Utility";"LASSDS01.FNBM.CORP";"Hewlett-Packard Development Company, L.P.";"20140612";"4.3.0.0";;;;
+"HP ProLiant Agentless Management Service";"LASSDS01.FNBM.CORP";"Hewlett-Packard Company";;"9.60.0.0";;;;
+"HP ProLiant iLO 3/4 Channel Interface Driver";"LASSDS01.FNBM.CORP";"Hewlett-Packard Company";;"3.10.0.0";;;;
+"HP ProLiant iLO 3/4 Management Controller Package";"LASSDS01.FNBM.CORP";"Hewlett-Packard Company";;"3.9.0.0";;;;
+"HP ProLiant Integrated Management Log Viewer";"LASSDS01.FNBM.CORP";"Hewlett-Packard Company";"20140612";"7.0.0.0";;;;
+"HP ProLiant PCI-express Power Management Update for Windows";"LASSDS01.FNBM.CORP";"Hewlett-Packard Company";"20130812";"1.3.0.0";;;;
+"HP Smart Array SAS/SATA Event Notification Service";"LASSDS01.FNBM.CORP";"Hewlett-Packard Development Company, L.P.";"20140612";"6.36.0.64";;;;
+"HP System Management Homepage";"LASSDS01.FNBM.CORP";"Hewlett-Packard Development Company, L.P.";"20140710";"7.3.3";;;;
+"HP Version Control Agent";"LASSDS01.FNBM.CORP";"Hewlett Packard Development Company, L.P.";"20140710";"7.3.3.0";;;;
+"Identity Finder Console";"LASSDS01.FNBM.CORP";"Identity Finder, LLC";"20160602";;;;;
+"Infognition ScreenPressor v2.1 (Remove Only)";"LASSDS01.FNBM.CORP";;;;;;;
+"Matrox Graphics Software (remove only)";"LASSDS01.FNBM.CORP";;;;;;;
+"Microsoft .NET Framework 4.5.2";"LASSDS01.FNBM.CORP";"Microsoft Corporation";;"4.5.51209";;;;
+"Microsoft Baseline Security Analyzer 2.1";"LASSDS01.FNBM.CORP";"Microsoft Corporation";"20130813";"2.1.0000";;;;
+"Microsoft Silverlight";"LASSDS01.FNBM.CORP";"Microsoft Corporation";"20170429";"5.1.50906.0";;;;
+"Microsoft SQL Server 2012 Management Objects  (x64)";"LASSDS01.FNBM.CORP";"Microsoft Corporation";"20140610";"11.1.3000.0";;;;
+"Microsoft SQL Server 2012 Native Client ";"LASSDS01.FNBM.CORP";"Microsoft Corporation";"20140610";"11.1.3000.0";;;;
+"Microsoft System CLR Types for SQL Server 2012 (x64)";"LASSDS01.FNBM.CORP";"Microsoft Corporation";"20140610";"11.1.3000.0";;;;
+"Microsoft Visual C++ 2005 Redistributable";"LASSDS01.FNBM.CORP";"Microsoft Corporation";"20140424";"8.0.59193";;;;
+"Microsoft Visual C++ 2005 Redistributable";"LASSDS01.FNBM.CORP";"Microsoft Corporation";"20130812";"8.0.61001";;;;
+"Microsoft Visual C++ 2005 Redistributable (x64)";"LASSDS01.FNBM.CORP";"Microsoft Corporation";"20130812";"8.0.59192";;;;
+"Microsoft Visual C++ 2005 Redistributable (x64)";"LASSDS01.FNBM.CORP";"Microsoft Corporation";"20130812";"8.0.61000";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.17";"LASSDS01.FNBM.CORP";"Microsoft Corporation";"20140911";"9.0.30729";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161";"LASSDS01.FNBM.CORP";"Microsoft Corporation";"20130812";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.17";"LASSDS01.FNBM.CORP";"Microsoft Corporation";"20140911";"9.0.30729";;;;
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161";"LASSDS01.FNBM.CORP";"Microsoft Corporation";"20140920";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2012 Redistributable (x64) - 11.0.61030";"LASSDS01.FNBM.CORP";"Microsoft Corporation";;"11.0.61030.0";;;;
+"Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.61030";"LASSDS01.FNBM.CORP";"Microsoft Corporation";;"11.0.61030.0";;;;
+"Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.30501";"LASSDS01.FNBM.CORP";"Microsoft Corporation";;"12.0.30501.0";;;;
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501";"LASSDS01.FNBM.CORP";"Microsoft Corporation";;"12.0.30501.0";;;;
+"PFA Server Registry Update";"LASSDS01.FNBM.CORP";"Hewlett-Packard Company";"20130812";"1.0.0.0";;;;
+"SolarWinds Agent 2.0.70.0";"LASSDS01.FNBM.CORP";"SolarWinds Worldwide, LLC.";"20180604";"2.0.70.0";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"LASSDS01.FNBM.CORP";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"Symantec Endpoint Protection";"LASSDS01.FNBM.CORP";"Symantec Corporation";"20180421";"14.0.3876.1100";;;;"0"
+"Veritas InfoScale Operations Manager (Host Component)";"LASSDS01.FNBM.CORP";"Veritas Technologies LLC";;"7.3.1.400";;;;"0"
+"Veritas Storage Foundation 6.0.1 for Windows ";"LASSDS01.FNBM.CORP";"Symantec Corporation";"11.10.2005.11.10 10:33:24 PST";"6.0.100";;;;
+"Visual C++ 9.0 SP1+KB971092 Runtime DLLs (x64/release)";"LASSDS01.FNBM.CORP";"Microsoft";"20140912";"9.0.30729.4148";;;;

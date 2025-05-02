@@ -1,0 +1,1701 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SharePoint Theme</title>
+    <link rel="stylesheet" href="layout/layout.css" />
+    <link rel="stylesheet" href="main/style.css" />
+    <link rel="stylesheet" href="table/tables.css" />
+    <link rel="stylesheet" href="utilitybar/navigation/nav.css" />
+    <link rel="stylesheet" href="commandBar/commandbar.css" />
+    <link rel="stylesheet" href="dialogs/dailog.css" />
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.4.0/css/fabric.min.css"
+    />
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css"
+    />
+
+
+    <style></style>
+</head>
+
+<body class="ms-Fabric ms-normalize">
+    <div id="wrapper">
+        <div id="top-bar">
+            <nav class="topbar ms-bgColor-black ms-fontColor-white ms-font-xl">
+                <div class="topbar-content">
+                    <button class="topbar-button ms-bgColor-themePrimary">
+                        <i class="ms-Icon ms-Icon--Waffle ms-fontColor-white ms-font-xl" aria-hidden="true"></i>
+                    </button>
+                    <a class="topbar-title">Health Report: SharePoint</a>
+                </div>
+            </nav>
+
+        </div>
+
+        <div id="utility-bar" class="animate-transition animate-all">
+            <nav class="utilitybar ms-fontColor-white  ms-bgColor-neutralDark ms-font-m-plus">
+                <div class="utilitybar-category" id="Navigation">
+                    <div class="utilitybar-category-header ms-bgColor-neutralSecondary--hover">
+                        <a>
+                            <i class="ms-Icon ms-Icon--ContextMenu" style="padding-right: 10px;" aria-hidden="true"></i>
+                            Navigation
+                        </a>
+                    </div>
+                    <div class="utilitybar-category-content ms-bgColor-neutralPrimary" style="display: none;">
+                    </div>
+                </div>
+                <div class="utilitybar-category">
+                    <div class="utilitybar-category-header ms-bgColor-neutralSecondary--hover">
+                        <a>
+                            <i class="ms-Icon ms-Icon--FilterSolid" style="padding-right: 10px;" aria-hidden="true"></i>
+                            Filters
+                        </a>
+                    </div>
+                    <div class="utilitybar-category-content ms-bgColor-neutralPrimary" style="display: none;">
+                        <button class="ms-Button ms-Button--menu filter-button">
+                            <span class="ms-Button-label">OK</span>
+                        </button>
+                        <button class="ms-Button ms-Button--menu filter-button">
+                            <span class="ms-Button-label">Warning</span>
+                        </button>
+                        <button class="ms-Button ms-Button--menu filter-button">
+                            <span class="ms-Button-label">Error</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="utilitybar-category">
+                    <div class="utilitybar-category-header ms-bgColor-neutralSecondary--hover">
+                        <a>
+                            <i class="ms-Icon ms-Icon--ServerProcesses" style="padding-right: 10px;" aria-hidden="true"></i>
+                            Options
+                        </a>
+                    </div>
+                    <div class="utilitybar-category-content ms-bgColor-neutralPrimary" style="display: none;">
+                        <a style="cursor: unset;"><span class="nav-icon"><i class="ms-Icon ms-Icon--ColumnOptions" ></i></span><span class="nav-text">Tables</span></a>
+                        <button id="collapse-tables" class="ms-Button ms-Button--menu">
+                                <span class="ms-Button-label">Collapse</span>
+                        </button>
+                        <button id="expand-tables" class="ms-Button ms-Button--menu">
+                                <span class="ms-Button-label">Expand</span>
+                        </button>
+
+                        <a style="cursor: unset;"><span class="nav-icon"><i class="ms-Icon ms-Icon--DocumentSearch" ></i></span><span class="nav-text">Search</span></a>
+                        <button id="toggle-regex" class="ms-Button ms-Button--menu">
+                            <span class="ms-Button-label">RegEx</span>
+                        </button>
+
+                        <a style="cursor: unset;"><span class="nav-icon"><i class="ms-Icon ms-Icon--ViewList" ></i></span><span class="nav-text">View</span></a>
+                        <button id="view-10" class="ms-Button ms-Button--menu">
+                            <span class="ms-Button-label">10 entries</span>
+                        </button>
+                        <button id="view-all" class="ms-Button ms-Button--menu">
+                            <span class="ms-Button-label">All entries</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="utilitybar-category">
+                    <div class="utilitybar-category-header ms-bgColor-neutralSecondary--hover">
+                        <a>
+                            <i class="ms-Icon ms-Icon--InfoSolid" style="padding-right: 10px;" aria-hidden="true"></i>
+                            Information
+                        </a>
+                    </div>
+                    <div class="utilitybar-category-content ms-bgColor-neutralPrimary" style="display: none;">
+                        <button id="details_Button" class="ms-Button ms-Button--menu">
+                            <span class="ms-Button-label">Report details</span>
+                        </button>
+                        <button id="about_Button" class="ms-Button ms-Button--menu">
+                            <span class="ms-Button-label">About</span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+        <div id="overlay" class="animate-transition animate-all"></div>
+
+        <div id="main-content" class="animate-transition animate-all loading">
+
+            <div id="loadingoverlay"></div>
+            <div class="loader"></div>
+            <div id="Tables"> 
+                <h2>Basic Utilization Too Long Header For Display</h2>
+                <table id="basic_-_utilization">
+                    <thead>
+                        <tr>
+                            <th>Server Name</th>
+                            <th>Memory Usage (in MB)</th>
+                            <th>CPU Usage</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>5070 / 7972 (64%)</td>
+                            <td>6%</td>
+                            <td>Error</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>5070 / 7972 (64%)</td>
+                            <td>3%</td>
+                            <td>Warning</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Disk Space</h2>
+                <table id="disk_space">
+                    <thead>
+                        <tr>
+                            <th>Server Name</th>
+                            <th>Drive</th>
+                            <th>Usage (in GB)</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>C:</td>
+                            <td>103,28 / 237,97 (0,43%)</td>
+                            <td>OK</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>C:</td>
+                            <td>103,28 / 237,97 (0,43%)</td>
+                            <td>Warning</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Event Log Too Long Header For Display</h2>
+                <table id="event_log">
+                    <thead>
+                        <tr>
+                            <th>Server Name</th>
+                            <th>TimeWritten</th>
+                            <th>EntryType</th>
+                            <th>Source</th>
+                            <th>InstanceId</th>
+                            <th>Message</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 15:28:49</td>
+                            <td>Warning</td>
+                            <td>Group Policy Scheduled Tasks</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Scheduled Tasks' cannot be
+                                found. The local computer may not have the necessary registry information or message DLL
+                                files to display the message, or you may not have permission to access them. The following
+                                information is part of the event:'computer', 'GoogleUpdateTaskMachineUA', 'MCD-CP-Baseline-Computer-Policy-v02
+                                {19011D82-8C21-480A-94C8-E1234806D482}', '0x80070005 Access is denied.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 15:28:42</td>
+                            <td>Warning</td>
+                            <td>Group Policy Files</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Files' cannot be found. The
+                                local computer may not have the necessary registry information or message DLL files to display
+                                the message, or you may not have permission to access them. The following information is
+                                part of the event:'computer', 'atos.exe', 'Default Domain Policy {31B2F340-016D-11D2-945F-00C04FB984F9}',
+                                '0x80070002 The system cannot find the file specified.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 15:28:42</td>
+                            <td>Warning</td>
+                            <td>Group Policy Files</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Files' cannot be found. The
+                                local computer may not have the necessary registry information or message DLL files to display
+                                the message, or you may not have permission to access them. The following information is
+                                part of the event:'computer', 'atos.exe', 'Default Domain Policy {31B2F340-016D-11D2-945F-00C04FB984F9}',
+                                '0x80070002 The system cannot find the file specified.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 11:37:18</td>
+                            <td>Warning</td>
+                            <td>Group Policy Scheduled Tasks</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Scheduled Tasks' cannot be
+                                found. The local computer may not have the necessary registry information or message DLL
+                                files to display the message, or you may not have permission to access them. The following
+                                information is part of the event:'computer', 'GoogleUpdateTaskMachineUA', 'MCD-CP-Baseline-Computer-Policy-v02
+                                {19011D82-8C21-480A-94C8-E1234806D482}', '0x80070005 Access is denied.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 11:37:08</td>
+                            <td>Warning</td>
+                            <td>Group Policy Files</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Files' cannot be found. The
+                                local computer may not have the necessary registry information or message DLL files to display
+                                the message, or you may not have permission to access them. The following information is
+                                part of the event:'computer', 'atos.exe', 'Default Domain Policy {31B2F340-016D-11D2-945F-00C04FB984F9}',
+                                '0x80070002 The system cannot find the file specified.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 11:37:08</td>
+                            <td>Warning</td>
+                            <td>Group Policy Files</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Files' cannot be found. The
+                                local computer may not have the necessary registry information or message DLL files to display
+                                the message, or you may not have permission to access them. The following information is
+                                part of the event:'computer', 'atos.exe', 'Default Domain Policy {31B2F340-016D-11D2-945F-00C04FB984F9}',
+                                '0x80070002 The system cannot find the file specified.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 11:06:32</td>
+                            <td>Error</td>
+                            <td>SideBySide</td>
+                            <td>3238068259</td>
+                            <td>Activation context generation failed for "C:\Program Files (x86)\Microsoft Office\root\Office16\lync.exe.Manifest".Error
+                                in manifest or policy file "C:\Program Files (x86)\Microsoft Office\root\Office16\UccApi.DLL"
+                                on line 1. Component identity found in manifest does not match the identity of the component
+                                requested. Reference is UccApi,processorArchitecture="AMD64",type="win32",version="16.0.0.0".
+                                Definition is UccApi,processorArchitecture="x86",type="win32",version="16.0.0.0". Please
+                                use sxstrace.exe for detailed diagnosis.</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 09:33:31</td>
+                            <td>Error</td>
+                            <td>SideBySide</td>
+                            <td>3238068259</td>
+                            <td>Activation context generation failed for "C:\Program Files (x86)\Microsoft Office\root\Office16\lync.exe.Manifest".Error
+                                in manifest or policy file "C:\Program Files (x86)\Microsoft Office\root\Office16\UccApi.DLL"
+                                on line 1. Component identity found in manifest does not match the identity of the component
+                                requested. Reference is UccApi,processorArchitecture="AMD64",type="win32",version="16.0.0.0".
+                                Definition is UccApi,processorArchitecture="x86",type="win32",version="16.0.0.0". Please
+                                use sxstrace.exe for detailed diagnosis.</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 09:05:36</td>
+                            <td>Error</td>
+                            <td>Office 2016 Licensing Service</td>
+                            <td>0</td>
+                            <td>The description for Event ID '0' in Source 'Office 2016 Licensing Service' cannot be found. The
+                                local computer may not have the necessary registry information or message DLL files to display
+                                the message, or you may not have permission to access them. The following information is
+                                part of the event:'Subscription licensing service failed: -2143485946'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 09:05:36</td>
+                            <td>Error</td>
+                            <td>Microsoft Office 16</td>
+                            <td>3221227483</td>
+                            <td>Office Subscription licensing exception: Error Code: 0x803D0006; CorrelationId: {33F361B9-ADAC-4C7F-87C9-A1A8666C0493}</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:18:41</td>
+                            <td>Warning</td>
+                            <td>Group Policy Scheduled Tasks</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Scheduled Tasks' cannot be
+                                found. The local computer may not have the necessary registry information or message DLL
+                                files to display the message, or you may not have permission to access them. The following
+                                information is part of the event:'computer', 'GoogleUpdateTaskMachineUA', 'MCD-CP-Baseline-Computer-Policy-v02
+                                {19011D82-8C21-480A-94C8-E1234806D482}', '0x80070005 Access is denied.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:18:35</td>
+                            <td>Warning</td>
+                            <td>Group Policy Files</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Files' cannot be found. The
+                                local computer may not have the necessary registry information or message DLL files to display
+                                the message, or you may not have permission to access them. The following information is
+                                part of the event:'computer', 'atos.exe', 'Default Domain Policy {31B2F340-016D-11D2-945F-00C04FB984F9}',
+                                '0x80070002 The system cannot find the file specified.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:18:35</td>
+                            <td>Warning</td>
+                            <td>Group Policy Files</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Files' cannot be found. The
+                                local computer may not have the necessary registry information or message DLL files to display
+                                the message, or you may not have permission to access them. The following information is
+                                part of the event:'computer', 'atos.exe', 'Default Domain Policy {31B2F340-016D-11D2-945F-00C04FB984F9}',
+                                '0x80070002 The system cannot find the file specified.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:17:51</td>
+                            <td>Error</td>
+                            <td>SideBySide</td>
+                            <td>3238068259</td>
+                            <td>Activation context generation failed for "C:\Program Files (x86)\Microsoft Office\root\Office16\lync.exe.Manifest".Error
+                                in manifest or policy file "C:\Program Files (x86)\Microsoft Office\root\Office16\UccApi.DLL"
+                                on line 1. Component identity found in manifest does not match the identity of the component
+                                requested. Reference is UccApi,processorArchitecture="AMD64",type="win32",version="16.0.0.0".
+                                Definition is UccApi,processorArchitecture="x86",type="win32",version="16.0.0.0". Please
+                                use sxstrace.exe for detailed diagnosis.</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:12:29</td>
+                            <td>Warning</td>
+                            <td>Windows Search Service</td>
+                            <td>2147486684</td>
+                            <td>The content source cannot be accessed. Context: Application, SystemIndex Catalog Details: The
+                                object was not found. (HRESULT : 0x80041201) (0x80041201)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:10:03</td>
+                            <td>Error</td>
+                            <td>McAfee Endpoint Security</td>
+                            <td>536870915</td>
+                            <td>EventID=1095 Użytkownik WW930\A672845 uruchomił proces REG.EXE, który uzyskał dostęp do ścieżkiHKCU\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN\CIRCUIT
+                                w sposób naruszający regułę \"Rejestrowanie programów do autouruchamiania\". Zezwolono na
+                                dostęp, ponieważ konfiguracja reguły nie przewiduje blokowania.</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:09:48</td>
+                            <td>Error</td>
+                            <td>SideBySide</td>
+                            <td>3238068259</td>
+                            <td>Activation context generation failed for "C:\Program Files (x86)\Microsoft Office\root\Office16\lync.exe.Manifest".Error
+                                in manifest or policy file "C:\Program Files (x86)\Microsoft Office\root\Office16\UccApi.DLL"
+                                on line 1. Component identity found in manifest does not match the identity of the component
+                                requested. Reference is UccApi,processorArchitecture="AMD64",type="win32",version="16.0.0.0".
+                                Definition is UccApi,processorArchitecture="x86",type="win32",version="16.0.0.0". Please
+                                use sxstrace.exe for detailed diagnosis.</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:09:38</td>
+                            <td>Warning</td>
+                            <td>CardOS API</td>
+                            <td>0</td>
+                            <td>The description for Event ID '0' in Source 'CardOS API' cannot be found. The local computer may
+                                not have the necessary registry information or message DLL files to display the message,
+                                or you may not have permission to access them. The following information is part of the event:'The
+                                Microsoft build-in certificate propagation is enabled. It is not recommended to use the Microsoft
+                                build-in propagation and CardOS API propagation in parallel. Microsoft build-in propagation
+                                can be disabled by stopping the Microsoft Certificate Propagation Service. Refer to the CardOS
+                                API Installation Manual Section 7 "Microsoft vs. CardOS API Certificate Propagation" for
+                                details. '
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:09:05</td>
+                            <td>Error</td>
+                            <td>Microsoft-Windows-WMI</td>
+                            <td>10</td>
+                            <td>Event filter with query "SELECT * FROM __InstanceModificationEvent WITHIN 60 WHERE TargetInstance
+                                ISA "Win32_Processor" AND TargetInstance.LoadPercentage > 99" could not be reactivated in
+                                namespace "//./root/CIMV2" because of error 0x80041003. Events cannot be delivered through
+                                this filter until the problem is corrected.</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/12/2018 16:20:39</td>
+                            <td>Warning</td>
+                            <td>Microsoft-Windows-User Profiles Service</td>
+                            <td>1530</td>
+                            <td>Windows detected your registry file is still in use by other applications or services. The file
+                                will be unloaded now. The applications or services that hold your registry file may not function
+                                properly afterwards. DETAIL - 5 user registry handles leaked from \Registry\User\S-1-5-21-1014176260-98930707-4043447730-705175:
+                                Process 844 (\Device\HarddiskVolume2\Windows\System32\lsass.exe) has opened key \REGISTRY\USER\S-1-5-21-1014176260-98930707-4043447730-705175
+                                Process 844 (\Device\HarddiskVolume2\Windows\System32\lsass.exe) has opened key \REGISTRY\USER\S-1-5-21-1014176260-98930707-4043447730-705175
+                                Process 844 (\Device\HarddiskVolume2\Windows\System32\lsass.exe) has opened key \REGISTRY\USER\S-1-5-21-1014176260-98930707-4043447730-705175\Software\Microsoft\SystemCertificates\MY
+                                Process 844 (\Device\HarddiskVolume2\Windows\System32\lsass.exe) has opened key \REGISTRY\USER\S-1-5-21-1014176260-98930707-4043447730-705175\Software\Microsoft\SystemCertificates\CA
+                                Process 844 (\Device\HarddiskVolume2\Windows\System32\lsass.exe) has opened key \REGISTRY\USER\S-1-5-21-1014176260-98930707-4043447730-705175\Software\Microsoft\SystemCertificates\Disallowed
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 15:28:49</td>
+                            <td>Warning</td>
+                            <td>Group Policy Scheduled Tasks</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Scheduled Tasks' cannot be
+                                found. The local computer may not have the necessary registry information or message DLL
+                                files to display the message, or you may not have permission to access them. The following
+                                information is part of the event:'computer', 'GoogleUpdateTaskMachineUA', 'MCD-CP-Baseline-Computer-Policy-v02
+                                {19011D82-8C21-480A-94C8-E1234806D482}', '0x80070005 Access is denied.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 15:28:42</td>
+                            <td>Warning</td>
+                            <td>Group Policy Files</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Files' cannot be found. The
+                                local computer may not have the necessary registry information or message DLL files to display
+                                the message, or you may not have permission to access them. The following information is
+                                part of the event:'computer', 'atos.exe', 'Default Domain Policy {31B2F340-016D-11D2-945F-00C04FB984F9}',
+                                '0x80070002 The system cannot find the file specified.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 15:28:42</td>
+                            <td>Warning</td>
+                            <td>Group Policy Files</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Files' cannot be found. The
+                                local computer may not have the necessary registry information or message DLL files to display
+                                the message, or you may not have permission to access them. The following information is
+                                part of the event:'computer', 'atos.exe', 'Default Domain Policy {31B2F340-016D-11D2-945F-00C04FB984F9}',
+                                '0x80070002 The system cannot find the file specified.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 11:37:18</td>
+                            <td>Warning</td>
+                            <td>Group Policy Scheduled Tasks</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Scheduled Tasks' cannot be
+                                found. The local computer may not have the necessary registry information or message DLL
+                                files to display the message, or you may not have permission to access them. The following
+                                information is part of the event:'computer', 'GoogleUpdateTaskMachineUA', 'MCD-CP-Baseline-Computer-Policy-v02
+                                {19011D82-8C21-480A-94C8-E1234806D482}', '0x80070005 Access is denied.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 11:37:08</td>
+                            <td>Warning</td>
+                            <td>Group Policy Files</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Files' cannot be found. The
+                                local computer may not have the necessary registry information or message DLL files to display
+                                the message, or you may not have permission to access them. The following information is
+                                part of the event:'computer', 'atos.exe', 'Default Domain Policy {31B2F340-016D-11D2-945F-00C04FB984F9}',
+                                '0x80070002 The system cannot find the file specified.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 11:37:08</td>
+                            <td>Warning</td>
+                            <td>Group Policy Files</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Files' cannot be found. The
+                                local computer may not have the necessary registry information or message DLL files to display
+                                the message, or you may not have permission to access them. The following information is
+                                part of the event:'computer', 'atos.exe', 'Default Domain Policy {31B2F340-016D-11D2-945F-00C04FB984F9}',
+                                '0x80070002 The system cannot find the file specified.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 11:06:32</td>
+                            <td>Error</td>
+                            <td>SideBySide</td>
+                            <td>3238068259</td>
+                            <td>Activation context generation failed for "C:\Program Files (x86)\Microsoft Office\root\Office16\lync.exe.Manifest".Error
+                                in manifest or policy file "C:\Program Files (x86)\Microsoft Office\root\Office16\UccApi.DLL"
+                                on line 1. Component identity found in manifest does not match the identity of the component
+                                requested. Reference is UccApi,processorArchitecture="AMD64",type="win32",version="16.0.0.0".
+                                Definition is UccApi,processorArchitecture="x86",type="win32",version="16.0.0.0". Please
+                                use sxstrace.exe for detailed diagnosis.</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 09:33:31</td>
+                            <td>Error</td>
+                            <td>SideBySide</td>
+                            <td>3238068259</td>
+                            <td>Activation context generation failed for "C:\Program Files (x86)\Microsoft Office\root\Office16\lync.exe.Manifest".Error
+                                in manifest or policy file "C:\Program Files (x86)\Microsoft Office\root\Office16\UccApi.DLL"
+                                on line 1. Component identity found in manifest does not match the identity of the component
+                                requested. Reference is UccApi,processorArchitecture="AMD64",type="win32",version="16.0.0.0".
+                                Definition is UccApi,processorArchitecture="x86",type="win32",version="16.0.0.0". Please
+                                use sxstrace.exe for detailed diagnosis.</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 09:05:36</td>
+                            <td>Error</td>
+                            <td>Office 2016 Licensing Service</td>
+                            <td>0</td>
+                            <td>The description for Event ID '0' in Source 'Office 2016 Licensing Service' cannot be found. The
+                                local computer may not have the necessary registry information or message DLL files to display
+                                the message, or you may not have permission to access them. The following information is
+                                part of the event:'Subscription licensing service failed: -2143485946'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 09:05:36</td>
+                            <td>Error</td>
+                            <td>Microsoft Office 16</td>
+                            <td>3221227483</td>
+                            <td>Office Subscription licensing exception: Error Code: 0x803D0006; CorrelationId: {33F361B9-ADAC-4C7F-87C9-A1A8666C0493}</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:18:41</td>
+                            <td>Warning</td>
+                            <td>Group Policy Scheduled Tasks</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Scheduled Tasks' cannot be
+                                found. The local computer may not have the necessary registry information or message DLL
+                                files to display the message, or you may not have permission to access them. The following
+                                information is part of the event:'computer', 'GoogleUpdateTaskMachineUA', 'MCD-CP-Baseline-Computer-Policy-v02
+                                {19011D82-8C21-480A-94C8-E1234806D482}', '0x80070005 Access is denied.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:18:35</td>
+                            <td>Warning</td>
+                            <td>Group Policy Files</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Files' cannot be found. The
+                                local computer may not have the necessary registry information or message DLL files to display
+                                the message, or you may not have permission to access them. The following information is
+                                part of the event:'computer', 'atos.exe', 'Default Domain Policy {31B2F340-016D-11D2-945F-00C04FB984F9}',
+                                '0x80070002 The system cannot find the file specified.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:18:35</td>
+                            <td>Warning</td>
+                            <td>Group Policy Files</td>
+                            <td>2248216578</td>
+                            <td>The description for Event ID '-2046750718' in Source 'Group Policy Files' cannot be found. The
+                                local computer may not have the necessary registry information or message DLL files to display
+                                the message, or you may not have permission to access them. The following information is
+                                part of the event:'computer', 'atos.exe', 'Default Domain Policy {31B2F340-016D-11D2-945F-00C04FB984F9}',
+                                '0x80070002 The system cannot find the file specified.'</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:17:51</td>
+                            <td>Error</td>
+                            <td>SideBySide</td>
+                            <td>3238068259</td>
+                            <td>Activation context generation failed for "C:\Program Files (x86)\Microsoft Office\root\Office16\lync.exe.Manifest".Error
+                                in manifest or policy file "C:\Program Files (x86)\Microsoft Office\root\Office16\UccApi.DLL"
+                                on line 1. Component identity found in manifest does not match the identity of the component
+                                requested. Reference is UccApi,processorArchitecture="AMD64",type="win32",version="16.0.0.0".
+                                Definition is UccApi,processorArchitecture="x86",type="win32",version="16.0.0.0". Please
+                                use sxstrace.exe for detailed diagnosis.</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:12:29</td>
+                            <td>Warning</td>
+                            <td>Windows Search Service</td>
+                            <td>2147486684</td>
+                            <td>The content source cannot be accessed. Context: Application, SystemIndex Catalog Details: The
+                                object was not found. (HRESULT : 0x80041201) (0x80041201)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:10:03</td>
+                            <td>Error</td>
+                            <td>McAfee Endpoint Security</td>
+                            <td>536870915</td>
+                            <td>EventID=1095 Użytkownik WW930\A672845 uruchomił proces REG.EXE, który uzyskał dostęp do ścieżkiHKCU\SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\RUN\CIRCUIT
+                                w sposób naruszający regułę \"Rejestrowanie programów do autouruchamiania\". Zezwolono na
+                                dostęp, ponieważ konfiguracja reguły nie przewiduje blokowania.</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:09:48</td>
+                            <td>Error</td>
+                            <td>SideBySide</td>
+                            <td>3238068259</td>
+                            <td>Activation context generation failed for "C:\Program Files (x86)\Microsoft Office\root\Office16\lync.exe.Manifest".Error
+                                in manifest or policy file "C:\Program Files (x86)\Microsoft Office\root\Office16\UccApi.DLL"
+                                on line 1. Component identity found in manifest does not match the identity of the component
+                                requested. Reference is UccApi,processorArchitecture="AMD64",type="win32",version="16.0.0.0".
+                                Definition is UccApi,processorArchitecture="x86",type="win32",version="16.0.0.0". Please
+                                use sxstrace.exe for detailed diagnosis.</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:09:38</td>
+                            <td>Warning</td>
+                            <td>CardOS API</td>
+                            <td>0</td>
+                            <td>The description for Event ID '0' in Source 'CardOS API' cannot be found. The local computer may
+                                not have the necessary registry information or message DLL files to display the message,
+                                or you may not have permission to access them. The following information is part of the event:'The
+                                Microsoft build-in certificate propagation is enabled. It is not recommended to use the Microsoft
+                                build-in propagation and CardOS API propagation in parallel. Microsoft build-in propagation
+                                can be disabled by stopping the Microsoft Certificate Propagation Service. Refer to the CardOS
+                                API Installation Manual Section 7 "Microsoft vs. CardOS API Certificate Propagation" for
+                                details. '
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/13/2018 08:09:05</td>
+                            <td>Error</td>
+                            <td>Microsoft-Windows-WMI</td>
+                            <td>10</td>
+                            <td>Event filter with query "SELECT * FROM __InstanceModificationEvent WITHIN 60 WHERE TargetInstance
+                                ISA "Win32_Processor" AND TargetInstance.LoadPercentage > 99" could not be reactivated in
+                                namespace "//./root/CIMV2" because of error 0x80041003. Events cannot be delivered through
+                                this filter until the problem is corrected.</td>
+                        </tr>
+                        <tr>
+                            <td>MC0Y780C</td>
+                            <td>03/12/2018 16:20:39</td>
+                            <td>Warning</td>
+                            <td>Microsoft-Windows-User Profiles Service</td>
+                            <td>1530</td>
+                            <td>Windows detected your registry file is still in use by other applications or services. The file
+                                will be unloaded now. The applications or services that hold your registry file may not function
+                                properly afterwards. DETAIL - 5 user registry handles leaked from \Registry\User\S-1-5-21-1014176260-98930707-4043447730-705175:
+                                Process 844 (\Device\HarddiskVolume2\Windows\System32\lsass.exe) has opened key \REGISTRY\USER\S-1-5-21-1014176260-98930707-4043447730-705175
+                                Process 844 (\Device\HarddiskVolume2\Windows\System32\lsass.exe) has opened key \REGISTRY\USER\S-1-5-21-1014176260-98930707-4043447730-705175
+                                Process 844 (\Device\HarddiskVolume2\Windows\System32\lsass.exe) has opened key \REGISTRY\USER\S-1-5-21-1014176260-98930707-4043447730-705175\Software\Microsoft\SystemCertificates\MY
+                                Process 844 (\Device\HarddiskVolume2\Windows\System32\lsass.exe) has opened key \REGISTRY\USER\S-1-5-21-1014176260-98930707-4043447730-705175\Software\Microsoft\SystemCertificates\CA
+                                Process 844 (\Device\HarddiskVolume2\Windows\System32\lsass.exe) has opened key \REGISTRY\USER\S-1-5-21-1014176260-98930707-4043447730-705175\Software\Microsoft\SystemCertificates\Disallowed
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Test</h2>
+                <table id="test">
+                    <thead>
+                        <tr>
+                            <th>DisplayName</th>
+                            <th>Name</th>
+                            <th>State</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Adobe Acrobat Update Service</td>
+                            <td>AdobeARMservice</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Adobe Flash Player Update Service</td>
+                            <td>AdobeFlashPlayerUpdateSvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Application Experience</td>
+                            <td>AeLookupSvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Application Layer Gateway Service</td>
+                            <td>ALG</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Alps HID Monitor Service</td>
+                            <td>ApHidMonitorService</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Application Identity</td>
+                            <td>AppIDSvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Application Information</td>
+                            <td>Appinfo</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Application Management</td>
+                            <td>AppMgmt</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>ASP.NET State Service</td>
+                            <td>aspnet_state</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Audio Endpoint Builder</td>
+                            <td>AudioEndpointBuilder</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Audio</td>
+                            <td>AudioSrv</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>ActiveX Installer (AxInstSV)</td>
+                            <td>AxInstSV</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>BitLocker Drive Encryption Service</td>
+                            <td>BDESVC</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Base Filtering Engine</td>
+                            <td>BFE</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Background Intelligent Transfer Service</td>
+                            <td>BITS</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Bluetooth Device Monitor</td>
+                            <td>Bluetooth Device Monitor</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Bluetooth Media Service</td>
+                            <td>Bluetooth Media Service</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Bluetooth OBEX Service</td>
+                            <td>Bluetooth OBEX Service</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Computer Browser</td>
+                            <td>Browser</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Bluetooth Support Service</td>
+                            <td>bthserv</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>SMS Agent Host</td>
+                            <td>CcmExec</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Certificate Propagation</td>
+                            <td>CertPropSvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft Office Click-to-Run Service</td>
+                            <td>ClickToRunSvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft .NET Framework NGEN v2.0.50727_X86</td>
+                            <td>clr_optimization_v2.0.50727_32</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft .NET Framework NGEN v2.0.50727_X64</td>
+                            <td>clr_optimization_v2.0.50727_64</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft .NET Framework NGEN v4.0.30319_X86</td>
+                            <td>clr_optimization_v4.0.30319_32</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft .NET Framework NGEN v4.0.30319_X64</td>
+                            <td>clr_optimization_v4.0.30319_64</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Configuration Manager Remote Control</td>
+                            <td>CmRcService</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>COM+ System Application</td>
+                            <td>COMSysApp</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Intel(R) Content Protection HECI Service</td>
+                            <td>cphs</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Cryptographic Services</td>
+                            <td>CryptSvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Offline Files</td>
+                            <td>CscService</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Dolby DAX2 API Service</td>
+                            <td>DAX2API</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>DCOM Server Process Launcher</td>
+                            <td>DcomLaunch</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Disk Defragmenter</td>
+                            <td>defragsvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>DHCP Client</td>
+                            <td>Dhcp</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>DisplayLinkManager</td>
+                            <td>DisplayLinkService</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>DNS Client</td>
+                            <td>Dnscache</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Wired AutoConfig</td>
+                            <td>dot3svc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Lenovo Doze Mode Service</td>
+                            <td>DozeSvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Diagnostic Policy Service</td>
+                            <td>DPS</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Pulse Secure Network Connect Service</td>
+                            <td>dsNcService</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Extensible Authentication Protocol</td>
+                            <td>EapHost</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Encrypting File System (EFS)</td>
+                            <td>EFS</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Media Center Receiver Service</td>
+                            <td>ehRecvr</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Media Center Scheduler Service</td>
+                            <td>ehSched</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Event Log</td>
+                            <td>eventlog</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>COM+ Event System</td>
+                            <td>EventSystem</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Fax</td>
+                            <td>Fax</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Function Discovery Provider Host</td>
+                            <td>fdPHost</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Function Discovery Resource Publication</td>
+                            <td>FDResPub</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Font Cache Service</td>
+                            <td>FontCache</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Presentation Foundation Font Cache 3.0.0.0</td>
+                            <td>FontCache3.0.0.0</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Group Policy Client</td>
+                            <td>gpsvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Usługa Google Update (gupdate)</td>
+                            <td>gupdate</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Usługa Google Update (gupdatem)</td>
+                            <td>gupdatem</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Human Interface Device Access</td>
+                            <td>hidserv</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Health Key and Certificate Management</td>
+                            <td>hkmsvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>HomeGroup Provider</td>
+                            <td>HomeGroupProvider</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Lenovo PM Service</td>
+                            <td>IBMPMSVC</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Intel Bluetooth Service</td>
+                            <td>iBtSiva</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Windows CardSpace</td>
+                            <td>idsvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Internet Explorer ETW Collector Service</td>
+                            <td>IEEtwCollectorService</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Intel(R) HD Graphics Control Panel Service</td>
+                            <td>igfxCUIService2.0.0.0</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>IKE and AuthIP IPsec Keying Modules</td>
+                            <td>IKEEXT</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>PnP-X IP Bus Enumerator</td>
+                            <td>IPBusEnum</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>IP Helper</td>
+                            <td>iphlpsvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Juniper Unified Network Service</td>
+                            <td>JuniperAccessService</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>CNG Key Isolation</td>
+                            <td>KeyIso</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>KtmRm for Distributed Transaction Coordinator</td>
+                            <td>KtmRm</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Server</td>
+                            <td>LanmanServer</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Workstation</td>
+                            <td>LanmanWorkstation</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Lenovo Microphone Mute</td>
+                            <td>LENOVO.MICMUTE</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Link-Layer Topology Discovery Mapper</td>
+                            <td>lltdsvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>TCP/IP NetBIOS Helper</td>
+                            <td>lmhosts</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft Policy Platform Local Authority</td>
+                            <td>lpasvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft Policy Platform Processor</td>
+                            <td>lppsvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>McAfee Agent Common Services</td>
+                            <td>macmnsvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>McAfee Agent Service</td>
+                            <td>masvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>McAfee Agent Backwards Compatibility Service</td>
+                            <td>McAfeeFramework</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Media Center Extender Service</td>
+                            <td>Mcx2Svc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>McAfee Firewall Core Service</td>
+                            <td>mfefire</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>McAfee Service Controller</td>
+                            <td>mfemms</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>McAfee Validation Trust Protection Service</td>
+                            <td>mfevtp</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Multimedia Class Scheduler</td>
+                            <td>MMCSS</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Firewall</td>
+                            <td>MpsSvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Distributed Transaction Coordinator</td>
+                            <td>MSDTC</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft iSCSI Initiator Service</td>
+                            <td>MSiSCSI</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Installer</td>
+                            <td>msiserver</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Network Access Protection Agent</td>
+                            <td>napagent</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Netlogon</td>
+                            <td>Netlogon</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Network Connections</td>
+                            <td>Netman</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Net.Msmq Listener Adapter</td>
+                            <td>NetMsmqActivator</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Net.Pipe Listener Adapter</td>
+                            <td>NetPipeActivator</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Network List Service</td>
+                            <td>netprofm</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Net.Tcp Listener Adapter</td>
+                            <td>NetTcpActivator</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Net.Tcp Port Sharing Service</td>
+                            <td>NetTcpPortSharing</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Network Location Awareness</td>
+                            <td>NlaSvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Network Store Interface Service</td>
+                            <td>nsi</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>O2FLASH</td>
+                            <td>O2FLASH</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Office Source Engine</td>
+                            <td>ose</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Office Software Protection Platform</td>
+                            <td>osppsvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Peer Networking Identity Manager</td>
+                            <td>p2pimsvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Peer Networking Grouping</td>
+                            <td>p2psvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Program Compatibility Assistant Service</td>
+                            <td>PcaSvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>BranchCache</td>
+                            <td>PeerDistSvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Performance Counter DLL Host</td>
+                            <td>PerfHost</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Performance Logs Alerts</td>
+                            <td>pla</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Plug and Play</td>
+                            <td>PlugPlay</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>PNRP Machine Name Publication Service</td>
+                            <td>PNRPAutoReg</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Peer Name Resolution Protocol</td>
+                            <td>PNRPsvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>IPsec Policy Agent</td>
+                            <td>PolicyAgent</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Power</td>
+                            <td>Power</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Power Manager Service</td>
+                            <td>Power Manager DBC Service</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>User Profile Service</td>
+                            <td>ProfSvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Protected Storage</td>
+                            <td>ProtectedStorage</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Pulse Secure Service</td>
+                            <td>PulseSecureService</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Cisco EnergyWise Enabler</td>
+                            <td>PwmEWSvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Quality Windows Audio Video Experience</td>
+                            <td>QWAVE</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Remote Access Auto Connection Manager</td>
+                            <td>RasAuto</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Remote Access Connection Manager</td>
+                            <td>RasMan</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Routing and Remote Access</td>
+                            <td>RemoteAccess</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Remote Registry</td>
+                            <td>RemoteRegistry</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>RPC Endpoint Mapper</td>
+                            <td>RpcEptMapper</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Remote Procedure Call (RPC) Locator</td>
+                            <td>RpcLocator</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Remote Procedure Call (RPC)</td>
+                            <td>RpcSs</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Security Accounts Manager</td>
+                            <td>SamSs</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Smart Card</td>
+                            <td>SCardSvr</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Task Scheduler</td>
+                            <td>Schedule</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Smart Card Removal Policy</td>
+                            <td>SCPolicySvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Backup</td>
+                            <td>SDRSVC</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Secondary Logon</td>
+                            <td>seclogon</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>System Event Notification Service</td>
+                            <td>SENS</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Adaptive Brightness</td>
+                            <td>SensrSvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Remote Desktop Configuration</td>
+                            <td>SessionEnv</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Internet Connection Sharing (ICS)</td>
+                            <td>SharedAccess</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Shell Hardware Detection</td>
+                            <td>ShellHWDetection</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>ConfigMgr Task Sequence Agent</td>
+                            <td>smstsmgr</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>SNMP Trap</td>
+                            <td>SNMPTRAP</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Print Spooler</td>
+                            <td>Spooler</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Software Protection</td>
+                            <td>sppsvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>SPP Notification Service</td>
+                            <td>sppuinotify</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>SSDP Discovery</td>
+                            <td>SSDPSRV</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Secure Socket Tunneling Protocol Service</td>
+                            <td>SstpSvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Image Acquisition (WIA)</td>
+                            <td>stisvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Storage Service</td>
+                            <td>StorSvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft Software Shadow Copy Provider</td>
+                            <td>swprv</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Superfetch</td>
+                            <td>SysMain</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Tablet PC Input Service</td>
+                            <td>TabletInputService</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Telephony</td>
+                            <td>TapiSrv</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Remote Desktop Services</td>
+                            <td>TermService</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Themes</td>
+                            <td>Themes</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Thread Ordering Server</td>
+                            <td>THREADORDER</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>ThinkPad HDD APS Logging Service</td>
+                            <td>TPHDEXLGSVC</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Lenovo Hotkey Client Loader</td>
+                            <td>TPHKLOAD</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>On Screen Display</td>
+                            <td>TPHKSVC</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Distributed Link Tracking Client</td>
+                            <td>TrkWks</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Modules Installer</td>
+                            <td>TrustedInstaller</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>UCMS</td>
+                            <td>UCMS</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Interactive Services Detection</td>
+                            <td>UI0Detect</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Remote Desktop Services UserMode Port Redirector</td>
+                            <td>UmRdpService</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>UPnP Device Host</td>
+                            <td>upnphost</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Desktop Window Manager Session Manager</td>
+                            <td>UxSms</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Credential Manager</td>
+                            <td>VaultSvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Virtual Disk</td>
+                            <td>vds</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>VMware USB Arbitration Service</td>
+                            <td>VMUSBArbService</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Volume Shadow Copy</td>
+                            <td>VSS</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Time</td>
+                            <td>W32Time</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Block Level Backup Engine Service</td>
+                            <td>wbengine</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Biometric Service</td>
+                            <td>WbioSrvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Connect Now - Config Registrar</td>
+                            <td>wcncsvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Color System</td>
+                            <td>WcsPlugInService</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Diagnostic Service Host</td>
+                            <td>WdiServiceHost</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Diagnostic System Host</td>
+                            <td>WdiSystemHost</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>WebClient</td>
+                            <td>WebClient</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Event Collector</td>
+                            <td>Wecsvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Problem Reports and Solutions Control Panel Support</td>
+                            <td>wercplsupport</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Error Reporting Service</td>
+                            <td>WerSvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Defender</td>
+                            <td>WinDefend</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>WinHTTP Web Proxy Auto-Discovery Service</td>
+                            <td>WinHttpAutoProxySvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Management Instrumentation</td>
+                            <td>Winmgmt</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Remote Management (WS-Management)</td>
+                            <td>WinRM</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>WLAN AutoConfig</td>
+                            <td>Wlansvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>WMI Performance Adapter</td>
+                            <td>wmiApSrv</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Media Player Network Sharing Service</td>
+                            <td>WMPNetworkSvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Parental Controls</td>
+                            <td>WPCSvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Portable Device Enumerator Service</td>
+                            <td>WPDBusEnum</td>
+                            <td>Stopped</td>
+                        </tr>
+                        <tr>
+                            <td>Security Center</td>
+                            <td>wscsvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Search</td>
+                            <td>WSearch</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Update</td>
+                            <td>wuauserv</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>Windows Driver Foundation - User-mode Driver Framework</td>
+                            <td>wudfsvc</td>
+                            <td>Running</td>
+                        </tr>
+                        <tr>
+                            <td>WWAN AutoConfig</td>
+                            <td>WwanSvc</td>
+                            <td>Stopped</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="about_Dialog">
+        <div class="ms-Dialog ms-Dialog--lgHeader">
+            <div class="ms-Dialog-title">About</div>
+            <div class="ms-Dialog-content">
+                <p class="ms-Dialog-subText">This application was created by: Lukasz Gorski.</p>
+            </div>
+            <div class="ms-Dialog-actions">
+                <button class="ms-Button ms-Dialog-action ms-Button--primary">
+                    <span class="ms-Button-label">Ok</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="details_Dialog">
+        <div class="ms-Dialog ms-Dialog--lgHeader">
+            <div class="ms-Dialog-title">Report details</div>
+            <div class="ms-Dialog-content">
+                <p class="ms-Dialog-subText">This report was generated by PowerShell report solution server:
+                    <span class="ms-fontWeight-semibold">SERVERPLACEHOLDER</span>
+                    <br /> Data was gathered on:
+                    <span class="ms-fontWeight-semibold">DATEPLACEHOLDER</span>.
+                </p>
+            </div>
+            <div class="ms-Dialog-actions">
+                <button class="ms-Button ms-Dialog-action ms-Button--primary">
+                    <span class="ms-Button-label">Ok</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script type="text/javascript" src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+
+    <script type="text/javascript" src="main/scripts.js"></script>
+    <script type="text/javascript" src="table/tables.js"></script>
+    <script type="text/javascript" src="utilitybar/navigation/nav.js"></script>
+    <script type="text/javascript" src="commandbar/commandbar.js"></script>
+    <script type="text/javascript" src="dialogs/about.js"></script>
+    <script type="text/javascript" src="dialogs/reportdetails.js"></script>
+    <script type="text/javascript" src="utilitybar/filter/filter.js"></script>
+    <script type="text/javascript" src="utilitybar/options/options.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+.ms-ContextualMenu-link.search-options.checked::before
+{
+    font-family: "FabricMDL2Icons";
+    content: '\E8FB';
+    display: inline-block;
+    font-size: 12px;
+    position: absolute;
+    left: 7px;
+}
+
+
+.ms-ContextualMenu-link.search-options.regex-toggle::after
+{
+    font-family: "FabricMDL2Icons";
+    content: '\E943';
+    color: #0078d7;
+    display: inline-block;
+    position: absolute;
+    right: 7px;
+}
+
+.ms-ContextualMenu-link.column-picker.checked::before
+{
+    font-family: "FabricMDL2Icons";
+    content: '\E8FB';
+    display: inline-block;
+    font-size: 12px;
+    position: absolute;
+    left: 7px;
+}
+
+.ms-ContextualMenu-link.js-Paginate-Select.checked::before
+{
+    font-family: "FabricMDL2Icons";
+    content: '\E8FB';
+    display: inline-block;
+    font-size: 12px;
+    position: absolute;
+    left: 7px;
+}
+
+@media only screen and (max-width: 639px) {
+    .ms-CommandBar .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active 
+    {
+        margin-left: 40px!important;
+        max-width: calc(100% - 40px);
+    }
+}
+
+@media only screen and (min-width: 640px)
+{
+    .ms-CommandBar .ms-SearchBox {
+        margin-right: 0!important;
+    }
+}
+
+
+@media only screen and (max-height: 440px)
+{
+    .ms-ContextualMenu-link {
+        line-height: 24px!important;
+        height: unset!important;
+    }
+}
+
+
+/* Search box "return" icon debug */
+.ms-CommandButton-icon > .ms-Icon.ms-Icon--ChromeBack::after
+{
+    content: "\E830";
+    color: #0078d7;
+}
+
+
+/* Export buttons css*/
+
+.ms-ContextualMenu-link.export-csv::after
+{
+    font-family: "FabricMDL2Icons";
+    content: '\F52B';
+    color: #0078d7;
+    display: inline-block;
+    position: absolute;
+    right: 7px;
+    font-size: 18px;
+}
+
+.ms-ContextualMenu-link.export-excel::after
+{
+    font-family: "FabricMDL2Icons";
+    content: '\F1E5';
+    color: #0078d7;
+    display: inline-block;
+    position: absolute;
+    right: 7px;
+    font-size: 18px;
+}

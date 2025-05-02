@@ -1,0 +1,18 @@
+Get-MailboxDatabaseCopyStatus * -Active | ft Name,Status,ActivationPreference,MailboxServer,CopyQueueLength,ReplayQueueLength,ContentIndexState -auto
+Get-MailboxDatabaseCopyStatus * -Active | ft Name,Status,MailboxServer,ActivationPreference,ContentIndexState
+Get-MailboxDatabaseCopyStatus * | ft -auto
+
+Rebalance Databases
+RedistributeActiveDatabases.ps1 -DagName DAG -BalanceDbsByActivationPreference -Confirm:$false
+
+RedistributeActiveDatabases.ps1 -DagName DAG -ShowDatabaseDistributionByServer | ft
+
+Check PAM
+get-databaseavailabilitygroup LASEXDAG16 -status |fl name, primaryactivemanager
+
+To move PAM
+cluster group  "LASEXDAG16" /MoveTo:<DAG Server Name>
+
+DAGNAMES
+LASEXDAG
+LASEXDAG16

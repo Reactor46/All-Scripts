@@ -1,0 +1,204 @@
+23-01-2024 10:16:58  Hostname: www.kelseycareadvantage.com
+23-01-2024 10:16:58  Scan URL: https://api.ssllabs.com/api/v2/analyze?host=www.kelseycareadvantage.com&publish=off&startNew=on
+23-01-2024 10:16:58  Trying Invoke-WebRequest...
+23-01-2024 10:16:59  ...Successfully started web request
+23-01-2024 10:16:59  Hostname: www.kelseycareadvantage.com
+23-01-2024 10:16:59  Check URL: https://api.ssllabs.com/api/v2/analyze?host=www.kelseycareadvantage.com&publish=off
+23-01-2024 10:16:59  Trying Invoke-WebRequest...
+23-01-2024 10:17:03  ...Successfully started web request
+23-01-2024 10:17:03  Sleeping for 60 seconds...
+23-01-2024 10:17:03  DNS
+23-01-2024 10:18:03  Hostname: www.kelseycareadvantage.com
+23-01-2024 10:18:03  Check URL: https://api.ssllabs.com/api/v2/analyze?host=www.kelseycareadvantage.com&publish=off
+23-01-2024 10:18:03  Trying Invoke-WebRequest...
+23-01-2024 10:18:03  ...Successfully started web request
+23-01-2024 10:18:03  Sleeping for 60 seconds...
+23-01-2024 10:18:03  IN_PROGRESS
+23-01-2024 10:19:03  Hostname: www.kelseycareadvantage.com
+23-01-2024 10:19:03  Check URL: https://api.ssllabs.com/api/v2/analyze?host=www.kelseycareadvantage.com&publish=off
+23-01-2024 10:19:03  Trying Invoke-WebRequest...
+23-01-2024 10:19:05  ...Successfully started web request
+23-01-2024 10:19:05  ...Successfully started web request 
+23-01-2024 10:19:05  Hostname: www.kelseycareadvantage.com
+23-01-2024 10:19:05  Get URL: https://api.ssllabs.com/api/v2/getEndpointData?host=www.kelseycareadvantage.com&s=204.28.12.30
+23-01-2024 10:19:05  Trying Invoke-WebRequest...
+23-01-2024 10:19:10  ...Successfully started web request
+23-01-2024 10:19:10  Adding results to all results object.
+23-01-2024 10:19:10  Hostname: www.kelsey-seybold.com
+23-01-2024 10:19:10  Scan URL: https://api.ssllabs.com/api/v2/analyze?host=www.kelsey-seybold.com&publish=off&startNew=on
+23-01-2024 10:19:10  Trying Invoke-WebRequest...
+23-01-2024 10:19:15  Error performing operation: START
+23-01-2024 10:19:15  Web request error: https://api.ssllabs.com/api/v2/analyze?host=www.kelsey-seybold.com&publish=off&startNew=on
+23-01-2024 10:19:15  Web request error: System.Net.WebException: The remote server returned an error: (529).
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.GetResponse(WebRequest request)
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.ProcessRecord()
+23-01-2024 10:19:15  ...Successfully started web request
+23-01-2024 10:19:15  Hostname: www.kelsey-seybold.com
+23-01-2024 10:19:15  Check URL: https://api.ssllabs.com/api/v2/analyze?host=www.kelsey-seybold.com&publish=off
+23-01-2024 10:19:15  Trying Invoke-WebRequest...
+23-01-2024 10:19:29  Error performing operation: CHECK
+23-01-2024 10:19:29  Web request error: https://api.ssllabs.com/api/v2/analyze?host=www.kelsey-seybold.com&publish=off
+23-01-2024 10:19:29  Web request error: System.Net.WebException: The remote server returned an error: (529).
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.GetResponse(WebRequest request)
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.ProcessRecord()
+23-01-2024 10:19:29  ...Successfully started web request
+23-01-2024 10:19:29  Sleeping for 60 seconds...
+23-01-2024 10:19:29  ProtocolError
+23-01-2024 10:20:29  Hostname: www.kelsey-seybold.com
+23-01-2024 10:20:29  Check URL: https://api.ssllabs.com/api/v2/analyze?host=www.kelsey-seybold.com&publish=off
+23-01-2024 10:20:29  Trying Invoke-WebRequest...
+23-01-2024 10:20:30  ...Successfully started web request
+23-01-2024 10:20:30  Sleeping for 60 seconds...
+23-01-2024 10:20:30  DNS
+23-01-2024 10:21:30  Hostname: www.kelsey-seybold.com
+23-01-2024 10:21:30  Check URL: https://api.ssllabs.com/api/v2/analyze?host=www.kelsey-seybold.com&publish=off
+23-01-2024 10:21:30  Trying Invoke-WebRequest...
+23-01-2024 10:21:53  ...Successfully started web request
+23-01-2024 10:21:53  ...Successfully started web request 
+23-01-2024 10:21:53  Hostname: www.kelsey-seybold.com
+23-01-2024 10:21:53  Get URL: https://api.ssllabs.com/api/v2/getEndpointData?host=www.kelsey-seybold.com&s=204.28.12.31
+23-01-2024 10:21:53  Trying Invoke-WebRequest...
+23-01-2024 10:21:56  ...Successfully started web request
+23-01-2024 10:21:56  Adding results to all results object.
+23-01-2024 10:21:56  Hostname: www.kelseycare.com
+23-01-2024 10:21:56  Scan URL: https://api.ssllabs.com/api/v2/analyze?host=www.kelseycare.com&publish=off&startNew=on
+23-01-2024 10:21:56  Trying Invoke-WebRequest...
+23-01-2024 10:21:56  Error performing operation: START
+23-01-2024 10:21:56  Web request error: https://api.ssllabs.com/api/v2/analyze?host=www.kelseycare.com&publish=off&startNew=on
+23-01-2024 10:21:56  Web request error: System.Net.WebException: The remote server returned an error: (529).
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.GetResponse(WebRequest request)
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.ProcessRecord()
+23-01-2024 10:21:56  ...Successfully started web request
+23-01-2024 10:21:56  Hostname: www.kelseycare.com
+23-01-2024 10:21:56  Check URL: https://api.ssllabs.com/api/v2/analyze?host=www.kelseycare.com&publish=off
+23-01-2024 10:21:56  Trying Invoke-WebRequest...
+23-01-2024 10:22:04  Error performing operation: CHECK
+23-01-2024 10:22:04  Web request error: https://api.ssllabs.com/api/v2/analyze?host=www.kelseycare.com&publish=off
+23-01-2024 10:22:04  Web request error: System.Net.WebException: The remote server returned an error: (529).
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.GetResponse(WebRequest request)
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.ProcessRecord()
+23-01-2024 10:22:04  ...Successfully started web request
+23-01-2024 10:22:04  Sleeping for 60 seconds...
+23-01-2024 10:22:04  ProtocolError
+23-01-2024 10:23:04  Hostname: www.kelseycare.com
+23-01-2024 10:23:04  Check URL: https://api.ssllabs.com/api/v2/analyze?host=www.kelseycare.com&publish=off
+23-01-2024 10:23:04  Trying Invoke-WebRequest...
+23-01-2024 10:23:05  ...Successfully started web request
+23-01-2024 10:23:05  Sleeping for 60 seconds...
+23-01-2024 10:23:05  DNS
+23-01-2024 10:24:05  Hostname: www.kelseycare.com
+23-01-2024 10:24:05  Check URL: https://api.ssllabs.com/api/v2/analyze?host=www.kelseycare.com&publish=off
+23-01-2024 10:24:05  Trying Invoke-WebRequest...
+23-01-2024 10:24:09  ...Successfully started web request
+23-01-2024 10:24:09  Sleeping for 60 seconds...
+23-01-2024 10:24:09  IN_PROGRESS
+23-01-2024 10:25:09  Hostname: www.kelseycare.com
+23-01-2024 10:25:09  Check URL: https://api.ssllabs.com/api/v2/analyze?host=www.kelseycare.com&publish=off
+23-01-2024 10:25:09  Trying Invoke-WebRequest...
+23-01-2024 10:25:09  ...Successfully started web request
+23-01-2024 10:25:09  ...Successfully started web request 
+23-01-2024 10:25:09  Hostname: www.kelseycare.com
+23-01-2024 10:25:09  Get URL: https://api.ssllabs.com/api/v2/getEndpointData?host=www.kelseycare.com&s=204.28.12.54
+23-01-2024 10:25:09  Trying Invoke-WebRequest...
+23-01-2024 10:25:10  ...Successfully started web request
+23-01-2024 10:25:10  Adding results to all results object.
+23-01-2024 10:29:52  Hostname: www.kelseycareadvantage.com
+23-01-2024 10:29:52  Scan URL: https://api.ssllabs.com/api/v3/analyze?host=www.kelseycareadvantage.com&publish=off&startNew=on
+23-01-2024 10:29:52  Trying Invoke-WebRequest...
+23-01-2024 10:30:24  Error performing operation: START
+23-01-2024 10:30:24  Web request error: https://api.ssllabs.com/api/v3/analyze?host=www.kelseycareadvantage.com&publish=off&startNew=on
+23-01-2024 10:30:24  Web request error: System.Net.WebException: The remote server returned an error: (529).
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.GetResponse(WebRequest request)
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.ProcessRecord()
+23-01-2024 10:30:24  ...Successfully started web request
+23-01-2024 10:30:24  Hostname: www.kelseycareadvantage.com
+23-01-2024 10:30:24  Check URL: https://api.ssllabs.com/api/v3/analyze?host=www.kelseycareadvantage.com&publish=off
+23-01-2024 10:30:24  Trying Invoke-WebRequest...
+23-01-2024 10:31:09  ...Successfully started web request
+23-01-2024 10:31:09  ...Successfully started web request 
+23-01-2024 10:31:09  Hostname: www.kelseycareadvantage.com
+23-01-2024 10:31:09  Get URL: https://api.ssllabs.com/api/v3/getEndpointData?host=www.kelseycareadvantage.com&s=204.28.12.30
+23-01-2024 10:31:09  Trying Invoke-WebRequest...
+23-01-2024 10:31:20  ...Successfully started web request
+23-01-2024 10:31:20  Adding results to all results object.
+23-01-2024 10:31:20  Hostname: www.kelsey-seybold.com
+23-01-2024 10:31:20  Scan URL: https://api.ssllabs.com/api/v3/analyze?host=www.kelsey-seybold.com&publish=off&startNew=on
+23-01-2024 10:31:20  Trying Invoke-WebRequest...
+23-01-2024 10:32:27  Error performing operation: START
+23-01-2024 10:32:27  Web request error: https://api.ssllabs.com/api/v3/analyze?host=www.kelsey-seybold.com&publish=off&startNew=on
+23-01-2024 10:32:27  Web request error: System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host. ---> System.Net.Sockets.SocketException: An existing connection was forcibly closed by the remote host
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Security._SslStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.TlsStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.GetResponse(WebRequest request)
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.ProcessRecord()
+23-01-2024 10:32:28  ...Successfully started web request
+23-01-2024 10:32:28  Hostname: www.kelsey-seybold.com
+23-01-2024 10:32:28  Check URL: https://api.ssllabs.com/api/v3/analyze?host=www.kelsey-seybold.com&publish=off
+23-01-2024 10:32:28  Trying Invoke-WebRequest...
+23-01-2024 10:33:03  Error performing operation: CHECK
+23-01-2024 10:33:03  Web request error: https://api.ssllabs.com/api/v3/analyze?host=www.kelsey-seybold.com&publish=off
+23-01-2024 10:33:03  Web request error: System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host. ---> System.Net.Sockets.SocketException: An existing connection was forcibly closed by the remote host
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Security._SslStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.TlsStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.GetResponse(WebRequest request)
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.ProcessRecord()
+23-01-2024 10:33:03  ...Successfully started web request
+23-01-2024 10:33:03  Sleeping for 60 seconds...
+23-01-2024 10:33:03  ReceiveFailure
+23-01-2024 10:34:03  Hostname: www.kelsey-seybold.com
+23-01-2024 10:34:03  Check URL: https://api.ssllabs.com/api/v3/analyze?host=www.kelsey-seybold.com&publish=off
+23-01-2024 10:34:03  Trying Invoke-WebRequest...
+23-01-2024 10:34:14  Error performing operation: CHECK
+23-01-2024 10:34:14  Web request error: https://api.ssllabs.com/api/v3/analyze?host=www.kelsey-seybold.com&publish=off
+23-01-2024 10:34:14  Web request error: System.Net.WebException: The underlying connection was closed: An unexpected error occurred on a receive. ---> System.IO.IOException: Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host. ---> System.Net.Sockets.SocketException: An existing connection was forcibly closed by the remote host
+   at System.Net.Sockets.Socket.EndReceive(IAsyncResult asyncResult)
+   at System.Net.Sockets.NetworkStream.EndRead(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at System.Net.Security._SslStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.TlsStream.EndRead(IAsyncResult asyncResult)
+   at System.Net.Connection.ReadCallback(IAsyncResult asyncResult)
+   --- End of inner exception stack trace ---
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.GetResponse(WebRequest request)
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.ProcessRecord()
+23-01-2024 10:34:14  ...Successfully started web request
+23-01-2024 10:34:14  Sleeping for 60 seconds...
+23-01-2024 10:34:14  ReceiveFailure
+23-01-2024 10:35:14  Hostname: www.kelsey-seybold.com
+23-01-2024 10:35:14  Check URL: https://api.ssllabs.com/api/v3/analyze?host=www.kelsey-seybold.com&publish=off
+23-01-2024 10:35:14  Trying Invoke-WebRequest...
+23-01-2024 10:35:20  ...Successfully started web request
+23-01-2024 10:35:20  ...Successfully started web request 
+23-01-2024 10:35:20  Hostname: www.kelsey-seybold.com
+23-01-2024 10:35:20  Get URL: https://api.ssllabs.com/api/v3/getEndpointData?host=www.kelsey-seybold.com&s=204.28.12.31
+23-01-2024 10:35:20  Trying Invoke-WebRequest...
+23-01-2024 10:35:21  ...Successfully started web request
+23-01-2024 10:35:21  Adding results to all results object.
+23-01-2024 10:35:21  Hostname: www.kelseycare.com
+23-01-2024 10:35:21  Scan URL: https://api.ssllabs.com/api/v3/analyze?host=www.kelseycare.com&publish=off&startNew=on
+23-01-2024 10:35:21  Trying Invoke-WebRequest...
+23-01-2024 10:35:28  Error performing operation: START
+23-01-2024 10:35:28  Web request error: https://api.ssllabs.com/api/v3/analyze?host=www.kelseycare.com&publish=off&startNew=on
+23-01-2024 10:35:28  Web request error: System.Net.WebException: The remote server returned an error: (529).
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.GetResponse(WebRequest request)
+   at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.ProcessRecord()
+23-01-2024 10:35:29  ...Successfully started web request
+23-01-2024 10:35:29  Hostname: www.kelseycare.com
+23-01-2024 10:35:29  Check URL: https://api.ssllabs.com/api/v3/analyze?host=www.kelseycare.com&publish=off
+23-01-2024 10:35:29  Trying Invoke-WebRequest...
+23-01-2024 10:35:30  ...Successfully started web request
+23-01-2024 10:35:30  ...Successfully started web request 
+23-01-2024 10:35:30  Hostname: www.kelseycare.com
+23-01-2024 10:35:30  Get URL: https://api.ssllabs.com/api/v3/getEndpointData?host=www.kelseycare.com&s=204.28.12.54
+23-01-2024 10:35:30  Trying Invoke-WebRequest...
+23-01-2024 10:35:48  ...Successfully started web request
+23-01-2024 10:35:48  Adding results to all results object.

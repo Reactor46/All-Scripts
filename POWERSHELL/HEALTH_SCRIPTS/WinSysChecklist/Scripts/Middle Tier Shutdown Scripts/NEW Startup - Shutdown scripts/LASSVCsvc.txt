@@ -1,0 +1,10 @@
+CollectionsAgentTimeService
+CreditOneBatchLetterRequestService
+CreditOne.LogParser.Service
+ContosoQueueProcessorService
+FdrOutGoingFileWatcher
+ValidationTriggerWatcher
+ContosoFinCenService
+ContosoCheckRequestService
+ContosoLPSService
+CentralizedCacheService

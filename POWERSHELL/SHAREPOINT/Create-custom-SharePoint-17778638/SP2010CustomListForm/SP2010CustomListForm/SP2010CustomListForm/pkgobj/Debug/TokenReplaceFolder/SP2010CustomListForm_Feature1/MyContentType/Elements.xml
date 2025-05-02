@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: Item (0x01) -->
+  <ContentType ID="0x0100ca617ed5b05a4ded890902bbf86e3886"
+               Name="MyContentType"
+               Group="Custom Content Types"
+               Description="My Content Type"
+               Overwrite="TRUE"
+               Version="0">
+    <FieldRefs>
+      <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title"/>
+      <FieldRef ID="{03E7B8FC-8BD8-48D9-BB07-A9FB5F86F277}" Name="MyCustom"/>
+    </FieldRefs>
+  </ContentType>
+</Elements>

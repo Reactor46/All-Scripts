@@ -1,0 +1,1677 @@
+﻿
+  <FileID>d664be25-84fc-43a1-ad78-0239908e2a7f</FileID>
+  <LastExport>130090618284273812</LastExport>
+  <FileVersion>1.2</FileVersion>
+  <Object type="System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="MainForm" children="Controls">
+    <Property name="ClientSize">445, 463</Property>
+    <Property name="Name">MainForm</Property>
+    <Property name="StartPosition">CenterScreen</Property>
+    <Property name="Text">VMware Report GUI - 0.0.2</Property>
+    <Event name="Load">form1_FadeInLoad</Event>
+    <Object type="System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="btnSaveAndRun" children="Controls">
+      <Property name="Enabled">False</Property>
+      <Property name="Location">178, 436</Property>
+      <Property name="Name">btnSaveAndRun</Property>
+      <Property name="Size">98, 23</Property>
+      <Property name="TabIndex">203</Property>
+      <Property name="Text">Save and Run!</Property>
+      <Property name="ToolTip" extended="True" provider="tooltipAll">Saves configuration and runs the script.</Property>
+      <Property name="UseVisualStyleBackColor">True</Property>
+      <Event name="Click">btnSaveAndRun_Click</Event>
+    </Object>
+    <Object type="System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="buttonCancel" children="Controls">
+      <Property name="DialogResult">Cancel</Property>
+      <Property name="Location">363, 436</Property>
+      <Property name="Name">buttonCancel</Property>
+      <Property name="Size">75, 23</Property>
+      <Property name="TabIndex">202</Property>
+      <Property name="Text">Cancel</Property>
+      <Property name="UseVisualStyleBackColor">True</Property>
+    </Object>
+    <Object type="System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="buttonSave" children="Controls">
+      <Property name="Location">282, 436</Property>
+      <Property name="Name">buttonSave</Property>
+      <Property name="Size">75, 23</Property>
+      <Property name="TabIndex">201</Property>
+      <Property name="Text">Save</Property>
+      <Property name="UseVisualStyleBackColor">True</Property>
+      <Event name="Click">buttonSave_Click</Event>
+    </Object>
+    <Object type="System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="buttonRun" children="Controls">
+      <Property name="Location">97, 436</Property>
+      <Property name="Name">buttonRun</Property>
+      <Property name="Size">75, 23</Property>
+      <Property name="TabIndex">200</Property>
+      <Property name="Text">Run!</Property>
+      <Property name="ToolTip" extended="True" provider="tooltipAll">Runs the script with prior save data</Property>
+      <Property name="UseVisualStyleBackColor">True</Property>
+      <Event name="Click">buttonRun_Click</Event>
+    </Object>
+    <Object type="System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="tabcontrol1" children="Controls">
+      <Property name="Location">5, 4</Property>
+      <Property name="Name">tabcontrol1</Property>
+      <Property name="SelectedIndex">0</Property>
+      <Property name="Size">436, 430</Property>
+      <Property name="TabIndex">40</Property>
+      <Object type="System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="tabpage1" children="Controls">
+        <Property name="BackColor">ControlLight</Property>
+        <Property name="Location">4, 22</Property>
+        <Property name="Name">tabpage1</Property>
+        <Property name="Padding">3, 3, 3, 3</Property>
+        <Property name="Size">428, 404</Property>
+        <Property name="TabIndex">0</Property>
+        <Property name="Text">Script Settings</Property>
+        <Object type="System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="grpConnectionInfo" children="Controls">
+          <Property name="Location">7, 240</Property>
+          <Property name="Name">grpConnectionInfo</Property>
+          <Property name="Size">407, 158</Property>
+          <Property name="TabIndex">3</Property>
+          <Property name="TabStop">False</Property>
+          <Property name="Text">Saved Connection Info (Last Valid Save)</Property>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="lblConnectHost" children="Controls">
+            <Property name="BorderStyle">FixedSingle</Property>
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Italic</Property>
+            <Property name="Location">92, 105</Property>
+            <Property name="Name">lblConnectHost</Property>
+            <Property name="Size">307, 20</Property>
+            <Property name="TabIndex">99</Property>
+            <Property name="Text">NA</Property>
+            <Property name="TextAlign">MiddleLeft</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="lblConnectCluster" children="Controls">
+            <Property name="BorderStyle">FixedSingle</Property>
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Italic</Property>
+            <Property name="Location">92, 85</Property>
+            <Property name="Name">lblConnectCluster</Property>
+            <Property name="Size">307, 20</Property>
+            <Property name="TabIndex">98</Property>
+            <Property name="Text">NA</Property>
+            <Property name="TextAlign">MiddleLeft</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="lblConnectDatacenter" children="Controls">
+            <Property name="BorderStyle">FixedSingle</Property>
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Italic</Property>
+            <Property name="Location">92, 64</Property>
+            <Property name="Name">lblConnectDatacenter</Property>
+            <Property name="Size">307, 21</Property>
+            <Property name="TabIndex">97</Property>
+            <Property name="Text">NA</Property>
+            <Property name="TextAlign">MiddleLeft</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="lblConnectServer" children="Controls">
+            <Property name="BorderStyle">FixedSingle</Property>
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Italic</Property>
+            <Property name="Location">92, 23</Property>
+            <Property name="Name">lblConnectServer</Property>
+            <Property name="Size">307, 20</Property>
+            <Property name="TabIndex">96</Property>
+            <Property name="Text">NA</Property>
+            <Property name="TextAlign">MiddleLeft</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="lblConnectLogon" children="Controls">
+            <Property name="BorderStyle">FixedSingle</Property>
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Italic</Property>
+            <Property name="Location">92, 43</Property>
+            <Property name="Name">lblConnectLogon</Property>
+            <Property name="Size">307, 21</Property>
+            <Property name="TabIndex">95</Property>
+            <Property name="Text">NA</Property>
+            <Property name="TextAlign">MiddleLeft</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="label3" children="Controls">
+            <Property name="BorderStyle">FixedSingle</Property>
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">6, 105</Property>
+            <Property name="Name">label3</Property>
+            <Property name="Size">80, 20</Property>
+            <Property name="TabIndex">94</Property>
+            <Property name="Text">Host:</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="label4" children="Controls">
+            <Property name="BorderStyle">FixedSingle</Property>
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">6, 85</Property>
+            <Property name="Name">label4</Property>
+            <Property name="Size">80, 20</Property>
+            <Property name="TabIndex">93</Property>
+            <Property name="Text">Cluster:</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="label2" children="Controls">
+            <Property name="BorderStyle">FixedSingle</Property>
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">6, 64</Property>
+            <Property name="Name">label2</Property>
+            <Property name="Size">80, 21</Property>
+            <Property name="TabIndex">92</Property>
+            <Property name="Text">Datacenter:</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="label1" children="Controls">
+            <Property name="BorderStyle">FixedSingle</Property>
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">6, 23</Property>
+            <Property name="Name">label1</Property>
+            <Property name="Size">80, 20</Property>
+            <Property name="TabIndex">91</Property>
+            <Property name="Text">Server:</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelLogon" children="Controls">
+            <Property name="BorderStyle">FixedSingle</Property>
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">6, 43</Property>
+            <Property name="Name">labelLogon</Property>
+            <Property name="Size">80, 21</Property>
+            <Property name="TabIndex">89</Property>
+            <Property name="Text">Logon:</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+        </Object>
+        <Object type="System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="grpCredentials" children="Controls">
+          <Property name="Location">6, 6</Property>
+          <Property name="Name">grpCredentials</Property>
+          <Property name="Size">409, 110</Property>
+          <Property name="TabIndex">1</Property>
+          <Property name="TabStop">False</Property>
+          <Property name="Text">Credentials</Property>
+          <Object type="System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="txtvCenterServer" children="Controls">
+            <Property name="Location">102, 15</Property>
+            <Property name="Name">txtvCenterServer</Property>
+            <Property name="Size">211, 20</Property>
+            <Property name="TabIndex">0</Property>
+            <Property name="Text">localhost</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelServer" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">35, 15</Property>
+            <Property name="Name">labelServer</Property>
+            <Property name="Size">51, 20</Property>
+            <Property name="TabIndex">88</Property>
+            <Property name="Text">Server</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="buttonConnect" children="Controls">
+            <Property name="Location">327, 81</Property>
+            <Property name="Name">buttonConnect</Property>
+            <Property name="Size">73, 23</Property>
+            <Property name="TabIndex">4</Property>
+            <Property name="Text">Connect!</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+            <Event name="Click">buttonConnect_Click</Event>
+          </Object>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkCurrentUser" children="Controls">
+            <Property name="Checked">True</Property>
+            <Property name="CheckState">Checked</Property>
+            <Property name="Location">102, 38</Property>
+            <Property name="Name">chkCurrentUser</Property>
+            <Property name="Size">16, 20</Property>
+            <Property name="TabIndex">1</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+            <Event name="CheckedChanged">chkCurrentUser_CheckedChanged</Event>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelCurrentUser" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">3, 38</Property>
+            <Property name="Name">labelCurrentUser</Property>
+            <Property name="Size">83, 20</Property>
+            <Property name="TabIndex">85</Property>
+            <Property name="Text">Current User</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="txtUser" children="Controls">
+            <Property name="Enabled">False</Property>
+            <Property name="Location">102, 58</Property>
+            <Property name="Name">txtUser</Property>
+            <Property name="Size">211, 20</Property>
+            <Property name="TabIndex">2</Property>
+          </Object>
+          <Object type="System.Windows.Forms.MaskedTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="txtPassword" children="Controls">
+            <Property name="Enabled">False</Property>
+            <Property name="Location">102, 84</Property>
+            <Property name="Name">txtPassword</Property>
+            <Property name="PasswordChar">*</Property>
+            <Property name="Size">212, 20</Property>
+            <Property name="TabIndex">3</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelUser" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">24, 58</Property>
+            <Property name="Name">labelUser</Property>
+            <Property name="Size">63, 21</Property>
+            <Property name="TabIndex">80</Property>
+            <Property name="Text">User</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelPassword" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">23, 86</Property>
+            <Property name="Name">labelPassword</Property>
+            <Property name="Size">63, 20</Property>
+            <Property name="TabIndex">81</Property>
+            <Property name="Text">Password</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+        </Object>
+        <Object type="System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="grpVMwareSettings" children="Controls">
+          <Property name="Enabled">False</Property>
+          <Property name="Location">7, 122</Property>
+          <Property name="Name">grpVMwareSettings</Property>
+          <Property name="Size">408, 114</Property>
+          <Property name="TabIndex">2</Property>
+          <Property name="TabStop">False</Property>
+          <Property name="Text">Scope</Property>
+          <Object type="System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="comboHost" children="Controls">
+            <Property name="DropDownStyle">DropDownList</Property>
+            <Property name="Enabled">False</Property>
+            <Property name="FormattingEnabled">True</Property>
+            <Property name="Location">101, 89</Property>
+            <Property name="Name">comboHost</Property>
+            <Property name="Size">298, 21</Property>
+            <Property name="Sorted">True</Property>
+            <Property name="TabIndex">8</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelHost" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">13, 91</Property>
+            <Property name="Name">labelHost</Property>
+            <Property name="Size">72, 20</Property>
+            <Property name="TabIndex">88</Property>
+            <Property name="Text">Host</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="comboCluster" children="Controls">
+            <Property name="DropDownStyle">DropDownList</Property>
+            <Property name="Enabled">False</Property>
+            <Property name="FormattingEnabled">True</Property>
+            <Property name="Location">101, 62</Property>
+            <Property name="Name">comboCluster</Property>
+            <Property name="Size">298, 21</Property>
+            <Property name="TabIndex">7</Property>
+            <Event name="SelectedIndexChanged">comboCluster_SelectedIndexChanged</Event>
+          </Object>
+          <Object type="System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="comboDatacenter" children="Controls">
+            <Property name="DropDownStyle">DropDownList</Property>
+            <Property name="Enabled">False</Property>
+            <Property name="FormattingEnabled">True</Property>
+            <Property name="Location">101, 35</Property>
+            <Property name="Name">comboDatacenter</Property>
+            <Property name="Size">298, 21</Property>
+            <Property name="TabIndex">6</Property>
+            <Event name="SelectedIndexChanged">comboDatacenter_SelectedIndexChanged</Event>
+          </Object>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkWholeFarm" children="Controls">
+            <Property name="Checked">True</Property>
+            <Property name="CheckState">Checked</Property>
+            <Property name="Location">102, 12</Property>
+            <Property name="Name">chkWholeFarm</Property>
+            <Property name="Size">19, 24</Property>
+            <Property name="TabIndex">5</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+            <Event name="CheckedChanged">chkWholeFarm_CheckedChanged</Event>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelCluster" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">13, 64</Property>
+            <Property name="Name">labelCluster</Property>
+            <Property name="Size">72, 20</Property>
+            <Property name="TabIndex">83</Property>
+            <Property name="Text">Cluster</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelWholeFarm" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">10, 13</Property>
+            <Property name="Name">labelWholeFarm</Property>
+            <Property name="Size">76, 20</Property>
+            <Property name="TabIndex">82</Property>
+            <Property name="Text">Whole Farm</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelDatacenter" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">13, 34</Property>
+            <Property name="Name">labelDatacenter</Property>
+            <Property name="Size">72, 20</Property>
+            <Property name="TabIndex">81</Property>
+            <Property name="Text">Datacenter</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+        </Object>
+      </Object>
+      <Object type="System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="tabpage6" children="Controls">
+        <Property name="BackColor">ControlLight</Property>
+        <Property name="Location">4, 22</Property>
+        <Property name="Name">tabpage6</Property>
+        <Property name="Size">428, 404</Property>
+        <Property name="TabIndex">5</Property>
+        <Property name="Text">Report Options</Property>
+        <Object type="System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="grpVC" children="Controls">
+          <Property name="Location">3, 59</Property>
+          <Property name="Name">grpVC</Property>
+          <Property name="Size">413, 130</Property>
+          <Property name="TabIndex">1</Property>
+          <Property name="TabStop">False</Property>
+          <Property name="Text">Virtual Center</Property>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkRptVCServices" children="Controls">
+            <Property name="Checked">True</Property>
+            <Property name="CheckState">Checked</Property>
+            <Property name="Location">148, 97</Property>
+            <Property name="Name">chkRptVCServices</Property>
+            <Property name="Size">20, 24</Property>
+            <Property name="TabIndex">7</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelVCServiceStatus" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">11, 97</Property>
+            <Property name="Name">labelVCServiceStatus</Property>
+            <Property name="Size">131, 23</Property>
+            <Property name="TabIndex">122</Property>
+            <Property name="Text">VC Service Status</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="dialRptVCEventlogsAge" children="Controls">
+            <Property name="Location">331, 80</Property>
+            <Property name="Name">dialRptVCEventlogsAge</Property>
+            <Property name="Size">37, 20</Property>
+            <Property name="TabIndex">6</Property>
+            <Property name="ToolTip" extended="True" provider="tooltipAll">Amount of days to report.</Property>
+            <Property name="Value">3</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelWindowsEventLogError" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">168, 67</Property>
+            <Property name="Name">labelWindowsEventLogError</Property>
+            <Property name="Size">159, 40</Property>
+            <Property name="TabIndex">120</Property>
+            <Property name="Text">Windows Event Log Error/Warning Threshold</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkRptVCEvtLogs" children="Controls">
+            <Property name="Checked">True</Property>
+            <Property name="CheckState">Checked</Property>
+            <Property name="Location">148, 76</Property>
+            <Property name="Name">chkRptVCEvtLogs</Property>
+            <Property name="Size">20, 24</Property>
+            <Property name="TabIndex">5</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelEventLogErrWarn" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">11, 76</Property>
+            <Property name="Name">labelEventLogErrWarn</Property>
+            <Property name="Size">131, 23</Property>
+            <Property name="TabIndex">119</Property>
+            <Property name="Text">Event Log Err/Warn</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="dialRptVCErrorsAge" children="Controls">
+            <Property name="Location">331, 20</Property>
+            <Property name="Name">dialRptVCErrorsAge</Property>
+            <Property name="Size">37, 20</Property>
+            <Property name="TabIndex">2</Property>
+            <Property name="ToolTip" extended="True" provider="tooltipAll">Amount of days to report for added/removed VMs or VC errors.</Property>
+            <Property name="Value">3</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelVCErrorEventsTheshol" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">166, 19</Property>
+            <Property name="Name">labelVCErrorEventsTheshol</Property>
+            <Property name="Size">159, 24</Property>
+            <Property name="TabIndex">112</Property>
+            <Property name="Text">VC Error Events Theshold</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkRptVCErrors" children="Controls">
+            <Property name="Checked">True</Property>
+            <Property name="CheckState">Checked</Property>
+            <Property name="Location">148, 19</Property>
+            <Property name="Name">chkRptVCErrors</Property>
+            <Property name="Size">20, 20</Property>
+            <Property name="TabIndex">1</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+            <Event name="CheckedChanged">chkRptVCErrors_CheckedChanged</Event>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelVCEventErrors" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">11, 17</Property>
+            <Property name="Name">labelVCEventErrors</Property>
+            <Property name="Size">131, 23</Property>
+            <Property name="TabIndex">108</Property>
+            <Property name="Text">VC Event Errors</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkRptVCVMsDeleted" children="Controls">
+            <Property name="Checked">True</Property>
+            <Property name="CheckState">Checked</Property>
+            <Property name="Location">148, 57</Property>
+            <Property name="Name">chkRptVCVMsDeleted</Property>
+            <Property name="Size">20, 24</Property>
+            <Property name="TabIndex">4</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelVMsDeleted" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">11, 57</Property>
+            <Property name="Name">labelVMsDeleted</Property>
+            <Property name="Size">131, 23</Property>
+            <Property name="TabIndex">106</Property>
+            <Property name="Text">VMs Deleted</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkRptVCVMsCreated" children="Controls">
+            <Property name="Checked">True</Property>
+            <Property name="CheckState">Checked</Property>
+            <Property name="Location">148, 41</Property>
+            <Property name="Name">chkRptVCVMsCreated</Property>
+            <Property name="Size">20, 16</Property>
+            <Property name="TabIndex">3</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelVMsCreatedCloned" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">11, 36</Property>
+            <Property name="Name">labelVMsCreatedCloned</Property>
+            <Property name="Size">131, 24</Property>
+            <Property name="TabIndex">104</Property>
+            <Property name="Text">VMs Created/Cloned</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+        </Object>
+        <Object type="System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="grpHosts" children="Controls">
+          <Property name="Location">5, 195</Property>
+          <Property name="Name">grpHosts</Property>
+          <Property name="Size">414, 63</Property>
+          <Property name="TabIndex">2</Property>
+          <Property name="TabStop">False</Property>
+          <Property name="Text">Hosts</Property>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkRptHostsInMaint" children="Controls">
+            <Property name="Checked">True</Property>
+            <Property name="CheckState">Checked</Property>
+            <Property name="Location">333, 14</Property>
+            <Property name="Name">chkRptHostsInMaint</Property>
+            <Property name="Size">20, 24</Property>
+            <Property name="TabIndex">5</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelInMaintinance" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">196, 15</Property>
+            <Property name="Name">labelInMaintinance</Property>
+            <Property name="Size">129, 20</Property>
+            <Property name="TabIndex">104</Property>
+            <Property name="Text">In Maintinance</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkRptHostsNotResponding" children="Controls">
+            <Property name="Checked">True</Property>
+            <Property name="CheckState">Checked</Property>
+            <Property name="Location">150, 14</Property>
+            <Property name="Name">chkRptHostsNotResponding</Property>
+            <Property name="Size">18, 24</Property>
+            <Property name="TabIndex">4</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+          </Object>
+          <Object type="System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="dialRptHostsDatastorePercent" children="Controls">
+            <Property name="Location">331, 37</Property>
+            <Property name="Name">dialRptHostsDatastorePercent</Property>
+            <Property name="Size">37, 20</Property>
+            <Property name="TabIndex">7</Property>
+            <Property name="Value">10</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelNotResponding" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">13, 15</Property>
+            <Property name="Name">labelNotResponding</Property>
+            <Property name="Size">129, 20</Property>
+            <Property name="TabIndex">102</Property>
+            <Property name="Text">Not Responding</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkRptHostsDatastore" children="Controls">
+            <Property name="Checked">True</Property>
+            <Property name="CheckState">Checked</Property>
+            <Property name="Location">150, 35</Property>
+            <Property name="Name">chkRptHostsDatastore</Property>
+            <Property name="Size">18, 24</Property>
+            <Property name="TabIndex">6</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelFreeThreshold" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">215, 35</Property>
+            <Property name="Name">labelFreeThreshold</Property>
+            <Property name="Size">110, 20</Property>
+            <Property name="TabIndex">94</Property>
+            <Property name="Text">% Free Threshold</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelDatastoreUtilization" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">7, 35</Property>
+            <Property name="Name">labelDatastoreUtilization</Property>
+            <Property name="Size">135, 20</Property>
+            <Property name="TabIndex">93</Property>
+            <Property name="Text">Datastore Utilization</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+        </Object>
+        <Object type="System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="grpReportGeneral" children="Controls">
+          <Property name="Location">3, 12</Property>
+          <Property name="Name">grpReportGeneral</Property>
+          <Property name="Size">416, 44</Property>
+          <Property name="TabIndex">0</Property>
+          <Property name="TabStop">False</Property>
+          <Property name="Text">General</Property>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkRptSelective" children="Controls">
+            <Property name="Checked">True</Property>
+            <Property name="CheckState">Checked</Property>
+            <Property name="Location">331, 20</Property>
+            <Property name="Name">chkRptSelective</Property>
+            <Property name="Size">18, 18</Property>
+            <Property name="TabIndex">0</Property>
+            <Property name="ToolTip" extended="True" provider="tooltipAll">This only applies to datastore space and snapshot age. </Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelGenerateReportOnlyWh" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">7, 16</Property>
+            <Property name="Name">labelGenerateReportOnlyWh</Property>
+            <Property name="Size">308, 20</Property>
+            <Property name="TabIndex">93</Property>
+            <Property name="Text">Generate Report Only When Thresholds Surpassed</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+        </Object>
+        <Object type="System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="grpVMs" children="Controls">
+          <Property name="Location">3, 264</Property>
+          <Property name="Name">grpVMs</Property>
+          <Property name="Size">416, 78</Property>
+          <Property name="TabIndex">3</Property>
+          <Property name="TabStop">False</Property>
+          <Property name="Text">Virtual Machines</Property>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkRptVMFloppyConnected" children="Controls">
+            <Property name="Checked">True</Property>
+            <Property name="CheckState">Checked</Property>
+            <Property name="Location">330, 53</Property>
+            <Property name="Name">chkRptVMFloppyConnected</Property>
+            <Property name="Size">18, 20</Property>
+            <Property name="TabIndex">6</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelFloppyConnected" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">189, 53</Property>
+            <Property name="Name">labelFloppyConnected</Property>
+            <Property name="Size">135, 20</Property>
+            <Property name="TabIndex">100</Property>
+            <Property name="Text">Floppy Connected</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkRptVMCDConnected" children="Controls">
+            <Property name="Checked">True</Property>
+            <Property name="CheckState">Checked</Property>
+            <Property name="Location">330, 34</Property>
+            <Property name="Name">chkRptVMCDConnected</Property>
+            <Property name="Size">18, 20</Property>
+            <Property name="TabIndex">4</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelCDConnected" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">189, 33</Property>
+            <Property name="Name">labelCDConnected</Property>
+            <Property name="Size">135, 20</Property>
+            <Property name="TabIndex">98</Property>
+            <Property name="Text">CD Connected</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkRptVMTools" children="Controls">
+            <Property name="Checked">True</Property>
+            <Property name="CheckState">Checked</Property>
+            <Property name="Location">149, 53</Property>
+            <Property name="Name">chkRptVMTools</Property>
+            <Property name="Size">18, 20</Property>
+            <Property name="TabIndex">5</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelNoVMwareTools" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">6, 53</Property>
+            <Property name="Name">labelNoVMwareTools</Property>
+            <Property name="Size">135, 20</Property>
+            <Property name="TabIndex">96</Property>
+            <Property name="Text">No VMware Tools</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkRptVMThinProvisioned" children="Controls">
+            <Property name="Checked">True</Property>
+            <Property name="CheckState">Checked</Property>
+            <Property name="Location">149, 33</Property>
+            <Property name="Name">chkRptVMThinProvisioned</Property>
+            <Property name="Size">18, 24</Property>
+            <Property name="TabIndex">3</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelThinProvisioned" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">6, 33</Property>
+            <Property name="Name">labelThinProvisioned</Property>
+            <Property name="Size">135, 20</Property>
+            <Property name="TabIndex">94</Property>
+            <Property name="Text">Thin Provisioned</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="dialRptVMSnapThresh" children="Controls">
+            <Property name="Location">330, 13</Property>
+            <Property name="Maximum">180</Property>
+            <Property name="Name">dialRptVMSnapThresh</Property>
+            <Property name="Size">37, 20</Property>
+            <Property name="TabIndex">2</Property>
+            <Property name="Value">2</Property>
+          </Object>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkRptVMSnapshots" children="Controls">
+            <Property name="Checked">True</Property>
+            <Property name="CheckState">Checked</Property>
+            <Property name="Location">149, 13</Property>
+            <Property name="Name">chkRptVMSnapshots</Property>
+            <Property name="Size">18, 24</Property>
+            <Property name="TabIndex">1</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+            <Event name="CheckedChanged">chkRptVMSnapshots_CheckedChanged</Event>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelSnapshotThreshold" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">197, 13</Property>
+            <Property name="Name">labelSnapshotThreshold</Property>
+            <Property name="Size">127, 20</Property>
+            <Property name="TabIndex">89</Property>
+            <Property name="Text">Snapshot Threshold</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelSnapshots" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">6, 13</Property>
+            <Property name="Name">labelSnapshots</Property>
+            <Property name="Size">135, 20</Property>
+            <Property name="TabIndex">88</Property>
+            <Property name="Text">Snapshots</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+        </Object>
+      </Object>
+      <Object type="System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="tabpage2" children="Controls">
+        <Property name="BackColor">ControlLight</Property>
+        <Property name="Location">4, 22</Property>
+        <Property name="Name">tabpage2</Property>
+        <Property name="Padding">3, 3, 3, 3</Property>
+        <Property name="Size">428, 404</Property>
+        <Property name="TabIndex">1</Property>
+        <Property name="Text">Delivery Options</Property>
+        <Object type="System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="grpSchedule" children="Controls">
+          <Property name="Location">10, 259</Property>
+          <Property name="Name">grpSchedule</Property>
+          <Property name="Size">411, 85</Property>
+          <Property name="TabIndex">76</Property>
+          <Property name="TabStop">False</Property>
+          <Property name="Text">Schedule</Property>
+          <Property name="Visible">False</Property>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelTaskName" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">35, 16</Property>
+            <Property name="Name">labelTaskName</Property>
+            <Property name="Size">89, 20</Property>
+            <Property name="TabIndex">81</Property>
+            <Property name="Text">Task Name</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="txtTaskName" children="Controls">
+            <Property name="Location">141, 16</Property>
+            <Property name="Name">txtTaskName</Property>
+            <Property name="Size">258, 20</Property>
+            <Property name="TabIndex">0</Property>
+          </Object>
+        </Object>
+        <Object type="System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="grpReportFormat" children="Controls">
+          <Property name="Location">8, 344</Property>
+          <Property name="Name">grpReportFormat</Property>
+          <Property name="Size">414, 54</Property>
+          <Property name="TabIndex">75</Property>
+          <Property name="TabStop">False</Property>
+          <Property name="Text">Format</Property>
+          <Property name="Visible">False</Property>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelReportStyle" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">3, 19</Property>
+            <Property name="Name">labelReportStyle</Property>
+            <Property name="Size">123, 20</Property>
+            <Property name="TabIndex">80</Property>
+            <Property name="Text">Report Style</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="comboReportStyle" children="Controls">
+            <Property name="DisplayMember">Default</Property>
+            <Property name="DropDownStyle">DropDownList</Property>
+            <Property name="FormattingEnabled">True</Property>
+            <Property name="Items">
+              <Item type="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">Default</Item>
+            </Property>
+            <Property name="Location">143, 19</Property>
+            <Property name="Name">comboReportStyle</Property>
+            <Property name="Size">258, 21</Property>
+            <Property name="TabIndex">0</Property>
+            <Property name="ValueMember">Default</Property>
+          </Object>
+        </Object>
+        <Object type="System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="grpDelivery" children="Controls">
+          <Property name="BackColor">ControlLight</Property>
+          <Property name="FlatStyle">System</Property>
+          <Property name="Location">9, 6</Property>
+          <Property name="Name">grpDelivery</Property>
+          <Property name="RightToLeft">No</Property>
+          <Property name="Size">413, 247</Property>
+          <Property name="TabIndex">74</Property>
+          <Property name="TabStop">False</Property>
+          <Property name="Text">Delivery</Property>
+          <Object type="System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="txtEmailSubject" children="Controls">
+            <Property name="Enabled">False</Property>
+            <Property name="Location">142, 61</Property>
+            <Property name="Name">txtEmailSubject</Property>
+            <Property name="Size">259, 20</Property>
+            <Property name="TabIndex">86</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelSubject" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">2, 60</Property>
+            <Property name="Name">labelSubject</Property>
+            <Property name="Size">123, 20</Property>
+            <Property name="TabIndex">87</Property>
+            <Property name="Text">Subject</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelEmailReport" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">35, 35</Property>
+            <Property name="Name">labelEmailReport</Property>
+            <Property name="Size">89, 20</Property>
+            <Property name="TabIndex">85</Property>
+            <Property name="Text">Email Report</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkEmailReport" children="Controls">
+            <Property name="Location">142, 38</Property>
+            <Property name="Name">chkEmailReport</Property>
+            <Property name="Size">14, 17</Property>
+            <Property name="TabIndex">84</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+            <Event name="CheckedChanged">chkEmailReport_CheckedChanged</Event>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelReportName" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">35, 187</Property>
+            <Property name="Name">labelReportName</Property>
+            <Property name="Size">89, 20</Property>
+            <Property name="TabIndex">75</Property>
+            <Property name="Text">Report Name</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelSaveReport" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">-3, 161</Property>
+            <Property name="Name">labelSaveReport</Property>
+            <Property name="Size">128, 20</Property>
+            <Property name="TabIndex">82</Property>
+            <Property name="Text">Save Report</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="txtReportName" children="Controls">
+            <Property name="Enabled">False</Property>
+            <Property name="Location">142, 187</Property>
+            <Property name="Name">txtReportName</Property>
+            <Property name="Size">259, 20</Property>
+            <Property name="TabIndex">83</Property>
+            <Property name="Text">Report.html</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelReportFolder" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">35, 211</Property>
+            <Property name="Name">labelReportFolder</Property>
+            <Property name="Size">89, 20</Property>
+            <Property name="TabIndex">80</Property>
+            <Property name="Text">Report Folder</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="chkSaveLocally" children="Controls">
+            <Property name="Location">142, 164</Property>
+            <Property name="Name">chkSaveLocally</Property>
+            <Property name="Size">14, 17</Property>
+            <Property name="TabIndex">81</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+            <Event name="CheckedChanged">chkSaveLocally_CheckedChanged</Event>
+          </Object>
+          <Object type="System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="txtReportFolder" children="Controls">
+            <Property name="AutoCompleteMode">SuggestAppend</Property>
+            <Property name="AutoCompleteSource">FileSystemDirectories</Property>
+            <Property name="Enabled">False</Property>
+            <Property name="Location">142, 213</Property>
+            <Property name="Name">txtReportFolder</Property>
+            <Property name="Size">223, 20</Property>
+            <Property name="TabIndex">72</Property>
+            <Property name="Text">.</Property>
+          </Object>
+          <Object type="System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="txtSMTPServer" children="Controls">
+            <Property name="Enabled">False</Property>
+            <Property name="Location">142, 86</Property>
+            <Property name="Name">txtSMTPServer</Property>
+            <Property name="Size">259, 20</Property>
+            <Property name="TabIndex">74</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="buttonBrowseFolder" children="Controls">
+            <Property name="Location">371, 211</Property>
+            <Property name="Name">buttonBrowseFolder</Property>
+            <Property name="Size">30, 23</Property>
+            <Property name="TabIndex">73</Property>
+            <Property name="Text">...</Property>
+            <Property name="UseVisualStyleBackColor">True</Property>
+            <Event name="Click">buttonBrowseFolder_Click</Event>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelSMTPRelayServer" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">2, 85</Property>
+            <Property name="Name">labelSMTPRelayServer</Property>
+            <Property name="Size">123, 20</Property>
+            <Property name="TabIndex">75</Property>
+            <Property name="Text">SMTP Relay Server</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelEmailSender" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">35, 137</Property>
+            <Property name="Name">labelEmailSender</Property>
+            <Property name="Size">90, 20</Property>
+            <Property name="TabIndex">78</Property>
+            <Property name="Text">Email Sender</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="labelEmailRecipient" children="Controls">
+            <Property name="Font">Microsoft Sans Serif, 8.25pt, style=Bold</Property>
+            <Property name="Location">2, 111</Property>
+            <Property name="Name">labelEmailRecipient</Property>
+            <Property name="Size">123, 20</Property>
+            <Property name="TabIndex">79</Property>
+            <Property name="Text">Email Recipient</Property>
+            <Property name="TextAlign">MiddleRight</Property>
+          </Object>
+          <Object type="System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="txtEmailRecipient" children="Controls">
+            <Property name="Enabled">False</Property>
+            <Property name="Location">142, 112</Property>
+            <Property name="Name">txtEmailRecipient</Property>
+            <Property name="Size">259, 20</Property>
+            <Property name="TabIndex">76</Property>
+          </Object>
+          <Object type="System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="txtEmailSender" children="Controls">
+            <Property name="Enabled">False</Property>
+            <Property name="Location">142, 138</Property>
+            <Property name="Name">txtEmailSender</Property>
+            <Property name="Size">259, 20</Property>
+            <Property name="TabIndex">77</Property>
+          </Object>
+        </Object>
+      </Object>
+      <Object type="System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="tabpage5" children="Controls">
+        <Property name="BackColor">ControlLight</Property>
+        <Property name="Location">4, 22</Property>
+        <Property name="Name">tabpage5</Property>
+        <Property name="Size">428, 404</Property>
+        <Property name="TabIndex">4</Property>
+        <Property name="Text">About</Property>
+        <Object type="System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="richtextbox1" children="Controls">
+          <Property name="Location">3, 4</Property>
+          <Property name="Name">richtextbox1</Property>
+          <Property name="ScrollBars">Vertical</Property>
+          <Property name="Size">421, 397</Property>
+          <Property name="TabIndex">0</Property>
+          <Property name="Text">Utility:
+vSphere Report GUI
+
+Version:
+0.0.2
+
+Introduction:
+This GUI is meant to help configure vmware report generation. You are able to select reporting scoped up to the whole farm all the way down to individual hosts.
+
+There are several options for those interested in monitoring their environment. Some options include;
+
+General Options:
+- Generating reports only if thresholds are surpassed
+
+Virtual Center
+- VC event errors (with threshold in # of days)
+- VMs created/cloned/deleted
+- VC windows server errors/warnings (with threshold in # of days)
+- VC windows server service status
+
+ESX/vSphere Hosts
+- Hosts not responding
+- Hosts in maintenance
+- Host datastore utilization (with % free utilization threshold)
+
+Virtual Machines
+- VM snapshots (with threshold in # of days)
+- VMs with thin provisioned disks
+- VMs with no vmware tools
+- VMs with connected CD drives
+- VMs with connected floppy drives
+
+Usage:
+The GUI is used to perform an initial test connection to the server and to save options. Once connected to the server you can select more granular scoped reports based on the datacenter, cluster, and host if desired. Currently you need to report on the whole farm to get virtual center reporting options.
+
+Once the configuration is saved another script, VMware-Report.ps1 can be used to schedule the job. This script will automatically load the saved xml config file and run without any interface. 
+
+Author: Zachary Loeber
+Sites: http://the-little-things.net</Property>
+        </Object>
+      </Object>
+    </Object>
+  </Object>
+  <Object type="System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="timerFadeIn">
+    <Event name="Tick">timerFadeIn_Tick</Event>
+  </Object>
+  <Object type="System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="openfiledialog1">
+    <Property name="DefaultExt">txt</Property>
+    <Property name="Filter">Text File (.txt)|*.txt|All Files|*.*</Property>
+    <Property name="ShowHelp">True</Property>
+  </Object>
+  <Object type="System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="folderbrowserdialog1" />
+  <Object type="System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="tooltipAll" />
+  <Code><![CDATA[Function Set-SaveData
+{  
+    $Script:varEmailReport = $chkEmailReport.Checked
+    $Script:varEmailSubject = $txtEmailSubject.Text
+    $Script:varEmailRecipient = $txtEmailRecipient.Text
+    $Script:varEmailSender = $txtEmailSender.Text
+    $Script:varSMTPServer = $txtSMTPServer.Text
+    $Script:varSaveReportsLocally = $chkSaveLocally.Checked
+    $Script:varReportName = $txtReportName.Text
+    $Script:varReportFolder = $txtReportFolder.Text
+    $Script:varVIServer = $txtvCenterServer.Text
+    $Script:varUseCurrentUser = $chkCurrentUser.Checked
+    $Script:varVIUser = $txtUser.Text
+    $Script:varVIPassword = ''#$txtPassword.Text
+    $Script:varScopeWholeFarm = $chkWholeFarm.Checked
+    $Script:varScopeDatacenter = $comboDatacenter.Text
+    $Script:varScopeCluster = $comboCluster.Text
+    $Script:varScopeHost = $comboHost.Text
+    $Script:varReportHostsDatastore = $chkRptHostsDatastore.Checked
+    $Script:varReportHostsDatastoreThreshold = $dialRptHostsDatastorePercent.Text
+    $Script:varReportVMSnapshots = $chkRptVMSnapshots.Checked
+    $Script:varReportVMSnapshotsThreshold = $dialRptVMSnapThresh.Text
+    $Script:varReportVMThinProvisioned = $chkRptVMThinProvisioned.Checked
+    $Script:varReportSelective = $chkRptSelective.Checked
+    $Script:varReportVCErrors = $chkRptVCErrors.Checked
+    $Script:varReportHostsNotResponding = $chkRptHostsNotResponding.Checked
+    $Script:varReportHostsInMaint = $chkRptHostsInMaint.Checked
+    $Script:varReportVMTools = $chkRptVMTools.Checked
+    $Script:varReportCDConnected = $chkRptVMCDConnected.Checked
+    $Script:varReportFloppyConnected = $chkRptVMFloppyConnected.Checked
+    $Script:varReportVCErrorsAge = $dialRptVCErrorsAge.Text
+    $Script:varReportVCEventLogsAge = $dialRptVCEventlogsAge.Text
+    $Script:varReportVCEvntlogs = $chkRptVCEvtLogs.Checked
+    $Script:varReportVCServices = $chkRptVCServices.Checked
+    $Script:varReportVCVMsCreated = $chkRptVCVMsCreated.Checked
+    $Script:varReportVCVMsDeleted = $chkRptVCVMsDeleted.Checked
+    $Script:varReportStyle = $comboReportStyle.Text
+    
+    If (-not $chkCurrentUser.Checked) 
+    {
+       New-VICredentialStoreItem -host $txtvCenterServer.Text -user $txtUser.Text `
+            -password $txtPassword.text -file $CredFile 
+	}
+}
+
+function Load-FormConfig
+{
+    $chkEmailReport.Checked = $varEmailReport
+    $txtEmailSubject.Text = $varEmailSubject
+    $txtEmailRecipient.Text = $varEmailRecipient
+    $txtEmailSender.Text = $varEmailSender
+    $txtSMTPServer.Text = $varSMTPServer
+    $chkSaveLocally.Checked = $varSaveReportsLocally
+    $txtReportName.Text = $varReportName
+    $txtReportFolder.Text = $varReportFolder
+    $txtvCenterServer.Text = $varVIServer
+    $chkCurrentUser.Checked = $varUseCurrentUser
+    $txtUser.Text = $varVIUser
+    $txtPassword.Text = $varVIPassword
+    $chkWholeFarm.Checked = $varScopeWholeFarm
+    $comboDatacenter.Text = $varScopeDatacenter
+	$lblConnectDatacenter.Text = $varScopeDatacenter
+    $comboCluster.Text = $varScopeCluster
+	$lblConnectCluster.Text = $varScopeCluster
+    $comboHost.Text = $varScopeHost
+	$lblConnectHost.Text = $varScopeHost
+    $chkRptHostsDatastore.Checked = $varReportHostsDatastore
+    $dialRptHostsDatastorePercent.Text = $varReportHostsDatastoreThreshold
+    $chkRptVMSnapshots.Checked = $varReportVMSnapshots
+    $dialRptVMSnapThresh.Text = $varReportVMSnapshotsThreshold
+    $chkRptVMThinProvisioned.Checked = $varReportVMThinProvisioned
+    $chkRptSelective.Checked = $varReportSelective
+    $chkRptVCVMsCreated.Checked = $varReportVCVMsCreated
+    $chkRptVCVMsDeleted.Checked = $varReportVCVMsDeleted
+    $chkRptVCErrors.Checked = $varReportVCErrors
+    $chkRptHostsNotResponding.Checked = $varReportHostsNotResponding
+    $chkRptHostsInMaint.Checked = $varReportHostsInMaint
+    $chkRptVMTools.Checked = $varReportVMTools
+    $chkRptVMCDConnected.Checked = $varReportCDConnected
+    $chkRptVMFloppyConnected.Checked = $varReportFloppyConnected
+    $chkRptVCEvtLogs.Checked = $varReportVCEvntlogs
+    $dialRptVCErrorsAge.Text = $varReportVCErrorsAge
+    $dialRptVCEventlogsAge.Text = $varReportVCEventLogsAge
+    $comboReportStyle.DisplayMember = $varReportStyle
+}
+
+function Set-ConnectionInfoLabel
+{
+    $lblConnectServer.Text = $varVIServer
+    if ($varScopeWholeFarm)
+    {
+        $lblConnectDatacenter.Text = "Whole Farm"
+        $lblConnectCluster.Text = "Whole Farm"
+        $lblConnectHost.Text = "Whole Farm"
+	}
+    else
+    {
+        $lblConnectDatacenter.Text = $varScopeDatacenter
+        $lblConnectCluster.Text = $varScopeCluster
+        $lblConnectHost.Text = $varScopeHost
+	}
+    if ($varUseCurrentUser)
+    {
+        $lblConnectLogon.Text = "<Current User>"
+	}
+    else
+    {
+        $lblConnectLogon.Text = "$varVIUser - <Password>"
+	}
+}
+
+# Account for all of our form control depenencies.
+function Set-FormControlsState
+{
+    # Snapshot checkbox
+    if ($chkRptVMSnapshots.Checked)
+	{
+        $dialRptVMSnapThresh.Enabled = $true
+	}
+	else
+	{
+        $dialRptVMSnapThresh.Enabled = $false
+	}
+    
+    # Datastore checkbox
+    if ($chkRptHostsDatastore.Checked)
+	{
+        $dialRptHostsDatastorePercent.Enabled = $true
+	}
+	else
+	{
+        $dialRptHostsDatastorePercent.Enabled = $false
+	}
+    
+    #Saved Locally Checkbox
+    if ($chkSaveLocally.Checked)
+	{
+		$buttonBrowseFolder.Enabled = $true
+        $txtReportFolder.Enabled = $true
+		$txtReportName.Enabled = $true
+	}
+	else
+	{
+		$buttonBrowseFolder.Enabled = $false
+        $txtReportFolder.Enabled = $false
+		$txtReportName.Enabled = $false
+	}
+    
+    # Email Checkbox
+	if ($chkEmailReport.Checked)
+	{
+        $txtEmailSubject.Enabled = $true
+        $txtEmailRecipient.Enabled = $true
+        $txtEmailSender.Enabled = $true
+        $txtSMTPServer.Enabled = $true
+	}
+	else
+	{
+        $txtEmailSubject.Enabled = $false        
+        $txtEmailRecipient.Enabled = $false
+        $txtEmailSender.Enabled = $false
+        $txtSMTPServer.Enabled = $false
+	}
+    if ($VIConnected)
+    {
+        $comboDatacenter.Enabled = $true
+        $grpVMwareSettings.Enabled = $true
+	}
+    else
+    {
+        $comboDatacenter.Enabled = $false
+        $grpVMwareSettings.Enabled = $false
+	}
+    # Whole Farm Checkbox
+    if ($chkWholeFarm.Checked)
+	{
+        $comboDatacenter.Enabled = $true
+        $comboCluster.Enabled = $false
+        $comboHost.Enabled = $false
+        $grpVC.Enabled = $true
+     }
+	else
+	{
+        if ($VIConnected)
+        {
+
+		}
+        $grpVC.Enabled = $false
+	}
+    
+    # VM Deletions requires VC Error reporting
+    if ($chkRptVCErrors.Checked)
+    {
+        $chkRptVCVMsDeleted.Enabled = $true
+        $chkRptVCVMsCreated.Enabled = $true
+        
+	}
+    else
+    {
+        $chkRptVCVMsDeleted.Enabled = $false
+        $chkRptVCVMsCreated.Enabled = $false
+	}
+}
+
+function PopulateVIDatacenters
+{
+    $x=0    
+    Load-ComboBox $comboCluster ''
+    Load-ComboBox $comboHost ''
+    foreach ($Datacenter in (Get-Datacenter))
+    {
+        $x++
+        if ($x++ -eq 1)
+        {
+            Load-ComboBox $comboDatacenter $Datacenter.Name
+		}
+        else
+        {
+            Load-ComboBox $comboDatacenter $Datacenter.Name -Append
+		}
+	}
+}
+
+function PopulateVIClusters
+{
+    # Only try to populate if a datacenter has been selected
+    If ($comboDatacenter.Text -ne '')
+    {
+        Load-ComboBox $comboHost ''
+        Load-ComboBox $comboCluster ''
+        foreach ($Cluster in ((Get-Datacenter $comboDatacenter.Text) | Get-Cluster))
+        {
+            Load-ComboBox $comboCluster $Cluster.Name -Append
+		}    	
+	}
+}
+
+function PopulateVIHosts
+{ 
+    # Only try to populate if a cluster has been selected
+    If ($comboCluster.Text -ne "")
+    {
+        Load-ComboBox $comboHost ''
+        foreach ($VMH in ((Get-Cluster $comboCluster.Text) | Get-VMHost))
+        {
+            Load-ComboBox $comboHost $VMH.Name -Append
+    	}
+	}
+}
+
+$OnLoadFormEvent={
+#TODO: Initialize Form Controls here
+}
+
+$form1_FadeInLoad={
+	#Start the Timer to Fade In
+	$timerFadeIn.Start()
+	$MainForm.Opacity = 0
+	if (Load-Config)
+    {
+        Load-ComboBox $comboReportStyle ($Styles)
+        Load-FormConfig
+        Set-FormControlsState       
+	}
+	Set-ConnectionInfoLabel
+    #	$txtScheduledTask.Text = @"
+    #In an administrative EMC console run the following:
+    # cd `$exscripts
+    # .\ManageScheduledTask.ps1 -Install –ServerName <Your Server> -PsScriptPath "$($ScriptDirectory)$($StarterScript)" –TaskName "Troubleshoot Exchange 2010 Mailbox Servers"
+    #"@
+}
+
+$timerFadeIn_Tick={
+	#Can you see me now?
+	if($MainForm.Opacity -lt 1)
+	{
+		$MainForm.Opacity += 0.1
+		
+		if($MainForm.Opacity -ge 1)
+		{
+			#Stop the timer once we are 100% visible
+			$timerFadeIn.Stop()
+		}
+	}
+}
+
+$buttonBrowse_Click={
+
+	if($openfiledialog1.ShowDialog() -eq 'OK')
+	{
+		$txtReportFolder.Text = $openfiledialog1.FileName
+	}
+}
+
+#region Control Helper Functions
+function Load-ComboBox 
+{
+<#
+	.SYNOPSIS
+		This functions helps you load items into a ComboBox.
+
+	.DESCRIPTION
+		Use this function to dynamically load items into the ComboBox control.
+
+	.PARAMETER  ComboBox
+		The ComboBox control you want to add items to.
+
+	.PARAMETER  Items
+		The object or objects you wish to load into the ComboBox's Items collection.
+
+	.PARAMETER  DisplayMember
+		Indicates the property to display for the items in this control.
+	
+	.PARAMETER  Append
+		Adds the item(s) to the ComboBox without clearing the Items collection.
+	
+	.EXAMPLE
+		Load-ComboBox $combobox1 "Red", "White", "Blue"
+	
+	.EXAMPLE
+		Load-ComboBox $combobox1 "Red" -Append
+		Load-ComboBox $combobox1 "White" -Append
+		Load-ComboBox $combobox1 "Blue" -Append
+	
+	.EXAMPLE
+		Load-ComboBox $combobox1 (Get-Process) "ProcessName"
+#>
+	Param (
+		[ValidateNotNull()]
+		[Parameter(Mandatory=$true)]
+		[System.Windows.Forms.ComboBox]$ComboBox,
+		[ValidateNotNull()]
+		[Parameter(Mandatory=$true)]
+		$Items,
+	    [Parameter(Mandatory=$false)]
+		[string]$DisplayMember,
+		[switch]$Append
+	)
+	
+	if(-not $Append)
+	{
+		$ComboBox.Items.Clear()	
+	}
+	
+	if($Items -is [Object[]])
+	{
+		$ComboBox.Items.AddRange($Items)
+	}
+	elseif ($Items -is [Array])
+	{
+		$ComboBox.BeginUpdate()
+		foreach($obj in $Items)
+		{
+			$ComboBox.Items.Add($obj)	
+		}
+		$ComboBox.EndUpdate()
+	}
+	else
+	{
+		$ComboBox.Items.Add($Items)	
+	}
+
+	$ComboBox.DisplayMember = $DisplayMember	
+}
+
+function Load-ListBox 
+{
+<#
+	.SYNOPSIS
+		This functions helps you load items into a ListBox or CheckedListBox.
+
+	.DESCRIPTION
+		Use this function to dynamically load items into the ListBox control.
+
+	.PARAMETER  ListBox
+		The ListBox control you want to add items to.
+
+	.PARAMETER  Items
+		The object or objects you wish to load into the ListBox's Items collection.
+
+	.PARAMETER  DisplayMember
+		Indicates the property to display for the items in this control.
+	
+	.PARAMETER  Append
+		Adds the item(s) to the ListBox without clearing the Items collection.
+	
+	.EXAMPLE
+		Load-ListBox $ListBox1 "Red", "White", "Blue"
+	
+	.EXAMPLE
+		Load-ListBox $listBox1 "Red" -Append
+		Load-ListBox $listBox1 "White" -Append
+		Load-ListBox $listBox1 "Blue" -Append
+	
+	.EXAMPLE
+		Load-ListBox $listBox1 (Get-Process) "ProcessName"
+#>
+	Param (
+		[ValidateNotNull()]
+		[Parameter(Mandatory=$true)]
+		[System.Windows.Forms.ListBox]$listBox,
+		[ValidateNotNull()]
+		[Parameter(Mandatory=$true)]
+		$Items,
+	    [Parameter(Mandatory=$false)]
+		[string]$DisplayMember,
+		[switch]$Append
+	)
+	
+	if(-not $Append)
+	{
+		$listBox.Items.Clear()	
+	}
+	
+	if($Items -is [System.Windows.Forms.ListBox+ObjectCollection])
+	{
+		$listBox.Items.AddRange($Items)
+	}
+	elseif ($Items -is [Array])
+	{
+		$listBox.BeginUpdate()
+		foreach($obj in $Items)
+		{
+			$listBox.Items.Add($obj)
+		}
+		$listBox.EndUpdate()
+	}
+	else
+	{
+		$listBox.Items.Add($Items)	
+	}
+
+	$listBox.DisplayMember = $DisplayMember	
+}
+#endregion
+
+$buttonSave_Click={
+    Set-SaveData
+    if (Save-Config)
+    {
+        Set-ConnectionInfoLabel
+        #[void][reflection.assembly]::Load("System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089")
+		[void][System.Windows.Forms.MessageBox]::Show("Configuration saved.","All went well!")
+	}
+}
+
+$buttonRun_Click={
+   	$script = $ScriptDirectory + $StarterScript
+   	&$script
+}
+
+$buttonBrowse_Click2={
+
+	if($openfiledialog1.ShowDialog() -eq 'OK')
+	{
+		$txtReportFolder.Text = $openfiledialog1.FileName
+	}
+}
+
+$chkSaveLocally_CheckedChanged={
+	if ($chkSaveLocally.Checked)
+	{
+		$buttonBrowseFolder.Enabled = $true
+        $txtReportFolder.Enabled = $true
+		$txtReportName.Enabled = $true
+	}
+	else
+	{
+		$buttonBrowseFolder.Enabled = $false
+        $txtReportFolder.Enabled = $false
+		$txtReportName.Enabled = $false
+	}
+}
+
+$buttonBrowseFolder_Click={
+	if($folderbrowserdialog1.ShowDialog() -eq 'OK')
+	{
+		$txtReportFolder.Text = $folderbrowserdialog1.SelectedPath
+	}
+}
+$chkEmailReport_CheckedChanged={
+	if ($chkEmailReport.Checked)
+	{
+        $txtEmailSubject.Enabled = $true
+        $txtEmailRecipient.Enabled = $true
+        $txtEmailSender.Enabled = $true
+        $txtSMTPServer.Enabled = $true
+	}
+	else
+	{
+        $txtEmailSubject.Enabled = $false        
+        $txtEmailRecipient.Enabled = $false
+        $txtEmailSender.Enabled = $false
+        $txtSMTPServer.Enabled = $false
+	}
+}
+
+$chkWholeFarm_CheckedChanged={
+    if ($chkWholeFarm.Checked)
+	{
+        $comboDatacenter.Enabled = $false
+        $comboCluster.Enabled = $false
+        $comboHost.Enabled = $false
+        $grpVC.Enabled = $true
+     }
+	else
+	{
+        if ($VIConnected)
+        {
+            PopulateVIDatacenters
+            $comboDatacenter.Enabled = $true
+		}
+        $grpVC.Enabled = $false
+	}
+}
+
+$chkCurrentUser_CheckedChanged={
+    if ($chkCurrentUser.Checked)
+	{
+        $txtUser.Enabled = $false
+        $txtPassword.Enabled = $false
+	}
+	else
+	{
+        $txtUser.Enabled = $true
+        $txtPassword.Enabled = $true
+	}
+}
+
+$buttonConnect_Click={
+    $Snapins=@(’VMware.VimAutomation.Core’)
+    $RequiredSnapinsLoaded=$True 
+    if ($Snapins.Count -ge 1) 
+    {
+    	Foreach ($Snapin in $Snapins)
+    	{
+    		Add-PSSnapin $Snapin –ErrorAction SilentlyContinue 
+    		if ((Get-PSSnapin $Snapin) –eq $NULL) 
+    		{
+    			$RequiredSnapinsLoaded=$false
+    		} 
+     	}
+    }
+    if ($RequiredSnapinsLoaded) 
+    { 
+    	# Connect to the server
+        if ($chkCurrentUser.Checked)
+        {
+        	$VIConnection = Connect-VIServer $txtvCenterServer.Text -ErrorAction:SilentlyContinue
+        }
+        else
+        {
+        	$VIConnection = Connect-VIServer $txtvCenterServer.Text `
+             -User $txtUser.Text -Password $txtPassword.text -ErrorAction:SilentlyContinue
+        }
+        If ($VIConnection.IsConnected) 
+        {
+            $VIConnected = $true
+            $grpVMwareSettings.Enabled = $true
+            $btnSaveAndRun.Enabled = $true
+    	}
+        else
+        {
+            $VIConnected = $false
+            $grpVMwareSettings.Enabled = $false
+            $btnSaveAndRun.Enabled = $false
+    	}
+    }
+}
+
+$chkRptDatastore_CheckedChanged={
+    if ($chkRptHostsDatastore.Checked)
+	{
+        $dialRptHostsDatastorePercent.Enabled = $true
+	}
+	else
+	{
+        $dialRptHostsDatastorePercent.Enabled = $false
+	}
+}
+
+$chkRptVMSnapshots_CheckedChanged={
+    if ($chkRptVMSnapshots.Checked)
+	{
+        $dialRptVMSnapThresh.Enabled = $true
+	}
+	else
+	{
+        $dialRptVMSnapThresh.Enabled = $false
+	}
+}
+
+$comboCluster_SelectedIndexChanged={
+	if ($comboCluster.Text -ne '')
+    {
+        $comboHost.Enabled = $true
+        PopulateVIHosts
+	}
+    else
+    {
+        $comboHost.Enabled = $true
+        Load-ComboBox $comboHost ''
+	}
+}
+
+$comboDatacenter_SelectedIndexChanged={
+    $comboCluster.Enabled = $true
+    PopulateVIClusters
+}
+$chkRptVCErrors_CheckedChanged={
+	if ($chkRptVCErrors.Checked)
+    {
+        $chkRptVCVMsDeleted.Enabled = $true
+        $chkRptVCVMsCreated.Enabled = $true
+	}
+    else
+    {
+        $chkRptVCVMsDeleted.Enabled = $false
+        $chkRptVCVMsCreated.Enabled = $false
+	}
+}
+
+$btnSaveAndRun_Click={
+	Set-SaveData
+    if (Save-Config)
+    {
+    	# Run the script
+    	$script = $ScriptDirectory + $StarterScript
+    	&$script
+	}
+}
+]]></Code>
+  <Mode>0</Mode>
+  <Assemblies>
+    <Assembly>System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35</Assembly>
+    <Assembly>System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|C:\Windows\Microsoft.NET\Framework\v4.0.30319\System.dll</Assembly>
+    <Assembly>System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|C:\Windows\Microsoft.NET\Framework\v4.0.30319\System.Windows.Forms.dll</Assembly>
+    <Assembly>System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a|C:\Windows\Microsoft.NET\Framework\v4.0.30319\System.Drawing.dll</Assembly>
+    <Assembly>mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</Assembly>
+    <Assembly>System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|C:\Windows\Microsoft.NET\Framework\v4.0.30319\System.Data.dll</Assembly>
+    <Assembly>System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|C:\Windows\Microsoft.NET\Framework\v4.0.30319\System.XML.dll</Assembly>
+    <Assembly>System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a|C:\Windows\Microsoft.NET\Framework\v4.0.30319\System.DirectoryServices.dll</Assembly>
+  </Assemblies>
+  <Packager>
+    <General>
+      <PackageName>
+      </PackageName>
+      <PackageIcon>
+      </PackageIcon>
+      <ManifestCreation>1</ManifestCreation>
+      <CustomManifest>
+      </CustomManifest>
+      <Platform>-1</Platform>
+      <RunSTA>0</RunSTA>
+      <PowerShellVersion>2</PowerShellVersion>
+    </General>
+    <Security>
+      <Username>
+      </Username>
+      <Password>
+      </Password>
+      <SignPackage>False</SignPackage>
+      <Certificate>
+      </Certificate>
+      <CertificatePassword>
+      </CertificatePassword>
+      <RunAs>0</RunAs>
+    </Security>
+    <Version>
+      <FileVersion>
+      </FileVersion>
+      <ProductVersion>
+      </ProductVersion>
+      <ProductName>
+      </ProductName>
+      <Description>
+      </Description>
+      <Company>
+      </Company>
+      <Copyright>
+      </Copyright>
+      <InternalName>
+      </InternalName>
+      <OriginalFileName>
+      </OriginalFileName>
+      <Comment>
+      </Comment>
+    </Version>
+  </Packager>

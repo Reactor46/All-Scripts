@@ -1,0 +1,97 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20180122075538
+Username: ContosoCORP\jbattista.advisor
+RunAs User: ContosoCORP\jbattista.advisor
+Machine: LASPSHOST (Microsoft Windows NT 6.3.9600.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell_ise.exe C:\Scripts\Repository\jbattista\Web\reports\AdminScripts\Monitor-Wrapper.ps1
+Process ID: 10684
+PSVersion: 5.0.10586.117
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0.10586.117
+BuildVersion: 10.0.10586.117
+CLRVersion: 4.0.30319.36399
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Scripts\Repository\jbattista\Web\reports\Lockouts\Transcripts\20180122_.Log
+** SETTING VARIABLES **
+** IMPORTING MODULES **
+Import-Module : The specified module 
+'C:\Scripts\Repository\jbattista\Web\reports\Lockouts\PSModules\OutDataTableView\OutDataTableView.psm1' was not loaded 
+because no valid module file was found in any module directory.
+At C:\Scripts\Repository\jbattista\Web\reports\AdminScripts\Lockouts\AccountLockout.ps1:180 char:20
++ ... ldWebPage){ Import-Module "$scriptDir\PSModules\OutDataTableView\OutD ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (C:\Scripts\Repo...aTableView.psm1:String) [Import-Module], 
+FileNotFoundException
+    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
+Import-Module : The specified module 'C:\Scripts\Repository\jbattista\Web\reports\Lockouts\PSModules\OutDataTableView\OutDataTableView.psm1' was not loaded because no valid module file was found in any module directory.
+At C:\Scripts\Repository\jbattista\Web\reports\AdminScripts\Lockouts\AccountLockout.ps1:180 char:20
++ ... ldWebPage){ Import-Module "$scriptDir\PSModules\OutDataTableView\OutD ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ResourceUnavailable: (C:\Scripts\Repo...aTableView.psm1:String) [Import-Module], FileNotFoundException
+    + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
+
+Add: mmorris Unlocked By: moconner 1/22/2018 7:50:52 AM Unlock LASDC01
+Add: bawada DPC-20719 1/22/2018 7:52:17 AM Lockout LASDC02
+Add: MBrown DPC-20842 1/22/2018 7:53:31 AM Lockout LASDC02
+Add: bawada Unlocked By: shinds 1/22/2018 7:54:22 AM Unlock LASDC02
+Add: MBrown DPC-20842 1/22/2018 7:54:24 AM Lockout LASDC01
+Copy-Item : Cannot find path 'C:\Scripts\Repository\jbattista\Web\reports\Lockouts\padlock2.png' because it does not 
+exist.
+At C:\Scripts\Repository\jbattista\Web\reports\AdminScripts\Lockouts\AccountLockout.ps1:287 char:50
++ ... oWebPath")){Copy-Item "$scriptDir\$LogoWebPath" "$SiteDir\$LogoWebPat ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Scripts\Repo...ts\padlock2.png:String) [Copy-Item], 
+ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.CopyItemCommand
+Copy-Item : Cannot find path 'C:\Scripts\Repository\jbattista\Web\reports\Lockouts\padlock2.png' because it does not exist.
+At C:\Scripts\Repository\jbattista\Web\reports\AdminScripts\Lockouts\AccountLockout.ps1:287 char:50
++ ... oWebPath")){Copy-Item "$scriptDir\$LogoWebPath" "$SiteDir\$LogoWebPat ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Scripts\Repo...ts\padlock2.png:String) [Copy-Item], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.CopyItemCommand
+
+Out-DataTableView : The term 'Out-DataTableView' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At C:\Scripts\Repository\jbattista\Web\reports\AdminScripts\Lockouts\AccountLockout.ps1:290 char:15
++     $Events | Out-DataTableView -Properties User,Source,Time,EventTyp ...
++               ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Out-DataTableView:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Out-DataTableView : The term 'Out-DataTableView' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Scripts\Repository\jbattista\Web\reports\AdminScripts\Lockouts\AccountLockout.ps1:290 char:15
++     $Events | Out-DataTableView -Properties User,Source,Time,EventTyp ...
++               ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Out-DataTableView:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+
+
+Transcript started, output file is C:\Scripts\Repository\jbattista\Web\reports\AdminScripts\Lockouts\Transcripts\20180122_.Log
+** SETTING VARIABLES **
+** IMPORTING MODULES **
+Add: mmorris Unlocked By: moconner 1/22/2018 7:50:52 AM Unlock LASDC01
+Add: bawada DPC-20719 1/22/2018 7:52:17 AM Lockout LASDC02
+Add: MBrown DPC-20842 1/22/2018 7:53:31 AM Lockout LASDC02
+Add: bawada Unlocked By: shinds 1/22/2018 7:54:22 AM Unlock LASDC02
+Add: MBrown DPC-20842 1/22/2018 7:54:24 AM Lockout LASDC01
+Add: MBrown Unlocked By: moconner 1/22/2018 7:57:04 AM Unlock LASDC01
+Add: MBrown Unlocked By: moconner 1/22/2018 7:57:14 AM Unlock LASDC01
+Transcript started, output file is C:\Scripts\Repository\jbattista\Web\reports\AdminScripts\Lockouts\Transcripts\20180122_.Log
+** SETTING VARIABLES **
+** IMPORTING MODULES **
+Add: bawada DPC-20719 1/22/2018 7:52:17 AM Lockout LASDC02
+Add: MBrown DPC-20842 1/22/2018 7:53:31 AM Lockout LASDC02
+Add: bawada Unlocked By: shinds 1/22/2018 7:54:22 AM Unlock LASDC02
+Add: MBrown DPC-20842 1/22/2018 7:54:24 AM Lockout LASDC01
+Add: MBrown Unlocked By: moconner 1/22/2018 7:57:04 AM Unlock LASDC01
+Add: svc_WebContent-Prod Unlocked By: nfedei.advisor 1/22/2018 7:57:07 AM Unlock LASDC02
+Add: MBrown Unlocked By: moconner 1/22/2018 7:57:14 AM Unlock LASDC01
+PS C:\Scripts\Repository\jbattista\Web\reports\AdminScripts\Lockouts> cls
+PS C:\Scripts\Repository\jbattista\Web\reports\AdminScripts\Lockouts> cd ..
+PS C:\Scripts\Repository\jbattista\Web\reports\AdminScripts> TerminatingError(): "The pipeline has been stopped."
+PS C:\Scripts\Repository\jbattista\Web\reports\AdminScripts> TerminatingError(): "The pipeline has been stopped."
+>> cd..

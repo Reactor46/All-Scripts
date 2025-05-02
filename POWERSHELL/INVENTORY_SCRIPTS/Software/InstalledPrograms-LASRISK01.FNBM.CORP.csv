@@ -1,0 +1,22 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"BMC Track-It! 11.3 Agent";"LASRISK01.FNBM.CORP";"BMC Software";;"11.3.0.355";;;;
+"Commvault ContentStore";"LASRISK01.FNBM.CORP";"Commvault";;"11.80.110.0";;;;
+"HP ProLiant iLO 3/4 Channel Interface Driver";"LASRISK01.FNBM.CORP";"Hewlett-Packard Company";;"3.10.0.0";;;;
+"HP ProLiant iLO 3/4 Management Controller Package";"LASRISK01.FNBM.CORP";"Hewlett-Packard Company";;"3.20.0.0";;;;
+"Infognition ScreenPressor v2.1 (Remove Only)";"LASRISK01.FNBM.CORP";;;;;;;
+"Microsoft Silverlight";"LASRISK01.FNBM.CORP";"Microsoft Corporation";"20170429";"5.1.50906.0";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.21022";"LASRISK01.FNBM.CORP";"Microsoft Corporation";"20151125";"9.0.21022";;;;
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161";"LASRISK01.FNBM.CORP";"Microsoft Corporation";"20160123";"9.0.30729.6161";;;;
+"Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219";"LASRISK01.FNBM.CORP";"Microsoft Corporation";"20151121";"10.0.40219";;;;
+"Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219";"LASRISK01.FNBM.CORP";"Microsoft Corporation";"20151121";"10.0.40219";;;;
+"Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.61030";"LASRISK01.FNBM.CORP";"Microsoft Corporation";;"11.0.61030.0";;;;
+"Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.30501";"LASRISK01.FNBM.CORP";"Microsoft Corporation";;"12.0.30501.0";;;;
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501";"LASRISK01.FNBM.CORP";"Microsoft Corporation";;"12.0.30501.0";;;;
+"Microsoft Visual C++ 2017 Redistributable (x64) - 14.11.25325";"LASRISK01.FNBM.CORP";"Microsoft Corporation";;"14.11.25325.0";;;;
+"SolarWinds Agent 2.0.70.0";"LASRISK01.FNBM.CORP";"SolarWinds Worldwide, LLC.";"20180604";"2.0.70.0";;;;
+"SolarWinds Client Components - x64 (2.1.5.6002)";"LASRISK01.FNBM.CORP";"SolarWinds, Inc.";;"2.1.5.6002";;;;
+"Symantec Endpoint Protection";"LASRISK01.FNBM.CORP";"Symantec Corporation";"20180421";"14.0.3876.1100";;;;"0"
+"Veritas InfoScale Foundation 7.3.1 for Windows ";"LASRISK01.FNBM.CORP";"Veritas Technologies LLC";"11.10.2005.11.10 10:33:24 PST";"7.3.1";;;;
+"Veritas InfoScale Operations Manager (Host Component)";"LASRISK01.FNBM.CORP";"Veritas Technologies LLC";;"7.3.1.400";;;;"0"
+"VRTSvbs";"LASRISK01.FNBM.CORP";"Veritas Technologies LLC";"20180728";"7.3.10000.000";;;;
+"Wolfram Mathematica 11 License Manager (M-WIN-LM 11.0.0 5546814";"LASRISK01.FNBM.CORP";"Wolfram Research, Inc.";"20161023";"11.0.0";;;;

@@ -1,0 +1,4 @@
+﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
+"Service Pack 3 for SQL Server 2008 (KB2546951) (64-bit)";"LASINFRA05.FNBM.CORP";"Microsoft Corporation";"20151024";"10.3.5500.0";;"ServicePack";;
+"Service Pack 3 for SQL Server 2012 (KB3072779) (64-bit)";"LASINFRA05.FNBM.CORP";"Microsoft Corporation";"20160123";"11.3.6020.0";;"ServicePack";"Microsoft SQL Server 2012 (64-bit)";
+"Hotfix for Windows Server Update Services 3.0 SP2 (KB2720211)";"LASINFRA05.FNBM.CORP";"Microsoft Corporation";;"3.2.7600.251";;;"Windows Server Update Services 3.0 SP2";

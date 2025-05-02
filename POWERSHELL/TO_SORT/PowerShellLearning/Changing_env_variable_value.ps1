@@ -1,0 +1,1 @@
+﻿Set-Item Env:HOMEDRIVE "home_drive" 

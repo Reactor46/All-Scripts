@@ -1,0 +1,1 @@
+powershell .\CertExpiryalert.ps1

@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>SharePoint Feature Upgrade - Step by Step</title>        
+        <meta name="description" content="This article will present SharePoint Feature Upgrade process in ‘What steps to Do’ instead on theory.Let’s start with a simple scenario,We have a custom list with custom Content-Type in SharePoint, now we want to add a new field&#160;with a default value&#160;to the existing Content-Type A" />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<p>This article will present SharePoint Feature Upgrade process in &lsquo;What steps to Do&rsquo; instead on theory.</p>
+<p>Let&rsquo;s start with a simple scenario,</p>
+<p><span style="font-size:small"><em>We have a custom list with custom Content-Type in SharePoint, now we want to add a new field&nbsp;<em>with a default value</em>&nbsp;to the existing Content-Type AND to all the lists using this Content-Type.
+</em>&nbsp;</span></p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Create a new Element file and add the new field &ndash; Since it&rsquo;s easy to manage and push.
+</li><li>Add new field as field reference in existing Content Type XML: &nbsp; This is required for future new list getting created using the Content-Type, it should have the new field by default.
+</li><li>Feature upgrade to push the new element xml </li><li>Feature upgrade code, in Feature event receiver: This is to update the existing List to add the new field and set the default value.
+</li><li>Upgrade solution and feature upgrade PowerShell </li></ol>
+<p><strong><span style="text-decoration:underline">1) &nbsp;Add new field element (say FLD_Update):</span></strong></p>
+<p>We will define a new field in a Element file.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>XML</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">xml</span>
+<pre class="hidden">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Elements xmlns=&quot;http://schemas.microsoft.com/sharepoint/&quot;&gt;
+  &lt;Field ID=&quot;{A9AE26A7-51EA-4BF3-A96B-0DC9DAE33E9E}&quot;
+       Name=&quot;DemoField&quot;
+       SourceID=&quot;http://schemas.microsoft.com/sharepoint/v3&quot;
+       StaticName=&quot;demoField&quot;
+       Group=&quot;Demo - Custom&quot;
+       Type=&quot;Text&quot;
+       DisplayName=&quot;Demo Name&quot;
+       Required=&quot;FALSE&quot;&gt;
+  &lt;/Field&gt;
+&lt;/Elements&gt;
+</pre>
+<div class="preview">
+<pre class="xml"><span class="xml__tag_start">&lt;?xml</span>&nbsp;<span class="xml__attr_name">version</span>=<span class="xml__attr_value">&quot;1.0&quot;</span>&nbsp;<span class="xml__attr_name">encoding</span>=<span class="xml__attr_value">&quot;utf-8&quot;</span><span class="xml__tag_start">?&gt;</span>&nbsp;
+<span class="xml__tag_start">&lt;Elements</span>&nbsp;<span class="xml__attr_name">xmlns</span>=<span class="xml__attr_value">&quot;http://schemas.microsoft.com/sharepoint/&quot;</span><span class="xml__tag_start">&gt;&nbsp;
+</span>&nbsp;&nbsp;<span class="xml__tag_start">&lt;Field</span>&nbsp;<span class="xml__attr_name">ID</span>=<span class="xml__attr_value">&quot;{A9AE26A7-51EA-4BF3-A96B-0DC9DAE33E9E}&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xml__attr_name">Name</span>=<span class="xml__attr_value">&quot;DemoField&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xml__attr_name">SourceID</span>=<span class="xml__attr_value">&quot;http://schemas.microsoft.com/sharepoint/v3&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xml__attr_name">StaticName</span>=<span class="xml__attr_value">&quot;demoField&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xml__attr_name">Group</span>=<span class="xml__attr_value">&quot;Demo&nbsp;-&nbsp;Custom&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xml__attr_name">Type</span>=<span class="xml__attr_value">&quot;Text&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xml__attr_name">DisplayName</span>=<span class="xml__attr_value">&quot;Demo&nbsp;Name&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="xml__attr_name">Required</span>=<span class="xml__attr_value">&quot;FALSE&quot;</span><span class="xml__tag_start">&gt;&nbsp;
+</span>&nbsp;&nbsp;<span class="xml__tag_end">&lt;/Field&gt;</span>&nbsp;
+<span class="xml__tag_end">&lt;/Elements&gt;</span>&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"><span style="text-decoration:underline"><strong>&nbsp;2)&nbsp;Add new field to the List in the list definition XML</strong></span></div>
+<div class="endscriptcode"></div>
+<div class="endscriptcode">This is my custom Content Type, I have added newly created field - so that any new list with this content type will have the new field.</div>
+<div class="endscriptcode"></div>
+<div class="endscriptcode"></div>
+<div class="endscriptcode"><img id="122235" src="C:\Users\John\Documents\WindowsPowerShell\Scripts\SharePoint-Feature-Upgrade-5451a5a9\Documentation_files\tmpA7C8Resources.png" alt="" width="882" height="322">
+<div class="endscriptcode">&nbsp;</div>
+<span style="text-decoration:underline"><strong>3) Add Feature upgrade to push the new element xml</strong></span></div>
+<p>Feature Upgrade has 2 parts:</p>
+<ul>
+<li>Pushing the new field </li><li>Updating the existing lists. </li></ul>
+<p>Configuration for pushing the new field:</p>
+<p>Pushing the new field: Below is the Manifest.xml of my feature which is pushing the new field added.</p>
+<p><img id="122237" src="C:\Users\John\Documents\WindowsPowerShell\Scripts\SharePoint-Feature-Upgrade-5451a5a9\Documentation_files\tmpA7C9Resources.png" alt="" width="1167" height="229"></p>
+<p>Above, I have added new Field XML - FLD_Update\Element,xml&nbsp;</p>
+<p>- Pushed the new field using the &quot;<strong>ApplyElementManifests</strong>&quot;</p>
+<p>- Added &quot;CustomUpgradeAction&quot; by name '<strong>AddFieldsToDemoList</strong>' - which will be used to write code to update existing lists.</p>
+<p>- Put <strong>BeginVersion </strong>to 0.0.0.0 as its the first time the feature is getting updated.
+<strong>EndVersion </strong>as 0.0.0.1 - this will be the new version of feature after upgrade.</p>
+<p>- Update the Version in the property of the feature</p>
+<p><img id="122232" src="C:\Users\John\Documents\WindowsPowerShell\Scripts\SharePoint-Feature-Upgrade-5451a5a9\Documentation_files\tmpA7CAResources.png" alt="" width="292" height="114"></p>
+<p><span style="text-decoration:underline"><strong>4)&nbsp;Add feature upgrade code</strong></span></p>
+<p>Go to feature event receiver and add the following code in Feature Upgrades</p>
+<div class="endscriptcode">&nbsp;<img id="122238" src="C:\Users\John\Documents\WindowsPowerShell\Scripts\SharePoint-Feature-Upgrade-5451a5a9\Documentation_files\tmpA7CBResources.png" alt="" width="1231" height="819"></div>
+<div class="endscriptcode"></div>
+<div class="endscriptcode">5) Upgrade solution and PowerShell to upgrade feature</div>
+<div class="endscriptcode"></div>
+<div class="endscriptcode">- Build and Package the complete solution.</div>
+<div class="endscriptcode">- Do a solution Upgrade&nbsp;</div>
+<div class="endscriptcode"></div>
+<div class="endscriptcode"><strong>****After Solution upgrade - Close the PowerShell and reopen again, since PowerShell caches the solution dlls*****</strong></div>
+<div class="endscriptcode"><strong><br>
+</strong></div>
+<div class="endscriptcode">- PowerShell for the Feature upgrade is attached. <span>
+It&rsquo;s a generic PowerShell</span>, updated the Web application name and the Feature Id as per need. After Solution upgrade run this PowerShell script to upgrade the feature.</div>
+<div class="endscriptcode"></div>
+<div class="endscriptcode"><span style="text-decoration:underline"><strong>Conclusion</strong></span></div>
+<div class="endscriptcode">This article is to show basic SharePoint feature upgrade steps and process.</div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+#TYPE System.Management.Automation.PSCustomObject
+"Identity","ExternalClientAuthenticationMethod","InternalClientAuthenticationMethod","IISAuthenticationMethods","ExternalHostname","InternalHostname","ExchangeVersion","Server"
+"LASEXCH01\Rpc (Default Web Site)","Basic","Ntlm","Basic Ntlm Negotiate","monsoon.creditone.com","outlook.creditonemail.biz","0.20 (15.0.0.0)","LASEXCH01"
+"LASEXCH03\Rpc (Default Web Site)","Basic","Ntlm","Basic Ntlm Negotiate","monsoon.creditone.com","outlook.creditonemail.biz","0.20 (15.0.0.0)","LASEXCH03"
+"LASEXCH02\Rpc (Default Web Site)","Basic","Ntlm","Basic Ntlm Negotiate","monsoon.creditone.com","outlook.creditonemail.biz","0.20 (15.0.0.0)","LASEXCH02"
+"LASEXDB01\Rpc (Default Web Site)","Ntlm","Ntlm","Ntlm","outlook.creditonemail.biz",,"0.10 (14.0.100.0)","LASEXDB01"
+"LASEXDB02\Rpc (Default Web Site)","Ntlm","Ntlm","Ntlm","outlook.creditonemail.biz",,"0.10 (14.0.100.0)","LASEXDB02"
+"LASEXCH04\Rpc (Default Web Site)","Negotiate","Ntlm","Basic Ntlm Negotiate",,"lasexch04.fnbm.corp","0.20 (15.0.0.0)","LASEXCH04"

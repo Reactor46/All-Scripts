@@ -1,0 +1,14 @@
+System.Management.ConnectionOptions objconn = new System.Management.ConnectionOptions();
+objconn.Impersonation = System.Management.ImpersonationLevel.Impersonate;
+objconn.EnablePrivileges = true;
+string cServername = "servername";
+System.Management.ManagementScope exmangescope = new System.Management.ManagementScope(@"\\" + cServername + @"\root\MicrosoftExchangeV2",objconn);
+System.Management.ObjectQuery objquery = new System.Management.ObjectQuery("SELECT * FROM Exchange_Mailbox");
+System.Management.ManagementObjectSearcher objsearch = new System.Management.ManagementObjectSearcher(exmangescope,objquery);
+System.Management.ManagementObjectCollection queryCollection1 = objsearch.Get();            
+string strDisplay;
+foreach( System.Management.ManagementObject instmailbox in queryCollection1 ) 
+{
+strDisplay = instmailbox["MailboxDisplayName"].ToString() + "  " + instmailbox["size"].ToString();
+System.Console.WriteLine(strDisplay);
+}  

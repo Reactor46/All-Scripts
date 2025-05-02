@@ -1,0 +1,338 @@
+Windows Registry Editor Version 5.00
+
+;This works for Multiple versions of windows(2008)-(2012R2) testing on 2016.
+;Change-Log: Removed port opening in registry. Not a good practice as it only seems to open one port and not all.
+;Could possibley just create a firewall opening with just all the ports needed. This may happen. -MD [11-7-16]
+;Added Version support in MachineCreator string.
+;Read Notes below for things this does.
+;Stripping all responsibiltiy of this in the registry. 
+;Updated Powershell context menu.
+;Cleaned up network lag issues. <-software so it can only help like .2%
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation]
+"Manufacturer"="Kbdl pg bmm usbeft"
+"MachineCreator"="- Copyright 2016 v_11/7/16"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system]
+"FilterAdministratorToken"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system]
+"EnableUIADesktopToggle"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system]
+"ConsentPromptBehaviorAdmin"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system]
+"EnableInstallerDetection"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system]
+"ValidateAdminCodeSignatures"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system]
+"EnableSecureUIAPaths"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system]
+"PromptOnSecureDesktop"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system]
+"EnableVirtualization"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Action Center\Checks\{C8E6F269-B90A-4053-A3BE-499AFCEC98C4}.check.0]
+"CheckSetting"=hex:23,00,41,00,43,00,42,00,6c,00,6f,00,62,00,00,00,00,00,00,00,\
+  00,00,00,00,01,00,00,00,10,00,00,00,00,00,00,00
+
+;DA stuff
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows]
+"NoUACforHashMissing"=dword:00000001
+
+;Kill IPV6
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters]
+"Dhcpv6DUID"=hex:00,01,00,01,1e,00,de,b2,d0,67,e5,ed,3b,62
+"disableipsourcerouting"=dword:00000002
+"EnableICSIPv6"=dword:00000000
+"DisabledComponents"=dword:00000001
+
+;Update 2/10/17
+; Add context menu entry to Windows Explorer background
+;
+[HKEY_CLASSES_ROOT\Directory\Background\shell\powershell]
+@="Open PowerShell window here"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\powershell\command]
+@="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command Set-Location -LiteralPath '%V'"
+
+; Add context menu entry to Windows Explorer folders
+[HKEY_CLASSES_ROOT\Directory\shell\powershell]
+@="Open PowerShell window here"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\Directory\shell\powershell\command]
+@="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command Set-Location -LiteralPath '%V'"
+
+; Add context menu entry to Windows Explorer drive icons
+
+[HKEY_CLASSES_ROOT\Drive\shell\powershell]
+@="Open PowerShell window here"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\Drive\shell\powershell\command]
+@="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command Set-Location -LiteralPath '%V'"
+
+; Updates 10516
+;TurnVMToolBackon **TaskBar**
+[HKEY_LOCAL_MACHINE\SOFTWARE\VMware, Inc.\VMware Tools]
+"ShowTray"=dword:00000001
+
+;Show hidden files and folders (but not hidden system files and folders)
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Hidden"=dword:00000001
+
+;Allow UNC path for Remote install
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor]
+"DisableUNCCHeck"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Command Processor]
+"DisableUNCCheck"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Kbdl pg bmm usbeft]
+@="default"
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\MikeDopp]
+@="Kbdl pg bmm usbeft"
+
+;Shows file extensions
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"HideFileExt"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\runas]
+@="Take Ownership"
+"NoWorkingDirectory"=""
+
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"DesktopLivePreviewHoverTime"=dword:00000000
+"ExtendUIHoverTime"=dword:00000001
+
+;Add Network Adapter SpeedUp! 
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system]
+"SynchronousMachineGroupPolicy"=dword:00000000
+"SynchronousUserGroupPolicy"=dword:00000000
+
+;Disable Full Row Select feature in Windows 7
+;Created by Ramesh Srinivasan
+;http://www.winhelponline.com/Blog
+;Created on 19 Feb 2010
+
+[-HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags]
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"FullRowSelect"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell]
+"KnownFolderDerivedFolderType"="{57807898-8C4F-4462-BB63-71042380B109}"
+"SniffedFolderType"="Generic"
+
+;Disable IE8 Tour for all users
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Main]
+"DisableFirstRunCustomize"=dword:00000001
+
+;Decrease amount of time to cleanup temp files: for disk cleanup utility. -MikeDopp
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Temporary Files]
+"LastAccess"=dword:00000002
+
+;Restart Explorer from context menu 
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Restart Explorer]
+"HasLUAShield"=""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Restart Explorer\command]
+@=tskill explorer
+
+;Add Shield to Merge Reg 
+[HKEY_CLASSES_ROOT\regfile\shell\open]
+"HasLUAShield"=""
+
+;Enable MP3 Encoding from right-click while browsing
+[- HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MediaPlayer\Settings\MP3Encoding]
+"HighRate"=dword:0004e200
+
+;Open NFO files with notepad
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.nfo]
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.nfo\OpenWithList]
+"a"="NOTEPAD.EXE"
+"MRUList"="a"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.nfo\OpenWithProgids]
+"MSInfoFile"=hex(0):
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.nfo\UserChoice]
+"Progid"="Applications\\notepad.exe"
+
+; Typing Long File Names In DOS
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor]
+"CompletionChar"=dword:00000009
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"MaxConnectionsPerServer"=dword:00000014
+"MaxConnectionsPer1_0Server"=dword:00000014
+
+
+;Desktop and Shutdown
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoLowDiskSpaceChecks"=dword:00000001
+"LinkResolveIgnoreLinkInfo"=dword:00000001
+"NoResolveSearch"=dword:00000001
+"NoResolveTrack"=dword:00000001
+"NoInternetOpenWith"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Classes\Msi.Package\shell\Unpack\command]
+@="msiexec.exe /a \"%1\" /qb TARGETDIR=\"%1 Content\""
+
+
+
+
+;Empty folder contents 
+
+[HKEY_CLASSES_ROOT\Directory\shell\Empty Folder Contents\Command]
+@="cmd /c \"cd /d %1 && del /s /f /q *.*\""
+
+;Internet Connection Optimization
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]
+"SackOpts"=dword:00000001
+"TcpWindowSize"=dword:0003ebc0
+"Tcp1323Opts"=dword:00000001
+"DefaultTTL"=dword:00000040
+"EnablePMTUBHDetect"=dword:00000000
+"EnablePMTUDiscovery"=dword:00000001
+"GlobalMaxTcpWindowSize"=dword:0003ebc0
+[HKEY_USERS\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"MaxConnectionsPerServer"=dword:00000020
+"MaxConnectionsPer1_0Server"=dword:00000020
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"MaxConnectionsPerServer"=dword:00000020
+"MaxConnectionsPer1_0Server"=dword:00000020
+
+;Max your Internet Explorer's simultaneous downloads to 10 (default was 2)
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"MaxConnectionsPer1_0Server"=dword:0000000a
+"MaxConnectionsPerServer"=dword:0000000a
+
+
+;Speed up Prefetcher 
+ [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"EnablePrefetcher"=dword:00000005
+
+;Improve I/O performance
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Memory Management]
+"IoPageLockLimit"=dword:00008000
+
+;System Shutdown/Restart Speeds Improvement
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"HungAppTimeout"="5000"
+"WaitToKillAppTimeout"="4000"
+"AutoEndTasks"="1"
+
+;Show Folder Options
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoFolderOptions"=dword:0000000
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoFolderOptions"=dword:0000000
+
+;Clear Temp file every 
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Temporary Files]
+"LastAccess"=dword:00000002
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"EnableLinkedConnections"=dword:1
+
+;Remove restrictions on file transfers
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters]
+
+"RequireSecuritySignature"=dword:00000000
+"EnableSecuritySignature"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters]
+"RequireSignOrSeal"=dword:00000000
+"RequireStrongKey"=dword:00000001
+"SignSecureChannel"=dword:00000000
+"SealSecureChannel"=dword:00000000
+
+;Increase Network Throughput
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\lanmanworkstation\parameters]
+"MaxCmds"=dword:00000064
+"MaxThreads"=dword:00000064
+"MaxCollectionCount"=dword:00000064
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AFD\Parameters]
+"BufferMultiplier"=dword:00000400
+
+;DNS Stuffs
+;Stop caching negative responses
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters]
+"MaxNegativeCacheTtl "=dword:00000000
+
+;DNS Fix
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\DNS\Parameters]
+"EnableEDNSProbes"=dword:00000001
+"MaximumUdpPacketSize"=dword:00004096
+
+;Set DNS SearchList
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Tcpip\Parameters]
+"SearchList"="corp.srelay.com,ext.srelay.com,sorenson.com"
+
+;Powershell Unrestricted
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell]
+"Path"="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+"ExecutionPolicy"="Unrestricted"
+;Remove Local account token filter
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+ "LocalAccountTokenFilterPolicy"=dword:00000001
+
+;Kill Windows Firewall 4 good! 8/22/16
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\StandardProfile]
+"DisableNotifications"=dword:00000000
+"EnableFirewall"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\PublicProfile]
+"DisableNotifications"=dword:00000000
+"EnableFirewall"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\DomainProfile]
+"DisableNotifications"=dword:00000000
+"EnableFirewall"=dword:00000000
+
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Terminal Server]
+"AllowRemoteRPC"=dword:00000001
+"fDenyTSConnections"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Terminal Server\Wds\rdpwd\Tds]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Terminal Server\Wds\rdpwd\Tds\tcp]
+"PortNumber"=dword:00000d3d
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Terminal Server\WinStations\Console]
+"Shadow"=dword:00000001
+[HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Terminal Server\WinStations\RDP-Tcp]
+"UserAuthentication"=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp]
+"PortNumber"=dword:00000d3d
+
+;Kill Kill Kill the BGINFO!!!!!
+[-HKEY_CLASSES_ROOT\.bgi]
+[-HKEY_CLASSES_ROOT\BGInfo.Config.1]
+[-HKEY_CURRENT_USER\Software\Sysinternals\BGinfo]
+[-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\.bgi]
+[-HKEY_LOCAl_MACHINE\Software\Classes\.bgi]
+[-HKEY_LOCAl_MACHINE\Software\Classes\BGInfo.Config.1]
+[-HKEY_USERS\Software\Sysinternals\BGinfo]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
+"desktopinfo"="\"C:\\Program Files (x86)\\DesktopInfo\\DesktopInfo.exe\""
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
+"WaitToKillServiceTimeout"="2000"

@@ -1,0 +1,1 @@
+powershell .\shutdown-restart.ps1

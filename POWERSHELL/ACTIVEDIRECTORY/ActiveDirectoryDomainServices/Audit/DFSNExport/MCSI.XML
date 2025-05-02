@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<Root xmlns = "http://schemas.microsoft.com/dfs/2007/03/dfsutil" majorVersion = "2" minorVersion = "0" 
+	Name="\\FNBMCORP\MCSI" State="OK" Timeout="300" SITECOSTING = "1" >
+	<Target State="ONLINE" >\\LASHAFILE01N02\MCSI</Target>
+	<Target State="ONLINE" >\\LASHAFILE01N01\MCSI</Target>
+
+
+	<Link Name="mcsi" State="OK" Timeout="1800" >
+		<Target State="OFFLINE" >\\lasfs04\mcsi</Target>
+		<Target State="ONLINE" >\\lasfs02\xMCSI</Target>
+	</Link>
+
+</Root>
+

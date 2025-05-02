@@ -1,0 +1,5 @@
+Remove this first line and add your servers here, one per line. for examlep
+
+deletethisline1
+deletethisline2
+deletethisline3

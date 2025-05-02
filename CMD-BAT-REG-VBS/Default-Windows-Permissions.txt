@@ -1,0 +1,2147 @@
+c:\
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   container_inherit+object_inherit
+   Authenticated Users   change   allow   container_inherit+object_inherit+inherit_only
+   Authenticated Users   FILE_ADD_SUBDIRECTORY   allow   no_inheritance
+
+c:\$Recycle.Bin
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute+FILE_ADD_SUBDIRECTORY+FILE_WRITE_ATTRIBUTES   allow   no_inheritance
+
+c:\$Recycle.Bin\<USER SID>
+
+   Owner: <USER>
+
+   DACL(protected):
+   Administrators        full   allow   container_inherit+object_inherit
+   SYSTEM                full   allow   container_inherit+object_inherit
+   <USER>                full   allow   container_inherit+object_inherit
+
+c:\Boot
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                read_execute+write   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute+write   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Documents and Settings
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+   Everyone              read_execute   allow   no_inheritance
+   SYSTEM                full   allow   no_inheritance
+   Administrators        full   allow   no_inheritance
+
+c:\Program Files
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Program Files\Common Files\SpeechEngines\Microsoft\TTS20
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Program Files\Windows Media Player\Icons
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Program Files\Windows Media Player\Visualizations
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Program Files\Windows Sidebar\Shared Gadgets
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   container_inherit+object_inherit
+   Users                 write   allow   container_inherit
+
+c:\ProgramData\Application Data
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+   Everyone              read_execute   allow   no_inheritance
+   SYSTEM                full   allow   no_inheritance
+   Administrators        full   allow   no_inheritance
+
+c:\ProgramData\Desktop
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+   Everyone              read_execute   allow   no_inheritance
+   SYSTEM                full   allow   no_inheritance
+   Administrators        full   allow   no_inheritance
+
+c:\ProgramData\Documents
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+   Everyone              read_execute   allow   no_inheritance
+   SYSTEM                full   allow   no_inheritance
+   Administrators        full   allow   no_inheritance
+
+c:\ProgramData\Favorites
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+   Everyone              read_execute   allow   no_inheritance
+   SYSTEM                full   allow   no_inheritance
+   Administrators        full   allow   no_inheritance
+
+c:\ProgramData\Microsoft
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   Users                 read_execute   allow   container_inherit+object_inherit
+   Everyone              read_execute   allow   container_inherit+object_inherit
+
+c:\ProgramData\Microsoft\Crypto\DSS\MachineKeys
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Everyone              write+read   allow   no_inheritance
+   Administrators        full   allow   no_inheritance
+
+c:\ProgramData\Microsoft\Crypto\Keys
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   Everyone              read   allow   container_inherit+object_inherit
+
+c:\ProgramData\Microsoft\Crypto\RSA\MachineKeys
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Everyone              write+read   allow   no_inheritance
+   Administrators        full   allow   no_inheritance
+
+c:\ProgramData\Microsoft\Device Stage\Device\<GUID>
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\DeviceSync
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Guests                full   deny   no_inheritance
+   Guests                full   deny   container_inherit+object_inherit+inherit_only
+   Guest                 full   deny   no_inheritance
+   Guest                 full   deny   container_inherit+object_inherit+inherit_only
+   Everyone              read_execute+write+FILE_DELETE_CHILD+WRITE_OWNER+WRITE_DAC   allow   no_inheritance
+   Everyone              full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+
+c:\ProgramData\Microsoft\DRM\Server
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   Everyone              read+FILE_ADD_SUBDIRECTORY   allow   container_inherit+object_inherit
+
+c:\ProgramData\Microsoft\eHome
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   container_inherit+object_inherit
+   Authenticated Users   change+FILE_DELETE_CHILD   allow   container_inherit+object_inherit
+   ehSched               change+FILE_DELETE_CHILD   allow   container_inherit+object_inherit
+   ehRecvr               change+FILE_DELETE_CHILD   allow   container_inherit+object_inherit
+   SYSTEM                full   allow   container_inherit
+
+c:\ProgramData\Microsoft\Network\Connections
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Everyone              read_execute   allow   no_inheritance
+   Everyone              read_execute   allow   container_inherit+object_inherit+inherit_only
+   Network Configuration Operators   read_execute+write   allow   no_inheritance
+   Network Configuration Operators   read_execute+write   allow   container_inherit+object_inherit+inherit_only
+   S-1-5-80-3906544942-1489856346-3706913989-164347954-1900376235   full   allow   no_inheritance
+   S-1-5-80-3906544942-1489856346-3706913989-164347954-1900376235   full   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\Network\Downloader
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\RAC\Outbound
+
+   Owner: Administrators
+
+   DACL(not_protected+auto_inherited):
+   LOCAL SERVICE         change   allow   no_inheritance
+   LOCAL SERVICE         change   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\RAC\PublishedData
+
+   Owner: Administrators
+
+   DACL(not_protected+auto_inherited):
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   LOCAL SERVICE         full   allow   no_inheritance
+   LOCAL SERVICE         full   allow   container_inherit+object_inherit+inherit_only
+   Users                 full   allow   no_inheritance
+   Users                 full   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\RAC\StateData
+
+   Owner: Administrators
+
+   DACL(not_protected+auto_inherited):
+   LOCAL SERVICE         change   allow   no_inheritance
+   LOCAL SERVICE         change   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\RAC\Temp
+
+   Owner: Administrators
+
+   DACL(not_protected+auto_inherited):
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   LOCAL SERVICE         full   allow   no_inheritance
+   LOCAL SERVICE         full   allow   container_inherit+object_inherit+inherit_only
+   Users                 full   allow   no_inheritance
+   Users                 full   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\Search\Data
+
+   Owner: SYSTEM
+
+   DACL(pseudo_protected):
+   Administrators        full   allow   object_inherit+inherit_only
+   Administrators        full   allow   container_inherit
+   SYSTEM                full   allow   object_inherit+inherit_only
+   SYSTEM                full   allow   container_inherit
+
+c:\ProgramData\Microsoft\User Account Pictures
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   Users                 read_execute+FILE_ADD_FILE   allow   container_inherit+object_inherit
+   Everyone              read_execute   allow   container_inherit+object_inherit
+
+c:\ProgramData\Microsoft\User Account Pictures\Default Pictures
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\Vault
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\Windows\AIT
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\Windows\DeviceMetadataStore
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\Windows\DRM
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Domain Guests         full   deny   no_inheritance
+   Domain Guests         full   deny   container_inherit+object_inherit+inherit_only
+   Guests                full   deny   no_inheritance
+   Guests                full   deny   container_inherit+object_inherit+inherit_only
+   Guest                 full   deny   no_inheritance
+   Guest                 full   deny   container_inherit+object_inherit+inherit_only
+   Everyone              read_execute+write+FILE_DELETE_CHILD+WRITE_OWNER+WRITE_DAC   allow   no_inheritance
+   Everyone              full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+
+c:\ProgramData\Microsoft\Windows\DRM\Cache
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Guests                full   deny   no_inheritance
+   Guests                full   deny   container_inherit+object_inherit+inherit_only
+   Guest                 full   deny   no_inheritance
+   Guest                 full   deny   container_inherit+object_inherit+inherit_only
+   Everyone              read_execute+write+FILE_DELETE_CHILD+WRITE_OWNER+WRITE_DAC   allow   no_inheritance
+   Everyone              full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+
+c:\ProgramData\Microsoft\Windows\Power Efficiency Diagnostics
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\Windows\Start Menu
+
+   Owner: Administrators
+
+   DACL(not_protected+auto_inherited):
+   Helge                 FILE_DELETE_CHILD+DELETE   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\Windows\WER\ReportArchive
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Authenticated Users   FILE_LIST_DIRECTORY   allow   container_inherit
+   LOCAL SERVICE         FILE_LIST_DIRECTORY+FILE_ADD_SUBDIRECTORY   allow   container_inherit
+   NETWORK SERVICE       FILE_LIST_DIRECTORY+FILE_ADD_SUBDIRECTORY   allow   container_inherit
+   SERVICE               FILE_LIST_DIRECTORY+FILE_ADD_SUBDIRECTORY   allow   container_inherit
+   WRITE RESTRICTED      FILE_ADD_SUBDIRECTORY   allow   container_inherit
+
+c:\ProgramData\Microsoft\Windows\WER\ReportQueue
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Authenticated Users   FILE_LIST_DIRECTORY   allow   container_inherit
+   LOCAL SERVICE         FILE_LIST_DIRECTORY+FILE_ADD_SUBDIRECTORY   allow   container_inherit
+   NETWORK SERVICE       FILE_LIST_DIRECTORY+FILE_ADD_SUBDIRECTORY   allow   container_inherit
+   SERVICE               FILE_LIST_DIRECTORY+FILE_ADD_SUBDIRECTORY   allow   container_inherit
+   WRITE RESTRICTED      FILE_ADD_SUBDIRECTORY   allow   container_inherit
+
+c:\ProgramData\Microsoft\Windows\WER\ReportQueue\<SUBDIRECTORY>
+
+   Owner: SYSTEM
+
+   DACL(pseudo_protected):
+   Administrators        full   allow   container_inherit+object_inherit
+   SYSTEM                read_execute+write   allow   container_inherit+object_inherit
+   WRITE RESTRICTED      write+READ_CONTROL   allow   container_inherit+object_inherit
+
+c:\ProgramData\Microsoft\Windows Defender
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\Windows Defender\Definition Updates
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\Windows NT\MSFax
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   container_inherit+object_inherit
+   Fax                   full   allow   container_inherit+object_inherit
+
+c:\ProgramData\Microsoft\Windows NT\MSFax\Common Coverpages
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   container_inherit+object_inherit
+   Everyone              read_execute   allow   container_inherit+object_inherit
+
+c:\ProgramData\Microsoft\Windows NT\MSFax\Common Coverpages\<LANGUAGE CODE>
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\Windows NT\MSFax\Inbox
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   container_inherit+object_inherit
+   Fax                   full   allow   container_inherit+object_inherit
+
+c:\ProgramData\Microsoft\Windows NT\MSFax\Queue
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   container_inherit+object_inherit
+   Fax                   full   allow   container_inherit+object_inherit
+
+c:\ProgramData\Microsoft\Windows NT\MSFax\SentItems
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   container_inherit+object_inherit
+   Fax                   full   allow   container_inherit+object_inherit
+
+c:\ProgramData\Microsoft\Windows NT\MSFax\VirtualInbox\<LANGUAGE CODE>
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\Windows NT\MSScan
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\ProgramData\Microsoft\WwanSvc\Profiles
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Guests                full   deny   no_inheritance
+   Guests                full   deny   container_inherit+object_inherit+inherit_only
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   WwanSvc               full   allow   no_inheritance
+   WwanSvc               full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read+FILE_ADD_SUBDIRECTORY   allow   container_inherit+object_inherit
+   SYSTEM                read+FILE_ADD_SUBDIRECTORY   allow   container_inherit+object_inherit
+   Everyone              read+FILE_ADD_SUBDIRECTORY   allow   container_inherit+object_inherit
+
+c:\ProgramData\Start Menu
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+   Everyone              read_execute   allow   no_inheritance
+   SYSTEM                full   allow   no_inheritance
+   Administrators        full   allow   no_inheritance
+
+c:\ProgramData\Templates
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+   Everyone              read_execute   allow   no_inheritance
+   SYSTEM                full   allow   no_inheritance
+   Administrators        full   allow   no_inheritance
+
+c:\Recovery
+
+   Owner: SYSTEM
+
+   DACL(pseudo_protected):
+   Administrators        full   allow   container_inherit+object_inherit
+
+c:\System Volume Information
+
+   Owner: Administrators
+
+   DACL(protected):
+   SYSTEM                full   allow   container_inherit+object_inherit
+
+c:\System Volume Information\SPP
+
+   Owner: Administrators
+
+   DACL(protected):
+   Administrators        full   allow   container_inherit+object_inherit
+   SYSTEM                full   allow   container_inherit+object_inherit
+
+c:\System Volume Information\SPP\OnlineMetadataCache
+
+   Owner: Administrators
+
+   DACL(protected):
+   Administrators        full   allow   container_inherit+object_inherit
+   SYSTEM                full   allow   container_inherit+object_inherit
+
+c:\Users
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   Everyone              read_execute   allow   no_inheritance
+   Everyone              read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Users\All Users
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+   Everyone              read_execute   allow   no_inheritance
+   SYSTEM                full   allow   no_inheritance
+   Administrators        full   allow   no_inheritance
+
+c:\Users\Default\AppData\Local\Application Data
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Default\AppData\Local\History
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Default\AppData\Local\Temporary Internet Files
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Default\Application Data
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Default\Cookies
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Default\Documents\My Music
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Default\Documents\My Pictures
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Default\Documents\My Videos
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Default\Local Settings
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Default\My Documents
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Default\NetHood
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Default\PrintHood
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Default\Recent
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Default\SendTo
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Default\Start Menu
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Default\Templates
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Default User
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+   Everyone              read_execute   allow   no_inheritance
+   SYSTEM                full   allow   no_inheritance
+   Administrators        full   allow   no_inheritance
+
+c:\Users\Helge
+
+   Owner: SYSTEM
+
+   DACL(protected):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   Helge                 full   allow   container_inherit+object_inherit
+
+c:\Users\Helge\AppData\Local\Application Data
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Helge\AppData\Local\History
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Helge\AppData\Local\Microsoft\Windows\WER\ReportArchive
+
+   Owner: Helge
+
+   DACL(pseudo_protected):
+   Administrators        full   allow   container_inherit+object_inherit
+   Helge                 full   allow   container_inherit+object_inherit
+
+c:\Users\Helge\AppData\Local\Temporary Internet Files
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Helge\Application Data
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Helge\Cookies
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Helge\Documents\My Music
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Helge\Documents\My Pictures
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Helge\Documents\My Videos
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Helge\Local Settings
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Helge\My Documents
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Helge\NetHood
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Helge\PrintHood
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Helge\Recent
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Helge\SendTo
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Helge\Start Menu
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Helge\Templates
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+
+c:\Users\Public
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   container_inherit+object_inherit
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   container_inherit+object_inherit
+   INTERACTIVE           change+FILE_DELETE_CHILD   allow   container_inherit+object_inherit+inherit_only
+   INTERACTIVE           read_execute+FILE_ADD_FILE+FILE_ADD_SUBDIRECTORY   allow   no_inheritance
+   SERVICE               change+FILE_DELETE_CHILD   allow   container_inherit+object_inherit+inherit_only
+   SERVICE               read_execute+FILE_ADD_FILE+FILE_ADD_SUBDIRECTORY   allow   no_inheritance
+   BATCH                 change+FILE_DELETE_CHILD   allow   container_inherit+object_inherit+inherit_only
+   BATCH                 read_execute+FILE_ADD_FILE+FILE_ADD_SUBDIRECTORY   allow   no_inheritance
+
+c:\Users\Public\Desktop
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   container_inherit+object_inherit
+   INTERACTIVE           read_execute   allow   container_inherit+object_inherit
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Helge                 FILE_DELETE_CHILD+DELETE   allow   container_inherit+object_inherit+inherit_only
+
+c:\Users\Public\Documents\My Music
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+   Everyone              read_execute   allow   no_inheritance
+   SYSTEM                full   allow   no_inheritance
+   Administrators        full   allow   no_inheritance
+
+c:\Users\Public\Documents\My Pictures
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+   Everyone              read_execute   allow   no_inheritance
+   SYSTEM                full   allow   no_inheritance
+   Administrators        full   allow   no_inheritance
+
+c:\Users\Public\Documents\My Videos
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Everyone              FILE_LIST_DIRECTORY   deny   no_inheritance
+   Everyone              read_execute   allow   no_inheritance
+   SYSTEM                full   allow   no_inheritance
+   Administrators        full   allow   no_inheritance
+
+c:\Users\Public\Recorded TV
+
+   Owner: Administrators
+
+   DACL(not_protected+auto_inherited):
+   ehSched               change+FILE_DELETE_CHILD   allow   container_inherit+object_inherit
+   ehRecvr               change+FILE_DELETE_CHILD   allow   container_inherit+object_inherit
+
+c:\Windows
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\AppCompat\Programs
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   container_inherit+object_inherit
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Users                 FILE_TRAVERSE+READ_CONTROL   allow   container_inherit+object_inherit
+   TrustedInstaller      full   allow   container_inherit+object_inherit
+
+c:\Windows\AppPatch\Custom
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+inherit_only
+
+c:\Windows\Boot
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\CSC\v2.0.6
+
+   Owner: Administrators
+
+   DACL(pseudo_protected):
+   SYSTEM                full   allow   no_inheritance
+
+c:\Windows\CSC\v2.0.6\namespace
+
+   Owner: SYSTEM
+
+   DACL(not_protected):
+   SYSTEM                full   allow   no_inheritance
+
+c:\Windows\CSC\v2.0.6\temp
+
+   Owner: SYSTEM
+
+   DACL(not_protected):
+   SYSTEM                full   allow   no_inheritance
+
+c:\Windows\debug\WIA
+
+   Owner: SYSTEM
+
+   DACL(pseudo_protected):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   LOCAL SERVICE                     change+FILE_DELETE_CHILD   allow   container_inherit+object_inherit
+   Authenticated Users   change+FILE_DELETE_CHILD   allow   container_inherit+object_inherit
+
+c:\Windows\diagnostics
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\Help\Corporate
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\Help\OEM
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\inf\TAPISRV\<LANGUAGE CODE>
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\Installer
+
+   Owner: Administrators
+
+   DACL(pseudo_protected):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Everyone              read_execute   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+
+c:\Windows\LiveKernelReports
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\Logs\HomeGroup
+
+   Owner: HomeGroupProvider
+
+   DACL(protected+auto_inherited):
+   HomeGroupProvider   full   allow   container_inherit+object_inherit
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+
+c:\Windows\Logs\SystemRestore
+
+   Owner: Administrators
+
+   DACL(protected):
+   Administrators        full   allow   container_inherit+object_inherit
+   SYSTEM                full   allow   container_inherit+object_inherit
+
+c:\Windows\ModemLogs
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   NETWORK SERVICE                   write+read+DELETE   allow   no_inheritance
+   NETWORK SERVICE                   write+read+DELETE   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\PLA\Reports
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+   Performance Log Users read_execute+FILE_ADD_FILE   allow   container_inherit+object_inherit
+
+c:\Windows\PLA\Rules
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+   Performance Log Users read_execute+FILE_ADD_FILE   allow   container_inherit+object_inherit
+
+c:\Windows\PLA\System
+
+   Owner: Administrators
+
+   DACL(not_protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   pla   change+FILE_DELETE_CHILD   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\PLA\Templates
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+   Performance Log Users read_execute+FILE_ADD_FILE   allow   container_inherit+object_inherit
+
+c:\Windows\Prefetch
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\Registration
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   object_inherit
+   Everyone              read_execute   allow   object_inherit
+   SYSTEM                full   allow   object_inherit
+
+c:\Windows\Registration\CRMLog
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        write+read+FILE_DELETE_CHILD+WRITE_OWNER+WRITE_DAC+DELETE   allow   container_inherit+object_inherit
+   SYSTEM                write+read+FILE_DELETE_CHILD+WRITE_OWNER+WRITE_DAC+DELETE   allow   container_inherit+object_inherit
+   Users                 read+FILE_ADD_FILE   allow   no_inheritance
+   Users                 write+read+DELETE   allow   object_inherit+inherit_only
+
+c:\Windows\RemotePackages
+
+   Owner: Administrators
+
+   DACL(not_protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit+inherit_only
+   Administrators        full   allow   container_inherit+inherit_only
+   Authenticated Users   read_execute   allow   no_inheritance
+   Authenticated Users   read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\rescache
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\schemas\EAPHost
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\schemas\EAPMethods
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\schemas\TSWorkSpace
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\security\audit
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   container_inherit+object_inherit
+   SYSTEM                full   allow   container_inherit+object_inherit
+
+c:\Windows\ServiceProfiles\LocalService
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   LOCAL SERVICE                     full   allow   container_inherit+object_inherit
+
+c:\Windows\ServiceProfiles\NetworkService
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   NETWORK SERVICE                   full   allow   container_inherit+object_inherit
+
+c:\Windows\ServiceProfiles\NetworkService\AppData\Local\Microsoft\Windows Media Player NSS\3.0\Icon Files
+
+   Owner: NETWORK SERVICE
+
+   DACL(not_protected+auto_inherited):
+   INTERACTIVE           read   allow   container_inherit+object_inherit
+
+c:\Windows\ServiceProfiles\NetworkService\AppData\Local\Microsoft\Windows Media Player NSS\3.0\SCPD
+
+   Owner: NETWORK SERVICE
+
+   DACL(not_protected+auto_inherited):
+   LOCAL SERVICE         read   allow   container_inherit+object_inherit
+
+c:\Windows\ServiceProfiles\NetworkService\AppData\Roaming\Microsoft\SoftwareProtectionPlatform\Cache
+
+   Owner: NETWORK SERVICE
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   sppsvc   write+read+DELETE   allow   container_inherit+object_inherit
+   Everyone              read   allow   container_inherit+object_inherit
+
+c:\Windows\servicing
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\servicing\Editions
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\Speech\Common
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\Speech\Engines\Lexicon\<LANGUAGE CODE>
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\Speech\Engines\SR\<LANGUAGE CODE>
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\AdvancedInstallers
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\appmgmt
+
+   Owner: SYSTEM
+
+   DACL(pseudo_protected):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   Everyone              read_execute   allow   no_inheritance
+
+c:\Windows\System32\appmgmt\S-1-5-18
+
+   Owner: SYSTEM
+
+   DACL(not_protected):
+   SYSTEM                read_execute   allow   container_inherit+object_inherit
+
+c:\Windows\System32\Boot
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\catroot
+
+   Owner: Administrators
+
+   DACL(not_protected+auto_inherited):
+   CryptSvc              full   allow   no_inheritance
+   CryptSvc              full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\catroot2
+
+   Owner: Administrators
+
+   DACL(not_protected+auto_inherited):
+   CryptSvc              full   allow   no_inheritance
+   CryptSvc              full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\catroot2\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}
+
+   Owner: NETWORK SERVICE
+
+   DACL(not_protected+auto_inherited):
+   CryptSvc              full   allow   container_inherit+object_inherit
+   Users                 read_execute   allow   container_inherit+object_inherit
+   Authenticated Users   change   allow   no_inheritance
+
+c:\Windows\System32\com\dmp
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        write+read+FILE_DELETE_CHILD+WRITE_OWNER+WRITE_DAC+DELETE   allow   container_inherit+object_inherit
+   CREATOR OWNER         write+read+FILE_DELETE_CHILD+WRITE_OWNER+WRITE_DAC+DELETE   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                write+read+FILE_DELETE_CHILD+WRITE_OWNER+WRITE_DAC+DELETE   allow   container_inherit+object_inherit
+   Users                 FILE_ADD_FILE+FILE_ADD_SUBDIRECTORY   allow   container_inherit
+
+c:\Windows\System32\config
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   container_inherit
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\config\systemprofile
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+
+c:\Windows\System32\<LANGUAGE CODE>\Licenses
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\DriverStore
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Everyone              read_execute   allow   no_inheritance
+   Everyone              read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\FxsTmp
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Users                 FILE_TRAVERSE   deny   container_inherit+object_inherit+inherit_only
+   Users                 FILE_LIST_DIRECTORY+FILE_ADD_FILE   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit
+   SYSTEM                full   allow   container_inherit+object_inherit
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\GroupPolicy
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Authenticated Users   read_execute   allow   no_inheritance
+   Authenticated Users   read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\GroupPolicyUsers
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Authenticated Users   read_execute   allow   no_inheritance
+   Authenticated Users   read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\ias
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   NETWORK SERVICE       read_execute+write   allow   no_inheritance
+   NETWORK SERVICE       read_execute+write   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\icsxml
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\LogFiles\Fax\Incoming
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   container_inherit+object_inherit
+   Fax                   full   allow   container_inherit+object_inherit
+
+c:\Windows\System32\LogFiles\Fax\Outgoing
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   container_inherit+object_inherit
+   Fax                   full   allow   container_inherit+object_inherit
+
+c:\Windows\System32\LogFiles\Firewall
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   MpsSvc                full   allow   object_inherit
+   SYSTEM                full   allow   object_inherit
+   Administrators        full   allow   object_inherit
+
+c:\Windows\System32\LogFiles\WMI
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   LOCAL SERVICE         full   allow   container_inherit+object_inherit
+   NETWORK SERVICE       full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   Performance Log Users full   allow   container_inherit+object_inherit
+
+c:\Windows\System32\LogFiles\WMI\RtBackup
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit+object_inherit
+
+c:\Windows\System32\LogFiles\WUDF
+
+   Owner: Administrators
+
+   DACL(not_protected+auto_inherited):
+   wudfsvc               write+read   allow   container_inherit+object_inherit
+   LOCAL SERVICE         FILE_ADD_FILE+READ_CONTROL   allow   container_inherit+object_inherit
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+
+c:\Windows\System32\Msdtc
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   MSDTC                 read_execute+write   allow   no_inheritance
+   MSDTC                 full   allow   container_inherit+object_inherit+inherit_only
+   KtmRm                 read_execute+write   allow   no_inheritance
+   KtmRm                 full   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\Msdtc\Trace
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change+WRITE_DAC   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   MSDTC                 read_execute+write   allow   no_inheritance
+   MSDTC                 full   allow   container_inherit+object_inherit+inherit_only
+   KtmRm                 read_execute+write   allow   no_inheritance
+   KtmRm                 full   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\NDF
+
+   Owner: Administrators
+
+   DACL(not_protected+auto_inherited):
+   WdiServiceHost        full   allow   no_inheritance
+   WdiServiceHost        full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\NetworkList
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   netprofm              full   allow   container_inherit+object_inherit
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+
+c:\Windows\System32\NetworkList\Icons\StockIcons
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+inherit_only
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\Recovery
+
+   Owner: Administrators
+
+   DACL(not_protected+auto_inherited):
+   ANONYMOUS LOGON       full   deny   no_inheritance
+   ANONYMOUS LOGON       full   deny   container_inherit+object_inherit+inherit_only
+   NETWORK SERVICE       read   allow   no_inheritance
+   NETWORK SERVICE       read   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\Speech\Common
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\Speech\Engines\SR
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\Speech\SpeechUX
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\spool\drivers
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Everyone              read_execute   allow   no_inheritance
+   Everyone              read_execute   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\spool\drivers\color
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   container_inherit
+   SYSTEM                change   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute+FILE_ADD_FILE   allow   container_inherit+object_inherit
+   CREATOR OWNER         write+read+DELETE   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\spool\PRINTERS
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Users                 FILE_ADD_FILE+FILE_ADD_SUBDIRECTORY+FILE_READ_EA+FILE_READ_ATTRIBUTES   allow   container_inherit
+   Administrators        write+read+FILE_DELETE_CHILD+WRITE_OWNER+WRITE_DAC+DELETE   allow   no_inheritance
+   CREATOR OWNER         write+read+FILE_DELETE_CHILD+WRITE_OWNER+WRITE_DAC+DELETE   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                write+read+FILE_DELETE_CHILD+WRITE_OWNER+WRITE_DAC+DELETE   allow   container_inherit+object_inherit
+   Administrators        write+read+FILE_DELETE_CHILD+WRITE_OWNER+WRITE_DAC+DELETE   allow   container_inherit+object_inherit
+
+c:\Windows\System32\Tasks
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   container_inherit
+   Administrators        write+read+WRITE_OWNER+WRITE_DAC+DELETE   allow   object_inherit
+   SYSTEM                full   allow   container_inherit
+   SYSTEM                write+read+WRITE_OWNER+WRITE_DAC+DELETE   allow   object_inherit
+   Authenticated Users   write+READ_CONTROL   allow   container_inherit
+   NETWORK SERVICE       write+READ_CONTROL   allow   container_inherit
+   LOCAL SERVICE         write+READ_CONTROL   allow   container_inherit
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\Tasks\Microsoft
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   container_inherit
+   Administrators        write+read+WRITE_OWNER+WRITE_DAC+DELETE   allow   object_inherit
+   SYSTEM                full   allow   container_inherit
+   SYSTEM                write+read+WRITE_OWNER+WRITE_DAC+DELETE   allow   object_inherit
+   Authenticated Users   read   allow   container_inherit+object_inherit
+   LOCAL SERVICE         read   allow   container_inherit+object_inherit
+   NETWORK SERVICE       read   allow   container_inherit+object_inherit
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\Tasks\Microsoft\Windows\Media Center
+
+   Owner: Administrators
+
+   DACL(not_protected+auto_inherited):
+   NETWORK SERVICE       change+FILE_DELETE_CHILD+WRITE_DAC   allow   container_inherit+object_inherit
+
+c:\Windows\System32\Tasks\Microsoft\Windows\Media Center\Extender
+
+   Owner: Administrators
+
+   DACL(pseudo_protected+auto_inherited):
+   Administrators        full   allow   no_inheritance
+   SYSTEM                full   allow   no_inheritance
+   Users                 read_execute   allow   no_inheritance
+
+c:\Windows\System32\Tasks\Microsoft\Windows\PLA
+
+   Owner: Administrators
+
+   DACL(not_protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   Performance Log Users read_execute+FILE_ADD_FILE   allow   container_inherit+object_inherit
+
+c:\Windows\System32\Tasks\Microsoft\Windows\PLA\System
+
+   Owner: Administrators
+
+   DACL(pseudo_protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   Everyone              read_execute+FILE_ADD_FILE   allow   container_inherit+object_inherit
+
+c:\Windows\System32\Tasks\Microsoft\Windows\RemoteApp and Desktop Connections Update
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   container_inherit
+   Administrators        write+read+WRITE_OWNER+WRITE_DAC+DELETE   allow   object_inherit
+   SYSTEM                full   allow   container_inherit
+   SYSTEM                write+read+WRITE_OWNER+WRITE_DAC+DELETE   allow   object_inherit
+   Authenticated Users   write+READ_CONTROL   allow   container_inherit
+   NETWORK SERVICE       write+READ_CONTROL   allow   container_inherit
+   LOCAL SERVICE         write+READ_CONTROL   allow   container_inherit
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\Tasks\Microsoft\Windows\SyncCenter
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Users                 read_execute+FILE_ADD_SUBDIRECTORY   allow   no_inheritance
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\wbem\AutoRecover
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   NETWORK SERVICE       read   allow   no_inheritance
+   NETWORK SERVICE       read   allow   container_inherit+object_inherit+inherit_only
+   Backup Operators      write+read   allow   no_inheritance
+   Backup Operators      write+read   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   OWNER RIGHTS          READ_CONTROL   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\wbem\Logs
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   NETWORK SERVICE       write+read+DELETE   allow   no_inheritance
+   NETWORK SERVICE       write+read+DELETE   allow   container_inherit+object_inherit+inherit_only
+   Backup Operators      write+read   allow   no_inheritance
+   Backup Operators      write+read   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   OWNER RIGHTS          READ_CONTROL   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\wbem\MOF
+
+   Owner: SYSTEM
+
+   DACL(protected+auto_inherited):
+   Administrators        full   allow   container_inherit+object_inherit
+   SYSTEM                full   allow   container_inherit+object_inherit
+
+c:\Windows\System32\wbem\Repository
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+   NETWORK SERVICE       read   allow   no_inheritance
+   NETWORK SERVICE       read   allow   container_inherit+object_inherit+inherit_only
+   Backup Operators      write+read   allow   no_inheritance
+   Backup Operators      write+read   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   OWNER RIGHTS          READ_CONTROL   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\wdi
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Guests                full   deny   no_inheritance
+   Guests                full   deny   container_inherit+object_inherit+inherit_only
+   ANONYMOUS LOGON       full   deny   no_inheritance
+   ANONYMOUS LOGON       full   deny   container_inherit+object_inherit+inherit_only
+   Administrators        FILE_TRAVERSE   deny   object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   DPS                   write+read+DELETE   allow   no_inheritance
+   DPS                   write+read+DELETE   allow   container_inherit+object_inherit+inherit_only
+   WdiServiceHost        write+read+DELETE   allow   no_inheritance
+   WdiServiceHost        write+read+DELETE   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\wdi\perftrack\traces
+
+   Owner: SYSTEM
+
+   DACL(not_protected+auto_inherited):
+   WdiServiceHost        write+read   allow   no_inheritance
+   WdiServiceHost        write+read   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\wfp
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   SYSTEM                full   allow   container_inherit
+   SYSTEM                write+read+FILE_DELETE_CHILD+WRITE_OWNER+WRITE_DAC+DELETE   allow   object_inherit+inherit_only
+   Administrators        full   allow   container_inherit
+   Administrators        write+read+FILE_DELETE_CHILD+WRITE_OWNER+WRITE_DAC+DELETE   allow   object_inherit+inherit_only
+   BFE                   write+read   allow   container_inherit+object_inherit
+
+c:\Windows\System32\WindowsPowerShell\v1.0\<LANGUAGE CODE>
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   no_inheritance
+   TrustedInstaller      full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                read_execute   allow   no_inheritance
+   SYSTEM                read_execute   allow   container_inherit+object_inherit+inherit_only
+   Administrators        read_execute   allow   no_inheritance
+   Administrators        read_execute   allow   container_inherit+object_inherit+inherit_only
+   Users                 read_execute   allow   no_inheritance
+   Users                 read_execute   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\System32\winevt
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   eventlog              read_execute+write+FILE_DELETE_CHILD   allow   container_inherit+object_inherit
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   Authenticated Users   read   allow   container_inherit
+
+c:\Windows\System32\winevt\Logs
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   eventlog              full   allow   container_inherit+object_inherit
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Administrators        full   allow   container_inherit+object_inherit
+   Authenticated Users   read   allow   container_inherit
+
+c:\Windows\TAPI
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   TapiSrv               full   allow   no_inheritance
+   TapiSrv               full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   Users                 read   allow   no_inheritance
+   Users                 read   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\Tasks
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Authenticated Users   read_execute+FILE_ADD_FILE   allow   no_inheritance
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   Administrators        full   allow   no_inheritance
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\Temp
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   Users                 FILE_ADD_FILE+FILE_ADD_SUBDIRECTORY+FILE_TRAVERSE   allow   container_inherit
+   Administrators        full   allow   no_inheritance
+   Administrators        full   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   no_inheritance
+   SYSTEM                full   allow   container_inherit+object_inherit+inherit_only
+   CREATOR OWNER         full   allow   container_inherit+object_inherit+inherit_only
+
+c:\Windows\tracing
+
+   Owner: Administrators
+
+   DACL(protected+auto_inherited):
+   LOCAL SERVICE         read_execute+write   allow   no_inheritance
+   LOCAL SERVICE         read_execute+write   allow   container_inherit+object_inherit+inherit_only
+   NETWORK SERVICE       read_execute+write   allow   no_inheritance
+   NETWORK SERVICE       read_execute+write   allow   container_inherit+object_inherit+inherit_only
+   SYSTEM                full   allow   container_inherit+object_inherit
+   Users                 read_execute+write   allow   no_inheritance
+   Users                 read_execute+write   allow   container_inherit+inherit_only
+   Users                 write+read   allow   no_inheritance
+   Users                 write+read   allow   object_inherit+inherit_only
+   Administrators        change   allow   no_inheritance
+   Administrators        change   allow   container_inherit+inherit_only
+   Administrators        write+read+DELETE   allow   no_inheritance
+   Administrators        write+read+DELETE   allow   object_inherit+inherit_only
+
+c:\Windows\Vss
+
+   Owner: Administrators
+
+   DACL(not_protected+auto_inherited):
+   Backup Operators      full   allow   container_inherit+object_inherit
+   LOCAL SERVICE         full   allow   container_inherit+object_inherit
+   NETWORK SERVICE       full   allow   container_inherit+object_inherit
+
+c:\Windows\winsxs
+
+   Owner: TrustedInstaller
+
+   DACL(protected+auto_inherited):
+   TrustedInstaller      full   allow   container_inherit+object_inherit
+   Administrators        read_execute   allow   container_inherit+object_inherit
+   SYSTEM                read_execute   allow   container_inherit+object_inherit
+   Users                 read_execute   allow   container_inherit+object_inherit

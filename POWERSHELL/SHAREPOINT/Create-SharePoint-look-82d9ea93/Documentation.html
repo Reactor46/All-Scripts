@@ -1,0 +1,687 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Create SharePoint look upcolumn in sharepoin in Microsoft SharePoint Server 2010</title>        
+        <meta name="description" content="This is  all about dropdown column .we are creating dropdown column in list. This part of code will work for list and library both.CreateDropDownField &quot;ColumnDisplayName&quot; &quot;ColumnInternalName&quot; &quot;Choice&quot; &quot;SiteCollectionurl/TestSite&quot;  &quot;CustomListName&quot;     &quot;Dropdown&quot; &quot;ABC&quot; &quot;ColumnDisp" />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<p>This is &nbsp;all about dropdown column .we are creating dropdown column in list.</p>
+<p>&nbsp;This part of code will work for list and library both.</p>
+<p>CreateDropDownField &quot;ColumnDisplayName&quot; &quot;ColumnInternalName&quot; &quot;Choice&quot; &quot;<a href="http://eccoe-sps2010:12345/sites/Azasite/TestSite">SiteCollectionurl/TestSite</a>&quot;&nbsp; &quot;CustomListName&quot;&nbsp;&nbsp;&nbsp;&nbsp; &quot;Dropdown&quot; &quot;ABC&quot; &quot;ColumnDisplayName&quot;;&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp; CreateFieldLookUp &quot;Compound&quot; &quot;Compound&quot; &quot;LookUp&quot; &quot;http://eccoe-sps2010:12345/sites/Azasite/TestSite&quot;&nbsp; &quot;Team_TeamRoster&quot; &quot;Team_Compound&quot; &quot;Title&quot; &quot;false&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;;</p>
+<p>Will create look up column in custom list</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>Windows Shell Script</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">windowsshell</span>
+<pre class="hidden"># check to ensure Microsoft.SharePoint.PowerShell is loaded
+cls;
+Write-Host &quot;Loading SharePoint Powershell Snapin&quot; -ForegroundColor Blue
+Add-PSSnapin &quot;Microsoft.SharePoint.Powershell&quot; -ErrorAction SilentlyContinue
+
+
+Write-Host &quot;Loading SharePoint Assembly&quot; -ForegroundColor Blue
+[System.Reflection.Assembly]::LoadWithPartialName(&quot;Microsoft.SharePoint&quot;)
+#[System.Reflection.Assembly]::LoadWithPartialName(&quot;System.Xml&quot;)
+[System.Reflection.Assembly]::LoadWithPartialName(&quot;Microsoft.SharePoint.WebPartPages&quot;) 
+#[System.Reflection.Assembly]::LoadWithPartialName(&quot;Microsoft.SharePoint.Publishing&quot;)  
+#[Reflection.Assembly]::LoadWithPartialName(&quot;Microsoft.SharePoint.Taxonomy&quot;)
+
+
+
+
+
+
+function Main-Function ()
+{
+		CreateDropDownField &quot;CompoundTemp&quot; &quot;CompoundTemp&quot; &quot;Choice&quot; &quot;http://eccoe-sps2010:12345/sites/Azasite/TestSite&quot;  &quot;Team_TeamRoster&quot;     &quot;Dropdown&quot; &quot;ABC&quot; &quot;Compound&quot;;	
+       CreateFieldLookUp &quot;Compound&quot; &quot;Compound&quot; &quot;LookUp&quot; &quot;http://eccoe-sps2010:12345/sites/Azasite/TestSite&quot;  &quot;Team_TeamRoster&quot; &quot;Team_Compound&quot; &quot;Title&quot; &quot;false&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;; 
+}
+
+
+function CreateDropDownField([string] $fieldDisplayName,[string] $fieldInternalName,[string] $fieldDataType, [string] $DestinationSiteUrl,
+                     [string] $DestinationListName, [string] $ChoiceClmnDisplayType, [string] $ChoiceClmnItems, [string] $Compound)
+{
+    # Load Web and List 
+                try{         
+                
+                #region Load List and Web
+                try{
+
+								$dstListWeb = Get-SPWeb -identity $DestinationSiteUrl;              
+                                $destinationListUrl = $dstListWeb.ServerRelativeUrl &#43; &quot;/&quot; &#43; $DestinationListName;
+                                $DestinationList = $dstListWeb.GetList($destinationListUrl);	
+								
+                }
+                catch{
+                                $dstListWeb = Get-SPWeb -identity $DestinationSiteUrl;              
+                                $destinationListUrl = $dstListWeb.ServerRelativeUrl &#43; &quot;/lists/&quot; &#43; $DestinationListName;
+                                $DestinationList = $dstListWeb.GetList($destinationListUrl);
+                }
+                
+                #endregion
+                Write-Host &quot;DestinationList&quot; $DestinationList;
+                
+	            #region Create DropDown Choice Field
+		
+	                        
+									  
+									  $SourceField = $null;	
+							
+							$SourceField = $DestinationList.Fields.GetFieldByInternalName($Compound);
+									   
+							[int]$hh = 0;
+	                        [int]$SourceFieldChoicesCount = $SourceField.Choices.Count;
+
+					if($SourceField -ne $null)
+					{
+						try{
+
+	                            $ChoceFieldValues = $SourceField.Choices;
+						
+	                              for($hh -eq 0; $hh -lt $SourceFieldChoicesCount; $hh&#43;&#43;)
+	                              {   
+								 
+								  
+	                                 $ChoiceClmnItems=$ChoiceClmnItems &#43; $ChoceFieldValues[$hh]&#43;&quot;;&quot;;
+	                              }
+													
+								#region function is for generating/appending Log File				
+								$Message = &quot;$FieldName_Meeting lookup field has been set to $LookupFieldName field&quot;;
+								Write-Host $Message;
+								$count=$count&#43;1;
+								Generate-LogFile $Message $count $LogFileDayF;
+								#endregion function is for generating/appending Log File
+						}
+						catch
+						{						
+								#region function is for generating/appending Log File
+								$Message = &quot;Error : While updating $ListFieldName field's property.&quot;
+								Write-Host $Message;
+								$count=$count&#43;1;
+								Generate-LogFile $Message $count $LogFileDayF;
+								#endregion function is for generating/appending Log File
+						}
+						
+					}
+
+	                
+					if($fieldDataType -eq &quot;Choice&quot;)
+	                {
+	                #region column of type 'Choice'
+	                
+	                #region Get Choice Items
+	                $ChoiceItems = $ChoiceClmnItems.split(&quot;;&quot;);
+	                $Choices = &quot;&lt;CHOICES&gt;&quot;;
+
+	                for ($k=0; $k -le $ChoiceItems.length; $k&#43;&#43;)
+	                                {
+	                                $Choices = $Choices &#43; &quot;&lt;CHOICE&gt;&quot;;
+	                                $Choices = $Choices &#43; $ChoiceItems[$k];
+	                                $Choices = $Choices &#43; &quot;&lt;/CHOICE&gt;&quot;;
+	                                }
+	                $Choices = $Choices &#43; &quot;&lt;/CHOICES&gt;&quot;;
+	                
+					
+					
+	                #endregion
+	                
+	                if($ChoiceClmnDisplayType -eq &quot;Dropdown&quot;)
+	                {
+	    				$ColXml = &quot;&lt;Field Type='Choice' Format='Dropdown' FillInChoice='FALSE' DisplayName='&quot; &#43; $fieldInternalName &#43; &quot;' StaticName='&quot; &#43; $fieldInternalName &#43;&quot;' Name='&quot; &#43; $fieldInternalName &#43; &quot;' &gt;&quot; &#43; $Choices &#43; &quot;&lt;/Field&gt;&quot;;
+	    			}     
+	    
+	                $DestinationList.Fields.AddFieldAsXml($ColXml,$true, [Microsoft.SharePoint.SPAddFieldOptions]::AddFieldToDefaultView);
+	                $DestinationList.Update();
+	                #endregion
+	                }
+
+	                #endregion
+	                
+     
+                
+                #region function is for generating/appending Log File
+                $Message = &quot;Field &quot; &#43; $fieldDisplayName &#43; &quot;Created in destination list &quot; &#43; $DestinationListName &#43;&quot; type &quot;&#43;$fieldDataType;
+                #Bellow function is for generating Log File                            
+                $count=$count&#43;1;
+                Generate-LogFile $Message $count $LogFileDayF;
+                #endregion function is for generating/appending Log File
+                
+    }
+                catch{
+                                                
+                        #region function is for generating/appending Log File
+                        $Message = &quot;Error : in Create DropDown  Field Function is $_ . List named $DestinationListName does not exist on $DestinationSiteUrl&quot;
+                        #Bellow function is for generating Log File                            
+                        $count=$count&#43;1;
+                        Generate-LogFile $Message $count $LogFileDayF;
+                        #endregion function is for generating/appending Log File
+                                        
+                        Write-Host -ForegroundColor red $Message;
+                }
+				
+				
+}
+
+
+#region CreateField Function
+function CreateFieldLookUp([string] $fieldDisplayName,[string] $fieldInternalName,[string] $fieldDataType, [string] $DestinationSiteUrl,
+                     [string] $DestinationListName, [string] $LookUpMasterListName, [string] $LookUpMasterListClmnName, [string] $LookUpAllowMultiple, [string] $MultiLineClmnTextType,
+                                                                                [string] $ChoiceClmnDisplayType, [string] $ChoiceClmnItems, [string] $CalculatedClmnFormula, [string] $CalculatedClmnDataType,
+                                                                                [string] $fieldListView, [string] $UserClmnType)
+{     
+                try
+				{         
+                
+                #region Load List and Web
+                try{
+                                $dstListWeb = Get-SPWeb -identity $DestinationSiteUrl;              
+                                $destinationListUrl = $dstListWeb.ServerRelativeUrl &#43; &quot;/&quot; &#43; $DestinationListName;
+                                $DestinationList = $dstListWeb.GetList($destinationListUrl);
+                }
+                catch{
+                                $dstListWeb = Get-SPWeb -identity $DestinationSiteUrl;              
+                                $destinationListUrl = $dstListWeb.ServerRelativeUrl &#43; &quot;/lists/&quot; &#43; $DestinationListName;
+                                $DestinationList = $dstListWeb.GetList($destinationListUrl);
+                }
+                
+                #endregion
+                Write-Host &quot;DestinationList&quot; $DestinationList;
+                
+    			#region Create Field
+                
+ 
+               if($fieldDataType -eq &quot;Lookup&quot;)
+                {
+                #region column of type 'Lookup'               
+                $lookupListUrl = $dstListWeb.ServerRelativeUrl &#43; &quot;/Lists/&quot; &#43; $LookUpMasterListName;
+                $LookupList = $dstListWeb.GetList($lookupListUrl);
+                $LookupListID = $LookupList.ID;
+                if($LookUpAllowMultiple -eq &quot;true&quot;)
+                {
+                $ColXml = &quot;&lt;Field Type='Lookup' AllowMultipleValues='true' RelationshipDeleteBehavior='None' DisplayName='&quot; &#43; $fieldInternalName &#43; &quot;' StaticName='&quot; &#43; $fieldInternalName &#43;&quot;' Name='&quot; &#43; $fieldInternalName &#43; &quot;' List='{&quot; &#43; $LookupListID &#43; &quot;}' ShowField='&quot; &#43; $LookUpMasterListClmnName &#43;&quot;' /&gt;&quot;;
+    }
+                elseif($LookUpAllowMultiple -eq &quot;false&quot;)
+                {
+                $ColXml = &quot;&lt;Field Type='Lookup' AllowMultipleValues='false' RelationshipDeleteBehavior='None' DisplayName='&quot; &#43; $fieldInternalName &#43; &quot;' StaticName='&quot; &#43; $fieldInternalName &#43;&quot;' Name='&quot; &#43; $fieldInternalName &#43; &quot;' List='{&quot; &#43; $LookupListID &#43; &quot;}' ShowField='&quot; &#43; $LookUpMasterListClmnName &#43;&quot;' /&gt;&quot;;
+                }
+                
+                $DestinationList.Fields.AddFieldAsXml($ColXml,$true, [Microsoft.SharePoint.SPAddFieldOptions]::AddFieldToDefaultView);
+                $DestinationList.Update();
+                #endregion
+                }
+               
+             
+                #endregion
+                
+                               
+         
+                
+                #region function is for generating/appending Log File
+                $Message = &quot;Field &quot; &#43; $fieldDisplayName &#43; &quot;Created in destination list &quot; &#43; $DestinationListName &#43;&quot; type &quot;&#43;$fieldDataType;
+                #Bellow function is for generating Log File                            
+                $count=$count&#43;1;
+                Generate-LogFile $Message $count $LogFileDayF;
+                #endregion function is for generating/appending Log File
+                
+    			}
+                catch
+				{
+                                                
+                        #region function is for generating/appending Log File
+                        $Message = &quot;Error : in Create Field Function is $_ . List named $DestinationListName does not exist on $DestinationSiteUrl&quot;
+                        #Bellow function is for generating Log File                            
+                        $count=$count&#43;1;
+                        Generate-LogFile $Message $count $LogFileDayF;
+                        #endregion function is for generating/appending Log File
+                                        
+                        Write-Host -ForegroundColor red $Message;
+                }
+				
+				#region Change the Display Name
+                
+				try{
+	                $spField = $DestinationList.Fields.GetFieldByInternalName($fieldInternalName);
+					if($spField -eq $null)
+					{
+						$spField = $DestinationList.Fields[$fieldInternalName];
+					}
+				
+					if($spField -ne $null)
+					{
+		                $spField.Title = $fieldDisplayName;
+		                $spField.Update();
+	                }
+					else
+					{
+						 #region function is for generating/appending Log File
+		                 $Message = &quot;Field $fieldDisplayName on $DestinationSiteUrl not found&quot;
+		                 #Bellow function is for generating Log File                            
+		                 $count=$count&#43;1;
+		                 Generate-LogFile $Message $count $LogFileDayF;
+		                 #endregion function is for generating/appending Log File
+		                                
+		                 Write-Host -ForegroundColor red $Message;
+					}
+				}
+				catch
+				{
+					#region function is for generating/appending Log File
+	                $Message = &quot;Error : in Create Field Function while changing Display Name is $_ . Field name  $fieldDisplayName on $DestinationSiteUrl&quot;
+	                #Bellow function is for generating Log File                            
+	                $count=$count&#43;1;
+	                Generate-LogFile $Message $count $LogFileDayF;
+	                #endregion function is for generating/appending Log File
+	                                
+	                Write-Host -ForegroundColor red $Message;
+				}
+                #endregion
+}
+
+#endregion CreateField Function
+Main-Function</pre>
+<div class="preview">
+<pre class="windowsshell">#&nbsp;check&nbsp;to&nbsp;ensure&nbsp;Microsoft.SharePoint.PowerShell&nbsp;is&nbsp;loaded&nbsp;
+<span class="windowsshell__command">cls</span>;&nbsp;
+Write<span class="windowsshell__commandext">-Host</span>&nbsp;<span class="windowsshell__string">&quot;Loading&nbsp;SharePoint&nbsp;Powershell&nbsp;Snapin&quot;</span>&nbsp;<span class="windowsshell__commandext">-ForegroundColor</span>&nbsp;Blue&nbsp;
+Add<span class="windowsshell__commandext">-PSSnapin</span>&nbsp;<span class="windowsshell__string">&quot;Microsoft.SharePoint.Powershell&quot;</span>&nbsp;<span class="windowsshell__commandext">-ErrorAction</span>&nbsp;SilentlyContinue&nbsp;
+&nbsp;
+&nbsp;
+Write<span class="windowsshell__commandext">-Host</span>&nbsp;<span class="windowsshell__string">&quot;Loading&nbsp;SharePoint&nbsp;Assembly&quot;</span>&nbsp;<span class="windowsshell__commandext">-ForegroundColor</span>&nbsp;Blue&nbsp;
+[System.Reflection.Assembly]<span class="windowsshell__com">::LoadWithPartialName(&quot;Microsoft.SharePoint&quot;)</span>&nbsp;
+#[System.Reflection.Assembly]<span class="windowsshell__com">::LoadWithPartialName(&quot;System.Xml&quot;)</span>&nbsp;
+[System.Reflection.Assembly]<span class="windowsshell__com">::LoadWithPartialName(&quot;Microsoft.SharePoint.WebPartPages&quot;)&nbsp;</span>&nbsp;
+#[System.Reflection.Assembly]<span class="windowsshell__com">::LoadWithPartialName(&quot;Microsoft.SharePoint.Publishing&quot;)&nbsp;&nbsp;</span>&nbsp;
+#[Reflection.Assembly]<span class="windowsshell__com">::LoadWithPartialName(&quot;Microsoft.SharePoint.Taxonomy&quot;)</span>&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+function&nbsp;Main<span class="windowsshell__commandext">-Function</span>&nbsp;()&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CreateDropDownField&nbsp;<span class="windowsshell__string">&quot;CompoundTemp&quot;</span>&nbsp;<span class="windowsshell__string">&quot;CompoundTemp&quot;</span>&nbsp;<span class="windowsshell__string">&quot;Choice&quot;</span>&nbsp;<span class="windowsshell__string">&quot;http://eccoe-sps2010:12345/sites/Azasite/TestSite&quot;</span>&nbsp;&nbsp;<span class="windowsshell__string">&quot;Team_TeamRoster&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__string">&quot;Dropdown&quot;</span>&nbsp;<span class="windowsshell__string">&quot;ABC&quot;</span>&nbsp;<span class="windowsshell__string">&quot;Compound&quot;</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CreateFieldLookUp&nbsp;<span class="windowsshell__string">&quot;Compound&quot;</span>&nbsp;<span class="windowsshell__string">&quot;Compound&quot;</span>&nbsp;<span class="windowsshell__string">&quot;LookUp&quot;</span>&nbsp;<span class="windowsshell__string">&quot;http://eccoe-sps2010:12345/sites/Azasite/TestSite&quot;</span>&nbsp;&nbsp;<span class="windowsshell__string">&quot;Team_TeamRoster&quot;</span>&nbsp;<span class="windowsshell__string">&quot;Team_Compound&quot;</span>&nbsp;<span class="windowsshell__string">&quot;Title&quot;</span>&nbsp;<span class="windowsshell__string">&quot;false&quot;</span>&nbsp;&quot;<span class="windowsshell__string">&quot;&nbsp;&quot;</span><span class="windowsshell__string">&quot;&nbsp;&quot;</span><span class="windowsshell__string">&quot;&nbsp;&quot;</span><span class="windowsshell__string">&quot;&nbsp;&quot;</span><span class="windowsshell__string">&quot;&nbsp;&quot;</span><span class="windowsshell__string">&quot;&nbsp;&quot;</span>&quot;;&nbsp;&nbsp;
+}&nbsp;
+&nbsp;
+&nbsp;
+function&nbsp;CreateDropDownField([string]&nbsp;<span class="windowsshell__number">$fieldDisplayName</span>,[string]&nbsp;<span class="windowsshell__number">$fieldInternalName</span>,[string]&nbsp;<span class="windowsshell__number">$fieldDataType</span>,&nbsp;[string]&nbsp;<span class="windowsshell__number">$DestinationSiteUrl</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[string]&nbsp;<span class="windowsshell__number">$DestinationListName</span>,&nbsp;[string]&nbsp;<span class="windowsshell__number">$ChoiceClmnDisplayType</span>,&nbsp;[string]&nbsp;<span class="windowsshell__number">$ChoiceClmnItems</span>,&nbsp;[string]&nbsp;<span class="windowsshell__number">$Compound</span>)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Load&nbsp;Web&nbsp;and&nbsp;List&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;Load&nbsp;List&nbsp;and&nbsp;Web&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try{&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$dstListWeb</span>&nbsp;=&nbsp;Get<span class="windowsshell__commandext">-SPWeb</span>&nbsp;<span class="windowsshell__commandext">-identity</span>&nbsp;<span class="windowsshell__number">$DestinationSiteUrl</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$destinationListUrl</span>&nbsp;=&nbsp;<span class="windowsshell__number">$dstListWeb</span>.ServerRelativeUrl&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;/&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$DestinationListName</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$DestinationList</span>&nbsp;=&nbsp;<span class="windowsshell__number">$dstListWeb</span>.GetList(<span class="windowsshell__number">$destinationListUrl</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$dstListWeb</span>&nbsp;=&nbsp;Get<span class="windowsshell__commandext">-SPWeb</span>&nbsp;<span class="windowsshell__commandext">-identity</span>&nbsp;<span class="windowsshell__number">$DestinationSiteUrl</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$destinationListUrl</span>&nbsp;=&nbsp;<span class="windowsshell__number">$dstListWeb</span>.ServerRelativeUrl&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;/lists/&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$DestinationListName</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$DestinationList</span>&nbsp;=&nbsp;<span class="windowsshell__number">$dstListWeb</span>.GetList(<span class="windowsshell__number">$destinationListUrl</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="windowsshell__commandext">-Host</span>&nbsp;<span class="windowsshell__string">&quot;DestinationList&quot;</span>&nbsp;<span class="windowsshell__number">$DestinationList</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;Create&nbsp;DropDown&nbsp;<span class="windowsshell__command">Choice</span>&nbsp;Field&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$SourceField</span>&nbsp;=&nbsp;<span class="windowsshell__number">$null</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$SourceField</span>&nbsp;=&nbsp;<span class="windowsshell__number">$DestinationList</span>.Fields.GetFieldByInternalName(<span class="windowsshell__number">$Compound</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[int]<span class="windowsshell__number">$hh</span>&nbsp;=&nbsp;<span class="windowsshell__number">0</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[int]<span class="windowsshell__number">$SourceFieldChoicesCount</span>&nbsp;=&nbsp;<span class="windowsshell__number">$SourceField</span>.Choices.Count;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__command">if</span>(<span class="windowsshell__number">$SourceField</span>&nbsp;<span class="windowsshell__commandext">-ne</span>&nbsp;<span class="windowsshell__number">$null</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try{&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$ChoceFieldValues</span>&nbsp;=&nbsp;<span class="windowsshell__number">$SourceField</span>.Choices;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__command">for</span>(<span class="windowsshell__number">$hh</span>&nbsp;<span class="windowsshell__commandext">-eq</span>&nbsp;<span class="windowsshell__number">0</span>;&nbsp;<span class="windowsshell__number">$hh</span>&nbsp;<span class="windowsshell__commandext">-lt</span>&nbsp;<span class="windowsshell__number">$SourceFieldChoicesCount</span>;&nbsp;<span class="windowsshell__number">$hh</span>&#43;&#43;)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$ChoiceClmnItems</span>=<span class="windowsshell__number">$ChoiceClmnItems</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$ChoceFieldValues</span>[<span class="windowsshell__number">$hh</span>]&#43;<span class="windowsshell__string">&quot;;&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating<span class="windowsshell__commandext">/appending</span>&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$Message</span>&nbsp;=&nbsp;<span class="windowsshell__string">&quot;$FieldName_Meeting&nbsp;lookup&nbsp;field&nbsp;has&nbsp;been&nbsp;set&nbsp;to&nbsp;$LookupFieldName&nbsp;field&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="windowsshell__commandext">-Host</span>&nbsp;<span class="windowsshell__number">$Message</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$count</span>=<span class="windowsshell__number">$count</span><span class="windowsshell__number">&#43;1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generate<span class="windowsshell__commandext">-LogFile</span>&nbsp;<span class="windowsshell__number">$Message</span>&nbsp;<span class="windowsshell__number">$count</span>&nbsp;<span class="windowsshell__number">$LogFileDayF</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating<span class="windowsshell__commandext">/appending</span>&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating<span class="windowsshell__commandext">/appending</span>&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$Message</span>&nbsp;=&nbsp;<span class="windowsshell__string">&quot;Error&nbsp;:&nbsp;While&nbsp;updating&nbsp;$ListFieldName&nbsp;field's&nbsp;property.&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="windowsshell__commandext">-Host</span>&nbsp;<span class="windowsshell__number">$Message</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$count</span>=<span class="windowsshell__number">$count</span><span class="windowsshell__number">&#43;1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generate<span class="windowsshell__commandext">-LogFile</span>&nbsp;<span class="windowsshell__number">$Message</span>&nbsp;<span class="windowsshell__number">$count</span>&nbsp;<span class="windowsshell__number">$LogFileDayF</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating<span class="windowsshell__commandext">/appending</span>&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__command">if</span>(<span class="windowsshell__number">$fieldDataType</span>&nbsp;<span class="windowsshell__commandext">-eq</span>&nbsp;<span class="windowsshell__string">&quot;Choice&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;column&nbsp;of&nbsp;<span class="windowsshell__command">type</span>&nbsp;<span class="windowsshell__string">'Choice'</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;Get&nbsp;<span class="windowsshell__command">Choice</span>&nbsp;Items&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$ChoiceItems</span>&nbsp;=&nbsp;<span class="windowsshell__number">$ChoiceClmnItems</span>.split(<span class="windowsshell__string">&quot;;&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$Choices</span>&nbsp;=&nbsp;<span class="windowsshell__string">&quot;&lt;CHOICES&gt;&quot;</span>;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__command">for</span>&nbsp;(<span class="windowsshell__number">$k</span>=<span class="windowsshell__number">0</span>;&nbsp;<span class="windowsshell__number">$k</span>&nbsp;<span class="windowsshell__commandext">-le</span>&nbsp;<span class="windowsshell__number">$ChoiceItems</span>.length;&nbsp;<span class="windowsshell__number">$k</span>&#43;&#43;)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$Choices</span>&nbsp;=&nbsp;<span class="windowsshell__number">$Choices</span>&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;&lt;CHOICE&gt;&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$Choices</span>&nbsp;=&nbsp;<span class="windowsshell__number">$Choices</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$ChoiceItems</span>[<span class="windowsshell__number">$k</span>];&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$Choices</span>&nbsp;=&nbsp;<span class="windowsshell__number">$Choices</span>&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;&lt;/CHOICE&gt;&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$Choices</span>&nbsp;=&nbsp;<span class="windowsshell__number">$Choices</span>&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;&lt;/CHOICES&gt;&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__command">if</span>(<span class="windowsshell__number">$ChoiceClmnDisplayType</span>&nbsp;<span class="windowsshell__commandext">-eq</span>&nbsp;<span class="windowsshell__string">&quot;Dropdown&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$ColXml</span>&nbsp;=&nbsp;<span class="windowsshell__string">&quot;&lt;Field&nbsp;Type='Choice'&nbsp;Format='Dropdown'&nbsp;FillInChoice='FALSE'&nbsp;DisplayName='&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$fieldInternalName</span>&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;'&nbsp;StaticName='&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$fieldInternalName</span>&nbsp;&#43;<span class="windowsshell__string">&quot;'&nbsp;Name='&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$fieldInternalName</span>&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;'&nbsp;&gt;&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$Choices</span>&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;&lt;/Field&gt;&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$DestinationList</span>.Fields.AddFieldAsXml(<span class="windowsshell__number">$ColXml</span>,<span class="windowsshell__number">$true</span>,&nbsp;[Microsoft.SharePoint.SPAddFieldOptions]<span class="windowsshell__com">::AddFieldToDefaultView);</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$DestinationList</span>.Update();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating<span class="windowsshell__commandext">/appending</span>&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$Message</span>&nbsp;=&nbsp;<span class="windowsshell__string">&quot;Field&nbsp;&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$fieldDisplayName</span>&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;Created&nbsp;in&nbsp;destination&nbsp;list&nbsp;&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$DestinationListName</span>&nbsp;&#43;<span class="windowsshell__string">&quot;&nbsp;type&nbsp;&quot;</span>&#43;<span class="windowsshell__number">$fieldDataType</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Bellow&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$count</span>=<span class="windowsshell__number">$count</span><span class="windowsshell__number">&#43;1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generate<span class="windowsshell__commandext">-LogFile</span>&nbsp;<span class="windowsshell__number">$Message</span>&nbsp;<span class="windowsshell__number">$count</span>&nbsp;<span class="windowsshell__number">$LogFileDayF</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating<span class="windowsshell__commandext">/appending</span>&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating<span class="windowsshell__commandext">/appending</span>&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$Message</span>&nbsp;=&nbsp;<span class="windowsshell__string">&quot;Error&nbsp;:&nbsp;in&nbsp;Create&nbsp;DropDown&nbsp;&nbsp;Field&nbsp;Function&nbsp;is&nbsp;$_&nbsp;.&nbsp;List&nbsp;named&nbsp;$DestinationListName&nbsp;does&nbsp;not&nbsp;exist&nbsp;on&nbsp;$DestinationSiteUrl&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Bellow&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$count</span>=<span class="windowsshell__number">$count</span><span class="windowsshell__number">&#43;1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generate<span class="windowsshell__commandext">-LogFile</span>&nbsp;<span class="windowsshell__number">$Message</span>&nbsp;<span class="windowsshell__number">$count</span>&nbsp;<span class="windowsshell__number">$LogFileDayF</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating<span class="windowsshell__commandext">/appending</span>&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="windowsshell__commandext">-Host</span>&nbsp;<span class="windowsshell__commandext">-ForegroundColor</span>&nbsp;red&nbsp;<span class="windowsshell__number">$Message</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}&nbsp;
+&nbsp;
+&nbsp;
+#region&nbsp;CreateField&nbsp;Function&nbsp;
+function&nbsp;CreateFieldLookUp([string]&nbsp;<span class="windowsshell__number">$fieldDisplayName</span>,[string]&nbsp;<span class="windowsshell__number">$fieldInternalName</span>,[string]&nbsp;<span class="windowsshell__number">$fieldDataType</span>,&nbsp;[string]&nbsp;<span class="windowsshell__number">$DestinationSiteUrl</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[string]&nbsp;<span class="windowsshell__number">$DestinationListName</span>,&nbsp;[string]&nbsp;<span class="windowsshell__number">$LookUpMasterListName</span>,&nbsp;[string]&nbsp;<span class="windowsshell__number">$LookUpMasterListClmnName</span>,&nbsp;[string]&nbsp;<span class="windowsshell__number">$LookUpAllowMultiple</span>,&nbsp;[string]&nbsp;<span class="windowsshell__number">$MultiLineClmnTextType</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[string]&nbsp;<span class="windowsshell__number">$ChoiceClmnDisplayType</span>,&nbsp;[string]&nbsp;<span class="windowsshell__number">$ChoiceClmnItems</span>,&nbsp;[string]&nbsp;<span class="windowsshell__number">$CalculatedClmnFormula</span>,&nbsp;[string]&nbsp;<span class="windowsshell__number">$CalculatedClmnDataType</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[string]&nbsp;<span class="windowsshell__number">$fieldListView</span>,&nbsp;[string]&nbsp;<span class="windowsshell__number">$UserClmnType</span>)&nbsp;
+{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;Load&nbsp;List&nbsp;and&nbsp;Web&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$dstListWeb</span>&nbsp;=&nbsp;Get<span class="windowsshell__commandext">-SPWeb</span>&nbsp;<span class="windowsshell__commandext">-identity</span>&nbsp;<span class="windowsshell__number">$DestinationSiteUrl</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$destinationListUrl</span>&nbsp;=&nbsp;<span class="windowsshell__number">$dstListWeb</span>.ServerRelativeUrl&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;/&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$DestinationListName</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$DestinationList</span>&nbsp;=&nbsp;<span class="windowsshell__number">$dstListWeb</span>.GetList(<span class="windowsshell__number">$destinationListUrl</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$dstListWeb</span>&nbsp;=&nbsp;Get<span class="windowsshell__commandext">-SPWeb</span>&nbsp;<span class="windowsshell__commandext">-identity</span>&nbsp;<span class="windowsshell__number">$DestinationSiteUrl</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$destinationListUrl</span>&nbsp;=&nbsp;<span class="windowsshell__number">$dstListWeb</span>.ServerRelativeUrl&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;/lists/&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$DestinationListName</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$DestinationList</span>&nbsp;=&nbsp;<span class="windowsshell__number">$dstListWeb</span>.GetList(<span class="windowsshell__number">$destinationListUrl</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="windowsshell__commandext">-Host</span>&nbsp;<span class="windowsshell__string">&quot;DestinationList&quot;</span>&nbsp;<span class="windowsshell__number">$DestinationList</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;Create&nbsp;Field&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__command">if</span>(<span class="windowsshell__number">$fieldDataType</span>&nbsp;<span class="windowsshell__commandext">-eq</span>&nbsp;<span class="windowsshell__string">&quot;Lookup&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;column&nbsp;of&nbsp;<span class="windowsshell__command">type</span>&nbsp;<span class="windowsshell__string">'Lookup'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$lookupListUrl</span>&nbsp;=&nbsp;<span class="windowsshell__number">$dstListWeb</span>.ServerRelativeUrl&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;/Lists/&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$LookUpMasterListName</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$LookupList</span>&nbsp;=&nbsp;<span class="windowsshell__number">$dstListWeb</span>.GetList(<span class="windowsshell__number">$lookupListUrl</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$LookupListID</span>&nbsp;=&nbsp;<span class="windowsshell__number">$LookupList</span>.ID;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__command">if</span>(<span class="windowsshell__number">$LookUpAllowMultiple</span>&nbsp;<span class="windowsshell__commandext">-eq</span>&nbsp;<span class="windowsshell__string">&quot;true&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$ColXml</span>&nbsp;=&nbsp;<span class="windowsshell__string">&quot;&lt;Field&nbsp;Type='Lookup'&nbsp;AllowMultipleValues='true'&nbsp;RelationshipDeleteBehavior='None'&nbsp;DisplayName='&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$fieldInternalName</span>&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;'&nbsp;StaticName='&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$fieldInternalName</span>&nbsp;&#43;<span class="windowsshell__string">&quot;'&nbsp;Name='&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$fieldInternalName</span>&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;'&nbsp;List='{&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$LookupListID</span>&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;}'&nbsp;ShowField='&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$LookUpMasterListClmnName</span>&nbsp;&#43;<span class="windowsshell__string">&quot;'&nbsp;/&gt;&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elseif(<span class="windowsshell__number">$LookUpAllowMultiple</span>&nbsp;<span class="windowsshell__commandext">-eq</span>&nbsp;<span class="windowsshell__string">&quot;false&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$ColXml</span>&nbsp;=&nbsp;<span class="windowsshell__string">&quot;&lt;Field&nbsp;Type='Lookup'&nbsp;AllowMultipleValues='false'&nbsp;RelationshipDeleteBehavior='None'&nbsp;DisplayName='&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$fieldInternalName</span>&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;'&nbsp;StaticName='&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$fieldInternalName</span>&nbsp;&#43;<span class="windowsshell__string">&quot;'&nbsp;Name='&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$fieldInternalName</span>&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;'&nbsp;List='{&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$LookupListID</span>&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;}'&nbsp;ShowField='&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$LookUpMasterListClmnName</span>&nbsp;&#43;<span class="windowsshell__string">&quot;'&nbsp;/&gt;&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$DestinationList</span>.Fields.AddFieldAsXml(<span class="windowsshell__number">$ColXml</span>,<span class="windowsshell__number">$true</span>,&nbsp;[Microsoft.SharePoint.SPAddFieldOptions]<span class="windowsshell__com">::AddFieldToDefaultView);</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$DestinationList</span>.Update();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating<span class="windowsshell__commandext">/appending</span>&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$Message</span>&nbsp;=&nbsp;<span class="windowsshell__string">&quot;Field&nbsp;&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$fieldDisplayName</span>&nbsp;&#43;&nbsp;<span class="windowsshell__string">&quot;Created&nbsp;in&nbsp;destination&nbsp;list&nbsp;&quot;</span>&nbsp;&#43;&nbsp;<span class="windowsshell__number">$DestinationListName</span>&nbsp;&#43;<span class="windowsshell__string">&quot;&nbsp;type&nbsp;&quot;</span>&#43;<span class="windowsshell__number">$fieldDataType</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Bellow&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$count</span>=<span class="windowsshell__number">$count</span><span class="windowsshell__number">&#43;1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generate<span class="windowsshell__commandext">-LogFile</span>&nbsp;<span class="windowsshell__number">$Message</span>&nbsp;<span class="windowsshell__number">$count</span>&nbsp;<span class="windowsshell__number">$LogFileDayF</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating<span class="windowsshell__commandext">/appending</span>&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating<span class="windowsshell__commandext">/appending</span>&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$Message</span>&nbsp;=&nbsp;<span class="windowsshell__string">&quot;Error&nbsp;:&nbsp;in&nbsp;Create&nbsp;Field&nbsp;Function&nbsp;is&nbsp;$_&nbsp;.&nbsp;List&nbsp;named&nbsp;$DestinationListName&nbsp;does&nbsp;not&nbsp;exist&nbsp;on&nbsp;$DestinationSiteUrl&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Bellow&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$count</span>=<span class="windowsshell__number">$count</span><span class="windowsshell__number">&#43;1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generate<span class="windowsshell__commandext">-LogFile</span>&nbsp;<span class="windowsshell__number">$Message</span>&nbsp;<span class="windowsshell__number">$count</span>&nbsp;<span class="windowsshell__number">$LogFileDayF</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating<span class="windowsshell__commandext">/appending</span>&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="windowsshell__commandext">-Host</span>&nbsp;<span class="windowsshell__commandext">-ForegroundColor</span>&nbsp;red&nbsp;<span class="windowsshell__number">$Message</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;<span class="windowsshell__command">Change</span>&nbsp;the&nbsp;Display&nbsp;Name&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$spField</span>&nbsp;=&nbsp;<span class="windowsshell__number">$DestinationList</span>.Fields.GetFieldByInternalName(<span class="windowsshell__number">$fieldInternalName</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__command">if</span>(<span class="windowsshell__number">$spField</span>&nbsp;<span class="windowsshell__commandext">-eq</span>&nbsp;<span class="windowsshell__number">$null</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$spField</span>&nbsp;=&nbsp;<span class="windowsshell__number">$DestinationList</span>.Fields[<span class="windowsshell__number">$fieldInternalName</span>];&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__command">if</span>(<span class="windowsshell__number">$spField</span>&nbsp;<span class="windowsshell__commandext">-ne</span>&nbsp;<span class="windowsshell__number">$null</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$spField</span>.<span class="windowsshell__command">Title</span>&nbsp;=&nbsp;<span class="windowsshell__number">$fieldDisplayName</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$spField</span>.Update();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__key">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating<span class="windowsshell__commandext">/appending</span>&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$Message</span>&nbsp;=&nbsp;<span class="windowsshell__string">&quot;Field&nbsp;$fieldDisplayName&nbsp;on&nbsp;$DestinationSiteUrl&nbsp;not&nbsp;found&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Bellow&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$count</span>=<span class="windowsshell__number">$count</span><span class="windowsshell__number">&#43;1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generate<span class="windowsshell__commandext">-LogFile</span>&nbsp;<span class="windowsshell__number">$Message</span>&nbsp;<span class="windowsshell__number">$count</span>&nbsp;<span class="windowsshell__number">$LogFileDayF</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating<span class="windowsshell__commandext">/appending</span>&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="windowsshell__commandext">-Host</span>&nbsp;<span class="windowsshell__commandext">-ForegroundColor</span>&nbsp;red&nbsp;<span class="windowsshell__number">$Message</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#region&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating<span class="windowsshell__commandext">/appending</span>&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$Message</span>&nbsp;=&nbsp;<span class="windowsshell__string">&quot;Error&nbsp;:&nbsp;in&nbsp;Create&nbsp;Field&nbsp;Function&nbsp;while&nbsp;changing&nbsp;Display&nbsp;Name&nbsp;is&nbsp;$_&nbsp;.&nbsp;Field&nbsp;name&nbsp;&nbsp;$fieldDisplayName&nbsp;on&nbsp;$DestinationSiteUrl&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#Bellow&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="windowsshell__number">$count</span>=<span class="windowsshell__number">$count</span><span class="windowsshell__number">&#43;1</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generate<span class="windowsshell__commandext">-LogFile</span>&nbsp;<span class="windowsshell__number">$Message</span>&nbsp;<span class="windowsshell__number">$count</span>&nbsp;<span class="windowsshell__number">$LogFileDayF</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion&nbsp;function&nbsp;is&nbsp;<span class="windowsshell__command">for</span>&nbsp;generating<span class="windowsshell__commandext">/appending</span>&nbsp;<span class="windowsshell__command">Log</span>&nbsp;File&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="windowsshell__commandext">-Host</span>&nbsp;<span class="windowsshell__commandext">-ForegroundColor</span>&nbsp;red&nbsp;<span class="windowsshell__number">$Message</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#endregion&nbsp;
+}&nbsp;
+&nbsp;
+#endregion&nbsp;CreateField&nbsp;Function&nbsp;
+Main<span class="windowsshell__commandext">-Function</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+
+        </div>
+    </body>
+</html>

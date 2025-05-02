@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<helpItems schema="maml">
+  <_locDefinition>
+    <_locDefault _loc="locNone"/>
+    <_locTag _loc="locData">maml:para</_locTag>
+    <_locTag _loc="locData">maml:title</_locTag>
+  </_locDefinition>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>GetDatabaseForSearchIndex.ps1</command:name>
+      <maml:description>
+        <maml:para _locID="CommandShortDescription">Given the index Directory/ies, it returns the Database name(s) associated.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para _locID="Copyright">Copyright (c) Microsoft.  All rights reserved.</maml:para>
+      </maml:copyright>
+      <command:verb>GetDatabaseForSearchIndex.ps1</command:verb>
+      <command:noun></command:noun>
+      <dev:version/>
+    </command:details>
+    <maml:description>
+      <maml:para _locID="CommandLongDescription"></maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <command:name>GetDatabaseForSearchIndex.ps1</command:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <maml:alertSet>
+      <maml:title></maml:title>
+      <maml:alert>
+        <maml:para _locID="Alert_1_Note">Does not support -all because you can easily get the same output from GetSearchIndexForDatabase -all</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title _locID="Example_Title_1">-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>GetDatabaseForSearchIndex &lt;indexdir&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>[&lt;indexdir&gt;] ...</dev:code>
+        <dev:remarks/>
+      </command:example>
+      <command:example>
+        <maml:title _locID="Example_Title_2">-------------------------- EXAMPLE 2 --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para>C:\PS&gt;</maml:para>
+        </maml:introduction>
+        <dev:code>dir | GetDatabaseForSearchIndex</dev:code>
+        <dev:remarks>
+          <maml:para _locID="Example_2_Remarks_1">Run this from the directory containing the CatalogData* folder(s)</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+  </command:command>
+</helpItems>

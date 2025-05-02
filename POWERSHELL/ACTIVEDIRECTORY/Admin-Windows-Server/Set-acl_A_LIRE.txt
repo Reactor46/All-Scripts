@@ -1,0 +1,27 @@
+tuto sur un cas précis
+https://blogs.msdn.microsoft.com/adpowershell/2009/10/13/add-object-specific-aces-using-active-directory-powershell/
+
+Faut voir si on peut pas généraliser et trouver les différents guid
+
+Voir c'est quoi les extended_right
+
+
+
+
+
+
+
+
+Pour le set-acl2
+https://technet.microsoft.com/en-us/library/ff730951.aspx
+
+$colRights = [System.Security.AccessControl.FileSystemRights]"Fullcontrol" 
+			remplacer par "Read"
+					"Write, Read"
+					"Fullcontrol"
+					"ReadAndExecute"
+					"Modify"
+			voir liste pour plus
+
+
+Par contre ça s'applique à un fichier donc faut voir si les fameux chemin "AD:\DC=esgi,DC=priv" fonctionnent "comme" un fichier

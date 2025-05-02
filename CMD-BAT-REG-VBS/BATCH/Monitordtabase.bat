@@ -1,0 +1,1 @@
+powershell .\MonitorDtabase.ps1

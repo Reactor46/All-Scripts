@@ -1,0 +1,17 @@
+﻿Install-Module -Name VMware.VimAutomation.Sdk
+Install-Module -Name VMware.VimAutomation.Common
+Install-Module -Name VMware.VimAutomation.Core
+Install-Module -Name VMware.VimAutomation.Srm
+Install-Module -Name VMware.VimAutomation.License
+Install-Module -Name VMware.VimAutomation.Vds
+Install-Module -Name VMware.VimAutomation.vROps
+Install-Module -Name VMware.VimAutomation.Cis.Core
+Install-Module -Name VMware.VimAutomation.HA
+Install-Module -Name VMware.VimAutomation.HorizonView
+Install-Module -Name VMware.VimAutomation.PCloud
+Install-Module -Name VMware.VimAutomation.Cloud
+Install-Module -Name VMware.DeployAutomation
+Install-Module -Name VMware.ImageBuilder
+Install-Module -Name VMware.VimAutomation.Storage
+Install-Module -Name VMware.VimAutomation.StorageUtility
+Install-Module -Name VMware.VumAutomation

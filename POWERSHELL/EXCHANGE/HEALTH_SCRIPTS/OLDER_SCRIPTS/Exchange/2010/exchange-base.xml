@@ -1,0 +1,15 @@
+<!-- ServerManagerCmd Answer File compatible with Windows Server 2008 and R2				-->
+<!-- Usage: ServerManagerCmd -ip Exchange-Base.xml							-->
+<!-- Installs Exchange Server 2010 operating system prerequisites for Setup prepare functions		-->
+
+<ServerManagerConfiguration
+	Action="Install"
+	xmlns="http://schemas.microsoft.com/sdm/Windows/ServerManager/Configuration/2007/1">
+
+	<!-- BASE: Install .NET Framework 3.5 -->
+	<Feature Id="NET-Framework"/>
+
+	<!-- PREPARESCHEMA: Install LDIFDE and other directory tools -->
+	<Feature Id="RSAT-ADDS"/>
+
+</ServerManagerConfiguration>

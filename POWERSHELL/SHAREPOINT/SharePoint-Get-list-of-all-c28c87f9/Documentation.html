@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>SharePoint: Get list of all users using PowerShell script</title>        
+        <meta name="description" content="
+Attached script will be used to fetch list of all users on SharePoint site and also on any specific list using PowerShell script. Script consits of two functions
+
+GetSPWebUsers
+Using this, you can get list of all site users, it will take single parameter (i.e site URL).GetSP" />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<p style="border:0px; font-family:Gudea,sans-serif; font-size:14px; font-style:normal; font-weight:normal; margin:0px 0px 1.5em; outline:0px; padding:0px; vertical-align:baseline; color:#404040; font-variant:normal; letter-spacing:normal; line-height:21px; orphans:auto; text-align:start; text-indent:0px; text-transform:none; white-space:normal; widows:auto; word-spacing:0px; background-color:#ffffff">
+<span style="font-size:small">Attached script will be used to fetch list of all users on SharePoint site and also on any specific list using PowerShell script. Script consits of two functions
+</span></p>
+<p style="border:0px; font-family:Gudea,sans-serif; font-size:14px; font-style:normal; font-weight:normal; margin:0px 0px 1.5em; outline:0px; padding:0px; vertical-align:baseline; color:#404040; font-variant:normal; letter-spacing:normal; line-height:21px; orphans:auto; text-align:start; text-indent:0px; text-transform:none; white-space:normal; widows:auto; word-spacing:0px; background-color:#ffffff">
+<span style="font-size:small"><strong>GetSPWebUsers</strong></span></p>
+<p style="border:0px; font-family:Gudea,sans-serif; font-size:14px; font-style:normal; font-weight:normal; margin:0px 0px 1.5em; outline:0px; padding:0px; vertical-align:baseline; color:#404040; font-variant:normal; letter-spacing:normal; line-height:21px; orphans:auto; text-align:start; text-indent:0px; text-transform:none; white-space:normal; widows:auto; word-spacing:0px; background-color:#ffffff">
+<span style="font-size:small">Using this, you can get list of all site users, it will take single parameter (i.e site URL).</span></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">function GetSPWebUsers($SiteCollectionURL)
+{
+    [System.Reflection.Assembly]::LoadWithPartialName(&quot;Microsoft.SharePoint&quot;) &gt; $null
+    $site = new-object Microsoft.SharePoint.SPSite($SiteCollectionURL)
+    $web = $site.openweb()
+    $siteUsers = $web.SiteUsers
+
+    foreach($user in $siteUsers)
+    {       
+        Write-Host &quot; ------------------------------------- &quot;
+        Write-Host &quot;Site Collection URL:&quot;, $SiteCollectionURL
+        if($user.IsSiteAdmin -eq $true)
+        {
+            Write-Host &quot;ADMIN: &quot;, $user.LoginName
+        }
+        else
+        {
+            Write-Host &quot;USER: &quot;, $user.LoginName
+        }
+        Write-Host &quot; ------------------------------------- &quot;
+    }   
+    $web.Dispose()
+    $site.Dispose()
+}
+
+</pre>
+<div class="preview">
+<pre class="js"><span class="js__operator">function</span>&nbsp;GetSPWebUsers($SiteCollectionURL)&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[System.Reflection.Assembly]::LoadWithPartialName(<span class="js__string">&quot;Microsoft.SharePoint&quot;</span>)&nbsp;&gt;&nbsp;$null&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;$site&nbsp;=&nbsp;<span class="js__operator">new</span>-object&nbsp;Microsoft.SharePoint.SPSite($SiteCollectionURL)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;$web&nbsp;=&nbsp;$site.openweb()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;$siteUsers&nbsp;=&nbsp;$web.SiteUsers&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach($user&nbsp;<span class="js__operator">in</span>&nbsp;$siteUsers)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write-Host&nbsp;<span class="js__string">&quot;&nbsp;-------------------------------------&nbsp;&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write-Host&nbsp;<span class="js__string">&quot;Site&nbsp;Collection&nbsp;URL:&quot;</span>,&nbsp;$SiteCollectionURL&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>($user.IsSiteAdmin&nbsp;-eq&nbsp;$true)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write-Host&nbsp;<span class="js__string">&quot;ADMIN:&nbsp;&quot;</span>,&nbsp;$user.LoginName&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write-Host&nbsp;<span class="js__string">&quot;USER:&nbsp;&quot;</span>,&nbsp;$user.LoginName&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write-Host&nbsp;<span class="js__string">&quot;&nbsp;-------------------------------------&nbsp;&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;$web.Dispose()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;$site.Dispose()&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<p><span style="font-size:small"><strong>GetSPAllSPUsers</strong></span></p>
+<p><span style="font-size:small">This function will return list of all users and their permission set for any list/library. This can be used to check users permissions for against a list. This function have two parameters(i.e. site URL and List Name).</span></p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">function GetSPAllSPUsers($SiteCollectionURL,$SPListName)
+{
+    [System.Reflection.Assembly]::LoadWithPartialName(&quot;Microsoft.SharePoint&quot;) &gt; $null
+    $site = new-object Microsoft.SharePoint.SPSite($SiteCollectionURL)	
+    $web = $site.openweb()
+    $list = $web.Lists[$SPListName]
+    $siteCollUsers = $web.SiteUsers
+    
+    foreach($user in $siteCollUsers)
+	    {
+		    Write-Host &quot; ------------------------------------- &quot;
+		    Write-Host &quot;Site Collection URL:&quot;, $SiteCollectionURL
+            if($list.DoesUserHavePermissions([Microsoft.SharePoint.SPBasePermissions]::ViewListItems,$user) -eq $true)
+                {
+                    Write-Host &quot;User : &quot;, $user.LoginName
+                    Write-Host &quot;Assigned Permissions : &quot;, $list.GetUserEffectivePermissions($user.LoginName)
+                }			
+            Write-Host &quot; ------------------------------------- &quot;		
+	    }
+	
+	    $web.Dispose()
+	    $site.Dispose()
+ }
+</pre>
+<div class="preview">
+<pre class="js"><span class="js__operator">function</span>&nbsp;GetSPAllSPUsers($SiteCollectionURL,$SPListName)&nbsp;
+<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[System.Reflection.Assembly]::LoadWithPartialName(<span class="js__string">&quot;Microsoft.SharePoint&quot;</span>)&nbsp;&gt;&nbsp;$null&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;$site&nbsp;=&nbsp;<span class="js__operator">new</span>-object&nbsp;Microsoft.SharePoint.SPSite($SiteCollectionURL)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;$web&nbsp;=&nbsp;$site.openweb()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;$list&nbsp;=&nbsp;$web.Lists[$SPListName]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;$siteCollUsers&nbsp;=&nbsp;$web.SiteUsers&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;foreach($user&nbsp;<span class="js__operator">in</span>&nbsp;$siteCollUsers)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write-Host&nbsp;<span class="js__string">&quot;&nbsp;-------------------------------------&nbsp;&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write-Host&nbsp;<span class="js__string">&quot;Site&nbsp;Collection&nbsp;URL:&quot;</span>,&nbsp;$SiteCollectionURL&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">if</span>($list.DoesUserHavePermissions([Microsoft.SharePoint.SPBasePermissions]::ViewListItems,$user)&nbsp;-eq&nbsp;$true)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write-Host&nbsp;<span class="js__string">&quot;User&nbsp;:&nbsp;&quot;</span>,&nbsp;$user.LoginName&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write-Host&nbsp;<span class="js__string">&quot;Assigned&nbsp;Permissions&nbsp;:&nbsp;&quot;</span>,&nbsp;$list.GetUserEffectivePermissions($user.LoginName)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write-Host&nbsp;<span class="js__string">&quot;&nbsp;-------------------------------------&nbsp;&quot;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$web.Dispose()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$site.Dispose()&nbsp;
+&nbsp;<span class="js__brace">}</span>&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<p><strong><span style="font-size:small">Function Calls</span></strong></p>
+<p><span style="font-size:small">Functins can be called as below</span></p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">GetSPWebUsers &quot;http://SP2013&quot;
+GetSPAllSPUsers &quot;http://sp2013:1111&quot; &quot;List Name&quot;</pre>
+<div class="preview">
+<pre class="js">GetSPWebUsers&nbsp;<span class="js__string">&quot;http://SP2013&quot;</span>&nbsp;
+GetSPAllSPUsers&nbsp;<span class="js__string">&quot;http://sp2013:1111&quot;</span>&nbsp;<span class="js__string">&quot;List&nbsp;Name&quot;</span></pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<p style="border:0px; font-family:Gudea,sans-serif; font-size:14px; font-style:normal; font-weight:normal; margin:0px 0px 1.5em; outline:0px; padding:0px; vertical-align:baseline; color:#404040; font-variant:normal; letter-spacing:normal; line-height:21px; orphans:auto; text-align:start; text-indent:0px; text-transform:none; white-space:normal; widows:auto; word-spacing:0px; background-color:#ffffff">
+&nbsp;</p>
+
+        </div>
+    </body>
+</html>

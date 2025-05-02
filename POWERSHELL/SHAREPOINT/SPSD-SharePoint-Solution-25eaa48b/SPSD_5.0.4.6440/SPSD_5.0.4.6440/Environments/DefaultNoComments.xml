@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SPSD Version="5.0.4.6440">
+  <Configuration ID="Default">
+    <Settings>
+      <DeploymentRetries>3</DeploymentRetries>
+      <DeploymentTimeout>60000</DeploymentTimeout>
+      <RunOnMultipleServersInFarm>OnlyLocal</RunOnMultipleServersInFarm>
+      <WaitAfterDeployment>10000</WaitAfterDeployment>
+      <DisplayWizards>false</DisplayWizards>
+      <CreateULSLogfile>false</CreateULSLogfile>
+    </Settings>
+
+    <Restrictions>
+      <AllowGACDeployment>true</AllowGACDeployment>
+      <AllowCASPolicies>true</AllowCASPolicies>
+      <AllowFullTrustBinDeployment>true</AllowFullTrustBinDeployment>
+      <MinimalSharePointVersion>14.0.0.0</MinimalSharePointVersion>
+      <MinimalSharePointLicense>Foundation</MinimalSharePointLicense>
+      <RequiredSharePointLanguages>
+			  <SharePointLanguage LCID="$(LCID)" />
+	  </RequiredSharePointLanguages>
+    </Restrictions>
+
+    <Actions AfterDeploy="true" AfterRetract="true" AfterUpdate="true">
+      <RestartService Name="SPTimerV4" Force="false" />
+      <RestartService Name="SPAdminV4" Force="false" />
+      <RestartService Name="SPUserCodeV4" Force="false" />
+      <ResetIIS Force="false" />
+      <WarmUpUrls AllWebApps="true" AllSites="false"></WarmUpUrls>
+    </Actions>
+  </Configuration>
+
+  <Environment ID="Default">
+    <Variables ID="Default">
+      <Variable Name="UserID">$(env:USERDOMAIN)\$(env:USERNAME)</Variable>
+      <Variable Name="WebAppUrl">http://$(env:COMPUTERNAME).$(env:USERDNSDOMAIN)</Variable>
+      <Variable Name="SiteUrl">http://$(env:COMPUTERNAME).$(env:USERDNSDOMAIN)/sites/TestSite</Variable>
+      <Variable Name="LCID">1033</Variable>
+    </Variables>
+    <PreRequisiteSolutions ID="Default"></PreRequisiteSolutions>
+    <Solutions ID="Default" Force="true" Overwrite="true"></Solutions>
+  </Environment>
+
+  <Extensions ID="Default">
+    <!-- <Extension ID="ExampleInstance1" Type="Example" FilePath="Extensions\Example.xml" /> -->
+	<!-- <Extension ID="BlockedFileExtensions" Type="BlockedFileExtensions" FilePath="Extensions\BlockedFileExtensions.xml" /> -->
+	<!-- <Extension ID="ContentTypeHub" Type="ContentTypeHub" FilePath="Extensions\ContentTypeHub.xml" /> -->
+    <!-- <Extension ID="CustomCrawlConnector" Type="CustomCrawlConnector" FilePath="Extensions\CustomCrawlConnector.xml" /> -->
+	<!-- <Extension ID="FeatureInstance1" Type="Features" FilePath="Extensions\Features.xml" /> -->
+	<!-- <Extension ID="LoggingConfiguration" Type="LoggingConfiguration" FilePath="Extensions\LoggingConfiguration.xml" /> -->
+	<!-- <Extension ID="ReGhostExtension" Type="ReGhost" FilePath="Extensions\ReGhost.xml" /> -->
+    <!-- <Extension ID="SecureStore" Type="SecureStore" FilePath="Extensions\SecureStore.xml" /> -->
+    <!-- <Extension ID="SearchSchema" Type="SearchSchema" FilePath="Extensions\SearchSchema.xml" />	 -->
+    <!-- <Extension ID="SiteStructure" Type="SiteStructure" FilePath="Extensions\SiteStructure.xml" /> -->
+	<!-- TODO: Site Permissions file is missing -->
+    <!-- <Extension ID="SitePermissions" Type="SiteStructure" FilePath="Extensions\SitePermissions.xml" /> -->
+	<!-- <Extension ID="TermsStoreConfiguration" Type="ManagedMetadata" FilePath="Extensions\TermsStoreConfiguration.xml" /> -->
+    <!-- <Extension ID="Terms" Type="ManagedMetadata" FilePath="Extensions\Terms.xml" /> -->
+	<!-- <Extension ID="SPSD.Extensions.Client.2010" Type="SPSD.Extensions.Client.2010" FilePath="Extensions\SPSD.Extensions.Client.2010.xml" /> -->
+	<!-- <Extension ID="SPSD.Extensions.Client.2013" Type="SPSD.Extensions.Client.2013" FilePath="Extensions\SPSD.Extensions.Client.2013.xml" /> -->
+	<!-- <Extension ID="SPSD.Extensions.Client.SPO" Type="SPSD.Extensions.Client.SPO" FilePath="Extensions\SPSD.Extensions.Client.SPO.xml" /> -->
+  </Extensions>
+</SPSD>

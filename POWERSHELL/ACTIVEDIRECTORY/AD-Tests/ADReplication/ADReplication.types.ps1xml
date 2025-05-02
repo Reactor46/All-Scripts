@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--<Types xmlns="http://schemas.microsoft.com/PowerShell/TypeData/2007/04">-->
+<Types>
+  <Type>
+    <Name>System.DirectoryServices.ActiveDirectory.ActiveDirectorySite</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Description</Name>
+        <GetScriptBlock>
+          $this.GetDirectoryEntry().Description.Value
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param([string]$Description)
+          try
+          {
+            $directoryEntry = $this.GetDirectoryEntry()
+            $directoryEntry.Description.Value = $Description
+            $directoryEntry.CommitChanges()
+            Write-Verbose "Description written to Active Directory"
+          }
+          catch [Exception]
+          {
+            throw New-Object System.Exception("Could not write description on $($directoryEntry.SchemaClassName) $($directoryEntry.Name): $($_.Exception.Message)", $_.Exception)
+          }
+        </SetScriptBlock>
+      </ScriptProperty>
+	  <AliasProperty>
+        <Name>SiteName</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+	  </AliasProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Description</Name>
+        <GetScriptBlock>
+          $this.GetDirectoryEntry().Description.Value
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param([string]$Description)
+          try
+          {
+            $directoryEntry = $this.GetDirectoryEntry()
+            $directoryEntry.Description.Value = $Description
+            $directoryEntry.CommitChanges()
+            Write-Verbose "Description written to Active Directory"
+          }
+          catch [Exception]
+          {
+            throw New-Object System.Exception("Could not write description on $($directoryEntry.SchemaClassName) $($directoryEntry.Name): $($_.Exception.Message)", $_.Exception)
+          }
+        </SetScriptBlock>
+      </ScriptProperty>
+	  <AliasProperty>
+        <Name>SubnetName</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+	  </AliasProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Description</Name>
+        <GetScriptBlock>
+          $this.GetDirectoryEntry().Description.Value
+        </GetScriptBlock>
+        <SetScriptBlock>
+          param([string]$Description)
+          try
+          {
+            $directoryEntry = $this.GetDirectoryEntry()
+            $directoryEntry.Description.Value = $Description
+            $directoryEntry.CommitChanges()
+            Write-Verbose "Description written to Active Directory"
+          }
+          catch [Exception]
+          {
+            throw New-Object System.Exception("Could not write description on $($directoryEntry.SchemaClassName) $($directoryEntry.Name): $($_.Exception.Message)", $_.Exception)
+          }
+        </SetScriptBlock>
+      </ScriptProperty>
+	  <AliasProperty>
+        <Name>SiteLinkName</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+	  </AliasProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>System.DirectoryServices.ActiveDirectory.DomainController</Name>
+    <Members>      
+	  <AliasProperty>
+        <Name>DomainControllerName</Name>
+        <ReferencedMemberName>Name</ReferencedMemberName>
+	  </AliasProperty>
+    </Members>
+  </Type>
+</Types>

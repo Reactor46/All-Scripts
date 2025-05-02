@@ -1,0 +1,18 @@
+ComputerName,Status,ServiceName,Service DisplayName
+USONVSVRDC01,Running,ADWS,Active Directory Web Services
+USONVSVRDC01,Running,DFS,DFS NameSpace
+USONVSVRDC01,Running,DFSR,DFS Replication
+USONVSVRDC01,Running,DHCP,DHCP Server
+USONVSVRDC01,Running,DNS,DNS Server
+USONVSVRDC01,Running,MpsSvc,Windows Firewall
+USONVSVRDC01,Running,Netlogon,Netlogon
+USONVSVRDC01,Running,NTDS,Active Directory Domain Services
+USONVSVRDC01,Running,NtFrs,File Replication Service
+USONVSVRDC01,Running,ProfSvc,User Profile Service
+USONVSVRDC01,Running,RemoteRegistry,Remote Registry
+USONVSVRDC01,Running,SamSs,Security Accounts Manager
+USONVSVRDC01,Running,TermService,Remote Desktop Services
+USONVSVRDC01,Running,W32Time,Windows Time
+USONVSVRDC01,Running,Winmgmt,Windows Management Instrument (WMI)
+USONVSVRDC01,Running,WinRM,Windows Remote Management (WS-Management)
+USONVSVRDC01,Running,KDC,Kerberos Key Distribution Center

@@ -1,0 +1,88 @@
+using System;
+using System.Collections;
+using System.Net.Sockets;
+using System.Text;
+using System.Net;
+using System.Management;
+
+namespace ExchangeTrackinglogSender
+{
+	class SendLog
+	{
+		static void Main(string[] args)
+		{
+			try
+			{
+				SendLog sl = new SendLog();
+				string snServername = args[0];
+				string snSyslogIPName = args[1];
+				ArrayList alEmailalist = sl.getRecentLogs(5,snServername,1020,1028);
+				IEnumerator raEnumerator = alEmailalist.GetEnumerator();
+				while ( raEnumerator.MoveNext() )
+				{
+					sl.sendsyslog(raEnumerator.Current.ToString(),snSyslogIPName,21);
+				}
+				ArrayList alIMFalist = sl.getRecentLogs(5,snServername,1039,1039);
+				IEnumerator raEnumerator1 = alIMFalist.GetEnumerator();
+				while ( raEnumerator1.MoveNext() )
+				{
+					sl.sendsyslog(raEnumerator1.Current.ToString(),snSyslogIPName,20);}
+				ArrayList alNDRalist = sl.getRecentLogs(5,snServername,1026,1030);
+				IEnumerator raEnumerator2 = alNDRalist.GetEnumerator();
+				while ( raEnumerator2.MoveNext() )
+				{
+					sl.sendsyslog(raEnumerator2.Current.ToString(),snSyslogIPName,19);}
+			}
+			catch(IndexOutOfRangeException e){
+			Console.WriteLine("Usage exsyslog.exe <ExchangeServername> <SyslogIpaddress>");
+			}
+			catch(Exception e)
+			{
+				System.IO.StreamWriter elErrorlog = new System.IO.StreamWriter("c:\\Syslogsendererror.log",true);
+				elErrorlog.WriteLine(System.DateTime.Now + " " + e.InnerException + " " + " Exception Description:" + e.ToString());
+				elErrorlog.Close();
+			}
+		}
+
+
+		void sendsyslog(string mtMessagetxt,string iaIpaddress, int spPriority){
+			UdpClient ucUdpclient = new UdpClient(iaIpaddress, 514);
+			byte[] rawMsg;
+			string strParams = System.String.Format("<{0}>{1}",spPriority, mtMessagetxt); 
+			rawMsg = System.Text.Encoding.ASCII.GetBytes(string.Concat(strParams));
+			ucUdpclient.Send(rawMsg, rawMsg.Length);
+			ucUdpclient.Close();
+			ucUdpclient=null;
+		}
+		ArrayList getRecentLogs(int tiTimeinterval,string snServername, int idTid1, int idTid2){
+			ArrayList alRecpalist = new ArrayList();
+			ConnectionOptions coObjconn = new ConnectionOptions();
+			coObjconn.Impersonation = ImpersonationLevel.Impersonate;
+			coObjconn.EnablePrivileges = true;
+			string qtQuerytime = ManagementDateTimeConverter.ToDmtfDateTime(DateTime.Now.ToUniversalTime().AddMinutes(-tiTimeinterval));
+			ManagementScope msExmangescope = new ManagementScope(@"\\" + snServername + @"\root\MicrosoftExchangeV2",coObjconn);
+			ObjectQuery qoObjquery = new ObjectQuery("Select * FROM Exchange_MessageTrackingEntry where entrytype = '" + idTid1 + "' and OriginationTime >= '" + qtQuerytime + "' or entrytype = '" + idTid2 + "' and OriginationTime > '" + qtQuerytime + "'");
+			System.Management.ManagementObjectSearcher osObjsearch = new System.Management.ManagementObjectSearcher(msExmangescope,qoObjquery);
+			System.Management.ManagementObjectCollection qcQueryCollection1 = osObjsearch.Get(); 
+			foreach( System.Management.ManagementObject reTrackinglogEntry in qcQueryCollection1 ) 
+			{
+				string[] raReciparray = (string[])reTrackinglogEntry["RecipientAddress"];
+				UInt32[] raRecipStatusarray = (UInt32[])reTrackinglogEntry["RecipientStatus"];
+				for(int i=0;i<=raReciparray.GetUpperBound(0);i++)
+					 {
+						string msMsgtext;
+					    msMsgtext = "date=" + ManagementDateTimeConverter.ToDateTime(reTrackinglogEntry["OriginationTime"].ToString()).ToString("yyyy-MM-dd") + ",";
+						msMsgtext = msMsgtext + "time=" + ManagementDateTimeConverter.ToDateTime(reTrackinglogEntry["OriginationTime"].ToString()).ToString("HH:mm:ss") + ",";
+						msMsgtext = msMsgtext + "servername=" + snServername + ",eventid=" + reTrackinglogEntry["EntryType"].ToString() + ",";
+						msMsgtext = msMsgtext + "msgid=" + "\"" + reTrackinglogEntry["MessageID"].ToString() + "\",RecipientType=" + raRecipStatusarray[i] + ",";
+					    msMsgtext = msMsgtext + "nrcpts=" + reTrackinglogEntry["RecipientCount"] + ",";
+						if(reTrackinglogEntry["subject"] != null) {msMsgtext = msMsgtext + "subject=\"" + reTrackinglogEntry["subject"].ToString().Replace("\"","") + "\",";}
+						msMsgtext = msMsgtext + "from=" + reTrackinglogEntry["SenderAddress"].ToString() + ",to=" + raReciparray[i] + ",size=" + reTrackinglogEntry["size"].ToString();
+						alRecpalist.Add(msMsgtext);
+				     }
+			} 
+			return alRecpalist;
+
+		}
+	}
+}

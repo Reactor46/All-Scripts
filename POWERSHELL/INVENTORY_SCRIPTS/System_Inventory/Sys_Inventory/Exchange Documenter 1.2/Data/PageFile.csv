@@ -1,0 +1,10 @@
+#TYPE System.Management.Automation.PSCustomObject
+"Server","allocatedbasesize","caption","description"
+"LASEXCAS01","8189","C:\pagefile.sys","C:\pagefile.sys"
+"LASEXCAS02","8189","C:\pagefile.sys","C:\pagefile.sys"
+"LASEXDB01","16381","C:\pagefile.sys","C:\pagefile.sys"
+"LASEXDB02","16381","C:\pagefile.sys","C:\pagefile.sys"
+"LASEXCH01","32778","C:\pagefile.sys","C:\pagefile.sys"
+"LASEXCH03","32778","C:\pagefile.sys","C:\pagefile.sys"
+"LASEXCH02","32778","C:\pagefile.sys","C:\pagefile.sys"
+"LASEXCH04","32778","C:\pagefile.sys","C:\pagefile.sys"

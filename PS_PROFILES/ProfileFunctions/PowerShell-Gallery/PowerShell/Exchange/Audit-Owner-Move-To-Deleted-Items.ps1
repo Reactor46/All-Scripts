@@ -1,0 +1,1 @@
+Set-Mailbox -Identity” TestUser1” -AuditOwnerMoveToDeletedItems –AuditEnabled $True

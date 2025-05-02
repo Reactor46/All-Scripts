@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Setup>
+  <SiteCollections>
+    <SiteCollection Name="Department Host" Url="" ContentDatabase="SPS2013D_KSC_Intranet_Depts" HostHeaderWebApplication="http://depts.alt.ksnet.com" Template="STS#1" Language="1033" Description="" OwnerAlias="kelsey-seybold\altayl02" SecondaryOwnerAlias="kelsey-seybold\cmgrig01">
+      <Feature Name="BaseWeb" Guid="99fe402e-89a0-45aa-9163-85342e865dc8"></Feature>
+      <Feature Name="BaseSite" Guid="b21b090c-c796-4b0f-ac0f-7ef1659c20ae"></Feature>
+      <Feature Name="PublishingSite" Guid="f6924d36-2fa8-4f0b-b16d-06b7250180fa"></Feature>
+      <Feature Name="DocId" Guid="b50e3104-6812-424f-a011-cc90e6327318"></Feature>
+      <Feature Name="InPlaceRecords" Guid="da2e115b-07e4-49d9-bb2c-35e93bb9fca9"></Feature>
+      <Feature Name="LocationBasedPolicy" Guid="063c26fa-3ccc-4180-8a84-b6f98e991df3"></Feature>
+      <Feature Name="OpenInClient" Guid="8a4b8de2-6fd8-41e9-923c-c7c3c00f8295"></Feature>
+      <Feature Name="ReviewPublishingSPD" Guid="a44d2aa3-affc-4d58-8db4-f4a3af053188"></Feature>
+      <Feature Name="Reporting" Guid="7094bd89-2cfe-490a-8c7e-fbace37b4a34"></Feature>
+      <Feature Name="SearchWebParts" Guid="eaf6a128-0482-4f71-9a2f-b1c650680e77"></Feature>
+      <Feature Name="Workflows" Guid="0af5989a-3aea-4519-8ab0-85d91abe39ff"></Feature>
+      <Feature Name="PublishingWeb" Guid="94c94ca6-b32f-4da9-a9e3-1f3d343d7ecb"></Feature>
+      <Feature Name="MetaDataNav" Guid="7201d6a4-a5d3-49a1-8c19-19c4bac6e668"></Feature>
+      <Feature Name="Hold" Guid="9e56487c-795a-4077-9425-54a1ecb84282"></Feature>
+    </SiteCollection>
+  </SiteCollections>
+</Setup>

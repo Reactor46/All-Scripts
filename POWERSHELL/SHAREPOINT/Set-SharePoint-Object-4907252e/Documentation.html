@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Set SharePoint Object Cache Accounts</title>        
+        <meta name="description" content="This script provides an easy way to update object cache accounts, whether for one web application or all. It gracefully handles claims or classic web applications, and even comes with its own help documentation!" />
+        <link href="https://i1.code.msdn.s-msft.com/RequestReduceContent/c82dc8ab865be0fb7316b2e09ac97654-bafb67d64bd55a2b1fd123070a82b424-RequestReducedStyle.css" rel="Stylesheet" type="text/css" />        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.1.min.js" type="text/javascript" ></script>
+        <script src="https://i1.code.msdn.s-msft.com/RequestReduceContent/a12c72272a8fe142a00d8aae0ff5525e-cf9957f54e208c66abb738158989dd84-RequestReducedScript.js" type="text/javascript" ></script>                        <script type="text/javascript">
+            function initializePage() {
+                var activeTabData = 'activeTab';
+                var otherTabClass = 'otherTab';
+                var hiddenPreClass = 'hidden';
+                $("a[href^=#]").attr("target","_self");
+                $("div.scriptcode").each(function (i) {
+                    var scriptBlock = $(this);
+                    scriptBlock.trackCopy(trackCodeSnippetCodeDownload);
+                    var labelElems = scriptBlock.find("div.title > span");
+                    if (labelElems.length == 0) {
+                        labelElems = scriptBlock.find("div.title");
+                    }
+                    var languageSpans = scriptBlock.find("span.hidden");
+                    var pres = scriptBlock.find("pre");
+                    if (languageSpans.length > 0 && pres.length > 1) {
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            var languageSpan = $(languageSpans[index]);
+                            labelSpan.data('code', codePre.text().replace(/(\r(\n)?)|((\r)?\n)/ig, '\r\n'));
+                            codePre.removeClass(hiddenPreClass);  
+                            codePre.addClass(languageSpan.text().replace(/^\s+|\s+$/g,""));
+                            codePre.chili();
+                            languageSpan.remove();
+                        });
+
+                        pres = scriptBlock.find("pre");
+                        labelElems.each(function(index, elem) {
+                            var codePre = $(pres[index]);
+                            var labelSpan = $(elem);
+                            if (index == 0) {
+                                scriptBlock.data(activeTabData, 0);
+                            }
+                            else {
+                                labelSpan.addClass(otherTabClass);
+                                codePre.addClass(hiddenPreClass);  
+                            }
+                            labelSpan.click(function (e) {
+                                var activeTab = scriptBlock.data(activeTabData);
+                                $(labelElems[activeTab]).addClass(otherTabClass);   
+                                $(pres[activeTab]).addClass(hiddenPreClass);   
+                                        
+                                codePre.removeClass(hiddenPreClass);    
+                                labelSpan.removeClass(otherTabClass);
+                                scriptBlock.data(activeTabData, index);
+
+                                if( window.parent.Galleries ) {
+                                    window.parent.Galleries.project.resizeDesc();
+                                }
+                            });
+                        });
+
+                        var preview = scriptBlock.find('div.preview');
+                        if (preview.length == 0) {
+                            preview = $(pres[pres.length - 1]);
+                        }
+                        preview.remove();
+
+                        if (window.clipboardData && clipboardData.setData) {
+                            var copyLink = $("<a href='#' class='copyCode'>Copy code</a>");
+                            copyLink.click(function (e) {
+                                trackCodeSnippetCodeDownload();
+                                clipboardData.setData("Text", $(labelElems[scriptBlock.data(activeTabData)]).data('code'));
+                                return false;
+                            });
+                            $(this).prepend(copyLink);
+                        }
+                    }
+                });
+
+                if ((window.parent) && (window.parent.Galleries)) {
+                    window.parent.Galleries.project.resizeDesc();
+                }
+
+                    if (top.location == self.location) {
+                         window.location.replace(window.location.href.replace('/description', ''));
+                    }
+            }
+
+            function trackCodeSnippetCodeDownload() {
+                if ((window.parent) && (window.parent.gTracker)) {
+                    window.parent.gTracker.createActionEvent('Description', 'Download', 'Copy', 'CodeSnippet', null);
+                }
+            }
+            
+            function overrideAnchorLinksForFirefoxAndChrome(iframeId) {
+                if(($.browser.mozilla && parseInt($.browser.version, 10) >= 2) || $.browser.webkit) {
+                    var iframeOffset = $("#" + iframeId, window.parent.document).offset();
+                    $("a").each(function () {
+                        var link = $(this);
+                        var href = link.attr("href");
+                        if (href && href[0] == "#") {
+                            var name = href.substring(1);
+                            $(this).click(function () {
+                                var nameElement = $("[name='" + name + "']");
+                                var idElement = $("#" + name);
+                                var element = null;
+                                if (nameElement.length > 0) {
+                                    element = nameElement;
+                                } else if (idElement.length > 0) {
+                                    element = idElement;
+                                }
+
+                                if (element) {
+                                    var offset = element.offset();
+                                    window.parent.scrollTo(offset.left, offset.top + iframeOffset.top);
+                                }
+
+                                return false;
+                            });
+                        }
+                    });
+                }
+            }
+
+            $(window).load(function(){
+                initializePage();
+                overrideAnchorLinksForFirefoxAndChrome("longdescIframe");
+
+            });
+
+        </script>
+        <base target="_parent" />
+    </head>
+    <body>
+        <div id="longDesc">
+            
+<p>No doubt you've seen the errors in Event Viewer about SharePoint web applications having the incorrect object cache accounts. They are probably something like this:</p>
+<blockquote>
+<p><span style="font-family:Consolas">Object Cache: The super user account utilized by the cache is not configured. This can increase the number of cache misses, which causes the page requests to consume unneccesary system resources.&nbsp;<br>
+To configure the account use the following command &lsquo;stsadm -o setproperty -propertyname portalsuperuseraccount -propertyvalue account -url webappurl&rsquo;. The account should be any account that has Full Control access to the SharePoint databases but
+ is not an application pool account.&nbsp;<br>
+Additional Data:&nbsp;<br>
+Current default super user account: SHAREPOINT\system&nbsp;<br>
+</span><strong><br>
+</strong></p>
+</blockquote>
+<blockquote>
+<p><span style="font-family:Consolas">Object Cache: The super reader account utilized by the cache does not have sufficient permissions to SharePoint databases.&nbsp;<br>
+To configure the account use the following command 'stsadm -o setproperty -propertyname portalsuperreaderaccount -propertyvalue account -url webappurl'. It should be configured to be an account that has Read access to the SharePoint databases.&nbsp;<br>
+Additional Data:&nbsp;<br>
+Current default super reader account: NT AUTHORITY\LOCAL SERVICE</span></p>
+</blockquote>
+<p>&nbsp;</p>
+<p>This happens because SharePoint defaults to setting the object cache accounts for all new web applications to the SYSTEM and LOCAL SERVICE accounts, respectively. This script provides an easy way to update those accounts, whether for one web application
+ or all. It gracefully handles claims or classic web applications, and even comes with its own help documentation!</p>
+<p>You can import the function file into your current session like this:</p>
+<p>. .\Set-SPObjectCacheAccounts.ps1</p>
+<p>You can see how to use it like this:</p>
+<p>Get-Help Set-SPObjectCacheAccounts -Examples</p>
+<p>For more info on Object Cache accounts, please see this Technet arcticle:&nbsp;<a href="http://technet.microsoft.com/en-us/library/ff758656.aspx">http://technet.microsoft.com/en-us/library/ff758656.aspx</a></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>PowerShell</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">powershell</span>
+<pre class="hidden">Add-PSSnapin Microsoft.SharePoint.PowerShell -ErrorAction SilentlyContinue
+
+&lt;#
+.SYNOPSIS
+Helper function to set the the SharePoint object cache accounts.	
+
+.DESCRIPTION
+This function sets the SharePoint web application super user/reader object cache accounts to the accounts provided.
+
+.EXAMPLE
+Set-SPObjectCacheAccounts -WebAppURL http://www.example.com -SuperUser &quot;DOMAIN\superuser&quot; -SuperReader &quot;DOMAIN\superreader&quot;
+
+This command sets the object cache accounts for the http://www.example.com web application to DOMAIN\superuser and DOMAIN\superreader, respectively.
+
+.EXAMPLE
+Set-SPObjectCacheAccounts -WebAppURL http://www.example.com
+
+This command sets the object cache accounts for the http://www.example.com web application back to SharePoint's defaults: NT Authority\System and NT Authority\Local Service, respectively.
+
+.EXAMPLE
+Set-SPObjectCacheAccounts
+
+This command sets the object cache accounts for all the web applications back to SharePoint's defaults: NT Authority\System and NT Authority\Local Service, respectively.
+
+.EXAMPLE
+Set-SPObjectCacheAccounts -SuperUser &quot;DOMAIN\superuser&quot; -SuperReader &quot;DOMAIN\superreader&quot;
+
+This command sets the object cache accounts for all the web applications to DOMAIN\superuser and DOMAIN\superreader, respectively.
+
+.NOTES
+NAME: Set-SPObjectCacheAccounts
+AUTHOR: Wes Kroesbergen
+
+.LINK
+http://www.kroesbergens.com
+#&gt;
+
+Function Set-SPObjectCacheAccounts 
+{
+	Param([Parameter(Position=0,Mandatory=$false)][string] $WebAppURL,
+	[Parameter(Position=1,Mandatory=$false)][string] $SuperUser,
+	[Parameter(Position=2,Mandatory=$false)][string] $SuperReader)
+
+    # Check if there is a URL specified
+	if ($WebAppURL -notlike &quot;&quot;)
+	{
+		$WebApp = Get-SPWebApplication $WebAppURL
+		$WebApps = @($WebApp)
+	}
+
+    # If no URL specified, let's ask user if we should update all web apps
+	else
+	{
+        $Response = &quot;&quot;
+
+        # Validate a y/n response
+        While ($Response -notmatch '^(Y|N)$')
+        {
+            $Response = Read-Host &quot;No webapp specified, update all of them? (y/n)&quot;
+        }
+
+        # If user selects Y, then update all
+        if ($Response -like &quot;Y&quot;)
+        {
+            Write-Host &quot;Updating all web applications!&quot;  -fore yellow 
+            $WebApps = Get-SPWebApplication
+        }
+
+        # If user selects N, cancel
+        else
+        {
+            Write-Host &quot;Update cancelled.&quot;
+            $WebApps = @()
+        }
+	}
+	
+	foreach ($WebApp in $WebApps)
+	{
+
+        # Check if web app is claims
+	    $IsClaims = $WebApp.UseClaimsAuthentication
+
+        # Get descriptive URL for user feedback
+	    $URL = $WebApp.URL
+
+        # Ensure user has not already set claims format of username
+	    $SuperUser = $SuperUser.Replace(&quot;i:0#.w|&quot;,&quot;&quot;)
+	    $SuperReader = $SuperReader.Replace(&quot;i:0#.w|&quot;,&quot;&quot;)
+
+	    if ($SuperUser -like &quot;&quot;)
+	    {
+		    Write-Host &quot;Super User wasn't defined, resetting to SharePoint defaults...&quot;
+		    $SuperUser = &quot;NT Authority\System&quot;
+	    }
+
+	    if ($SuperReader -like &quot;&quot;)
+	    {
+		    Write-Host &quot;Super Reader wasn't defined, resetting to SharePoint defaults...&quot;
+		    $SuperReader = &quot;NT Authority\Local Service&quot;
+	    }
+
+                # If web app was claims, update format of username accordingly, as long as they are not the default accounts
+	    if ($IsClaims -eq $true -and $SuperUser -notlike &quot;*System&quot; -and $SuperReader -notlike &quot;*Service&quot;)
+	    {
+		    Write-Host &quot;Web application uses claims, ensuring user identities have correct prefix...&quot;
+		    $SuperUser = (&quot;i:0#.w|&quot; &#43; $SuperUser)
+		    $SuperReader = (&quot;i:0#.w|&quot; &#43; $SuperReader)
+	    }
+
+	    try 
+	    { 
+            # Update web app User Policy
+		    $SUpolicy = $WebApp.Policies.Add($SuperUser,&quot;Super User&quot;) 
+		    $SUpolicy.PolicyRoleBindings.Add($WebApp.PolicyRoles.GetSpecialRole([Microsoft.SharePoint.Administration.SPPolicyRoleType]::FullControl)) 
+		    $SRpolicy = $WebApp.Policies.Add($SuperReader,&quot;Super Reader&quot;) 
+		    $SRpolicy.PolicyRoleBindings.Add($WebApp.PolicyRoles.GetSpecialRole([Microsoft.SharePoint.Administration.SPPolicyRoleType]::FullRead)) 
+
+            # Update the actual web app object cache accounts
+		    $WebApp.Properties[&quot;portalsuperuseraccount&quot;] = [string]$SuperUser 
+		    $WebApp.Properties[&quot;portalsuperreaderaccount&quot;] = [string]$SuperReader
+
+            # Commit our changes
+		    $WebApp.Update()
+
+		    Write-Host &quot;Object cache accounts for $URL have been updated.&quot; 
+	    } 
+	    catch 
+	    { 
+		    Write-Host &quot;Error adding the object cache accounts for $URL!&quot; -fore red 
+	    } 
+	}
+} </pre>
+<div class="preview">
+<pre class="powershell"><span class="powerShell__cmdlets">Add-PSSnapin</span>&nbsp;Microsoft.SharePoint.PowerShell&nbsp;<span class="powerShell__operator">-</span>ErrorAction&nbsp;SilentlyContinue&nbsp;
+&nbsp;
+<span class="powerShell__mlcom">&lt;#&nbsp;
+.SYNOPSIS&nbsp;
+Helper&nbsp;function&nbsp;to&nbsp;set&nbsp;the&nbsp;the&nbsp;SharePoint&nbsp;object&nbsp;cache&nbsp;accounts.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;
+.DESCRIPTION&nbsp;
+This&nbsp;function&nbsp;sets&nbsp;the&nbsp;SharePoint&nbsp;web&nbsp;application&nbsp;super&nbsp;user/reader&nbsp;object&nbsp;cache&nbsp;accounts&nbsp;to&nbsp;the&nbsp;accounts&nbsp;provided.&nbsp;
+&nbsp;
+.EXAMPLE&nbsp;
+Set-SPObjectCacheAccounts&nbsp;-WebAppURL&nbsp;http://www.example.com&nbsp;-SuperUser&nbsp;&quot;DOMAIN\superuser&quot;&nbsp;-SuperReader&nbsp;&quot;DOMAIN\superreader&quot;&nbsp;
+&nbsp;
+This&nbsp;command&nbsp;sets&nbsp;the&nbsp;object&nbsp;cache&nbsp;accounts&nbsp;for&nbsp;the&nbsp;http://www.example.com&nbsp;web&nbsp;application&nbsp;to&nbsp;DOMAIN\superuser&nbsp;and&nbsp;DOMAIN\superreader,&nbsp;respectively.&nbsp;
+&nbsp;
+.EXAMPLE&nbsp;
+Set-SPObjectCacheAccounts&nbsp;-WebAppURL&nbsp;http://www.example.com&nbsp;
+&nbsp;
+This&nbsp;command&nbsp;sets&nbsp;the&nbsp;object&nbsp;cache&nbsp;accounts&nbsp;for&nbsp;the&nbsp;http://www.example.com&nbsp;web&nbsp;application&nbsp;back&nbsp;to&nbsp;SharePoint's&nbsp;defaults:&nbsp;NT&nbsp;Authority\System&nbsp;and&nbsp;NT&nbsp;Authority\Local&nbsp;Service,&nbsp;respectively.&nbsp;
+&nbsp;
+.EXAMPLE&nbsp;
+Set-SPObjectCacheAccounts&nbsp;
+&nbsp;
+This&nbsp;command&nbsp;sets&nbsp;the&nbsp;object&nbsp;cache&nbsp;accounts&nbsp;for&nbsp;all&nbsp;the&nbsp;web&nbsp;applications&nbsp;back&nbsp;to&nbsp;SharePoint's&nbsp;defaults:&nbsp;NT&nbsp;Authority\System&nbsp;and&nbsp;NT&nbsp;Authority\Local&nbsp;Service,&nbsp;respectively.&nbsp;
+&nbsp;
+.EXAMPLE&nbsp;
+Set-SPObjectCacheAccounts&nbsp;-SuperUser&nbsp;&quot;DOMAIN\superuser&quot;&nbsp;-SuperReader&nbsp;&quot;DOMAIN\superreader&quot;&nbsp;
+&nbsp;
+This&nbsp;command&nbsp;sets&nbsp;the&nbsp;object&nbsp;cache&nbsp;accounts&nbsp;for&nbsp;all&nbsp;the&nbsp;web&nbsp;applications&nbsp;to&nbsp;DOMAIN\superuser&nbsp;and&nbsp;DOMAIN\superreader,&nbsp;respectively.&nbsp;
+&nbsp;
+.NOTES&nbsp;
+NAME:&nbsp;Set-SPObjectCacheAccounts&nbsp;
+AUTHOR:&nbsp;Wes&nbsp;Kroesbergen&nbsp;
+&nbsp;
+.LINK&nbsp;
+http://www.kroesbergens.com&nbsp;
+#&gt;</span>&nbsp;
+&nbsp;
+<span class="powerShell__keyword">Function</span>&nbsp;Set<span class="powerShell__operator">-</span>SPObjectCacheAccounts&nbsp;&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">Param</span>([Parameter(Position=0,Mandatory=<span class="powerShell__variable">$false</span>)][string]&nbsp;<span class="powerShell__variable">$WebAppURL</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[Parameter(Position=1,Mandatory=<span class="powerShell__variable">$false</span>)][string]&nbsp;<span class="powerShell__variable">$SuperUser</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;[Parameter(Position=2,Mandatory=<span class="powerShell__variable">$false</span>)][string]&nbsp;<span class="powerShell__variable">$SuperReader</span>)&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;Check&nbsp;if&nbsp;there&nbsp;is&nbsp;a&nbsp;URL&nbsp;specified</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$WebAppURL</span>&nbsp;<span class="powerShell__operator">-</span>notlike&nbsp;<span class="powerShell__string">&quot;&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$WebApp</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPWebApplication&nbsp;<span class="powerShell__variable">$WebAppURL</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$WebApps</span>&nbsp;=&nbsp;@(<span class="powerShell__variable">$WebApp</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;If&nbsp;no&nbsp;URL&nbsp;specified,&nbsp;let's&nbsp;ask&nbsp;user&nbsp;if&nbsp;we&nbsp;should&nbsp;update&nbsp;all&nbsp;web&nbsp;apps</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Response</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;&quot;</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;Validate&nbsp;a&nbsp;y/n&nbsp;response</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">While</span>&nbsp;(<span class="powerShell__variable">$Response</span>&nbsp;<span class="powerShell__operator">-</span>notmatch&nbsp;<span class="powerShell__string">'^(Y|N)$'</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$Response</span>&nbsp;=&nbsp;<span class="powerShell__cmdlets">Read-Host</span>&nbsp;<span class="powerShell__string">&quot;No&nbsp;webapp&nbsp;specified,&nbsp;update&nbsp;all&nbsp;of&nbsp;them?&nbsp;(y/n)&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;If&nbsp;user&nbsp;selects&nbsp;Y,&nbsp;then&nbsp;update&nbsp;all</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$Response</span>&nbsp;<span class="powerShell__operator">-</span>like&nbsp;<span class="powerShell__string">&quot;Y&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;Updating&nbsp;all&nbsp;web&nbsp;applications!&quot;</span>&nbsp;&nbsp;<span class="powerShell__operator">-</span>fore&nbsp;yellow&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$WebApps</span>&nbsp;=&nbsp;Get<span class="powerShell__operator">-</span>SPWebApplication&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;If&nbsp;user&nbsp;selects&nbsp;N,&nbsp;cancel</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;Update&nbsp;cancelled.&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$WebApps</span>&nbsp;=&nbsp;@()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">foreach</span>&nbsp;(<span class="powerShell__variable">$WebApp</span>&nbsp;<span class="powerShell__keyword">in</span>&nbsp;<span class="powerShell__variable">$WebApps</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;Check&nbsp;if&nbsp;web&nbsp;app&nbsp;is&nbsp;claims</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$IsClaims</span>&nbsp;=&nbsp;<span class="powerShell__variable">$WebApp</span>.UseClaimsAuthentication&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;Get&nbsp;descriptive&nbsp;URL&nbsp;for&nbsp;user&nbsp;feedback</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$URL</span>&nbsp;=&nbsp;<span class="powerShell__variable">$WebApp</span>.URL&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;Ensure&nbsp;user&nbsp;has&nbsp;not&nbsp;already&nbsp;set&nbsp;claims&nbsp;format&nbsp;of&nbsp;username</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SuperUser</span>&nbsp;=&nbsp;<span class="powerShell__variable">$SuperUser</span>.Replace(<span class="powerShell__string">&quot;i:0#.w|&quot;</span>,<span class="powerShell__string">&quot;&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SuperReader</span>&nbsp;=&nbsp;<span class="powerShell__variable">$SuperReader</span>.Replace(<span class="powerShell__string">&quot;i:0#.w|&quot;</span>,<span class="powerShell__string">&quot;&quot;</span>)&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$SuperUser</span>&nbsp;<span class="powerShell__operator">-</span>like&nbsp;<span class="powerShell__string">&quot;&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;Super&nbsp;User&nbsp;wasn't&nbsp;defined,&nbsp;resetting&nbsp;to&nbsp;SharePoint&nbsp;defaults...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SuperUser</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;NT&nbsp;Authority\System&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$SuperReader</span>&nbsp;<span class="powerShell__operator">-</span>like&nbsp;<span class="powerShell__string">&quot;&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;Super&nbsp;Reader&nbsp;wasn't&nbsp;defined,&nbsp;resetting&nbsp;to&nbsp;SharePoint&nbsp;defaults...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SuperReader</span>&nbsp;=&nbsp;<span class="powerShell__string">&quot;NT&nbsp;Authority\Local&nbsp;Service&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;If&nbsp;web&nbsp;app&nbsp;was&nbsp;claims,&nbsp;update&nbsp;format&nbsp;of&nbsp;username&nbsp;accordingly,&nbsp;as&nbsp;long&nbsp;as&nbsp;they&nbsp;are&nbsp;not&nbsp;the&nbsp;default&nbsp;accounts</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">if</span>&nbsp;(<span class="powerShell__variable">$IsClaims</span>&nbsp;<span class="powerShell__operator">-</span>eq&nbsp;<span class="powerShell__variable">$true</span>&nbsp;<span class="powerShell__operator">-</span>and&nbsp;<span class="powerShell__variable">$SuperUser</span>&nbsp;<span class="powerShell__operator">-</span>notlike&nbsp;<span class="powerShell__string">&quot;*System&quot;</span>&nbsp;<span class="powerShell__operator">-</span>and&nbsp;<span class="powerShell__variable">$SuperReader</span>&nbsp;<span class="powerShell__operator">-</span>notlike&nbsp;<span class="powerShell__string">&quot;*Service&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;Web&nbsp;application&nbsp;uses&nbsp;claims,&nbsp;ensuring&nbsp;user&nbsp;identities&nbsp;have&nbsp;correct&nbsp;prefix...&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SuperUser</span>&nbsp;=&nbsp;(<span class="powerShell__string">&quot;i:0#.w|&quot;</span>&nbsp;<span class="powerShell__operator">&#43;</span>&nbsp;<span class="powerShell__variable">$SuperUser</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SuperReader</span>&nbsp;=&nbsp;(<span class="powerShell__string">&quot;i:0#.w|&quot;</span>&nbsp;<span class="powerShell__operator">&#43;</span>&nbsp;<span class="powerShell__variable">$SuperReader</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">try</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;Update&nbsp;web&nbsp;app&nbsp;User&nbsp;Policy</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SUpolicy</span>&nbsp;=&nbsp;<span class="powerShell__variable">$WebApp</span>.Policies.Add(<span class="powerShell__variable">$SuperUser</span>,<span class="powerShell__string">&quot;Super&nbsp;User&quot;</span>)&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SUpolicy</span>.PolicyRoleBindings.Add(<span class="powerShell__variable">$WebApp</span>.PolicyRoles.GetSpecialRole([Microsoft.SharePoint.Administration.SPPolicyRoleType]::FullControl))&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SRpolicy</span>&nbsp;=&nbsp;<span class="powerShell__variable">$WebApp</span>.Policies.Add(<span class="powerShell__variable">$SuperReader</span>,<span class="powerShell__string">&quot;Super&nbsp;Reader&quot;</span>)&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$SRpolicy</span>.PolicyRoleBindings.Add(<span class="powerShell__variable">$WebApp</span>.PolicyRoles.GetSpecialRole([Microsoft.SharePoint.Administration.SPPolicyRoleType]::FullRead))&nbsp;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;Update&nbsp;the&nbsp;actual&nbsp;web&nbsp;app&nbsp;object&nbsp;cache&nbsp;accounts</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$WebApp</span>.Properties[<span class="powerShell__string">&quot;portalsuperuseraccount&quot;</span>]&nbsp;=&nbsp;[string]<span class="powerShell__variable">$SuperUser</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$WebApp</span>.Properties[<span class="powerShell__string">&quot;portalsuperreaderaccount&quot;</span>]&nbsp;=&nbsp;[string]<span class="powerShell__variable">$SuperReader</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__com">#&nbsp;Commit&nbsp;our&nbsp;changes</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__variable">$WebApp</span>.Update()&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;Object&nbsp;cache&nbsp;accounts&nbsp;for&nbsp;$URL&nbsp;have&nbsp;been&nbsp;updated.&quot;</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="powerShell__keyword">catch</span>&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Write<span class="powerShell__operator">-</span>Host&nbsp;<span class="powerShell__string">&quot;Error&nbsp;adding&nbsp;the&nbsp;object&nbsp;cache&nbsp;accounts&nbsp;for&nbsp;$URL!&quot;</span>&nbsp;<span class="powerShell__operator">-</span>fore&nbsp;red&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}&nbsp;</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+
+        </div>
+    </body>
+</html>
