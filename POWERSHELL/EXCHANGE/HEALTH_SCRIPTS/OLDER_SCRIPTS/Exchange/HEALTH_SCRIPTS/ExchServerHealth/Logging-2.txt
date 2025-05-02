@@ -1,4 +1,0 @@
-﻿[8/6/2018 8:59:4] : Starting the Script
-[8/6/2018 8:59:35] : Building of the objects took 30.2281599 total seconds
-[8/6/2018 9:0:5] : Rebuilding of the Raw data collected and placed into the main object took 0.62843 total Seconds
-[8/6/2018 9:0:36] : Rebuilding of the Raw data collected and placed into the main object took 0.6365173 total Seconds

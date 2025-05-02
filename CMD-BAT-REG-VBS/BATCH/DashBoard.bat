@@ -1,1 +1,0 @@
-powershell .\DashBoard_SIP.ps1

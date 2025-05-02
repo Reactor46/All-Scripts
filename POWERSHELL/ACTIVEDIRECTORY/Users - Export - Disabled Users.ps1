@@ -1,2 +1,0 @@
-# All disabled users with last logon date
-Get-ADUser -Filter {Enabled -eq $False} -Properties name,sAMAccountName,lastLogonDate | Where-Object {$_.lastLogonDate -le [DateTime]::Now.AddDays(-180)} | Select name,sAMAccountName,lastLogonDate | Sort-Object name

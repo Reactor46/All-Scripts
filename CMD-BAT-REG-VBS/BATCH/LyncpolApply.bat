@@ -1,1 +1,0 @@
-powershell .\Lyncpolapply.ps1

@@ -1,7 +1,0 @@
-#TYPE System.Management.Automation.PSCustomObject
-"Identity","State","Priority","Comments","Description"
-"QA Test","Disabled","0","Will redirect mail from creditone@creditonemail.com to QA Test Account","If the message:
-	Includes these patterns in the From address: 'creditone@creditonemail.com'
-Take the following actions:
-	Redirect the message to 'QATest@creditone.com'
-"

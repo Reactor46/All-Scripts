@@ -1,1 +1,0 @@
-powershell .\EmailAddressChange.ps1

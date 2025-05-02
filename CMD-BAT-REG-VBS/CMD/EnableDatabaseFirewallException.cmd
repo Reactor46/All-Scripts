@@ -1,1 +1,0 @@
-netsh advfirewall firewall add rule name="SQL Server (MSSQLSERVER)" dir=in action=allow service=mssqlserver

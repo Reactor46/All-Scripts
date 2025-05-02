@@ -1,1 +1,0 @@
-C:\Windows\Sysnative\WindowsPowerShell\v1.0\powershell.exe "C:\scripts\MailqueueHealth.ps1"

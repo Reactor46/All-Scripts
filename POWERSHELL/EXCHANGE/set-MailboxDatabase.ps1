@@ -1,1 +1,0 @@
-Set-MailboxDatabase "students_21" -ProhibitSendReceiveQuota 256MB -ProhibitSendQuota 200MB -IssueWarningQuota 175MB -DeletedItemRetention 3 -PublicFolderDatabase "Public Folders" -OfflineAddressBook "\Offline Address List"

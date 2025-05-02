@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<CodeSnippets>
-  <Code Content="var form = document.aspnetForm;&#xD;&#xA;for (var i=0; i&lt;form.elements.length; i++){&#xD;&#xA;if (form.elements[i].type == &quot;checkbox&quot;){&#xD;&#xA;if (form.elements[i].id == 'chkRepair'){&#xD;&#xA;form.elements[i].checked = true;}}}" />
-  <Code Content="javascript:(function(){var form=document.aspnetForm;for(var i=0;i&lt;form.elements.length;i++){if(form.elements[i].type==&quot;checkbox&quot;){if(form.elements[i].id=='chkRepair'){form.elements[i].checked=true;}}}})();" />
-  <Code Content="var form = document.aspnetForm;&#xD;&#xA;for (var i=0; i&lt;form.elements.length; i++){&#xD;&#xA;if (form.elements[i].type == &quot;checkbox&quot;){&#xD;&#xA;if (form.elements[i].id == 'chkRepair'){&#xD;&#xA;form.elements[i].checked = true;}}}" />
-  <Code Content="javascript:(function(){var form=document.aspnetForm;for(var i=0;i&lt;form.elements.length;i++){if(form.elements[i].type==&quot;checkbox&quot;){if(form.elements[i].id=='chkRepair'){form.elements[i].checked=true;}}}})();" />
-</CodeSnippets>

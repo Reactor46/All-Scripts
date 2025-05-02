@@ -1,1 +1,0 @@
-powershell .\SpListarchiving.ps1

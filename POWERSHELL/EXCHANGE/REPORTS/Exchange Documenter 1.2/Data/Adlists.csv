@@ -1,8 +1,0 @@
-#TYPE System.Management.Automation.PSCustomObject
-"DisplayName","Path","RecipientFilter"
-"All Users","\All Users",""
-"All Distribution Lists","\All Distribution Lists",""
-"All Contacts","\All Contacts",""
-"Public Folders","\Public Folders",""
-"All Equipment","\All Equipment","((RecipientType -eq 'UserMailbox') -and (RecipientTypeDetails -eq 'EquipmentMailbox'))"
-"All Rooms","\All Rooms","((Alias -ne $null) -and (((RecipientDisplayType -eq 'ConferenceRoomMailbox') -or (RecipientDisplayType -eq 'SyncedConferenceRoomMailbox'))))"

@@ -1,8 +1,0 @@
-﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
-"Microsoft Visual Studio 2010 Service Pack 1";"LASETLTST04.FNBM.CORP";"Microsoft Corporation";;"10.0.40219";;"Service Pack";;
-"Update for  (KB2504637)";"LASETLTST04.FNBM.CORP";"Microsoft Corporation";;"1";;"Update";"";
-"Service Pack 2 for SQL Server 2012 (KB2958429)";"LASETLTST04.FNBM.CORP";"Microsoft Corporation";"20180308";"11.2.5058.0";;"ServicePack";"Microsoft SQL Server 2012";
-"Service Pack 3 for SQL Server 2012 (KB3072779) (64-bit)";"LASETLTST04.FNBM.CORP";"Microsoft Corporation";"20170926";"11.3.6020.0";;"ServicePack";"Microsoft SQL Server 2012 (64-bit)";
-"Update for Microsoft Visual Studio 2012 (KB2781514)";"LASETLTST04.FNBM.CORP";"Microsoft Corporation";;"11.0.50727";;;"Microsoft Visual Studio 2012";
-"Visual Studio 2012 Update 4 (KB2707250)";"LASETLTST04.FNBM.CORP";"Microsoft Corporation";;"11.0.61030";;;"Microsoft Visual Studio 2012";
-"Visual Studio 2012 Update 5 (KB2707250)";"LASETLTST04.FNBM.CORP";"Microsoft Corporation";;"11.0.61219";;;"Microsoft Visual Studio 2012";

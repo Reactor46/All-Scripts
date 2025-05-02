@@ -1,7 +1,0 @@
-{
-    "DevServer": "dev.server.name",
-    "StagingServer": "staging.server.name",
-    "LiveServer": "live.server.name",
-    "AardmanCertThumbPrint": "thumb print here",
-    "BaseSitePath": "E:\\WebSites\\"
-}

@@ -1,1 +1,0 @@
-Get-DistributionGroupMember -Identity "GroupEmail@DOMAIN.com" -ResultSize Unlimited | Export-CSV Export.csv

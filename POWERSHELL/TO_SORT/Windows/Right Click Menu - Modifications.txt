@@ -1,5 +1,0 @@
-Notes: Remove items from Right Clicking Mouse Menu
-
-HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers
-
--Backup before removing directories to modify menu items

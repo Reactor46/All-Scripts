@@ -1,1 +1,0 @@
-﻿Test-NetConnection -ComputerName youtube.com -TraceRoute -Hops 9

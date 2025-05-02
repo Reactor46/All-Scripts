@@ -1,1 +1,0 @@
-Add-MailboxPermission <mappedUser> -User <userMailbox> -AccessRights FullAccess -InheritanceType All -AutoMapping $false

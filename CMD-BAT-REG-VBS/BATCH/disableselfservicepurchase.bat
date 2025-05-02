@@ -1,1 +1,0 @@
-PowerShell .\disableselfservicepurchase.ps1 -smtpserver smtpserver -from DoNotRespond@labtest.com -erroremail Reports@labtest.com

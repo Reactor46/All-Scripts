@@ -1,1 +1,0 @@
-net use B: "\\server_name\share_name" /persistent:yes

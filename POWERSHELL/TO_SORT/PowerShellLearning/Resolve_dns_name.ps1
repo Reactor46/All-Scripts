@@ -1,1 +1,0 @@
-﻿Resolve-DnsName youtube.com

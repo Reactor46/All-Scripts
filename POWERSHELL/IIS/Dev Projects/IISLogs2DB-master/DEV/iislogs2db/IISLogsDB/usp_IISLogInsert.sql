@@ -1,7 +1,0 @@
-﻿CREATE PROCEDURE [dbo].[usp_IISLogInsert]
-	 @TVP TVPIISLog READONLY
-AS
-	INSERT INTO IISLog
-	SELECT * FROM @TVP
-GO
-GRANT EXEC ON [dbo].[usp_IISLogInsert] TO [AddIISLogRole]

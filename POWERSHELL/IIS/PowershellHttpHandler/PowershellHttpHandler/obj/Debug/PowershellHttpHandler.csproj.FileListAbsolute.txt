@@ -1,6 +1,0 @@
-c:\Users\jbattista\Downloads\PowershellHttpHandler\PowershellHttpHandler\obj\Debug\PowershellHttpHandler.csproj.CoreCompileInputs.cache
-C:\Users\jbattista\Downloads\PowershellHttpHandler\PowershellHttpHandler\bin\Debug\PowershellHttpHandler.dll
-C:\Users\jbattista\Downloads\PowershellHttpHandler\PowershellHttpHandler\bin\Debug\PowershellHttpHandler.pdb
-C:\Users\jbattista\Downloads\PowershellHttpHandler\PowershellHttpHandler\bin\Debug\System.Management.Automation.dll
-C:\Users\jbattista\Downloads\PowershellHttpHandler\PowershellHttpHandler\obj\Debug\PowershellHttpHandler.dll
-C:\Users\jbattista\Downloads\PowershellHttpHandler\PowershellHttpHandler\obj\Debug\PowershellHttpHandler.pdb

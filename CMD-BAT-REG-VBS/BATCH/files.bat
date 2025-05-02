@@ -1,1 +1,0 @@
-forfiles /p E:\ /s /d -730 /c "cmd /c echo @PATH >> C:\oldfiles.txt"

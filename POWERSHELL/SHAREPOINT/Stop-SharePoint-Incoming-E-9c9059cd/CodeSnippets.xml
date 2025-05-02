@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<CodeSnippets>
-  <Code Content="Get-SPServiceInstance | ? {$_.Typename -eq &quot;Microsoft SharePoint Foundation Incoming E-Mail&quot;} | Stop-SPServiceInstance -Confirm:$False" />
-  <Code Content="Get-SPServiceInstance | ? {$_.Typename -eq &quot;Microsoft SharePoint Foundation Incoming E-Mail&quot;} | Stop-SPServiceInstance -Confirm:$False" />
-</CodeSnippets>

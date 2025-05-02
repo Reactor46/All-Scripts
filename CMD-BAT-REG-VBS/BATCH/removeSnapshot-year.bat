@@ -1,1 +1,0 @@
-PowerShell.exe -Command ". 'C:\temp\EBSVolumeSnapshots.ps1'" -type 'removesnapshot' -removaldate 'year'

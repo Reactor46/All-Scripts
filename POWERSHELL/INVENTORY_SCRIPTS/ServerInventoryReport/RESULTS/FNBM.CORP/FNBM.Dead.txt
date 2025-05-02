@@ -1,5 +1,0 @@
-LASCAS04-OLD.fnbm.corp
-LASCAS05-OLD.fnbm.corp
-lashpsim01.fnbm.corp
-LASVCSTST01.fnbm.corp
-LASETLTST02.fnbm.corp

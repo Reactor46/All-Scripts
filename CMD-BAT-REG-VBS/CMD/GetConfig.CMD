@@ -1,1 +1,0 @@
-%~dp0BiosConfigUtility64.exe /cspwdfile:"%~dp0passwordConfig.bin" /get:"%~dp0elitebook840g1.txt"

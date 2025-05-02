@@ -1,1 +1,0 @@
-powershell .\UpdateACtivesyncPol.ps1

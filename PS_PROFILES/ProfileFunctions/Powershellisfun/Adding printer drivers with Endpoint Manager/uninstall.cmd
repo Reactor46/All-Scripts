@@ -1,1 +1,0 @@
-powershell.exe -executionpolicy bypass .\remove_printerdrivers.ps1

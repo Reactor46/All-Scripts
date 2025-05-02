@@ -1,1 +1,0 @@
-﻿Get-DnsClientCache | Clear-DnsClientCache

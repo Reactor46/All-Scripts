@@ -1,1 +1,0 @@
-Get-MailboxDatabase | ft Name, RPCClientAccessServer

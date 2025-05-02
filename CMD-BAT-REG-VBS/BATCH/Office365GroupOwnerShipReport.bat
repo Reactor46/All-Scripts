@@ -1,1 +1,0 @@
-PowerShell .\Office365GroupOwnerShipReport.ps1

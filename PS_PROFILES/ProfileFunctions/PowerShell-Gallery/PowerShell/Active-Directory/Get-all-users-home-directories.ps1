@@ -1,1 +1,0 @@
-Get-Aduser -Filter * -Properties * | Select SamAccountName,HomeDirectory,HomeDrive,ProfilePath

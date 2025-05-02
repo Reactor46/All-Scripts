@@ -1,1 +1,0 @@
-﻿$ComputerName | Get-RAMUtilization -WarningLevel 85 -ErrorLevel 95 | Select "Server Name",  "Memory (Gb)", Usage, Status | Group-ByStatus

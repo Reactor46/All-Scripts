@@ -1,1 +1,0 @@
-Powershell.exe -ExecutionPolicy Bypass -File "C:\ProgramData\PasswordExpirationEmail\Password Change Expiration - Email.ps1"

@@ -1,1 +1,0 @@
-powershell .\EnableActiveSync.ps1

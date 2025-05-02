@@ -1,1 +1,0 @@
-﻿NWAdmin.exe -o InstallTimerJob -job ScheduledWorkflows -url https://wiki.kscpulse.com -minutes 1

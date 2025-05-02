@@ -1,1 +1,0 @@
-powershell .\IntuneMarkingCorporateDevices.ps1

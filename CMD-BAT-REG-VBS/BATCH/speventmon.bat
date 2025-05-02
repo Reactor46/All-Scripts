@@ -1,1 +1,0 @@
-powershell .\speventidmon.ps1

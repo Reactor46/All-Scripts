@@ -1,1 +1,0 @@
-powershell .\processrestart.ps1

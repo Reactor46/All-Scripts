@@ -1,5 +1,0 @@
-﻿"ProgramName";"ComputerName";"Publisher";"InstallDate";"DisplayVersion";"IsMinorUpgrade";"ReleaseType";"ParentDisplayName";"SystemComponent"
-"Windows Server AppFabric v1.1 CU1[KB 2671763]LDR";"LASSQLSPTST01.FNBM.CORP";"Microsoft Corporation";;"1.1.2106.32";;"hotfix";"AppFabric 1.1 for Windows Server";
-"Hotfix 6518 for SQL Server 2012 (KB3123299) (64-bit)";"LASSQLSPTST01.FNBM.CORP";"Microsoft Corporation";"20170103";"11.3.6518.0";;"Hotfix";"Microsoft SQL Server 2012 (64-bit)";
-"Hotfix 6567 for SQL Server 2012 (KB3194724) (64-bit)";"LASSQLSPTST01.FNBM.CORP";"Microsoft Corporation";"20170615";"11.3.6567.0";;"Hotfix";"Microsoft SQL Server 2012 (64-bit)";
-"Service Pack 3 for SQL Server 2012 (KB3072779) (64-bit)";"LASSQLSPTST01.FNBM.CORP";"Microsoft Corporation";"20170103";"11.3.6020.0";;"ServicePack";"Microsoft SQL Server 2012 (64-bit)";

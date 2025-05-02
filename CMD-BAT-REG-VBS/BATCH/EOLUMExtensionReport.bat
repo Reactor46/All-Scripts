@@ -1,1 +1,0 @@
-powershell .\EOLUMExtensionReport.ps1

@@ -1,1 +1,0 @@
-﻿Get-Content -Path 'C:\Users\silad\Documents\text.txt'

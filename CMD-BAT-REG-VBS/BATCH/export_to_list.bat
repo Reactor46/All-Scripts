@@ -1,1 +1,0 @@
-powershell.exe .\export_to_list-PatchPilot.ps1

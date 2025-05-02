@@ -1,1 +1,0 @@
-powershell .\AccountExpiryMonitor.ps1

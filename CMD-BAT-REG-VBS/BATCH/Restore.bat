@@ -1,1 +1,0 @@
-powershell .\RestorePerm.ps1

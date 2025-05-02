@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Setup>
-  <WebApplications>
-    <WebApplication Name="Community Providers" ApplicationPool="Community Providers" ApplicationPoolAccount="kelsey-seybold\sa5SP2013x_UAT_Pool" AuthenticationMethod="NTLM" DatabaseServer="SPProd" DatabaseName="SP2013x_UAT_CommunityProviders_Content" HostHeader="VM119IS01SPXU01" Port="9902" Url="http://VM119IS01SPXU01" SSL="false" >
-    </WebApplication>
-  </WebApplications>
-</Setup>

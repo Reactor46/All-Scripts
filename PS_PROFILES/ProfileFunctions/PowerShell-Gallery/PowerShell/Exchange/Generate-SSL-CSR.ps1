@@ -1,1 +1,0 @@
-New-ExchangeCertificate -GenerateRequest -FriendlyName example.com -SubjectName "c=US,o=ExchangeOutlookWebAccess,cn=example.com" -DomainName autodiscover.example.com -PrivateKeyExportable $true

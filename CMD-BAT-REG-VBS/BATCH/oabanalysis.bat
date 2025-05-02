@@ -1,1 +1,0 @@
-powershell .\eventAnalysis.ps1 Application server1 9325

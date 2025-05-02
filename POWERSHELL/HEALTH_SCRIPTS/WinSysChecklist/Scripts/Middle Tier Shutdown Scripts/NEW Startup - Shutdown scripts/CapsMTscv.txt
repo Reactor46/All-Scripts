@@ -1,8 +1,0 @@
-ContosoApplicationParsingService
-ContosoApplicationProcessingService
-ContosoApplicationImportService
-ContosoIPFraudCheckService
-ContosoDebitCardHolderFileWatcher
-CreditPullService
-FromPPSExchangeFileWatcherService
-ContosoIdentityCheckService

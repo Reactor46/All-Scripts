@@ -1,8 +1,0 @@
-"Name","USNCreated","USNChanged","Created","Changed","RecordCount","DistinguishedName"
-"RootDNSServers","20558","20558","5/18/2007 6:24:28 PM","6/12/2017 2:53:05 PM","2","DC=RootDNSServers,CN=MicrosoftDNS,CN=System,DC=corp,DC=vegas,DC=com"
-"corp.vegas.com","45882","45882","5/18/2007 6:27:34 PM","6/12/2017 2:53:55 PM","437","DC=corp.vegas.com,CN=MicrosoftDNS,DC=DomainDnsZones,DC=corp,DC=vegas,DC=com"
-"RootDNSServers","45886","45886","5/18/2007 7:10:19 PM","6/12/2017 2:53:55 PM","14","DC=RootDNSServers,CN=MicrosoftDNS,DC=DomainDnsZones,DC=corp,DC=vegas,DC=com"
-"_msdcs.corp.vegas.com","45919","45919","5/20/2007 6:51:41 PM","6/12/2017 2:53:55 PM","17","DC=_msdcs.corp.vegas.com,CN=MicrosoftDNS,DC=DomainDnsZones,DC=corp,DC=vegas,DC=com"
-"25.172.in-addr.arpa","47411","47411","11/19/2009 3:12:55 PM","6/12/2017 2:53:56 PM","247","DC=25.172.in-addr.arpa,CN=MicrosoftDNS,DC=ForestDnsZones,DC=corp,DC=vegas,DC=com"
-"10.in-addr.arpa","47488","47488","11/19/2009 3:11:47 PM","6/12/2017 2:53:56 PM","917","DC=10.in-addr.arpa,CN=MicrosoftDNS,DC=ForestDnsZones,DC=corp,DC=vegas,DC=com"
-"..TrustAnchors","47506","47506","2/7/2011 1:18:58 PM","6/12/2017 2:53:56 PM","1","DC=..TrustAnchors,CN=MicrosoftDNS,DC=ForestDnsZones,DC=corp,DC=vegas,DC=com"

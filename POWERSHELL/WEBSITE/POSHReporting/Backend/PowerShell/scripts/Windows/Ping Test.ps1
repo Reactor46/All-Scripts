@@ -1,1 +1,0 @@
-$ComputerName | Get-PingTest | select "Server Name", "IP", "Ping success", "Error Message", "Status" | Group-ByStatus

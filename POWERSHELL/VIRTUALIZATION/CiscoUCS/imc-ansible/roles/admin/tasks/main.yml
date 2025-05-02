@@ -1,4 +1,0 @@
-
-- include: user.yml
-- include: ntp.yml
-- include: ldap.yml

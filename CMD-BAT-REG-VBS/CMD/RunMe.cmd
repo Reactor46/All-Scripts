@@ -1,1 +1,0 @@
-powershell.exe -executionpolicy bypass -file "%~dp0LTIWizard.ps1"

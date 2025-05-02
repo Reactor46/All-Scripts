@@ -1,3 +1,0 @@
-﻿FeatureAdmin2010 TODO
-
-Merge FeatureAdmin2007 GUI improvements from revision 81774+

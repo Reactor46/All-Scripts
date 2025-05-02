@@ -1,1 +1,0 @@
-Download VMware vSphere PowerCLI and install in computer/server that execute the scripts

@@ -1,1 +1,0 @@
-﻿New-Item -ItemType File -Path 'C:\Users\silad\Documents\text.txt'

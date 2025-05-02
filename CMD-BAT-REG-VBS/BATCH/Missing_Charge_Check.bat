@@ -1,2 +1,0 @@
-"C:\wamp\bin\php\php5.3.8\php.exe" -c "C:\wamp\bin\apache\Apache2.2.21\bin\php.ini" -f "c:\reports\_USONV_Reports\MissingChargeCheck\Missing_Charge_Check.php"
-"C:\wamp\bin\php\php5.3.8\php.exe" -c "C:\wamp\bin\apache\Apache2.2.21\bin\php.ini" -f "c:\reports\_USONV_Reports\MissingChargeCheck\Missing_Charge_Check-NoData"

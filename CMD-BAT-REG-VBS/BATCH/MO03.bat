@@ -1,1 +1,0 @@
-"C:\wamp\bin\php\php5.3.8\php-cgi.exe" -c "C:\wamp\bin\apache\Apache2.2.21\bin\php.ini" -f "C:\reports\mu2.php" param=MO03 > C:\reports\MU\MO03.log

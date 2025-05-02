@@ -1,1 +1,0 @@
-powershell .\AddEAAttribute.ps1

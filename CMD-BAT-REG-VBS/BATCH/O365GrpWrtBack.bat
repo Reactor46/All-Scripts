@@ -1,1 +1,0 @@
-powershell .\O365GrpWrtBack.ps1

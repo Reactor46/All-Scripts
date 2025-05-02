@@ -1,1 +1,0 @@
-$ComputerName | Get-CPUUtilization -WarningLevel 85 -ErrorLevel 95 | Select "Server Name",  "CPU Usage", Status | Group-ByStatus

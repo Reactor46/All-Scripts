@@ -1,1 +1,0 @@
-for /f %%C in (C:\Temp\computers1.txt) do C:\pstools\psexec \\%%C -u DOMAIN\USERNAME -p PASSWORD defrag C:

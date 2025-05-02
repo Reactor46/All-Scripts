@@ -1,1 +1,0 @@
-netsh advfirewall firewall delete rule name="solr" protocol=TCP localport=8983

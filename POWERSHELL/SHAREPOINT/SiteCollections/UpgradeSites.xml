@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Upgrade>
-  <SiteCollections>
-    <SiteCollection Name="The Pulse" URL="" HostHeaderWebApplication="https://pulse.int.kscpulse.com" />
-  </SiteCollections>
-</Upgrade>
-

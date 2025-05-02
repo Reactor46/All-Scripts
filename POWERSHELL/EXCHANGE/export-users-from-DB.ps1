@@ -1,1 +1,0 @@
-Get-Mailbox -ResultSize Unlimited -SortBy DisplayName -Filter '(Database -eq ''CN=Students_25,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=DMACC,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=dmacc,DC=edu'')' | Select-Object DisplayName, Alias | Export-Csv "c:\exports\Students_25.csv" -NoTypeInformation

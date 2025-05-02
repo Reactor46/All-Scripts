@@ -1,1 +1,0 @@
-Get-MailboxDatabase | Clean-MailboxDatabase

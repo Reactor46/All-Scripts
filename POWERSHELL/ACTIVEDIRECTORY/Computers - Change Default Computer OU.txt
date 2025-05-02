@@ -1,2 +1,0 @@
-redircmp "OU=Computers,OU=Company,OU=ParentCompany,DC=DOMAIN,DC=local"
-* Changes default OU computers are joined to

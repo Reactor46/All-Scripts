@@ -1,2 +1,0 @@
-Add-PSSnapin Microsoft.SharePoint.PowerShell -erroraction SilentlyContinue
-Get-CacheClusterInfo -ProviderType SPDistributedCacheClusterProvider -ConnectionString "Data Source=SPUAT;Initial Catalog=SP2013_UAT_CentralAdmin_Config;Integrated Security=True;Enlist=False;Pooling=True;Min Pool Size=0;Max Pool Size=100;Connect Timeout=15;Application Name=SharePoint[powershell][1][SP2013_UAT_CentralAdmin_Config]"

@@ -1,1 +1,0 @@
-c:\sendEmail\sendemail -f Administrator@optummso.com -t wbarker@optummso.com -s 192.168.1.8 -u Varian test -m Varian test.

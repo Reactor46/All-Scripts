@@ -1,5 +1,0 @@
-"Domain","Site","Name","IPv4Address","Operating System","Hostname","Infra","Naming","Schema","RID","PDC","SMB Port Open","SMB1(NT LM 0.12)","SMB2(0x0202)","SMB2(0x0210)","SMB3(0x0300)","SMB3(0x0302)","SMB3(0x0311)","SMB Signing"
-"USON.LOCAL","Default-First-Site-Name","MSODC01","192.168.1.4","Windows Server 2019 Datacenter 10.0 (17763)","MSODC01.USON.LOCAL","False","False","False","False","False","True","False","True","True","True","True","False","True"
-"USON.LOCAL","Default-First-Site-Name","MSODC02","192.168.1.10","Windows Server 2016 Standard 10.0 (14393)","MSODC02.USON.LOCAL","False","False","False","False","False","True","True","True","True","True","True","False","True"
-"USON.LOCAL","Default-First-Site-Name","MWTDC01","10.20.11.11","Windows Server 2016 Standard 10.0 (14393)","MWTDC01.USON.LOCAL","False","True","True","False","False","True","True","True","True","True","True","False","True"
-"USON.LOCAL","Default-First-Site-Name","MWTDC02","10.20.11.12","Windows Server 2016 Standard 10.0 (14393)","MWTDC02.USON.LOCAL","True","False","False","True","True","True","True","True","True","True","True","False","True"

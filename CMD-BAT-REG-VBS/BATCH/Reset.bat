@@ -1,1 +1,0 @@
-Del %userprofile%\CSCPOL_v123.txt

@@ -1,1 +1,0 @@
-Get-MailboxStatistics -Database Students_01 | measure-object

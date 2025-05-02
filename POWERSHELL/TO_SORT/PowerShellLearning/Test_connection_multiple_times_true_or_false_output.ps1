@@ -1,1 +1,0 @@
-﻿Test-Connection -ComputerName youtube.com -Quiet -Count 4

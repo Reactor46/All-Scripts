@@ -1,1 +1,0 @@
-powershell .\WSPBackup.ps1

@@ -1,7 +1,0 @@
-{
-	// See https://go.microsoft.com/fwlink/?LinkId=827846
-	"recommendations": [
-		"ms-vscode.PowerShell",
-		"PeterJausovec.vscode-docker"
-	]
-}

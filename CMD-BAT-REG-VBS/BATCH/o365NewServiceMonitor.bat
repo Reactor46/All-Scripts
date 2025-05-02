@@ -1,2 +1,0 @@
-powershell .\o365NewServiceMonitor.ps1 -LicenseSKU "Company:ENTERPRISEPACK" -smtpserver "smtp.labtest.com" -from "DoNotReply@labtest.com" -erroremail "ReportLogs@labtest.com" -email "VSukhija@labtest.com","c83975758@amer.teams.ms" -userid "MSOLSVC@labtest.com"
-powershell  .\o365NewServiceMonitor.ps1 -LicenseSKU "Company:DESKLESSPACK" -smtpserver "smtp.labtest.com" -from "DoNotReply@labtest.com" -erroremail "ReportLogs@labtest.com" -email "VSukhija@labtest.com","c83975758@amer.teams.ms" -userid "MSOLSVC@labtest.com"

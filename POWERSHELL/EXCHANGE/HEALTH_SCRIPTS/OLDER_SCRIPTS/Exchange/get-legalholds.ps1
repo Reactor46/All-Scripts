@@ -1,1 +1,0 @@
-Get-MailboxDatabase | Get-Mailbox | Select Name,LitigationHoldEnabled | where{$_.LitigationHoldEnabled -eq"True"}

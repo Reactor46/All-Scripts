@@ -1,1 +1,0 @@
-powershell .\FileV3Mon.ps1

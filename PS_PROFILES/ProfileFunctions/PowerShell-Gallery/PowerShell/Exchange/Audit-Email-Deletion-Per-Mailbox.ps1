@@ -1,1 +1,0 @@
-Set-Mailbox -Identity “TestUser1” -AuditAdminHardDelete, SoftDelete -AuditEnabled $True

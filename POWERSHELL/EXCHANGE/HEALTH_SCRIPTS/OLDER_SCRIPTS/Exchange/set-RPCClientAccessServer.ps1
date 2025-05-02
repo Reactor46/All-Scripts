@@ -1,1 +1,0 @@
-Set-MailboxDatabase -Identity <dbname> -RpcClientAccessServer cas.dmacc.edu

@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0180683d-443f-4495-9f30-a3257de92586" solutionId="0180683d-443f-4495-9f30-a3257de92586" resetWebServer="false" name="SP2010CustomListForm" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="c21db299-e4d8-4790-9087-9628609b004b" />
-  </features>
-  <projectItems>
-    <projectItemReference itemId="996df571-4a9f-4efe-ad0f-017cd52ee82e" />
-  </projectItems>
-</package>

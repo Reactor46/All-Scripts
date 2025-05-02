@@ -1,1 +1,0 @@
-Set-OWAVirtualDirectory -Identity "ANEXCA02\owa (Default Web Site)" -LegacyRedirectType Manual

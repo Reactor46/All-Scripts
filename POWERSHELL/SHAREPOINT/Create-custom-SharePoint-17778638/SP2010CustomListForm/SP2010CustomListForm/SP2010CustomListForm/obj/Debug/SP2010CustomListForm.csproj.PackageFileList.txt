@@ -1,1 +1,0 @@
-bin\Debug\SP2010CustomListForm.wsp

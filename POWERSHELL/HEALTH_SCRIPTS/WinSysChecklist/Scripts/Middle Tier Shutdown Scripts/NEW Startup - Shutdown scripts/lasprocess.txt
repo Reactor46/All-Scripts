@@ -1,2 +1,0 @@
-CreditOne.CustomerNotifications.EmailService
-CreditOne.CustomerNotifications.SMSService

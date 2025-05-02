@@ -1,1 +1,0 @@
-powershell .\Filebackup.ps1

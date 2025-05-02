@@ -1,1 +1,0 @@
-Get-MailboxDatabaseCopyStatus -Server ANEXMBX01 | Resume-MailboxDatabaseCopy

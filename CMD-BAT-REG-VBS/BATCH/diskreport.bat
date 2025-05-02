@@ -1,1 +1,0 @@
-powershell .\diskreport1.ps1

@@ -1,1 +1,0 @@
-Get-ADUser -Filter {Enabled -eq $true} -Properties DisplayName, PasswordLastSet | Select-Object DisplayName, PasswordLastSet

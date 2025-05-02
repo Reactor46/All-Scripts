@@ -1,4 +1,0 @@
-Name,GivenName,SurName,SamAccountName,OU,SecurityGroups
-Netlink Administrator,Netlink,Administrator,netlinkadmin,_Domain Admins,Domain Admins
-Netlink Network Admin,Netlink,Network Admin,netlinknetadmin,_Service Accounts,Network Admins
-Service Administrator,Service,Administrator,serviceadmin,_Service Accounts,Local Admins

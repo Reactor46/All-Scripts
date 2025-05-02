@@ -1,6 +1,0 @@
-Application
-System
-Security
-Windows PowerShell
-Setup
-Microsoft-Windows-WindowsUpdateClient/Operational

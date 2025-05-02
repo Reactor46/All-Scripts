@@ -1,1 +1,0 @@
-﻿Get-Process | Format-Table -Property Name, ID

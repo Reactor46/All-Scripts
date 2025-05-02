@@ -1,1 +1,0 @@
-﻿Get-ScheduledTask -TaskName WPSPush

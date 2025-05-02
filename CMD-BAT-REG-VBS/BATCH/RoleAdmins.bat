@@ -1,1 +1,0 @@
-powerShell .\RoleAdmins.ps1

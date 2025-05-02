@@ -1,1 +1,0 @@
-﻿Get-WinEvent -LogName *PowerShell*

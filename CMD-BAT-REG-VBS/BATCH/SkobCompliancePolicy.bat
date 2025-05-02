@@ -1,1 +1,0 @@
-powershell .\SkobCompliancePolicy.ps1

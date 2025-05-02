@@ -1,1 +1,0 @@
-powershell.exe -noprofile -noexit -WindowStyle Hidden -nologo -file Invoke-ServiceUI.ps1

@@ -1,1 +1,0 @@
-﻿$ComputerName | Get-DiskSpaceReport -WarningLevel 85 -ErrorLevel 95 | Select "Server Name", Drive, "Space (GB)", Usage, Status | Group-ByStatus

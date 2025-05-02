@@ -1,8 +1,0 @@
-SAS [[]Config-Lev1[]] Cache Locator on port 41415
-SAS [[]Config-Lev1[]] Connect Spawner
-SAS [[]Config-Lev1[]] Deployment Tester Server
-SAS [[]Config-Lev1[]] Object Spawner
-SAS [[]Config-Lev1[]] SAS Environment Manager Agent
-SAS [[]Config-Lev1[]] Web Infrastructure Platform Data Server
-SAS Deployment Agent
-SAS[[]Config-Lev1[]]DIPJobRunner

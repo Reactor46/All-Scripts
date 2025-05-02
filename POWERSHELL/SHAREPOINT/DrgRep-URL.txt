@@ -1,4 +1,0 @@
-https://uat-pulse.kscpulse.com/_layouts/15/ksc.internal.branding/generatedrugrepassignmentsreport.aspx
-https://int-pulse.kscpulse.com/_layouts/15/ksc.internal.branding/GenerateDrugRepAssignmentsReport.aspx
-https://uat-apps1.kscpulse.com/_layouts/15/ksc.internal.branding/GenerateDrugRepAssignmentsReport.aspx
-https://uat-pulse1.kscpulse.com/_layouts/15/ksc.internal.branding/GenerateDrugRepAssignmentsReport.aspx

@@ -1,6 +1,0 @@
-digraph test {
- rankdir = LR
-         
-     "Default-First-Site-Name" -> "MTS-FARM"[label = "Adjacent To"]        
-     "MTS-FARM" -> "Default-First-Site-Name"[label = "Adjacent To"]
-}

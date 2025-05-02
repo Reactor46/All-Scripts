@@ -1,4 +1,0 @@
-C:\Users\Administrator\Desktop\SharePointApp1\SharePointApp1\bin\Debug\SharePointApp1.pdb
-C:\Users\Administrator\Desktop\SharePointApp1\SharePointApp1\obj\Debug\SharePointApp1.dll
-C:\Users\Administrator\Desktop\SharePointApp1\SharePointApp1\obj\Debug\SharePointApp1.pdb
-C:\Users\Administrator\Desktop\SharePointApp1\SharePointApp1\obj\Debug\SharePointApp1.csprojResolveAssemblyReference.cache
